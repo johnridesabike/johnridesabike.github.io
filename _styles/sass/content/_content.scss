@@ -1,0 +1,50 @@
+.site {
+	/* fixes bug where full-bleed content creates horizontal scrollbar. May have undesireable side effects...? */
+	overflow-x: hidden;
+}
+
+%smallscreen-padding {
+	padding-right: 1rem; // 16px
+	padding-left: 1rem; // 16px
+}
+
+.site-content {
+	padding-bottom: 1em; /* give some space for the footer */
+	background-color: $color-bg-body;
+
+	@include max-site-width;
+	@extend %smallscreen-padding;
+}
+
+@media screen {
+
+	.print {
+		display: none;
+	}
+}
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+@import "posts-and-pages";
+
+/*--------------------------------------------------------------
+## Archives
+--------------------------------------------------------------*/
+@import "archives";
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+@import "comments";
+
+/*--------------------------------------------------------------
+## Front Page
+--------------------------------------------------------------*/
+.home.page {
+
+	.entry-header {
+		display: none;
+	}
+}
+

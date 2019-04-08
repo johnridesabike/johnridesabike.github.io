@@ -1,0 +1,42 @@
+.archive-description {
+	
+	@include max-content-width;
+}
+
+.archive-view {
+
+	// .entry-wrap {
+	// 	width: 100%;
+	// }
+
+	article:not(:last-of-type) {
+		margin-bottom: 2em;
+	}
+
+	.format-aside {
+		border-top-width: 4px; // matches h2
+		border-top-style: solid; // matches h2
+	}
+}
+
+.button-open,
+.button-open a {
+	display: block;
+}
+
+/** Archive Media Queries **/
+@media screen and (min-width: $breakpoint-2) {
+
+	.archive-view {
+
+		.site-content {
+			display: flex;
+			flex-flow: row;
+			justify-content: space-around;
+		}
+			
+		.content-area {
+			width: 100%;
+		}
+	}
+}

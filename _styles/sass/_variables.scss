@@ -1,0 +1,60 @@
+$color-text-main: #19191a;
+$color-bg-body: #fff;
+//$color-tint:rgba(1, 118, 128, 1); // Intense Teal
+$color-primary-hue: 185;
+$color-complementary-hue: 305;
+$color-saturation: 95%;
+$color-lightness: 25%;
+$color-lightness-hover: 40%;
+$color-link: hsl( $color-primary-hue, $color-saturation, $color-lightness);
+$color-link-hover: hsl( $color-primary-hue, $color-saturation, $color-lightness-hover);
+$color-button-text: $color-bg-body;
+
+$color-bg-pre: #eee;
+$color-border: #ccc;
+$color-border-abbr: #666;
+$color-background-ins: #fff9c0;
+$color-text-input: rgba($color-text-main, 0.8);
+$color-bg-screen: #f1f1f1; // _accessibiliity.scss
+$color-text-screen: #21759b; // _accessibiliity.scss
+
+$font-reading: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
+$font-UI: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-site-title: Baskerville, "Baskerville Old Face", Garamond, $font-reading;
+$font-pre: "Courier 10 Pitch", Courier, monospace;
+$font-code: Menlo, Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$glyph-arrow-down: "\25BC";
+$glyph-arrow-up: "\25B2";
+$glyph-arrow-next: "\276F";
+$glyph-arrow-down-right: "\21B3";
+
+$font-size-base: 20px;
+$font-size-base-mobile: 16px;
+// Update editor-font-sizes in functions.php when these change.
+$font-size-xs:    1em / 1.25;  // 16
+$font-size-sm:    1em / 1.125; // 17.78
+$font-size-md:    1em * 1;     // 20
+$font-size-lg:    1em * 1.25;   // 25
+$font-size-xl:    1em * 1.5;     // 30
+$font-size-xxl:   1em * 1.75;   // 35
+
+$font-line-height-pre: 1.6;
+
+$letter-spacing-allcaps: 0.06em;
+
+$opacity-aside: 0.8;
+
+$breakpoint-1: 600px; // Phone
+$breakpoint-2: 900px; // Tablet
+$breakpoint-3: 1200px; // Desktop
+$breakpoint-4: 1800px; // Big desktop
+
+$size-site-width: 1200px; // WordPress global: $content_width
+$size-content: 680px;
+
+$size-avatar-lg: 96px;
+$size-avatar-md: 72px;
+$size-avatar-sm: 48px;
+
+$border-radius-button: 0.625em;
+$border-radius-button-square: 0.15em;
