@@ -1,0 +1,295 @@
+// .page-content .wp-smiley,
+// .entry-content .wp-smiley,
+// .comment-content .wp-smiley {
+.wp-smiliey {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+	border: none;
+}
+
+.avatar {
+	border: 1px solid transparent;
+	border-radius: 50%;
+	box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Alignments and Images
+--------------------------------------------------------------*/
+.alignleft {
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+
+	@include center-block;
+}
+
+.entry-content figure {
+	// This ensures that long captions don't stretch the width of the figure.
+	display: table;
+
+	> figcaption {
+		display: table-caption;
+		caption-side: bottom;
+	}
+}
+
+.centered-image {
+	max-width: 100vw;
+	margin: 0 -1em;
+	border: none;
+}
+
+/*--------------------------------------------------------------
+## Single Post Featured Images
+--------------------------------------------------------------*/
+
+/* Note: `featured-image` is the class applied to <figure> and `post-thumbnail` is the class applied to <img> */
+
+/**
+ * Browsers that don't support object-fit (IE) will display the plain image.
+ * It's possible to replicate this with transforms and overflows, but I don't
+ * have the time to test that out just to cover IE.
+ */
+.featured-image__single {
+	// cancel the default figure margin
+	margin-top: 0;
+}
+
+/* for browsers that don't play well with cover */
+.featured-image__caption {
+	padding-right: 1.5em; /* to avoid scrollbars */
+	font-size: $font-size-xs;
+	font-style: italic;
+	text-align: right;
+
+}
+
+@supports (object-fit: cover) {
+
+	.featured-image__single {
+		position: relative;
+		width: 100vw;
+		max-width: 100vw;
+		height: 67vw; /* aspect ratio kept intact for small screens */
+		margin-top: 0;
+	}
+
+	.featured-image__caption { 
+
+		@include figcaption-overlay;
+
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		text-align: right;
+	}
+
+	.post-thumbnail__single {
+		position: absolute;
+		// z-index: -1; // TODO investigate this
+		width: 100vw;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	@media screen and (min-width: $breakpoint-1) {
+
+		.featured-image__single {
+			height: 430px;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Archive View Featured Images
+--------------------------------------------------------------*/
+
+.excerpt-entry {
+
+	.featured-image {
+		position: relative;
+		margin-top: 0; // cancel default figure
+		margin-bottom: 0; // cancel default figure
+	}
+
+	.featured-image__link {
+		display: block;
+		line-height: 0; /* fixes visual glitch with link overlay */
+
+		&:hover,
+		&:active,
+		&:focus {
+
+			&::before {
+				display: block;
+				position: absolute;
+				z-index: 2;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				opacity: 0.25;
+				background-color: $color-link-hover;
+				content: "";
+			}
+		}
+	}
+
+	.wp-post-image {
+		width: 100%; // fix for IE11
+	}
+}
+
+/*--------------------------------------------------------------
+## Attachment pages
+--------------------------------------------------------------*/
+.single-attachment {
+
+	.entry-title {
+		text-align: center;
+	}
+
+	.comments-area {
+		margin-top: 1em;
+	}
+
+	.site-content {
+		margin-top: 1em;
+	}
+
+	.entry-content {
+
+		@include full-bleed;
+	}
+}
+
+.entry-attachment {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	max-width: 100%;
+	margin-bottom: 1.5em;
+
+	img[class*="wp-image-"] {
+		
+		@include center-block;
+	}
+
+	.wp-caption-text {
+		margin: 0.8075em 0;
+		text-align: center;
+	}
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	vertical-align: top;
+
+	// Loops to enumerate the classes for gallery columns.
+	@for $i from 2 through 9 {
+
+		.gallery-columns-#{$i} & {
+			max-width: map-get( $columns, $i );
+		}
+	}
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+## SVG
+--------------------------------------------------------------*/
+
+.svg-icon {
+	width: 1em;
+	height: 1em;
+	vertical-align: middle;
+	transition: fill 120ms ease-in-out;
+	fill: currentColor;
+}
+
+
+/*
+** Media Queries
+**/
+
+@media screen and (max-width: $breakpoint-1) {
+	/* On small screens, display left and right alignments as if they were centered */
+	.alignleft,
+	.alignright {
+		float: none !important;
+		clear: both !important;
+
+		@include center-block;
+	}
+}
+
+@media screen and (max-width: $breakpoint-3) {
+
+	.full-bleed {
+
+		@include full-bleed;
+	}
+}
+
+@media screen and (min-width: $breakpoint-1) {
+
+	/* Alignments */
+
+	.centered-image {
+		margin: 0 -2em;
+	}
+
+	.featured-image__archive.full-bleed {
+
+		@include full-bleed-cancel;
+	}
+}
+
+@media screen and (min-width: $breakpoint-3) {
+
+	/* We change the style to prepare it for the grid layout in posts-and-pages */
+	.featured-image__single {
+		flex: 1 1 50%;
+	}
+
+	.post-thumbnail__single {
+		width: 100%;
+	}
+
+	.featured-image__caption {
+		padding-right: 0.5em;
+	}
+}

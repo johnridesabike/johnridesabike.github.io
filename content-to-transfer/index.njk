@@ -1,0 +1,161 @@
+---
+title: John Jackson
+layout: page.njk
+classes: home
+tags:
+    nav
+navtitle: Home
+---
+{% from "partials/latestposts.njk" import latestPosts %}
+<div class="wp-block-media-text">
+    <figure class="wp-block-media-text__media">
+        <img src="/media/john2018.jpg" alt="Portrait of John" class="wp-image-50"/>
+    </figure>
+    <div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…","fontSize":"large"} -->
+        <p class="has-large-font-size">Hi, I'm John Jackson.</p>
+        <!-- /wp:paragraph -->
+    </div>
+</div>
+
+<p style="text-align:left">I’m a public library staffer who is interested in digital library technologies, web development, and libraries of all types. I like to bike, write, build, and tinker.</p>
+
+<div class="wp-block-columns has-2-columns">
+<div class="wp-block-column">
+<p style="text-align:center"><strong>Hiring? Here’s a bit about me:</strong></p>
+
+<p>✔️ MLIS Graduate.</p>
+
+<p>✔️ Working in libraries since 2015.</p>
+
+<p>✔️ Experience in adult services programming, web development, data management, customer service, and more.</p>
+
+<div class="wp-block-button aligncenter is-style-squared"><a class="wp-block-button__link" href="/resume/">View my full résumé</a></div>
+</div>
+
+<div class="wp-block-column"><!-- wp:paragraph {"align":"center"} -->
+<p style="text-align:center"><strong>Let’s get in touch.</strong></p>
+
+<p>Questions, comments, job offers, jokes, poems, or just to say “hi.” </p>
+
+<div class="wp-block-button aligncenter is-style-squared">
+    <a class="wp-block-button__link" href="mailto:jbpjackson@icloud.com">
+        {%- include "svg/mail.svg" %}
+        Email me
+    </a>
+</div>
+</div>
+</div>
+
+<h2 style="text-align:center">Check out my portfolio and other projects:</h2>
+
+<div class="wp-block-columns alignwide has-2-columns">
+    <div class="wp-block-column">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 30 30" style="display: block; margin: auto;" class="has-header-color">
+            <path d="M15.1,9.3c2.6,0,4.7-2.1,4.7-4.7c0-2.6-2.1-4.7-4.7-4.7s-4.7,2.1-4.7,4.7C10.4,7.2,12.5,9.3,15.1,9.3z"></path>
+            <path d="M19.6,10.5c2.1,0.1,3,1.8,3,1.8l6.9,9.4c0.3,0.4,0.5,0.9,0.5,1.5c0,1.5-1.2,2.7-2.7,2.7
+                c-0.4,0-0.7-0.1-1-0.2l-4.2-1.2v4.1H7.8v-4.1l-4.2,1.2c-0.3,0.1-0.6,0.2-1,0.2c-1.5,0-2.7-1.2-2.7-2.7c0-0.6,0.2-1.1,0.5-1.5
+                l6.9-9.4c0,0,0.9-1.7,3-1.8C10.4,10.5,19.6,10.5,19.6,10.5z M15,25.7L15,25.7l5.4-1.8l-0.1,0c-3.7-1.1-2.3-6,1.4-4.9l0.5,0.2v-5.5
+                L15,16l-7.2-2.4v5.5L8.3,19c3.7-1.1,5.2,3.8,1.4,4.9l-0.1,0L15,25.7L15,25.7z"></path>
+        </svg>
+        <h3 style="text-align:center">Libraries</h3>
+        <p style="text-align:center">Some of the projects I’ve completed while working at a library and while completing my MLIS.</p>
+    </div>
+
+    <div class="wp-block-column">
+        {{ latestPosts(collections.Libraries) }}
+
+        <div class="wp-block-button aligncenter is-style-squared"><a class="wp-block-button__link" href="/libraries/">Browse “Libraries”<br></a>
+        </div>
+    </div>
+</div>
+
+<hr/>
+
+<div class="wp-block-columns alignwide has-2-columns">
+    <div class="wp-block-column">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="120" height="120" style="display: block; margin: auto;" class="has-header-color"><rect x="0" fill="none" width="20" height="20"></rect><g><path d="M18 18l.01-12.28c.59-.35.99-.99.99-1.72 0-1.1-.9-2-2-2s-2 .9-2 2c0 .8.47 1.48 1.14 1.8l-4.13 6.58c-.33-.24-.73-.38-1.16-.38-.84 0-1.55.51-1.85 1.24l-2.14-1.53c.09-.22.14-.46.14-.71 0-1.11-.89-2-2-2-1.1 0-2 .89-2 2 0 .73.4 1.36.98 1.71L1 18h17zM17 3c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM5 10c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm5.85 3c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"></path></g></svg>
+        <h3 style="text-align:center">Research</h3>
+        <p style="text-align:center">Research projects I completed while working on my MLIS degree.</p>
+    </div>
+
+    <div class="wp-block-column">
+        {{ latestPosts(collections.Research) }}
+        <div class="wp-block-button aligncenter is-style-squared">
+            <a class="wp-block-button__link" href="/tag/Research/">Browse “Research”</a>
+        </div>
+    </div>
+</div>
+
+<hr/>
+
+<div class="wp-block-columns alignwide has-2-columns">
+    <div class="wp-block-column">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="100" height="100" style="display: block; margin: auto;" class="has-header-color"><rect x="0" fill="none" width="20" height="20"></rect><g><path d="M9 6l-4 4 4 4-1 2-6-6 6-6zm2 8l4-4-4-4 1-2 6 6-6 6z"></path></g></svg>
+        <h3 style="text-align:center">Web Development</h3>
+        <p style="text-align:center">My web development projects, mostly with WordPress.</p>
+    </div>
+    <div class="wp-block-column">
+        {{ latestPosts(collections["Web development"]) }}
+        <div class="wp-block-button aligncenter is-style-squared"><a class="wp-block-button__link" href="/web-development/">Browse “Web Development”<br></a></div>
+    </div>
+</div>
+
+<hr/>
+
+<div class="wp-block-columns alignwide has-2-columns">
+    <div class="wp-block-column">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="100" height="100" style="display: block; margin: auto;" class="has-header-color"><rect x="0" fill="none" width="20" height="20"></rect><g><path d="M3 2h14c.55 0 1 .45 1 1v10c0 .55-.45 1-1 1h-5v2h2c.55 0 1 .45 1 1v1H5v-1c0-.55.45-1 1-1h2v-2H3c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1zm13 9V4H4v7h12zM5 5h9L5 9V5z"></path></g></svg>
+        <h3 style="text-align:center">Software</h3>
+        <p style="text-align:center">Software I’ve made, open source so you can fork it.</p>
+    </div>
+    <div class="wp-block-column">
+        {{ latestPosts(collections.Software) }}
+        <div class="wp-block-button aligncenter is-style-squared"><a class="wp-block-button__link" href="/software/">Browse “Software”</a>
+        </div>
+    </div>
+</div>
+
+<hr/>
+
+<div class="wp-block-columns alignwide has-2-columns">
+    <div class="wp-block-column">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="100" height="100" style="display: block; margin: auto;" class="has-header-color"><rect x="0" fill="none" width="20" height="20"></rect><g><path d="M17.7 6.32l1.41 1.42-3.47 3.41-1.42-1.42.84-.82c-.32-.76-.81-1.57-1.51-2.31l-4.61 6.59-5.26 4.7c-.39.39-1.02.39-1.42 0l-1.2-1.21c-.39-.39-.39-1.02 0-1.41l10.97-9.92c-1.37-.86-3.21-1.46-5.67-1.48 2.7-.82 4.95-.93 6.58-.3 1.7.66 2.82 2.2 3.91 3.58z"></path></g></svg>
+        <h3 style="text-align:center">Woodworking</h3>
+        <p style="text-align:center">Guides for the woodworking projects I’ve done.</p>
+    </div>
+    <div class="wp-block-column">
+        {{ latestPosts(collections["Woodworking"]) }}
+        <div class="wp-block-button aligncenter is-style-squared"><a class="wp-block-button__link" href="/woodworking/">Browse “Woodworking”</a>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="wp-block-columns alignwide has-2-columns">
+    <div class="wp-block-column">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 30 30" style="display: block; margin: auto;" class="has-header-color">
+            <g>
+                <path d="M17.2,12.5l-1.5-2.3l-3.1,3l2.8,1.5c1.2,0.6,1,1.6,1,1.6v6.4c0,0.7-0.6,1.3-1.3,1.3s-1.3-0.6-1.3-1.3v-5.1L9,14.8
+                    c-0.6-0.3-1-1-1-1.7c0-0.5,0.2-0.9,0.5-1.3L13,7h2l1,1l2.8,3.3h3.8c1.4,0,1.4,1.7,0,1.7h-4L17.2,12.5z"></path>
+                <path d="M24,27c2.8,0,5-2.2,5-5s-2.2-5-5-5s-5,2.2-5,5S21.2,27,24,27z M18,22c0-3.3,2.7-6,6-6s6,2.7,6,6s-2.7,6-6,6S18,25.3,18,22z
+                    "></path>
+                <path d="M6,27c2.8,0,5-2.2,5-5s-2.2-5-5-5s-5,2.2-5,5S3.2,27,6,27z M0,22c0-3.3,2.7-6,6-6s6,2.7,6,6s-2.7,6-6,6S0,25.3,0,22z"></path>
+                <circle cx="17.5" cy="4.5" r="2.5"></circle>
+            </g>
+        </svg>
+        <h3 style="text-align:center">Blog</h3>
+        <p style="text-align:center">Bicycles and everything else.</p>
+    </div>
+    <div class="wp-block-column">
+        <div class="wp-block-button aligncenter is-style-squared"><a class="wp-block-button__link" href="/category/blog/">Browse “Blog”</a>
+        </div>
+    </div>
+</div>-->
+
+<h2>Other general updates</h2>
+
+{% for page in collections.Updates %}
+    {% include "partials/update.njk" %}
+{% endfor %}
+
+<hr />

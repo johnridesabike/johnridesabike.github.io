@@ -1,0 +1,32 @@
+@mixin max-site-width {
+
+	@media screen and (min-width: $size-site-width) {
+		max-width: $size-site-width;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+@mixin max-content-width {
+	max-width: $size-content;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin full-bleed {
+	/* full-bleed on small screens */
+	margin-right: -1rem;
+	margin-left: -1rem;
+}
+
+@mixin full-bleed-cancel {
+	/* cancel full-bleed on larger screens */
+	margin-right: 0;
+	margin-left: 0;
+}
+
+@mixin center-block {
+	display: block; // might not be necessary
+	margin-right: auto !important;
+	margin-left: auto !important;
+}

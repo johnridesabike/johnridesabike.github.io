@@ -1,0 +1,18 @@
+---
+pagination:
+    data: collections
+    size: 1
+    alias: tag
+    filter:
+        - all
+        - nav
+        - post
+        - posts
+        - tagList
+    addAllPagesToCollections: true
+renderData:
+    title: “Libraries” archive
+    classes: archive-view
+---
+{% set pages = collections.Libraries %}
+{% include "archive.njk" %}
