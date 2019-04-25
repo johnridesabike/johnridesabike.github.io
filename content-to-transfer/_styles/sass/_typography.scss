@@ -1,0 +1,245 @@
+/* stylelint-disable-next-line no-duplicate-selectors */
+html { 
+	font-size: $font-size-base;
+	line-height: calculate-line-height($font-size-base, $size-content);
+}
+
+@media screen and (max-width: $breakpoint-1) {
+
+	html {
+		font-size: $font-size-base-mobile;
+		line-height: calculate-line-height($font-size-base-mobile, $breakpoint-1);
+	}
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+body {
+	color: $color-text-main;
+}
+
+body,
+textarea {
+	font-family: $font-reading;
+}
+
+input {
+	font-family: $font-UI;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-weight: 400;
+	hyphens: none;
+}
+
+/* Only use h1 for title */
+/* stylelint-disable-next-line no-duplicate-selectors */
+h1 {
+	clear: both;
+	font-size: $font-size-xl;
+	line-height: calculate-line-height( $font-size-xl, $size-content );
+}
+
+/* Use h2, h3, h4 in document bodies */
+
+h2 {
+	clear: both;
+	padding-top: 0.5em;
+	border-top-width: 4px;
+	border-top-style: solid;
+	font-size: $font-size-lg;
+	line-height: calculate-line-height( $font-size-lg, $size-content);
+}
+
+h3 {
+	clear: both;
+	font-size: $font-size-md;
+	font-weight: 700;
+	line-height: calculate-line-height( $font-size-md, $size-content );
+	letter-spacing: $letter-spacing-allcaps;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-size: $font-size-sm;
+	font-weight: 700;
+	line-height: calculate-line-height( $font-size-sm, $size-content );
+	letter-spacing: $letter-spacing-allcaps;
+	text-transform: uppercase;
+}
+
+/* Please don't use h5 or h6... why do we need them, anyway? */
+
+h5 {
+	font-size: $font-size-sm;
+	font-weight: 700;
+	line-height: calculate-line-height( $font-size-sm, $size-content );
+}
+
+h6 {
+	font-size: $font-size-xs;
+	font-weight: 700;
+	line-height: calculate-line-height( $font-size-xs, $size-content );
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+figcaption {
+
+	@include figcaption;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	font-size: $font-size-sm;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+pre {
+	overflow: auto;
+	max-width: 100%;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	background: $color-bg-pre;
+	font-family: $font-pre;
+	line-height: $font-line-height-pre;
+}
+
+code, kbd, tt, var {
+	font-family: $font-code;
+	font-size: $font-size-base;
+	font-size: $font-size-xs;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted $color-border-abbr;
+	cursor: help;
+}
+
+mark, ins {
+	background: $color-background-ins;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+.has-xsmall-font-size {
+	font-size: $font-size-xs;
+}
+
+.has-small-font-size {
+	font-size: $font-size-sm;
+}
+
+.has-normal-font-size,
+.has-regular-font-size ,
+.has-medium-font-size {
+	font-size: $font-size-md;
+}
+
+.has-large-font-size {
+	font-size: $font-size-lg;
+}
+
+.has-xlarge-font-size,
+.has-huge-font-size,
+.has-larger-font-size {
+	font-size: $font-size-xl;
+}
+
+.has-xxlarge-font-size {
+	font-size: $font-size-xxl;
+}
+
+.has-normal-color {
+	color: $color-text-main;
+}
+
+.has-primary-color,
+.has-link-color {
+	color: $color-link;
+}
+
+.has-primary-light-color {
+	color: $color-link-hover;
+}
+
+.has-complementary-color {
+	color: hsl( $color-complementary-hue, $color-saturation, $color-lightness);
+}
+
+.has-complementary-light-color {
+	color: hsl( $color-complementary-hue, $color-saturation, $color-lightness-hover);
+}
+
+.has-dark-gray-color {
+	color: #111;
+}
+
+.has-light-gray-color {
+	color: #767676;
+}
+
+.has-white-color {
+	color: #fff;
+}
+
+.has-primary-background-color {
+	background-color: $color-link;
+}
+
+.has-primary-light-background-color {
+	background-color: $color-link-hover;
+}
+
+.has-complementary-background-color {
+	background-color: hsl( $color-complementary-hue, $color-saturation, $color-lightness);
+}
+
+.has-complementary-light-background-color {
+	background-color: hsl( $color-complementary-hue, $color-saturation, $color-lightness-hover);
+}
+
+.has-dark-gray-background-color {
+	background-color: #111;
+}
+
+.has-light-gray-background-color {
+	background-color: #767676;
+}
+
+.has-white-background-color {
+	background-color: #fff;
+}
+
+.has-ui-font {
+	font-family: $font-UI;
+}
+
+.has-body-font {
+	font-family: $font-reading;
+}
+
+.footer-widgets {
+	opacity: $opacity-aside;
+}
+
+// /* Accessibility */
+// .entry-content,
+// .comment-content,
+// .widget p {
+
+// 	a:hover,
+// 	a:active,
+// 	a:focus {
+// 		text-decoration: underline;
+// 	}
+// }
