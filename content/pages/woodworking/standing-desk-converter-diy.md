@@ -8,9 +8,10 @@ tags:
     - 2x4
     - DIY
 layout: index.njk 
-thumbnail: ../media/standing-desk/final.png
+thumbnail: ./standing-desk-media/final.png
 description: Why spend hundreds of dollars on a new desk when you can surely make your own with a little DIY woodworking? It turns out, you can easily create your own standing desk with nothing more than your current desk, some scrap 2x4s, and some basic woodworking skills.
 attachments:
+    - "./standing-desk-media/standing_desk.skp.zip"
 ---
 If you’re like me, you’ve thought about joining the standing desk trend, but the price of entry is a turn-off. Why spend hundreds of dollars on a new desk when you can surely make your own with a little DIY woodworking? It turns out, you can easily create your own standing desk with nothing more than your current desk, some scrap 2x4s, and some basic woodworking skills.
 
@@ -42,7 +43,7 @@ Sound good? Let’s get started!
 
 <figure class="wp-block-image alignwide">
 
-![Diagram of final standing desk.](../media/standing-desk/final.png)
+![Diagram of final standing desk.](./standing-desk-media/final.png)
 
 </figure>
 
@@ -50,13 +51,11 @@ Sound good? Let’s get started!
 <div class="wp-block-column">
 <figure class="wp-block-image alignwide">
 
-![Project overview diagram.](../media/standing-desk/standing_desk_overview.png)
+![Project overview diagram.](./standing-desk-media/standing_desk_overview.png)
 
 </figure>
 </div>
 </div>
-
-<div class="wp-block-file aligncenter"><a href="../media/standing-desk/standing_desk.skp.zip">Download the SketchUp file to follow along</a><a href="../media/standing-desk/standing_desk.skp.zip" class="wp-block-file__button" download>Download</a></div>
 
 <div class="wp-block-columns has-2-columns">
 <div class="wp-block-column">
@@ -110,7 +109,7 @@ Here are some diagrams to help you visualize it:
 <div class="wp-block-image">
 <figure class="aligncenter">
 
-![Diagram of how to measure the legs.](../media/standing-desk/standing_desk_leg.png)
+![Diagram of how to measure the legs.](./standing-desk-media/standing_desk_leg.png)
 
 <figcaption>The “feet” lifting the legs to their new height.</figcaption>
 </figure>
@@ -119,7 +118,7 @@ Here are some diagrams to help you visualize it:
 <div class="wp-block-image">
 <figure class="aligncenter">
 
-![Diagram of how to measure the side stretcher.](../media/standing-desk/standing_desk_stretcher_1.png)
+![Diagram of how to measure the side stretcher.](./standing-desk-media/standing_desk_stretcher_1.png)
 
 <figcaption>The side stretcher, laid across the legs, should extend about ¼" on each side.</figcaption>
 </figure>
@@ -131,7 +130,7 @@ Here are some diagrams to help you visualize it:
 
 <figure class="aligncenter">
 
-![Diagram of how to measure the middle stretcher.](../media/standing-desk/standing_desk_stretcher_2.png)
+![Diagram of how to measure the middle stretcher.](./standing-desk-media/standing_desk_stretcher_2.png)
 
 <figcaption>The long, middle stretcher should lay completely across the front legs.</figcaption>
 </figure>
@@ -140,7 +139,7 @@ Here are some diagrams to help you visualize it:
 <div class="wp-block-image">
 <figure class="aligncenter">
 
-![Diagram of how the leg fits into the foot.](../media/standing-desk/standing_desk_foot.png)
+![Diagram of how the leg fits into the foot.](./standing-desk-media/standing_desk_foot.png)
 
 <figcaption>This isn’t an abstract painting, just the top-down view of a leg (the middle square) on the foot with walls and stretcher around it.</figcaption>
 </figure>
@@ -152,7 +151,7 @@ I cut mine entirely out of scrap, but here’s a chart to give you an idea of ho
 
 <figure class="wp-block-image alignwide">
 
-![Standing desk cut diagram.](../media/standing-desk/measurements.png)
+![Standing desk cut diagram.](./standing-desk-media/measurements.png)
 
 <figcaption>Sample cut diagram from four 2x4x8s.</figcaption>
 </figure>
@@ -166,7 +165,7 @@ Use wood glue to combine the eight foot pieces into four feet. Apply the glue ac
 <div class="wp-block-image">
 <figure class="aligncenter">
 
-![Standing desk step 1 diagram.](../media/standing-desk/standing_desk_01.png)
+![Standing desk step 1 diagram.](./standing-desk-media/standing_desk_01.png)
 
 </figure>
 </div>
@@ -178,7 +177,7 @@ Take four wall pieces and attach each to a broad sides of each foot. These will 
 <div class="wp-block-image">
 <figure class="aligncenter">
 
-![Standing desk step 2 diagram.](../media/standing-desk/standing_desk_02.png)
+![Standing desk step 2 diagram.](./standing-desk-media/standing_desk_02.png)
 
 </figure>
 </div>
@@ -189,7 +188,7 @@ Drill 1½" pocket holes into one end of each of your stretchers. Rest the stretc
 
 <figure class="wp-block-image alignwide">
 
-![Standing desk step 3 diagram.](../media/standing-desk/standing_desk_03.png)
+![Standing desk step 3 diagram.](./standing-desk-media/standing_desk_03.png)
 
 </figure>
 
@@ -205,7 +204,7 @@ These are almost exactly the same as the outer walls. Align them flush with the 
 <div class="wp-block-image">
 <figure class="aligncenter">
 
-![Standing desk step 4 diagram.](../media/standing-desk/standing_desk_04.png)
+![Standing desk step 4 diagram.](./standing-desk-media/standing_desk_04.png)
 
 </figure>
 </div>
@@ -220,7 +219,7 @@ Like the side stretchers, drill 1½" pocket holes into the ends of the middle st
 
 <figure class="wp-block-image alignwide">
 
-![Standing desk step 5 diagram.](../media/standing-desk/standing_desk_05.png)
+![Standing desk step 5 diagram.](./standing-desk-media/standing_desk_05.png)
 
 </figure>
 
@@ -231,7 +230,7 @@ That’s all! Just add your desk, and you’re now a proud standing desk owner. 
 <div class="wp-block-image">
 <figure class="alignright is-resized">
 
-![Photo of my final standing desk.](../media/standing-desk/IMG_1190.jpeg)
+![Photo of my final standing desk.](./standing-desk-media/IMG_1190.jpeg)
 
 </figure>
 </div>

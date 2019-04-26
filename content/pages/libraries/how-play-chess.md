@@ -1,32 +1,17 @@
 ---
+path: "/libraries/how-play-chess/"
 title: "How to Play Chess: a reference for novices and veterans"
-author: John Jackson
+author: "John Jackson"
 date: 2019-03-13
 updated: 2019-03-18
-tags: 
-    - Chess
-    - Public Libraries
-layout: index.njk
 description: Made originally for my public library chess program, this is a quick-and-easy chess reference for novice and veteran players alike. This guide covers the baseline rules everyone should know.
+attachments:
+    - "./chess-guide-media/handout-How-to-Play-Chess.pdf"
+    - "./chess-guide-media/handout-How-to-Play-Chess.docx"
 ---
 This guide covers all the knowledge required to play a basic game of chess. It’s a quick reference resource, one that can answer questions like: “how many squares do you move when castling?” or “what conditions make a stalemate?” Even if you know these rules by heart, it’s useful to have a text to cite so your opponent doesn’t think you just made up “*en passant*.”
 
 Many chess guides exist, so why use this one? I originally wrote this in 2017 as a handout for our [public library chess program](/libraries/chess-library/). After searching for a basic rule booklet, I had only found one-page diagrams of piece moves or hundred-page long books of strategy. Necessity led me to write this, a guide that’s simple yet also covers all the common rules.
-
-
-<div class="wp-block-columns has-2-columns">
-
-<div class="wp-block-column">
-<div class="wp-block-file aligncenter"><a href="/media/chess-guide/handout-How-to-Play-Chess.pdf">PDF printable booklet</a> <a href="/media/chess-guide/handout-How-to-Play-Chess.pdf" class="wp-block-file__button" download>Download</a>
-</div>
-</div>
-
-<div class="wp-block-column">
-<div class="wp-block-file aligncenter"><a href="/media/chess-guide/handout-How-to-Play-Chess.docx">DOCX printable booklet</a> <a href="/media/chess-guide/handout-How-to-Play-Chess.docx" class="wp-block-file__button" download>Download</a>
-</div>
-</div>
-
-</div>
 
 ## Setting up the board
 
@@ -36,7 +21,7 @@ A game of chess has two players, one with “*white*” pieces and one with “*
 <div class="wp-block-image">
 <figure class="aligncenter">
 
-![Chess starting position.](/media/chess-guide/chess_start.svg)
+![Chess starting position.](./chess-guide-media/chess_start.svg)
 
 </figure>
 </div>
@@ -67,7 +52,7 @@ To capture a piece, the player must move one of their pieces to the same square 
 <div class="wp-block-image">
 <figure class="alignright">
 
-![The king’s moves.](/media/chess-guide/chess_King.svg)
+![The king’s moves.](./chess-guide-media/chess_King.svg)
 
 </figure>
 </div>
@@ -81,7 +66,7 @@ Make sure your king always stays safe!
 <div class="wp-block-image">
 <figure class="alignright">
 
-![The queen’s moves.](/media/chess-guide/chess_Queen.svg)
+![The queen’s moves.](./chess-guide-media/chess_Queen.svg)
 
 </figure></div>
 
@@ -92,7 +77,7 @@ The queen is the most powerful piece. She can move any number of squares in any 
 <div class="wp-block-image">
 <figure class="alignright">
 
-![The rook’s moves.](/media/chess-guide/chess_Rook.svg)
+![The rook’s moves.](./chess-guide-media/chess_Rook.svg)
 
 </figure></div>
 
@@ -103,7 +88,7 @@ The rook is the second most powerful piece. It can move any number of squares ve
 <div class="wp-block-image">
 <figure class="alignright">
 
-![The bishop’s moves.](/media/chess-guide/chess_Bishop.svg)
+![The bishop’s moves.](./chess-guide-media/chess_Bishop.svg)
 
 </figure>
 </div>
@@ -118,7 +103,7 @@ Note that bishops can only move to the same color square that they started on. E
 <div class="wp-block-image">
 <figure class="alignright">
 
-![The knight’s moves.](/media/chess-guide/chess_Knight.svg)
+![The knight’s moves.](./chess-guide-media/chess_Knight.svg)
 
 </figure>
 </div>
@@ -130,7 +115,7 @@ The knight doesn’t move like the other pieces. Instead of a straight line, it 
 <div class="wp-block-image">
 <figure class="alignright">
 
-![The pawn’s moves.](/media/chess-guide/chess_Pawn.svg)
+![The pawn’s moves.](./chess-guide-media/chess_Pawn.svg)
 
 <figcaption>The dots mark where the pawns can move, and the Xs mark where they can capture. </figcaption>
 
@@ -163,7 +148,7 @@ A player may not castle out of check, into check, or through check. (See [*check
 
 <figure class="aligncenter">
 
-![The position before castling.](/media/chess-guide/chess_Castling-part-1.svg)
+![The position before castling.](./chess-guide-media/chess_Castling-part-1.svg)
 
 <figcaption>Before castling</figcaption>
 
@@ -175,7 +160,7 @@ A player may not castle out of check, into check, or through check. (See [*check
 <div class="wp-block-image">
 <figure class="aligncenter">
 
-![The position after castling.](/media/chess-guide/chess_Castling-part-2.svg)
+![The position after castling.](./chess-guide-media/chess_Castling-part-2.svg)
 
 <figcaption>After castling</figcaption>
 
@@ -198,7 +183,7 @@ This move is only an option on the turn immediately following the first pawn’s
 <div class="wp-block-image">
 <figure class="aligncenter">
 
-![The position before en passant.](/media/chess-guide/chess_En-passant-part-1.svg)
+![The position before en passant.](./chess-guide-media/chess_En-passant-part-1.svg)
 
 <figcaption>1. The black pawn advances two spaces.</figcaption>
 </figure>
@@ -209,7 +194,7 @@ This move is only an option on the turn immediately following the first pawn’s
 <div class="wp-block-image">
 <figure class="aligncenter">
 
-![The position after en passant.](/media/chess-guide/chess_En-passant-part-2.svg)
+![The position after en passant.](./chess-guide-media/chess_En-passant-part-2.svg)
 
 <figcaption>2. The white pawn captures the black pawn as if the black pawn had only advanced one space.</figcaption>
 </figure>
@@ -222,7 +207,7 @@ This move is only an option on the turn immediately following the first pawn’s
 <div class="wp-block-image">
 <figure class="alignright">
 
-![A checkmate position.](/media/chess-guide/chess_Checkmate.svg)
+![A checkmate position.](./chess-guide-media/chess_Checkmate.svg)
 
 <figcaption>The black king has been checkmated by the white queen. No matter where Black moves, they can’t escape check.</figcaption>
 </figure>
@@ -243,7 +228,7 @@ A player can never move their own king into check. This includes moving a piece 
 <div class="wp-block-image">
 <figure class="alignright">
 
-![A stalemate position.](/media/chess-guide/chess_Stalemate.svg)
+![A stalemate position.](./chess-guide-media/chess_Stalemate.svg)
 
 <figcaption>Black has no legal move, so this is a stalemate. (If it’s Black’s turn to move.)</figcaption>
 </figure>
@@ -288,7 +273,7 @@ Several situations will end the game in a draw. Some are obvious, but others can
 
 <figure class="alignright">
 
-![A fork position.](/media/chess-guide/chess_Fork.svg)
+![A fork position.](./chess-guide-media/chess_Fork.svg)
 
 <figcaption>The black knight is forking the white king and white queen. White cannot save both pieces.</figcaption>
 </figure>
@@ -313,7 +298,7 @@ Several situations will end the game in a draw. Some are obvious, but others can
 <div class="wp-block-image">
 <figure class="alignright">
 
-![A pin position.](/media/chess-guide/chess_Pin.svg)
+![A pin position.](./chess-guide-media/chess_Pin.svg)
 
 <figcaption>The white rook is pinning the black knight.</figcaption>
 </figure>

@@ -1,4 +1,5 @@
 ---
+path: "/libraries/library-twitter-text-analysis-r/"
 title: Library Twitter Text Analysis With R Presentation
 author: John Jackson
 date: 2018-12-19
