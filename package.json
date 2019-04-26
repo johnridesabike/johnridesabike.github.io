@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "johnridesa.bike",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "John Jackson's personal site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "John Jackson",
   "dependencies": {
     "gatsby": "^2.3.30",
     "gatsby-image": "^2.0.40",
