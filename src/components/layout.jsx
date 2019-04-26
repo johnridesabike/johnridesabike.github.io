@@ -8,6 +8,8 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import {StaticQuery, graphql} from "gatsby";
+import Sidebar from "./sidebar";
+import Footer from "./footer";
 
 import Header from "./header";
 import "normalize.css";
@@ -43,14 +45,11 @@ const Layout = ({ children }) => (
             <Header
                 siteTitle={data.site.siteMetadata.title}
                 siteDescription={data.site.siteMetadata.description} />
-            <div id="content" class="site-content">
+            <div id="content" className="site-content">
                 <main>{children}</main>
+                <Sidebar/>
             </div>
-            <footer>
-                © {new Date().getFullYear()}, Built with
-                {" "}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
+            <Footer />
         </div>
       </Fragment>
     )}
