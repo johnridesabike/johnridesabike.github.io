@@ -6,17 +6,15 @@ date: 2018-05-13
 updated: 2018-05-13
 tags:
     Woodworking
-thumbnail: ../media/chess-table/IMG_0293.jpg
+thumbnail: ./chess-table-media/IMG_0293.jpg
 layout: index.njk
 description: A while back, I inherited a marble chessboard that had once been the top to a beautiful table. The metal base had rusted away long ago, but I believed that I could restore this table to new glory. All I needed was my toolbox and some 2x4s.
 attachments:
-  - "../media/chess-table/Chess-Table-Sketchup.zip"
+  - "./chess-table-media/Chess-Table-Sketchup.zip"
 ---
 A while back, I inherited a marble chessboard that had once been the top to a beautiful table. The metal base had rusted away long ago, but I believed that I could restore this table to new glory. All I needed was my toolbox and some 2x4s.
 
 I adapted most of this design from [Ana White’s “Tryde End Table with Shelf” plan](http://www.ana-white.com/2013/10/plans/tryde-end-table-shelf-updated-pocket-hole-plans). I highly recommend checking out her website in addition to this guide. There are two main differences between my plan and hers. First, I attached a marble tabletop instead of building one from wood. Second, I resized the table into a square that would fit under the marble. With a bit of math, I found the optimal size that can comfortably fit the 2x4s in the shelf without any extra cutting.
-
-<!-- [Download the SketchUp file for this project here.](../media/chess-table/Chess-Table-Sketchup.zip) -->
 
 ## Shopping List
 
@@ -54,7 +52,7 @@ I calculated the most efficient use of wood, and here’s how I cut almost every
 
 <figure class="wp-block-image alignwide">
 
-![End Table Cut Diagram](../media/chess-table/6.png)
+![End Table Cut Diagram](./chess-table-media/6.png)
 
 </figure>
 
@@ -70,7 +68,7 @@ Attach the short aprons to the narrow ends of the legs. Do not fully tighten the
 
 <figure class="aligncenter">
 
-![End Table Step 1 Diagram](../media/chess-table/1.png)
+![End Table Step 1 Diagram](./chess-table-media/1.png)
 
 </figure>
 
@@ -80,7 +78,7 @@ Attach the long aprons to the wide ends of the legs. Do not fully tighten the sc
 
 <figure class="aligncenter">
 
-![End Table Step 2 Diagram](../media/chess-table/2.png)
+![End Table Step 2 Diagram](./chess-table-media/2.png)
 
 </figure>
 
@@ -90,7 +88,7 @@ Attach the shelf boards together using pocket hole screws on the bottom of each.
 
 <figure class="aligncenter">
 
-![End Table Step 3 Diagram](../media/chess-table/3.png)
+![End Table Step 3 Diagram](./chess-table-media/3.png)
 
 </figure>
 
@@ -100,7 +98,7 @@ This step required some creativity for me. My marble tabletop had four holes in 
 
 <figure class="aligncenter">
 
-![End Table Step 4 Diagram](../media/chess-table/4.png)
+![End Table Step 4 Diagram](./chess-table-media/4.png)
 
 </figure>
 
@@ -111,7 +109,7 @@ Some marble tables don’t attach to their bases. Marble is heavy, and the table
 <div>
 <figure class="alignleft">
 
-![End Table Completed Diagram](../media/chess-table/5.png)
+![End Table Completed Diagram](./chess-table-media/5.png)
 
 </figure>
 </div>

@@ -1,4 +1,5 @@
 ---
+path: "/libraries/chess-library/"
 title: "Chess at the Library: my public library chess program"
 author: John Jackson
 date: 2018-08-15

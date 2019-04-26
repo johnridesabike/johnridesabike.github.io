@@ -1,4 +1,5 @@
 ---
+path: "/libraries/open-access-presentation/"
 title: Open Access Presentation
 author: John Jackson
 date: 2018-12-19
