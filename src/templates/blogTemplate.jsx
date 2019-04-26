@@ -33,7 +33,8 @@ export default function Template({
                             />
                     </div>
                     <footer
-                        className="entry-footer entry-footer__single has-ui-font">
+                        className={`entry-footer entry-footer__single
+has-ui-font`}>
                         <div className="post-time entry-footer__item">
                             <span className="updated-on">
                                 <time
@@ -60,15 +61,18 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
+query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY"),
-        ISODate: date,
-        path,
-        title
-      }
+        html
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            ISODate: date
+            path
+            title
+            attachments {
+                publicURL
+            }
+        }
     }
   }
 `;
