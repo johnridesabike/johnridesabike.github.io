@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": "src",
+        "paths": { "*": ["types/*"] },
+        "resolveJsonModule": true,
+        "noImplicitAny": false,
+        "noImplicitThis": true,
+        "strictFunctionTypes": true,
+        "noEmit": true,
+        "jsx": "preserve"
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ]
+}

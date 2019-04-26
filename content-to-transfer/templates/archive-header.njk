@@ -1,0 +1,9 @@
+{% extends "header.njk" %}
+{% block entryHeader %}
+<h1 class="archive-title has-body-font">
+    {{ renderData.title or title or metadata.title }}
+</h1>
+<div class="archive-description has-body-font">
+    {{ description }}
+</div>
+{% endblock %}

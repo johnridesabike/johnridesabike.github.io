@@ -1,0 +1,114 @@
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-header {
+    background-color: #fff;
+}
+
+@media screen and (min-width: 1200px) {
+    .site-header {
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.site-header a {
+    text-decoration: none;
+}
+
+.global-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.global-header .site-branding {
+    flex: 1 1 0;
+    margin-bottom: 0.5em;
+}
+
+.global-header .menu-button {
+    flex: 0 0 auto;
+}
+
+.global-header .main-navigation {
+    flex: 1 0 100%;
+}
+
+.site-title {
+    display: inline-block;
+    margin: 0;
+    font-family: Baskerville, "Baskerville Old Face", Garamond, Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
+    font-size: 1.75em;
+    line-height: 1.36683;
+}
+
+.site-title a[rel="home"] {
+    color: #19191a;
+}
+
+.site-description {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.88889em;
+    font-style: italic;
+}
+
+/* Make sure logo link wraps around logo image. */
+.wp-custom-logo .site-title {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.custom-logo-link {
+    display: block;
+    margin: 0 12px 0 0;
+}
+
+.custom-logo-link img {
+    width: auto;
+    max-height: 1.25em;
+    vertical-align: middle;
+}
+
+.home h1.entry-title {
+    display: none;
+}
+
+/*
+ * Header Media Queries
+ */
+@media screen and (min-width: 600px) {
+    .site-branding {
+        text-align: left;
+    }
+    .global-header {
+        margin: 1em 0 0 0;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .global-header .main-navigation {
+        flex: 0 1 auto;
+    }
+    .site-title {
+        margin: 0;
+        font-size: 1.75em;
+    }
+    .site-header {
+        text-align: left;
+    }
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.site-footer {
+    position: relative;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    box-shadow: inset 0 1em 1.5em -1em rgba(0, 0, 0, 0.2);
+    font-size: 0.88889em;
+}
