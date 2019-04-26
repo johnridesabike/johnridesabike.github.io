@@ -41,14 +41,14 @@ object {
     margin-left: auto !important;
 }
 
-.entry-content figure {
+/* .entry-content figure {
     display: table;
 }
 
 .entry-content figure > figcaption {
     display: table-caption;
     caption-side: bottom;
-}
+} */
 
 .centered-image {
     max-width: 100vw;
