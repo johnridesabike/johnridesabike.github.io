@@ -7,6 +7,7 @@ layout: page.njk
 classes: page
 tags:
     nav
+attachments:
 ---
 <p style="text-align:center" class="has-large-font-size">John Jackson • Columbus, GA</p>
 
