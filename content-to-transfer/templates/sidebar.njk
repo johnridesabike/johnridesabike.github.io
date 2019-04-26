@@ -1,0 +1,47 @@
+<aside id="secondary" class="widget-area has-ui-font">
+	<section id="text-19" class="widget widget__main widget_text">
+        <h4 class="widgettitle">About John</h4>
+        <div class="textwidget">
+            <p>
+                <img class="wp-image-50 size-thumbnail avatar alignleft" src="/media/john2018.jpg" alt="Portrait of John" scale="0" width="150" height="150"/>
+            </p>
+            <p>
+                I’m a public library staffer who is interested in digital library technologies, web development, and libraries of all types.
+            </p>
+            <p>
+                This website is home to my blog, portfolio, and other projects I’ve managed. <a href="/">Head to the home page</a> if this is your first time here.
+            </p>
+        </div>
+    </section>
+    <section id="contextual_feed_widget-3" class="widget widget__main widget_contextual_feed">
+        <h4 class="widgettitle">Subscribe via RSS</h4>
+        <div class="text-before">
+            <p>Plug this into your favorite feed reader:</p>
+        </div>
+        <ul>
+		    <li class="feed-link">
+			    <a href="{{ metadata.feed.url }}">
+				    {% include "svg/feed.svg" %}
+                    Feed for all entries
+                </a>
+		    </li>
+		</ul>
+    </section>
+    <section id="nav_menu-7" class="widget widget__main widget_nav_menu">
+        <h4 class="widgettitle">Connect with John</h4>
+        <div class="menu-social-menu-container">
+            <ul id="menu-social-menu" class="menu">
+            {% for item in menu.social %}
+                <li id="menu-item-101" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-101">
+                    <a href="{{item.url}}">
+                    {% if item.icon %}
+                        {% include "svg/" + item.icon + ".svg" %}
+                    {% endif %}
+                        {{item.title}}
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </section>
+</aside><!-- #secondary -->

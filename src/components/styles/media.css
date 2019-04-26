@@ -1,0 +1,300 @@
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.wp-smiliey {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+}
+
+.avatar {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Alignments and Images
+--------------------------------------------------------------*/
+.alignleft {
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright {
+    float: right;
+    margin-left: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.entry-content figure {
+    display: table;
+}
+
+.entry-content figure > figcaption {
+    display: table-caption;
+    caption-side: bottom;
+}
+
+.centered-image {
+    max-width: 100vw;
+    margin: 0 -1em;
+    border: none;
+}
+
+/*--------------------------------------------------------------
+## Single Post Featured Images
+--------------------------------------------------------------*/
+/* Note: `featured-image` is the class applied to <figure> and `post-thumbnail` is the class applied to <img> */
+/**
+ * Browsers that don't support object-fit (IE) will display the plain image.
+ * It's possible to replicate this with transforms and overflows, but I don't
+ * have the time to test that out just to cover IE.
+ */
+.featured-image__single {
+    margin-top: 0;
+}
+
+/* for browsers that don't play well with cover */
+.featured-image__caption {
+    padding-right: 1.5em;
+    /* to avoid scrollbars */
+    font-size: 0.8em;
+    font-style: italic;
+    text-align: right;
+}
+
+@supports (object-fit: cover) {
+    .featured-image__single {
+        position: relative;
+        width: 100vw;
+        max-width: 100vw;
+        height: 67vw;
+        /* aspect ratio kept intact for small screens */
+        margin-top: 0;
+    }
+    .featured-image__caption {
+        margin-bottom: 0;
+        padding: 0.2em 0.5em;
+        opacity: 1;
+        color: #fff;
+        background: linear-gradient(transparent 0, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.8) 100%);
+        text-shadow: 0 0 6px #19191a;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        font-size: 0.8em;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: right;
+    }
+    .post-thumbnail__single {
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        object-fit: cover;
+    }
+    @media screen and (min-width: 600px) {
+        .featured-image__single {
+            height: 430px;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+## Archive View Featured Images
+--------------------------------------------------------------*/
+.excerpt-entry .featured-image {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.excerpt-entry .featured-image__link {
+    display: block;
+    line-height: 0;
+    /* fixes visual glitch with link overlay */
+}
+
+.excerpt-entry .featured-image__link:hover::before, .excerpt-entry .featured-image__link:active::before, .excerpt-entry .featured-image__link:focus::before {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.25;
+    background-color: #05b7c7;
+    content: "";
+}
+
+.excerpt-entry .wp-post-image {
+    width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Attachment pages
+--------------------------------------------------------------*/
+.single-attachment .entry-title {
+    text-align: center;
+}
+
+.single-attachment .comments-area {
+    margin-top: 1em;
+}
+
+.single-attachment .site-content {
+    margin-top: 1em;
+}
+
+.single-attachment .entry-content {
+    /* full-bleed on small screens */
+    margin-right: -1rem;
+    margin-left: -1rem;
+}
+
+.entry-attachment {
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+    max-width: 100%;
+    margin-bottom: 1.5em;
+}
+
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.wp-caption .wp-caption-text {
+    margin: 0.8075em 0;
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+    margin-bottom: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
+}
+
+.gallery-columns-2 .gallery-item {
+    max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+    max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+    max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+}
+
+.gallery-caption {
+    display: block;
+}
+
+/*--------------------------------------------------------------
+## SVG
+--------------------------------------------------------------*/
+.svg-icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    transition: fill 120ms ease-in-out;
+    fill: currentColor;
+}
+
+/*
+** Media Queries
+**/
+@media screen and (max-width: 600px) {
+    /* On small screens, display left and right alignments as if they were centered */
+    .alignleft,
+    .alignright {
+        float: none !important;
+        clear: both !important;
+        display: block;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .full-bleed {
+        /* full-bleed on small screens */
+        margin-right: -1rem;
+        margin-left: -1rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    /* Alignments */
+    .centered-image {
+        margin: 0 -2em;
+    }
+    .featured-image__archive.full-bleed {
+        /* cancel full-bleed on larger screens */
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /* We change the style to prepare it for the grid layout in posts-and-pages */
+    .featured-image__single {
+        flex: 1 1 50%;
+    }
+    .post-thumbnail__single {
+        width: 100%;
+    }
+    .featured-image__caption {
+        padding-right: 0.5em;
+    }
+}

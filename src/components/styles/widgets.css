@@ -1,0 +1,317 @@
+
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+.widget {
+    width: 100%;
+    margin: 0;
+}
+
+.widget ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.widget ul li {
+    display: block;
+    margin-bottom: 0.5em;
+    padding: 0;
+}
+
+.widget ul li ul,
+.widget ul li ol {
+    margin-left: 0.5em;
+}
+
+.widget ul li a {
+    display: block;
+    padding: 0.5em 0;
+    border-bottom: 1px dashed currentColor;
+    text-decoration: none;
+}
+
+.widget ul li a:hover, .widget ul li a:active, .widget ul li a:focus {
+    border-bottom: 1px dashed currentColor;
+    text-decoration: none;
+}
+
+.widget ul .children,
+.widget ul .sub-menu {
+    margin-left: 1em;
+    padding-top: 0;
+    padding-bottom: 0.5em;
+    font-size: 0.88889em;
+}
+
+.widget ul .children a::before,
+.widget ul .sub-menu a::before {
+    content: "↳ ";
+}
+
+.widget select {
+    width: 100%;
+    height: 2.5em;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.widgettitle {
+    /* Change the default h* margin */
+    margin: 0 0 0.5em;
+}
+
+/* Search widget. */
+.widget_search .search-submit {
+    display: none;
+}
+
+.widget_search input[type="search"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5em 1em;
+    border: 1px solid #ccc;
+    border-radius: 0;
+}
+
+/* RSS widget */
+.rssSummary {
+    opacity: 0.8;
+    font-size: 0.8em;
+}
+
+/* Calendar widget */
+.widget_calendar {
+    max-width: 250px;
+}
+
+.widget_calendar caption {
+    padding: 0.5em 0;
+    text-align: left;
+}
+
+.widget_calendar th {
+    border: none;
+    text-align: center;
+}
+
+.widget_calendar td {
+    padding: 0.2em;
+    border: 1px solid #ccc;
+    background: #fff;
+    text-align: center;
+}
+
+.widget_calendar .pad {
+    background: #eaeaea;
+}
+
+.widget_calendar a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Tags */
+.tagcloud {
+    text-align: center;
+}
+
+.tag-title,
+a.tag-cloud-link,
+a[rel="tag"] {
+    display: inline-block;
+    margin: 0.1em 0;
+    padding: 0 0.25em;
+    border-radius: 1em 0.3em 0.3em 1em;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.tag-title .svg-icon,
+a.tag-cloud-link .svg-icon,
+a[rel="tag"] .svg-icon {
+    opacity: 0.8;
+}
+
+a.tag-cloud-link {
+    padding-left: 0.5em;
+}
+
+a[rel="tag"],
+a.tag-cloud-link {
+    color: #19191a;
+}
+
+a[rel="tag"]:visited,
+a.tag-cloud-link:visited {
+    color: #19191a;
+}
+
+a[rel="tag"]:hover, a[rel="tag"]:focus, a[rel="tag"]:active,
+a.tag-cloud-link:hover,
+a.tag-cloud-link:focus,
+a.tag-cloud-link:active {
+    color: #03727c;
+    text-decoration: none;
+}
+
+/* Recent comments */
+/* Chaining classes to override specificity */
+.widget_recent_comments.widget_recent_comments a {
+    border: none;
+}
+
+.widget_recent_comments.widget_recent_comments a:hover, .widget_recent_comments.widget_recent_comments a:active, .widget_recent_comments.widget_recent_comments a:focus {
+    border: none;
+    text-decoration: underline;
+}
+
+/** Breadcrumbs **/
+.widget__breadcrumbs {
+    max-width: 20rem;
+    margin-bottom: 0.5em;
+    opacity: 0.8;
+    font-size: 0.88889em;
+}
+
+.widget__breadcrumbs > div {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 100%;
+    padding: 0.25em;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/** Widget Area **/
+/* .widget-area is the "main" widget area. It displays at the end of the content, or as a sidebar for archive pages */
+.widget-area {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    margin-top: 1em;
+}
+
+/* Page widgets */
+.page .widget-area,
+.single-attachment .widget-area {
+    margin-top: 2em;
+}
+
+/** Footer Widgets **/
+@media screen and (min-width: 1200px) {
+    .footer-widgets {
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.footer-widgets .widget {
+    margin: 0 0 1em;
+    padding: 0 0 1em;
+}
+
+.footer-widgets .widget .original-title {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-widgets .widget_calendar td,
+.footer-widgets .footer-widgets .widget_calendar a {
+    color: #000;
+}
+
+/** Archive View Widgets **/
+/* Don't target widgets in the header or footer */
+.archive-view .site-content .widget {
+    margin-bottom: 1em;
+}
+
+.archive-widget-area__bottom {
+    margin-top: 2em;
+}
+
+.widget__archive > ul {
+    display: flex;
+    list-style: none;
+    flex-flow: row wrap;
+}
+
+.widget__archive > ul > .cat-item {
+    width: 100%;
+}
+
+/** Widget Media Queries **/
+@media screen and (min-width: 600px) {
+    .widget__main,
+    .widget__footer {
+        /* Show 3 columns of widgets
+		** With an even number of widgets, show the first one at full width; */
+        width: 30.79667%;
+        margin-right: 3.8%;
+    }
+    .widget__main:nth-child(3n+3),
+    .widget__footer:nth-child(3n+3) {
+        margin-right: 0;
+    }
+    .widget__main:nth-last-child(even):first-of-type,
+    .widget__footer:nth-last-child(even):first-of-type {
+        width: 100%;
+        margin-right: 0;
+    }
+    .widget__main:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3),
+    .widget__footer:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+3) {
+        margin-right: 3.8%;
+    }
+    .widget__main:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4),
+    .widget__footer:nth-last-child(even):first-of-type ~ .widget:nth-child(3n+4) {
+        margin-right: 0;
+    }
+    .archive-widget-area ul:not(.children) > .cat-item {
+        width: 30.79667%;
+        margin-right: 3.8%;
+    }
+    .archive-widget-area ul:not(.children) > .cat-item:nth-child(3n+3) {
+        margin-right: 0;
+    }
+    .archive-widget-area__bottom {
+        margin-top: 4em;
+        margin-bottom: 4em;
+    }
+    .footer-widgets {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .widget-area {
+        margin-top: 0;
+    }
+    .single-post .widget-area {
+        margin-top: 4em;
+    }
+    .archive-view .site-content .widget {
+        margin-bottom: 4em;
+    }
+    .archive-view .widget-area {
+        display: block;
+        margin-left: 3.8%;
+        width: 30.79667%;
+    }
+    .archive-view .widget-area .alignleft,
+    .archive-view .widget-area .alignright {
+        /* Don't align stuff on this small size, */
+        float: none;
+        display: block;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+    .archive-view .widget__main {
+        width: 100%;
+        margin: 0 0 4em;
+    }
+}
