@@ -1,4 +1,5 @@
 ---
+path: "/libraries/chattahoochee-valley-environmental-analysis/"
 title: Chattahoochee Valley Environmental Analysis
 author: John Jackson
 date: 2018-12-19

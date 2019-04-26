@@ -1,4 +1,5 @@
 ---
+path: "/libraries/ex-libris-opac-analysis/"
 title: Ex Libris OPAC Analysis
 author: John Jackson
 date: 2018-12-19
@@ -28,7 +29,7 @@ As with most OPACs, Alma starts with a familiar search box. On this “simple se
 
 <figure class="aligncenter">
 
-![Screenshot of Ex Libris basic search form](/media/exlibris/alma-search-field.png)
+![Screenshot of Ex Libris basic search form](./exlibris-media/alma-search-field.png)
 
 <figcaption>Figure 1: Simple search</figcaption>
 
@@ -36,7 +37,7 @@ As with most OPACs, Alma starts with a familiar search box. On this “simple se
 
 <figure class="aligncenter">
 
-![Screenshot of Ex Libris advanced search form](/media/exlibris/exlibris-advanced-search.png)
+![Screenshot of Ex Libris advanced search form](./exlibris-media/exlibris-advanced-search.png)
 
 <figcaption>Figure 2: Advanced search</figcaption>
 </figure>
@@ -45,7 +46,7 @@ If the user types a search query, Alma delivers a series of results that list th
 
 <figure class="alignright">
 
-![A screenshot of Ex Libris.](/media/exlibris/exlibris-general-search.png)
+![A screenshot of Ex Libris.](./exlibris-media/exlibris-general-search.png)
 
 <figcaption>Figure 3: An example search for "Edgar Alan Poe."</figcaption>
 
@@ -73,21 +74,21 @@ The “technical view” link, located under this tab, opens the raw MARC data. 
 
 <figure class="wp-block-image">
 
-![A screenshot of Ex Libris.](/media/exlibris/exlibris-book-view-1.png)
+![A screenshot of Ex Libris.](./exlibris-media/exlibris-book-view-1.png)
 
 <figcaption>Figure 4: The "Get It" tab for an item</figcaption>
 </figure>
 
 <figure class="wp-block-image">
 
-![A screenshot of Ex Libris.](/media/exlibris/exlibris-book-view-2.png)
+![A screenshot of Ex Libris.](./exlibris-media/exlibris-book-view-2.png)
 
 <figcaption>Figure 5: The "Details" tab for an item. The link to view the raw MARC data is highlighted.</figcaption>
 </figure>
 
 <figure class="wp-block-image">
 
-![A screenshot of Ex Libris.](/media/exlibris/exlibris-book-view-3.png)
+![A screenshot of Ex Libris.](./exlibris-media/exlibris-book-view-3.png)
 
 <figcaption>Figure 6: The "Virtual Browse" tab for an item</figcaption>
 </figure>
@@ -98,7 +99,7 @@ If we do a title search for “King Lear,” for example, we will see every sing
 
 <figure class="wp-block-image">
 
-![A screenshot of Ex Libris.](/media/exlibris/exlibris-title-search-king-lear.png)
+![A screenshot of Ex Libris.](./exlibris-media/exlibris-title-search-king-lear.png)
 
 <figcaption>Figure 7: A title search for "King Lear"</figcaption>
 </figure>
@@ -107,14 +108,14 @@ If we do an author search for “Shakespeare,” Alma returns everything with th
 
 <figure class="wp-block-image">
 
-![A screenshot of Ex Libris.](/media/exlibris/ex-libris-author-search-2-shakespeare.png)
+![A screenshot of Ex Libris.](./exlibris-media/ex-libris-author-search-2-shakespeare.png)
 
 <figcaption>Figure 8: An author search for "William Shakespeare"</figcaption>
 </figure>
 
 <figure class="wp-block-image">
 
-![A screenshot of Ex Libris.](/media/exlibris/ex-libris-author-search-1-shakespeare.png)
+![A screenshot of Ex Libris.](./exlibris-media/ex-libris-author-search-1-shakespeare.png)
 
 <figcaption>Figure 9: Searching all fields for "William Shakespeare"</figcaption>
 </figure>
@@ -124,7 +125,7 @@ If we do a subject search for “southern gothic literature,” we get a wide ra
 
 <figure class="wp-block-image">
 
-![A screenshot of Ex Libris.](/media/exlibris/ex-libris-subject-search-southern-gothic-literature.png)
+![A screenshot of Ex Libris.](./exlibris-media/ex-libris-subject-search-southern-gothic-literature.png)
 
 <figcaption>Figure 10: Searching all fields for "southern gothic literature"</figcaption>
 </figure>
@@ -133,7 +134,7 @@ Finally, if a user just wants to find items based on general keywords, they woul
 
 <figure class="wp-block-image">
 
-![A screenshot of Ex Libris.](/media/exlibris/ex-libris-keyword-search-civil-war-allegory.png)
+![A screenshot of Ex Libris.](./exlibris-media/ex-libris-keyword-search-civil-war-allegory.png)
 
 <figcaption>Figure 11: Searching all fields for "civil war allegory"</figcaption>
 </figure>

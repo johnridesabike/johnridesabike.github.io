@@ -36,8 +36,15 @@ module.exports = {
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                path: `${__dirname}/content`,
-                name: "markdown-pages"
+                path: `${__dirname}/content/pages`,
+                name: "pages"
+            }
+        },
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                path: `${__dirname}/content/media`,
+                name: "media"
             }
         },
         "gatsby-transformer-remark",
@@ -55,7 +62,8 @@ module.exports = {
                             // widths of each image.
                             maxWidth: 1200
                         }
-                    }
+                    },
+                    "gatsby-remark-static-images"
                 ]
             }
         }
