@@ -1,6 +1,6 @@
 ---
 title: "Résumé"
-path: "/resume/"
+slug: "/resume/"
 author: John Jackson
 date: 2019-04-03
 layout: page.njk

@@ -12,60 +12,56 @@ export default function Template({
         <Layout>
             <SEO
                 title={frontmatter.title}
-                keywords={["gatsby", "application", "react"]} />
-            {/* <div id="primary" className="content-area single">
-            <div className="blog-post">
-                <h1>{frontmatter.title}</h1>
-                <h2>{frontmatter.date}</h2>
-                <div
-                className="blog-post-content"
-                dangerouslySetInnerHTML={{ __html: html }}
-                />
-            </div>
-        </div> */}
+                keywords={["gatsby", "application", "react"]}
+            />
             <div id="primary" className="content-area single">
                 <main id="main" className="site-main">
                     <article className="post">
                         <div className="post-content">
                             <div
                                 className="entry-content"
-                                dangerouslySetInnerHTML={{ __html: html }}
+                                dangerouslySetInnerHTML={{__html: html}}
                             />
-                            {frontmatter.attachments &&
-                            <div
-                                id="attachments"
-                                className="attachments has-ui-font">
-                                <h3>Downloads</h3>
-                                {frontmatter.attachments.map((file) =>
-                                    <div
-                                        key={file.publicURL}
-                                        className="wp-block-file">
-                                        <a href={file.publicURL}>
-                                            {file.name}
-                                        </a>&nbsp;
-                                        <a
-                                            href={file.publicURL}
-                                            className="wp-block-file__button"
-                                            download>
-                                        Download
-                                        </a>
-                                    </div>
-                                )}
-                            </div>
-                            }
+                            {frontmatter.attachments && (
+                                <div
+                                    id="attachments"
+                                    className="attachments has-ui-font"
+                                >
+                                    <h3>Downloads</h3>
+                                    {frontmatter.attachments.map((file) => (
+                                        <div
+                                            key={file.publicURL}
+                                            className="wp-block-file"
+                                        >
+                                            <a href={file.publicURL}>
+                                                {file.name}
+                                            </a>
+                                            &nbsp;
+                                            <a
+                                                href={file.publicURL}
+                                                // eslint-disable-next-line max-len
+                                                className="wp-block-file__button"
+                                                download
+                                            >
+                                                Download
+                                            </a>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                         <footer
-                            className={`entry-footer entry-footer__single
- has-ui-font`}>
+                            // eslint-disable-next-line max-len
+                            className="entry-footer entry-footer__single has-ui-font"
+                        >
                             <div className="post-time entry-footer__item">
                                 <span className="updated-on">
                                     <time
-                                        className={`updated updated-date
- published`}
-                                        dateTime={frontmatter.ISODate}>
-                                    Updated on
-                                        {" "}
-                                        {frontmatter.date}
+                                        // eslint-disable-next-line max-len
+                                        className="updated updated-date published"
+                                        dateTime={frontmatter.ISODate}
+                                    >
+                                        Updated on {frontmatter.date}
                                     </time>
                                 </span>
                                 {/* <div className="entry-footer-wrapper entry-footer__item">
@@ -84,19 +80,19 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-        html
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            ISODate: date
-            path
-            title
-            attachments {
-                publicURL
-                name
+    query($path: String!) {
+        markdownRemark(frontmatter: {slug: {eq: $path}}) {
+            html
+            frontmatter {
+                date(formatString: "MMMM DD, YYYY")
+                ISODate: date
+                slug
+                title
+                attachments {
+                    publicURL
+                    name
+                }
             }
         }
     }
-}
 `;
