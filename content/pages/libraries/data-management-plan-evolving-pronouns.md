@@ -1,5 +1,5 @@
 ---
-path: "/libraries/data-management-plan/"
+slug: "/libraries/data-management-plan/"
 title: "Data Management Plan: Evolving Pronouns"
 author: John Jackson
 date: 2018-12-19

@@ -14,18 +14,18 @@ exports.createPages = function ({actions, graphql}) {
 
     return graphql(`
         {
-          allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
-            limit: 1000
-          ) {
-            edges {
-              node {
-                frontmatter {
-                  path
+            allMarkdownRemark(
+                sort: {order: DESC, fields: [frontmatter___date]}
+                limit: 1000
+            ) {
+                edges {
+                    node {
+                        frontmatter {
+                            slug
+                        }
+                    }
                 }
-              }
             }
-          }
         }
     `).then(function (result) {
         if (result.errors) {
@@ -34,7 +34,7 @@ exports.createPages = function ({actions, graphql}) {
 
         result.data.allMarkdownRemark.edges.forEach(function ({node}) {
             createPage({
-                path: node.frontmatter.path,
+                path: node.frontmatter.slug,
                 component: pageTemplate,
                 context: {} // additional data can be passed via context
             });

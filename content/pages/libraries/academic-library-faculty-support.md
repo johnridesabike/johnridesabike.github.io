@@ -1,5 +1,5 @@
 ---
-path: "/libraries/academic-library-faculty-support/"
+slug: "/libraries/academic-library-faculty-support/"
 title: Academic Library Faculty Support
 author: John Jackson
 date: 2018-12-19

@@ -1,5 +1,5 @@
 ---
-path: "/woodworking/marble-top-chessboard-end-table/"
+slug: "/woodworking/marble-top-chessboard-end-table/"
 title: Marble-top Chessboard End Table
 author: John Jackson
 date: 2018-05-13

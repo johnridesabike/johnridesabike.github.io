@@ -1,5 +1,5 @@
 ---
-path: "/libraries/researching-hispanic-children-books/"
+slug: "/libraries/researching-hispanic-children-books/"
 title: Researching the Distribution of Hispanic and Latino Children’s Books in United States Public Libraries
 author: John Jackson
 date: 2018-12-19

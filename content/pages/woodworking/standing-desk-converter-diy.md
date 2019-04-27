@@ -1,5 +1,5 @@
 ---
-path: "/woodworking/standing-desk-converter-diy"
+slug: "/woodworking/standing-desk-converter-diy"
 title: Standing Desk Converter with Scrap Wood
 author: John Jackson
 date: 2019-01-11

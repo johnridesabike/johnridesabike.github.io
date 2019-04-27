@@ -1,5 +1,5 @@
 ---
-path: "/libraries/how-play-chess/"
+slug: "/libraries/how-play-chess/"
 title: "How to Play Chess: a reference for novices and veterans"
 author: "John Jackson"
 date: 2019-03-13
