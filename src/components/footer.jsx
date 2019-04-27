@@ -1,4 +1,5 @@
 import React from "react";
+import {CCIcon} from "./icons";
 
 const Footer = () => (
     <footer id="colophon" className="site-footer has-ui-font">
@@ -17,7 +18,15 @@ widget_custom_html`}>
                         </span>
                     </p>
                     <p>
-                        {/* {% include "svg/creative-commons.svg" %} */}
+                        <CCIcon
+                            height="32"
+                            style={{
+                                display: "block",
+                                float: "left",
+                                marginRight: "0.5em",
+                                marginTop: "0.25em"
+                            }}/>
+                        {" "}
                         All content by John on this site is licensed under a
                         {" "}
                         <a
@@ -34,7 +43,7 @@ widget_custom_html`}>
             <section
                 id="custom_html-8"
                 className="widget_text widget widget__footer widget_custom_html"
-                >
+            >
                 <h4 className="widgettitle">Privacy</h4>
                 <div className="textwidget custom-html-widget">
                     <p>
@@ -45,7 +54,7 @@ widget_custom_html`}>
                 </div>
             </section>
         </div>
-	</footer>
+    </footer>
 );
 
 export default Footer;
