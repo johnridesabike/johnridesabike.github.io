@@ -25,8 +25,8 @@ import "./styles/media.css";
 // import "./layout.css";
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
+    <StaticQuery
+        query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -36,28 +36,28 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={(data) => (
-      <Fragment>
-        <div id="page" className="site">
-            <a className="skip-link screen-reader-text" href="#content">
+        render={(data) => (
+            <Fragment>
+                <div id="page" className="site">
+                    <a className="skip-link screen-reader-text" href="#content">
                 Skip to content
-            </a>
-            <Header
-                siteTitle={data.site.siteMetadata.title}
-                siteDescription={data.site.siteMetadata.description} />
-            <div id="content" className="site-content">
-                <main>{children}</main>
-                <Sidebar/>
-            </div>
-            <Footer />
-        </div>
-      </Fragment>
-    )}
-  />
+                    </a>
+                    <Header
+                        siteTitle={data.site.siteMetadata.title}
+                        siteDescription={data.site.siteMetadata.description} />
+                    <div id="content" className="site-content">
+                        <main>{children}</main>
+                        <Sidebar/>
+                    </div>
+                    <Footer />
+                </div>
+            </Fragment>
+        )}
+    />
 );
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired
 };
 
 export default Layout;
