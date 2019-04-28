@@ -26,7 +26,30 @@ Whether or not there are disadvantages will depend on your tastes. This desk wil
 
 Here are the measurements I took for my desk:
 
-<table class="wp-block-table aligncenter is-style-stripes"><tbody><tr><td>Original height</td><td>30¼"</td></tr><tr><td>Desired height</td><td>41"<br></td></tr><tr><td>Depth (measured across the legs)</td><td>22" </td></tr><tr><td>Width (measured across the legs)</td><td>47⅝" </td></tr><tr><td>Leg thickness</td><td>1¾" </td></tr></tbody></table>
+<table class="wp-block-table aligncenter is-style-stripes">
+    <tbody>
+        <tr>
+            <td>Original height</td>
+            <td>30¼"</td>
+        </tr>
+        <tr>
+            <td>Desired height</td>
+            <td>41"</td>
+        </tr>
+        <tr>
+            <td>Depth (measured across the legs)</td>
+            <td>22"</td>
+        </tr>
+        <tr>
+            <td>Width (measured across the legs)</td>
+            <td>47⅝"</td>
+        </tr>
+        <tr>
+            <td>Leg thickness</td>
+            <td>1¾"</td>
+        </tr>
+    </tbody>
+</table>
 
 <p style="text-align:center" class="has-medium-font-size"><strong>BEWARE!</strong></p>
 
@@ -34,27 +57,21 @@ Here are the measurements I took for my desk:
 
 Sound good? Let’s get started!
 
-<div class="wp-block-columns alignwide has-2-columns"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:image {"id":1074,"linkDestination":"media","className":"alignwide"} -->
-
-<figure class="wp-block-image alignwide">
-
-![Diagram of final standing desk.](./standing-desk-media/final.png)
-
-</figure>
-
-</div>
-<div class="wp-block-column">
-<figure class="wp-block-image alignwide">
-
-![Project overview diagram.](./standing-desk-media/standing_desk_overview.png)
-
-</figure>
-</div>
+<div class="wp-block-columns alignwide has-2-columns">
+    <div class="wp-block-column">
+        <figure class="wp-block-image alignwide">
+            <img src="./standing-desk-media/final.png" alt="Diagram of final standing desk."/>
+        </figure>
+    </div>
+    <div class="wp-block-column">
+        <figure class="wp-block-image alignwide">
+            <img src="./standing-desk-media/standing_desk_overview.png" alt="Project overview diagram."/>
+        </figure>
+    </div>
 </div>
 
 <div class="wp-block-columns has-2-columns">
-<div class="wp-block-column">
+    <div class="wp-block-column">
 
 ### Tools
 
@@ -65,9 +82,8 @@ Sound good? Let’s get started!
 - Measuring tape
 - Orbital sander
 
-</div>
-
-<div class="wp-block-column">
+    </div>
+    <div class="wp-block-column">
 
 ### Materials
 
@@ -77,16 +93,16 @@ Sound good? Let’s get started!
 - Stain (optional)
 - 2x4s (huh?)
 
-</div>
+    </div>
 </div>
 
-Wait, you want your materials to be more specific than just “2x4s?” When it comes to the exact amount, you’re on your own. Remember, this project needs to be <em>custom-built</em> for your current desk. I can’t tell you how much wood you need or how you will cut it.
+Wait, you want your materials to be more specific than just “2x4s?” When it comes to the exact amount, you’re on your own. Remember, this project needs to be *custom-built* for your current desk. I can’t tell you how much wood you need or how you will cut it.
 
 ## My cut list (yours will be different)
 
 - Feet: 8 - 2x4 @ 10¾"
 - This is how high you want to raise your desk: desired standing-desk height minus current desk height.
-    - <strong>Warning!</strong> If your desk’s legs are thicker than 2", you may need to use wood wider than 2x4 for the feet and walls, such as a 2x6 instead. 
+    - **Warning!** If your desk’s legs are thicker than 2", you may need to use wood wider than 2x4 for the feet and walls, such as a 2x6 instead. 
 - Walls: 8 - 2x4 @ 14¼"
     - This should be 1½" taller than your feet cuts.
 - Side stretchers: 2 - 2x4 @ 22½"
@@ -96,60 +112,77 @@ Wait, you want your materials to be more specific than just “2x4s?” When it 
     
 If that seems confusing, here’s a chart:
 
-<table class="wp-block-table aligncenter is-style-stripes"><tbody><tr><td><strong>Feet</strong></td><td><em>desired height<br></em></td><td>-</td><td><em>original&nbsp;height</em></td><td>× 8</td></tr><tr><td><strong>Walls</strong></td><td><em>feet&nbsp;height</em></td><td>+</td><td>1½"</td><td>× 8</td></tr><tr><td><strong>Side stretchers<br></strong></td><td><em>desk&nbsp;depth</em></td><td>+</td><td>½"</td><td>× 2</td></tr><tr><td><strong>Middle&nbsp;stretcher</strong></td><td><em>desk&nbsp;length</em></td><td></td><td></td><td>× 1</td></tr></tbody></table>
+<table class="wp-block-table aligncenter is-style-stripes">
+    <tbody>
+        <tr>
+            <td><strong>Feet</strong></td>
+            <td><em>desired height</em></td>
+            <td>-</td>
+            <td><em>original height</em></td>
+            <td>× 8</td>
+        </tr>
+        <tr>
+            <td><strong>Walls</strong></td>
+            <td><em>feet height</em></td>
+            <td>+</td>
+            <td>1½"</td>
+            <td>× 8</td>
+        </tr>
+        <tr>
+            <td><strong>Side stretchers</strong></td>
+            <td><em>desk depth</em></td>
+            <td>+</td>
+            <td>½"</td>
+            <td>× 2</td>
+        </tr>
+        <tr>
+            <td><strong>Middle stretcher</strong></td>
+            <td><em>desk length</em></td>
+            <td></td>
+            <td></td>
+            <td>× 1</td>
+        </tr>
+    </tbody>
+</table>
 
 Here are some diagrams to help you visualize it:
 
 <div class="wp-block-columns alignwide has-2-columns">
-<div class="wp-block-column">
-<div class="wp-block-image">
-<figure class="aligncenter">
-
-![Diagram of how to measure the legs.](./standing-desk-media/standing_desk_leg.png)
-
-<figcaption>The “feet” lifting the legs to their new height.</figcaption>
-</figure>
-</div>
-
-<div class="wp-block-image">
-<figure class="aligncenter">
-
-![Diagram of how to measure the side stretcher.](./standing-desk-media/standing_desk_stretcher_1.png)
-
-<figcaption>The side stretcher, laid across the legs, should extend about ¼" on each side.</figcaption>
-</figure>
-</div>
-</div>
-
-<div class="wp-block-column">
-<div class="wp-block-image">
-
-<figure class="aligncenter">
-
-![Diagram of how to measure the middle stretcher.](./standing-desk-media/standing_desk_stretcher_2.png)
-
-<figcaption>The long, middle stretcher should lay completely across the front legs.</figcaption>
-</figure>
-</div>
-
-<div class="wp-block-image">
-<figure class="aligncenter">
-
-![Diagram of how the leg fits into the foot.](./standing-desk-media/standing_desk_foot.png)
-
-<figcaption>This isn’t an abstract painting, just the top-down view of a leg (the middle square) on the foot with walls and stretcher around it.</figcaption>
-</figure>
-</div>
-</div>
+    <div class="wp-block-column">
+        <div class="wp-block-image">
+            <figure class="aligncenter">
+                <img src="./standing-desk-media/standing_desk_leg.png" alt="Diagram of how to measure the legs." />
+                <figcaption>The “feet” lifting the legs to their new height.</figcaption>
+            </figure>
+        </div>
+        <div class="wp-block-image">
+            <figure class="aligncenter">
+                <img src="./standing-desk-media/standing_desk_stretcher_1.png" alt="Diagram of how to measure the side stretcher." />
+                <figcaption>The side stretcher, laid across the legs, should extend about ¼" on each side.</figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="wp-block-column">
+        <div class="wp-block-image">
+            <figure class="aligncenter">
+                <img src="./standing-desk-media/standing_desk_stretcher_2.png" alt="Diagram of how to measure the middle stretcher." />
+                <figcaption>The long, middle stretcher should lay completely across the front legs.</figcaption>
+            </figure>
+        </div>
+        <div class="wp-block-image">
+            <figure class="aligncenter">
+                <img src="./standing-desk-media/standing_desk_foot.png" alt="Diagram of how the leg fits into the foot."/>
+                <figcaption>This isn’t an abstract painting, just the top-down view of a leg (the middle square) on the foot with walls and stretcher around it.</figcaption>
+            </figure>
+        </div>
+    </div>
 </div>
 
 I cut mine entirely out of scrap, but here’s a chart to give you an idea of how much wood I used:
 
 <figure class="wp-block-image alignwide">
-
-![Standing desk cut diagram.](./standing-desk-media/measurements.png)
-
-<figcaption>Sample cut diagram from four 2x4x8s.</figcaption>
+    <img src="./standing-desk-media/measurements.png" alt="Standing desk cut diagram." />
+    <figcaption>Sample cut diagram from four 2x4x8s.</figcaption>
 </figure>
 
 ## Step 1: The Feet
@@ -159,11 +192,9 @@ First, cut all of the wood and sand the pieces.
 Use wood glue to combine the eight foot pieces into four feet. Apply the glue across one of the broad sides of each 2x4, and clamp until the glue settles. It’s best to wait 24 hours before continuing.
 
 <div class="wp-block-image">
-<figure class="aligncenter">
-
-![Standing desk step 1 diagram.](./standing-desk-media/standing_desk_01.png)
-
-</figure>
+    <figure class="aligncenter">
+        <img src="./standing-desk-media/standing_desk_01.png" alt="Standing desk step 1 diagram."/>
+    </figure>
 </div>
 
 ## Step 2: The Outer Walls
@@ -171,11 +202,9 @@ Use wood glue to combine the eight foot pieces into four feet. Apply the glue ac
 Take four wall pieces and attach each to a broad sides of each foot. These will either become the front or back of the foot, depending on which side of the desk the foot goes on. I attached it with 2 wood screws into the middle of the wall (1¾" from each side), about 3" apart.
 
 <div class="wp-block-image">
-<figure class="aligncenter">
-
-![Standing desk step 2 diagram.](./standing-desk-media/standing_desk_02.png)
-
-</figure>
+    <figure class="aligncenter">
+        <img src="./standing-desk-media/standing_desk_02.png" alt="Standing desk step 2 diagram." />
+    </figure>
 </div>
 
 ## Step 3: The Side Stretchers
@@ -183,9 +212,7 @@ Take four wall pieces and attach each to a broad sides of each foot. These will 
 Drill 1½" pocket holes into one end of each of your stretchers. Rest the stretchers on top of the feet, flush with the foot’s edge, and use pocket screws to attach the stretchers to the walls.
 
 <figure class="wp-block-image alignwide">
-
-![Standing desk step 3 diagram.](./standing-desk-media/standing_desk_03.png)
-
+    <img src="./standing-desk-media/standing_desk_03.png" alt="Standing desk step 3 diagram."/>
 </figure>
 
 ### Notes on step 3:
@@ -198,11 +225,9 @@ Drill 1½" pocket holes into one end of each of your stretchers. Rest the stretc
 These are almost exactly the same as the outer walls. Align them flush with the inner side of the foot, which means they won’t quite be flush with the outer wall. When you drill wood screws to attach them, align the screws with the center of the middle 2x4 that makes up the foot, which should be about 2¼" from the outside of the wall.
 
 <div class="wp-block-image">
-<figure class="aligncenter">
-
-![Standing desk step 4 diagram.](./standing-desk-media/standing_desk_04.png)
-
-</figure>
+    <figure class="aligncenter">
+        <img src="./standing-desk-media/standing_desk_04.png" alt="Standing desk step 4 diagram."/>
+    </figure>
 </div>
 
 ### Note on step 4:
@@ -214,9 +239,7 @@ I realized afterwards that this design could possibly have the screws on both wa
 Like the side stretchers, drill 1½" pocket holes into the ends of the middle stretcher. Then, attach it to the side stretchers with pocket screws. Before attaching, make sure that it is in the middle of the side stretchers (10½" from each end with my measurements).
 
 <figure class="wp-block-image alignwide">
-
-![Standing desk step 5 diagram.](./standing-desk-media/standing_desk_05.png)
-
+    <img src="./standing-desk-media/standing_desk_05.png" alt="Standing desk step 5 diagram."/>
 </figure>
 
 That’s all! Just add your desk, and you’re now a proud standing desk owner. Optionally, you can route the edges, stain the wood, or do whatever else you want to make it match your style.
@@ -224,11 +247,9 @@ That’s all! Just add your desk, and you’re now a proud standing desk owner. 
 ## Final comments about your new standing desk
 
 <div class="wp-block-image">
-<figure class="alignright is-resized">
-
-![Photo of my final standing desk.](./standing-desk-media/IMG_1190.jpeg)
-
-</figure>
+    <figure class="aligncenter is-resized">
+        <img src="./standing-desk-media/IMG_1190.jpeg" alt="Photo of my final standing desk." />
+    </figure>
 </div>
 
 To me, standing desks offer benefits beyond a healthy lifestyle. I move around when I’m working, so I love the convenience of being able to simply walk up to a desk, do work for a few minutes, and walk away. No sitting down or standing up required.

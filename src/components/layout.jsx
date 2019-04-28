@@ -22,6 +22,8 @@ import "../styles/content.css";
 import "../styles/wp-blocks.css";
 import "../styles/accessibilitiy-clearings.css";
 import "../styles/media.css";
+import "../styles/prism-dracula.css";
+// import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 // import "./layout.css";
 
 const Layout = ({ children }) => (
