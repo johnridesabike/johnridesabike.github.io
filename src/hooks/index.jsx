@@ -3,7 +3,10 @@ import {useStaticQuery, graphql} from "gatsby";
 export function useAllPages() {
     const query = useStaticQuery(graphql`
         query allPages {
-            allMarkdownRemark(limit: 1000) {
+            allMarkdownRemark(
+                sort: {order: DESC, fields: [frontmatter___date]}
+                limit: 1000
+            ) {
                 totalCount
                 edges {
                     node {
@@ -14,8 +17,9 @@ export function useAllPages() {
                         timeToRead
                         frontmatter {
                             title
-                            date
                             slug
+                            date(formatString: "MMMM DD, YYYY")
+                            ISODate: date
                         }
                     }
                 }

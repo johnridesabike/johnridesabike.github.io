@@ -225,6 +225,7 @@
 .wp-block-separator.is-style-dots {
     height: 0;
     background: none;
+    text-align: center;
 }
 
 .wp-block-separator.is-style-dots::before {
