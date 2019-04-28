@@ -4,9 +4,7 @@ title: Academic Library Faculty Support
 author: John Jackson
 date: 2018-12-19
 updated: 2018-12-19
-tags: ["Academic Libraries", "MLIS"]
-layout: index.njk
-description:
+category: "Libraries"
 ---
 <!-- wp:paragraph {"fontSize":"large","className":"alignwide"} -->
 <p class="has-large-font-size alignwide"><em>Here, I describe several key topics affecting academic libraries and how I could assist faculty with them: data management plans, open access, and intellectual property policy. This was originally written for my Academic Libraries class in the Spring of 2018. </em></p>

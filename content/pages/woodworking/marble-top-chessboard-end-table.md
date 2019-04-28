@@ -4,13 +4,10 @@ title: Marble-top Chessboard End Table
 author: John Jackson
 date: 2018-05-13
 updated: 2018-05-13
-tags:
-    Woodworking
 thumbnail: ./chess-table-media/IMG_0293.jpg
-layout: index.njk
-description: A while back, I inherited a marble chessboard that had once been the top to a beautiful table. The metal base had rusted away long ago, but I believed that I could restore this table to new glory. All I needed was my toolbox and some 2x4s.
 attachments:
   - "./chess-table-media/Chess-Table-Sketchup.zip"
+category: Woodworking
 ---
 A while back, I inherited a marble chessboard that had once been the top to a beautiful table. The metal base had rusted away long ago, but I believed that I could restore this table to new glory. All I needed was my toolbox and some 2x4s.
 
