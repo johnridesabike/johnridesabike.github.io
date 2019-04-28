@@ -13,15 +13,15 @@ import Footer from "./footer";
 
 import Header from "./header";
 import "normalize.css";
-import "./styles/elements.css";
-import "./styles/typography.css";
-import "./styles/header-footer.css";
-import "./styles/navigation.css";
-import "./styles/widgets.css";
-import "./styles/content.css";
-import "./styles/wp-blocks.css";
-import "./styles/accessibilitiy-clearings.css";
-import "./styles/media.css";
+import "../styles/elements.css";
+import "../styles/typography.css";
+import "../styles/header-footer.css";
+import "../styles/navigation.css";
+import "../styles/widgets.css";
+import "../styles/content.css";
+import "../styles/wp-blocks.css";
+import "../styles/accessibilitiy-clearings.css";
+import "../styles/media.css";
 // import "./layout.css";
 
 const Layout = ({ children }) => (

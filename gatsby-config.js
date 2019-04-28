@@ -37,10 +37,9 @@ module.exports = {
             }
         },
         {
-            resolve: "gatsby-source-filesystem",
+            resolve: "gatsby-plugin-categories",
             options: {
-                path: `${__dirname}/content/media`,
-                name: "media"
+                templatePath: `${__dirname}/src/templates/category.jsx`
             }
         },
         "gatsby-transformer-remark",

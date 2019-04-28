@@ -5,7 +5,7 @@ import Menu from "./menu";
 
 const Header = ({siteTitle, siteDescription}) => (
     <header id="masthead" className="site-header">
-    {/* site-header
+        {/* site-header
         {{ classes }}{% if thumbnail %} has-post-thumbnail{% endif %} */}
         <div id="global-header" className="global-header">
             <div className="site-branding">

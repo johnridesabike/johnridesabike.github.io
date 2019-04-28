@@ -91,8 +91,8 @@ const Sidebar = () => (
                     className="menu">{socialMenu.map((item) =>
                         <li key={item.url}
                             id="menu-item-101"
-                            className={`menu-item menu-item-type-custom
- menu-item-object-custom menu-item-101`}>
+                            // eslint-disable-next-line max-len
+                            className="menu-item menu-item-type-custom menu-item-object-custom menu-item-101">
                             <a href={item.url}>
                                 {item.icon}
                                 &nbsp;

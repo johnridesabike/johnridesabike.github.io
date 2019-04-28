@@ -4,14 +4,10 @@ title: Standing Desk Converter with Scrap Wood
 author: John Jackson
 date: 2019-01-11
 updated: 2019-01-11
-tags:
-    - 2x4
-    - DIY
-layout: index.njk 
 thumbnail: ./standing-desk-media/final.png
-description: Why spend hundreds of dollars on a new desk when you can surely make your own with a little DIY woodworking? It turns out, you can easily create your own standing desk with nothing more than your current desk, some scrap 2x4s, and some basic woodworking skills.
 attachments:
     - "./standing-desk-media/standing_desk.skp.zip"
+category: "Woodworking"
 ---
 If you’re like me, you’ve thought about joining the standing desk trend, but the price of entry is a turn-off. Why spend hundreds of dollars on a new desk when you can surely make your own with a little DIY woodworking? It turns out, you can easily create your own standing desk with nothing more than your current desk, some scrap 2x4s, and some basic woodworking skills.
 
