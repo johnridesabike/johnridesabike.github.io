@@ -4,11 +4,7 @@ title: Academic Library Student Support
 author: John Jackson
 date: 2018-12-19
 updated: 2018-12-19
-tags:
-    - MLIS
-    - Academic libraries
-layout: index.njk
-description: I walk through a hypothetical student project and explain how I, as an academic librarian, would assist throughout the whole process. This was originally written for my Academic Libraries class in the Spring of 2018.
+category: "Libraries"
 ---
 <p style="font-size:24px" class="alignwide"><em>Here, I walk through a hypothetical student project and explain how I, as an academic librarian, would assist throughout the whole process. This was originally written for my Academic Libraries class in the Spring of 2018. </em></p>
 

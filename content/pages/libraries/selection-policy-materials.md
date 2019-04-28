@@ -4,9 +4,7 @@ title: Selection Policy & Materials Project
 author: John Jackson
 date: 2018-12-19
 updated: 2018-12-19
-tags: ["Academic Libraries", "MLIS", "Technical Services"]
-layout: index.njk
-description:
+category: "Libraries"
 ---
 <!-- wp:paragraph {"customFontSize":24,"className":"alignwide"} -->
 <p style="font-size:24px" class="alignwide"><em>Here, I selected books with funds donated to a fictional university library. To aid selection, I compared policies from similar, real-world, institutions. This was originally written for my Technical Services class in the Fall of 2017. </em></p>

@@ -4,7 +4,7 @@ title: "How to Play Chess: a reference for novices and veterans"
 author: "John Jackson"
 date: 2019-03-13
 updated: 2019-03-18
-description: Made originally for my public library chess program, this is a quick-and-easy chess reference for novice and veteran players alike. This guide covers the baseline rules everyone should know.
+category: "Libraries"
 attachments:
     - "./chess-guide-media/handout-How-to-Play-Chess.pdf"
     - "./chess-guide-media/handout-How-to-Play-Chess.docx"
