@@ -106,12 +106,12 @@ pre {
     margin-bottom: 1.6em;
     padding: 1.6em;
     background: #eee;
-    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-family: "Fira Code", "Courier 10 Pitch", Courier, monospace;
     line-height: 1.6;
 }
 
 code, kbd, tt, var {
-    font-family: Menlo, Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-family: "Fira Code", Menlo, Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     font-size: 20px;
     font-size: 0.8em;
 }
