@@ -12,6 +12,7 @@ export function useAllPages() {
                     node {
                         fields {
                             category
+                            slug
                         }
                         excerpt
                         timeToRead

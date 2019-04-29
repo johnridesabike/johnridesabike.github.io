@@ -3,17 +3,63 @@ import {graphql} from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+const EntryHeader = ({thumbnail, caption, title, author, date, classNames}) => (
+    <div className={"entry-header has-ui-font " + classNames}>
+        {thumbnail && (
+            <figure className="featured-image featured-image__single full-bleed">
+                <img
+                    src={thumbnail.publicURL}
+                    className="attachment-post-thumbnail size-post-thumbnail post-thumbnail__single wp-post-image"
+                    alt={caption}
+                />
+                {caption && (
+                    <figcaption className="featured-image__caption">
+                        {caption}
+                    </figcaption>
+                )}
+            </figure>
+        )}
+        <div className="entry-header-wrap">
+            <h1 className="entry-title has-body-font">{title}</h1>
+            <div className="entry-meta entry-meta__single">
+                <div className="entry-meta-wrapper entry-meta-wrapper__single">
+                    {/* // {% import "partials/entry-meta.njk" as entryMeta %} */}
+                    {author}
+                    {date}
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
 export default function Template({
     pageContext,
     data // this prop will be injected by the GraphQL query below.
 }) {
-    const {markdownRemark} = data; // data.markdownRemark holds our post data
-    const {frontmatter, html} = markdownRemark;
+    const {slug} = pageContext;
+    const postNode = data.markdownRemark;
+    const post = postNode.frontmatter;
+    console.log(post);
     return (
-        <Layout>
+        <Layout
+            entryHeader={
+                <EntryHeader
+                    thumbnail={post.thumbnail}
+                    caption={post.caption}
+                    title={post.title}
+                    author={post.author}
+                    date={post.date}
+                    classNames={post.class || "single"}
+                />
+            }
+            thumbnail={post.thumbnail} // to trigger the thumbnail wrapper
+            classNames={post.class || "single"}
+        >
             <SEO
-                title={frontmatter.title}
-                keywords={["gatsby", "application", "react"]}
+                postPath={slug}
+                postNode={postNode}
+                title={post.title}
+                postSEO
             />
             <div id="primary" className="content-area single">
                 <main id="main" className="site-main">
@@ -21,15 +67,17 @@ export default function Template({
                         <div className="post-content">
                             <div
                                 className="entry-content"
-                                dangerouslySetInnerHTML={{__html: html}}
+                                dangerouslySetInnerHTML={{
+                                    __html: postNode.html
+                                }}
                             />
-                            {frontmatter.attachments && (
+                            {post.attachments && (
                                 <div
                                     id="attachments"
                                     className="attachments has-ui-font"
                                 >
                                     <h3>Downloads</h3>
-                                    {frontmatter.attachments.map((file) => (
+                                    {post.attachments.map((file) => (
                                         <div
                                             key={file.publicURL}
                                             className="wp-block-file"
@@ -60,9 +108,9 @@ export default function Template({
                                     <time
                                         // eslint-disable-next-line max-len
                                         className="updated updated-date published"
-                                        dateTime={frontmatter.ISODate}
+                                        dateTime={post.ISODate}
                                     >
-                                        Updated on {frontmatter.date}
+                                        Updated on {post.date}
                                     </time>
                                 </span>
                                 {/* <div className="entry-footer-wrapper entry-footer__item">
@@ -81,18 +129,25 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-    query($path: String!) {
-        markdownRemark(frontmatter: {slug: {eq: $path}}) {
+    query BlogPostBySlug($slug: String!) {
+        markdownRemark(fields: {slug: {eq: $slug}}) {
             html
+            timeToRead
+            excerpt
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
                 ISODate: date
-                slug
                 title
-                attachments {
+                category
+                author
+                thumbnail {
                     publicURL
-                    name
                 }
+                class
+            }
+            fields {
+                slug
+                date
             }
         }
     }

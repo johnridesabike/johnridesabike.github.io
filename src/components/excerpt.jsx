@@ -13,7 +13,7 @@ export const Excerpt = ({node}) => (
             </div>
             <h2 className="entry-title has-body-font">
                 <a
-                    href={node.frontmatter.slug}
+                    href={node.fields.slug}
                     rel="bookmark"
                     className="entry-title__link"
                 >
@@ -35,10 +35,10 @@ export const Excerpt = ({node}) => (
         <div className="entry-content">{node.excerpt}</div>
         <footer className="entry-footer has-ui-font">
             <div className="entry-meta">
-                <span class="posted-on entry-meta__item">
+                <span className="posted-on entry-meta__item">
                     <time
-                        class="entry-date published updated"
-                        datetime={node.frontmatter.ISODate}
+                        className="entry-date published updated"
+                        dateTime={node.frontmatter.ISODate}
                     >
                         <CalendarIcon /> Posted on {node.frontmatter.date}
                     </time>
@@ -46,7 +46,7 @@ export const Excerpt = ({node}) => (
             </div>
             <div className="continue-reading">
                 <Link
-                    to={node.frontmatter.slug}
+                    to={node.fields.slug}
                     className="button-link__link button-open"
                     rel="bookmark"
                 >
