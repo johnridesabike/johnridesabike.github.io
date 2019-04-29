@@ -33,7 +33,7 @@ module.exports = {
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                path: `${__dirname}/content/pages`,
+                path: `${__dirname}/content`,
                 name: "pages"
             }
         },
@@ -100,12 +100,12 @@ module.exports = {
                 ]
             }
         },
-        "gatsby-plugin-breadcrumb",
-        {
-            resolve: "gatsby-plugin-breadcrumb",
-            options: {
-                sitemapPath: "/sitemap.xml"
-            }
-        }
+        // "gatsby-plugin-breadcrumb",
+        // {
+        //     resolve: "gatsby-plugin-breadcrumb",
+        //     options: {
+        //         sitemapPath: "/sitemap.xml"
+        //     }
+        // }
     ]
 };

@@ -105,29 +105,8 @@ function IndexPage() {
 
             <hr className="wp-block-separator is-style-dots"/>
 
-            <div class="wp-block-columns alignwide has-2-columns">
-                <div class="wp-block-column">
-                    <ToolIcon
-                        style={{display: "block", margin: "auto"}}
-                        className="has-header-color"
-                    />
-                    <h3>Woodworking</h3>
-                    <p>Guides for the woodworking projects I’ve done.</p>
-                </div>
-                <div class="wp-block-column">
-                    {woodworking.map((edge) => (
-                        <Excerpt
-                            node={edge.node}
-                            key={edge.node.frontmatter.slug}
-                        />
-                    ))}
-                </div>
-            </div>
-
-            <hr className="wp-block-separator is-style-dots"/>
-
-            <div class="wp-block-columns alignwide has-2-columns">
-                <div class="wp-block-column">
+            <div className="wp-block-columns alignwide has-2-columns">
+                <div className="wp-block-column">
                     <LibraryIcon
                         style={{display: "block", margin: "auto"}}
                         className="has-header-color"
@@ -138,13 +117,34 @@ function IndexPage() {
                         library and while completing my MLIS.
                     </p>
                 </div>
-                <div class="wp-block-column">
+                <div className="wp-block-column">
                     {libraries.map((edge) => (
+                        <Excerpt
+                            node={edge.node}
+                            key={edge.node.fields.slug}
+                        />
+                    ))}
+                </div>
+            </div>
+
+            <hr className="wp-block-separator is-style-dots"/>
+
+            <div className="wp-block-columns alignwide has-2-columns">
+                <div className="wp-block-column">
+                    {woodworking.map((edge) => (
                         <Excerpt
                             node={edge.node}
                             key={edge.node.frontmatter.slug}
                         />
                     ))}
+                </div>
+                <div className="wp-block-column">
+                    <ToolIcon
+                        style={{display: "block", margin: "auto"}}
+                        className="has-header-color"
+                    />
+                    <h3>Woodworking</h3>
+                    <p>Guides for the woodworking projects I’ve done.</p>
                 </div>
             </div>
         </Layout>

@@ -3,7 +3,7 @@ import {Link} from "gatsby";
 import johnPic from "../images/john2018.jpg";
 import {
     ChessIcon,
-    FeedIcon,
+    // FeedIcon,
     GitHubIcon,
     LibraryThingIcon,
     LinkedInIcon
@@ -64,7 +64,7 @@ const Sidebar = () => (
                 </p>
             </div>
         </section>
-        <section
+        {/* <section
             id="contextual_feed_widget-3"
             className="widget widget__main widget_contextual_feed">
             <h4 className="widgettitle">Subscribe via RSS</h4>
@@ -80,7 +80,7 @@ const Sidebar = () => (
                     </a>
                 </li>
             </ul>
-        </section>
+        </section> */}
         <section
             id="nav_menu-7"
             className="widget widget__main widget_nav_menu">
