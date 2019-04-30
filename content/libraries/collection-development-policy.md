@@ -1,5 +1,4 @@
 ---
-slug: "/libraries/collection-development-policy/"
 title: Collection Development Policy
 author: John Jackson
 date: 2018-12-19

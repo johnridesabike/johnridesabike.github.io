@@ -1,10 +1,9 @@
 ---
-slug: "/woodworking/standing-desk-converter-diy"
 title: Standing Desk Converter with Scrap Wood
 author: John Jackson
 date: 2019-01-11
 updated: 2019-01-11
-thumbnail: ./final.png
+thumbnail: "./final.png"
 attachments:
     - "./standing_desk.skp.zip"
 category: "Woodworking"

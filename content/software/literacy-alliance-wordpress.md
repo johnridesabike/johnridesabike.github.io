@@ -7,7 +7,6 @@ tags:
     Web development
     Wordpress
 layout: index.njk
-thumbnail: /media/LA-logo-2018.png
 description: The Literacy Alliance is a nonprofit organization dedicated to literacy education in Columbus, Georgia. Beginning in 2017, I redesigned their website (theliteracyalliance.org) from the ground up with WordPress.
 ---
 The Literacy Alliance is a nonprofit organization dedicated to literacy education in Columbus, Georgia. Beginning in 2017, I redesigned their website ([theliteracyalliance.org](https://theliteracyalliance.org/)) from the ground up with WordPress.

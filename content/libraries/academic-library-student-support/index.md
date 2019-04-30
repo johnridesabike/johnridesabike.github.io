@@ -1,5 +1,4 @@
 ---
-slug: "/libraries/academic-library-student-support/"
 title: Academic Library Student Support
 author: John Jackson
 date: 2018-12-19

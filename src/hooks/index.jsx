@@ -18,7 +18,6 @@ export function useAllPages() {
                         timeToRead
                         frontmatter {
                             title
-                            slug
                             date(formatString: "MMMM DD, YYYY")
                             ISODate: date
                         }
