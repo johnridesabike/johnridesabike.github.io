@@ -23,6 +23,9 @@ function IndexPage() {
     const libraries = allPages.filter(
         (p) => p.node.fields.category === "libraries"
     );
+    const software = allPages.filter(
+        (p) => p.node.fields.category === "software"
+    );
     return (
         <Layout>
             <SEO title="Home" keywords={["gatsby", "application", "react"]} />
@@ -124,7 +127,7 @@ function IndexPage() {
 
             <div className="wp-block-columns alignwide has-2-columns">
                 <div className="wp-block-column">
-                    {libraries.map((edge) => (
+                    {software.map((edge) => (
                         <Excerpt node={edge.node} key={edge.node.fields.slug} />
                     ))}
                 </div>
