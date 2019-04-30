@@ -1,5 +1,4 @@
 ---
-slug: "/libraries/selection-policy-materials"
 title: Selection Policy & Materials Project
 author: John Jackson
 date: 2018-12-19

@@ -4,7 +4,7 @@ author: John Jackson
 date: 2018-10-08
 updated: 2018-10-08
 category: Software
-thumbnail: /media/ios-shortcuts.jpg
+thumbnail: "./ios-shortcuts.jpg"
 ---
 *These are a few shortcut scripts I've made for Apple's [iOS Shortcuts app](https://itunes.apple.com/app/shortcuts/id915249334).*
 

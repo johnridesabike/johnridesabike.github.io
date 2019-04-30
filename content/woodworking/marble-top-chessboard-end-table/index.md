@@ -1,10 +1,9 @@
 ---
-slug: "/woodworking/marble-top-chessboard-end-table/"
 title: Marble-top Chessboard End Table
 author: John Jackson
 date: 2018-05-13
 updated: 2018-05-13
-thumbnail: ./IMG_0293.jpg
+thumbnail: "./IMG_0293.jpg"
 attachments:
     - "./Chess-Table-Sketchup.zip"
 category: Woodworking

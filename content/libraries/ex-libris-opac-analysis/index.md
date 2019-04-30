@@ -1,5 +1,4 @@
 ---
-slug: "/libraries/ex-libris-opac-analysis/"
 title: Ex Libris OPAC Analysis
 author: John Jackson
 date: 2018-12-19
