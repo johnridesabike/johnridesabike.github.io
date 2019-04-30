@@ -7,7 +7,6 @@ tags:
     Web development
     Wordpress
 layout: index.njk
-thumbnail: /media/weracoba-home-page.jpg
 description: Weracoba is my custom-built theme based on Underscores.
 ---
 Weracoba is my custom-built theme based on [Underscores](https://underscores.me/). Until I switched away from WordPress, I used it to power the site here on [johnridesa.bike](https://johnridesa.bike/).

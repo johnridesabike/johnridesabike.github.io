@@ -98,12 +98,8 @@ function IndexPage() {
                     </div>
                 </div>
             </div>
-            <SoftwareIcon
-                style={{display: "block", margin: "auto"}}
-                className="has-header-color"
-            />
 
-            <hr className="wp-block-separator is-style-dots"/>
+            <hr className="wp-block-separator is-style-dots" />
 
             <div className="wp-block-columns alignwide has-2-columns">
                 <div className="wp-block-column">
@@ -119,25 +115,34 @@ function IndexPage() {
                 </div>
                 <div className="wp-block-column">
                     {libraries.map((edge) => (
-                        <Excerpt
-                            node={edge.node}
-                            key={edge.node.fields.slug}
-                        />
+                        <Excerpt node={edge.node} key={edge.node.fields.slug} />
                     ))}
                 </div>
             </div>
 
-            <hr className="wp-block-separator is-style-dots"/>
+            <hr className="wp-block-separator is-style-dots" />
 
             <div className="wp-block-columns alignwide has-2-columns">
                 <div className="wp-block-column">
-                    {woodworking.map((edge) => (
-                        <Excerpt
-                            node={edge.node}
-                            key={edge.node.frontmatter.slug}
-                        />
+                    {libraries.map((edge) => (
+                        <Excerpt node={edge.node} key={edge.node.fields.slug} />
                     ))}
                 </div>
+                <div className="wp-block-column">
+                    <SoftwareIcon
+                        style={{display: "block", margin: "auto"}}
+                        className="has-header-color"
+                    />
+                    <h3>Software</h3>
+                    <p>
+                        These are various software projects I've worked on.
+                    </p>
+                </div>
+            </div>
+
+            <hr className="wp-block-separator is-style-dots" />
+
+            <div className="wp-block-columns alignwide has-2-columns">
                 <div className="wp-block-column">
                     <ToolIcon
                         style={{display: "block", margin: "auto"}}
@@ -145,6 +150,14 @@ function IndexPage() {
                     />
                     <h3>Woodworking</h3>
                     <p>Guides for the woodworking projects I’ve done.</p>
+                </div>
+                <div className="wp-block-column">
+                    {woodworking.map((edge) => (
+                        <Excerpt
+                            node={edge.node}
+                            key={edge.node.frontmatter.slug}
+                        />
+                    ))}
                 </div>
             </div>
         </Layout>

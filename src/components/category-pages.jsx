@@ -21,13 +21,13 @@ const CategoryPages = ({category}) => (
                         node {
                             fields {
                                 category
+                                slug
                             }
                             excerpt
                             timeToRead
                             frontmatter {
                                 title
                                 date
-                                slug
                             }
                         }
                     }
