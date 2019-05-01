@@ -5,7 +5,7 @@ date: 2018-12-19
 updated: 2018-12-19
 category: "Libraries"
 ---
-*The director of a fictional library system is seeking a new OPAC, and I was tasked with writing a recommendation for Ex Libris. This was originally written for my Technical Services class in the Fall of 2017.* {.has-large-font-size .alignwide}
+*The director of a fictional library system is seeking a new OPAC, and I was tasked with writing a recommendation for Ex Libris. This was originally written for my Technical Services class in the Fall of 2017.*
 
 The University of Halloween is a four-year research school, and the largest higher-education institution in the state. The university’s library, Skellington Library, has seen a steady increase in usage in recent years. Our OPAC is no longer adequate for our current collection size and web traffic, nor does it support the features that our users expect. Library staff has grown frustrated with its lack of advanced features for them, as well.
 

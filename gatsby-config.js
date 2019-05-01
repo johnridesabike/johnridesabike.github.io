@@ -60,6 +60,7 @@ module.exports = {
                         }
                     },
                     "gatsby-remark-static-images",
+                    // "gatsby-remark-bracketed-spans",
                     "gatsby-remark-attr",
                     {
                         resolve: "gatsby-remark-prismjs",
