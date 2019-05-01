@@ -2,8 +2,18 @@ import React from "react";
 import {graphql} from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import PostedOn from "../components/posted-on";
+import PostedBy from "../components/posted-by";
 
-const EntryHeader = ({thumbnail, caption, title, author, date, classNames}) => (
+const EntryHeader = ({
+    thumbnail,
+    caption,
+    title,
+    author,
+    date,
+    ISODate,
+    classNames
+}) => (
     <div className={"entry-header has-ui-font " + classNames}>
         {thumbnail && (
             <figure className="featured-image featured-image__single full-bleed">
@@ -23,9 +33,8 @@ const EntryHeader = ({thumbnail, caption, title, author, date, classNames}) => (
             <h1 className="entry-title has-body-font">{title}</h1>
             <div className="entry-meta entry-meta__single">
                 <div className="entry-meta-wrapper entry-meta-wrapper__single">
-                    {/* // {% import "partials/entry-meta.njk" as entryMeta %} */}
-                    {author}
-                    {date}
+                    {author && <PostedBy author={author} />}
+                    {date && <PostedOn date={date} ISODate={ISODate} />}
                 </div>
             </div>
         </div>
@@ -49,6 +58,7 @@ export default function Template({
                     title={post.title}
                     author={post.author}
                     date={post.date}
+                    ISODate={post.ISODate}
                     classNames={post.class || "single"}
                 />
             }

@@ -16,6 +16,7 @@
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-plugin-sitemap": "^2.0.12",
     "gatsby-remark-attr": "0.0.2",
+    "gatsby-remark-bracketed-spans": "^2.0.3",
     "gatsby-remark-images": "^3.0.11",
     "gatsby-remark-prismjs": "^3.2.8",
     "gatsby-remark-static-images": "^1.1.0",
