@@ -93,7 +93,7 @@ export default function Template({
                                             className="wp-block-file"
                                         >
                                             <a href={file.publicURL}>
-                                                {file.name}
+                                                {file.name}.{file.extension}
                                             </a>
                                             &nbsp;
                                             <a
@@ -154,6 +154,11 @@ export const pageQuery = graphql`
                     publicURL
                 }
                 class
+                attachments {
+                    publicURL
+                    name
+                    extension
+                }
             }
             fields {
                 slug
