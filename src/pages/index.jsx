@@ -132,10 +132,11 @@ function IndexPage() {
                             </div>
                         </div>
 
-                        <hr className="wp-block-separator is-style-wide" />
-
                         <div className="wp-block-columns alignwide has-2-columns">
-                            <div className="wp-block-column">
+                            <div
+                                className="wp-block-column"
+                                style={{flexBasis: "33%", textAlign: "center"}}
+                            >
                                 <LibraryIcon
                                     style={{
                                         display: "block",
@@ -150,7 +151,10 @@ function IndexPage() {
                                     MLIS.
                                 </p>
                             </div>
-                            <div className="wp-block-column">
+                            <div
+                                className="wp-block-column"
+                                style={{flexBasis: "66%"}}
+                            >
                                 {libraries.map((edge) => (
                                     <Excerpt
                                         node={edge.node}
@@ -160,10 +164,11 @@ function IndexPage() {
                             </div>
                         </div>
 
-                        <hr className="wp-block-separator is-style-wide" />
-
                         <div className="wp-block-columns alignwide has-2-columns">
-                            <div className="wp-block-column">
+                            <div
+                                className="wp-block-column"
+                                style={{flexBasis: "66%"}}
+                            >
                                 {software.map((edge) => (
                                     <Excerpt
                                         node={edge.node}
@@ -171,7 +176,10 @@ function IndexPage() {
                                     />
                                 ))}
                             </div>
-                            <div className="wp-block-column">
+                            <div
+                                className="wp-block-column"
+                                style={{flexBasis: "33%", textAlign: "center"}}
+                            >
                                 <SoftwareIcon
                                     style={{display: "block", margin: "auto"}}
                                     className="has-header-color"
@@ -184,10 +192,11 @@ function IndexPage() {
                             </div>
                         </div>
 
-                        <hr className="wp-block-separator is-style-wide" />
-
                         <div className="wp-block-columns alignwide has-2-columns">
-                            <div className="wp-block-column">
+                            <div
+                                className="wp-block-column"
+                                style={{flexBasis: "33%", textAlign: "center"}}
+                            >
                                 <ToolIcon
                                     style={{
                                         display: "block",
@@ -201,7 +210,10 @@ function IndexPage() {
                                     done.
                                 </p>
                             </div>
-                            <div className="wp-block-column">
+                            <div
+                                className="wp-block-column"
+                                style={{flexBasis: "66%"}}
+                            >
                                 {woodworking.map((edge) => (
                                     <Excerpt
                                         node={edge.node}
