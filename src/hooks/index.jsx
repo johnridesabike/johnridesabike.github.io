@@ -20,6 +20,9 @@ export function useAllPages() {
                             title
                             date(formatString: "MMMM DD, YYYY")
                             ISODate: date
+                            thumbnail {
+                                publicURL
+                            }
                         }
                     }
                 }

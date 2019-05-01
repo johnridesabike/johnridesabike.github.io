@@ -1,16 +1,22 @@
 import React from "react";
 import {Link} from "gatsby";
-import {TagIcon, ChevronRightIcon, CalendarIcon} from "../components/icons";
+import {ChevronRightIcon} from "../components/icons";
+import PostedOn from "./posted-on";
 
 export const Excerpt = ({node}) => (
-    <article className="excerpt-entry post">
+    <article
+        className={
+            "excerpt-entry post " +
+            (node.frontmatter.thumbnail ? "has-post-thumbnail" : "")
+        }
+    >
         {/*{% if page.data.thumbnail %} has-post-thumbnail{% endif %}*/}
         <header className="entry-header has-ui-font">
-            <div className="tab-head">
+            {/* <div className="tab-head">
                 <TagIcon />
                 &nbsp;
                 {node.fields.category}
-            </div>
+            </div> */}
             <h2 className="entry-title has-body-font">
                 <a
                     href={node.fields.slug}
@@ -21,28 +27,34 @@ export const Excerpt = ({node}) => (
                 </a>
             </h2>
         </header>
+        {node.frontmatter.thumbnail && (
+            <figure className="featured-image featured-image__archive full-bleed">
+                <a
+                    href={node.fields.slug}
+                    className="featured-image__link"
+                    aria-hidden="true"
+                    tabindex="-1"
+                >
+                    <img
+                        width="224"
+                        height="150"
+                        src={node.frontmatter.thumbnail.publicURL}
+                        className="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                        alt=""
+                    />
+                </a>
+            </figure>
+        )}
 
-        {/* {% if page.data.thumbnail %}
-    <figure className="featured-image featured-image__archive full-bleed">
-        <a href="{{ page.url }}" className="featured-image__link" aria-hidden="true" tabindex="-1">
-            <img width="224" height="150"
-            src="{{ page.data.thumbnail }}" className="attachment-post-thumbnail size-post-thumbnail wp-post-image"
-            alt="{% if media[page.data.thumbnail] %}{{ media[page.data.thumbail].alt }} {% endif %}"/>
-        </a>
-    </figure>
-    {% endif %} */}
-
-        <div className="entry-content">{node.excerpt}</div>
+        <div className="entry-content">
+            <p>{node.excerpt}</p>
+        </div>
         <footer className="entry-footer has-ui-font">
             <div className="entry-meta">
-                <span className="posted-on entry-meta__item">
-                    <time
-                        className="entry-date published updated"
-                        dateTime={node.frontmatter.ISODate}
-                    >
-                        <CalendarIcon /> Posted on {node.frontmatter.date}
-                    </time>
-                </span>
+                <PostedOn
+                    date={node.frontmatter.date}
+                    ISODate={node.frontmatter.ISODate}
+                />
             </div>
             <div className="continue-reading">
                 <Link

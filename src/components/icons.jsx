@@ -261,3 +261,56 @@ export const CalendarIcon = () => (
         </g>
     </svg>
 );
+
+export const PersonIcon = () => (
+    <svg
+        className="svg-icon"
+        width="24"
+        height="24"
+        aria-hidden="true"
+        role="img"
+        focusable="false"
+        viewBox="0 0 24 24"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+        <path d="M0 0h24v24H0z" fill="none" />
+    </svg>
+);
+
+export const MenuIcon = () => (
+    <svg
+        className="svg-icon"
+        width="20"
+        height="20"
+        aria-hidden="true"
+        role="img"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+    >
+        <rect x="0" fill="none" width="20" height="20" />
+        <g>
+            <path d="M17 7V5H3v2h14zm0 4V9H3v2h14zm0 4v-2H3v2h14z" />
+        </g>
+    </svg>
+);
+
+export const DismissIcon = () => (
+    <svg
+        className="svg-icon"
+        width="20"
+        height="20"
+        aria-hidden="true"
+        role="img"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+    >
+        <rect x="0" fill="none" width="20" height="20" />
+        <g>
+            <path d="M10 2c4.42 0 8 3.58 8 8s-3.58 8-8 8-8-3.58-8-8 3.58-8 8-8zm5 11l-3-3 3-3-2-2-3 3-3-3-2 2 3 3-3 3 2 2 3-3 3 3z" />
+        </g>
+    </svg>
+);
