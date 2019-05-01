@@ -22,6 +22,9 @@ function IndexPage() {
     const libraries = allPages.filter(
         (p) => p.node.fields.category === "libraries"
     );
+    const software = allPages.filter(
+        (p) => p.node.fields.category === "software"
+    );
     return (
         <Layout>
             <div id="primary" className="content-area single">
@@ -161,7 +164,7 @@ function IndexPage() {
 
                         <div className="wp-block-columns alignwide has-2-columns">
                             <div className="wp-block-column">
-                                {libraries.map((edge) => (
+                                {software.map((edge) => (
                                     <Excerpt
                                         node={edge.node}
                                         key={edge.node.fields.slug}
@@ -170,10 +173,7 @@ function IndexPage() {
                             </div>
                             <div className="wp-block-column">
                                 <SoftwareIcon
-                                    style={{
-                                        display: "block",
-                                        margin: "auto"
-                                    }}
+                                    style={{display: "block", margin: "auto"}}
                                     className="has-header-color"
                                 />
                                 <h3>Software</h3>
