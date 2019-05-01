@@ -27,7 +27,7 @@ module.exports = {
                 theme_color: "#663399",
                 display: "minimal-ui",
                 // This path is relative to the root of the site.
-                icon: "src/images/gatsby-icon.png"
+                icon: "src/images/logo.png"
             }
         },
         {

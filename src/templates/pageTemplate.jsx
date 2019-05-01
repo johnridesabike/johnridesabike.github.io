@@ -48,7 +48,6 @@ export default function Template({
     const {slug} = pageContext;
     const postNode = data.markdownRemark;
     const post = postNode.frontmatter;
-    console.log(post);
     return (
         <Layout
             entryHeader={

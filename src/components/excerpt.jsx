@@ -11,7 +11,7 @@ export const Excerpt = ({node}) => (
         }
     >
         {/*{% if page.data.thumbnail %} has-post-thumbnail{% endif %}*/}
-        <header className="entry-header has-ui-font">
+        <header className="entry-header has-ui-font" style={{display: "block"}}>
             {/* <div className="tab-head">
                 <TagIcon />
                 &nbsp;
@@ -33,7 +33,7 @@ export const Excerpt = ({node}) => (
                     href={node.fields.slug}
                     className="featured-image__link"
                     aria-hidden="true"
-                    tabindex="-1"
+                    tabIndex="-1"
                 >
                     <img
                         width="224"
