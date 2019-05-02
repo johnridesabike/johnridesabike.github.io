@@ -8,10 +8,20 @@ attachments:
     - "./handout-How-to-Play-Chess.pdf"
     - "./handout-How-to-Play-Chess.docx"
 ---
-
 This guide covers all the knowledge required to play a basic game of chess. It’s a quick reference resource, one that can answer questions like: “how many squares do you move when castling?” or “what conditions make a stalemate?” Even if you know these rules by heart, it’s useful to have a text to cite so your opponent doesn’t think you just made up “_en passant_.”
 
 Many chess guides exist, so why use this one? I originally wrote this in 2017 as a handout for our [public library chess program](/libraries/chess-library/). After searching for a basic rule booklet, I had only found one-page diagrams of piece moves or hundred-page long books of strategy. Necessity led me to write this, a guide that’s simple yet also covers all the common rules.
+
+<div class="wp-block-columns has-2-columns">
+<div class="wp-block-column">
+<div class="wp-block-file aligncenter"><a href="./handout-How-to-Play-Chess.pdf">PDF printable booklet</a> <a href="./handout-How-to-Play-Chess.pdf" class="wp-block-file__button" download>Download</a>
+</div>
+</div>
+<div class="wp-block-column">
+<div class="wp-block-file aligncenter"><a href="./handout-How-to-Play-Chess.docx">DOCX printable booklet</a> <a href="./handout-How-to-Play-Chess.docx" class="wp-block-file__button" download>Download</a>
+</div>
+</div>
+</div>
 
 ## Setting up the board
 

@@ -69,6 +69,9 @@ Sound good? Let’s get started!
     </div>
 </div>
 
+<div class="wp-block-file aligncenter"><a href="./standing_desk.skp.zip">Download the SketchUp file to follow along</a> <a href="./standing_desk.skp.zip" class="wp-block-file__button" download>Download</a></div>
+
+
 <div class="wp-block-columns has-2-columns">
     <div class="wp-block-column">
 

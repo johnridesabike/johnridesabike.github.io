@@ -43,11 +43,12 @@ module.exports = {
                 templatePath: `${__dirname}/src/templates/category.jsx`
             }
         },
-        "gatsby-transformer-remark",
+        // "gatsby-transformer-remark",
         "gatsby-plugin-sharp",
         {
             resolve: "gatsby-transformer-remark",
             options: {
+                "excerpt_separator": "<!-- more -->",
                 plugins: [
                     {
                         resolve: "gatsby-remark-images",
@@ -61,6 +62,7 @@ module.exports = {
                     },
                     "gatsby-remark-static-images",
                     // "gatsby-remark-bracketed-spans",
+                    "gatsby-remark-copy-linked-files",
                     "gatsby-remark-attr",
                     {
                         resolve: "gatsby-remark-prismjs",
