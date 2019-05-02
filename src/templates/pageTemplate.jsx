@@ -111,6 +111,7 @@ export default function Template({
                         <footer
                             // eslint-disable-next-line max-len
                             className="entry-footer entry-footer__single has-ui-font"
+                            style={{marginTop: "1em", marginBottom: "1em"}}
                         >
                             <div className="post-time entry-footer__item">
                                 <span className="updated-on">

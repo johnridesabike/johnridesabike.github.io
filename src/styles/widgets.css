@@ -244,11 +244,23 @@ a.tag-cloud-link:active {
 }
 
 /** Widget Media Queries **/
+
 @media screen and (min-width: 600px) {
+    .widget-area,
+    .footer-widgets {
+        display: flex;
+        justify-content: space-between
+    }
+    .widget__main,
+    .widget__footer {
+        width: 46%;
+    }
+}
+/* @media screen and (min-width: 600px) {
     .widget__main,
     .widget__footer {
         /* Show 3 columns of widgets
-		** With an even number of widgets, show the first one at full width; */
+		** With an even number of widgets, show the first one at full width; *
         width: 30.79667%;
         margin-right: 3.8%;
     }
@@ -304,7 +316,7 @@ a.tag-cloud-link:active {
     }
     .archive-view .widget-area .alignleft,
     .archive-view .widget-area .alignright {
-        /* Don't align stuff on this small size, */
+        /* Don't align stuff on this small size, *
         float: none;
         display: block;
         margin-right: auto !important;
@@ -314,4 +326,4 @@ a.tag-cloud-link:active {
         width: 100%;
         margin: 0 0 4em;
     }
-}
+} */
