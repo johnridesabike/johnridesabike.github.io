@@ -12,6 +12,7 @@ import {
     SoftwareIcon,
     ToolIcon
 } from "../components/icons";
+import styles from "./index.module.css";
 
 function IndexPage() {
     let allPages = useAllPages();
@@ -134,8 +135,9 @@ function IndexPage() {
 
                         <div className="wp-block-columns alignwide has-2-columns">
                             <div
-                                className="wp-block-column"
-                                style={{flexBasis: "33%", textAlign: "center"}}
+                                className={
+                                    "wp-block-column " + styles.description
+                                }
                             >
                                 <LibraryIcon
                                     style={{
@@ -152,8 +154,7 @@ function IndexPage() {
                                 </p>
                             </div>
                             <div
-                                className="wp-block-column"
-                                style={{flexBasis: "66%"}}
+                                className={"wp-block-column " + styles.content}
                             >
                                 {libraries.map((edge) => (
                                     <Excerpt
@@ -166,8 +167,7 @@ function IndexPage() {
 
                         <div className="wp-block-columns alignwide has-2-columns">
                             <div
-                                className="wp-block-column"
-                                style={{flexBasis: "66%"}}
+                                className={"wp-block-column " + styles.content}
                             >
                                 {software.map((edge) => (
                                     <Excerpt
@@ -177,8 +177,9 @@ function IndexPage() {
                                 ))}
                             </div>
                             <div
-                                className="wp-block-column"
-                                style={{flexBasis: "33%", textAlign: "center"}}
+                                className={
+                                    "wp-block-column " + styles.description
+                                }
                             >
                                 <SoftwareIcon
                                     style={{display: "block", margin: "auto"}}
@@ -194,8 +195,9 @@ function IndexPage() {
 
                         <div className="wp-block-columns alignwide has-2-columns">
                             <div
-                                className="wp-block-column"
-                                style={{flexBasis: "33%", textAlign: "center"}}
+                                className={
+                                    "wp-block-column " + styles.description
+                                }
                             >
                                 <ToolIcon
                                     style={{
@@ -211,8 +213,7 @@ function IndexPage() {
                                 </p>
                             </div>
                             <div
-                                className="wp-block-column"
-                                style={{flexBasis: "66%"}}
+                                className={"wp-block-column " + styles.content}
                             >
                                 {woodworking.map((edge) => (
                                     <Excerpt

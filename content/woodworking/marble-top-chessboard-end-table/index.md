@@ -13,6 +13,9 @@ A while back, I inherited a marble chessboard that had once been the top to a be
 
 I adapted most of this design from [Ana White’s “Tryde End Table with Shelf” plan](http://www.ana-white.com/2013/10/plans/tryde-end-table-shelf-updated-pocket-hole-plans). I highly recommend checking out her website in addition to this guide. There are two main differences between my plan and hers. First, I attached a marble tabletop instead of building one from wood. Second, I resized the table into a square that would fit under the marble. With a bit of math, I found the optimal size that can comfortably fit the 2x4s in the shelf without any extra cutting.
 
+
+[Download the SketchUp file for this project here.](./Chess-Table-Sketchup.zip)
+
 ## Shopping List
 
 -   3 - 2x4 @ 8 feet long (Legs, aprons, &amp; shelves)

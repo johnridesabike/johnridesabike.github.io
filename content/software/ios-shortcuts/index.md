@@ -22,7 +22,7 @@ This shortcut sends anything to your inbox. No frills, no nonsense. **Send to In
 
 <div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://www.icloud.com/shortcuts/0258ae7edb614817810efbb01e9c0724">Bike Commute Clothes</a></div>
 
-![A screenshot of “Bike Commute Clothes” shortcut.](/media/ios-shortcuts-bike.jpg)
+<!--![A screenshot of “Bike Commute Clothes” shortcut.](./ios-shortcuts-bike.jpg)-->
 
 On a bike, the weather can become harsh without proper clothing. Cold air can numb your hands, the hot sun can soak you in sweat, and rain can just plain soak you. To make it more complicated,  you can’t always trust the weather when you walk out the door. It may be drastically different during your ride home.
 

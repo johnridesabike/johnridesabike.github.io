@@ -2,12 +2,13 @@ import React from "react";
 import {Link} from "gatsby";
 import {ChevronRightIcon} from "../components/icons";
 import PostedOn from "./posted-on";
+import styles from "./excerpt.module.css";
 
 export const Excerpt = ({node}) => (
     <article
         className={
-            "excerpt-entry post " +
-            (node.frontmatter.thumbnail ? "has-post-thumbnail" : "")
+            "excerpt-entry post " + styles.excerpt +
+            (node.frontmatter.thumbnail ? " has-post-thumbnail" : "")
         }
     >
         {/*{% if page.data.thumbnail %} has-post-thumbnail{% endif %}*/}
@@ -47,7 +48,7 @@ export const Excerpt = ({node}) => (
         )}
 
         <div className="entry-content">
-            <p>{node.excerpt}</p>
+            <p className="has-small-font-size">{node.excerpt}</p>
         </div>
         <footer className="entry-footer has-ui-font">
             <div className="entry-meta">

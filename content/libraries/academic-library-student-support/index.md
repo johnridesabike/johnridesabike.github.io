@@ -5,7 +5,7 @@ date: 2018-12-19
 updated: 2018-12-19
 category: "Libraries"
 ---
-<p style="font-size:24px" class="alignwide"><em>Here, I walk through a hypothetical student project and explain how I, as an academic librarian, would assist throughout the whole process. This was originally written for my Academic Libraries class in the Spring of 2018. </em></p>
+*I walk through a hypothetical student project and explain how I, as an academic librarian, would assist throughout the whole process. This was originally written for my Academic Libraries class in the Spring of 2018.*
 
 Just as university students are encouraged to find creative solutions to research questions, librarians must also use creativity when aiding these students. In this report, we’ll examine the work of a hypothetical graduate student and how I, as an academic librarian, would be able to support their research process.
 
@@ -74,7 +74,7 @@ The data itself will look like a table. There will be one column for the source 
 With the exception of the first and last columns, each other column will have a "1" or a checkmark to indicate which pronoun, gender, and number it refers to. Other columns will have a "0." Naturally, one article may be included in the table several times, one for each instance of a pronoun. The student can then use filters to calculate exactly how many different instances appear for each possible combination. See Figure 1 for an example.
 
 <figure class="alignwide">
-    <img alt="Screenshot of data in a spreadsheet." src="./student-support.png"/>
+    <img src="./student-support.png" alt="Screenshot of data in a spreadsheet."/>
     <figcaption>Figure 1: Sample data entry.</figcaption>
 </figure>
 

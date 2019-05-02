@@ -5,7 +5,7 @@ date: 2018-12-19
 updated: 2018-12-19
 category: "Libraries"
 ---
-<p class="has-large-font-size alignwide"><em>I presented on the state of open access in academic libraries. These are my slides with a transcript of the presentation. This was originally written for my Technical Services class in the Fall of 2017. </em></p>
+*I presented on the state of open access in academic libraries. These are my slides with a transcript of the presentation. This was originally written for my Technical Services class in the Fall of 2017.*
 
 <div class="wp-block-media-text alignwide is-stacked-on-mobile">
 <figure class="wp-block-media-text__media">
