@@ -21,6 +21,12 @@
     text-decoration: none;
 }
 
+.page-content > *:not(.alignwide):not(.alignfull) {
+    max-width: var(--size-content);
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/

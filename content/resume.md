@@ -1,5 +1,5 @@
 ---
-title: "Résumé"
+title: Résumé
 updated: 2019-04-03
 class: page
 ---
