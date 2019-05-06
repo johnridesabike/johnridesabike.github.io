@@ -28,8 +28,8 @@
     --font-site-title: Baskerville, "Baskerville Old Face", Garamond,
         var(--font-reading);
     --font-pre: "Courier 10 Pitch", Courier, monospace;
-    --font-code: Menlo, Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono",
-        monospace;
+    --font-code: "Fira Code", Menlo, Monaco, Consolas, "Andale Mono",
+        "DejaVu Sans Mono", monospace;
     --font-base-size: 20px;
     --font-size-base-mobile: 16px;
     --font-size-xs: calc(1em / 1.25); /* 16 */
@@ -38,12 +38,14 @@
     --font-size-lg: calc(1em * 1.25); /* 25 */
     --font-size-xl: calc(1em * 1.5); /* 30 */
     --font-size-xxl: calc(1em * 1.75); /* 35 */
+    --letter-spacing-allcaps: 0.06em;
     /**
      * Layout
      */
     --size-site-width: 1200px;
     --size-content: 680px;
     --border-radius-button-square: 0.15em;
+    --column-margin: 3.8%;
 }
 /*
 $
@@ -64,8 +66,6 @@ $glyph-arrow-down-right: "\21B3";
 
 
 $font-line-height-pre: 1.6;
-
-$letter-spacing-allcaps: 0.06em;
 
 $opacity-aside: 0.8;
 
