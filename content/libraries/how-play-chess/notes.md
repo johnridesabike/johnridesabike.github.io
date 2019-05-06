@@ -6,7 +6,7 @@ updated: 2019-03-18
 ---
 <nav class="post-nav-links">
 <a href="../" class="prev">
-Back
+← Back to main article
 </a>
 </nav>
 

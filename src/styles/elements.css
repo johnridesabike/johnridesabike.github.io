@@ -279,3 +279,11 @@ form span.required {
     opacity: 0.8;
     font-size: var(--font-size-xs);
 }
+
+
+/* Gatsby wraps some elements in <p> which adds extra margins to them */
+td > p:only-of-type,
+th > p:only-of-type,
+li > p:only-of-type {
+    margin: 0;
+}
