@@ -1,0 +1,20 @@
+.site {
+    /*
+    fixes bug where full-bleed content creates horizontal scrollbar.
+    May have undesireable side effects...?
+    */
+    overflow-x: hidden;
+}
+
+.content {
+    padding-bottom: 1em; /* give some space for the footer */
+    background-color: #fff;
+}
+
+@media screen and (min-width: 1200px) {
+    .content {
+        max-width: var(--size-site-width);
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

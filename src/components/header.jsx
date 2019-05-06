@@ -1,16 +1,16 @@
 import {Link} from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
+import classnames from "classnames";
 import Menu from "./menu";
 
-const Header = ({siteTitle, siteDescription, entryHeader, thumbnail}) => (
+const Header = ({siteTitle, siteDescription, entryHeader}) => (
     <header
         id="masthead"
-        className={
-            thumbnail !== undefined
-                ? "site-header has-post-thumbnail"
-                : "site-header"
-        }
+        className={classnames(
+            "site-header",
+            "smallscreen-padding",
+        )}
     >
         <div id="global-header" className="global-header">
             <div className="site-branding">

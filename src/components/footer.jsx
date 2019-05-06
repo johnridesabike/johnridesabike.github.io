@@ -2,7 +2,7 @@ import React from "react";
 import {CCIcon} from "./icons";
 
 const Footer = () => (
-    <footer id="colophon" className="site-footer has-ui-font">
+    <footer id="colophon" className="site-footer has-ui-font smallscreen-padding">
         <div className="footer-widgets">
             <section className="widget widget__footer">
                 <div className="textwidget custom-html-widget">

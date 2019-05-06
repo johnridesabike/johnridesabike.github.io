@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "gatsby";
+import classnames from "classnames";
 import VisuallyHidden from "@reach/visually-hidden";
 import {ChevronRightIcon} from "../components/icons";
 import PostedOn from "./posted-on";
@@ -7,33 +8,32 @@ import styles from "./excerpt.module.css";
 
 export const Excerpt = ({node}) => (
     <article
-        className={
-            "excerpt-entry post " + styles.excerpt +
-            (node.frontmatter.thumbnail ? " has-post-thumbnail" : "")
-        }
+        className={classnames(
+            styles.entry,
+            {[`${styles.hasThumbnail}`]: node.frontmatter.thumbnail}
+        )}
     >
-        {/*{% if page.data.thumbnail %} has-post-thumbnail{% endif %}*/}
-        <header className="entry-header has-ui-font" style={{display: "block"}}>
+        <header className={classnames(styles.header, "has-ui-font")}>
             {/* <div className="tab-head">
                 <TagIcon />
                 &nbsp;
                 {node.fields.category}
             </div> */}
-            <h2 className="entry-title has-body-font">
+            <h2 className={classnames(styles.title, "has-body-font")}>
                 <a
                     href={node.fields.slug}
                     rel="bookmark"
-                    className="entry-title__link"
+                    className={styles.titleLink}
                 >
                     {node.frontmatter.title}
                 </a>
             </h2>
         </header>
         {node.frontmatter.thumbnail && (
-            <figure className="featured-image featured-image__archive full-bleed">
+            <figure className={classnames("full-bleed", styles.coverFigure)}>
                 <a
                     href={node.fields.slug}
-                    className="featured-image__link"
+                    className={styles.coverLink}
                     aria-hidden="true"
                     tabIndex="-1"
                 >
@@ -41,27 +41,30 @@ export const Excerpt = ({node}) => (
                         width="224"
                         height="150"
                         src={node.frontmatter.thumbnail.publicURL}
-                        className="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                        className={styles.coverImg}
                         alt=""
                     />
                 </a>
             </figure>
         )}
-
-        <div className="entry-content">
+        <div className={styles.content}>
             <p className="has-small-font-size">{node.excerpt}</p>
         </div>
-        <footer className="entry-footer has-ui-font">
-            <div className="entry-meta">
+        <footer className={classnames(styles.footer, "has-ui-font")}>
+            <div className={styles.meta}>
                 <PostedOn
                     date={node.frontmatter.date}
                     ISODate={node.frontmatter.ISODate}
+                    classes={[styles.metaItem]}
                 />
             </div>
-            <div className="continue-reading">
+            <div className={styles.continueReading}>
                 <Link
                     to={node.fields.slug}
-                    className="button-link__link button-open"
+                    className={classnames(
+                        "button-link__link",
+                        styles.continueReadingLink
+                    )}
                     rel="bookmark"
                 >
                     Open{" "}
