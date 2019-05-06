@@ -5,7 +5,7 @@ date: 2018-05-13
 updated: 2018-05-13
 thumbnail: "./IMG_0293.jpg"
 attachments:
-    - "./Chess-Table-Sketchup.zip"
+    - ./Chess-Table-Sketchup.zip
 category: Woodworking
 ---
 
@@ -19,12 +19,14 @@ I adapted most of this design from [Ana White’s “Tryde End Table with Shelf�
 ## Shopping List
 
 -   3 - 2x4 @ 8 feet long (Legs, aprons, &amp; shelves)
--   1 - 2x4 @ ~3 feet long (stretchers)<sup><a id="ffn1" class="footnote" href="#fn1">1</a></sup>
+-   1 - 2x4 @ ~3 feet long (stretchers) ¹
 -   2 1/2” pocket hole screws
 -   4 1/4” dowel pins
 -   Stain (optional)
 -   Polyurethane (optional)
 -   Paint (optional)
+
+¹ *I just used old scrap wood for the stretchers.*
 
 ## Tools
 
@@ -100,7 +102,3 @@ Some marble tables don’t attach to their bases. Marble is heavy, and the table
 </figure>
 
 All that’s left is sanding and staining or painting, if you choose to do so. One of the best things about building your own furniture is that you can make it can look however you want!
-
----
-
-<ol><li id="fn1">I just used old scrap wood for the stretchers. <a href="#ffn1">↩︎</a></li></ol>

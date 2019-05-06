@@ -3,10 +3,11 @@ title: Standing Desk Converter with Scrap Wood
 author: John Jackson
 date: 2019-01-11
 updated: 2019-01-11
-thumbnail: "./final.png"
+thumbnail: ./final.png
+caption: Diagram of the final design.
 attachments:
-    - "./standing_desk.skp.zip"
-category: "Woodworking"
+    - ./standing_desk.skp.zip
+category: Woodworking
 ---
 If you’re like me, you’ve thought about joining the standing desk trend, but the price of entry is a turn-off. Why spend hundreds of dollars on a new desk when you can surely make your own with a little DIY woodworking? It turns out, you can easily create your own standing desk with nothing more than your current desk, some scrap 2x4s, and some basic woodworking skills.
 
@@ -25,32 +26,23 @@ Whether or not there are disadvantages will depend on your tastes. This desk wil
 
 Here are the measurements I took for my desk:
 
-<table class="wp-block-table aligncenter is-style-stripes">
-    <tbody>
-        <tr>
-            <td>Original height</td>
-            <td>30¼"</td>
-        </tr>
-        <tr>
-            <td>Desired height</td>
-            <td>41"</td>
-        </tr>
-        <tr>
-            <td>Depth (measured across the legs)</td>
-            <td>22"</td>
-        </tr>
-        <tr>
-            <td>Width (measured across the legs)</td>
-            <td>47⅝"</td>
-        </tr>
-        <tr>
-            <td>Leg thickness</td>
-            <td>1¾"</td>
-        </tr>
-    </tbody>
-</table>
++------------------+-------------+
+|     Section      | Measurement |
++==================+=============+
+| Original height  |     30¼"    |
++------------------+-------------+
+| Desired height   |     41"     |
++------------------+-------------+
+| Depth (measured  |     22"     |
+| across the legs) |             |
++------------------+-------------+
+| Width (measured  |    47⅝"     |
+| across the legs) |             |
++------------------+-------------+
+| Leg thickness    |    1¾"      |
++------------------+-------------+
 
-<p style="text-align:center" class="has-medium-font-size"><strong>BEWARE!</strong></p>
+<p style="text-align:center" class="has-large-font-size"><strong>BEWARE!</strong></p>
 
 **Understanding your measurements is critical.** Throughout this guide, I'll refer to the dimensions I used, but you will have to modify my plan based on your own measurements. Don't worry, it shouldn’t be too complicated. As always, measure twice, cut once 😉.
 
@@ -69,11 +61,7 @@ Sound good? Let’s get started!
     </div>
 </div>
 
-<div class="wp-block-file aligncenter"><a href="./standing_desk.skp.zip">Download the SketchUp file to follow along</a> <a href="./standing_desk.skp.zip" class="wp-block-file__button" download>Download</a></div>
-
-
-<div class="wp-block-columns has-2-columns">
-    <div class="wp-block-column">
+[Download the SketchUp file to follow along](./standing_desk.skp.zip)
 
 ### Tools
 
@@ -95,9 +83,6 @@ Sound good? Let’s get started!
 - Stain (optional)
 - 2x4s (huh?)
 
-    </div>
-</div>
-
 Wait, you want your materials to be more specific than just “2x4s?” When it comes to the exact amount, you’re on your own. Remember, this project needs to be *custom-built* for your current desk. I can’t tell you how much wood you need or how you will cut it.
 
 ## My cut list (yours will be different)
@@ -114,38 +99,17 @@ Wait, you want your materials to be more specific than just “2x4s?” When it 
     
 If that seems confusing, here’s a chart:
 
-<table class="wp-block-table aligncenter is-style-stripes">
-    <tbody>
-        <tr>
-            <td><strong>Feet</strong></td>
-            <td><em>desired height</em></td>
-            <td>-</td>
-            <td><em>original height</em></td>
-            <td>× 8</td>
-        </tr>
-        <tr>
-            <td><strong>Walls</strong></td>
-            <td><em>feet height</em></td>
-            <td>+</td>
-            <td>1½"</td>
-            <td>× 8</td>
-        </tr>
-        <tr>
-            <td><strong>Side stretchers</strong></td>
-            <td><em>desk depth</em></td>
-            <td>+</td>
-            <td>½"</td>
-            <td>× 2</td>
-        </tr>
-        <tr>
-            <td><strong>Middle stretcher</strong></td>
-            <td><em>desk length</em></td>
-            <td></td>
-            <td></td>
-            <td>× 1</td>
-        </tr>
-    </tbody>
-</table>
++----------------------+-------------------+----------+--------------------+----------+
+|          Part        | First measurement | Operator | Second measurement | Quantity |
++======================+===================+==========+====================+==========+
+|        **Feet**      | *desired height*  |    -     | *original height*  |   × 8    |
++----------------------+-------------------+----------+--------------------+----------+
+|       **Walls**      |   *feet height*   |    +     |         1½"        |   × 8    |
++----------------------+-------------------+----------+--------------------+----------+
+|  **Side stretchers** |   *desk depth*    |    +     |         ½"         |   × 2    |
++----------------------+-------------------+----------+--------------------+----------+
+| **Middle stretcher** |   *desk length*   |          |                    |   × 1    |
++----------------------+-------------------+----------+--------------------+----------+
 
 Here are some diagrams to help you visualize it:
 

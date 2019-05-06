@@ -23,6 +23,7 @@ object {
     display: block;
     margin-right: auto !important;
     margin-left: auto !important;
+    text-align: center;
 }
 
 /* .entry-content figure {
