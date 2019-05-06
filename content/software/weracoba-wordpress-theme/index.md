@@ -12,12 +12,10 @@ Weracoba is my custom-built theme based on [Underscores](https://underscores.me/
 
 A few key ideas guide its design: minimal use of widgets, major use of categories, and a focus on reading content. Since I keep more than just typical "blog" content on my website, this theme helps organize the different categories.
 
-## Use and contributing
+## Current status
 
-Although I use Weracoba, it's not quite ready for public distribution. It lacks several features like customizer options that a WordPress administrator will probably need. But feel free to use it, if you dare. Weracoba is GPL 2.0 licensed, so go ahead and browse the source or copy the code for your own theme. [Pull requests, issue submissions](https://github.com/johnridesabike/Weracoba), and [emails](mailto:jbpjackson@icloud.com) are always welcome.
+I was heavily developing this theme for about a year while I used it on my website. Since I stopped using WordPress, development has officially ended. Feel free to download or fork the original, but be aware that there are a few lingering bugs that I'll probably never fix.
 
-## Notes on using Weracoba
+I tried to follow best practices and introduce a few cutting-edge ideas (at the time). I hope the code is useful to someone learning to develop their own theme. 
 
-There are three widget areas: A sidebar that appears beside posts, a sidebar that appears beside the blog index and archive, and the footer. 
-
-Weracoba has some special styling for Gutenberg blocks. I only styled the ones I’m actively using, so it’s not feature-complete.
+A lot of the ideas and stylesheets are still present on this website's design, although without the WordPress baggage.

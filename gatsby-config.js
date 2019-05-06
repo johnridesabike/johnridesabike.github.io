@@ -1,4 +1,6 @@
 /* eslint-disable camelcase */
+const path = require("path");
+
 module.exports = {
     siteMetadata: {
         title: "John Jackson",
@@ -55,6 +57,16 @@ module.exports = {
         },
         "gatsby-plugin-sharp",
         {
+            resolve: "gatsby-mdx",
+            options: {
+                defaultLayouts: {
+                    default: path.resolve(
+                        "./src/templates/pageMDXTemplate.jsx"
+                    )
+                }
+            }
+        },
+        {
             resolve: "gatsby-transformer-remark",
             options: {
                 "excerpt_separator": "<!-- more -->",
@@ -70,8 +82,8 @@ module.exports = {
                         }
                     },
                     "gatsby-remark-static-images",
-                    // "gatsby-remark-bracketed-spans",
                     "gatsby-remark-copy-linked-files",
+                    "gatsby-remark-grid-tables",
                     "gatsby-remark-attr",
                     {
                         resolve: "gatsby-remark-prismjs",
@@ -111,7 +123,7 @@ module.exports = {
                     }
                 ]
             }
-        },
+        }
         // "gatsby-plugin-breadcrumb",
         // {
         //     resolve: "gatsby-plugin-breadcrumb",

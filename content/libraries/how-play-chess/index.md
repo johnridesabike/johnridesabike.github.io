@@ -4,6 +4,8 @@ author: John Jackson
 date: 2019-03-13
 updated: 2019-03-18
 category: Libraries
+thumbnail: ./chess_Fork.svg
+caption: An example of a chess fork.
 attachments:
     - ./handout-How-to-Play-Chess.pdf
     - ./handout-How-to-Play-Chess.docx
@@ -12,23 +14,14 @@ This guide covers all the knowledge required to play a basic game of chess. It�
 
 Many chess guides exist, so why use this one? I originally wrote this in 2017 as a handout for our [public library chess program](/libraries/chess-library/). After searching for a basic rule booklet, I had only found one-page diagrams of piece moves or hundred-page long books of strategy. Necessity led me to write this, a guide that’s simple yet also covers all the common rules.
 
-<div class="wp-block-columns has-2-columns">
-<div class="wp-block-column">
-<div class="wp-block-file aligncenter"><a href="./handout-How-to-Play-Chess.pdf">PDF printable booklet</a> <a href="./handout-How-to-Play-Chess.pdf" class="wp-block-file__button" download>Download</a>
-</div>
-</div>
-<div class="wp-block-column">
-<div class="wp-block-file aligncenter"><a href="./handout-How-to-Play-Chess.docx">DOCX printable booklet</a> <a href="./handout-How-to-Play-Chess.docx" class="wp-block-file__button" download>Download</a>
-</div>
-</div>
-</div>
+[PDF printable booklet](./handout-How-to-Play-Chess.pdf) • [DOCX printable booklet](./handout-How-to-Play-Chess.docx)
 
 ## Setting up the board
 
 A game of chess has two players, one with “_white_” pieces and one with “_black_” pieces (although you may actually see them as green, blue, or any color). The chessboard is made of alternating dark and light squares, eight wide and eight long.
 
 <div class="wp-block-image">
-    <figure class="aligncenter" style="text-align:center">
+    <figure class="aligncenter">
         <img src="./chess_start.svg" alt="Chess starting position."/>
     </figure>
 </div>
@@ -43,7 +36,7 @@ Begin the game by setting the board as shown above. Keep these details in mind:
 
 White always moves first. Then, the players take turns moving. A player cannot end their turn without moving.
 
-Only one piece can move each turn, with the exception of “_castling_,” a special move. (See <a href="#section-special-moves">_special moves_</a>.)
+Only one piece can move each turn, with the exception of “_castling_,” a special move. (See [_special moves_](#section-special-moves).)
 
 Pieces cannot pass through other pieces, with the exception of moving the knight.
 
@@ -110,10 +103,12 @@ The knight doesn’t move like the other pieces. Instead of a straight line, it 
 ### ♟The pawn ♙
 
 <div class="wp-block-image">
-    <figure class="aligncenter">
+    <figure class="alignright">
         <img src="./chess_Pawn.svg" alt="The pawn’s moves." />
         <figcaption>
-            The dots mark where the pawns can move, and the Xs mark where they can capture.
+            The dots mark where the pawns<br/>
+            can move, and the Xs mark<br/>
+            where they can capture.
         </figcaption>
     </figure>
 </div>
@@ -194,7 +189,10 @@ This move is only an option on the turn immediately following the first pawn’s
     <figure class="alignright">
         <img src="./chess_Checkmate.svg" alt="A checkmate position."/>
         <figcaption>
-            The black king has been checkmated by the white queen. No matter where Black moves, they can’t escape check.
+            The black king has been<br/>
+            checkmated by the white queen.<br/>
+            No matter where Black moves,<br/>
+            they can’t escape check.
         </figcaption>
     </figure>
 </div>
@@ -215,7 +213,9 @@ A player can never move their own king into check. This includes moving a piece 
     <figure class="alignright">
         <img src="./chess_Stalemate.svg" alt="A stalemate position."/>
         <figcaption>
-            Black has no legal move, so this is a stalemate. (If it’s Black’s turn to move.)
+            Black has no legal move, so<br/>
+            this is a stalemate. (If it’s<br/>
+            Black’s turn to move.)
         </figcaption>
     </figure>
 </div>
@@ -259,7 +259,9 @@ Several situations will end the game in a draw. Some are obvious, but others can
     <figure class="alignright">
         <img src="./chess_Fork.svg" alt="A fork position." />
         <figcaption>
-            The black knight is forking the white king and white queen. White cannot save both pieces.
+            The black knight is forking<br/>
+            the white king and white queen.<br/>
+            White cannot save both pieces.
         </figcaption>
     </figure>
 </div>
@@ -283,7 +285,10 @@ Several situations will end the game in a draw. Some are obvious, but others can
 <div class="wp-block-image">
     <figure class="alignright">
         <img src="./chess_Pin.svg" alt="A pin position."/>
-        <figcaption>The white rook is pinning the black knight.</figcaption>
+        <figcaption>
+            The white rook is pinning the<br/>
+            black knight.
+        </figcaption>
     </figure>
 </div>
 
@@ -304,5 +309,5 @@ Several situations will end the game in a draw. Some are obvious, but others can
 **Zugzwang**: When a player is forced to make a move when they would rather pass without moving.
 
 <nav class="post-nav-links">
-<a href="./notes/" class="next">Notes</a>
+<a href="./notes/" class="next">Keep reading to the endnotes →</a>
 </nav>
