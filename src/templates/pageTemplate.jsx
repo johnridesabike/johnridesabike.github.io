@@ -77,9 +77,9 @@ export default function Template({
                 postSEO
             />
             <main id="main" className="site-main">
-                <article className="post">
+                <article>
                     <div
-                        className={style.content}
+                        className="page-content"
                         dangerouslySetInnerHTML={{
                             __html: postNode.html
                         }}

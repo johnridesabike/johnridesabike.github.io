@@ -28,12 +28,6 @@
     width: 100%;
 }
 
-.content > *:not(.alignwide):not(.alignfull) {
-    max-width: var(--size-content);
-    margin-right: auto;
-    margin-left: auto;
-}
-
 .footer {
     margin-top: 1em;
     margin-bottom: 1em;
