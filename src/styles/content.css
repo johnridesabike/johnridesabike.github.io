@@ -1,25 +1,26 @@
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
 .site {
-    /* fixes bug where full-bleed content creates horizontal scrollbar. May have undesireable side effects...? */
+    /*
+    fixes bug where full-bleed content creates horizontal scrollbar.
+    May have undesireable side effects...?
+    */
     overflow-x: hidden;
 }
 
-.site-header, .site-footer, .site-content {
+.site-header,
+.site-footer,
+.site-content {
     padding-right: 1rem;
     padding-left: 1rem;
 }
 
 .site-content {
-    padding-bottom: 1em;
-    /* give some space for the footer */
+    padding-bottom: 1em; /* give some space for the footer */
     background-color: #fff;
 }
 
 @media screen and (min-width: 1200px) {
     .site-content {
-        max-width: 1200px;
+        max-width: var(--size-site-width);
         margin-right: auto;
         margin-left: auto;
     }
@@ -34,15 +35,6 @@
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-/** General **/
-.sticky {
-    display: block;
-}
-
-.updated:not(.published) {
-    display: none;
-}
-
 /** Nav links under paginated posts. **/
 .post-nav-links {
     clear: both;
@@ -58,11 +50,10 @@
 /* 
  * Entry header
  */
-.entry-header .cat-links {
+/* .entry-header .cat-links {
     font-size: 0.88889em;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-}
 
 .entry-header .entry-title {
     margin: 0;
@@ -71,7 +62,7 @@
 .entry-header a {
     text-decoration: none;
 }
-
+ */
 .entry-title__link {
     color: #19191a;
 }
@@ -84,7 +75,7 @@
     color: #05b7c7;
 }
 
-.entry-meta__single {
+/* .entry-meta__single {
     display: flex;
     margin-top: 0.5em;
     font-size: 0.88889em;
@@ -102,6 +93,7 @@
     display: flex;
     flex-flow: column nowrap;
 }
+*/
 
 /*
  * Entry Footer
@@ -115,7 +107,7 @@
     font-style: italic;
 }
 
-.entry-footer a {
+/* .entry-footer a {
     text-decoration: none;
 }
 
@@ -132,15 +124,15 @@
 .entry-footer__single .entry-footer__item {
     margin-bottom: 0.5em;
 }
-
+ */
 /*
  * Post body
  */
-.single .post .entry-content > *:not(.alignwide):not(.alignfull) {
+/* .single .post .entry-content > *:not(.alignwide):not(.alignfull) {
     max-width: 680px;
     margin-right: auto;
     margin-left: auto;
-}
+} */
 
 /*
  * Asides & excerpts
@@ -209,7 +201,7 @@ article.format-aside {
     display: block;
 }
 
-.tab-head {
+/* .tab-head {
     display: inline-block;
     margin: 0;
     padding: 0 0.5em;
@@ -235,7 +227,7 @@ article.format-aside {
 .tab-head [rel~="category"]:active,
 .tab-head [rel~="category"]:focus {
     background-color: #05b7c7;
-}
+} */
 
 .excerpt-entry .entry-meta,
 .format-aside .entry-meta {
@@ -286,7 +278,7 @@ article.format-aside {
 /*
  * Error 404 & Search Page
  */
-.search-results .entry-header .search-form,
+/* .search-results .entry-header .search-form,
 .error404 .page-content .search-form {
     margin-bottom: 1em;
     text-align: center;
@@ -295,7 +287,7 @@ article.format-aside {
 .search-results .entry-header .search-form [type="search"],
 .error404 .page-content .search-form [type="search"] {
     margin-bottom: 0.5em;
-}
+} */
 
 /*
  * Media queries
@@ -304,7 +296,7 @@ article.format-aside {
     /*
 	 * Entry footer
 	 */
-    .entry-footer__single {
+    /* .entry-footer__single {
         max-width: 1200px;
         margin: auto;
     }
@@ -318,7 +310,7 @@ article.format-aside {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-    }
+    } */
     /*
 	 * Asides
 	 */
@@ -391,11 +383,11 @@ article.format-aside {
     /*
 	 * Entry header
 	 */
-    .entry-meta__single .avatar {
+    /* .entry-meta__single .avatar {
         width: 96px;
         height: 96px;
-    }
-    .single .has-post-thumbnail .entry-header {
+    } */
+    /* .single .has-post-thumbnail .entry-header {
         display: flex;
         flex-direction: row-reverse;
         align-items: stretch;
@@ -410,7 +402,7 @@ article.format-aside {
     }
     .single .entry-title {
         margin: 0.5em 0;
-    }
+    } */
 }
 
 /*--------------------------------------------------------------

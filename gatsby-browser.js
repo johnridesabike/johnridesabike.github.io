@@ -7,6 +7,7 @@
 // You can delete this file if you're not using it
 import "normalize.css";
 import "firacode/distr/fira_code.css";
+import "./src/styles/variables.css";
 import "./src/styles/elements.css";
 import "./src/styles/typography.css";
 import "./src/styles/header-footer.css";
