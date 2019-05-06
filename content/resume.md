@@ -3,7 +3,7 @@ title: "Résumé"
 updated: 2019-04-03
 class: page
 ---
-<p style="text-align:center" class="has-large-font-size">John Jackson • Columbus, GA</p>
+<p class="has-large-font-size">John Jackson • Columbus, GA</p>
 
 I’m a public library staffer and MLIS graduate who is interested in digital library technologies, web development, and libraries of all types. I like to  bike, write, build, and tinker.
 

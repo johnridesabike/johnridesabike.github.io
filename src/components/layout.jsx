@@ -8,12 +8,14 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import {StaticQuery, graphql} from "gatsby";
+import classnames from "classnames";
+import styles from "./layout.module.css";
 import VisuallyHidden from "@reach/visually-hidden";
 import Sidebar from "./sidebar";
 import Footer from "./footer";
 import Header from "./header";
 
-const Layout = ({children, entryHeader, classNames, thumbnail}) => (
+const Layout = ({children, entryHeader}) => (
     <StaticQuery
         query={graphql`
             query SiteTitleQuery {
@@ -27,7 +29,7 @@ const Layout = ({children, entryHeader, classNames, thumbnail}) => (
         `}
         render={(data) => (
             <Fragment>
-                <div id="page" className={"site " + classNames}>
+                <div id="page" className={styles.site}>
                     <VisuallyHidden>
                         <a className="skip-link" href="#content">
                             Skip to content
@@ -37,10 +39,15 @@ const Layout = ({children, entryHeader, classNames, thumbnail}) => (
                         siteTitle={data.site.siteMetadata.title}
                         siteDescription={data.site.siteMetadata.description}
                         entryHeader={entryHeader}
-                        thumbnail={thumbnail} // to trigger the thumbnail wrapper
                     />
-                    <div id="content" className="site-content">
-                        <main>{children}</main>
+                    <div
+                        id="content"
+                        className={classnames(
+                            styles.content,
+                            "smallscreen-padding"
+                        )}
+                    >
+                        {children}
                         <Sidebar />
                     </div>
                     <Footer />
