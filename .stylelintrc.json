@@ -2,6 +2,7 @@
     "extends": "stylelint-config-recommended",
     "rules": {
         "max-line-length": 80,
-        "indentation": 4
+        "indentation": 4,
+        "declaration-block-trailing-semicolon": "always"
     }
 }

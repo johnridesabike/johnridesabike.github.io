@@ -1,0 +1,7 @@
+.svgIcon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    transition: fill 120ms ease-in-out;
+    fill: currentColor;
+}

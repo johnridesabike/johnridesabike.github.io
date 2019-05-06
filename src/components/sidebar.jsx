@@ -1,9 +1,10 @@
 import React from "react";
 import {Link} from "gatsby";
 import johnPic from "../images/john2018.jpg";
+import styles from "../styles/widgets.module.css";
+import classnames from "classnames";
 import {
     ChessIcon,
-    // FeedIcon,
     GitHubIcon,
     LibraryThingIcon,
     LinkedInIcon
@@ -33,32 +34,33 @@ const socialMenu = [
 ];
 
 const Sidebar = () => (
-    <aside id="secondary" className="widget-area has-ui-font">
-        <section className="widget widget__main widget_text">
-            <h4 className="widgettitle">About John</h4>
-            <div className="textwidget">
-                <p>
-                    <img
-                        className="wp-image-50 size-thumbnail avatar alignleft"
-                        src={johnPic}
-                        alt="Portrait of John"
-                        scale="0"
-                        width="150"
-                        height="150"
-                    />
-                </p>
-                <p>
-                    I’m a public library staffer who is interested in digital
-                    library technologies, web development, and libraries of all
-                    types.
-                </p>
-                <p>
-                    This website is home to my blog, portfolio, and other
-                    projects I’ve managed.{" "}
-                    <Link to="/">Head to the home page</Link> if this is your
-                    first time here.
-                </p>
-            </div>
+    <aside
+        id="secondary"
+        className={classnames(styles.widgetArea, "has-ui-font")}
+    >
+        <section className={styles.widget}>
+            <h4>About John</h4>
+            <p>
+                <img
+                    className="avatar alignleft"
+                    src={johnPic}
+                    alt="Portrait of John"
+                    scale="0"
+                    width="150"
+                    height="150"
+                />
+            </p>
+            <p>
+                I’m a public library staffer who is interested in digital
+                library technologies, web development, and libraries of all
+                types.
+            </p>
+            <p>
+                This website is home to my blog, portfolio, and other
+                projects I’ve managed.{" "}
+                <Link to="/">Head to the home page</Link> if this is your
+                first time here.
+            </p>
         </section>
         {/* <section
             id="contextual_feed_widget-3"
@@ -77,23 +79,17 @@ const Sidebar = () => (
                 </li>
             </ul>
         </section> */}
-        <section className="widget widget__main widget_nav_menu">
-            <h4 className="widgettitle">Connect with John</h4>
-            <div className="menu-social-menu-container">
-                <ul id="menu-social-menu" className="menu">
-                    {socialMenu.map((item) => (
-                        <li
-                            key={item.url}
-                            // eslint-disable-next-line max-len
-                            className="menu-item menu-item-type-custom menu-item-object-custom menu-item-101"
-                        >
-                            <a href={item.url}>
-                                {item.icon}&nbsp;{item.title}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+        <section className={styles.widget}>
+            <h4 >Connect with John</h4>
+            <ul id="menu-social-menu" className="menu">
+                {socialMenu.map((item) => (
+                    <li key={item.url}>
+                        <a href={item.url}>
+                            {item.icon}&nbsp;{item.title}
+                        </a>
+                    </li>
+                ))}
+            </ul>
         </section>
     </aside>
 );

@@ -1,72 +1,14 @@
-/*--------------------------------------------------------------
-# Blocks
---------------------------------------------------------------*/
-/**
-** Archives
-**/
-.wp-block-archives-list, .wp-block-categories-list,
-.wp-block-categories__list, .wp-block-latest-posts {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-.wp-block-archives-list li, .wp-block-categories-list li, .wp-block-categories__list li, .wp-block-latest-posts li {
-    display: block;
-    margin-bottom: 0.5em;
-    padding: 0;
-}
-
-.wp-block-archives-list li ul, .wp-block-categories-list li ul, .wp-block-categories__list li ul, .wp-block-latest-posts li ul,
-.wp-block-archives-list li ol,
-.wp-block-categories-list li ol,
-.wp-block-categories__list li ol,
-.wp-block-latest-posts li ol {
-    margin-left: 0.5em;
-}
-
-.wp-block-archives-list li a, .wp-block-categories-list li a, .wp-block-categories__list li a, .wp-block-latest-posts li a {
-    display: block;
-    padding: 0.5em 0;
-    border-bottom: 1px dashed currentColor;
-    text-decoration: none;
-}
-
-.wp-block-archives-list li a:hover, .wp-block-categories-list li a:hover, .wp-block-categories__list li a:hover, .wp-block-latest-posts li a:hover, .wp-block-archives-list li a:active, .wp-block-categories-list li a:active, .wp-block-categories__list li a:active, .wp-block-latest-posts li a:active, .wp-block-archives-list li a:focus, .wp-block-categories-list li a:focus, .wp-block-categories__list li a:focus, .wp-block-latest-posts li a:focus {
-    border-bottom: 1px dashed currentColor;
-    text-decoration: none;
-}
-
-.wp-block-archives-list .children, .wp-block-categories-list .children, .wp-block-categories__list .children, .wp-block-latest-posts .children,
-.wp-block-archives-list .sub-menu,
-.wp-block-categories-list .sub-menu,
-.wp-block-categories__list .sub-menu,
-.wp-block-latest-posts .sub-menu {
-    margin-left: 1em;
-    padding-top: 0;
-    padding-bottom: 0.5em;
-    font-size: 0.88889em;
-}
-
-.wp-block-archives-list .children a::before, .wp-block-categories-list .children a::before, .wp-block-categories__list .children a::before, .wp-block-latest-posts .children a::before,
-.wp-block-archives-list .sub-menu a::before,
-.wp-block-categories-list .sub-menu a::before,
-.wp-block-categories__list .sub-menu a::before,
-.wp-block-latest-posts .sub-menu a::before {
-    content: "↳ ";
-}
-
 /**
 ** button
 **/
 .wp-block-button__link, .wp-block-file .wp-block-file__button {
-    color: #fff;
-    background-color: #03727c;
+    color: var(--color-bg-body);
+    background-color: var(--color-link);
     display: inline-block;
     padding: 0.2em 0.75em;
-    border: 1px solid #19191a;
+    border: 1px solid var(--color-text-main);
     border-radius: 0.625em;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: var(--font-UI);
     text-decoration: none;
     cursor: pointer;
     text-shadow: 0 0 2px black;
@@ -76,43 +18,30 @@
     filter: drop-shadow(0 0 1px black);
 }
 
-.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .wp-block-button__link:active, .wp-block-file .wp-block-file__button:active {
-    color: #fff;
-    background-color: #05b7c7;
+.wp-block-button__link:hover,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:focus,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-button__link:active,
+.wp-block-file .wp-block-file__button:active {
+    color: var(--color-bg-body);
+    background-color: var(--color-link-hover);
     text-decoration: none;
 }
 
-.wp-block-button__link:visited, .wp-block-file .wp-block-file__button:visited {
-    color: #fff;
+.wp-block-button__link:visited,
+.wp-block-file .wp-block-file__button:visited {
+    color: var(--color-bg-body);
 }
 
-.is-style-squared .wp-block-button__link, .is-style-squared .wp-block-file .wp-block-file__button, .wp-block-file .is-style-squared .wp-block-file__button {
+.is-style-squared .wp-block-button__link,
+.is-style-squared .wp-block-file .wp-block-file__button,
+.wp-block-file .is-style-squared .wp-block-file__button {
     border: none;
     border-radius: 0.15em;
 }
 
-.is-style-outline {
-    color: #03727c;
-}
 
-.is-style-outline .wp-block-button__link, .is-style-outline .wp-block-file .wp-block-file__button, .wp-block-file .is-style-outline .wp-block-file__button {
-    border: 2px solid;
-    color: currentColor;
-    background-color: transparent;
-    text-shadow: none;
-}
-
-.is-style-outline .wp-block-button__link:hover, .is-style-outline .wp-block-file .wp-block-file__button:hover, .wp-block-file .is-style-outline .wp-block-file__button:hover, .is-style-outline .wp-block-button__link:focus, .is-style-outline .wp-block-file .wp-block-file__button:focus, .wp-block-file .is-style-outline .wp-block-file__button:focus, .is-style-outline .wp-block-button__link:active, .is-style-outline .wp-block-file .wp-block-file__button:active, .wp-block-file .is-style-outline .wp-block-file__button:active {
-    color: #05b7c7;
-    background-color: transparent;
-}
-
-/**
-** calendar
-**/
-/**
-** categories
-*/
 /**
 ** columns
 **/
@@ -121,123 +50,30 @@
 }
 
 /**
-** cover
-**/
-.wp-block-cover .wp-block-cover-text {
-    color: #fff;
-    font-size: 1.75em;
-}
-
-/**
 ** file
 **/
 .wp-block-file .wp-block-file__button {
-    font-size: 0.8em;
+    font-size: var(--font-size-xs);
 }
 
-.wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:visited, .wp-block-file .wp-block-file__button:focus, .wp-block-file .wp-block-file__button:active {
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-file .wp-block-file__button:visited,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:active {
     opacity: 1;
-}
-
-/**
-** gallery
-**/
-.wp-block-gallery .blocks-gallery-item figcaption {
-    margin-bottom: 0;
-    padding: 0.2em 0.5em;
-    opacity: 1;
-    color: #fff;
-    background: linear-gradient(transparent 0, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.8) 100%);
-    text-shadow: 0 0 6px #19191a;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-size: 0.8em;
 }
 
 /**
 ** image
 **/
 .wp-block-image figcaption {
-    color: #19191a;
+    color: var(--color-text-main);
     margin-top: 0;
     margin-bottom: 0.5em;
     opacity: 0.8;
-    font-size: 0.88889em;
+    font-size: var(--font-size-sm);
     text-align: center;
 }
-
-/**
-** latest-comments
-**/
-.wp-block-latest-comments__comment {
-    font-size: 1em;
-}
-
-.wp-block-latest-comments__comment-meta {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-size: 0.8em;
-}
-
-.wp-block-latest-comments__comment-meta a {
-    text-decoration: none;
-}
-
-.wp-block-latest-comments__comment-excerpt p {
-    font-size: 0.88889em;
-}
-
-/**
-** latest-posts
-**/
-.wp-block-latest-posts__post-date {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
-/**
-** pullquote
-**/
-.wp-block-pullquote {
-    padding: 2em 0;
-    border-top-width: 4px;
-    border-top-style: solid;
-    border-bottom-width: 4px;
-    border-bottom-style: solid;
-}
-
-.wp-block-pullquote blockquote {
-    border-left: none;
-}
-
-.wp-block-pullquote p,
-.wp-block-pullquote blockquote > .editor-rich-text p {
-    font-size: 1.5em;
-}
-
-/**
-** rss
-**/
-/**
-** separator
-**/
-.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
-    width: 5em;
-}
-
-.wp-block-separator.is-style-dots {
-    height: 0;
-    background: none;
-    text-align: center;
-}
-
-.wp-block-separator.is-style-dots::before {
-    color: #19191a;
-    font-size: 20px;
-    letter-spacing: 2em;
-    content: "\00b7 \00b7 \00b7";
-}
-
-/**
-** table
-**/
 /**
 ** Alignments
 */
@@ -345,7 +181,8 @@
     padding: 0 8%;
 }
 
-.wp-block-media-text > figure > img, .wp-block-media-text > figure > video {
+.wp-block-media-text > figure > img,
+.wp-block-media-text > figure > video {
     max-width: unset;
     width: 100%;
     vertical-align: middle;
