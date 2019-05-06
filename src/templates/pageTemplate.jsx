@@ -16,20 +16,21 @@ export default function Template({
     const post = postNode.frontmatter;
     return (
         <Layout
-            thumbnail={false} // to trigger the thumbnail wrapper
-            classNames={post.class || "single"}
             entryHeader={
                 <div
                     className={classnames(
-                        "entry-header",
                         "has-ui-font",
-                        post.class,
-                        {"single": !post.class},
+                        style.header,
                         {[`${style.hasThumbnail}`]: post.thumbnail}
                     )}
                 >
                     {post.thumbnail && (
-                        <figure className={`full-bleed ${style.coverFigure}`}>
+                        <figure
+                            className={classnames(
+                                "full-bleed",
+                                style.coverFigure
+                            )}
+                        >
                             <img
                                 src={post.thumbnail.publicURL}
                                 className={style.coverImg}
@@ -44,7 +45,12 @@ export default function Template({
                         </figure>
                     )}
                     <div className={style.headerWrap}>
-                        <h1 className={`${style.title} has-body-font`}>
+                        <h1
+                            className={classnames(
+                                "has-body-font",
+                                style.title
+                            )}
+                        >
                             {post.title}
                         </h1>
                         <div className={style.meta}>
@@ -105,7 +111,10 @@ export default function Template({
                         </div>
                     )}
                     <footer className={`${style.footer} has-ui-font`}>
-                        <div className={`post-time ${style.footerItem}`}>
+                        <div className={classnames(
+                            style.postTime,
+                            style.footerItem
+                        )}>
                             <time dateTime={post.ISOUpdated}>
                                 Updated on {post.updated || post.date}
                             </time>

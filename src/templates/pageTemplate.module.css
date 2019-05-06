@@ -13,6 +13,15 @@
     flex-flow: row nowrap;
 }
 
+.header {
+    width: var(--size-content);
+    margin: auto;
+}
+
+.hasThumbnail.header {
+    width: var(--size-max-width);
+}
+
 .metaWrapper {
     display: flex;
     flex-flow: column nowrap;
@@ -41,6 +50,11 @@
 
 .footerItem {
     margin-bottom: 0.5em;
+}
+
+.postTime {
+    font-size: var(--font-size-sm);
+    font-style: italic;
 }
 
 .coverFigure {
