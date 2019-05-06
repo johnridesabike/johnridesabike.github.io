@@ -1,177 +1,3 @@
-
-/*--------------------------------------------------------------
-## Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-### Menus
---------------------------------------------------------------*/
-.main-navigation {
-    display: block;
-    clear: both;
-    position: relative;
-    text-align: center;
-}
-
-.main-navigation a {
-    display: inline-block;
-    padding: 0.5em 0 0.5em 0;
-}
-
-.main-navigation .menu-item {
-    float: none;
-    position: relative;
-}
-
-.main-navigation .menu-item .menu-item {
-    padding: 0;
-}
-
-.main-navigation .menu-item:hover > a,
-.main-navigation .menu-item.focus > a {
-    color: #05b7c7;
-}
-
-.main-navigation ul.menu,
-.main-navigation ul.sub-menu {
-    margin: 0;
-    padding: 0 1em;
-    list-style: none;
-}
-
-.main-navigation .menu {
-    display: none;
-    position: relative;
-    border-top-width: 2px;
-    border-top-style: solid;
-}
-
-.main-navigation .menu :hover > a,
-.main-navigation .menu .focus > a {
-    color: #05b7c7;
-}
-
-.main-navigation .menu a:hover,
-.main-navigation .menu a.focus {
-    color: #05b7c7;
-}
-
-.main-navigation .sub-menu {
-    display: block;
-    float: left;
-    position: absolute;
-    z-index: 99999;
-    top: 100%;
-    left: -999em;
-    width: 100%;
-    border-width: 0;
-    border-style: none;
-    border-radius: 0.25em;
-    background: #fff;
-    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.2);
-}
-
-.main-navigation .sub-menu .sub-menu {
-    left: -999em;
-}
-
-.main-navigation .menu-item:hover > .sub-menu,
-.main-navigation .menu-item.focus > .sub-menu {
-    right: 0;
-    left: auto;
-}
-
-.menu-item-has-children > a::after {
-    margin-left: 0.25em;
-    font-size: 0.8em;
-    content: "▼";
-}
-
-/*
- * Small menu.
- */
-.menu-toggle {
-    display: block;
-    padding: 0.1em;
-    border-style: none;
-    color: #03727c;
-    background: none;
-    box-shadow: none;
-}
-
-.menu-toggle:hover, .menu-toggle:focus, .menu-toggle:active {
-    color: #03727c;
-    background: none;
-    transform: none;
-}
-
-.menu-toggle .svg-icon {
-    font-size: 40px;
-    filter: none;
-}
-
-.menu-button .menu-toggle,
-.main-navigation.toggled .menu {
-    display: block;
-}
-
-.menu-button {
-    position: relative;
-    margin: 0.25em 0 0.25em 0.25em;
-    text-align: right;
-}
-
-.menu-button .dismiss-icon {
-    display: none;
-}
-
-.menu-button.toggled .menu-icon {
-    display: none;
-}
-
-.menu-button.toggled .dismiss-icon {
-    display: inline;
-}
-
-/*
- * Media queries
- */
-@media screen and (min-width: 600px) {
-    .menu-toggle {
-        display: none;
-    }
-    .menu-button {
-        display: none;
-    }
-    .main-navigation {
-        line-height: 1.1;
-        /* fixes vertical dropdown menu spacing */
-    }
-    .main-navigation .menu {
-        display: flex;
-        justify-content: flex-end;
-    }
-    .main-navigation .menu-item {
-        padding-left: 1.2em;
-    }
-    .main-navigation .menu-item:first-child {
-        padding-left: 0;
-    }
-    .main-navigation .sub-menu {
-        width: auto;
-        margin-left: 0;
-        padding: 0 1em;
-        text-align: left;
-    }
-    .main-navigation .sub-menu .sub-menu {
-        top: 0;
-        width: 100%;
-    }
-    .main-navigation .sub-menu .menu-item:hover > .sub-menu,
-    .main-navigation .sub-menu .menu-item.focus > .sub-menu {
-        left: 100%;
-    }
-}
-
 /*--------------------------------------------------------------
 ### Content navigation
 --------------------------------------------------------------*/
@@ -199,8 +25,8 @@
     padding-top: 1em;
     border-top-width: 4px;
     border-top-style: solid;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-size: 1.25em;
+    font-family: var(--font-UI);
+    font-size: var(--font-size-lg);
     text-align: center;
 }
 
@@ -225,10 +51,10 @@
 .post-page-numbers.current,
 .page-numbers.current,
 .current_page_item > a,
-.current-menu-item > a,
+/* .current-menu-item > a, */
 .current_page_ancestor > a,
 .current-menu-ancestor > a {
-    border-color: #05b7c7;
+    border-color: var(--color-link-hover);
     border-bottom-width: 2px;
     border-bottom-style: solid;
 }
@@ -255,7 +81,7 @@
 
 /* The previous and next posts in entry-footer */
 .attachment .post-navigation .meta-nav {
-    color: #19191a;
+    color: var(--color-text-main);
 }
 
 .attachment .post-navigation .post-title {
@@ -267,7 +93,7 @@
 }
 
 .single-post .post-navigation .meta-nav {
-    color: #19191a;
+    color: var(--color-text-main);
 }
 
 .single-post .post-navigation .meta-nav,
@@ -334,6 +160,6 @@
 
 @media screen and (min-width: 900px) {
     .post-navigation .post-title {
-        font-size: 1.25em;
+        font-size: var(--font-size-lg);
     }
 }

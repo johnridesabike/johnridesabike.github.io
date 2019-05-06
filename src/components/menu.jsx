@@ -1,64 +1,68 @@
 import {Link} from "gatsby";
 import PropTypes from "prop-types";
 import React, {Fragment, useState} from "react";
-import {Location} from "@reach/router";
 import VisuallyHidden from "@reach/visually-hidden";
+import classnames from "classnames";
 import {MenuIcon, DismissIcon} from "./icons";
+import styles from "./menu.module.css";
 
-function Menu({links}) {
-    const [menuClasses, setMenuClasses] = useState("");
+function Menu({links, location}) {
+    const [menuToggled, setMenuToggled] = useState("");
     return (
-        <Location>
-            {({location}) => (
-                <Fragment>
-                    <div className="menu-button" id="toggle-button">
-                        <button
-                            className="menu-toggle"
-                            aria-controls="primary-menu"
-                            aria-expanded="false"
-                            onClick={() => (
-                                (menuClasses === "")
-                                    ? setMenuClasses("toggled")
-                                    : setMenuClasses("")
-                            )}
-                        >
-                            <VisuallyHidden>Menu</VisuallyHidden>
-                            <span className="menu-icon">
-                                <MenuIcon />
-                            </span>
-                            <span className="dismiss-icon">
-                                <DismissIcon />
-                            </span>
-                        </button>
-                    </div>
-                    <nav
-                        id="site-navigation"
-                        className={"main-navigation has-ui-font " + menuClasses}
-                    >
-                        <div className="menu-main-menu-container">
-                            <ul
-                                id="primary-menu"
-                                className="menu nav-menu"
-                                aria-expanded="false"
+        <Fragment>
+            <div
+                id="toggle-button"
+                className={classnames(styles.menuButton, menuToggled)}
+            >
+                <button
+                    className={styles.toggle}
+                    aria-controls="primary-menu"
+                    aria-expanded="false"
+                    onClick={() => (
+                        (menuToggled === "")
+                        ? setMenuToggled(styles.toggled)
+                        : setMenuToggled("")
+                    )}
+                >
+                    <VisuallyHidden>Menu</VisuallyHidden>
+                    <MenuIcon className={classnames(
+                        styles.toggleIcon,
+                        styles.menuIcon
+                    )}/>
+                    <DismissIcon className={classnames(
+                        styles.toggleIcon,
+                        styles.dismissIcon
+                    )}/>
+                </button>
+            </div>
+            <nav
+                id="site-navigation"
+                className={classnames("has-ui-font", styles.navigation)}
+            >
+                <ul
+                    id="primary-menu"
+                    className={classnames(styles.menu, menuToggled)}
+                    aria-expanded="false"
+                >
+                    {links.map((link) => (
+                        <li key={link.url} className={styles.menuItem}>
+                            <Link
+                                to={link.url}
+                                className={classnames(
+                                    styles.menuLink,
+                                    {
+                                        [`${styles.menuLink__current}`]:
+                                        location.pathname === link.url
+                                    }
+                                )}
                             >
-                                {links.map((link) => (
-                                    <li
-                                        key={link.url}
-                                        className={
-                                            location.pathname === link.url
-                                                ? "menu-item current-menu-item"
-                                                : "menu-item"
-                                        }
-                                    >
-                                        <Link to={link.url}>{link.title}</Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </nav>
-                </Fragment>
-            )}
-        </Location>
+                                {link.title}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+        </Fragment>
     );
 }
 

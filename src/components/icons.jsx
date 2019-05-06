@@ -1,9 +1,11 @@
 /* eslint-disable max-len */
 import React from "react";
+import classnames from "classnames";
+import {svgIcon} from "./icons.module.css";
 
-export const ChessIcon = () => (
+export const ChessIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="24"
         height="24"
         aria-hidden="true"
@@ -17,9 +19,9 @@ export const ChessIcon = () => (
     </svg>
 );
 
-export const FeedIcon = () => (
+export const FeedIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="24"
         height="24"
         aria-hidden="true"
@@ -33,9 +35,9 @@ export const FeedIcon = () => (
     </svg>
 );
 
-export const GitHubIcon = () => (
+export const GitHubIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="24"
         height="24"
         aria-hidden="true"
@@ -49,9 +51,9 @@ export const GitHubIcon = () => (
     </svg>
 );
 
-export const LibraryThingIcon = () => (
+export const LibraryThingIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="24"
         height="24"
         aria-hidden="true"
@@ -65,9 +67,9 @@ export const LibraryThingIcon = () => (
     </svg>
 );
 
-export const LinkedInIcon = () => (
+export const LinkedInIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="24"
         height="24"
         aria-hidden="true"
@@ -151,9 +153,9 @@ export const CCIcon = (props) => (
     </svg>
 );
 
-export const MailIcon = () => (
+export const MailIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="24"
         height="24"
         aria-hidden="true"
@@ -167,7 +169,7 @@ export const MailIcon = () => (
     </svg>
 );
 
-export const LibraryIcon = () => (
+export const LibraryIcon = ({className}) => (
     <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -185,7 +187,7 @@ export const LibraryIcon = () => (
     </svg>
 );
 
-export const SoftwareIcon = () => (
+export const SoftwareIcon = ({className}) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
@@ -199,7 +201,7 @@ export const SoftwareIcon = () => (
     </svg>
 );
 
-export const ToolIcon = () => (
+export const ToolIcon = ({className}) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
@@ -213,9 +215,9 @@ export const ToolIcon = () => (
     </svg>
 );
 
-export const TagIcon = () => (
+export const TagIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="24"
         height="24"
         aria-hidden="true"
@@ -229,9 +231,9 @@ export const TagIcon = () => (
     </svg>
 );
 
-export const ChevronRightIcon = () => (
+export const ChevronRightIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="24"
         height="24"
         aria-hidden="true"
@@ -245,9 +247,9 @@ export const ChevronRightIcon = () => (
     </svg>
 );
 
-export const CalendarIcon = () => (
+export const CalendarIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="20"
         height="20"
         aria-hidden="true"
@@ -262,9 +264,9 @@ export const CalendarIcon = () => (
     </svg>
 );
 
-export const PersonIcon = () => (
+export const PersonIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="24"
         height="24"
         aria-hidden="true"
@@ -279,9 +281,9 @@ export const PersonIcon = () => (
     </svg>
 );
 
-export const MenuIcon = () => (
+export const MenuIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="20"
         height="20"
         aria-hidden="true"
@@ -297,9 +299,9 @@ export const MenuIcon = () => (
     </svg>
 );
 
-export const DismissIcon = () => (
+export const DismissIcon = ({className}) => (
     <svg
-        className="svg-icon"
+        className={classnames(svgIcon, className)}
         width="20"
         height="20"
         aria-hidden="true"

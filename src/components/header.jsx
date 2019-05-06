@@ -2,31 +2,38 @@ import {Link} from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import classnames from "classnames";
+import {Location} from "@reach/router";
 import Menu from "./menu";
+import styles from "./header.module.css";
 
 const Header = ({siteTitle, siteDescription, entryHeader}) => (
     <header
         id="masthead"
         className={classnames(
-            "site-header",
+            styles.headerWrapper,
             "smallscreen-padding",
         )}
     >
-        <div id="global-header" className="global-header">
-            <div className="site-branding">
-                <p className="site-title">
-                    <Link to="/" rel="home">
+        <div id="global-header" className={styles.globalHeader}>
+            <div className={styles.branding}>
+                <p className={styles.title}>
+                    <Link to="/" rel="home" className={styles.linkHome}>
                         {siteTitle}
                     </Link>
                 </p>
-                <p className="site-description">{siteDescription}</p>
+                <p className={styles.description}>{siteDescription}</p>
             </div>
-            <Menu
-                links={[
-                    {url: "/", title: "Home"},
-                    {url: "/resume/", title: "Résumé"}
-                ]}
-            />
+            <Location>
+                {({location}) => (
+                    <Menu
+                        location={location}
+                        links={[
+                            {url: "/", title: "Home"},
+                            {url: "/resume/", title: "Résumé"}
+                        ]}
+                    />
+                )}
+            </Location>
         </div>
         {entryHeader}
     </header>

@@ -1,0 +1,106 @@
+.menuButton {
+    position: relative;
+    margin: 0.25em 0 0.25em 0.25em;
+    text-align: right;
+    /* so this works with the header css */
+    flex: 0 0 auto;
+}
+
+.navigation {
+    display: block;
+    clear: both;
+    position: relative;
+    text-align: center;
+    /* so this works with the header css */
+    flex: 1 0 100%;
+}
+
+.menuLink {
+    display: inline-block;
+    padding: 0.5em 0 0.5em 0;
+}
+
+.menuLink__current {
+    border-color: var(--color-link-hover);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+.menuItem {
+    float: none;
+    position: relative;
+}
+
+.menuItem .menuItem {
+    padding: 0;
+}
+
+.menu {
+    position: relative;
+    border-top-width: 2px;
+    border-top-style: solid;
+    list-style: none;
+    padding: 0;
+    /* hidden by default on small screens */
+    display: none;
+}
+
+.toggled.menu {
+    display: block;
+}
+
+/* controls for small screen */
+.toggle {
+    display: block;
+    padding: 0.1em;
+    border-style: none;
+    color: var(--color-link);
+    background: none;
+    box-shadow: none;
+}
+
+.toggle:hover,
+.toggle:focus,
+.toggle:active {
+    color: var(--color-link);
+    background: none;
+    transform: none;
+}
+
+.toggleIcon {
+    font-size: 40px;
+    filter: none;
+}
+
+.toggled .menuIcon {
+    display: none;
+}
+
+.dismissIcon {
+    display: none;
+}
+
+.toggled .dismissIcon {
+    display: inline;
+}
+
+@media screen and (min-width: 600px) {
+    .navigation {
+        flex: 0 1 auto;
+    }
+    .toggle,
+    .menuButton {
+        display: none;
+    }
+    .menu,
+    .toggled.menu {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .menuItem {
+        padding-left: 1.2em;
+    }
+    .menuItem:first-child {
+        padding-left: 0;
+    }
+}

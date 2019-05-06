@@ -8,7 +8,7 @@
 
 .content {
     padding-bottom: 1em; /* give some space for the footer */
-    background-color: #fff;
+    background-color: var(--color-bg-body);
 }
 
 @media screen and (min-width: 1200px) {

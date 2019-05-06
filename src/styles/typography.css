@@ -1,27 +1,26 @@
 html {
-    font-size: 20px;
+    font-size: var(--font-base-size);
     line-height: 1.50967;
 }
 
 @media screen and (max-width: 600px) {
     html {
-        font-size: 16px;
+        font-size: var(--font-base-size-mobile);
         line-height: 1.58566;
     }
 }
 
-/* stylelint-disable-next-line no-duplicate-selectors */
 body {
-    color: #19191a;
+    color: var(--color-text-main);
 }
 
 body,
 textarea {
-    font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
+    font-family: var(--font-reading);
 }
 
 input {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: var(--font-UI);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 /* stylelint-disable-next-line no-duplicate-selectors */
 h1 {
     clear: both;
-    font-size: 1.5em;
+    font-size: var(--font-size-xl);
     line-height: 1.3982;
 }
 
@@ -45,36 +44,36 @@ h2 {
     padding-top: 0.5em;
     border-top-width: 4px;
     border-top-style: solid;
-    font-size: 1.25em;
+    font-size: var(--font-size-lg);
     line-height: 1.43744;
 }
 
 h3 {
     clear: both;
-    font-size: 1em;
+    font-size: var(--font-size-md);
     font-weight: 700;
     line-height: 1.50967;
-    letter-spacing: 0.06em;
+    letter-spacing: var(--letter-spacing-allcaps);
     text-transform: uppercase;
 }
 
 h4 {
-    font-size: 0.88889em;
+    font-size: var(--font-size-sm);
     font-weight: 700;
     line-height: 1.56297;
-    letter-spacing: 0.06em;
+    letter-spacing: var(--letter-spacing-allcaps);
     text-transform: uppercase;
 }
 
 /* Please don't use h5 or h6... why do we need them, anyway? */
 h5 {
-    font-size: 0.88889em;
+    font-size: var(--font-size-sm);
     font-weight: 700;
     line-height: 1.56297;
 }
 
 h6 {
-    font-size: 0.8em;
+    font-size: var(--font-size-xs);
     font-weight: 700;
     line-height: 1.62254;
 }
@@ -87,7 +86,7 @@ figcaption {
     margin-top: 0;
     margin-bottom: 0.5em;
     opacity: 0.8;
-    font-size: 0.88889em;
+    font-size: var(--font-size-sm);
     text-align: center;
 }
 
@@ -96,24 +95,23 @@ dfn, cite, em, i {
 }
 
 blockquote {
-    font-size: 0.88889em;
+    font-size: var(--font-size-sm);
 }
 
-/* stylelint-disable-next-line no-duplicate-selectors */
 pre {
     overflow: auto;
     max-width: 100%;
     margin-bottom: 1.6em;
     padding: 1.6em;
     background: #eee;
-    font-family: "Fira Code", "Courier 10 Pitch", Courier, monospace;
+    font-family: var(--font-code);
     line-height: 1.6;
 }
 
 code, kbd, tt, var {
-    font-family: "Fira Code", Menlo, Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-family: var(--font-code);
     font-size: 20px;
-    font-size: 0.8em;
+    font-size: var(--font-size-xs);
 }
 
 abbr, acronym {
@@ -131,100 +129,60 @@ big {
 }
 
 .has-xsmall-font-size {
-    font-size: 0.8em;
+    font-size: var(--font-size-xs);
 }
 
 .has-small-font-size {
-    font-size: 0.88889em;
+    font-size: var(--font-size-sm);
 }
 
 .has-normal-font-size,
 .has-regular-font-size,
 .has-medium-font-size {
-    font-size: 1em;
+    font-size: var(--font-size-md);
 }
 
 .has-large-font-size {
-    font-size: 1.25em;
+    font-size: var(--font-size-lg);
 }
 
 .has-xlarge-font-size,
 .has-huge-font-size,
 .has-larger-font-size {
-    font-size: 1.5em;
+    font-size: var(--font-size-xl);
 }
 
 .has-xxlarge-font-size {
-    font-size: 1.75em;
+    font-size: var(--font-size-xxl);
 }
 
 .has-normal-color {
-    color: #19191a;
+    color: var(--color-text-main);
 }
 
 .has-primary-color,
 .has-link-color {
-    color: #03727c;
+    color: var(--color-link);
 }
 
 .has-primary-light-color {
-    color: #05b7c7;
-}
-
-.has-complementary-color {
-    color: #7c0372;
-}
-
-.has-complementary-light-color {
-    color: #c705b7;
-}
-
-.has-dark-gray-color {
-    color: #111;
-}
-
-.has-light-gray-color {
-    color: #767676;
-}
-
-.has-white-color {
-    color: #fff;
+    color: var(--color-link-hover);
 }
 
 .has-primary-background-color {
-    background-color: #03727c;
+    background-color: var(--color-link);
 }
 
 .has-primary-light-background-color {
-    background-color: #05b7c7;
-}
-
-.has-complementary-background-color {
-    background-color: #7c0372;
-}
-
-.has-complementary-light-background-color {
-    background-color: #c705b7;
-}
-
-.has-dark-gray-background-color {
-    background-color: #111;
-}
-
-.has-light-gray-background-color {
-    background-color: #767676;
-}
-
-.has-white-background-color {
-    background-color: #fff;
+    background-color: var(--color-link-hover);
 }
 
 .has-ui-font {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: var(--font-UI);
 }
 
 .has-body-font {
-    font-family: Palatino, "Palatino Linotype", Athelas, Georgia, Times, "Times New Roman", serif;
+    font-family: var(--font-reading);
 }
 
 .footer-widgets {

@@ -1,8 +1,3 @@
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-/* stylelint-disable-next-line no-duplicate-selectors */
 html {
     box-sizing: border-box;
 }
@@ -10,26 +5,27 @@ html {
 *,
 *::before,
 *::after {
-    /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+    /*
+    Inherit box-sizing to make it easier to change the property for components
+    that leverage other behavior; see
+    https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+    */
     box-sizing: inherit;
 }
 
 * {
-    border-color: #03727c;
+    border-color: var(--color-link);
 }
 
-/* stylelint-disable-next-line no-duplicate-selectors */
 body {
-    background: #fff;
-    /* Fallback for when there is no custom background color defined. */
+    background: var(--color-bg-body);
 }
 
-/* stylelint-disable-next-line no-duplicate-selectors */
 hr {
     height: 2px;
     margin-bottom: 1.5em;
     border: 0;
-    background-color: #03727c;
+    background-color: var(--color-link);
     clear: both;
 }
 
@@ -82,7 +78,6 @@ li > ol {
     margin-left: 0;
 }
 
-/* stylelint-enable no-descending-specificity */
 dt {
     font-weight: 700;
 }
@@ -91,7 +86,6 @@ dd {
     margin: 0 1.5em 1.5em;
 }
 
-/* stylelint-disable-next-line no-duplicate-selectors */
 blockquote {
     margin-right: 0;
     margin-left: 0;
@@ -112,15 +106,15 @@ address {
 
 img,
 svg {
-    max-width: 100%;
     /* Adhere to container width. */
-    height: auto;
+    max-width: 100%;
     /* Make sure images are scaled correctly. */
+    height: auto;
 }
 
 figure {
-    margin: 0 0 1em 0;
     /* Extra wide images within figure tags don't overflow the content area. */
+    margin: 0 0 1em 0;
 }
 
 /* Tables */
@@ -138,7 +132,6 @@ th, td {
 /*--------------------------------------------------------------
 ## Forms
 --------------------------------------------------------------*/
-/* stylelint-disable-next-line no-duplicate-selectors */
 textarea {
     width: 100%;
 }
@@ -182,7 +175,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-    color: #19191a;
+    color: var(--color-text-main);
 }
 
 select {
@@ -194,16 +187,16 @@ select {
 --------------------------------------------------------------*/
 /* stylelint-disable-next-line no-duplicate-selectors */
 a {
-    color: #03727c;
+    color: var(--color-link);
     text-decoration: none;
 }
 
 a:visited {
-    color: #03727c;
+    color: var(--color-link);
 }
 
 a:hover, a:focus, a:active {
-    color: #05b7c7;
+    color: var(--color-link-hover);
     text-decoration: underline;
 }
 
@@ -218,13 +211,13 @@ a:hover, a:active {
 /* All of the buttons and button-like elements */
 /* This can be used in the HTML templates or extended to produce more buttons */
 .button-link__link {
-    color: #fff;
-    background-color: #03727c;
+    color: var(--color-bg-body);
+    background-color: var(--color-link);
     display: inline-block;
     padding: 0.2em 0.75em;
-    border: 1px solid #19191a;
+    border: 1px solid var(--color-text-main);
     border-radius: 0.625em;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: var(--font-UI);
     text-decoration: none;
     cursor: pointer;
     text-shadow: 0 0 2px black;
@@ -235,26 +228,26 @@ a:hover, a:active {
 }
 
 .button-link__link:hover, .button-link__link:focus, .button-link__link:active {
-    color: #fff;
-    background-color: #05b7c7;
+    color: var(--color-bg-body);
+    background-color: var(--color-link-hover);
     text-decoration: none;
 }
 
 .button-link__link:visited {
-    color: #fff;
+    color: var(--color-bg-body);
 }
 
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    color: #fff;
-    background-color: #03727c;
+    color: var(--color-bg-body);
+    background-color: var(--color-link);
     display: inline-block;
     padding: 0.2em 0.75em;
-    border: 1px solid #19191a;
+    border: 1px solid var(--color-text-main);
     border-radius: 0.625em;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: var(--font-UI);
     text-decoration: none;
     cursor: pointer;
     text-shadow: 0 0 2px black;
@@ -277,12 +270,12 @@ input[type="reset"]:active,
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:active {
-    color: #fff;
-    background-color: #05b7c7;
+    color: var(--color-bg-body);
+    background-color: var(--color-link-hover);
     text-decoration: none;
 }
 
 form span.required {
     opacity: 0.8;
-    font-size: 0.8em;
+    font-size: var(--font-size-xs);
 }
