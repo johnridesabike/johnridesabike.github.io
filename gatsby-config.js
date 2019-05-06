@@ -44,6 +44,15 @@ module.exports = {
             }
         },
         // "gatsby-transformer-remark",
+        {
+            resolve: "gatsby-plugin-postcss",
+            options: {
+                postCssPlugins: [
+                    require("postcss-custom-properties")({
+                        importFrom: "./src/styles/variables.css"
+                    })]
+            }
+        },
         "gatsby-plugin-sharp",
         {
             resolve: "gatsby-transformer-remark",

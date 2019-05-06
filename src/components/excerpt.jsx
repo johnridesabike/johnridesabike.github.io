@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "gatsby";
+import VisuallyHidden from "@reach/visually-hidden";
 import {ChevronRightIcon} from "../components/icons";
 import PostedOn from "./posted-on";
 import styles from "./excerpt.module.css";
@@ -64,9 +65,7 @@ export const Excerpt = ({node}) => (
                     rel="bookmark"
                 >
                     Open{" "}
-                    <span className="screen-reader-text">
-                        {node.frontmatter.title}
-                    </span>
+                    <VisuallyHidden>{node.frontmatter.title}</VisuallyHidden>
                     <ChevronRightIcon />
                 </Link>
             </div>

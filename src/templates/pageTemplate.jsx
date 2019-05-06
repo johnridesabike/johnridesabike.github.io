@@ -1,45 +1,11 @@
 import React from "react";
 import {graphql} from "gatsby";
+import classnames from "classnames";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import PostedOn from "../components/posted-on";
 import PostedBy from "../components/posted-by";
-
-const EntryHeader = ({
-    thumbnail,
-    caption,
-    title,
-    author,
-    date,
-    ISODate,
-    classNames
-}) => (
-    <div className={"entry-header has-ui-font " + classNames}>
-        {thumbnail && (
-            <figure className="featured-image featured-image__single full-bleed">
-                <img
-                    src={thumbnail.publicURL}
-                    className="attachment-post-thumbnail size-post-thumbnail post-thumbnail__single wp-post-image"
-                    alt={caption}
-                />
-                {caption && (
-                    <figcaption className="featured-image__caption">
-                        {caption}
-                    </figcaption>
-                )}
-            </figure>
-        )}
-        <div className="entry-header-wrap">
-            <h1 className="entry-title has-body-font">{title}</h1>
-            <div className="entry-meta entry-meta__single">
-                <div className="entry-meta-wrapper entry-meta-wrapper__single">
-                    {author && <PostedBy author={author} />}
-                    {date && <PostedOn date={date} ISODate={ISODate} />}
-                </div>
-            </div>
-        </div>
-    </div>
-);
+import style from "./pageTemplate.module.css";
 
 export default function Template({
     pageContext,
@@ -50,19 +16,53 @@ export default function Template({
     const post = postNode.frontmatter;
     return (
         <Layout
-            entryHeader={
-                <EntryHeader
-                    thumbnail={post.thumbnail}
-                    caption={post.caption}
-                    title={post.title}
-                    author={post.author}
-                    date={post.date}
-                    ISODate={post.ISODate}
-                    classNames={post.class || "single"}
-                />
-            }
-            thumbnail={post.thumbnail} // to trigger the thumbnail wrapper
+            thumbnail={false} // to trigger the thumbnail wrapper
             classNames={post.class || "single"}
+            entryHeader={
+                <div
+                    className={classnames(
+                        "entry-header",
+                        "has-ui-font",
+                        post.class,
+                        {"single": !post.class},
+                        {[`${style.hasThumbnail}`]: post.thumbnail}
+                    )}
+                >
+                    {post.thumbnail && (
+                        <figure className={`full-bleed ${style.coverFigure}`}>
+                            <img
+                                src={post.thumbnail.publicURL}
+                                className={style.coverImg}
+                                alt={post.caption}
+                            />
+                            {post.caption && (
+                                <figcaption
+                                    className={style.coverFigureCaption}>
+                                    {post.caption}
+                                </figcaption>
+                            )}
+                        </figure>
+                    )}
+                    <div className={style.headerWrap}>
+                        <h1 className={`${style.title} has-body-font`}>
+                            {post.title}
+                        </h1>
+                        <div className={style.meta}>
+                            <div className={style.metaWrapper}>
+                                {post.author &&
+                                    <PostedBy author={post.author} />
+                                }
+                                {post.date &&
+                                    <PostedOn
+                                        date={post.date}
+                                        ISODate={post.ISODate}
+                                    />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         >
             <SEO
                 postPath={slug}
@@ -70,70 +70,55 @@ export default function Template({
                 title={post.title}
                 postSEO
             />
-            <div id="primary" className="content-area single">
-                <main id="main" className="site-main">
-                    <article className="post">
-                        <div className="post-content">
-                            <div
-                                className="entry-content"
-                                dangerouslySetInnerHTML={{
-                                    __html: postNode.html
-                                }}
-                            />
-                            {post.attachments && (
-                                <div
-                                    id="attachments"
-                                    className="attachments has-ui-font"
-                                >
-                                    <h3>Downloads</h3>
-                                    {post.attachments.map((file) => (
-                                        <div
-                                            key={file.publicURL}
-                                            className="wp-block-file"
-                                        >
-                                            <a href={file.publicURL}>
-                                                {file.name}.{file.extension}
-                                            </a>
-                                            &nbsp;
-                                            <a
-                                                href={file.publicURL}
-                                                // eslint-disable-next-line max-len
-                                                className="wp-block-file__button"
-                                                download
-                                            >
-                                                Download
-                                            </a>
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                        <footer
-                            // eslint-disable-next-line max-len
-                            className="entry-footer entry-footer__single has-ui-font"
-                            style={{marginTop: "1em", marginBottom: "1em"}}
+            <main id="main" className="site-main">
+                <article className="post">
+                    <div
+                        className={style.content}
+                        dangerouslySetInnerHTML={{
+                            __html: postNode.html
+                        }}
+                    />
+                    {post.attachments && (
+                        <div
+                            id="attachments"
+                            className="attachments has-ui-font"
                         >
-                            <div className="post-time entry-footer__item">
-                                <span className="updated-on">
-                                    <time
-                                        // eslint-disable-next-line max-len
-                                        className="updated updated-date published"
-                                        dateTime={post.ISODate}
+                            <h3>Downloads</h3>
+                            {post.attachments.map((file) => (
+                                <div
+                                    key={file.publicURL}
+                                    className="wp-block-file"
+                                >
+                                    <a href={file.publicURL}>
+                                        {file.name}.{file.extension}
+                                    </a>
+                                    &nbsp;
+                                    <a
+                                        href={file.publicURL}
+                                        className="wp-block-file__button"
+                                        download
                                     >
-                                        Updated on {post.date}
-                                    </time>
-                                </span>
-                                {/* <div className="entry-footer-wrapper entry-footer__item">
-                                <div className="post-taxonomy entry-footer__item">
-                                    {% import "partials/entry-meta.njk" as entryMeta %}
-                                    {{ entryMeta.tags(tags) }}
-                                </div><!--.post-taxonomy-->
-                            </div><!-- .entry-footer-wrapper --> */}
-                            </div>
-                        </footer>
-                    </article>
-                </main>
-            </div>
+                                        Download
+                                    </a>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    <footer className={`${style.footer} has-ui-font`}>
+                        <div className={`post-time ${style.footerItem}`}>
+                            <time dateTime={post.ISOUpdated}>
+                                Updated on {post.updated || post.date}
+                            </time>
+                            {/* <div className="entry-footer-wrapper entry-footer__item">
+                            <div className="post-taxonomy entry-footer__item">
+                                {% import "partials/entry-meta.njk" as entryMeta %}
+                                {{ entryMeta.tags(tags) }}
+                            </div><!--.post-taxonomy-->
+                        </div><!-- .entry-footer-wrapper --> */}
+                        </div>
+                    </footer>
+                </article>
+            </main>
         </Layout>
     );
 }
@@ -150,6 +135,8 @@ export const pageQuery = graphql`
                 title
                 category
                 author
+                updated(formatString: "MMM DD, YYYY")
+                ISOUpdated: updated
                 thumbnail {
                     publicURL
                 }

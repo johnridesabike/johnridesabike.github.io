@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-.wp-smiliey {
+/* .wp-smiliey {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
@@ -12,7 +12,7 @@
     border: 1px solid transparent;
     border-radius: 50%;
     box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
-}
+} */
 
 /* Make sure embeds and iframes fit their containers. */
 embed,
@@ -65,26 +65,26 @@ object {
  * It's possible to replicate this with transforms and overflows, but I don't
  * have the time to test that out just to cover IE.
  */
-.featured-image__single {
+/* .featured-image__single {
     margin-top: 0;
-}
+} */
 
 /* for browsers that don't play well with cover */
-.featured-image__caption {
+/* .featured-image__caption {
     padding-right: 1.5em;
-    /* to avoid scrollbars */
+    /* to avoid scrollbars *//*
     font-size: 0.8em;
     font-style: italic;
     text-align: right;
-}
-
+} */
+/* 
 @supports (object-fit: cover) {
     .featured-image__single {
         position: relative;
         width: 100vw;
         max-width: 100vw;
         height: 67vw;
-        /* aspect ratio kept intact for small screens */
+        /* aspect ratio kept intact for small screens *//*
         margin-top: 0;
     }
     .featured-image__caption {
@@ -112,7 +112,7 @@ object {
             height: 430px;
         }
     }
-}
+} */
 
 /*--------------------------------------------------------------
 ## Archive View Featured Images
@@ -193,7 +193,7 @@ object {
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
-.gallery {
+/* .gallery {
     margin-bottom: 1.5em;
 }
 
@@ -238,7 +238,7 @@ object {
 
 .gallery-caption {
     display: block;
-}
+}*/
 
 /*--------------------------------------------------------------
 ## SVG
@@ -286,8 +286,8 @@ object {
     }
 }
 
-@media screen and (min-width: 1200px) {
-    /* We change the style to prepare it for the grid layout in posts-and-pages */
+/* @media screen and (min-width: 1200px) {
+    /* We change the style to prepare it for the grid layout in posts-and-pages *//*
     .featured-image__single {
         flex: 1 1 50%;
     }
@@ -297,4 +297,4 @@ object {
     .featured-image__caption {
         padding-right: 0.5em;
     }
-}
+} */

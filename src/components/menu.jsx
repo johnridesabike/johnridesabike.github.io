@@ -2,6 +2,7 @@ import {Link} from "gatsby";
 import PropTypes from "prop-types";
 import React, {Fragment, useState} from "react";
 import {Location} from "@reach/router";
+import VisuallyHidden from "@reach/visually-hidden";
 import {MenuIcon, DismissIcon} from "./icons";
 
 function Menu({links}) {
@@ -21,7 +22,7 @@ function Menu({links}) {
                                     : setMenuClasses("")
                             )}
                         >
-                            <span className="screen-reader-text">Menu</span>
+                            <VisuallyHidden>Menu</VisuallyHidden>
                             <span className="menu-icon">
                                 <MenuIcon />
                             </span>

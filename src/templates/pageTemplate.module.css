@@ -1,0 +1,132 @@
+.title {
+    margin: 0;
+}
+
+.title a {
+    text-decoration: none;
+}
+
+.meta {
+    display: flex;
+    margin-top: 0.5em;
+    font-size: var(--font-size-sm);
+    flex-flow: row nowrap;
+}
+
+.metaWrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+}
+
+.content > *:not(.alignwide):not(.alignfull) {
+    max-width: var(--size-content);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footer {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-top-style: double;
+    border-bottom-style: double;
+    opacity: 0.8;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footerItem {
+    margin-bottom: 0.5em;
+}
+
+.coverFigure {
+    margin-top: 0;
+}
+
+.coverFigureCaption {
+    padding-right: 1.5em;
+    /* to avoid scrollbars */
+    font-size: var(--font-size-xs);
+    font-style: italic;
+    text-align: right;
+}
+
+@supports (object-fit: cover) {
+    .coverFigure {
+        position: relative;
+        width: 100vw;
+        max-width: 100vw;
+        height: 67vw;
+        /* aspect ratio kept intact for small screens */
+        margin-top: 0;
+    }
+    .coverFigureCaption {
+        margin-bottom: 0;
+        padding: 0.2em 0.5em;
+        opacity: 1;
+        color: #fff;
+        background: linear-gradient(
+            transparent
+            0,
+            rgba(0, 0, 0, 0.5) 40%,
+            rgba(0, 0, 0, 0.8) 100%
+        );
+        text-shadow: 0 0 6px var(--color-text-main);
+        font-family: var(--font-UI);
+        font-size: 0.8em;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: right;
+    }
+    .coverImg {
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        object-fit: cover;
+    }
+    @media screen and (min-width: 600px) {
+        .coverFigure {
+            height: 430px;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .footer {
+        max-width: var(--size-site-width);
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .coverFigure {
+        flex: 1 1 50%;
+    }
+    .coverImg {
+        width: 100%;
+    }
+    .coverFigureCaption {
+        padding-right: 0.5em;
+    }
+    .hasThumbnail {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+    .hasThumbnail .headerWrap {
+        display: flex;
+        margin: 0 1em 0 0;
+        flex: 1 1 50%;
+        flex-flow: column;
+        justify-content: center;
+    }
+    .title {
+        margin: 0.5em 0;
+    }
+}

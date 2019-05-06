@@ -8,6 +8,7 @@
 import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import {StaticQuery, graphql} from "gatsby";
+import VisuallyHidden from "@reach/visually-hidden";
 import Sidebar from "./sidebar";
 import Footer from "./footer";
 import Header from "./header";
@@ -27,9 +28,11 @@ const Layout = ({children, entryHeader, classNames, thumbnail}) => (
         render={(data) => (
             <Fragment>
                 <div id="page" className={"site " + classNames}>
-                    <a className="skip-link screen-reader-text" href="#content">
-                        Skip to content
-                    </a>
+                    <VisuallyHidden>
+                        <a className="skip-link" href="#content">
+                            Skip to content
+                        </a>
+                    </VisuallyHidden>
                     <Header
                         siteTitle={data.site.siteMetadata.title}
                         siteDescription={data.site.siteMetadata.description}
