@@ -18,6 +18,7 @@
         var(--color-saturation),
         var(--color-lightness-hover)
     );
+    --color-caption: #555d66;
     /**
      * Fonts
      */

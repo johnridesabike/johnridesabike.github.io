@@ -177,6 +177,10 @@ big {
     background-color: var(--color-link-hover);
 }
 
+.has-caption-color {
+    color: var(--color-caption);
+}
+
 .has-ui-font {
     font-family: var(--font-UI);
 }
