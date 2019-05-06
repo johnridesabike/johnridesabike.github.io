@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "gatsby";
-
+import classnames from "classnames";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import john2018 from "../images/john2018.jpg";
@@ -46,30 +46,21 @@ function IndexPage() {
                         <Image />
                     </div>
                     <Link to="/page-2/">Go to page 2</Link> */}
-                    <div
-                        className="wp-block-columns has-2-columns"
-                        style={{textAlign: "center"}}
-                    >
-                        <div className="wp-block-column">
+                    <div className={styles.topColumns}>
+                        <figure>
                             <img
                                 src={john2018}
                                 alt="Portrait of John"
                                 height="256"
                                 width="256"
                             />
-                        </div>
-                        <div
-                            className="wp-block-column"
-                            style={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center"
-                            }}
-                        >
-                            <p className="has-large-font-size">
-                                Hi, I'm John Jackson.
-                            </p>
-                        </div>
+                        </figure>
+                        <p className={classnames(
+                            styles.hi,
+                            "has-large-font-size"
+                        )}>
+                            Hi, I'm John Jackson.
+                        </p>
                     </div>
                     <p>
                         I’m a public library staffer who is interested in
@@ -77,26 +68,26 @@ function IndexPage() {
                         libraries of all types. I like to bike, write,
                         build, and tinker.
                     </p>
-                    <div className="wp-block-columns has-2-columns">
-                        <div className="wp-block-column">
-                            <p style={{textAlign: "center"}}>
+                    <div className={styles.topColumns}>
+                        <div>
+                            <p>
                                 <strong>
                                     Hiring? Here’s a bit about me:
                                 </strong>
                             </p>
-                            <p>
+                            <p style={{textAlign: "left"}}>
                                 <span role="img" aria-label="check">
                                     ✔️
                                 </span>{" "}
                                 MLIS Graduate.
                             </p>
-                            <p>
+                            <p style={{textAlign: "left"}}>
                                 <span role="img" aria-label="check">
                                     ✔️
                                 </span>{" "}
                                 Working in libraries since 2015.
                             </p>
-                            <p>
+                            <p style={{textAlign: "left"}}>
                                 <span role="img" aria-label="check">
                                     ✔️
                                 </span>{" "}
@@ -113,11 +104,11 @@ function IndexPage() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="wp-block-column">
-                            <p style={{textAlign: "center"}}>
+                        <div>
+                            <p>
                                 <strong>Let’s get in touch.</strong>
                             </p>
-                            <p>
+                            <p style={{textAlign: "left"}}>
                                 Questions, comments, job offers, jokes,
                                 poems, or just to say “hi.”{" "}
                             </p>

@@ -7,8 +7,20 @@
     .description {
         flex-basis: 33%;
     }
-
     .content {
         flex-basis: 66%;
+    }
+    .topColumns {
+        display: flex;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+    .topColumns > * {
+        flex-basis: calc(50% - var(--column-margin));
+    }
+    .hi {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
