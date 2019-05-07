@@ -1,34 +1,39 @@
 import React from "react";
+import Layout from "../components/layout";
 import {useStaticQuery, graphql} from "gatsby";
 import remark from "remark";
 import html from "remark-html";
 
 export default function GitHub() {
-    const {github} = useStaticQuery(graphql`
-        {
+    const {github} = useStaticQuery(
+        graphql`{
             github {
                 repository(owner: "johnridesabike", name: "chessahoochee") {
-                    object(expression: "master:README.md") {
+                    name
+                    description
+                    homepageUrl
+                    url
+                    updatedAt
+                    licenseInfo {
+                        key
+                    }
+                    readme: object(expression: "master:README.md") {
                         ... on GitHub_Blob {
                             text
                         }
                     }
                 }
             }
-        }
-    `);
-    // IDK how this is supposed to work.
-    const output = remark().use(html).process(
-        github.repository.object.text,
-        // function (err, file) {
-        //     if (err) {
-        //         throw err;
-        //     }
-        //     return String(file);
-        // }
+        }`
     );
-    console.log(output);
+    const repo = github.repository;
+    const {contents} = remark().use(html).processSync(repo.readme.text);
     return (
-        <div></div>
+        <Layout entryHeader={<h1>{repo.name}</h1>}>
+            <div
+                className="page-content"
+                dangerouslySetInnerHTML={{__html: contents}}
+            />
+        </Layout>
     );
 }
