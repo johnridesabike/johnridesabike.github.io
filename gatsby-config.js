@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-const path = require("path");
 require("dotenv").config();
 
 module.exports = {
@@ -57,16 +56,6 @@ module.exports = {
             }
         },
         "gatsby-plugin-sharp",
-        {
-            resolve: "gatsby-mdx",
-            options: {
-                defaultLayouts: {
-                    default: path.resolve(
-                        "./src/templates/pageMDXTemplate.jsx"
-                    )
-                }
-            }
-        },
         {
             resolve: "gatsby-transformer-remark",
             options: {

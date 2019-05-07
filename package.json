@@ -37,6 +37,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "remark": "^10.0.1",
+    "remark-html": "^9.0.0",
     "stylelint-config-recommended": "^2.2.0"
   },
   "keywords": [
