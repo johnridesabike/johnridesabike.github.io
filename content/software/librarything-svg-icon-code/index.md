@@ -28,7 +28,7 @@ And here's what it looks like:
 This code will render the logo with a transparent “L,” which is useful for font-style icons that can blend into your own website’s theme (which is how I'm using it). If you prefer to preserve the white color, you can simply insert this line just before the `<path>` element:
 
 ```xml
-<rect y="25" x="25" height="215" width="215" style="fill:#fff;" /></pre>
+<rect y="25" x="25" height="215" width="215" style="fill:#fff;" />
 ```
 [Download both styles of icon](./LibraryThing_Icons.zip)
 
