@@ -81,6 +81,21 @@
     content: "";
 }
 
+@supports (object-fit: cover) {
+    .coverFigure {
+        position: relative;
+        /* aspect ratio kept intact for small screens */
+        height: 140px;
+        margin-top: 0;
+    }
+    .coverImg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
 @media screen and (min-width: 600px) {
     .entry {
         display: grid;

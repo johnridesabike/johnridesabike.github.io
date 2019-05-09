@@ -1,5 +1,5 @@
 ---
-title: "How to Play Chess: a reference for novices and veterans"
+title: "How to Play Chess: end notes"
 author: John Jackson
 date: 2019-03-13
 updated: 2019-03-18
@@ -9,8 +9,6 @@ updated: 2019-03-18
 ← Back to main article
 </a>
 </nav>
-
-## End notes
 
 To further develop your chess strategy, you should consider the guides on [lichess.org](https://lichess.org/) or any book written by a grandmaster (which I am not). I personally credit my library’s copy of _Bobby Fischer Teaches Chess_ as one of the most rewarding chess books I’ve read.
 

@@ -20,7 +20,7 @@
     padding: 0.5em 0 0.5em 0;
 }
 
-.menuLink__current {
+.menuLink[aria-current="page"] {
     border-color: var(--color-link-hover);
     border-bottom-width: 2px;
     border-bottom-style: solid;

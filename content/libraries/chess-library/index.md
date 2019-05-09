@@ -3,7 +3,7 @@ title: "Chess at the Library: my public library chess program"
 author: John Jackson
 date: 2018-08-15
 updated: 2018-08-15
-category: "Libraries"
+category: unlisted
 thumbnail: "./Chess.jpg"
 ---
 In 2017, I began an adult chess library program for [Chattahoochee Valley Libraries](http://www.cvlga.org/) in Columbus, Georgia. It’s been a hit with our community and continues to grow. I believe that its success comes from the way chess transcends the gaps between diverse people.
