@@ -2,7 +2,6 @@ import {Link} from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import classnames from "classnames";
-import {Location} from "@reach/router";
 import Menu from "./menu";
 import styles from "./header.module.css";
 
@@ -23,17 +22,12 @@ const Header = ({siteTitle, siteDescription, entryHeader}) => (
                 </p>
                 <p className={styles.description}>{siteDescription}</p>
             </div>
-            <Location>
-                {({location}) => (
-                    <Menu
-                        location={location}
-                        links={[
-                            {url: "/", title: "Home"},
-                            {url: "/resume/", title: "Résumé"}
-                        ]}
-                    />
-                )}
-            </Location>
+            <Menu
+                links={[
+                    {url: "/", title: "Home"},
+                    {url: "/resume/", title: "Résumé"}
+                ]}
+            />
         </div>
         {entryHeader}
     </header>

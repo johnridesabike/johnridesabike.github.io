@@ -6,7 +6,7 @@ import classnames from "classnames";
 import {MenuIcon, DismissIcon} from "./icons";
 import styles from "./menu.module.css";
 
-function Menu({links, location}) {
+function Menu({links}) {
     const [menuToggled, setMenuToggled] = useState("");
     return (
         <Fragment>
@@ -48,13 +48,7 @@ function Menu({links, location}) {
                         <li key={link.url} className={styles.menuItem}>
                             <Link
                                 to={link.url}
-                                className={classnames(
-                                    styles.menuLink,
-                                    {
-                                        [`${styles.menuLink__current}`]:
-                                        location.pathname === link.url
-                                    }
-                                )}
+                                className={classnames(styles.menuLink)}
                             >
                                 {link.title}
                             </Link>
