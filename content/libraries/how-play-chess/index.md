@@ -4,17 +4,17 @@ author: John Jackson
 date: 2019-03-13
 updated: 2019-03-18
 category: Libraries
-thumbnail: ./chess_Fork.svg
-caption: An example of a chess fork.
+thumbnail: ./Chess.jpg
+caption: A chess set with USCF rule book.
 attachments:
     - ./handout-How-to-Play-Chess.pdf
     - ./handout-How-to-Play-Chess.docx
 ---
 This guide covers all the knowledge required to play a basic game of chess. It’s a quick reference resource, one that can answer questions like: “how many squares do you move when castling?” or “what conditions make a stalemate?” Even if you know these rules by heart, it’s useful to have a text to cite so your opponent doesn’t think you just made up “_en passant_.”
 
-Many chess guides exist, so why use this one? I originally wrote this in 2017 as a handout for our [public library chess program](/libraries/chess-library/). After searching for a basic rule booklet, I had only found one-page diagrams of piece moves or hundred-page long books of strategy. Necessity led me to write this, a guide that’s simple yet also covers all the common rules.
+Many chess guides exist, so why use this one? I originally wrote this in 2017 as a handout for our public library chess program. After searching for a basic rule booklet, I had only found one-page diagrams of piece moves or hundred-page long books of strategy. Necessity led me to write this, a guide that’s simple yet also covers all the common rules.
 
-[PDF printable booklet](./handout-How-to-Play-Chess.pdf) • [DOCX printable booklet](./handout-How-to-Play-Chess.docx)
+Download: [PDF printable booklet](./handout-How-to-Play-Chess.pdf) *or* [DOCX printable booklet](./handout-How-to-Play-Chess.docx)
 
 ## Setting up the board
 
