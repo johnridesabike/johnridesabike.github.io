@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import john2018 from "../images/john2018.jpg";
 import {useAllPages} from "../hooks";
-import Excerpt from "../components/excerpt";
+import Excerpt from "../components/old/excerpt";
 import Icons from "../components/icons";
 import styles from "./index.module.css";
 
