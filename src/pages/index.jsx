@@ -6,12 +6,7 @@ import SEO from "../components/seo";
 import john2018 from "../images/john2018.jpg";
 import {useAllPages} from "../hooks";
 import Excerpt from "../components/excerpt";
-import {
-    MailIcon,
-    LibraryIcon,
-    SoftwareIcon,
-    ToolIcon
-} from "../components/icons";
+import Icons from "../components/icons";
 import styles from "./index.module.css";
 
 function IndexPage() {
@@ -117,7 +112,7 @@ function IndexPage() {
                                     className="wp-block-button__link"
                                     href="mailto:jbpjackson@icloud.com"
                                 >
-                                    <MailIcon /> Email me
+                                    <Icons.Mail /> Email me
                                 </a>
                             </div>
                         </div>
@@ -129,7 +124,7 @@ function IndexPage() {
                                 "wp-block-column " + styles.description
                             }
                         >
-                            <LibraryIcon
+                            <Icons.Library
                                 style={{
                                     display: "block",
                                     margin: "auto"
@@ -171,7 +166,7 @@ function IndexPage() {
                                 "wp-block-column " + styles.description
                             }
                         >
-                            <SoftwareIcon
+                            <Icons.Software
                                 style={{display: "block", margin: "auto"}}
                                 className="has-header-color"
                             />
@@ -189,7 +184,7 @@ function IndexPage() {
                                 "wp-block-column " + styles.description
                             }
                         >
-                            <ToolIcon
+                            <Icons.Tool
                                 style={{
                                     display: "block",
                                     margin: "auto"
