@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import styles from "./footer.module.css";
 import widgetStyles from "../styles/widgets.module.css";
-import {CCIcon} from "./icons";
+import Icons from "./icons";
 
 const Footer = () => (
     <footer
@@ -23,7 +23,7 @@ const Footer = () => (
                     <span property="cc:attributionName">John Jackson</span>
                 </p>
                 <p>
-                    <CCIcon height="32" className={styles.ccIcon} />{" "}
+                    <Icons.CC height="32" className={styles.ccIcon} />{" "}
                     All content by John on this site is licensed under a {" "}
                     <a
                         rel="license"

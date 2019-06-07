@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React, {Fragment, useState} from "react";
 import VisuallyHidden from "@reach/visually-hidden";
 import classnames from "classnames";
-import {MenuIcon, DismissIcon} from "./icons";
+import Icons from "./icons";
 import styles from "./menu.module.css";
 
 function Menu({links}) {
@@ -25,11 +25,11 @@ function Menu({links}) {
                     )}
                 >
                     <VisuallyHidden>Menu</VisuallyHidden>
-                    <MenuIcon className={classnames(
+                    <Icons.Menu className={classnames(
                         styles.toggleIcon,
                         styles.menuIcon
                     )}/>
-                    <DismissIcon className={classnames(
+                    <Icons.Dismiss className={classnames(
                         styles.toggleIcon,
                         styles.dismissIcon
                     )}/>

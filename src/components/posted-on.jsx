@@ -1,10 +1,10 @@
 import React from "react";
 import classnames from "classnames";
-import {CalendarIcon} from "./icons";
+import Icons from "./icons";
 
 const PostedOn = ({date, ISODate, classes}) => (
     <span className={classnames(...classes)}>
-        <time dateTime={ISODate}><CalendarIcon /> Posted on {date}</time>
+        <time dateTime={ISODate}><Icons.Calendar /> Posted on {date}</time>
     </span>
 );
 

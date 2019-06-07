@@ -1,9 +1,9 @@
 import React from "react";
-import {PersonIcon} from "./icons";
+import Icons from "./icons";
 
 const PostedBy = ({author}) => (
     <span className="author byline">
-        <PersonIcon /> {author}
+        <Icons.Person /> {author}
     </span>
 );
 

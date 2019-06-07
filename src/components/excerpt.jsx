@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "gatsby";
 import classnames from "classnames";
 import VisuallyHidden from "@reach/visually-hidden";
-import {ChevronRightIcon} from "../components/icons";
+import Icons from "../components/icons";
 import PostedOn from "./posted-on";
 import styles from "./excerpt.module.css";
 
@@ -69,7 +69,7 @@ export const Excerpt = ({node}) => (
                 >
                     Open{" "}
                     <VisuallyHidden>{node.frontmatter.title}</VisuallyHidden>
-                    <ChevronRightIcon />
+                    <Icons.ChevronRight />
                 </Link>
             </div>
         </footer>
