@@ -1,79 +1,82 @@
-import React from "react";
 import {Link} from "gatsby";
-import classnames from "classnames";
+import PropTypes from "prop-types";
+import React from "react";
 import VisuallyHidden from "@reach/visually-hidden";
-import Icons from "../components/icons";
-import PostedOn from "./posted-on";
+import classNames from "classnames";
 import styles from "./excerpt.module.css";
 
-export const Excerpt = ({node}) => (
+const Excerpt = ({slug, title, thumbnail, children, className}) => (
     <article
-        className={classnames(
-            styles.entry,
-            {[`${styles.hasThumbnail}`]: node.frontmatter.thumbnail}
+        className={classNames(
+            styles.excerpt,
+            className,
+            {[`${styles.hasThumbnail}`]: thumbnail !== null}
         )}
     >
-        <header className={classnames(styles.header, "has-ui-font")}>
-            {/* <div className="tab-head">
-                <TagIcon />
-                &nbsp;
-                {node.fields.category}
-            </div> */}
-            <h2 className={classnames(styles.title, "has-body-font")}>
-                <a
-                    href={node.fields.slug}
-                    rel="bookmark"
-                    className={styles.titleLink}
-                >
-                    {node.frontmatter.title}
-                </a>
-            </h2>
-        </header>
-        {node.frontmatter.thumbnail && (
-            <figure className={classnames("full-bleed", styles.coverFigure)}>
-                <a
-                    href={node.fields.slug}
-                    className={styles.coverLink}
-                    aria-hidden="true"
-                    tabIndex="-1"
-                >
-                    <img
-                        width="224"
-                        height="150"
-                        src={node.frontmatter.thumbnail.publicURL}
-                        className={styles.coverImg}
-                        alt=""
-                    />
-                </a>
-            </figure>
-        )}
-        <div className={styles.content}>
-            <p className="has-small-font-size">{node.excerpt}</p>
-        </div>
-        <footer className={classnames(styles.footer, "has-ui-font")}>
-            <div className={styles.meta}>
-                <PostedOn
-                    date={node.frontmatter.date}
-                    ISODate={node.frontmatter.ISODate}
-                    classes={[styles.metaItem]}
-                />
-            </div>
-            <div className={styles.continueReading}>
+        <header className="has-ui-font">
+            <h3
+                className={classNames(
+                    "has-body-font",
+                    "has-medium-font-size",
+                    "has-no-text-transform",
+                    styles.title
+                )}
+            >
                 <Link
-                    to={node.fields.slug}
-                    className={classnames(
-                        "button-link__link",
-                        styles.continueReadingLink
+                    to={slug}
+                    rel="bookmark"
+                    className=""
+                >
+                    {title}
+                </Link>
+            </h3>
+        </header>
+        <div className={styles.content}>
+            {thumbnail && (
+                <figure className={classNames("full-bleed", styles.thumbnail)}>
+                    <a
+                        href={slug}
+                        className=""
+                        aria-hidden="true"
+                        tabIndex="-1"
+                    >
+                        <img
+                            width="128"
+                            height="96"
+                            src={thumbnail.publicURL}
+                            className=""
+                            alt=""
+                        />
+                    </a>
+                </figure>
+            )}
+            <p
+                className={classNames(
+                    "has-small-font-size",
+                    styles.text
+                )}
+            >
+                {children}
+            </p>
+            <VisuallyHidden>
+                <Link
+                    to={slug}
+                    className={classNames(
+                        "button-link__link"
                     )}
                     rel="bookmark"
                 >
-                    Open{" "}
-                    <VisuallyHidden>{node.frontmatter.title}</VisuallyHidden>
-                    <Icons.ChevronRight />
+                    Open {title}
                 </Link>
-            </div>
-        </footer>
+            </VisuallyHidden>
+        </div>
     </article>
 );
-
+Excerpt.propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    slug: PropTypes.string,
+    thumbnail: PropTypes.object,
+    title: PropTypes.string
+};
 export default Excerpt;

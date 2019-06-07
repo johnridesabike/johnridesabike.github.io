@@ -1,11 +1,15 @@
 {
-    "extends": ["react-app", "plugin:jsx-a11y/recommended"],
-    "plugins": ["jsx-a11y"],
+    "extends": [
+        "react-app",
+        "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": ["jsx-a11y", "react"],
     "rules": {
         "max-len": [
             "warn", {
                 "code": 80,
-                "ignoreComments": true
+                "ignoreComments": true,
+                "ignorePattern": "^(    )*d=\"M"
             }
         ],
         "space-infix-ops": "warn",
@@ -21,16 +25,34 @@
         "eol-last": ["warn", "always"],
         "block-spacing": ["warn", "never"],
         "computed-property-spacing": ["warn", "never"],
+        "complexity": ["warn", 5],
         "space-before-function-paren": ["warn", {
             "anonymous": "always",
             "named": "never",
             "asyncArrow": "always"
         }],
-        "no-unused-vars": "error",
+        "no-unused-vars": ["warn", {"argsIgnorePattern": "^ignore$|^props$"}],
         "no-shadow": "error",
         "no-var": 1,
         "arrow-parens": "warn",
-        "arrow-body-style": ["warn", "never"]
-
+        "arrow-body-style": ["warn", "never"],
+        "no-unused-expressions": "warn",
+        "no-unneeded-ternary": "error",
+        "multiline-ternary": ["error", "always-multiline"],
+        "sort-keys": "warn",
+        "sort-imports": [
+            "warn",
+            {
+                "ignoreCase": false,
+                "ignoreDeclarationSort": false,
+                "ignoreMemberSort": false,
+                "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+            }
+        ],
+        "react/prop-types": [2],
+        "react/jsx-closing-tag-location": [1],
+        "react/jsx-closing-bracket-location": [1],
+        "react/jsx-handler-names": [1],
+        "react/jsx-first-prop-new-line": ["warn", "multiline"]
     }
 }
