@@ -3,7 +3,7 @@ import React from "react";
 import classnames from "classnames";
 import {svgIcon} from "./icons.module.css";
 
-export const ChessIcon = (props) => (
+const Chess = (props) => (
     <svg
         width="24"
         height="24"
@@ -20,7 +20,7 @@ export const ChessIcon = (props) => (
     </svg>
 );
 
-export const FeedIcon = (props) => (
+const Feed = (props) => (
     <svg
         width="24"
         height="24"
@@ -37,7 +37,7 @@ export const FeedIcon = (props) => (
     </svg>
 );
 
-export const GitHubIcon = (props) => (
+const GitHub = (props) => (
     <svg
         width="24"
         height="24"
@@ -54,7 +54,7 @@ export const GitHubIcon = (props) => (
     </svg>
 );
 
-export const LibraryThingIcon = (props) => (
+const LibraryThing = (props) => (
     <svg
         width="24"
         height="24"
@@ -71,7 +71,7 @@ export const LibraryThingIcon = (props) => (
     </svg>
 );
 
-export const LinkedInIcon = (props) => (
+const LinkedIn = (props) => (
     <svg
         width="24"
         height="24"
@@ -88,7 +88,7 @@ export const LinkedInIcon = (props) => (
     </svg>
 );
 
-export const CCIcon = (props) => (
+const CC = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width="120"
@@ -158,7 +158,7 @@ export const CCIcon = (props) => (
     </svg>
 );
 
-export const MailIcon = (props) => (
+const Mail = (props) => (
     <svg
         width="24"
         height="24"
@@ -175,7 +175,7 @@ export const MailIcon = (props) => (
     </svg>
 );
 
-export const LibraryIcon = (props) => (
+const Library = (props) => (
     <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -194,7 +194,7 @@ export const LibraryIcon = (props) => (
     </svg>
 );
 
-export const SoftwareIcon = (props) => (
+const Software = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
@@ -209,7 +209,7 @@ export const SoftwareIcon = (props) => (
     </svg>
 );
 
-export const ToolIcon = (props) => (
+const Tool = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
@@ -224,7 +224,7 @@ export const ToolIcon = (props) => (
     </svg>
 );
 
-export const TagIcon = (props) => (
+const Tag = (props) => (
     <svg
         width="24"
         height="24"
@@ -241,7 +241,7 @@ export const TagIcon = (props) => (
     </svg>
 );
 
-export const ChevronRightIcon = (props) => (
+const ChevronRight = (props) => (
     <svg
         width="24"
         height="24"
@@ -258,7 +258,7 @@ export const ChevronRightIcon = (props) => (
     </svg>
 );
 
-export const CalendarIcon = (props) => (
+const Calendar = (props) => (
     <svg
         width="20"
         height="20"
@@ -276,7 +276,7 @@ export const CalendarIcon = (props) => (
     </svg>
 );
 
-export const PersonIcon = (props) => (
+const Person = (props) => (
     <svg
         width="24"
         height="24"
@@ -294,7 +294,7 @@ export const PersonIcon = (props) => (
     </svg>
 );
 
-export const MenuIcon = (props) => (
+const Menu = (props) => (
     <svg
         width="20"
         height="20"
@@ -313,7 +313,7 @@ export const MenuIcon = (props) => (
     </svg>
 );
 
-export const DismissIcon = (props) => (
+const Dismiss = (props) => (
     <svg
         width="20"
         height="20"
@@ -331,3 +331,22 @@ export const DismissIcon = (props) => (
         </g>
     </svg>
 );
+
+export default {
+    Calendar,
+    CC,
+    Chess,
+    ChevronRight,
+    Dismiss,
+    Feed,
+    GitHub,
+    Library,
+    LibraryThing,
+    LinkedIn,
+    Mail,
+    Menu,
+    Person,
+    Software,
+    Tag,
+    Tool
+};

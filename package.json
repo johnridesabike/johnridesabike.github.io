@@ -8,7 +8,7 @@
     "@reach/visually-hidden": "^0.1.4",
     "classnames": "^2.2.6",
     "firacode": "^1.206.0",
-    "gatsby": "^2.8.2",
+    "gatsby": "^2.8.5",
     "gatsby-image": "^2.1.2",
     "gatsby-plugin-breadcrumb": "^2.1.1",
     "gatsby-plugin-categories": "^2.3.1",
@@ -22,7 +22,7 @@
     "gatsby-remark-copy-linked-files": "^2.0.13",
     "gatsby-remark-grid-tables": "0.0.3",
     "gatsby-remark-images": "^3.0.14",
-    "gatsby-remark-prismjs": "^3.2.9",
+    "gatsby-remark-prismjs": "^3.2.10",
     "gatsby-remark-static-images": "^1.1.0",
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-source-graphql": "^2.0.18",
@@ -34,11 +34,14 @@
     "prism": "^4.1.2",
     "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",
+    "ramda": "^0.26.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "remark": "^10.0.1",
-    "remark-html": "^9.0.0",
+    "remark-html": "^9.0.0"
+  },
+  "devDependencies": {
     "stylelint-config-recommended": "^2.2.0"
   },
   "keywords": [
