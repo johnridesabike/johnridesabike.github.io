@@ -333,8 +333,8 @@ const Dismiss = (props) => (
 );
 
 export default {
-    Calendar,
     CC,
+    Calendar,
     Chess,
     ChevronRight,
     Dismiss,

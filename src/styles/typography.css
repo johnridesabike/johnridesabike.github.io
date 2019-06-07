@@ -23,7 +23,12 @@ input {
     font-family: var(--font-UI);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-top: 1em;
     margin-bottom: 1em;
     font-weight: 400;
@@ -42,7 +47,7 @@ h1 {
 h2 {
     clear: both;
     padding-top: 0.5em;
-    border-top-width: 4px;
+    border-top-width: 2px;
     border-top-style: solid;
     font-size: var(--font-size-lg);
     line-height: 1.43744;
@@ -60,7 +65,7 @@ h3 {
 h4 {
     font-size: var(--font-size-sm);
     font-weight: 700;
-    line-height: 1.56297;
+    line-height: 1.4;
     letter-spacing: var(--letter-spacing-allcaps);
     text-transform: uppercase;
 }
@@ -90,7 +95,10 @@ figcaption {
     text-align: center;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
     font-style: italic;
 }
 
@@ -108,18 +116,23 @@ pre {
     line-height: 1.6;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
     font-family: var(--font-code);
     font-size: 20px;
     font-size: var(--font-size-xs);
 }
 
-abbr, acronym {
+abbr,
+acronym {
     border-bottom: 1px dotted #666;
     cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
     background: #fff9c0;
     text-decoration: none;
 }
@@ -191,4 +204,13 @@ big {
 
 .footer-widgets {
     opacity: 0.8;
+}
+
+.has-no-text-transform {
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.align-center {
+    text-align: center;
 }

@@ -5,7 +5,8 @@
  */
 
 // You can delete this file if you're not using it
-const _ = require("lodash");
+// const _ = require("lodash");
+const dashify = require("dashify");
 const path = require("path");
 const moment = require("moment");
 const siteConfig = require("./data/SiteConfig");
@@ -40,7 +41,7 @@ exports.onCreateNode = function ({node, actions, getNode}) {
             if (
                 Object.prototype.hasOwnProperty.call(node.frontmatter, "slug")
             ) {
-                slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+                slug = `/${dashify(node.frontmatter.slug)}`;
             }
             if (
                 Object.prototype.hasOwnProperty.call(node.frontmatter, "date")
@@ -143,7 +144,7 @@ exports.createPages = function ({graphql, actions}) {
                 const categoryList = Array.from(categorySet);
                 categoryList.forEach(function (category) {
                     createPage({
-                        path: `/category/${_.kebabCase(category)}/`,
+                        path: `/category/${dashify(category)}/`,
                         component: categoryPage,
                         context: {
                             category
