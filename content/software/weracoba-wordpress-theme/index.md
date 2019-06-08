@@ -4,7 +4,7 @@ author: John Jackson
 date: 2018-08-16
 updated: 2018-08-16
 category: Software
-thumbnail: "./weracoba-home-page.jpg"
+# thumbnail: "./weracoba-home-page.jpg"
 ---
 Weracoba is my custom-built theme based on [Underscores](https://underscores.me/). Until I switched away from WordPress, I used it to power the site here on [johnridesa.bike](https://johnridesa.bike/).
 

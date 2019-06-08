@@ -45,20 +45,23 @@ export function Woodworking() {
                     Woodworking projects
                 </h1>
                 <p>
-                    Woodworking stuff goes here.
+                    Sometimes I build furniture, and these are the guides I
+                    wrote for them.
                 </p>
             </header>
             <Excerpt
                 {... nodeFields(pages["marble-top-chessboard-end-table"])}
             >
-                This is a guide I wrote based on an end-table I made with a
-                marble chessboard and 2x4s.
+                I made a custom end-table with an old marble chessboard and some
+                two-by-fours. This guide covers how it was done, and some tips
+                for building your own.
             </Excerpt>
             <Excerpt
                 {... nodeFields(pages["standing-desk-converter-diy"])}
             >
-                This is a guide I wrote based on a project which converted a
-                regular old desk into a modern standing desk.
+                I turned a old, regular desk into a fancy new standing desk.
+                This covers how I did it, how you can make your own, and some
+                general tips about standing desks.
             </Excerpt>
         </section>
     );
@@ -66,7 +69,7 @@ export function Woodworking() {
 
 export default function Page() {
     return (
-        <Layout entryHeader={<h1>Woodworking</h1>}>
+        <Layout>
             <SEO
                 title="Woodworking"
                 postSEO

@@ -1,7 +1,7 @@
+import Page from "../components/page";
+import PropTypes from "prop-types";
 import React from "react";
 import {graphql} from "gatsby";
-
-import Page from "../components/page";
 
 export default function Template({pageContext, data, location}) {
     const postNode = data.markdownRemark;
@@ -14,6 +14,11 @@ export default function Template({pageContext, data, location}) {
         </Page>
     );
 }
+Template.propTypes = {
+    data: PropTypes.object,
+    location: PropTypes.any,
+    pageContext: PropTypes.any
+};
 
 export const pageQuery = graphql`
     query BlogPostBySlug($slug: String!) {
