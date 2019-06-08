@@ -31,6 +31,10 @@ I’m a public library staffer and MLIS graduate who is interested in digital li
 - Worked with client to create a WordPress website ([theliteracyalliance.org](https://theliteracyalliance.org/)) that aligns with their goals.
 - Coded HTML, CSS, & PHP.
 
+## Publications
+
+- “[Your Library’s First Chess Tournament: From Opening to Endgame.](http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame)” *Programming Librarian*, 22 May 2019.
+
 ## Professional development
 
 - Attended 2018 Public Library Association Conference.

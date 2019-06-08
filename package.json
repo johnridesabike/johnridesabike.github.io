@@ -37,9 +37,11 @@
     "ramda": "^0.26.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-feather": "^1.1.6",
     "react-helmet": "^5.2.1",
     "remark": "^10.0.1",
-    "remark-html": "^9.0.0"
+    "remark-html": "^9.0.0",
+    "simple-icons": "^1.9.27"
   },
   "devDependencies": {
     "eslint-config-react-app": "^4.0.1",

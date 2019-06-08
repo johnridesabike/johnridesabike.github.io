@@ -14,7 +14,9 @@ export {edges2Dict};
 
 const nodeFields = (node) => ({
     slug: node.fields.slug,
-    thumbnail: node.frontmatter.thumbnail,
+    thumbnailURL: (node.frontmatter.thumbnail)
+        ? node.frontmatter.thumbnail.publicURL
+        : null,
     title: node.frontmatter.title
 });
 export {nodeFields};
