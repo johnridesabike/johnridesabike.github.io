@@ -4,8 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
 import "normalize.css";
+import "charter-webfont";
+import "typeface-libre-baskerville";
 import "firacode/distr/fira_code.css";
 import "./src/styles/prism-dracula.css";
 import "./src/styles/variables.css";

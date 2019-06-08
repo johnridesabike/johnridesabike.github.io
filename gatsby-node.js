@@ -14,6 +14,7 @@ const siteConfig = require("./data/SiteConfig");
 const postNodes = [];
 
 // https://github.com/Vagr9K/gatsby-advanced-starter/blob/master/gatsby-node.js
+// eslint-disable-next-line complexity
 exports.onCreateNode = function ({node, actions, getNode}) {
     const {createNodeField} = actions;
     let slug;
@@ -54,13 +55,13 @@ exports.onCreateNode = function ({node, actions, getNode}) {
                     console.warn("WARNING: Invalid date.", node.frontmatter);
                 }
                 createNodeField({
-                    node,
                     name: "date",
+                    node,
                     value: date.toISOString()
                 });
             }
         }
-        createNodeField({node, name: "slug", value: slug});
+        createNodeField({name: "slug", node, value: slug});
         postNodes.push(node);
     }
 };
@@ -134,21 +135,21 @@ exports.createPages = function ({graphql, actions}) {
                         categorySet.add(edge.node.frontmatter.category);
                     }
                     createPage({
-                        path: edge.node.fields.slug,
                         component: pageTemplate,
                         context: {
                             slug: edge.node.fields.slug
-                        }
+                        },
+                        path: edge.node.fields.slug
                     });
                 });
                 const categoryList = Array.from(categorySet);
                 categoryList.forEach(function (category) {
                     createPage({
-                        path: `/category/${dashify(category)}/`,
                         component: categoryPage,
                         context: {
                             category
-                        }
+                        },
+                        path: `/category/${dashify(category)}/`
                     });
                 });
             })

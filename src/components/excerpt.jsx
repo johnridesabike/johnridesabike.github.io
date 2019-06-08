@@ -31,6 +31,7 @@ SpecialLink.propTypes = {
 
 const Excerpt = ({
     isExternal,
+    isWide,
     slug,
     title,
     thumbnailURL,
@@ -41,7 +42,7 @@ const Excerpt = ({
         className={classNames(
             styles.excerpt,
             className,
-            {[`${styles.hasThumbnail}`]: thumbnailURL !== null}
+            {[`${styles.isWide}`]: isWide}
         )}
     >
         <header className="has-ui-font">
@@ -111,6 +112,7 @@ Excerpt.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
     isExternal: PropTypes.bool,
+    isWide: PropTypes.bool,
     slug: PropTypes.string,
     thumbnailURL: PropTypes.string,
     title: PropTypes.string
