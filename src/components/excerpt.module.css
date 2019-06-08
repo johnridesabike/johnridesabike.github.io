@@ -8,7 +8,7 @@
     }
 }
 
-.excerpt.hasThumbnail {
+.excerpt.isWide {
     flex-basis: 100%;
 }
 

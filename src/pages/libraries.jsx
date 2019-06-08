@@ -5,7 +5,7 @@ import Icons from "../components/icons";
 import Layout from "../components/layout";
 import React from "react";
 import SEO from "../components/seo";
-import chessStockPhoto from "../images/chess.jpg";
+// import chessStockPhoto from "../images/chess.jpg";
 import classNames from "classnames";
 import styles from "./index.module.css";
 
@@ -149,7 +149,7 @@ export function Libraries() {
                 title="Your Library’s First Chess Tournament: From Opening to Endgame"
                 // eslint-disable-next-line max-len
                 slug="http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame"
-                thumbnailURL={chessStockPhoto}
+                // thumbnailURL={chessStockPhoto}
                 isExternal
             >
                 I've published a guide to running a library chess tournament on

@@ -26,6 +26,7 @@
      * Fonts
      */
     --font-reading:
+        Charter,
         Palatino,
         "Palatino Linotype",
         Athelas,
@@ -44,6 +45,7 @@
         "Helvetica Neue",
         sans-serif;
     --font-site-title:
+        "Libre Baskerville",
         Baskerville,
         "Baskerville Old Face",
         Garamond,

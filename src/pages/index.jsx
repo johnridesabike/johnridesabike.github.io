@@ -25,6 +25,7 @@ function IndexPage() {
                             alt="Portrait of John"
                             height="256"
                             width="256"
+                            style={{borderRadius: "50%"}}
                         />
                     </figure>
                     <p

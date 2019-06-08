@@ -4,7 +4,7 @@ import PostedOn from "./posted-on";
 import PropTypes from "prop-types";
 import React from "react";
 import SEO from "./seo";
-import classnames from "classnames";
+import classNames from "classnames";
 import style from "./page.module.css";
 
 // eslint-disable-next-line complexity
@@ -35,7 +35,7 @@ export default function Page({pageContext, children, location}) {
         <Layout
             entryHeader={
                 <div
-                    className={classnames(
+                    className={classNames(
                         "has-ui-font",
                         style.header,
                         {[`${style.hasThumbnail}`]: thumbnail}
@@ -43,7 +43,7 @@ export default function Page({pageContext, children, location}) {
                 >
                     {thumbnail && (
                         <figure
-                            className={classnames(
+                            className={classNames(
                                 "full-bleed",
                                 style.coverFigure
                             )}
@@ -55,16 +55,21 @@ export default function Page({pageContext, children, location}) {
                             />
                             {caption && (
                                 <figcaption
-                                    className={style.coverFigureCaption}
+                                    className={classNames(
+                                        style.coverFigureCaption,
+                                        "has-xsmall-font-size"
+                                    )}
                                 >
-                                    {caption}
+                                    <span className={style.captionText}>
+                                        {caption}
+                                    </span>
                                 </figcaption>
                             )}
                         </figure>
                     )}
                     <div className={style.headerWrap}>
                         <h1
-                            className={classnames(
+                            className={classNames(
                                 "has-body-font",
                                 style.title
                             )}
@@ -123,7 +128,7 @@ export default function Page({pageContext, children, location}) {
                     )}
                     <footer className={`${style.footer} has-ui-font`}>
                         <div
-                            className={classnames(
+                            className={classNames(
                                 style.postTime,
                                 style.footerItem
                             )}

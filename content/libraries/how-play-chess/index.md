@@ -4,8 +4,8 @@ author: John Jackson
 date: 2019-03-13
 updated: 2019-03-18
 category: Libraries
-thumbnail: ./Chess.jpg
-caption: A chess set with USCF rule book.
+# thumbnail: ./Chess.jpg
+# caption: A chess set with USCF rule book.
 attachments:
     - ./handout-How-to-Play-Chess.pdf
     - ./handout-How-to-Play-Chess.docx

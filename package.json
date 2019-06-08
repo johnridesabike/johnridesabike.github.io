@@ -6,6 +6,7 @@
   "author": "John Jackson",
   "dependencies": {
     "@reach/visually-hidden": "^0.1.4",
+    "charter-webfont": "^3.0.1",
     "classnames": "^2.2.6",
     "dashify": "^2.0.0",
     "dotenv": "^8.0.0",
@@ -41,7 +42,8 @@
     "react-helmet": "^5.2.1",
     "remark": "^10.0.1",
     "remark-html": "^9.0.0",
-    "simple-icons": "^1.9.27"
+    "simple-icons": "^1.9.27",
+    "typeface-libre-baskerville": "0.0.72"
   },
   "devDependencies": {
     "eslint-config-react-app": "^4.0.1",

@@ -1,30 +1,30 @@
-import React from "react";
+import Icons from "./icons";
 import {Link} from "gatsby";
+import React from "react";
+import classnames from "classnames";
 import johnPic from "../images/john2018.jpg";
 import styles from "../styles/widgets.module.css";
-import classnames from "classnames";
-import Icons from "./icons";
 
 const socialMenu = [
     {
+        icon: <Icons.LinkedIn />,
         title: "LinkedIn",
-        url: "https://www.linkedin.com/in/johnbpjackson/",
-        icon: <Icons.LinkedIn />
+        url: "https://www.linkedin.com/in/johnbpjackson/"
     },
     {
+        icon: <Icons.GitHub />,
         title: "GitHub",
-        url: "https://github.com/johnridesabike",
-        icon: <Icons.GitHub />
+        url: "https://github.com/johnridesabike"
     },
     {
+        icon: <Icons.LibraryThing />,
         title: "LibraryThing",
-        url: "https://www.librarything.com/profile/jbpjackson",
-        icon: <Icons.LibraryThing />
+        url: "https://www.librarything.com/profile/jbpjackson"
     },
     {
+        icon: <Icons.Chess />,
         title: "Challenge me to a game of chess",
-        url: "https://lichess.org/@/Chessahoochee",
-        icon: <Icons.Chess />
+        url: "https://lichess.org/@/Chessahoochee"
     }
 ];
 
@@ -43,6 +43,7 @@ const Sidebar = () => (
                     scale="0"
                     width="150"
                     height="150"
+                    style={{borderRadius: "50%"}}
                 />
             </p>
             <p>
