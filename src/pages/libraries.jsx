@@ -120,8 +120,7 @@ export function Libraries() {
             >
                 I worked with a team that researched the distribution of
                 Hispanic and Latino children's books in various US
-                libraries, and we compared our findings with population
-                statistics.
+                libraries.
             </Excerpt>
             <Excerpt
                 {... nodeFields(pages["environmental-analysis"])}
@@ -159,7 +158,7 @@ export function Libraries() {
 
 export default function Page() {
     return (
-        <Layout entryHeader={<h1>Libraries</h1>}>
+        <Layout>
             <SEO
                 title="Libraries"
                 postSEO

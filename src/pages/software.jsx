@@ -45,32 +45,33 @@ export function Software() {
                     Software projects
                 </h1>
                 <p>
-                Software stuff goes here.
+                    These are the sundry software projects I've dabbled in over
+                    the last few years.
                 </p>
             </header>
             <Excerpt
                 {... nodeFields(pages["ios-shortcuts"])}
             >
-                This is a guide I wrote based on an end-table I made with a
-                marble chessboard and 2x4s.
+                These are a few iOS shortcut scripts that I've made.
             </Excerpt>
             <Excerpt
                 {... nodeFields(pages["wordroom-a-pythonista-dictionary-app"])}
             >
-                This is a guide I wrote based on an end-table I made with a
-                marble chessboard and 2x4s.
-            </Excerpt>
-            <Excerpt
-                {... nodeFields(pages["literacy-alliance-wordpress"])}
-            >
-                This is a guide I wrote based on an end-table I made with a
-                marble chessboard and 2x4s.
+                This is an iOS dictionary "app" built with Pythonista. It saves
+                the words you look up and your notes on them.
             </Excerpt>
             <Excerpt
                 {... nodeFields(pages["weracoba-wordpress-theme"])}
             >
-                This is a guide I wrote based on an end-table I made with a
-                marble chessboard and 2x4s.
+                (Currently defunct.) This is a custom WordPress theme I created
+                from scratch. I don't update it anymore since I stopped using
+                WordPress for this site.
+            </Excerpt>
+            <Excerpt
+                {... nodeFields(pages["literacy-alliance-wordpress"])}
+            >
+                In 2017, I redesigned a website for the local nonprofit Literacy
+                Alliance using WordPress and SquareSpace.
             </Excerpt>
         </section>
     );
@@ -78,7 +79,7 @@ export function Software() {
 
 export default function Page() {
     return (
-        <Layout entryHeader={<h1>Software</h1>}>
+        <Layout>
             <SEO
                 title="Software"
                 postSEO

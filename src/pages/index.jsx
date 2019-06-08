@@ -1,214 +1,119 @@
-import React from "react";
-import {Link} from "gatsby";
-import classnames from "classnames";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import john2018 from "../images/john2018.jpg";
-import {useAllPages} from "../hooks";
-import Excerpt from "../components/old/excerpt";
 import Icons from "../components/icons";
+import Layout from "../components/layout";
+import {Libraries} from "./libraries";
+import {Link} from "gatsby";
+import React from "react";
+import SEO from "../components/seo";
+import {Software} from "./software";
+import {Woodworking} from "./woodworking";
+import classNames from "classnames";
+import john2018 from "../images/john2018.jpg";
 import styles from "./index.module.css";
 
 function IndexPage() {
-    let allPages = useAllPages();
-    allPages = allPages.filter((p) => p.node.fields !== null);
-    const woodworking = allPages.filter(
-        (p) => p.node.fields.category === "woodworking"
-    );
-    const libraries = allPages.filter(
-        (p) => p.node.fields.category === "libraries"
-    );
-    const software = allPages.filter(
-        (p) => p.node.fields.category === "software"
-    );
     return (
         <Layout>
             <SEO
                 title="Home"
                 keywords={["librarian", "software", "woodworking"]}
             />
-            <main id="main" className="site-main">
-                <div className="page-content">
-                    {/* <h1>Hi people</h1>
-                    <p>Welcome to your new Gatsby site.</p>
-                    <p>Now go build something great.</p>
-                    <div
-                        style={{
-                            maxWidth: "300px",
-                            marginBottom: "1.45rem"
-                        }}
-                    >
-                        <Image />
-                    </div>
-                    <Link to="/page-2/">Go to page 2</Link> */}
-                    <div className={styles.topColumns}>
-                        <figure>
-                            <img
-                                src={john2018}
-                                alt="Portrait of John"
-                                height="256"
-                                width="256"
-                            />
-                        </figure>
-                        <p className={classnames(
+            <main id="main" className="site-main page-content">
+                <div className={styles.topColumns}>
+                    <figure>
+                        <img
+                            src={john2018}
+                            alt="Portrait of John"
+                            height="256"
+                            width="256"
+                        />
+                    </figure>
+                    <p
+                        className={classNames(
                             styles.hi,
                             "has-large-font-size"
-                        )}>
-                            Hi, I'm John Jackson.
-                        </p>
-                    </div>
-                    <p>
-                        I’m a public library staffer who is interested in
-                        digital library technologies, web development, and
-                        libraries of all types. I like to bike, write,
-                        build, and tinker.
+                        )}
+                    >
+                        Hi, I'm John Jackson.
                     </p>
-                    <div className={styles.topColumns}>
-                        <div>
-                            <p>
-                                <strong>
+                </div>
+                <p>
+                    I’m a public library staffer who is interested in
+                    digital library technologies, web development, and
+                    libraries of all types. I like to bike, write,
+                    build, and tinker.
+                </p>
+                <div className={styles.topColumns}>
+                    <div>
+                        <p>
+                            <strong>
                                     Hiring? Here’s a bit about me:
-                                </strong>
-                            </p>
-                            <p style={{textAlign: "left"}}>
-                                <span role="img" aria-label="check">
+                            </strong>
+                        </p>
+                        <p style={{textAlign: "left"}}>
+                            <span role="img" aria-label="check">
                                     ✔️
-                                </span>{" "}
+                            </span>{" "}
                                 MLIS Graduate.
-                            </p>
-                            <p style={{textAlign: "left"}}>
-                                <span role="img" aria-label="check">
+                        </p>
+                        <p style={{textAlign: "left"}}>
+                            <span role="img" aria-label="check">
                                     ✔️
-                                </span>{" "}
+                            </span>{" "}
                                 Working in libraries since 2015.
-                            </p>
-                            <p style={{textAlign: "left"}}>
-                                <span role="img" aria-label="check">
+                        </p>
+                        <p style={{textAlign: "left"}}>
+                            <span role="img" aria-label="check">
                                     ✔️
-                                </span>{" "}
-                                Experience in adult services programming,
-                                web development, data management, customer
-                                service, and more.
-                            </p>
-                            <div className="wp-block-button aligncenter is-style-squared">
-                                <Link
-                                    className="wp-block-button__link"
-                                    to="/resume/"
-                                >
+                            </span>{" "}
+                            Experience in adult services programming,
+                            web development, data management, customer
+                            service, and more.
+                        </p>
+                        <div
+                            className={classNames(
+                                "wp-block-button",
+                                "aligncenter",
+                                "is-style-squared"
+                            )}
+                        >
+                            <Link
+                                className="wp-block-button__link"
+                                to="/resume/"
+                            >
                                     View my full résumé
-                                </Link>
-                            </div>
-                        </div>
-                        <div>
-                            <p>
-                                <strong>Let’s get in touch.</strong>
-                            </p>
-                            <p style={{textAlign: "left"}}>
-                                Questions, comments, job offers, jokes,
-                                poems, or just to say “hi.”{" "}
-                            </p>
-                            <div className="wp-block-button aligncenter is-style-squared">
-                                <a
-                                    className="wp-block-button__link"
-                                    href="mailto:jbpjackson@icloud.com"
-                                >
-                                    <Icons.Mail /> Email me
-                                </a>
-                            </div>
+                            </Link>
                         </div>
                     </div>
-
-                    <div className="wp-block-columns alignwide has-2-columns">
+                    <div>
+                        <p>
+                            <strong>Let’s get in touch.</strong>
+                        </p>
+                        <p style={{textAlign: "left"}}>
+                            Questions, comments, job offers, jokes,
+                            poems, or just to say “hi.”{" "}
+                        </p>
                         <div
-                            className={
-                                "wp-block-column " + styles.description
-                            }
+                            className={classNames(
+                                "wp-block-button",
+                                "aligncenter",
+                                "is-style-squared"
+                            )}
                         >
-                            <Icons.Library
-                                style={{
-                                    display: "block",
-                                    margin: "auto"
-                                }}
-                                className="has-header-color"
-                            />
-                            <h3>Libraries</h3>
-                            <p>
-                                Some of the projects I’ve completed while
-                                working at a library and while completing my
-                                MLIS.
-                            </p>
-                        </div>
-                        <div
-                            className={"wp-block-column " + styles.content}
-                        >
-                            {libraries.map((edge) => (
-                                <Excerpt
-                                    node={edge.node}
-                                    key={edge.node.fields.slug}
-                                />
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="wp-block-columns alignwide has-2-columns">
-                        <div
-                            className={"wp-block-column " + styles.content}
-                        >
-                            {software.map((edge) => (
-                                <Excerpt
-                                    node={edge.node}
-                                    key={edge.node.fields.slug}
-                                />
-                            ))}
-                        </div>
-                        <div
-                            className={
-                                "wp-block-column " + styles.description
-                            }
-                        >
-                            <Icons.Software
-                                style={{display: "block", margin: "auto"}}
-                                className="has-header-color"
-                            />
-                            <h3>Software</h3>
-                            <p>
-                                These are various software projects I've
-                                worked on.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="wp-block-columns alignwide has-2-columns">
-                        <div
-                            className={
-                                "wp-block-column " + styles.description
-                            }
-                        >
-                            <Icons.Tool
-                                style={{
-                                    display: "block",
-                                    margin: "auto"
-                                }}
-                                className="has-header-color"
-                            />
-                            <h3>Woodworking</h3>
-                            <p>
-                                Guides for the woodworking projects I’ve
-                                done.
-                            </p>
-                        </div>
-                        <div
-                            className={"wp-block-column " + styles.content}
-                        >
-                            {woodworking.map((edge) => (
-                                <Excerpt
-                                    node={edge.node}
-                                    key={edge.node.fields.slug}
-                                />
-                            ))}
+                            <a
+                                className="wp-block-button__link"
+                                href="mailto:jbpjackson@icloud.com"
+                            >
+                                <Icons.Mail /> Email me
+                            </a>
                         </div>
                     </div>
                 </div>
+                <hr />
+                <Libraries />
+                <hr />
+                <Woodworking />
+                <hr />
+                <Software />
             </main>
         </Layout>
     );
