@@ -1,11 +1,13 @@
-import React from "react";
-import classnames from "classnames";
 import Layout from "./layout";
-import SEO from "./seo";
-import PostedOn from "./posted-on";
 import PostedBy from "./posted-by";
+import PostedOn from "./posted-on";
+import PropTypes from "prop-types";
+import React from "react";
+import SEO from "./seo";
+import classnames from "classnames";
 import style from "./page.module.css";
 
+// eslint-disable-next-line complexity
 export default function Page({pageContext, children, location}) {
     const {
         caption,
@@ -18,11 +20,7 @@ export default function Page({pageContext, children, location}) {
         ISOUpdated,
         attachments
     } = pageContext.frontmatter;
-    const path = (
-        (pageContext.slug)
-        ? pageContext.slug
-        : location.pathname
-    );
+    const path = (pageContext.slug) ? pageContext.slug : location.pathname;
     const content = (
         (typeof children === "string")
         ? (
@@ -57,7 +55,8 @@ export default function Page({pageContext, children, location}) {
                             />
                             {caption && (
                                 <figcaption
-                                    className={style.coverFigureCaption}>
+                                    className={style.coverFigureCaption}
+                                >
                                     {caption}
                                 </figcaption>
                             )}
@@ -74,8 +73,7 @@ export default function Page({pageContext, children, location}) {
                         </h1>
                         <div className={style.meta}>
                             <div className={style.metaWrapper}>
-                                {author &&
-                                    <PostedBy author={author} />
+                                {author && <PostedBy author={author} />
                                 }
                                 {date &&
                                     <PostedOn
@@ -124,19 +122,15 @@ export default function Page({pageContext, children, location}) {
                         </div>
                     )}
                     <footer className={`${style.footer} has-ui-font`}>
-                        <div className={classnames(
-                            style.postTime,
-                            style.footerItem
-                        )}>
+                        <div
+                            className={classnames(
+                                style.postTime,
+                                style.footerItem
+                            )}
+                        >
                             <time dateTime={ISOUpdated}>
                                 Updated on {updated || date}
                             </time>
-                            {/* <div className="entry-footer-wrapper entry-footer__item">
-                            <div className="post-taxonomy entry-footer__item">
-                                {% import "partials/entry-meta.njk" as entryMeta %}
-                                {{ entryMeta.tags(tags) }}
-                            </div><!--.post-taxonomy-->
-                        </div><!-- .entry-footer-wrapper --> */}
                         </div>
                     </footer>
                 </article>
@@ -144,3 +138,8 @@ export default function Page({pageContext, children, location}) {
         </Layout>
     );
 }
+Page.propTypes = {
+    children: PropTypes.node,
+    location: PropTypes.any,
+    pageContext: PropTypes.any
+};

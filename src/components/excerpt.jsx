@@ -33,10 +33,15 @@ const Excerpt = ({slug, title, thumbnail, children, className}) => (
         </header>
         <div className={styles.content}>
             {thumbnail && (
-                <figure className={classNames("full-bleed", styles.thumbnail)}>
+                <figure
+                    className={classNames(
+                        "full-bleed",
+                        styles.coverFigure
+                    )}
+                >
                     <a
                         href={slug}
-                        className=""
+                        className={styles.coverLink}
                         aria-hidden="true"
                         tabIndex="-1"
                     >
@@ -44,7 +49,7 @@ const Excerpt = ({slug, title, thumbnail, children, className}) => (
                             width="128"
                             height="96"
                             src={thumbnail.publicURL}
-                            className=""
+                            className={styles.coverImg}
                             alt=""
                         />
                     </a>
