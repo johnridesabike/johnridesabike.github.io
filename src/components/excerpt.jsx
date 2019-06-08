@@ -1,16 +1,47 @@
+import Icons from "./icons";
 import {Link} from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import VisuallyHidden from "@reach/visually-hidden";
 import classNames from "classnames";
+import {omit} from "ramda";
 import styles from "./excerpt.module.css";
 
-const Excerpt = ({slug, title, thumbnail, children, className}) => (
+function SpecialLink(props) {
+    return (props.isExternal)
+        ? (
+            <a
+                rel="external"
+                href={props.to}
+                {...omit(["isExternal", "to"], props)}
+            >
+                {props.children}
+            </a>
+        ) : (
+            <Link {...omit(["isExternal"], props)}>
+                {props.children}
+            </Link>
+        );
+}
+SpecialLink.propTypes = {
+    children: PropTypes.node,
+    isExternal: PropTypes.bool,
+    to: PropTypes.string
+};
+
+const Excerpt = ({
+    isExternal,
+    slug,
+    title,
+    thumbnailURL,
+    children,
+    className
+}) => (
     <article
         className={classNames(
             styles.excerpt,
             className,
-            {[`${styles.hasThumbnail}`]: thumbnail !== null}
+            {[`${styles.hasThumbnail}`]: thumbnailURL !== null}
         )}
     >
         <header className="has-ui-font">
@@ -22,37 +53,35 @@ const Excerpt = ({slug, title, thumbnail, children, className}) => (
                     styles.title
                 )}
             >
-                <Link
-                    to={slug}
-                    rel="bookmark"
-                    className=""
-                >
-                    {title}
-                </Link>
+                <SpecialLink to={slug} rel="bookmark" isExternal={isExternal}>
+                    {title}{" "}
+                    {(isExternal) && <Icons.ExternalLink/>}
+                </SpecialLink>
             </h3>
         </header>
         <div className={styles.content}>
-            {thumbnail && (
+            {thumbnailURL && (
                 <figure
                     className={classNames(
                         "full-bleed",
                         styles.coverFigure
                     )}
                 >
-                    <a
-                        href={slug}
+                    <SpecialLink
+                        to={slug}
                         className={styles.coverLink}
                         aria-hidden="true"
                         tabIndex="-1"
+                        isExternal={isExternal}
                     >
                         <img
                             width="128"
                             height="96"
-                            src={thumbnail.publicURL}
+                            src={thumbnailURL}
                             className={styles.coverImg}
                             alt=""
                         />
-                    </a>
+                    </SpecialLink>
                 </figure>
             )}
             <p
@@ -64,15 +93,16 @@ const Excerpt = ({slug, title, thumbnail, children, className}) => (
                 {children}
             </p>
             <VisuallyHidden>
-                <Link
+                <SpecialLink
                     to={slug}
                     className={classNames(
                         "button-link__link"
                     )}
                     rel="bookmark"
+                    isExternal={isExternal}
                 >
                     Open {title}
-                </Link>
+                </SpecialLink>
             </VisuallyHidden>
         </div>
     </article>
@@ -80,8 +110,9 @@ const Excerpt = ({slug, title, thumbnail, children, className}) => (
 Excerpt.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
+    isExternal: PropTypes.bool,
     slug: PropTypes.string,
-    thumbnail: PropTypes.object,
+    thumbnailURL: PropTypes.string,
     title: PropTypes.string
 };
 export default Excerpt;

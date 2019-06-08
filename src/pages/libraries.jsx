@@ -5,6 +5,7 @@ import Icons from "../components/icons";
 import Layout from "../components/layout";
 import React from "react";
 import SEO from "../components/seo";
+import chessStockPhoto from "../images/chess.jpg";
 import classNames from "classnames";
 import styles from "./index.module.css";
 
@@ -83,7 +84,7 @@ export function Libraries() {
                 example data management plan I created.
             </Excerpt>
 
-            <h3 className={styles.divider}>Technical services</h3>
+            <h2 className={styles.divider}>Technical services</h2>
             <Excerpt
                 {... nodeFields(pages["ex-libris-opac-analysis"])}
             >
@@ -130,18 +131,33 @@ export function Libraries() {
                 Chattahoochee Valley Libraries in Columbus, GA.
             </Excerpt>
         </section>
+        <hr />
         <section className={classNames(styles.section)}>
             <header className={styles.sectionHeader}>
                 <h1>
-                    <Icons.Library height="1em" width="1em"/>{" "}
-                    Public library work
+                    <Icons.Chess />{" "}
+                    Chess at the library.
                 </h1>
                 <p>
-                    In addition to my academic career, I've worked in a
-                    public library for several years. These are a few of the
-                    projects I've worked on during that time.
+                    While working at a public library for the last few years,
+                    I've developed an all-ages chess program. These are a few
+                    resources I created to help facilitate it
                 </p>
             </header>
+            <Excerpt
+                // eslint-disable-next-line max-len
+                title="Your Library’s First Chess Tournament: From Opening to Endgame"
+                // eslint-disable-next-line max-len
+                slug="http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame"
+                thumbnailURL={chessStockPhoto}
+                isExternal
+            >
+                I've published a guide to running a library chess tournament on
+                {" "}<em>Programming Librarian</em>. It covers all of the basic
+                knowledge such as scorekeeping and pairing, plus other tips that
+                a library worker (or anyone directing a tournamnet) would need
+                to know.
+            </Excerpt>
             <Excerpt
                 {... nodeFields(pages["how-play-chess"])}
             >

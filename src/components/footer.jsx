@@ -1,8 +1,8 @@
+import Icons from "./icons";
 import React from "react";
 import classnames from "classnames";
 import styles from "./footer.module.css";
 import widgetStyles from "../styles/widgets.module.css";
-import Icons from "./icons";
 
 const Footer = () => (
     <footer
@@ -14,9 +14,11 @@ const Footer = () => (
         )}
     >
         <div className={classnames(styles.footer, widgetStyles.widgetArea)}>
-            <section className={classnames(
-                widgetStyles.widget,
-                styles.footerWidget)}
+            <section
+                className={classnames(
+                    widgetStyles.widget,
+                    styles.footerWidget
+                )}
             >
                 <p>
                     Copyright ©{" "}
@@ -35,9 +37,11 @@ const Footer = () => (
                     .
                 </p>
             </section>
-            <section className={classnames(
-                widgetStyles.widget,
-                styles.footerWidget)}
+            <section
+                className={classnames(
+                    widgetStyles.widget,
+                    styles.footerWidget
+                )}
             >
                 <p>
                     This website doesn't collect or store anything about{" "}

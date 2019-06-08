@@ -30,7 +30,8 @@ hr {
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
     margin: 0 0 1.5em 0;
     padding-left: 1.5em;
 }
@@ -90,6 +91,7 @@ blockquote {
     margin-right: 0;
     margin-left: 0;
     padding: 0 1.5em;
+
     /* use padding, not margins to avoid conflict with post content margins */
     border-left-width: 2px;
     border-left-style: solid;
@@ -104,12 +106,19 @@ address {
     margin: 0 0 1.5em;
 }
 
-img,
-svg {
+img {
     /* Adhere to container width. */
     max-width: 100%;
+
     /* Make sure images are scaled correctly. */
     height: auto;
+}
+
+svg {
+    max-width: 100%;
+    height: 1em;
+    width: auto;
+    vertical-align: middle;
 }
 
 figure {
@@ -124,14 +133,15 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     padding: 0 6px;
     border: 1px solid #000;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
 ## Forms
---------------------------------------------------------------*/
+-------------------------------------------------------------- */
 textarea {
     width: 100%;
 }
@@ -182,9 +192,9 @@ select {
     border: 1px solid #ccc;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
 ## Links
---------------------------------------------------------------*/
+-------------------------------------------------------------- */
 /* stylelint-disable-next-line no-duplicate-selectors */
 a {
     color: var(--color-link);
@@ -195,7 +205,9 @@ a:visited {
     color: var(--color-link);
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
     color: var(--color-link-hover);
     text-decoration: underline;
 }
@@ -204,12 +216,13 @@ a:focus {
     outline: thin dotted;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
     outline: 0;
 }
 
-/* All of the buttons and button-like elements */
-/* This can be used in the HTML templates or extended to produce more buttons */
+/* All of the buttons and button-like elements
+This can be used in the HTML templates or extended to produce more buttons */
 .button-link__link {
     color: var(--color-bg-body);
     background-color: var(--color-link);
@@ -227,7 +240,9 @@ a:hover, a:active {
     filter: drop-shadow(0 0 1px black);
 }
 
-.button-link__link:hover, .button-link__link:focus, .button-link__link:active {
+.button-link__link:hover,
+.button-link__link:focus,
+.button-link__link:active {
     color: var(--color-bg-body);
     background-color: var(--color-link-hover);
     text-decoration: none;
@@ -260,7 +275,9 @@ input[type="submit"] svg {
     filter: drop-shadow(0 0 1px black);
 }
 
-button:hover, button:focus, button:active,
+button:hover,
+button:focus,
+button:active,
 input[type="button"]:hover,
 input[type="button"]:focus,
 input[type="button"]:active,
@@ -279,7 +296,6 @@ form span.required {
     opacity: 0.8;
     font-size: var(--font-size-xs);
 }
-
 
 /* Gatsby wraps some elements in <p> which adds extra margins to them */
 td > p:only-of-type,
