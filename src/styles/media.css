@@ -5,9 +5,9 @@ object {
     max-width: 100%;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
 ## Alignments and Images
---------------------------------------------------------------*/
+-------------------------------------------------------------- */
 .alignleft {
     float: left;
     margin-right: 1.5em;
@@ -40,9 +40,10 @@ object {
     margin: 0 -1em;
     border: none;
 }
-/*--------------------------------------------------------------
+
+/* --------------------------------------------------------------
 ## Archive View Featured Images
---------------------------------------------------------------*/
+-------------------------------------------------------------- */
 /* .excerpt-entry .featured-image {
     position: relative;
     margin-top: 0;
@@ -74,9 +75,9 @@ object {
     width: 100%;
 }
 
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
 ## Captions
---------------------------------------------------------------*/
+-------------------------------------------------------------- */
 .wp-caption {
     max-width: 100%;
     margin-bottom: 1.5em;
@@ -97,7 +98,8 @@ object {
 ** Media Queries
 **/
 @media screen and (max-width: 600px) {
-    /* On small screens, display left and right alignments as if they were centered */
+    /* On small screens, display left and right alignments as if they were
+    centered */
     .alignleft,
     .alignright {
         float: none !important;
@@ -121,6 +123,7 @@ object {
     .centered-image {
         margin: 0 -2em;
     }
+
     .featured-image__archive.full-bleed {
         /* cancel full-bleed on larger screens */
         margin-right: 0;

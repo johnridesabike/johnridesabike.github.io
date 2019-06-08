@@ -15,6 +15,7 @@
     display: block;
     float: left;
     margin: 0.25em 0.5em 0 0;
+    height: 32px;
 }
 
 @media screen and (min-width: 600px) {
@@ -22,6 +23,7 @@
         display: flex;
         justify-content: space-between;
     }
+
     .footerWidget {
         width: calc(50% - var(--column-margin));
     }
