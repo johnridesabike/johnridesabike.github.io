@@ -13,6 +13,7 @@ const edges2Dict = (edgesArr) => (
 export {edges2Dict};
 
 const nodeFields = (node) => ({
+    isWide: node.frontmatter.thumbnail !== null,
     slug: node.fields.slug,
     thumbnailURL: (node.frontmatter.thumbnail)
         ? node.frontmatter.thumbnail.publicURL

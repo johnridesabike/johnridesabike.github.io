@@ -50,7 +50,13 @@ export function Software() {
                 </p>
             </header>
             <Excerpt
+                {... nodeFields(pages["chessahoochee"])}
+            >
+                A free, open-source Swiss chess tournament manager.
+            </Excerpt>
+            <Excerpt
                 {... nodeFields(pages["ios-shortcuts"])}
+                isWide={false}
             >
                 These are a few iOS shortcut scripts that I've made.
             </Excerpt>
@@ -69,6 +75,7 @@ export function Software() {
             </Excerpt>
             <Excerpt
                 {... nodeFields(pages["literacy-alliance-wordpress"])}
+                isWide={false}
             >
                 In 2017, I redesigned a website for the local nonprofit Literacy
                 Alliance using WordPress and SquareSpace.
