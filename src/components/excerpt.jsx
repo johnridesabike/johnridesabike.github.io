@@ -64,7 +64,7 @@ const Excerpt = ({
             {thumbnailURL && (
                 <figure
                     className={classNames(
-                        "full-bleed",
+                        "full-bleed-small",
                         styles.coverFigure
                     )}
                 >

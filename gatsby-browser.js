@@ -5,7 +5,7 @@
  */
 
 import "normalize.css";
-import "charter-webfont";
+import "typeface-source-serif-pro";
 import "typeface-libre-baskerville";
 import "firacode/distr/fira_code.css";
 import "./src/styles/prism-dracula.css";

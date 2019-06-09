@@ -25,7 +25,7 @@ function IndexPage() {
                             alt="Portrait of John"
                             height="256"
                             width="256"
-                            style={{borderRadius: "50%"}}
+                            className="avatar"
                         />
                     </figure>
                     <p
@@ -112,9 +112,9 @@ function IndexPage() {
                 <hr />
                 <Libraries />
                 <hr />
-                <Woodworking />
-                <hr />
                 <Software />
+                <hr />
+                <Woodworking />
             </main>
         </Layout>
     );

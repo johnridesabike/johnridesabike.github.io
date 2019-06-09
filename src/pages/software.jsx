@@ -45,14 +45,16 @@ export function Software() {
                     Software projects
                 </h1>
                 <p>
-                    These are the sundry software projects I've dabbled in over
-                    the last few years.
+                    The sundry software projects I've dabbled in over the
+                    years. I do mostly coding and web design.
                 </p>
             </header>
             <Excerpt
                 {... nodeFields(pages["chessahoochee"])}
             >
-                A free, open-source Swiss chess tournament manager.
+                I created my own Swiss chess tournament manager with JavaScript
+                and React. It's free and open source for anyone to use, but
+                especially designed for the needs of libraries and small clubs.
             </Excerpt>
             <Excerpt
                 {... nodeFields(pages["ios-shortcuts"])}

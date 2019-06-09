@@ -5,6 +5,12 @@ object {
     max-width: 100%;
 }
 
+.avatar {
+    border-radius: 50%;
+    border: 2px white solid;
+    box-shadow: 0 0 4px rgba(3, 114, 124, 0.8);
+}
+
 /* --------------------------------------------------------------
 ## Alignments and Images
 -------------------------------------------------------------- */
@@ -107,6 +113,14 @@ object {
         display: block;
         margin-right: auto !important;
         margin-left: auto !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .full-bleed-small {
+        /* full-bleed on small screens */
+        margin-right: -1rem;
+        margin-left: -1rem;
     }
 }
 
