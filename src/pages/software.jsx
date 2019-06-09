@@ -49,6 +49,7 @@ export function Software() {
                     years. I do mostly coding and web design.
                 </p>
             </header>
+            <h2 className={styles.divider}>Apps and scripts</h2>
             <Excerpt
                 {... nodeFields(pages["chessahoochee"])}
             >
@@ -68,6 +69,7 @@ export function Software() {
                 This is an iOS dictionary "app" built with Pythonista. It saves
                 the words you look up and your notes on them.
             </Excerpt>
+            <h2 className={styles.divider}>Web development</h2>
             <Excerpt
                 {... nodeFields(pages["weracoba-wordpress-theme"])}
             >

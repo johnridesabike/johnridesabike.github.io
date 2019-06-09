@@ -24,6 +24,7 @@ body {
 hr {
     height: 2px;
     margin-bottom: 1.5em;
+    margin-top: 1.5em;
     border: 0;
     background-color: var(--color-link);
     clear: both;
