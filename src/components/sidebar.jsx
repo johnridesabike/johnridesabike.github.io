@@ -43,7 +43,6 @@ const Sidebar = () => (
                     scale="0"
                     width="150"
                     height="150"
-                    style={{borderRadius: "50%"}}
                 />
             </p>
             <p>
