@@ -7,13 +7,17 @@ category: Software
 thumbnail: ./icon_pretty_wide.svg
 caption: The Chessahoochee logo.
 ---
-Chessahoochee is a free, open-source app for managing Swiss chess tournaments. I began working on it shortly after hosting a tournament at my public library, and I discovered a dearth of free software. Library employees deal with limited budgets and restrictive computer access, so purchasing, installing, and learning to use specialized tournament software is usually a considerable barrier-to-entry.
-
-Chessahoochee aims to solve this problem. It’s free, open source, and runs on almost any system. Although it (probably) won’t replace a professional app in a rated tournament, it fills the gap for small-scale clubs or public events.
+Chessahoochee is a free, open-source app for managing Swiss-style chess tournaments.
 
 <p><div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://johnridesa.bike/chessahoochee/">Launch Chessahoochee in your browser</a></div></p>
 
 <p><div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://github.com/johnridesabike/chessahoochee">Download or fork on GitHub</a></div></p>
+
+## Background
+
+I began working on Chessahoochee shortly after hosting a tournament at Chattahoochee Valley Libraries, and I discovered a dearth of free software. Library employees deal with limited budgets and restrictive computer access, so purchasing, installing, and learning to use specialized tournament software is usually a considerable barrier-to-entry.
+
+Chessahoochee aims to solve this problem. It’s free, open source, and runs on almost any system. Although it (probably) won’t replace a professional app in a rated tournament, it fills the gap for small clubs or public events.
 
 ## Setup
 
