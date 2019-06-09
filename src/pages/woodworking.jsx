@@ -1,7 +1,7 @@
 import {edges2Dict, nodeFields} from "../utils";
 import {graphql, useStaticQuery} from "gatsby";
 import Excerpt from "../components/excerpt";
-import Icons from "../components/icons";
+// import Icons from "../components/icons";
 import Layout from "../components/layout";
 import React from "react";
 import SEO from "../components/seo";
@@ -41,7 +41,7 @@ export function Woodworking() {
         <section className={classNames(styles.section)}>
             <header className={styles.sectionHeader}>
                 <h1>
-                    <Icons.Tool height="1em" width="1em"/>{" "}
+                    <span role="img" aria-hidden>🛠</span>{" "}
                     Woodworking projects
                 </h1>
                 <p>
@@ -49,6 +49,7 @@ export function Woodworking() {
                     wrote for them.
                 </p>
             </header>
+            <h2 className={styles.divider}>Guides</h2>
             <Excerpt
                 {... nodeFields(pages["marble-top-chessboard-end-table"])}
             >

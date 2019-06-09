@@ -144,6 +144,7 @@ export function Libraries() {
                     resources I created to help facilitate it
                 </p>
             </header>
+            <h2 className={styles.divider}>Chess articles</h2>
             <Excerpt
                 // eslint-disable-next-line max-len
                 title="Your Library’s First Chess Tournament: From Opening to Endgame"

@@ -40,7 +40,7 @@ h6 {
 h1 {
     clear: both;
     font-size: var(--font-size-xl);
-    line-height: 1.3982;
+    line-height: 1.4;
 }
 
 /* Use h2, h3, h4 in document bodies */
@@ -50,13 +50,13 @@ h2 {
     border-top-width: 2px;
     border-top-style: solid;
     font-size: var(--font-size-lg);
-    line-height: 1.43744;
+    line-height: 1.4;
 }
 
 h3 {
     clear: both;
     font-size: var(--font-size-md);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.4;
     letter-spacing: var(--letter-spacing-allcaps);
     text-transform: uppercase;
@@ -64,7 +64,7 @@ h3 {
 
 h4 {
     font-size: var(--font-size-sm);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.4;
     letter-spacing: var(--letter-spacing-allcaps);
     text-transform: uppercase;
@@ -73,13 +73,13 @@ h4 {
 /* Please don't use h5 or h6... why do we need them, anyway? */
 h5 {
     font-size: var(--font-size-sm);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.56297;
 }
 
 h6 {
     font-size: var(--font-size-xs);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.62254;
 }
 
