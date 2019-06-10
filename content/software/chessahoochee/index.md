@@ -2,7 +2,7 @@
 title: "Chessahoochee: a Swiss chess tournament manager"
 author: John Jackson
 date: 2019-06-08
-updated: 2019-06-08
+updated: 2019-06-10
 category: Software
 thumbnail: ./icon_pretty_wide.svg
 caption: The Chessahoochee logo.
@@ -15,7 +15,7 @@ Chessahoochee is a free, open-source app for managing Swiss-style chess tourname
 
 ## Background
 
-I began working on Chessahoochee shortly after hosting a tournament at Chattahoochee Valley Libraries, and I discovered a dearth of free software. Library employees deal with limited budgets and restrictive computer access, so purchasing, installing, and learning to use specialized tournament software is usually a considerable barrier-to-entry.
+I began working on Chessahoochee shortly after hosting a tournament at Chattahoochee Valley Libraries. I discovered a dearth of free software, and decided to change that. Library employees deal with limited budgets and restrictive computer access, so purchasing, installing, and learning to use specialized tournament software is usually a considerable barrier-to-entry.
 
 Chessahoochee aims to solve this problem. It’s free, open source, and runs on almost any system. Although it (probably) won’t replace a professional app in a rated tournament, it fills the gap for small clubs or public events.
 
@@ -31,7 +31,7 @@ Tournaments use the Swiss-style system. For the unfamiliar, [my article on runni
 
 ### Rounds
 
-After you make a tournament and add your players, you can create a new round. There is a basic interface to help you pair players, but almost always you should use the “auto-pair players” button. Only resort to manual pairing if the auto-pair results cause a problem.
+After you make a tournament and add your players, you can create a new round. There is a basic interface to help you pair players, but you should almost always use the “auto-pair players” button. Typically, just resort to manual pairing if the auto-pair results cause a problem.
 
 Once the players are paired, the pairings will be listed in a numbered order. These numbers would typically correspond to specific tables or chess sets you have. The round screen provides controls to rearrange these pairings, swap players’ colors, or unpair the players. Of course, you can also set the result of each match.
 
@@ -65,7 +65,9 @@ Chessahoochee addresses these in a couple of ways. First, you can manually load 
 
 ### Scoring
 
-I modeled the scorekeeping code after the specifications by the USCF. When appropriate, the code should have comments indicating the specific section of the rulebook they come from. Not all scoring rules are implemented (yet), just the commonly recommended ones.
+I modeled the scorekeeping code after the specifications by the USCF. When appropriate, the code should have comments indicating the specific section of the rulebook they come from. Not all scoring rules are implemented (yet), just the commonly used ones.
+
+[USCF's scoring guidelines can be found on their rulebook, which is freely downloadable here.](http://www.uschess.org/content/view/7752/369/)
 
 ### Pairing
 
@@ -73,4 +75,4 @@ Similar to scoring, the auto-pairing functions aim to comply with USCF recommend
 
 ### Source code
 
-All code is [GPL v3.0 licensed](https://github.com/johnridesabike/chessahoochee/blob/master/LICENSE) which allows anyone the freedom to download and modify it. I welcome contributions in code, suggestions, or bug reports. [This document in the repository](https://github.com/johnridesabike/chessahoochee/blob/master/CONTRIBUTING.md) includes more details about the project’s goals and direction.
+All code is [GPL v3.0 licensed](https://github.com/johnridesabike/chessahoochee/blob/master/LICENSE) which allows anyone the freedom to download and modify it. I welcome contributions in code, as well as suggestions and bug reports. [Visit the repository page to get started](https://github.com/johnridesabike/chessahoochee/).
