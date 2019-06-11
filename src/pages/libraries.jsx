@@ -156,7 +156,7 @@ export function Libraries() {
                 I've published a guide to running a library chess tournament on
                 {" "}<em>Programming Librarian</em>. It covers all of the basic
                 knowledge such as scorekeeping and pairing, plus other tips that
-                a library worker (or anyone directing a tournamnet) would need
+                a library worker (or anyone directing a tournament) would need
                 to know.
             </Excerpt>
             <Excerpt
