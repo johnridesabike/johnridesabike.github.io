@@ -70,7 +70,7 @@ export default function Page({pageContext, children, location}) {
                     <div className={style.headerWrap}>
                         <h1
                             className={classNames(
-                                "has-body-font",
+                                "has-title-font",
                                 style.title
                             )}
                         >
