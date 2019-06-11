@@ -21,7 +21,7 @@
 .title {
     display: inline-block;
     margin: 0;
-    font-family: var(--font-site-title);
+    font-family: var(--font-title);
     font-size: var(--font-size-xxl);
     line-height: 1.36683;
 }
@@ -42,16 +42,19 @@
     .branding {
         text-align: left;
     }
+
     .globalHeader {
         margin: 1em 0 0 0;
         flex-flow: row nowrap;
         align-items: flex-start;
         justify-content: space-between;
     }
+
     .title {
         margin: 0;
         font-size: var(--font-size-xxl);
     }
+
     .headerWrapper {
         text-align: left;
     }
@@ -64,23 +67,3 @@
         margin-left: auto;
     }
 }
-
-/*
-.widget__breadcrumbs {
-    max-width: 20rem;
-    margin-bottom: 0.5em;
-    opacity: 0.8;
-    font-size: var(--font-size-sm);
-}
-
-.widget__breadcrumbs > div {
-    display: inline-block;
-    overflow: hidden;
-    max-width: 100%;
-    padding: 0.25em;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-*/

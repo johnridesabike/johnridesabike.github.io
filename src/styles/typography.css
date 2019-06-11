@@ -202,6 +202,10 @@ big {
     font-family: var(--font-reading);
 }
 
+.has-title-font {
+    font-family: var(--font-title);
+}
+
 .footer-widgets {
     opacity: 0.8;
 }
