@@ -55,7 +55,7 @@ Outside of tournaments, there is also a page for managing players. If you open a
 
 You can edit other player data as well, but you typically won’t need to.
 
-## 🗂 Managing tournament data
+## 🗃 Managing tournament data
 
 Unlike most web apps, Chessahoochee doesn’t keep your data in “the cloud” (e.g. someone else’s computer). Instead, your data is saved to your browser’s storage. This mostly works quite well, but it comes with caveats: a) moving data from one device to another is frustrating, b) backing up and making copies of data is frustrating, and c) browsers manage their data differently from each other and are sometimes eager to quietly delete or restrict storage.
 
