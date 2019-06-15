@@ -90,6 +90,6 @@ the Chattahoochee.
 </p>
 </blockquote>
 
-Chattahoochee is a great and beautiful river that flows through the southeastern United States. It’s also the name of the area where I lived when I began working on this app, and it’s the name of public library that the app was created for.
+Chattahoochee is a great and beautiful river that flows through the southeastern United States. It’s also the name of the area where I lived when I began working on this app, and it’s the name of the public library that the app was created for.
 
-Although I’m not drawn to punny software titles, transforming the name into *Chess*ahoochee was too easy to resist. And in addition to the word’s wonderful history and character, it’s just fun to say.
+Although I’m not drawn to punny software titles, transforming the name into *Chess*ahoochee was too easy to resist. And in addition to the word’s history and character, it’s just fun to say.
