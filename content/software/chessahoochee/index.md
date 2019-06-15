@@ -2,7 +2,7 @@
 title: "Chessahoochee: a Swiss chess tournament manager"
 author: John Jackson
 date: 2019-06-08
-updated: 2019-06-10
+updated: 2019-06-15
 category: Software
 thumbnail: ./icon_pretty_wide.svg
 caption: The Chessahoochee logo.
@@ -67,7 +67,7 @@ Chessahoochee addresses these in a couple of ways. First, you can manually load 
 
 I modeled the scorekeeping code after the specifications by the USCF. When appropriate, the code should have comments indicating the specific section of the rulebook they come from. Not all scoring rules are implemented (yet), just the commonly used ones.
 
-[USCF's scoring guidelines can be found on their rulebook, which is freely downloadable here.](http://www.uschess.org/content/view/7752/369/)
+[USCF’s scoring guidelines can be found on their rulebook, which is freely downloadable here.](http://www.uschess.org/content/view/7752/369/)
 
 ### Pairing
 
@@ -76,3 +76,20 @@ Similar to scoring, the auto-pairing functions aim to comply with USCF recommend
 ### Source code
 
 All code is [GPL v3.0 licensed](https://github.com/johnridesabike/chessahoochee/blob/master/LICENSE) which allows anyone the freedom to download and modify it. I welcome contributions in code, as well as suggestions and bug reports. [Visit the repository page to get started](https://github.com/johnridesabike/chessahoochee/).
+
+## 🎣 The name
+
+<blockquote style="float:right;border: none;margin-top: 0;">
+<p><em>sit still<br>
+as an old powerhouse<br>
+and mind your moorings<br>
+the river roaring</em></p>
+<p>
+- inscription along<br>
+the Chattahoochee.
+</p>
+</blockquote>
+
+Chattahoochee is a great and beautiful river that flows through the southeastern United States. It’s also the name of the area where I lived when I began working on this app, and it’s the name of public library that the app was created for.
+
+Although I’m not drawn to punny software titles, transforming the name into *Chess*ahoochee was too easy to resist. And in addition to the word’s wonderful history and character, it’s just fun to say.
