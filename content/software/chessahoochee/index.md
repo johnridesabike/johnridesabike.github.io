@@ -75,7 +75,7 @@ Similar to scoring, the auto-pairing functions aim to comply with USCF recommend
 
 ### Source code
 
-All code is [GPL v3.0 licensed](https://github.com/johnridesabike/chessahoochee/blob/master/LICENSE) which allows anyone the freedom to download and modify it. I welcome contributions in code, as well as suggestions and bug reports. [Visit the repository page to get started](https://github.com/johnridesabike/chessahoochee/).
+All code is [AGPL v3.0 licensed](https://github.com/johnridesabike/chessahoochee/blob/master/LICENSE) which allows anyone the freedom to download and modify it. I welcome contributions in code, as well as suggestions and bug reports. [Visit the repository page to get started](https://github.com/johnridesabike/chessahoochee/).
 
 ## 🎣 The name
 
