@@ -43,7 +43,7 @@
     "remark-html": "^9.0.1",
     "simple-icons": "^1.9.28",
     "typeface-libre-baskerville": "0.0.72",
-    "typeface-source-serif-pro": "0.0.73"
+    "typeface-source-sans-pro": "0.0.54"
   },
   "devDependencies": {
     "eslint-config-react-app": "^4.0.1",

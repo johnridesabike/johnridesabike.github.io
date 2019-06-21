@@ -80,29 +80,15 @@ I’m a public library staffer and MLIS graduate who is interested in digital li
 
 **_Food Server_ • Summer 2015**
 
-- Served food to customers.
-- Handled monetary transactions.
-- Advised customers on opportunities for activities and destinations in Alaska.
-
 ### Florida Sea Base, Boy Scouts of America • Summerland Key, FL
 
 **_Kitchen Assistant_ • 2014-2015**
 
-- Supervised kitchen and kitchen staff.
-- Planned, prepared, and served meals for 10 to 300 people.
-
 **_Sales Associate_ • Spring 2013**
-
-- Cleaned rooms and facilities.
-- Handled money transactions in retail store.
-- Supervised eco-tours and snorkel trips.
-- Advised visitors on opportunities for activities and destinations in the Florida Keys.
 
 ### Green Boundary Club • Aiken, SC
 
 **_Dining Room Server_ • 2013-2014**
-
-- Served food and drinks to club members.
 
 ## Skills and interests
 
