@@ -5,7 +5,7 @@
  */
 
 import "normalize.css";
-import "typeface-source-serif-pro";
+import "typeface-source-sans-pro";
 import "typeface-libre-baskerville";
 import "firacode/distr/fira_code.css";
 import "./src/styles/prism-dracula.css";
