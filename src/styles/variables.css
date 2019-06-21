@@ -26,14 +26,9 @@
      * Fonts
      */
     --font-reading:
-        "Source Serif Pro",
-        Palatino,
-        "Palatino Linotype",
-        Athelas,
-        Georgia,
-        Times,
-        "Times New Roman",
-        serif;
+        "Source Sans Pro",
+        "Helvetica Neue",
+        sans-serif;
     --font-UI:
         -apple-system,
         BlinkMacSystemFont,
@@ -49,7 +44,13 @@
         Baskerville,
         "Baskerville Old Face",
         Garamond,
-        var(--font-reading);
+        Palatino,
+        "Palatino Linotype",
+        Athelas,
+        Georgia,
+        Times,
+        "Times New Roman",
+        serif;
     --font-pre: "Courier 10 Pitch", Courier, monospace;
     --font-code:
         "Fira Code",
