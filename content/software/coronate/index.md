@@ -9,9 +9,9 @@ caption: The Coronate logo.
 ---
 Coronate is a free, open-source app for managing Swiss-style chess tournaments.
 
-<p><div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://johnridesa.bike/chessahoochee/">Launch Coronate in your browser</a></div></p>
+<p><div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://johnridesa.bike/coronate/">Launch Coronate in your browser</a></div></p>
 
-<p><div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://github.com/johnridesabike/chessahoochee">Download or fork on GitHub</a></div></p>
+<p><div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://github.com/johnridesabike/coronate">Download or fork on GitHub</a></div></p>
 
 ## 🧐 About
 
@@ -75,4 +75,4 @@ Similar to scoring, the auto-pairing functions aim to comply with USCF recommend
 
 ### Source code
 
-All code is [AGPL v3.0 licensed](https://github.com/johnridesabike/chessahoochee/blob/master/LICENSE) which allows anyone the freedom to download and modify it. I welcome contributions in code, as well as suggestions and bug reports. [Visit the repository page to get started](https://github.com/johnridesabike/chessahoochee/).
+All code is [AGPL v3.0 licensed](https://github.com/johnridesabike/coronate/blob/master/LICENSE) which allows anyone the freedom to download and modify it. I welcome contributions in code, as well as suggestions and bug reports. [Visit the repository page to get started](https://github.com/johnridesabike/coronate/).
