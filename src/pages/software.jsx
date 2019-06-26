@@ -51,7 +51,7 @@ export function Software() {
             </header>
             <h2 className={styles.divider}>Apps and scripts</h2>
             <Excerpt
-                {... nodeFields(pages["chessahoochee"])}
+                {... nodeFields(pages["coronate"])}
             >
                 I created my own Swiss chess tournament manager with JavaScript
                 and React. It's free and open source for anyone to use, but

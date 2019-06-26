@@ -8,7 +8,7 @@
 //     const {github} = useStaticQuery(
 //         graphql`{
 //             github {
-//                 repository(owner: "johnridesabike", name: "chessahoochee") {
+//                 repository(owner: "johnridesabike", name: "coronate") {
 //                     name
 //                     description
 //                     homepageUrl
