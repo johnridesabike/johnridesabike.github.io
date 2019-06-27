@@ -4,7 +4,7 @@ author: John Jackson
 date: 2019-06-08
 updated: 2019-06-15
 category: Software
-thumbnail: ./icon_pretty_wide.svg
+thumbnail: ./logo_wide.svg
 caption: The Coronate logo.
 ---
 Coronate is a free, open-source app for managing Swiss-style chess tournaments.
@@ -15,7 +15,7 @@ Coronate is a free, open-source app for managing Swiss-style chess tournaments.
 
 ## 🧐 About
 
-I began working on Coronate shortly after hosting a tournament at Chattahoochee Valley Libraries. I discovered a dearth of free software and decided to change that. Library employees deal with limited budgets and restrictive computer access, so purchasing, installing, and learning to use specialized tournament software is usually a considerable barrier-to-entry.
+I began working on Coronate shortly after hosting a tournament at Chattahoochee Valley Libraries. I discovered a dearth of free software, so I and decided to change that. Library employees deal with limited budgets and restrictive computer access, so purchasing, installing, and learning to use specialized tournament software is usually a considerable barrier-to-entry.
 
 Coronate aims to solve this problem. It’s free, open source, and runs on almost any system. Although it (probably) won’t replace a professional app in a rated tournament, it fills the gap for small clubs or public events.
 
@@ -76,3 +76,50 @@ Similar to scoring, the auto-pairing functions aim to comply with USCF recommend
 ### Source code
 
 All code is [AGPL v3.0 licensed](https://github.com/johnridesabike/coronate/blob/master/LICENSE) which allows anyone the freedom to download and modify it. I welcome contributions in code, as well as suggestions and bug reports. [Visit the repository page to get started](https://github.com/johnridesabike/coronate/).
+
+## Screenshots
+
+<figure class="alignwide">
+    <img
+        alt="An example round."
+        src="./screenshot-round.png"
+        height="792"
+        width="1136"
+    />
+</figure>
+
+<figure class="alignwide">
+    <img
+        alt="The crosstable screen."
+        src="./screenshot-crosstable.png"
+        height="792"
+        width="1136"
+    />
+</figure>
+
+<figure class="alignwide">
+    <img
+        alt="A screen displaying tiebreak details."
+        src="./screenshot-score-detail.png"
+        height="792"
+        width="1136"
+    />
+</figure>
+
+<figure class="alignwide">
+    <img
+        alt="The tournament list screen."
+        src="./screenshot-tourney-list.png"
+        height="792"
+        width="1136"
+    />
+</figure>
+
+<figure class="alignwide">
+    <img
+        alt="A screen editing player information."
+        src="./screenshot-player-edit.png"
+        height="792"
+        width="1136"
+    />
+</figure>
