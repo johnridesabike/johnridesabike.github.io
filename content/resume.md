@@ -1,6 +1,6 @@
 ---
 title: Résumé
-updated: 2019-04-03
+updated: 2019-07-24
 ---
 <p class="has-large-font-size">John Jackson • Columbus, GA</p>
 
@@ -54,6 +54,12 @@ I’m a public library staffer and MLIS graduate who is interested in digital li
 **_Bachelor of Arts, English_ • 2006-2010**
 
 - Academic interests include: English literature, writing, and teaching of writing.
+
+## Professional licenses
+
+### Librarian license
+
+- Issued by the State of Georgia.
 
 ## Community service
 
