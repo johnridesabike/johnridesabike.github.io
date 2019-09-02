@@ -2,7 +2,7 @@
 title: "Coronate: a Swiss chess tournament manager"
 author: John Jackson
 date: 2019-06-08
-updated: 2019-06-15
+updated: 2019-09-01
 category: Software
 thumbnail: ./logo_wide.svg
 caption: The Coronate logo.
@@ -20,6 +20,8 @@ Coronate is a free, open-source app for managing Swiss-style chess tournaments.
 I began working on Coronate shortly after hosting a tournament at Chattahoochee Valley Libraries. I discovered a dearth of free software, so I and decided to change that. Library employees deal with limited budgets and restrictive computer access, so purchasing, installing, and learning to use specialized tournament software is usually a considerable barrier-to-entry.
 
 Coronate aims to solve this problem. It’s free, open source, and runs on almost any system. Although it (probably) won’t replace a professional app in a rated tournament, it fills the gap for small clubs or public events.
+
+Coronate is in a "proof-of-concept" phase. It should work fine, but it's optimized for small groups and specific conditions. Adding features, even small ones, is time consuming, so work is prioritized based on the real-world needs of its users. [If you would like to contribute your feature ideas, it's easy!](https://github.com/johnridesabike/coronate/blob/master/CONTRIBUTING.md)
 
 ## 🔧 Setup
 
@@ -76,6 +78,8 @@ I modeled the scorekeeping code after the specifications by the USCF. When appro
 Similar to scoring, the auto-pairing functions aim to comply with USCF recommendations. Pairing is a much trickier beast than scoring, however. The current implementation is “good enough” for now, and still needs more work.
 
 ### Source code
+
+Coronate is written with [Reason](https://reasonml.github.io), [ReasonReact](https://reasonml.github.io/reason-react/), and [BuckleScript](https://bucklescript.github.io). Reason is an extension of the OCaml programming language, and BuckleScript provides a JavaScript compiler along with a standard library optimized for web usage. Reason (and OCaml) uses a functional paradigm that I find preferable to object-oriented alternatives.
 
 All code is [AGPL v3.0 licensed](https://github.com/johnridesabike/coronate/blob/master/LICENSE) which allows anyone the freedom to download and modify it. I welcome contributions in code, as well as suggestions and bug reports. [Visit the repository page to get started](https://github.com/johnridesabike/coronate/).
 
