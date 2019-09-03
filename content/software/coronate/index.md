@@ -11,7 +11,7 @@ Coronate is a free, open-source app for managing Swiss-style chess tournaments.
 
 <p><div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://johnridesa.bike/coronate/">Launch Coronate in your browser</a></div></p>
 
-<p><div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://github.com/johnridesabike/coronate/releases">Download Coronate for Mac or PC</a></div></p>
+<p><div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://github.com/johnridesabike/coronate/releases/latest">Download Coronate for Mac or PC</a></div></p>
 
 <p><div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://github.com/johnridesabike/coronate">Browse the source code</a></div></p>
 
