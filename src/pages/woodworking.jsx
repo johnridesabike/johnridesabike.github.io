@@ -1,6 +1,6 @@
 import {edges2Dict, nodeFields} from "../utils";
 import {graphql, useStaticQuery} from "gatsby";
-import Excerpt from "../components/excerpt";
+import {make as Excerpt} from "../components/Excerpt.bs";
 // import Icons from "../components/icons";
 import Layout from "../components/layout";
 import React from "react";
@@ -51,6 +51,7 @@ export function Woodworking() {
             </header>
             <h2 className={styles.divider}>Guides</h2>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["marble-top-chessboard-end-table"])}
             >
                 I made a custom end-table with an old marble chessboard and some
@@ -58,6 +59,7 @@ export function Woodworking() {
                 for building your own.
             </Excerpt>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["standing-desk-converter-diy"])}
             >
                 I turned a old, regular desk into a fancy new standing desk.
