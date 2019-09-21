@@ -36,7 +36,7 @@ const CategoryPages = ({category}) => (
         `}
         render={(data) =>
             data.allMarkdownRemark.edges.map((edge) => (
-                <Excerpt node={edge.node} key={edge.node.frontmatter.slug} />
+                <Excerpt node={edge.node} key={edge.node.frontmatter.slug} isWide={false}/>
             ))
         }
     />

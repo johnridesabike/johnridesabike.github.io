@@ -1,6 +1,6 @@
 import {edges2Dict, nodeFields} from "../utils";
 import {graphql, useStaticQuery} from "gatsby";
-import Excerpt from "../components/excerpt";
+import {make as Excerpt} from "../components/Excerpt.bs";
 import Icons from "../components/icons";
 import Layout from "../components/layout";
 import React from "react";
@@ -51,6 +51,7 @@ export function Software() {
             </header>
             <h2 className={styles.divider}>Apps and coding</h2>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["coronate"])}
             >
                 I created my own Swiss chess tournament manager with
@@ -64,6 +65,7 @@ export function Software() {
                 These are a few iOS shortcut scripts that I've made.
             </Excerpt>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["wordroom-a-pythonista-dictionary-app"])}
             >
                 This is an iOS dictionary "app" built with Pythonista. It saves
@@ -71,6 +73,7 @@ export function Software() {
             </Excerpt>
             <h2 className={styles.divider}>Web development</h2>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["weracoba-wordpress-theme"])}
             >
                 (Currently defunct.) This is a custom WordPress theme I created
