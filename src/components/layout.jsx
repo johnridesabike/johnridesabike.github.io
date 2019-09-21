@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 import {StaticQuery, graphql} from "gatsby";
-import Footer from "./footer";
-import Header from "./header";
+import {make as Footer} from "./Footer.bs";
+import {make as Header} from "./Header.bs";
 import PropTypes from "prop-types";
 import Sidebar from "./sidebar";
 import VisuallyHidden from "@reach/visually-hidden";

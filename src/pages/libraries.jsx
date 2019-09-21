@@ -1,6 +1,6 @@
 import {edges2Dict, nodeFields} from "../utils";
 import {graphql, useStaticQuery} from "gatsby";
-import Excerpt from "../components/excerpt";
+import {make as Excerpt} from "../components/Excerpt.bs";
 import Icons from "../components/icons";
 import Layout from "../components/layout";
 import React from "react";
@@ -56,6 +56,7 @@ export function Libraries() {
 
             <h2 className={styles.divider}>Academic libraries</h2>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["academic-library-student-support"])}
             >
                 Here, I walk through a hypothetical student project and
@@ -63,12 +64,14 @@ export function Libraries() {
                 throughout the process.
             </Excerpt>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["open-access-presentation"])}
             >
                 These are the slides and notes from a presentation I did on
                 the state of open access in academic libraries.
             </Excerpt>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["academic-library-faculty-support"])}
             >
                 I describe several key topics affecting academic libraries
@@ -76,6 +79,7 @@ export function Libraries() {
                 plans, open access, and intellectual property policy.
             </Excerpt>
             <Excerpt
+                isWide={false}
                 {... nodeFields(
                     pages["data-management-plan-evolving-pronouns"]
                 )}
@@ -86,12 +90,14 @@ export function Libraries() {
 
             <h2 className={styles.divider}>Technical services</h2>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["ex-libris-opac-analysis"])}
             >
                 I explain the pros and cons of using the Ex Libris OPAC
                 for an academic library.
             </Excerpt>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["collection-development-policy"])}
             >
                 I worked with a team to create this original collection
@@ -99,6 +105,7 @@ export function Libraries() {
                 existing policies.
             </Excerpt>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["selection-policy-materials"])}
             >
                 I selected books with funds donated to a fictional
@@ -108,6 +115,7 @@ export function Libraries() {
 
             <h2 className={styles.divider}>Research</h2>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["library-twitter-r-presentation"])}
             >
                 These are the slides and notes from a presentation I did
@@ -115,6 +123,7 @@ export function Libraries() {
                 programming language.
             </Excerpt>
             <Excerpt
+                isWide={false}
                 {... nodeFields(
                     pages["researching-hispanic-children-books"]
                 )}
@@ -124,6 +133,7 @@ export function Libraries() {
                 libraries.
             </Excerpt>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["environmental-analysis"])}
                 className={styles.excerpt}
             >
@@ -146,6 +156,7 @@ export function Libraries() {
             </header>
             <h2 className={styles.divider}>Chess articles</h2>
             <Excerpt
+                isWide={false}
                 // eslint-disable-next-line max-len
                 title="Your Library’s First Chess Tournament: From Opening to Endgame"
                 // eslint-disable-next-line max-len
@@ -160,6 +171,7 @@ export function Libraries() {
                 to know.
             </Excerpt>
             <Excerpt
+                isWide={false}
                 {... nodeFields(pages["how-play-chess"])}
             >
                 I've run a succesful chess program since 2017. At the time,
