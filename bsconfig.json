@@ -18,7 +18,8 @@
   "namespace": true,
   "bs-dependencies": [
     "reason-react",
-    "re-classnames"
+    "re-classnames",
+    "@moox/bs-react-helmet"
   ],
   "ppx-flags": [],
   "refmt": 3

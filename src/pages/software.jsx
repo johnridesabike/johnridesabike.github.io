@@ -1,10 +1,10 @@
+import * as Icons from "../components/icons";
 import {edges2Dict, nodeFields} from "../utils";
 import {graphql, useStaticQuery} from "gatsby";
 import {make as Excerpt} from "../components/Excerpt.bs";
-import Icons from "../components/icons";
-import Layout from "../components/layout";
+import {make as Layout} from "../components/Layout.bs"
 import React from "react";
-import SEO from "../components/seo";
+import {make as SEO} from "../components/Seo.bs";
 import classNames from "classnames";
 import styles from "./index.module.css";
 
@@ -26,7 +26,7 @@ export function Software() {
                         frontmatter {
                             title
                             date(formatString: "MMMM DD, YYYY")
-                            ISODate: date
+                            isoDate: date
                             thumbnail {
                                 publicURL
                             }

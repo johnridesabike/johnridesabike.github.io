@@ -1,14 +1,14 @@
-import Icons from "../components/icons";
-import Layout from "../components/layout";
+import {make as Layout} from "../components/Layout.bs"
 import {Libraries} from "./libraries";
 import {Link} from "gatsby";
 import React from "react";
-import SEO from "../components/seo";
+import {make as SEO} from "../components/Seo.bs";
 import {Software} from "./software";
 import {Woodworking} from "./woodworking";
 import classNames from "classnames";
 import john2018 from "../images/john2018.jpg";
 import styles from "./index.module.css";
+import * as Icons from "../components/icons";
 
 function IndexPage() {
     return (
