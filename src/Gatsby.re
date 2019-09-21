@@ -13,3 +13,4 @@ module Link = {
 };
 
 [@bs.val] external loadCssModule: string => Js.t({..}) = "require";
+[@bs.val] external loadJpg: string => string = "require";

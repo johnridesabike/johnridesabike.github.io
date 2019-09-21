@@ -1,3 +1,5 @@
+let styles = Gatsby.loadCssModule("./icons.module.css");
+
 module ExternalLink = {
   [@bs.module "react-feather"] [@react.component]
   external make: unit => React.element = "ExternalLink";
@@ -9,6 +11,10 @@ module Menu = {
 module Dismiss = {
   [@bs.module "react-feather"] [@react.component]
   external make: (~className: string=?) => React.element = "XCircle";
+};
+module Mail = {
+  [@bs.module "react-feather"] [@react.component]
+  external make: (~className: string=?) => React.element = "Mail";
 };
 
 [@bs.deriving abstract]
@@ -170,3 +176,65 @@ module CreativeCommons = {
       </g>
     </svg>;
 };
+
+module Person = {
+  [@react.component]
+  let make = (~className="") =>
+    <svg
+      width="24"
+      height="24"
+      ariaHidden=true
+      role="img"
+      focusable="false"
+      viewBox="0 0 24 24"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      className={Cn.make([styles##svgIcon, className])}>
+      <path
+        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+      />
+      <path d="M0 0h24v24H0z" fill="none" />
+    </svg>;
+};
+
+module Calendar = {
+  [@react.component]
+  let make = (~className="") =>
+    <svg
+      width="20"
+      height="20"
+      ariaHidden=true
+      role="img"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      className={Cn.make([styles##svgIcon, className])}>
+      <g>
+        <path
+          d="M15 4h3v15H2V4h3V3c0-.41.15-.76.44-1.06.29-.29.65-.44 1.06-.44s.77.15 1.06.44c.29.3.44.65.44 1.06v1h4V3c0-.41.15-.76.44-1.06.29-.29.65-.44 1.06-.44s.77.15 1.06.44c.29.3.44.65.44 1.06v1zM6 3v2.5c0 .14.05.26.15.36.09.09.21.14.35.14s.26-.05.35-.14c.1-.1.15-.22.15-.36V3c0-.14-.05-.26-.15-.35-.09-.1-.21-.15-.35-.15s-.26.05-.35.15c-.1.09-.15.21-.15.35zm7 0v2.5c0 .14.05.26.14.36.1.09.22.14.36.14s.26-.05.36-.14c.09-.1.14-.22.14-.36V3c0-.14-.05-.26-.14-.35-.1-.1-.22-.15-.36-.15s-.26.05-.36.15c-.09.09-.14.21-.14.35zm4 15V8H3v10h14zM7 9v2H5V9h2zm2 0h2v2H9V9zm4 2V9h2v2h-2zm-6 1v2H5v-2h2zm2 0h2v2H9v-2zm4 2v-2h2v2h-2zm-6 1v2H5v-2h2zm4 2H9v-2h2v2zm4 0h-2v-2h2v2z"
+        />
+      </g>
+    </svg>;
+};
+/*
+module Library = {
+  [@react.component]
+  let make = () =>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      width="120"
+      height="120"
+      viewBox="0 0 30 30">
+      <path
+        d="M15.1,9.3c2.6,0,4.7-2.1,4.7-4.7c0-2.6-2.1-4.7-4.7-4.7s-4.7,2.1-4.7,4.7C10.4,7.2,12.5,9.3,15.1,9.3z"
+      />
+      <path
+        d="M19.6,10.5c2.1,0.1,3,1.8,3,1.8l6.9,9.4c0.3,0.4,0.5,0.9,0.5,1.5c0,1.5-1.2,2.7-2.7,2.7
+        c-0.4,0-0.7-0.1-1-0.2l-4.2-1.2v4.1H7.8v-4.1l-4.2,1.2c-0.3,0.1-0.6,0.2-1,0.2c-1.5,0-2.7-1.2-2.7-2.7c0-0.6,0.2-1.1,0.5-1.5
+        l6.9-9.4c0,0,0.9-1.7,3-1.8C10.4,10.5,19.6,10.5,19.6,10.5z M15,25.7L15,25.7l5.4-1.8l-0.1,0c-3.7-1.1-2.3-6,1.4-4.9l0.5,0.2v-5.5
+        L15,16l-7.2-2.4v5.5L8.3,19c3.7-1.1,5.2,3.8,1.4,4.9l-0.1,0L15,25.7L15,25.7z"
+      />
+    </svg>;
+};
+*/

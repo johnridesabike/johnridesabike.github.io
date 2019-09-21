@@ -1,4 +1,4 @@
-import Page from "../components/page";
+import {make as Page} from "../components/Page.bs";
 import PropTypes from "prop-types";
 import React from "react";
 import {graphql} from "gatsby";
@@ -28,13 +28,13 @@ export const pageQuery = graphql`
             excerpt
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
-                ISODate: date
+                isoDate: date
                 title
                 category
                 author
                 caption
                 updated(formatString: "MMM DD, YYYY")
-                ISOUpdated: updated
+                isoUpdated: updated
                 thumbnail {
                     publicURL
                 }
