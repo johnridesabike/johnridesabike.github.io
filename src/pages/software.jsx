@@ -73,19 +73,19 @@ export function Software() {
             </Excerpt>
             <h2 className={styles.divider}>Web development</h2>
             <Excerpt
+                {... nodeFields(pages["literacy-alliance-wordpress"])}
+                isWide={false}
+            >
+                In 2017, I redesigned a website for the local nonprofit Literacy
+                Alliance using WordPress and SquareSpace.
+            </Excerpt>
+            <Excerpt
                 isWide={false}
                 {... nodeFields(pages["weracoba-wordpress-theme"])}
             >
                 (Currently defunct.) This is a custom WordPress theme I created
                 from scratch. I don't update it anymore since I stopped using
                 WordPress for this site.
-            </Excerpt>
-            <Excerpt
-                {... nodeFields(pages["literacy-alliance-wordpress"])}
-                isWide={false}
-            >
-                In 2017, I redesigned a website for the local nonprofit Literacy
-                Alliance using WordPress and SquareSpace.
             </Excerpt>
         </section>
     );

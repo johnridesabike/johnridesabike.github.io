@@ -12,7 +12,7 @@
     "dashify": "^2.0.0",
     "dotenv": "^8.1.0",
     "firacode": "^2.0.0",
-    "gatsby": "^2.15.19",
+    "gatsby": "^2.15.20",
     "gatsby-image": "^2.2.20",
     "gatsby-plugin-categories": "^2.3.6",
     "gatsby-plugin-manifest": "^2.2.18",
@@ -25,7 +25,7 @@
     "gatsby-remark-images": "^3.1.23",
     "gatsby-remark-prismjs": "^3.3.14",
     "gatsby-remark-static-images": "^1.1.0",
-    "gatsby-source-filesystem": "^2.1.25",
+    "gatsby-source-filesystem": "^2.1.26",
     "gatsby-source-graphql": "^2.1.15",
     "gatsby-transformer-remark": "^2.6.24",
     "gatsby-transformer-sharp": "^2.2.16",
@@ -59,7 +59,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "npm run re:build && gatsby build",
     "develop": "gatsby develop",
     "lint:javascript": "eslint --ext .jsx,.js src/",
     "lint:stylesheets": "stylelint \"src/**/*.css\"",
@@ -69,13 +69,14 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "deploy": "gatsby build && gh-pages -d public -b master",
     "re:build": "bsb -make-world -clean-world",
-    "re:watch": "bsb -make-world -clean-world -w"
+    "re:watch": "bsb -make-world -clean-world -w",
+    "schema": "node ./generateSchema.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/johnridesabike/johnridesabike.github.io"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/johnridesabike/johnridesabike.github.io/issues"
   }
 }

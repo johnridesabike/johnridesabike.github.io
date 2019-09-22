@@ -5,11 +5,10 @@
  */
 
 // You can delete this file if you're not using it
-// const _ = require("lodash");
 const dashify = require("dashify");
 const path = require("path");
 const moment = require("moment");
-const siteConfig = require("./data/SiteConfig");
+const siteConfig = require("./SiteConfig");
 
 const postNodes = [];
 
