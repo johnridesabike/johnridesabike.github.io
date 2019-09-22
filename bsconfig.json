@@ -1,7 +1,11 @@
 {
   "name": "johnridesabike.github.io",
-  "reason": { "react-jsx": 3 },
-  "bsc-flags": ["-bs-super-errors"],
+  "reason": {
+    "react-jsx": 3
+  },
+  "bsc-flags": [
+    "-bs-super-errors"
+  ],
   "sources": [
     {
       "dir": "src",
@@ -24,7 +28,7 @@
   "ppx-flags": [],
   "refmt": 3,
   "warnings": {
-      "number": "+A-48-42-40-9",
-      "error": "+A-3-44-102"
+    "number": "+A-48-42-40-9",
+    "error": "+A-3-44-102"
   }
 }

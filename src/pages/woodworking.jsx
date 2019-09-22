@@ -9,7 +9,7 @@ import styles from "./index.module.css";
 
 export function Woodworking() {
     const query = useStaticQuery(graphql`
-        query woodworkingDocs {
+        query woodworkingDocsold {
             allMarkdownRemark(
                 filter: {fields: {category: { eq: "woodworking"}}}
             ) {
