@@ -1,27 +1,42 @@
-import {make as Page} from "../components/Page.bs";
+import { make as Page } from "../re/templates/PageTemplate.bs";
 import PropTypes from "prop-types";
 import React from "react";
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
 
-export default function Template({pageContext, data, location}) {
-    const postNode = data.markdownRemark;
+export default function Template({ pageContext, data }) {
+    const {frontmatter, html} = data.markdownRemark;
+    const {
+        title,
+        thumbnail,
+        caption,
+        date,
+        isoDate,
+        author,
+        attachments,
+        updated,
+        isoUpdated,
+    } = frontmatter;
     return (
         <Page
-            location={location}
-            pageContext={{...postNode, pageContext}}
-        >
-            {postNode.html}
-        </Page>
+            title={title}
+            thumbnail={thumbnail}
+            caption={caption}
+            date={date}
+            isoDate={isoDate}
+            author={author}
+            attachments={attachments}
+            updated={updated}
+            isoUpdated={isoUpdated}
+            html={html} />
     );
 }
 Template.propTypes = {
     data: PropTypes.object,
-    location: PropTypes.any,
     pageContext: PropTypes.any
 };
 
 export const pageQuery = graphql`
-    query BlogPostBySlug($slug: String!) {
+    query PageBySlug($slug: String!) {
         markdownRemark(fields: {slug: {eq: $slug}}) {
             html
             timeToRead

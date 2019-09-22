@@ -21,33 +21,40 @@ module PostedOn = {
 };
 
 [@react.component]
-let make = (~pageContext, ~children) => {
-  let data = pageContext##frontmatter;
-  let thumbnail = Js.Nullable.toOption(data##thumbnail);
-  let caption = Js.Nullable.toOption(data##caption);
-  let date = Js.Nullable.toOption(data##date);
-  let isoDate = Js.Nullable.toOption(data##isoDate);
-  let author = Js.Nullable.toOption(data##author);
-  let attachments = Js.Nullable.toOption(data##attachments);
-  let updated = Js.Nullable.toOption(data##updated);
+let make =
+    (
+      ~title,
+      ~thumbnail,
+      ~caption,
+      ~date,
+      ~isoDate,
+      ~author,
+      ~attachments,
+      ~updated,
+      ~html,
+      ~isoUpdated,
+    ) => {
   <Layout
     entryHeader={
       <div
         className={Cn.make([
           "has-ui-font",
           styles##header,
-          Cn.ifSome(styles##hasThumbnail, thumbnail),
+          Cn.ifSome(styles##hasThumbnail, Js.Nullable.toOption(thumbnail)),
         ])}>
-        {switch (thumbnail) {
+        {switch (Js.Nullable.toOption(thumbnail)) {
          | None => React.null
          | Some(thumbnail) =>
            <figure className={Cn.make(["full-bleed", styles##coverFigure])}>
              <img
                src=thumbnail##publicURL
                className=styles##coverImg
-               alt={Belt.Option.getWithDefault(caption, "")}
+               alt={
+                 Js.Nullable.toOption(caption)
+                 ->Belt.Option.getWithDefault("")
+               }
              />
-             {switch (caption) {
+             {switch (Js.Nullable.toOption(caption)) {
               | Some(caption) =>
                 <figcaption
                   className={Cn.make([
@@ -64,15 +71,18 @@ let make = (~pageContext, ~children) => {
          }}
         <div className=styles##headerWrap>
           <h1 className={Cn.make(["has-title-font", styles##title])}>
-            {React.string @@  data##title}
+            {React.string @@ title}
           </h1>
           <div className=styles##meta>
             <div className=styles##metaWrapper>
-              {switch (author) {
+              {switch (Js.Nullable.toOption(author)) {
                | Some(author) => <PostedBy author />
                | None => React.null
                }}
-              {switch (date, isoDate) {
+              {switch (
+                 Js.Nullable.toOption(date),
+                 Js.Nullable.toOption(isoDate),
+               ) {
                | (Some(date), Some(isoDate)) => <PostedOn date isoDate />
                | (None, _)
                | (_, None) => React.null
@@ -82,14 +92,14 @@ let make = (~pageContext, ~children) => {
         </div>
       </div>
     }>
-    <Seo title={data##title} />
+    <Seo title />
     <main id="main" className="site-main">
       <article>
         <div
           className="page-content"
-          dangerouslySetInnerHTML={"__html": children}
+          dangerouslySetInnerHTML={"__html": html}
         />
-        {switch (attachments) {
+        {switch (Js.Nullable.toOption(attachments)) {
          | None => React.null
          | Some(attachments) =>
            <div id="attachments" className="attachments has-ui-font">
@@ -115,8 +125,11 @@ let make = (~pageContext, ~children) => {
          }}
         <footer className={Cn.make([styles##footer, "has-ui-font"])}>
           <div className={Cn.make([styles##postTime, styles##footerItem])}>
-            <time dateTime=data##isoUpdated>
-              {switch (updated, date) {
+            <time dateTime=isoUpdated>
+              {switch (
+                 Js.Nullable.toOption(updated),
+                 Js.Nullable.toOption(date),
+               ) {
                | (Some(updated), _) =>
                  React.string @@ "Updated on " ++ updated
                | (_, Some(date)) => React.string @@ "Updated on " ++ date

@@ -1,13 +1,9 @@
 /* eslint-disable camelcase */
 require("dotenv").config();
+const {siteMetadata} = require("./SiteConfig");
 
 module.exports = {
-    siteMetadata: {
-        title: "John Jackson",
-        description: "Librarian portfolio & other projects.",
-        author: "John Jackson",
-        siteUrl: "https://johnridesa.bike/"
-    },
+    siteMetadata,
     plugins: [
         "gatsby-plugin-react-helmet",
         {
