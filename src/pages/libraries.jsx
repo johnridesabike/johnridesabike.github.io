@@ -9,8 +9,6 @@ import {make as SEO} from "../components/Seo.bs";
 import classNames from "classnames";
 import styles from "./index.module.css";
 
-const Chess = Icons.Chess[0]
-
 export function Libraries() {
     const query = useStaticQuery(graphql`
         query libraryDocs {
@@ -147,7 +145,7 @@ export function Libraries() {
         <section className={classNames(styles.section)}>
             <header className={styles.sectionHeader}>
                 <h1>
-                    <Chess />{" "}
+                    <Icons.Chess.make />{" "}
                     Chess at the library.
                 </h1>
                 <p>

@@ -141,22 +141,22 @@ module Sidebar = {
   };
   let socialMenu = [|
     {
-      icon: <Icons.LinkedIn />,
+      icon: <Icons.LinkedIn className="svgIconColored" />,
       title: "LinkedIn",
       url: "https://www.linkedin.com/in/johnbpjackson/",
     },
     {
-      icon: <Icons.GitHub />,
+      icon: <Icons.GitHub className="svgIconColored" />,
       title: "GitHub",
       url: "https://github.com/johnridesabike",
     },
     {
-      icon: <Icons.LibraryThing />,
+      icon: <Icons.LibraryThing className="svgIconColored" />,
       title: "LibraryThing",
       url: "https://www.librarything.com/profile/jbpjackson",
     },
     {
-      icon: <Icons.Chess />,
+      icon: <Icons.Chess className="svgIconColored" />,
       title: "Challenge me to a game of chess",
       url: "https://lichess.org/@/Chessahoochee",
     },
