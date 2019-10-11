@@ -78,3 +78,30 @@
     --border-radius-button-square: 0.15em;
     --column-margin: 3.8%;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /**
+        * Colors
+        */
+        --color-text-main: #eee;
+        --color-bg-body: #19191a;
+        --color-primary-hue: 185;
+        --color-saturation: 95%;
+        --color-lightness: 40%;
+        --color-lightness-hover: 25%;
+        --color-link:
+            hsl(
+                var(--color-primary-hue),
+                var(--color-saturation),
+                var(--color-lightness)
+            );
+        --color-link-hover:
+            hsl(
+                var(--color-primary-hue),
+                var(--color-saturation),
+                var(--color-lightness-hover)
+            );
+        --color-caption: #555d66;
+    }
+}
