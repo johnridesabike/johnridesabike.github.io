@@ -90,3 +90,5 @@ let make =
     </div>
   </article>;
 };
+
+let default = make;
