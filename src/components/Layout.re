@@ -241,3 +241,5 @@ let make = (~children, ~entryHeader=React.null) => {
     </div>
   </React.Fragment>;
 };
+
+let default = make;

@@ -1,8 +1,8 @@
-import {make as Layout} from "../components/Layout.bs"
+import Layout from "../components/Layout.bs"
 import {Libraries} from "./libraries";
 import {Link} from "gatsby";
 import React from "react";
-import {make as SEO} from "../components/Seo.bs";
+import SEO from "../components/Seo.bs";
 import {Software} from "./software";
 import {Woodworking} from "./woodworking";
 import classNames from "classnames";

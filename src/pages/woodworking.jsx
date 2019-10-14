@@ -1,9 +1,9 @@
 import {edges2Dict, nodeFields} from "../utils";
 import {graphql, useStaticQuery} from "gatsby";
-import {make as Excerpt} from "../components/Excerpt.bs";
-import {make as Layout} from "../components/Layout.bs"
+import Excerpt from "../components/Excerpt.bs";
+import Layout from "../components/Layout.bs"
 import React from "react";
-import {make as SEO} from "../components/Seo.bs";
+import SEO from "../components/Seo.bs";
 import classNames from "classnames";
 import styles from "./index.module.css";
 
