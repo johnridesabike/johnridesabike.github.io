@@ -25,13 +25,13 @@ Coronate is in a "proof-of-concept" phase. It should work fine, but it's optimiz
 
 ## 🔧 Setup
 
-Coronate is built on top of the [React](https://reactjs.org/) web technology, so you can run a copy of it right in your browser, no installation required.
+Coronate is built in the language [Reason](https://reasonml.github.io) with the [React](https://reactjs.org/) library, so you can run a copy of it right in your browser, no installation required.
 
-You can also download the standalone version. It is literally the same code as the web version, except it’s wrapped in [Electron](https://electronjs.org/).
+You can also download the standalone version. It is literally the same code as the web version, except it’s wrapped in [Electron](https://electronjs.org/). The main reason to use the standalone version is it separates your data from a specific browser.
 
 ## ♟ How to use it
 
-Tournaments use the Swiss-style system. For the unfamiliar, [my article on running your first chess tournament](http://programminglibrarian.org/articles/your-library%E2%80%99s-first-chess-tournament-opening-endgame) can explain how the logistics work. While understanding those is helpful, Coronate should effortlessly manage the nitty-gritty for you.
+Coronate tournaments use the Swiss-style system. For the unfamiliar, [my article on running your first chess tournament](http://programminglibrarian.org/articles/your-library%E2%80%99s-first-chess-tournament-opening-endgame) can explain how the logistics work. While understanding those is helpful, Coronate should effortlessly manage the nitty-gritty for you.
 
 ### Rounds
 
@@ -61,9 +61,15 @@ You can edit other player data as well, but you typically won’t need to.
 
 ## 🗃 Managing tournament data
 
-Unlike most web apps, Coronate doesn’t keep your data in “the cloud” (e.g. someone else’s computer). Instead, your data is saved to your browser’s storage. This mostly works quite well, but it comes with caveats: a) moving data from one device to another is frustrating, b) backing up and making copies of data is frustrating, and c) browsers manage their data differently from each other and are sometimes eager to quietly delete or restrict storage.
+Unlike most web apps, Coronate doesn’t keep your data in “the cloud” (e.g. someone else’s computer). Instead, your data is saved to your browser’s storage. This mostly works well, but it comes with caveats: a) moving data from one device to another is frustrating, b) backing up and making copies of data is frustrating, and c) browsers manage their data differently from each other and are sometimes eager to quietly delete or restrict storage.
 
 Coronate addresses these in a couple of ways. First, you can manually load and save your data through its “options” screen. If you create a tournament on your work laptop and want to ensure its records are preserved, just go to the options and save the file somewhere safe. At any point, you can open Coronate again and load the data. Second, you can use the portable Electron version for Windows (only the Windows version is portable). This will give you a standalone *.exe* file and a *data* folder that you can save where you want: a USB drive, your DropBox, wherever.
+
+## 🌅 The future
+
+Coronate is currently 1.0 status, mostly bugfree and with all of the basic functionality. There are still plenty of features that can go into the next version, but I haven't decided yet what to focus on.
+
+One common suggestion has been to make it compatible with other games that use Swiss-style tournament structures. If you have a specific game that you would like to see it support, just let me know.
 
 ## 🤓 Behind the scenes
 
@@ -79,9 +85,9 @@ Similar to scoring, the auto-pairing functions aim to comply with USCF recommend
 
 ### Source code
 
-Coronate is written with [Reason](https://reasonml.github.io), [ReasonReact](https://reasonml.github.io/reason-react/), and [BuckleScript](https://bucklescript.github.io). Reason is an extension of the OCaml programming language, and BuckleScript provides a JavaScript compiler along with a standard library optimized for web usage. Reason (and OCaml) uses a functional paradigm that I find preferable to object-oriented alternatives.
+Coronate is written with [Reason](https://reasonml.github.io), [ReasonReact](https://reasonml.github.io/reason-react/), and [BuckleScript](https://bucklescript.github.io). Reason is an extension of the OCaml programming language, and BuckleScript provides a JavaScript compiler along with a standard library optimized for web usage.
 
-All code is [AGPL v3.0 licensed](https://github.com/johnridesabike/coronate/blob/master/LICENSE) which allows anyone the freedom to download and modify it. I welcome contributions in code, as well as suggestions and bug reports. [Visit the repository page to get started](https://github.com/johnridesabike/coronate/).
+All code is [AGPL v3.0 licensed](https://github.com/johnridesabike/coronate/blob/master/LICENSE) which allows anyone the freedom to download and modify it. If you are interested in using parts of the source for your own project (e.g. the scoring or pairing algorithms), let me know and I'm happy to release those modules under a more liberal license for you. I welcome contributions in code, as well as suggestions and bug reports. [Visit the repository page to get started](https://github.com/johnridesabike/coronate/).
 
 ## Screenshots
 
