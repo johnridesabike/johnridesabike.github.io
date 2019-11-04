@@ -15,6 +15,7 @@ I’m a public library staffer and MLIS graduate who is interested in digital li
 <!--<div class="wp-block-button alignright noprint is-style-squared"><a class="wp-block-button__link" href="/libraries/">Browse my library projects<br></a></div>-->
 
 - Planning and leading an average of 6 unique adult library programs per year on topics including: chess clubs, job search assistance, fitness, bicycle safety, and geocaching.
+- Working with patrons by teaching computer skills and assisting with student research projects.
 - Continuing the duties of Library Assistant:
 
 **_Library Assistant_ • 2015-2016**
