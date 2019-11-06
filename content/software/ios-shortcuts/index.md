@@ -2,7 +2,7 @@
 title: iOS Shortcuts
 author: John Jackson
 date: 2018-10-08
-updated: 2018-10-08
+updated: 2019-11-05
 category: Software
 thumbnail: ./ios-shortcuts.jpg
 caption: The iOS Shortcuts app.
@@ -21,7 +21,7 @@ This shortcut sends anything to your inbox. No frills, no nonsense. **Send to In
 
 **Send Photo to Inbox** opens your camera to snap a photo and then sends it to your inbox. It’s useful for when you come across a poster or other visual bit of information that you need to process later
 
-<div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://www.icloud.com/shortcuts/0258ae7edb614817810efbb01e9c0724">Bike Commute Clothes</a></div>
+<div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://www.icloud.com/shortcuts/e823721c7258424a94bab1e0ba6ace53">Bike Commute Clothes</a></div>
 
 <!--![A screenshot of “Bike Commute Clothes” shortcut.](./ios-shortcuts-bike.jpg)-->
 
