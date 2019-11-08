@@ -30,6 +30,7 @@ I’m a public library staffer and MLIS graduate who is interested in digital li
 <!--<div class="wp-block-button alignright noprint is-style-squared"><a class="wp-block-button__link" href="/web-development/">Browse my web projects</a></div>-->
 
 - Worked with client to create a WordPress website ([theliteracyalliance.org](https://theliteracyalliance.org/)) that aligns with their goals.
+- Managed client’s online Square store.
 - Coded HTML, CSS, & PHP.
 
 ## Publications
