@@ -71,7 +71,7 @@ I’m a public library staffer and MLIS graduate who is interested in digital li
 
 **_Commissioner_ • 2018-present**
 
-- [C.I.R.C.L.E. is a mayoral commission for managing events with Columbus’ sister cities.](https://www.columbusga.gov/mayor/circle.htm)
+- [C.I.R.C.L.E. is a mayoral commission for managing events with Columbus’ sister cities.](https://www.columbusga.gov/mayor/Commission-on-Relations)
 - Secretary from 2019 to present.
 - Organizer for a student art exchange between Columbus, GA and Kiryū, Japan.
 
