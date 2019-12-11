@@ -17,7 +17,7 @@ let make = () => {
           />
         </figure>
         <p className={Cn.make([styles##hi, "has-large-font-size"])}>
-          {j|"Hi, I'm John Jackson."|j}->React.string
+          {j|Hi, I'm John Jackson.|j}->React.string
         </p>
       </div>
       <p>
