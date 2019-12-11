@@ -4,7 +4,8 @@
     "react-jsx": 3
   },
   "bsc-flags": [
-    "-bs-super-errors"
+    "-bs-super-errors",
+    "-open Belt"
   ],
   "sources": [
     {
@@ -28,7 +29,7 @@
   "ppx-flags": [],
   "refmt": 3,
   "warnings": {
-    "number": "+A-48-42-40-9",
+    "number": "+A-48-9",
     "error": "+A-3-44-102"
   }
 }

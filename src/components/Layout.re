@@ -163,7 +163,7 @@ module Sidebar = {
   |];
 
   let styles = Gatsby.loadCssModule("../styles/widgets.module.css");
-  let johnPic = Gatsby.loadJpg("../images/john2018.jpg");
+  let johnPic = Gatsby.loadImage("../images/john2018.jpg");
 
   [@react.component]
   let make = () =>
@@ -218,7 +218,7 @@ let styles = Gatsby.loadCssModule("./layout.module.css");
 
 [@react.component]
 let make = (~children, ~entryHeader=React.null) => {
-  let data = Queries.useSiteMetadata();
+  let data = Queries.SiteMetadata.useSiteMetadata();
   <React.Fragment>
     <div id="page" className={styles##site}>
       <Externals.VisuallyHidden>
@@ -227,8 +227,8 @@ let make = (~children, ~entryHeader=React.null) => {
         </a>
       </Externals.VisuallyHidden>
       <Header
-        siteTitle={data##site##siteMetadata##title}
-        siteDescription={data##site##siteMetadata##description}
+        siteTitle={Queries.SiteMetadata.title(data)}
+        siteDescription={Queries.SiteMetadata.description(data)}
         entryHeader
       />
       <div
