@@ -26,11 +26,11 @@ module SpecialLink = {
 let make =
     (
       ~className="",
-      ~isWide,
-      ~slug,
-      ~isExternal,
-      ~title,
-      ~thumbnailURL,
+      ~isWide: bool,
+      ~slug: string,
+      ~isExternal=false,
+      ~title: string,
+      ~thumbnailURL=None,
       ~children,
     ) => {
   <article
@@ -54,7 +54,7 @@ let make =
       </h3>
     </header>
     <div className={styles##content}>
-      {switch (Js.Nullable.toOption(thumbnailURL)) {
+      {switch (thumbnailURL) {
        | Some(thumbnailURL) =>
          <figure
            className={Cn.make(["full-bleed-small", styles##coverFigure])}>

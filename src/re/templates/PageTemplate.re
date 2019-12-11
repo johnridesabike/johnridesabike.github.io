@@ -1,3 +1,34 @@
+type nullable('a) = Js.Nullable.t('a);
+type data = {markdownRemark}
+and markdownRemark = {
+  html: string,
+  frontmatter,
+  fields,
+}
+and fields = {
+  slug: string,
+  date: string,
+}
+and frontmatter = {
+  [@bs.as "date"]
+  frontmatterDate: nullable(string),
+  isoDate: nullable(string),
+  title: string,
+  category: nullable(string),
+  author: nullable(string),
+  caption: nullable(string),
+  updated: nullable(string),
+  isoUpdated: string,
+  thumbnail: nullable(thumbnail),
+  attachments: nullable(array(attachments)),
+}
+and thumbnail = {publicURL: string}
+and attachments = {
+  [@bs.as "publicURL"]
+  fileUrl: string,
+  name: string,
+  extension: string,
+};
 let styles = Gatsby.loadCssModule("./page.module.css");
 
 module PostedBy = {
@@ -21,19 +52,19 @@ module PostedOn = {
 };
 
 [@react.component]
-let make =
-    (
-      ~title,
-      ~thumbnail,
-      ~caption,
-      ~date,
-      ~isoDate,
-      ~author,
-      ~attachments,
-      ~updated,
-      ~html,
-      ~isoUpdated,
-    ) => {
+let make = (~pageContext as _, ~data: data) => {
+  let {frontmatter, html} = data.markdownRemark;
+  let {
+    title,
+    thumbnail,
+    caption,
+    frontmatterDate,
+    isoDate,
+    author,
+    attachments,
+    updated,
+    isoUpdated,
+  } = frontmatter;
   <Layout
     entryHeader={
       <div
@@ -47,7 +78,7 @@ let make =
          | Some(thumbnail) =>
            <figure className={Cn.make(["full-bleed", styles##coverFigure])}>
              <img
-               src=thumbnail##publicURL
+               src={thumbnail.publicURL}
                className=styles##coverImg
                alt={
                  Js.Nullable.toOption(caption)
@@ -80,7 +111,7 @@ let make =
                | None => React.null
                }}
               {switch (
-                 Js.Nullable.toOption(date),
+                 Js.Nullable.toOption(frontmatterDate),
                  Js.Nullable.toOption(isoDate),
                ) {
                | (Some(date), Some(isoDate)) => <PostedOn date isoDate />
@@ -105,15 +136,15 @@ let make =
            <div id="attachments" className="attachments has-ui-font">
              <h3> {React.string @@ "Downloads"} </h3>
              {Js.Array2.map(attachments, file =>
-                <div key={file##publicURL} className="wp-block-file">
-                  <a href={file##publicURL}>
-                    {[file##name, ".", file##extension]
+                <div key={file.fileUrl} className="wp-block-file">
+                  <a href={file.fileUrl}>
+                    {[file.name, ".", file.extension]
                      |> String.concat("")
                      |> React.string}
                   </a>
                   {React.string @@ " "}
                   <a
-                    href={file##publicURL}
+                    href={file.fileUrl}
                     className="wp-block-file__button"
                     download="true">
                     {React.string @@ "Download"}
@@ -128,7 +159,7 @@ let make =
             <time dateTime=isoUpdated>
               {switch (
                  Js.Nullable.toOption(updated),
-                 Js.Nullable.toOption(date),
+                 Js.Nullable.toOption(frontmatterDate),
                ) {
                | (Some(updated), _) =>
                  React.string @@ "Updated on " ++ updated
@@ -142,3 +173,4 @@ let make =
     </main>
   </Layout>;
 };
+let default = make;
