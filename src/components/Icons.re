@@ -17,6 +17,14 @@ module Mail = {
   external make: (~className: string=?) => React.element = "Mail";
 };
 
+module Software = {
+  [@bs.module "react-feather"] [@react.component]
+  external make:
+    (~className: string=?, ~height: string=?, ~width: string=?) =>
+    React.element =
+    "Code";
+};
+
 [@bs.deriving abstract]
 type simpleIcon = {
   svg: string,
