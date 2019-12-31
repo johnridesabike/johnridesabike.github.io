@@ -9,19 +9,19 @@ caption: The iOS Shortcuts app.
 ---
 *These are a few shortcut scripts I've made for Apple's [iOS Shortcuts app](https://itunes.apple.com/app/shortcuts/id915249334).*
 
-<div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://www.icloud.com/shortcuts/4f45e05a8049416a929bf7996ae2a982">Reading Time</a></div>
+<div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://www.icloud.com/shortcuts/4f45e05a8049416a929bf7996ae2a982">Reading Time</a></div>
 
 You know how some websites will include a helpful "this article takes X minutes to read" message? I wanted that feature on every website, so I made the **Reading Time** shortcut. It does exactly what you'd expect: takes an article, does some math on the number of words, and outputs a rough estimate of how long it will take you to read it.
 
-<div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://www.icloud.com/shortcuts/ebf2aff419154f4ca6d67df8bda759fd">Send to Inbox</a></div>
+<div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://www.icloud.com/shortcuts/ebf2aff419154f4ca6d67df8bda759fd">Send to Inbox</a></div>
 
 This shortcut sends anything to your inbox. No frills, no nonsense. **Send to Inbox** is probably my most-used shortcut.
 
-<div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://www.icloud.com/shortcuts/6d8fa1d9f22041a6a25018a0acf23168">Send Photo to Inbox</a></div>
+<div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://www.icloud.com/shortcuts/6d8fa1d9f22041a6a25018a0acf23168">Send Photo to Inbox</a></div>
 
 **Send Photo to Inbox** opens your camera to snap a photo and then sends it to your inbox. It’s useful for when you come across a poster or other visual bit of information that you need to process later
 
-<div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://www.icloud.com/shortcuts/e823721c7258424a94bab1e0ba6ace53">Bike Commute Clothes</a></div>
+<div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://www.icloud.com/shortcuts/e823721c7258424a94bab1e0ba6ace53">Bike Commute Clothes</a></div>
 
 <!--![A screenshot of “Bike Commute Clothes” shortcut.](./ios-shortcuts-bike.jpg)-->
 
@@ -32,7 +32,7 @@ On a bike, the weather can become harsh without proper clothing. Cold air can nu
 This shortcut is probably my most subjective. It’s based on my climate, my biking habits, and my preferences. It probably won’t be suitable if you plan on biking for an hour through a blizzard, but you are free to customize it to suit your own lifestyle
 
 
-<div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://www.icloud.com/shortcuts/db9ab1f8015343acad7a626a4a856f3e">Can I Eat Meat Today?</a></div>
+<div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://www.icloud.com/shortcuts/db9ab1f8015343acad7a626a4a856f3e">Can I Eat Meat Today?</a></div>
 
 The Roman Catholic teaching on abstaining from meat is fairly straightforward, except for when it’s not ([canons 1249-1253](http://www.vatican.va/archive/ENG1104/__P4O.HTM)). If you’re having trouble keeping up with solemnities, **Can I Eat Meat Today?** checks if today falls on a Friday or other day of abstinence, and then it checks if today is a solemnity which would overrule the abstinence obligation. This won’t account for any of your local rules or exceptions ([e.g. USCCB](http://www.usccb.org/issues-and-action/take-action-now/call-to-prayer/call-to-prayer-fast.cfm)). So if you follow a non-meat-related fasting practice, just edit that into the shortcut instead. Powered by the [Church Calendar API](http://calapi.inadiutorium.cz/).
 

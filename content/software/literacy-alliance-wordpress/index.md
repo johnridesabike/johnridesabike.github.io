@@ -11,7 +11,7 @@ The Literacy Alliance is a nonprofit organization dedicated to literacy educatio
 
 The new website highlights their current impact, their history, and streamlines the ability of users to volunteer, donate, or find educational resources. It's designed with modern web technologies, for users on desktop or mobile browsers.
 
-<div class="wp-block-button aligncenter"><a class="wp-block-button__link" href="https://theliteracyalliance.org/">View the Literacy Alliance website here</a></div>
+<div class="wp-block-button aligncenter"><a class="button-link__link" href="https://theliteracyalliance.org/">View the Literacy Alliance website here</a></div>
 
 ![Literacy Alliance front page](./LA-front-page.jpeg)
 ![Literacy Alliance events](/LA-events.jpeg)
