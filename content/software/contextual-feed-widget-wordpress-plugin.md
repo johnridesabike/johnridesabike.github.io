@@ -11,4 +11,4 @@ Contextual Feed Widget (and I’m open to suggestions for a better name) is a Wo
 
 It’s a simple plugin and I doubt anyone will have much of a problem using it. If you do have any issues or feature suggestions, [you can browse the code or submit an issue on the GitHub repository](https://github.com/johnridesabike/Contextual-Feed-Widget), which is where I do most of my development.
 
-<div class="wp-block-button aligncenter"><a class="wp-block-button__link" href="https://wordpress.org/plugins/contextual-feed-widget/">Get the “Contextual Feed Widget” Plugin</a></div>
+<div class="wp-block-button aligncenter"><a class="button-link__link" href="https://wordpress.org/plugins/contextual-feed-widget/">Get the “Contextual Feed Widget” Plugin</a></div>

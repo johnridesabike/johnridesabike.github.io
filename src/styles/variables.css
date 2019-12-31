@@ -60,7 +60,7 @@
         "Andale Mono",
         "DejaVu Sans Mono",
         var(--font-pre);
-    --font-base-size: 20px;
+    --font-base-size: 18px;
     --font-size-base-mobile: 16px;
     --font-size-xs: calc(1em / 1.25); /* 16 */
     --font-size-sm: calc(1em / 1.125); /* 17.78 */
@@ -74,7 +74,7 @@
      * Layout
      */
     --size-site-width: 1200px;
-    --size-content: 680px;
+    --size-content: 640px;
     --border-radius-button-square: 0.15em;
     --column-margin: 3.8%;
 }

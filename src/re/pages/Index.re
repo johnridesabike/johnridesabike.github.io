@@ -21,10 +21,9 @@ let make = () => {
         </p>
       </div>
       <p>
-        {j|I’m a public library staffer who is interested in
-                    digital library technologies, web development, and
-                    libraries of all types. I like to bike, write,
-                    build, and tinker.|j}
+        {j|I’m a public library staffer who is interested in digital library
+	   technologies, web development, and libraries of all types. I like to
+	   bike, write, build, and tinker.|j}
         ->React.string
       </p>
       <div className={styles##topColumns}>
@@ -50,9 +49,8 @@ let make = () => {
             <span role="img" ariaLabel="check">
               {j|✔️|j}->React.string
             </span>
-            {j| Experience in adult services programming,
-                            web development, data management, customer
-                            service, and more.|j}
+            {j| Experience in adult services programming, web development, data
+	       management, customer service, and more.|j}
             ->React.string
           </p>
           <div
@@ -61,7 +59,7 @@ let make = () => {
               "aligncenter",
               "is-style-squared",
             ])}>
-            <Gatsby.Link className="wp-block-button__link" _to="/resume/">
+            <Gatsby.Link className="button-link__link" _to="/resume/">
               {j|View my full résumé|j}->React.string
             </Gatsby.Link>
           </div>
@@ -69,8 +67,8 @@ let make = () => {
         <div>
           <p> <strong> {j|Let’s get in touch.|j}->React.string </strong> </p>
           <p style={ReactDOMRe.Style.make(~textAlign="left", ())}>
-            {j|Questions, comments, job offers, jokes,
-                            poems, or just to say “hi.”|j}
+            {j|Questions, comments, job offers, jokes, poems, or just to say
+	       “hi.”|j}
             ->React.string
           </p>
           <div
@@ -80,7 +78,7 @@ let make = () => {
               "is-style-squared",
             ])}>
             <a
-              className="wp-block-button__link"
+              className="button-link__link"
               href="mailto:jbpjackson@icloud.com">
               <Icons.Mail />
               " Email me"->React.string
