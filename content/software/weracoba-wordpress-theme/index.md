@@ -8,7 +8,7 @@ category: Software
 ---
 Weracoba is my custom-built theme based on [Underscores](https://underscores.me/). Until I switched away from WordPress, I used it to power the site here on [johnridesa.bike](https://johnridesa.bike/).
 
-<div class="wp-block-button aligncenter download"><a class="wp-block-button__link" href="https://github.com/johnridesabike/Weracoba">Download or Fork Weracoba</a></div>
+<div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://github.com/johnridesabike/Weracoba">Download or Fork Weracoba</a></div>
 
 A few key ideas guide its design: minimal use of widgets, major use of categories, and a focus on reading content. Since I keep more than just typical "blog" content on my website, this theme helps organize the different categories.
 
