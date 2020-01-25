@@ -73,3 +73,5 @@ yarn-error.log
 .bsb.lock
 /lib/
 *.bs.js
+
+*.swp
