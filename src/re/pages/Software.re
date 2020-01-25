@@ -50,6 +50,16 @@ module ExcerptList = {
        )}
       <h2 className={styles##divider}> "Web development"->React.string </h2>
       {Queries.ToProps.(
+         make(pages, "johnridesa.bike", ({slug, thumbnailURL, title}) =>
+           <Excerpt slug thumbnailURL title isWide=true>
+             {j|This page explains what technology I use to maintain this
+                website, as well as how I solved a few problems along the way.
+                It may be of interest to similarly-minded web developers.|j}
+             ->React.string
+           </Excerpt>
+         )
+       )}
+      {Queries.ToProps.(
          make(
            pages,
            "literacy-alliance-wordpress",
