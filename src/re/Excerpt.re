@@ -49,7 +49,12 @@ let make =
         ])}>
         <SpecialLink _to=slug rel="bookmark" isExternal>
           {React.string(title)}
-          {isExternal ? <Icons.ExternalLink /> : React.null}
+          {isExternal
+             ? <React.Fragment>
+                 {React.string(" ")}
+                 <Icons.ExternalLink />
+               </React.Fragment>
+             : React.null}
         </SpecialLink>
       </h3>
     </header>

@@ -6,7 +6,7 @@ module SiteMetadata = {
     description: string,
     author: string,
   };
-  [@bs.module "../quereySiteMetadata"]
+  [@bs.module "../querySiteMetadata"]
   external useSiteMetadata: unit => t = "useSiteMetadata";
   let title = t => t.site.siteMetadata.title;
   let description = t => t.site.siteMetadata.description;
@@ -77,7 +77,7 @@ module ToProps = {
       title: node.frontmatter.pageTitle,
     });
 
-  let make = (dict: Js.Dict.t(node), k, f) =>
+  let propsOfDict = (dict: Js.Dict.t(node), k, f) =>
     switch (Js.Dict.get(dict, k)) {
     | None => React.null
     | Some(node) =>

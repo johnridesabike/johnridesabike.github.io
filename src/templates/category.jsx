@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import {graphql} from "gatsby";
-import Layout from "../components/Layout.bs"
+import Layout from "../re/Layout.bs"
 
 export default function CategoryTemplate({pageContext, data}) {
     const {category} = pageContext;
