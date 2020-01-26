@@ -13,14 +13,14 @@ module ExcerptList = {
           " Woodworking projects"->React.string
         </h1>
         <p>
-          {j|Sometimes I build furniture, and these are the guides I
-                    wrote for them.|j}
+          {j|Sometimes I build furniture, and these are the guides I wrote for
+             them.|j}
           ->React.string
         </p>
       </header>
       <h2 className={styles##divider}> "Guides"->React.string </h2>
       {Queries.ToProps.(
-         make(
+         propsOfDict(
            pages,
            "marble-top-chessboard-end-table",
            ({slug, thumbnailURL, title}) =>
@@ -33,7 +33,7 @@ module ExcerptList = {
          )
        )}
       {Queries.ToProps.(
-         make(
+         propsOfDict(
            pages,
            "standing-desk-converter-diy",
            ({slug, thumbnailURL, title}) =>

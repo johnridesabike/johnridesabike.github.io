@@ -19,7 +19,7 @@ module ExcerptList = {
       </header>
       <h2 className={styles##divider}> "Apps and coding"->React.string </h2>
       {Queries.ToProps.(
-         make(pages, "coronate", ({slug, thumbnailURL, title}) =>
+         propsOfDict(pages, "coronate", ({slug, thumbnailURL, title}) =>
            <Excerpt slug thumbnailURL title isWide=true>
              {j|I created my own Swiss chess tournament manager with
                 ReasonReact. It's free and open source for anyone to use, but
@@ -29,7 +29,7 @@ module ExcerptList = {
          )
        )}
       {Queries.ToProps.(
-         make(pages, "ios-shortcuts", ({slug, thumbnailURL, title}) =>
+         propsOfDict(pages, "ios-shortcuts", ({slug, thumbnailURL, title}) =>
            <Excerpt slug thumbnailURL title isWide=false>
              {j|These are a few iOS shortcut scripts that I've made.|j}
              ->React.string
@@ -37,7 +37,7 @@ module ExcerptList = {
          )
        )}
       {Queries.ToProps.(
-         make(
+         propsOfDict(
            pages,
            "wordroom-a-pythonista-dictionary-app",
            ({slug, thumbnailURL, title}) =>
@@ -50,7 +50,7 @@ module ExcerptList = {
        )}
       <h2 className={styles##divider}> "Web development"->React.string </h2>
       {Queries.ToProps.(
-         make(pages, "johnridesa.bike", ({slug, thumbnailURL, title}) =>
+         propsOfDict(pages, "johnridesa.bike", ({slug, thumbnailURL, title}) =>
            <Excerpt slug thumbnailURL title isWide=true>
              {j|This page explains what technology I use to maintain this
                 website, as well as how I solved a few problems along the way.
@@ -60,7 +60,7 @@ module ExcerptList = {
          )
        )}
       {Queries.ToProps.(
-         make(
+         propsOfDict(
            pages,
            "literacy-alliance-wordpress",
            ({slug, thumbnailURL, title}) =>
@@ -72,7 +72,7 @@ module ExcerptList = {
          )
        )}
       {Queries.ToProps.(
-         make(
+         propsOfDict(
            pages, "weracoba-wordpress-theme", ({slug, thumbnailURL, title}) =>
            <Excerpt slug thumbnailURL title isWide=false>
              {j| (Currently defunct.) This is a custom WordPress theme I created
