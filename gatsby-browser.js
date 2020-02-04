@@ -7,7 +7,7 @@
 import "normalize.css";
 import "typeface-source-sans-pro";
 import "typeface-libre-baskerville";
-import "firacode";
+import "typeface-source-code-pro";
 import "./src/styles/prism-dracula.css";
 import "./src/styles/variables.css";
 import "./src/styles/elements.css";
