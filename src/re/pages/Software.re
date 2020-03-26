@@ -1,5 +1,7 @@
 let styles = Gatsby.loadCssModule("./index.module.css");
 
+let mwmatching = Gatsby.loadImage("../../images/mwmatching.svg");
+
 module ExcerptList = {
   [@react.component]
   let make = () => {
@@ -28,6 +30,20 @@ module ExcerptList = {
            </Excerpt>
          )
        )}
+      <Excerpt
+        isWide=true
+        title={j|Maximum weighted matching finder|j}
+        slug="https://johnridesa.bike/mwmatching-finder/"
+        thumbnailURL=Some(mwmatching)
+        isExternal=true>
+        {j|While I was developing |j}->React.string
+        <em> "Coronate"->React.string </em>
+        {j| I needed to solve the problem of how to correctly pair chess players.
+           Researching this problem led me to discover the world of graph
+           theory and “maximum weighted matching.” To make these concepts easier
+           for other people to learn, I put together this interactive webpage.|j}
+        ->React.string
+      </Excerpt>
       {Queries.ToProps.(
          propsOfDict(pages, "ios-shortcuts", ({slug, thumbnailURL, title}) =>
            <Excerpt slug thumbnailURL title isWide=false>
@@ -90,8 +106,6 @@ module ExcerptList = {
 let make = () =>
   <Layout>
     <Seo title="Software" />
-    <main id="main" className="site-mainn page-content">
-      <ExcerptList />
-    </main>
+    <main id="main" className="site-main page-content"> <ExcerptList /> </main>
   </Layout>;
 let default = make;

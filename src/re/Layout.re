@@ -101,7 +101,7 @@ module Footer = {
         <section
           className={Cn.make([widgetStyles##widget, styles##footerWidget])}>
           <p>
-            {React.string({j|Copyright © |j})}
+            {React.string({j|Copyright © 2020 |j})}
             <span property="cc:attributionName">
               {React.string("John Jackson")}
             </span>
