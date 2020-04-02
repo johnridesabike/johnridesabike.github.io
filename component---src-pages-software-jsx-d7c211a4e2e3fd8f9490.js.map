@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/software.jsx"],"names":["Software"],"mappings":"2FAAA,uBACeA,YAAf","file":"component---src-pages-software-jsx-d7c211a4e2e3fd8f9490.js","sourcesContent":["import Software from \"../re/pages/Software.bs\";\nexport default Software;"],"sourceRoot":""}
