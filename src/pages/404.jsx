@@ -1,2 +1,2 @@
-import NotFound from "../re/pages/NotFound.bs";
-export default NotFound;
+import {make} from "../re/pages/NotFound.bs";
+export default make;

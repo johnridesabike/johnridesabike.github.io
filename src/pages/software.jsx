@@ -1,2 +1,2 @@
-import Software from "../re/pages/Software.bs";
-export default Software;
+import {make} from "../re/pages/Software.bs";
+export default make;

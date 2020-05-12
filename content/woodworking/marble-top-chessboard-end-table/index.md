@@ -6,7 +6,6 @@ updated: 2018-05-13
 thumbnail: "./IMG_0293.jpg"
 attachments:
     - ./Chess-Table-Sketchup.zip
-category: Woodworking
 ---
 
 A while back, I inherited a marble chessboard that had once been the top to a beautiful table. The metal base had rusted away long ago, but I believed that I could restore this table to new glory. All I needed was my toolbox and some 2x4s.

@@ -8,4 +8,3 @@ let make = () =>
       ->React.string
     </p>
   </Layout>;
-let default = make;

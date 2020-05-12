@@ -7,7 +7,6 @@ and markdownRemark = {
 }
 and fields = {
   slug: string,
-  date: string,
 }
 and frontmatter = {
   [@bs.as "date"]
@@ -173,4 +172,3 @@ let make = (~pageContext as _, ~data: data) => {
     </main>
   </Layout>;
 };
-let default = make;

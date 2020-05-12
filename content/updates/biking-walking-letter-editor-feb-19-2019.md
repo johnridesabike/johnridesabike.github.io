@@ -3,7 +3,6 @@ title: "Biking and walking letter to the editor: Feb 19, 2019"
 author: John Jackson
 date: 2019-02-19
 updated: 2019-02-19
-category: Updates
 ---
 [The Columbus Ledger-Enquirer published a letter of mine](https://www.ledger-enquirer.com/opinion/letters-to-the-editor/article226272120.html) which discusses the state of biking and walking in downtown Columbus. You can read the full letter on their site, but here’s an excerpt:
 

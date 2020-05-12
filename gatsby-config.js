@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 require("dotenv").config();
-const {siteMetadata} = require("./SiteConfig");
+const {SiteMetadata} = require("./lib/js/SiteConfig.bs.js");
 
 module.exports = {
-    siteMetadata,
+    siteMetadata: SiteMetadata,
     plugins: [
         "gatsby-plugin-react-helmet",
         {
@@ -33,12 +33,6 @@ module.exports = {
             options: {
                 path: `${__dirname}/content`,
                 name: "pages"
-            }
-        },
-        {
-            resolve: "gatsby-plugin-categories",
-            options: {
-                templatePath: `${__dirname}/src/templates/category.jsx`
             }
         },
         {

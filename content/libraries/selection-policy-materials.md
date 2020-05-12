@@ -3,7 +3,6 @@ title: Selection Policy & Materials Project
 author: John Jackson
 date: 2018-12-19
 updated: 2018-12-19
-category: "Libraries"
 ---
 *I selected books with funds donated to a fictional university library. To aid selection, I compared policies from similar, real-world, institutions. This was originally written for my Technical Services class in the Fall of 2017.*
 

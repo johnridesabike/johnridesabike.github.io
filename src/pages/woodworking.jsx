@@ -1,2 +1,2 @@
-import Woodworking from "../re/pages/Woodworking.bs";
-export default Woodworking;
+import {make} from "../re/pages/Woodworking.bs";
+export default make;
