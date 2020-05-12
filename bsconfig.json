@@ -11,12 +11,20 @@
     {
       "dir": "src",
       "subdirs": true
+    },
+    {
+      "dir": ".",
+      "subdirs": false
     }
   ],
   "package-specs": [
     {
       "module": "es6",
       "in-source": true
+    },
+    {
+      "module": "commonjs",
+      "in-source": false
     }
   ],
   "suffix": ".bs.js",
@@ -24,7 +32,9 @@
   "bs-dependencies": [
     "reason-react",
     "re-classnames",
-    "@moox/bs-react-helmet"
+    "@moox/bs-react-helmet",
+    "reason-nodejs",
+    "reason-promise"
   ],
   "ppx-flags": [],
   "refmt": 3,

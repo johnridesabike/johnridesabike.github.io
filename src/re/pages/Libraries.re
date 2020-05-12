@@ -28,7 +28,7 @@ module ExcerptList = {
              pages,
              "academic-library-student-support",
              ({slug, thumbnailURL, title}) =>
-             <Excerpt slug thumbnailURL title isWide=false>
+             <Excerpt slug ?thumbnailURL title isWide=false>
                {j|Here, I walk through a hypothetical student project and
                   explain how I, as an academic librarian, would assist
                   throughout the process.|j}
@@ -39,7 +39,7 @@ module ExcerptList = {
         {Queries.ToProps.(
            propsOfDict(
              pages, "open-access-presentation", ({slug, thumbnailURL, title}) =>
-             <Excerpt slug thumbnailURL title isWide=false>
+             <Excerpt slug ?thumbnailURL title isWide=false>
                {j|These are the slides and notes from a presentation I did on
                   the state of open access in academic libraries.|j}
                ->React.string
@@ -51,7 +51,7 @@ module ExcerptList = {
              pages,
              "academic-library-faculty-support",
              ({slug, thumbnailURL, title}) =>
-             <Excerpt slug thumbnailURL title isWide=false>
+             <Excerpt slug ?thumbnailURL title isWide=false>
                {j|I describe several key topics affecting academic libraries
                   and how I could assist faculty with them: data management
                   plans, open access, and intellectual property policy.|j}
@@ -64,7 +64,7 @@ module ExcerptList = {
              pages,
              "data-management-plan-evolving-pronouns",
              ({slug, thumbnailURL, title}) =>
-             <Excerpt slug thumbnailURL title isWide=false>
+             <Excerpt slug ?thumbnailURL title isWide=false>
                {j|In conjunction with my student support project, this is an
                   example data management plan I created.|j}
                ->React.string
@@ -77,7 +77,7 @@ module ExcerptList = {
         {Queries.ToProps.(
            propsOfDict(
              pages, "ex-libris-opac-analysis", ({slug, thumbnailURL, title}) =>
-             <Excerpt slug thumbnailURL title isWide=false>
+             <Excerpt slug ?thumbnailURL title isWide=false>
                {j|I explain the pros and cons of using the Ex Libris OPAC
                 for an academic library.|j}
                ->React.string
@@ -89,7 +89,7 @@ module ExcerptList = {
              pages,
              "collection-development-policy",
              ({slug, thumbnailURL, title}) =>
-             <Excerpt slug thumbnailURL title isWide=false>
+             <Excerpt slug ?thumbnailURL title isWide=false>
                {j|I worked with a team to create this original collection
                   development policy a fictional library and critiqued three
                   existing policies.|j}
@@ -102,7 +102,7 @@ module ExcerptList = {
              pages,
              "selection-policy-materials",
              ({slug, thumbnailURL, title}) =>
-             <Excerpt slug thumbnailURL title isWide=true>
+             <Excerpt slug ?thumbnailURL title isWide=true>
                {j|I selected books with funds donated to a fictional
                   university library. To aid selection, I compared policies
                   from similar, real-world, institutions.|j}
@@ -116,7 +116,7 @@ module ExcerptList = {
              pages,
              "researching-hispanic-children-books",
              ({slug, thumbnailURL, title}) =>
-             <Excerpt slug thumbnailURL title isWide=true>
+             <Excerpt slug ?thumbnailURL title isWide=true>
                {j|I worked with a team that researched the distribution of
                   Hispanic and Latino children's books in various US libraries.
                 |j}
@@ -129,7 +129,7 @@ module ExcerptList = {
              pages,
              "library-twitter-r-presentation",
              ({slug, thumbnailURL, title}) =>
-             <Excerpt slug thumbnailURL title isWide=false>
+             <Excerpt slug ?thumbnailURL title isWide=false>
                {j|These are the slides and notes from a presentation I did
                   on using language analysis of Twitter accounts with the R
                   programming language.|j}
@@ -140,7 +140,7 @@ module ExcerptList = {
         {Queries.ToProps.(
            propsOfDict(
              pages, "environmental-analysis", ({slug, thumbnailURL, title}) =>
-             <Excerpt slug thumbnailURL title isWide=false>
+             <Excerpt slug ?thumbnailURL title isWide=false>
                {j|I wrote this analysis of the community surrounding the
                   Chattahoochee Valley Libraries in Columbus, GA.|j}
                ->React.string
@@ -177,7 +177,7 @@ module ExcerptList = {
         {Queries.ToProps.(
            propsOfDict(
              pages, "how-play-chess", ({slug, thumbnailURL, title}) =>
-             <Excerpt slug thumbnailURL title isWide=false>
+             <Excerpt slug ?thumbnailURL title isWide=false>
                {j| I've run a succesful chess program since 2017. At the time,
                   I couldn't find any satisfactory guides to give to
                   participants. This is one that I wrote myself which aims to
@@ -200,4 +200,3 @@ let make = () =>
       <ExcerptList />
     </main>
   </Layout>;
-let default = make;

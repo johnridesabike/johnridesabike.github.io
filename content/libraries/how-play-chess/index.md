@@ -3,7 +3,6 @@ title: "How to Play Chess: a reference for novices and veterans"
 author: John Jackson
 date: 2019-03-13
 updated: 2019-03-18
-category: Libraries
 # thumbnail: ./Chess.jpg
 # caption: A chess set with USCF rule book.
 attachments:

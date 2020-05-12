@@ -22,7 +22,7 @@ module ExcerptList = {
       <h2 className={styles##divider}> "Apps and coding"->React.string </h2>
       {Queries.ToProps.(
          propsOfDict(pages, "coronate", ({slug, thumbnailURL, title}) =>
-           <Excerpt slug thumbnailURL title isWide=true>
+           <Excerpt slug ?thumbnailURL title isWide=true>
              {j|I created my own Swiss chess tournament manager with
                 ReasonReact. It's free and open source for anyone to use, but
                 especially designed for the needs of libraries and small clubs.|j}
@@ -34,7 +34,7 @@ module ExcerptList = {
         isWide=true
         title={j|Maximum weighted matching finder|j}
         slug="https://johnridesa.bike/mwmatching-finder/"
-        thumbnailURL=Some(mwmatching)
+        thumbnailURL=(mwmatching)
         isExternal=true>
         {j|While I was developing |j}->React.string
         <em> "Coronate"->React.string </em>
@@ -46,7 +46,7 @@ module ExcerptList = {
       </Excerpt>
       {Queries.ToProps.(
          propsOfDict(pages, "ios-shortcuts", ({slug, thumbnailURL, title}) =>
-           <Excerpt slug thumbnailURL title isWide=false>
+           <Excerpt slug ?thumbnailURL title isWide=false>
              {j|These are a few iOS shortcut scripts that I've made.|j}
              ->React.string
            </Excerpt>
@@ -57,7 +57,7 @@ module ExcerptList = {
            pages,
            "wordroom-a-pythonista-dictionary-app",
            ({slug, thumbnailURL, title}) =>
-           <Excerpt slug thumbnailURL title isWide=false>
+           <Excerpt slug ?thumbnailURL title isWide=false>
              {j|This is an iOS dictionary "app" built with Pythonista. It saves
                  the words you look up and your notes on them.|j}
              ->React.string
@@ -67,7 +67,7 @@ module ExcerptList = {
       <h2 className={styles##divider}> "Web development"->React.string </h2>
       {Queries.ToProps.(
          propsOfDict(pages, "johnridesa.bike", ({slug, thumbnailURL, title}) =>
-           <Excerpt slug thumbnailURL title isWide=true>
+           <Excerpt slug ?thumbnailURL title isWide=true>
              {j|This page explains what technology I use to maintain this
                 website, as well as how I solved a few problems along the way.
                 It may be of interest to similarly-minded web developers.|j}
@@ -80,7 +80,7 @@ module ExcerptList = {
            pages,
            "literacy-alliance-wordpress",
            ({slug, thumbnailURL, title}) =>
-           <Excerpt slug thumbnailURL title isWide=false>
+           <Excerpt slug ?thumbnailURL title isWide=false>
              {j|In 2017, I redesigned a website for the local nonprofit Literacy
                  Alliance using WordPress and SquareSpace.|j}
              ->React.string
@@ -90,7 +90,7 @@ module ExcerptList = {
       {Queries.ToProps.(
          propsOfDict(
            pages, "weracoba-wordpress-theme", ({slug, thumbnailURL, title}) =>
-           <Excerpt slug thumbnailURL title isWide=false>
+           <Excerpt slug ?thumbnailURL title isWide=false>
              {j| (Currently defunct.) This is a custom WordPress theme I created
                  from scratch. I don't update it anymore since I stopped using
                  WordPress for this site.|j}
@@ -108,4 +108,3 @@ let make = () =>
     <Seo title="Software" />
     <main id="main" className="site-main page-content"> <ExcerptList /> </main>
   </Layout>;
-let default = make;

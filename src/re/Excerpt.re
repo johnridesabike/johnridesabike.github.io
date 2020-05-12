@@ -30,7 +30,7 @@ let make =
       ~slug: string,
       ~isExternal=false,
       ~title: string,
-      ~thumbnailURL=None,
+      ~thumbnailURL=?,
       ~children,
     ) => {
   <article
@@ -96,4 +96,3 @@ let make =
   </article>;
 };
 
-let default = make;

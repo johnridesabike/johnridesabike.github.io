@@ -95,4 +95,3 @@ let make = () => {
     </main>
   </Layout>;
 };
-let default = make;

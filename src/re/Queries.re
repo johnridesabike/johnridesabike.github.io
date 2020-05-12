@@ -23,7 +23,6 @@ and node = {
   frontmatter,
 }
 and fields = {
-  category: Js.Nullable.t(string),
   [@bs.as "slug"]
   pageSlug: string,
 }

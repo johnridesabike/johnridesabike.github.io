@@ -3,7 +3,6 @@ title: Open Access Presentation
 author: John Jackson
 date: 2018-12-19
 updated: 2018-12-19
-category: "Libraries"
 ---
 *I presented on the state of open access in academic libraries. These are my slides with a transcript of the presentation. This was originally written for my Technical Services class in the Fall of 2017.*
 
