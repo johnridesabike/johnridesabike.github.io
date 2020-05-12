@@ -3,7 +3,6 @@ title: "Coronate: a Swiss chess tournament manager"
 author: John Jackson
 date: 2019-06-08
 updated: 2019-09-01
-category: Software
 thumbnail: ./logo_wide.svg
 caption: The Coronate logo.
 ---

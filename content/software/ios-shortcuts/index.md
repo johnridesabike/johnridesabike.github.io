@@ -3,7 +3,6 @@ title: iOS Shortcuts
 author: John Jackson
 date: 2018-10-08
 updated: 2019-11-05
-category: Software
 thumbnail: ./ios-shortcuts.jpg
 caption: The iOS Shortcuts app.
 ---

@@ -42,5 +42,3 @@ let make = (~description=?, ~lang="en", ~meta=[||], ~keywords=[||], ~title) => {
     }
   />;
 };
-
-let default = make;

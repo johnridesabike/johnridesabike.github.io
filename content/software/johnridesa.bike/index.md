@@ -3,7 +3,6 @@ title: "JohnRidesA.Bike: how I made this website"
 author: John Jackson
 date: 2020-01-25
 updated: 2020-01-25
-category: Software
 ---
 I maintain [JohnRidesA.bike](https://johnridesa.bike/) with a combination of
 two technologies:

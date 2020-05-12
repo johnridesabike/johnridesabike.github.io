@@ -24,7 +24,7 @@ module ExcerptList = {
            pages,
            "marble-top-chessboard-end-table",
            ({slug, thumbnailURL, title}) =>
-           <Excerpt slug thumbnailURL title isWide=false>
+           <Excerpt slug ?thumbnailURL title isWide=false>
              {j|I made a custom end-table with an old marble chessboard and some
                 two-by-fours. This guide covers how it was done, and some tips
                 for building your own.|j}
@@ -37,7 +37,7 @@ module ExcerptList = {
            pages,
            "standing-desk-converter-diy",
            ({slug, thumbnailURL, title}) =>
-           <Excerpt slug thumbnailURL title isWide=false>
+           <Excerpt slug ?thumbnailURL title isWide=false>
              {j| I turned a old, regular desk into a fancy new standing desk.
                 This covers how I did it, how you can make your own, and some
                 general tips about standing desks.|j}
@@ -57,4 +57,3 @@ let make = () =>
       <ExcerptList />
     </main>
   </Layout>;
-let default = make;

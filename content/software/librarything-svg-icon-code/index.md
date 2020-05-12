@@ -3,7 +3,6 @@ title: LibraryThing SVG Icon
 author: John Jackson
 date: 2019-01-24
 updated: 2019-01-24
-category: Software
 thumbnail: ./librarything.svg
 caption: The libraryThing logo.
 attachments:

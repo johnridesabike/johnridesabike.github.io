@@ -3,7 +3,6 @@ title: Literacy Alliance WordPress Redesign
 author: John Jackson
 date: 2018-08-15
 updated: 2018-08-15
-category: Software
 thumbnail: ./LA-logo-2018.png
 caption: The Literacy Alliance logo.
 ---
