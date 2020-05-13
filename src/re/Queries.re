@@ -35,7 +35,15 @@ and frontmatter = {
   isoDate: string,
   thumbnail: Js.Nullable.t(thumbnail),
 }
-and thumbnail = {publicURL: string};
+and thumbnail = {
+  publicURL: string,
+  childImageSharp: Js.Nullable.t(childImageSharp),
+}
+and childImageSharp = {fluid}
+and fluid = {
+  srcSet: string,
+  src: string,
+};
 [@bs.module "../queryLibraryPages"]
 external useLibraryPages: unit => query = "useLibraryPages";
 
@@ -45,11 +53,18 @@ external useSoftwarePages: unit => query = "useSoftwarePages";
 [@bs.module "../queryWoodPages"]
 external useWoodworkingPages: unit => query = "useWoodworkingPages";
 
+module Thumbnail = {
+  type t = {
+    src: string,
+    srcSet: option(string),
+  };
+};
+
 module ToProps = {
   type t = {
     isWide: bool,
     fullPath: string,
-    thumbnailURL: option(string),
+    thumbnail: option(Thumbnail.t),
     title: string,
   };
 
@@ -61,13 +76,18 @@ module ToProps = {
     dict;
   };
 
-  let nodeFields = (node: node, f) =>
+  let nodeFields = (node, f) =>
     f({
       isWide: Js.Nullable.isNullable(node.frontmatter.thumbnail),
       fullPath: node.fields.fullPath,
-      thumbnailURL:
+      thumbnail:
         switch (Js.Nullable.toOption(node.frontmatter.thumbnail)) {
-        | Some(thumbnail) => Some(thumbnail.publicURL)
+        | Some({publicURL, childImageSharp}) =>
+          switch (Js.Nullable.toOption(childImageSharp)) {
+          | Some({fluid: {src, srcSet}}) =>
+            Some({src, srcSet: Some(srcSet)})
+          | None => Some({src: publicURL, srcSet: None})
+          }
         | None => None
         },
       title: node.frontmatter.pageTitle,
@@ -76,16 +96,6 @@ module ToProps = {
   let propsOfDict = (dict: Js.Dict.t(node), k, f) =>
     switch (Js.Dict.get(dict, k)) {
     | None => React.null
-    | Some(node) =>
-      f({
-        isWide: Js.Nullable.isNullable(node.frontmatter.thumbnail),
-        fullPath: node.fields.fullPath,
-        thumbnailURL:
-          switch (Js.Nullable.toOption(node.frontmatter.thumbnail)) {
-          | Some(thumbnail) => Some(thumbnail.publicURL)
-          | None => None
-          },
-        title: node.frontmatter.pageTitle,
-      })
+    | Some(node) => nodeFields(node, f)
     };
 };

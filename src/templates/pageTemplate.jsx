@@ -17,6 +17,12 @@ query PageByPath($path: String!) {
       isoUpdated: updated
       thumbnail {
         publicURL
+        childImageSharp {
+          fluid {
+            srcSet
+            src
+          }
+        }
       }
       attachments {
         publicURL
