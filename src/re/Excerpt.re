@@ -30,7 +30,7 @@ let make =
       ~fullPath: string,
       ~isExternal=false,
       ~title: string,
-      ~thumbnailURL=?,
+      ~thumbnail=?,
       ~children,
     ) => {
   <article
@@ -59,8 +59,8 @@ let make =
       </h3>
     </header>
     <div className={styles##content}>
-      {switch (thumbnailURL) {
-       | Some(thumbnailURL) =>
+      {switch (thumbnail) {
+       | Some(Queries.Thumbnail.{src, srcSet}) =>
          <figure
            className={Cn.make(["full-bleed-small", styles##coverFigure])}>
            <SpecialLink
@@ -72,7 +72,8 @@ let make =
              <img
                width="128"
                height="96"
-               src=thumbnailURL
+               src
+               ?srcSet
                className={styles##coverImg}
                alt=""
              />
@@ -95,4 +96,3 @@ let make =
     </div>
   </article>;
 };
-

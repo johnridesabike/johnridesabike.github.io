@@ -5,9 +5,7 @@ and markdownRemark = {
   frontmatter,
   fields,
 }
-and fields = {
-  slug: string,
-}
+and fields = {slug: string}
 and frontmatter = {
   [@bs.as "date"]
   frontmatterDate: nullable(string),
@@ -21,7 +19,15 @@ and frontmatter = {
   thumbnail: nullable(thumbnail),
   attachments: nullable(array(attachments)),
 }
-and thumbnail = {publicURL: string}
+and thumbnail = {
+  publicURL: string,
+  childImageSharp: Js.Nullable.t(childImageSharp),
+}
+and childImageSharp = {fluid}
+and fluid = {
+  srcSet: string,
+  src: string,
+}
 and attachments = {
   [@bs.as "publicURL"]
   fileUrl: string,
@@ -74,10 +80,21 @@ let make = (~pageContext as _, ~data: data) => {
         ])}>
         {switch (Js.Nullable.toOption(thumbnail)) {
          | None => React.null
-         | Some(thumbnail) =>
+         | Some({publicURL, childImageSharp}) =>
            <figure className={Cn.make(["full-bleed", styles##coverFigure])}>
              <img
-               src={thumbnail.publicURL}
+               src={
+                 switch (Js.Nullable.toOption(childImageSharp)) {
+                 | Some({fluid: {src}}) => src
+                 | None => publicURL
+                 }
+               }
+               srcSet=?{
+                 switch (Js.Nullable.toOption(childImageSharp)) {
+                 | Some({fluid: {srcSet}}) => Some(srcSet)
+                 | None => None
+                 }
+               }
                className=styles##coverImg
                alt={
                  Js.Nullable.toOption(caption)

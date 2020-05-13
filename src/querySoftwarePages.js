@@ -14,10 +14,16 @@ query softwareDocs {
         frontmatter {
           title
           date(formatString: "MMMM DD, YYYY")
-            isoDate: date
-            thumbnail {
-              publicURL
+          isoDate: date
+          thumbnail {
+            publicURL
+            childImageSharp {
+              fluid {
+                srcSet
+                src
+              }
             }
+          }
         }
       }
     }

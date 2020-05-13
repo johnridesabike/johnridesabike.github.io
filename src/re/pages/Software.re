@@ -21,8 +21,8 @@ module ExcerptList = {
       </header>
       <h2 className={styles##divider}> "Apps and coding"->React.string </h2>
       {Queries.ToProps.propsOfDict(
-         pages, "coronate", ({fullPath, thumbnailURL, title}) =>
-         <Excerpt fullPath ?thumbnailURL title isWide=true>
+         pages, "coronate", ({fullPath, thumbnail, title}) =>
+         <Excerpt fullPath ?thumbnail title isWide=true>
            {j|I created my own Swiss chess tournament manager with
                 ReasonReact. It's free and open source for anyone to use, but
                 especially designed for the needs of libraries and small clubs.|j}
@@ -33,7 +33,7 @@ module ExcerptList = {
         isWide=true
         title={j|Maximum weighted matching finder|j}
         fullPath="https://johnridesa.bike/mwmatching-finder/"
-        thumbnailURL=mwmatching
+        thumbnail={src: mwmatching, srcSet: None}
         isExternal=true>
         {j|While I was developing |j}->React.string
         <em> "Coronate"->React.string </em>
@@ -44,8 +44,8 @@ module ExcerptList = {
         ->React.string
       </Excerpt>
       {Queries.ToProps.propsOfDict(
-         pages, "ios-shortcuts", ({fullPath, thumbnailURL, title}) =>
-         <Excerpt fullPath ?thumbnailURL title isWide=false>
+         pages, "ios-shortcuts", ({fullPath, thumbnail, title}) =>
+         <Excerpt fullPath ?thumbnail title isWide=false>
            {j|These are a few iOS shortcut scripts that I've made.|j}
            ->React.string
          </Excerpt>
@@ -53,8 +53,8 @@ module ExcerptList = {
       {Queries.ToProps.propsOfDict(
          pages,
          "wordroom-a-pythonista-dictionary-app",
-         ({fullPath, thumbnailURL, title}) =>
-         <Excerpt fullPath ?thumbnailURL title isWide=false>
+         ({fullPath, thumbnail, title}) =>
+         <Excerpt fullPath ?thumbnail title isWide=false>
            {j|This is an iOS dictionary "app" built with Pythonista. It saves
                  the words you look up and your notes on them.|j}
            ->React.string
@@ -62,8 +62,8 @@ module ExcerptList = {
        )}
       <h2 className={styles##divider}> "Web development"->React.string </h2>
       {Queries.ToProps.propsOfDict(
-         pages, "johnridesa.bike", ({fullPath, thumbnailURL, title}) =>
-         <Excerpt fullPath ?thumbnailURL title isWide=true>
+         pages, "johnridesa.bike", ({fullPath, thumbnail, title}) =>
+         <Excerpt fullPath ?thumbnail title isWide=true>
            {j|This page explains what technology I use to maintain this
                 website, as well as how I solved a few problems along the way.
                 It may be of interest to similarly-minded web developers.|j}
@@ -71,18 +71,16 @@ module ExcerptList = {
          </Excerpt>
        )}
       {Queries.ToProps.propsOfDict(
-         pages,
-         "literacy-alliance-wordpress",
-         ({fullPath, thumbnailURL, title}) =>
-         <Excerpt fullPath ?thumbnailURL title isWide=false>
+         pages, "literacy-alliance-wordpress", ({fullPath, thumbnail, title}) =>
+         <Excerpt fullPath ?thumbnail title isWide=false>
            {j|In 2017, I redesigned a website for the local nonprofit Literacy
                  Alliance using WordPress and SquareSpace.|j}
            ->React.string
          </Excerpt>
        )}
       {Queries.ToProps.propsOfDict(
-         pages, "weracoba-wordpress-theme", ({fullPath, thumbnailURL, title}) =>
-         <Excerpt fullPath ?thumbnailURL title isWide=false>
+         pages, "weracoba-wordpress-theme", ({fullPath, thumbnail, title}) =>
+         <Excerpt fullPath ?thumbnail title isWide=false>
            {j| (Currently defunct.) This is a custom WordPress theme I created
                  from scratch. I don't update it anymore since I stopped using
                  WordPress for this site.|j}
