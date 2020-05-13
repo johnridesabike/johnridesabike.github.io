@@ -1,12 +1,13 @@
 import { useStaticQuery, graphql } from "gatsby";
 export const useLibraryPages = () => useStaticQuery(graphql`
 query libraryDocs {
-  allMarkdownRemark(filter: {fields: {slug: {glob: "/libraries/*"}}}) {
+  allMarkdownRemark(filter: {fields: {parentDir: {eq: "libraries"}}}) {
     totalCount
     edges {
       node {
         fields {
           slug
+          fullPath
         }
         excerpt
         timeToRead

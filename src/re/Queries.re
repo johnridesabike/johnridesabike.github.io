@@ -25,6 +25,8 @@ and node = {
 and fields = {
   [@bs.as "slug"]
   pageSlug: string,
+  parentDir: string,
+  fullPath: string,
 }
 and frontmatter = {
   [@bs.as "title"]
@@ -46,20 +48,15 @@ external useWoodworkingPages: unit => query = "useWoodworkingPages";
 module ToProps = {
   type t = {
     isWide: bool,
-    slug: string,
+    fullPath: string,
     thumbnailURL: option(string),
     title: string,
   };
-  let getSlug = longSlug => Js.String2.split(longSlug, "/")[2];
 
-  let dictOfEdges = query => {
+  let dictOfEdges = edges => {
     let dict = Js.Dict.empty();
-    Js.Array2.forEach(
-      query.allMarkdownRemark.edges,
-      edge => {
-        let slug = getSlug(edge.node.fields.pageSlug)->Option.getExn;
-        Js.Dict.set(dict, slug, edge.node);
-      },
+    Js.Array2.forEach(edges, ({node: {fields: {pageSlug}} as node}) =>
+      Js.Dict.set(dict, pageSlug, node)
     );
     dict;
   };
@@ -67,7 +64,7 @@ module ToProps = {
   let nodeFields = (node: node, f) =>
     f({
       isWide: Js.Nullable.isNullable(node.frontmatter.thumbnail),
-      slug: node.fields.pageSlug,
+      fullPath: node.fields.fullPath,
       thumbnailURL:
         switch (Js.Nullable.toOption(node.frontmatter.thumbnail)) {
         | Some(thumbnail) => Some(thumbnail.publicURL)
@@ -82,7 +79,7 @@ module ToProps = {
     | Some(node) =>
       f({
         isWide: Js.Nullable.isNullable(node.frontmatter.thumbnail),
-        slug: node.fields.pageSlug,
+        fullPath: node.fields.fullPath,
         thumbnailURL:
           switch (Js.Nullable.toOption(node.frontmatter.thumbnail)) {
           | Some(thumbnail) => Some(thumbnail.publicURL)

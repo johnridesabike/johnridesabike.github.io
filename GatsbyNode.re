@@ -1,3 +1,4 @@
+open! Belt;
 type frontmatter = {
   slug: option(string),
   date: option(string),
@@ -8,7 +9,11 @@ type internal = {
   nodeType: string,
 };
 
-type fields = {slug: option(string)};
+type fields = {
+  slug: string,
+  fullPath: string,
+  parentDir: string,
+};
 
 type parent;
 
@@ -38,7 +43,7 @@ external field:
   (~name: string, ~node: node, ~value: string, unit) => createNodeFieldInput;
 
 type context;
-[@bs.obj] external context: (~slug: string, unit) => context;
+[@bs.obj] external context: (~fullPath: string, unit) => context;
 
 type createPageInput;
 [@bs.obj]
@@ -63,13 +68,35 @@ let onCreateNode = ({node, actions: {createNodeField}, getNode}) =>
   | {internal: {nodeType: "MarkdownRemark"}, parent} =>
     let fileNode = getNode(. parent);
     let parsedFilePath = NodeJs.Path.parse(fileNode.relativePath);
-    let slug =
-      switch (parsedFilePath) {
-      | {name: "index"} => "/" ++ parsedFilePath.dir ++ "/"
-      | {dir: ""} => "/" ++ parsedFilePath.name ++ "/"
-      | _ => "/" ++ parsedFilePath.dir ++ "/" ++ parsedFilePath.name ++ "/"
-      };
-    createNodeField(. field(~name="slug", ~node, ~value=slug, ()));
+    switch (parsedFilePath) {
+    | {dir, name: "index"} =>
+      let path = "/" ++ dir ++ "/";
+      let dir' = dir->Js.String2.split(NodeJs.Path.sep);
+      let parentDir =
+        dir'
+        ->Js.Array2.slice(~start=0, ~end_=Js.Array2.length(dir') - 1)
+        ->Js.Array2.joinWith("/");
+      let slug =
+        switch (dir'[Js.Array2.length(dir') - 1]) {
+        | None => ""
+        | Some(slug) => slug
+        };
+      createNodeField(. field(~name="fullPath", ~node, ~value=path, ()));
+      createNodeField(.
+        field(~name="parentDir", ~node, ~value=parentDir, ()),
+      );
+      createNodeField(. field(~name="slug", ~node, ~value=slug, ()));
+    | {dir: "", name} =>
+      let path = "/" ++ name ++ "/";
+      createNodeField(. field(~name="fullPath", ~node, ~value=path, ()));
+      createNodeField(. field(~name="parentDir", ~node, ~value="", ()));
+      createNodeField(. field(~name="slug", ~node, ~value=name, ()));
+    | {dir, name} =>
+      let path = "/" ++ dir ++ "/" ++ name ++ "/";
+      createNodeField(. field(~name="fullPath", ~node, ~value=path, ()));
+      createNodeField(. field(~name="parentDir", ~node, ~value=dir, ()));
+      createNodeField(. field(~name="slug", ~node, ~value=name, ()));
+    };
   | _ => ()
   };
 
@@ -83,7 +110,7 @@ let createPages = ({graphql, actions: {createPage}}) => {
           edges {
             node {
               fields {
-                slug
+                fullPath
               }
             }
           }
@@ -102,18 +129,14 @@ let createPages = ({graphql, actions: {createPage}}) => {
   ->Promise.Js.map(result => {
       result.data.allMarkdownRemark.edges
       ->Js.Array2.forEach(edge =>
-          switch (edge.node.fields.slug) {
-          | None => ()
-          | Some(slug) =>
-            createPage(.
-              page(
-                ~component=pageTemplate,
-                ~context=context(~slug, ()),
-                ~path=slug,
-                (),
-              ),
-            )
-          }
+          createPage(.
+            page(
+              ~component=pageTemplate,
+              ~context=context(~fullPath=edge.node.fields.fullPath, ()),
+              ~path=edge.node.fields.fullPath,
+              (),
+            ),
+          )
         )
     });
 };

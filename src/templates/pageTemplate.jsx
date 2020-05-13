@@ -2,8 +2,8 @@ import {graphql} from "gatsby";
 import {make} from "../re/templates/PageTemplate.bs";
 export default make;
 export const pageQuery = graphql`
-query PageBySlug($slug: String!) {
-  markdownRemark(fields: {slug: {eq: $slug}}) {
+query PageByPath($path: String!) {
+  markdownRemark(fields: {fullPath: {eq: $path}}) {
     html
     timeToRead
     excerpt
@@ -26,6 +26,8 @@ query PageBySlug($slug: String!) {
     }
     fields {
       slug
+      fullPath
+      parentDir
     }
   }
 }

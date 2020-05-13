@@ -27,7 +27,7 @@ let make =
     (
       ~className="",
       ~isWide: bool,
-      ~slug: string,
+      ~fullPath: string,
       ~isExternal=false,
       ~title: string,
       ~thumbnailURL=?,
@@ -47,7 +47,7 @@ let make =
           "has-no-text-transform",
           styles##title,
         ])}>
-        <SpecialLink _to=slug rel="bookmark" isExternal>
+        <SpecialLink _to=fullPath rel="bookmark" isExternal>
           {React.string(title)}
           {isExternal
              ? <React.Fragment>
@@ -64,7 +64,7 @@ let make =
          <figure
            className={Cn.make(["full-bleed-small", styles##coverFigure])}>
            <SpecialLink
-             _to=slug
+             _to=fullPath
              className={styles##coverLink}
              ariaHidden=true
              tabIndex=(-1)
@@ -85,7 +85,7 @@ let make =
       </p>
       <Externals.VisuallyHidden>
         <SpecialLink
-          _to=slug
+          _to=fullPath
           className={Cn.make(["button-link__link"])}
           rel="bookmark"
           isExternal>

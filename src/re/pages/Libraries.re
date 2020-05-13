@@ -4,7 +4,7 @@ module ExcerptList = {
   [@react.component]
   let make = () => {
     let query = Queries.useLibraryPages();
-    let pages = Queries.ToProps.dictOfEdges(query);
+    let pages = Queries.ToProps.dictOfEdges(query.allMarkdownRemark.edges);
     <React.Fragment>
       <section className={styles##section}>
         <header className={styles##sectionHeader}>
@@ -23,48 +23,44 @@ module ExcerptList = {
         <h2 className={styles##divider}>
           "Academic libraries"->React.string
         </h2>
-        {Queries.ToProps.(
-           propsOfDict(
-             pages,
-             "academic-library-student-support",
-             ({slug, thumbnailURL, title}) =>
-             <Excerpt slug ?thumbnailURL title isWide=false>
-               {j|Here, I walk through a hypothetical student project and
+        {Queries.ToProps.propsOfDict(
+           pages,
+           "academic-library-student-support",
+           ({fullPath, thumbnailURL, title}) =>
+           <Excerpt fullPath ?thumbnailURL title isWide=false>
+             {j|Here, I walk through a hypothetical student project and
                   explain how I, as an academic librarian, would assist
                   throughout the process.|j}
-               ->React.string
-             </Excerpt>
-           )
+             ->React.string
+           </Excerpt>
          )}
-        {Queries.ToProps.(
-           propsOfDict(
-             pages, "open-access-presentation", ({slug, thumbnailURL, title}) =>
-             <Excerpt slug ?thumbnailURL title isWide=false>
-               {j|These are the slides and notes from a presentation I did on
+        {Queries.ToProps.propsOfDict(
+           pages,
+           "open-access-presentation",
+           ({fullPath, thumbnailURL, title}) =>
+           <Excerpt fullPath ?thumbnailURL title isWide=false>
+             {j|These are the slides and notes from a presentation I did on
                   the state of open access in academic libraries.|j}
-               ->React.string
-             </Excerpt>
-           )
+             ->React.string
+           </Excerpt>
          )}
-        {Queries.ToProps.(
-           propsOfDict(
-             pages,
-             "academic-library-faculty-support",
-             ({slug, thumbnailURL, title}) =>
-             <Excerpt slug ?thumbnailURL title isWide=false>
-               {j|I describe several key topics affecting academic libraries
+        {Queries.ToProps.propsOfDict(
+           pages,
+           "academic-library-faculty-support",
+           ({fullPath, thumbnailURL, title}) =>
+           <Excerpt fullPath ?thumbnailURL title isWide=false>
+             {j|I describe several key topics affecting academic libraries
                   and how I could assist faculty with them: data management
                   plans, open access, and intellectual property policy.|j}
-               ->React.string
-             </Excerpt>
-           )
+             ->React.string
+           </Excerpt>
          )}
         {Queries.ToProps.(
            propsOfDict(
              pages,
              "data-management-plan-evolving-pronouns",
-             ({slug, thumbnailURL, title}) =>
-             <Excerpt slug ?thumbnailURL title isWide=false>
+             ({fullPath, thumbnailURL, title}) =>
+             <Excerpt fullPath ?thumbnailURL title isWide=false>
                {j|In conjunction with my student support project, this is an
                   example data management plan I created.|j}
                ->React.string
@@ -74,78 +70,80 @@ module ExcerptList = {
         <h2 className={styles##divider}>
           "Technical services"->React.string
         </h2>
-        {Queries.ToProps.(
-           propsOfDict(
-             pages, "ex-libris-opac-analysis", ({slug, thumbnailURL, title}) =>
-             <Excerpt slug ?thumbnailURL title isWide=false>
-               {j|I explain the pros and cons of using the Ex Libris OPAC
+        {Queries.ToProps.propsOfDict(
+           pages,
+           "ex-libris-opac-analysis",
+           ({fullPath, thumbnailURL, title}) =>
+           <Excerpt fullPath ?thumbnailURL title isWide=false>
+             {j|I explain the pros and cons of using the Ex Libris OPAC
                 for an academic library.|j}
-               ->React.string
-             </Excerpt>
-           )
+             ->React.string
+           </Excerpt>
          )}
-        {Queries.ToProps.(
-           propsOfDict(
-             pages,
-             "collection-development-policy",
-             ({slug, thumbnailURL, title}) =>
-             <Excerpt slug ?thumbnailURL title isWide=false>
-               {j|I worked with a team to create this original collection
+        {Queries.ToProps.propsOfDict(
+           pages,
+           "collection-development-policy",
+           ({fullPath, thumbnailURL, title}) =>
+           <Excerpt fullPath ?thumbnailURL title isWide=false>
+             {j|I worked with a team to create this original collection
                   development policy a fictional library and critiqued three
                   existing policies.|j}
-               ->React.string
-             </Excerpt>
-           )
+             ->React.string
+           </Excerpt>
          )}
-        {Queries.ToProps.(
-           propsOfDict(
-             pages,
-             "selection-policy-materials",
-             ({slug, thumbnailURL, title}) =>
-             <Excerpt slug ?thumbnailURL title isWide=true>
-               {j|I selected books with funds donated to a fictional
+        {Queries.ToProps.propsOfDict(
+           pages,
+           "selection-policy-materials",
+           ({fullPath, thumbnailURL, title}) =>
+           <Excerpt fullPath ?thumbnailURL title isWide=true>
+             {j|I selected books with funds donated to a fictional
                   university library. To aid selection, I compared policies
                   from similar, real-world, institutions.|j}
-               ->React.string
-             </Excerpt>
-           )
+             ->React.string
+           </Excerpt>
          )}
         <h2 className={styles##divider}> "Research"->React.string </h2>
-        {Queries.ToProps.(
-           propsOfDict(
-             pages,
-             "researching-hispanic-children-books",
-             ({slug, thumbnailURL, title}) =>
-             <Excerpt slug ?thumbnailURL title isWide=true>
-               {j|I worked with a team that researched the distribution of
+        {Queries.ToProps.propsOfDict(
+           pages,
+           "researching-hispanic-children-books",
+           ({fullPath, thumbnailURL, title}) =>
+           <Excerpt fullPath ?thumbnailURL title isWide=true>
+             {j|I worked with a team that researched the distribution of
                   Hispanic and Latino children's books in various US libraries.
                 |j}
-               ->React.string
-             </Excerpt>
-           )
+             ->React.string
+           </Excerpt>
          )}
-        {Queries.ToProps.(
-           propsOfDict(
-             pages,
-             "library-twitter-r-presentation",
-             ({slug, thumbnailURL, title}) =>
-             <Excerpt slug ?thumbnailURL title isWide=false>
-               {j|These are the slides and notes from a presentation I did
+        {Queries.ToProps.propsOfDict(
+           pages,
+           "library-twitter-r-presentation",
+           ({fullPath, thumbnailURL, title}) =>
+           <Excerpt fullPath ?thumbnailURL title isWide=false>
+             {j|These are the slides and notes from a presentation I did
                   on using language analysis of Twitter accounts with the R
                   programming language.|j}
-               ->React.string
-             </Excerpt>
-           )
+             ->React.string
+           </Excerpt>
          )}
-        {Queries.ToProps.(
-           propsOfDict(
-             pages, "environmental-analysis", ({slug, thumbnailURL, title}) =>
-             <Excerpt slug ?thumbnailURL title isWide=false>
-               {j|I wrote this analysis of the community surrounding the
+        {Queries.ToProps.propsOfDict(
+           pages, "environmental-analysis", ({fullPath, thumbnailURL, title}) =>
+           <Excerpt fullPath ?thumbnailURL title isWide=false>
+             {j|I wrote this analysis of the community surrounding the
                   Chattahoochee Valley Libraries in Columbus, GA.|j}
-               ->React.string
-             </Excerpt>
-           )
+             ->React.string
+           </Excerpt>
+         )}
+        <h2 className={styles##divider}> "Media"->React.string </h2>
+        {Queries.ToProps.propsOfDict(
+           pages, "library-media", ({fullPath, thumbnailURL, title}) =>
+           <Excerpt fullPath ?thumbnailURL title isWide=true>
+             {j|
+I produced instructional videos for Chattahoochee Valley Libraries. This was in
+part a response to the COVID-19 crisis. These videos were a way to extend
+library services to patrons while our doors were closed to the public.
+             |j}
+             ->React.string
+           </Excerpt>
          )}
       </section>
       <hr />
@@ -163,7 +161,7 @@ module ExcerptList = {
         <Excerpt
           isWide=false
           title={j|Your Library’s First Chess Tournament: From Opening to Endgame|j}
-          slug={j|http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame|j}
+          fullPath={j|http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame|j}
           isExternal=true>
           "I've published a guide to running a library chess tournament on "
           ->React.string
@@ -174,18 +172,16 @@ module ExcerptList = {
               to know.|j}
           ->React.string
         </Excerpt>
-        {Queries.ToProps.(
-           propsOfDict(
-             pages, "how-play-chess", ({slug, thumbnailURL, title}) =>
-             <Excerpt slug ?thumbnailURL title isWide=false>
-               {j| I've run a succesful chess program since 2017. At the time,
+        {Queries.ToProps.propsOfDict(
+           pages, "how-play-chess", ({fullPath, thumbnailURL, title}) =>
+           <Excerpt fullPath ?thumbnailURL title isWide=false>
+             {j| I've run a succesful chess program since 2017. At the time,
                   I couldn't find any satisfactory guides to give to
                   participants. This is one that I wrote myself which aims to
                   cover all of the necessary knowledge without being too long
                   or too short.|j}
-               ->React.string
-             </Excerpt>
-           )
+             ->React.string
+           </Excerpt>
          )}
       </section>
     </React.Fragment>;
