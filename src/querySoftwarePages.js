@@ -1,12 +1,13 @@
 import { useStaticQuery, graphql } from "gatsby";
 export const useSoftwarePages = () => useStaticQuery(graphql`
 query softwareDocs {
-  allMarkdownRemark(filter: {fields: {slug: {glob: "/software/*"}}}) {
+  allMarkdownRemark(filter: {fields: {parentDir: {eq: "software"}}}) {
     totalCount
     edges {
       node {
         fields {
           slug
+          fullPath
         }
         excerpt
         timeToRead

@@ -3,7 +3,7 @@ let make:
   (
     ~className: string=?,
     ~isWide: bool,
-    ~slug: string,
+    ~fullPath: string,
     ~isExternal: bool=?,
     ~title: string,
     ~thumbnailURL: string=?,

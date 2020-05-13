@@ -1,12 +1,13 @@
 import { useStaticQuery, graphql } from "gatsby";
 export const useWoodworkingPages = () => useStaticQuery(graphql`
 query woodworkingDocs {
-  allMarkdownRemark(filter: {fields: {slug: {glob: "/woodworking/*"}}}) {
+  allMarkdownRemark(filter: {fields: {parentDir: {eq: "woodworking"}}}) {
     totalCount
     edges {
       node {
         fields {
           slug
+          fullPath
         }
         excerpt
         timeToRead
