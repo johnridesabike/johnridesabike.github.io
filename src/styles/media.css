@@ -108,6 +108,19 @@ object {
     border-radius: 4px;
 }
 
+/* --------------------------------------------------------------
+## Video
+-------------------------------------------------------------- */
+
+.video-embed {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.video-embed.alignwide {
+    width: 100vw;
+}
+
 /*
 ** Media Queries
 **/
@@ -150,5 +163,10 @@ object {
         /* cancel full-bleed on larger screens */
         margin-right: 0;
         margin-left: 0;
+    }
+
+    .video-embed.alignwide.alignwide {
+        width: var(--size-content);
+        margin: 1em auto;
     }
 }
