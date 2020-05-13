@@ -17,6 +17,12 @@ query libraryDocs {
           isoDate: date
           thumbnail {
             publicURL
+            childImageSharp {
+              fluid {
+                srcSet
+                src
+              }
+            }
           }
         }
       }
