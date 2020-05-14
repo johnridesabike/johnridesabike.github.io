@@ -1,39 +1,6 @@
-type nullable('a) = Js.Nullable.t('a);
-type data = {markdownRemark}
-and markdownRemark = {
-  html: string,
-  frontmatter,
-  fields,
-}
-and fields = {slug: string}
-and frontmatter = {
-  [@bs.as "date"]
-  frontmatterDate: nullable(string),
-  isoDate: nullable(string),
-  title: string,
-  category: nullable(string),
-  author: nullable(string),
-  caption: nullable(string),
-  updated: nullable(string),
-  isoUpdated: string,
-  thumbnail: nullable(thumbnail),
-  attachments: nullable(array(attachments)),
-}
-and thumbnail = {
-  publicURL: string,
-  childImageSharp: Js.Nullable.t(childImageSharp),
-}
-and childImageSharp = {fluid}
-and fluid = {
-  srcSet: string,
-  src: string,
-}
-and attachments = {
-  [@bs.as "publicURL"]
-  fileUrl: string,
-  name: string,
-  extension: string,
-};
+module T = QueryTypes;
+type data = T.PageTemplate.data;
+
 let styles = Gatsby.loadCssModule("./page.module.css");
 
 module PostedBy = {
@@ -58,18 +25,18 @@ module PostedOn = {
 
 [@react.component]
 let make = (~pageContext as _, ~data: data) => {
-  let {frontmatter, html} = data.markdownRemark;
-  let {
-    title,
-    thumbnail,
-    caption,
-    frontmatterDate,
-    isoDate,
-    author,
-    attachments,
-    updated,
-    isoUpdated,
-  } = frontmatter;
+  let T.PageTemplate.{frontmatter, html} = data.markdownRemark;
+  let T.PageTemplate.{
+        title,
+        thumbnail,
+        caption,
+        frontmatterDate,
+        isoDate,
+        author,
+        attachments,
+        updated,
+        isoUpdated,
+      } = frontmatter;
   <Layout
     entryHeader={
       <div
