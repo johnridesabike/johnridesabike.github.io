@@ -3,6 +3,16 @@
  * attempts to keep them organized and as unified as possible. Be aware that
  * these must be in sync with the actual queries used throughout the project.
  */
+module SiteMetadata = {
+  type t = {site}
+  and site = {siteMetadata}
+  and siteMetadata = {
+    title: string,
+    description: string,
+    author: string,
+  };
+};
+
 module GatsbyNode = {
   type node = {
     fields,
@@ -75,7 +85,6 @@ module PageTemplate = {
     frontmatterDate: nullable(string),
     isoDate: nullable(string),
     title: string,
-    category: nullable(string),
     author: nullable(string),
     caption: nullable(string),
     updated: nullable(string),

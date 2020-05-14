@@ -1,4 +1,7 @@
-type nodeApiHelpers;
+type nodeApiHelpers('context);
 
-let onCreateNode: nodeApiHelpers => unit;
-let createPages: nodeApiHelpers => Promise.rejectable(unit, Js.Promise.error);
+let onCreateNode: nodeApiHelpers('context) => unit;
+
+let createPages:
+  nodeApiHelpers({. fullPath: string}) =>
+  Promise.rejectable(unit, Js.Promise.error);
