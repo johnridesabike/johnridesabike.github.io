@@ -1,11 +1,5 @@
 module SiteMetadata = {
-  type t = {site}
-  and site = {siteMetadata}
-  and siteMetadata = {
-    title: string,
-    description: string,
-    author: string,
-  };
+  include QueryTypes.SiteMetadata;
   [@bs.module "../querySiteMetadata"]
   external useSiteMetadata: unit => t = "useSiteMetadata";
   let title = t => t.site.siteMetadata.title;
@@ -14,8 +8,9 @@ module SiteMetadata = {
 };
 
 module T = QueryTypes;
+module N = T.ListPages;
 
-type query = T.query(T.ListPages.node);
+type query = T.query(N.node);
 
 [@bs.module "../queryLibraryPages"]
 external useLibraryPages: unit => query = "useLibraryPages";
@@ -43,19 +38,19 @@ module ToProps = {
 
   let dictOfEdges = edges => {
     let dict = Js.Dict.empty();
-    Js.Array2.forEach(
-      edges, (T.{node: T.ListPages.{fields: {pageSlug}} as node}) =>
+    Js.Array2.forEach(edges, (T.{node: N.{fields: {pageSlug}} as node}) =>
       Js.Dict.set(dict, pageSlug, node)
     );
     dict;
   };
 
-  let nodeFields = (node, f) =>
-    f({
-      isWide: Js.Nullable.isNullable(node.T.ListPages.frontmatter.thumbnail),
-      fullPath: node.fields.fullPath,
+  let nodeFields =
+      (N.{frontmatter: {N.thumbnail, pageTitle}, fields: {N.fullPath}}, f) =>
+    f(. {
+      isWide: Js.Nullable.isNullable(thumbnail),
+      fullPath,
       thumbnail:
-        switch (Js.Nullable.toOption(node.frontmatter.thumbnail)) {
+        switch (Js.Nullable.toOption(thumbnail)) {
         | Some({publicURL, childImageSharp}) =>
           switch (Js.Nullable.toOption(childImageSharp)) {
           | Some({fluid: {src, srcSet}}) =>
@@ -64,10 +59,10 @@ module ToProps = {
           }
         | None => None
         },
-      title: node.frontmatter.pageTitle,
+      title: pageTitle,
     });
 
-  let propsOfDict = (dict: Js.Dict.t(T.ListPages.node), k, f) =>
+  let propsOfDict = (dict, k, f) =>
     switch (Js.Dict.get(dict, k)) {
     | None => React.null
     | Some(node) => nodeFields(node, f)

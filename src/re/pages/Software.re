@@ -21,7 +21,7 @@ module ExcerptList = {
       </header>
       <h2 className={styles##divider}> "Apps and coding"->React.string </h2>
       {Queries.ToProps.propsOfDict(
-         pages, "coronate", ({fullPath, thumbnail, title}) =>
+         pages, "coronate", (. {fullPath, thumbnail, title}) =>
          <Excerpt fullPath ?thumbnail title isWide=true>
            {j|I created my own Swiss chess tournament manager with
                 ReasonReact. It's free and open source for anyone to use, but
@@ -44,7 +44,7 @@ module ExcerptList = {
         ->React.string
       </Excerpt>
       {Queries.ToProps.propsOfDict(
-         pages, "ios-shortcuts", ({fullPath, thumbnail, title}) =>
+         pages, "ios-shortcuts", (. {fullPath, thumbnail, title}) =>
          <Excerpt fullPath ?thumbnail title isWide=false>
            {j|These are a few iOS shortcut scripts that I've made.|j}
            ->React.string
@@ -53,7 +53,7 @@ module ExcerptList = {
       {Queries.ToProps.propsOfDict(
          pages,
          "wordroom-a-pythonista-dictionary-app",
-         ({fullPath, thumbnail, title}) =>
+         (. {fullPath, thumbnail, title}) =>
          <Excerpt fullPath ?thumbnail title isWide=false>
            {j|This is an iOS dictionary "app" built with Pythonista. It saves
                  the words you look up and your notes on them.|j}
@@ -62,7 +62,7 @@ module ExcerptList = {
        )}
       <h2 className={styles##divider}> "Web development"->React.string </h2>
       {Queries.ToProps.propsOfDict(
-         pages, "johnridesa.bike", ({fullPath, thumbnail, title}) =>
+         pages, "johnridesa.bike", (. {fullPath, thumbnail, title}) =>
          <Excerpt fullPath ?thumbnail title isWide=true>
            {j|This page explains what technology I use to maintain this
                 website, as well as how I solved a few problems along the way.
@@ -71,7 +71,9 @@ module ExcerptList = {
          </Excerpt>
        )}
       {Queries.ToProps.propsOfDict(
-         pages, "literacy-alliance-wordpress", ({fullPath, thumbnail, title}) =>
+         pages,
+         "literacy-alliance-wordpress",
+         (. {fullPath, thumbnail, title}) =>
          <Excerpt fullPath ?thumbnail title isWide=false>
            {j|In 2017, I redesigned a website for the local nonprofit Literacy
                  Alliance using WordPress and SquareSpace.|j}
@@ -79,7 +81,7 @@ module ExcerptList = {
          </Excerpt>
        )}
       {Queries.ToProps.propsOfDict(
-         pages, "weracoba-wordpress-theme", ({fullPath, thumbnail, title}) =>
+         pages, "weracoba-wordpress-theme", (. {fullPath, thumbnail, title}) =>
          <Excerpt fullPath ?thumbnail title isWide=false>
            {j| (Currently defunct.) This is a custom WordPress theme I created
                  from scratch. I don't update it anymore since I stopped using
