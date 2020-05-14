@@ -1,46 +1,16 @@
 open! Belt;
-type frontmatter = {
-  slug: option(string),
-  date: option(string),
-};
-
-type internal = {
-  [@bs.as "type"]
-  nodeType: string,
-};
-
-type fields = {
-  slug: string,
-  fullPath: string,
-  parentDir: string,
-};
-
-type parent;
-
-type node = {
-  fields,
-  internal,
-  parent,
-  frontmatter: option(frontmatter),
-};
-
-type fileNode = {relativePath: string};
-
-type edge = {node};
-
-type allMarkdownRemark = {edges: array(edge)};
-
-type data = {allMarkdownRemark};
+module T = QueryTypes;
 
 type graphqlResult = {
   errors: option(Js.Exn.t),
-  data,
+  data: T.query(T.GatsbyNode.node),
 };
 
 type createNodeFieldInput;
 [@bs.obj]
 external field:
-  (~name: string, ~node: node, ~value: string, unit) => createNodeFieldInput;
+  (~name: string, ~node: T.GatsbyNode.node, ~value: string, unit) =>
+  createNodeFieldInput;
 
 type context;
 [@bs.obj] external context: (~fullPath: string, unit) => context;
@@ -57,9 +27,9 @@ type actions = {
 };
 
 type nodeApiHelpers = {
-  node,
+  node: T.GatsbyNode.node,
   actions,
-  getNode: (. parent) => fileNode,
+  getNode: (.T.GatsbyNode.parent) => T.GatsbyNode.fileNode,
   graphql: (. string) => Js.Promise.t(graphqlResult),
 };
 

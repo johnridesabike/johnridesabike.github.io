@@ -55,7 +55,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npm run re:build && gatsby build",
+    "build": "npm run re:cleanbuild && gatsby build",
     "develop": "gatsby develop",
     "lint:javascript": "eslint --ext .jsx,.js src/",
     "lint:stylesheets": "stylelint \"src/**/*.css\"",
@@ -64,7 +64,8 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "deploy": "npm run build && gh-pages -d public -b master",
-    "re:build": "bsb -make-world -clean-world",
+    "re:build": "bsb -make-world",
+    "re:cleanbuild": "bsb -make-world -clean-world",
     "re:watch": "bsb -make-world -clean-world -w"
   },
   "repository": {

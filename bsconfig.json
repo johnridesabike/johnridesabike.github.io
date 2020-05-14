@@ -28,7 +28,7 @@
     }
   ],
   "suffix": ".bs.js",
-  "namespace": true,
+  "namespace": "JohnRidesABike",
   "bs-dependencies": [
     "reason-react",
     "re-classnames",
