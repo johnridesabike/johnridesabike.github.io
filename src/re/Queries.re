@@ -10,6 +10,11 @@ module SiteMetadata = {
 module T = QueryTypes;
 module N = T.ListPages;
 
+module Image = {
+  [@bs.module "../queryImages"]
+  external useImages: unit => T.Images.t = "useImages";
+};
+
 type query = T.query(N.node);
 
 [@bs.module "../queryLibraryPages"]

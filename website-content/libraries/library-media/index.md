@@ -1,8 +1,6 @@
 ---
 title: Social distancing library videos
 date: 2020-05-11
-thumbnail: ./imovie.png
-caption: Screenshot of iMovie editing a chess instruction video.
 ---
 
 I produced instructional videos for Chattahoochee Valley Libraries as 
@@ -13,6 +11,8 @@ Video production involved iPhone and iPad cameras, iMovie software, and sundry
 props available around the house.
 
 ## Library services
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hTnw1sfOeQQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-embed alignwide"></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qms2A6q78J0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-embed alignwide"></iframe>
 
@@ -25,3 +25,7 @@ props available around the house.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LubUp85_s0k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-embed alignwide"></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KXsTUkHgaJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-embed alignwide"></iframe>
+
+## Learn to code
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Vw_sBSQ9KMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-embed alignwide"></iframe>
