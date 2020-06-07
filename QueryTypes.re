@@ -109,6 +109,16 @@ module PageTemplate = {
   };
 };
 
+module Images = {
+  type t = {file}
+  and file = {childImageSharp}
+  and childImageSharp = {fixed}
+  and fixed = {
+    src: string,
+    srcSet: string,
+  };
+};
+
 type query('node) = {allMarkdownRemark: allMarkdownRemark('node)}
 and allMarkdownRemark('node) = {edges: array(edge('node))}
 and edge('node) = {node: 'node};
