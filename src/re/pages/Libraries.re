@@ -42,7 +42,12 @@ module ExcerptList = {
                    className={Cn.make([
                      "full-bleed-small",
                      stylesExcerpt##coverFigure,
-                   ])}>
+                   ])}
+                   style={ReactDOMRe.Style.make(
+                     ~height="90px",
+                     ~width="160px",
+                     (),
+                   )}>
                    <Gatsby.Link
                      _to=fullPath
                      className={stylesExcerpt##coverLink}
