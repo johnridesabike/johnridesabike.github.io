@@ -1,18 +1,16 @@
 let styles = Gatsby.loadCssModule("./index.module.css");
-let john2018 = Gatsby.loadImage("../../images/john2018.jpg");
 
 [@react.component]
 let make = () => {
+  let john2018 = Queries.Image.useImages();
   <Layout>
     <Seo title="Home" keywords=[|"librarian", "software", "woodworking"|] />
     <main id="main" className="site-main page-content">
       <div className={styles##topColumns}>
         <figure>
-          <img
-            src=john2018
+          <Gatsby.Img
+            fixed=QueryTypes.Images.(john2018.file.childImageSharp.fixed)
             alt="Portrait of John"
-            height="256"
-            width="256"
             className="avatar"
           />
         </figure>

@@ -7,6 +7,11 @@ module SiteMetadata: {
   let author: t => string;
 };
 
+module Image: {
+  [@bs.module "../queryImages"]
+  external useImages: unit => QueryTypes.Images.t = "useImages";
+};
+
 type query = QueryTypes.query(QueryTypes.ListPages.node);
 
 [@bs.module "../queryLibraryPages"]
