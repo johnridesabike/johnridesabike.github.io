@@ -1,6 +1,7 @@
 ---
 title: Social distancing library videos
 date: 2020-05-11
+updated: 2020-06-08
 ---
 
 I produced instructional videos for Chattahoochee Valley Libraries as 
