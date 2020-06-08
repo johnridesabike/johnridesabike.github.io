@@ -39,6 +39,16 @@ module GatsbyNode = {
   type fileNode = {relativePath: string};
 };
 
+module Sharp = {
+  type fixed;
+  type fluid = {
+    src: string,
+    srcSet: string,
+    sizes: string,
+    aspectRatio: int,
+  };
+};
+
 module ListPages = {
   type node = {
     fields,
@@ -61,13 +71,9 @@ module ListPages = {
   }
   and thumbnail = {
     publicURL: string,
-    childImageSharp: Js.Nullable.t(childImageSharp),
+    sharpImg: Js.Nullable.t(childImageSharp),
   }
-  and childImageSharp = {fluid}
-  and fluid = {
-    srcSet: string,
-    src: string,
-  };
+  and childImageSharp = {fixed: Sharp.fixed};
 };
 
 module PageTemplate = {
@@ -94,12 +100,12 @@ module PageTemplate = {
   }
   and thumbnail = {
     publicURL: string,
-    childImageSharp: nullable(childImageSharp),
+    sharpImg: nullable(childImageSharp),
   }
-  and childImageSharp = {fluid}
-  and fluid = {
-    srcSet: string,
-    src: string,
+  and childImageSharp = {
+    mobileImage: Sharp.fluid,
+    tabletImage: Sharp.fluid,
+    desktopImage: Sharp.fluid,
   }
   and attachments = {
     [@bs.as "publicURL"]
@@ -110,12 +116,11 @@ module PageTemplate = {
 };
 
 module Images = {
-  type t = {file}
-  and file = {childImageSharp}
-  and childImageSharp = {fixed}
-  and fixed = {
-    src: string,
-    srcSet: string,
+  type t = {john2018}
+  and john2018 = {sharpImg}
+  and sharpImg = {
+    large: Sharp.fixed,
+    small: Sharp.fixed,
   };
 };
 

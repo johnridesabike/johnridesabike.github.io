@@ -1,8 +1,21 @@
 open QueryTypes;
 let styles = Gatsby.loadCssModule("./index.module.css");
-let stylesExcerpt = Gatsby.loadCssModule("../excerpt.module.css");
-let montageMp4 = Gatsby.loadImage("../../video/montage_web.mp4");
-let montageWebm = Gatsby.loadImage("../../video/montage_web.webm");
+
+let montage =
+  Queries.Video.{
+    height: "90",
+    width: "160",
+    sources: [|
+      {
+        src: Gatsby.loadImage("../../video/montage_web.mp4"),
+        type_: "video/mp4",
+      },
+      {
+        src: Gatsby.loadImage("../../video/montage_web.webm"),
+        type_: "video/webm",
+      },
+    |],
+  };
 
 module ExcerptList = {
   [@react.component]
@@ -14,77 +27,19 @@ module ExcerptList = {
         <header className={styles##sectionHeader}>
           <h1>
             <span role="img" ariaHidden=true> {j|📽|j}->React.string </span>
-            " Media"->React.string
+            " Media production"->React.string
           </h1>
         </header>
+        <h2 className={styles##divider}> "Public libraries"->React.string </h2>
         {Queries.ToProps.(
-           propsOfDict(pages, "library-media", (. {fullPath, title, _}) =>
-             <article
-               className={Cn.make([
-                 stylesExcerpt##excerpt,
-                 Cn.ifTrue(stylesExcerpt##isWide, true),
-               ])}>
-               <header className="has-ui-font">
-                 <h3
-                   className={Cn.make([
-                     "has-body-font",
-                     "has-medium-font-size",
-                     "has-no-text-transform",
-                     stylesExcerpt##title,
-                   ])}>
-                   <Gatsby.Link _to=fullPath rel="bookmark">
-                     {React.string(title)}
-                   </Gatsby.Link>
-                 </h3>
-               </header>
-               <div className={stylesExcerpt##content}>
-                 <figure
-                   className={Cn.make([
-                     "full-bleed-small",
-                     stylesExcerpt##coverFigure,
-                   ])}
-                   style={ReactDOMRe.Style.make(
-                     ~height="90px",
-                     ~width="160px",
-                     (),
-                   )}>
-                   <Gatsby.Link
-                     _to=fullPath
-                     className={stylesExcerpt##coverLink}
-                     tabIndex=(-1)>
-                     <video
-                       autoPlay=true
-                       muted=true
-                       loop=true
-                       height="90"
-                       width="160">
-                       <source src=montageMp4 type_="video/mp4" />
-                       <source src=montageWebm type_="video/webm" />
-                     </video>
-                   </Gatsby.Link>
-                 </figure>
-                 <p
-                   className={Cn.make([
-                     "has-small-font-size",
-                     stylesExcerpt##text,
-                   ])}>
-                   {j|
-I produced instructional videos for Chattahoochee Valley Libraries. This was in
-part a response to the COVID-19 crisis. These videos were a way to extend
-library services to patrons while our doors were closed to the public.
-             |j}
-                   ->React.string
-                 </p>
-                 <Externals.VisuallyHidden>
-                   <Gatsby.Link
-                     _to=fullPath
-                     className={Cn.make(["button-link__link"])}
-                     rel="bookmark">
-                     {["Open", "title"] |> String.concat(" ") |> React.string}
-                   </Gatsby.Link>
-                 </Externals.VisuallyHidden>
-               </div>
-             </article>
+           propsOfDict(pages, "library-media", (. {fullPath, title, isWide}) =>
+             <Excerpt fullPath thumbnail={Video(montage)} title isWide>
+               {j|I produced instructional videos for Chattahoochee Valley
+                  Libraries. This was in part a response to the COVID-19 crisis.
+                  These videos were a way to extend library services to patrons
+                  while our doors were closed to the public.|j}
+               ->React.string
+             </Excerpt>
            )
          )}
       </section>
@@ -111,7 +66,7 @@ library services to patrons while our doors were closed to the public.
              pages,
              "academic-library-student-support",
              (. {fullPath, thumbnail, title}) =>
-             <Excerpt fullPath ?thumbnail title isWide=false>
+             <Excerpt fullPath thumbnail title isWide=false>
                {j|Here, I walk through a hypothetical student project and
                   explain how I, as an academic librarian, would assist
                   throughout the process.|j}
@@ -124,7 +79,7 @@ library services to patrons while our doors were closed to the public.
              pages,
              "open-access-presentation",
              (. {fullPath, thumbnail, title}) =>
-             <Excerpt fullPath ?thumbnail title isWide=false>
+             <Excerpt fullPath thumbnail title isWide=false>
                {j|These are the slides and notes from a presentation I did on
                   the state of open access in academic libraries.|j}
                ->React.string
@@ -136,7 +91,7 @@ library services to patrons while our doors were closed to the public.
              pages,
              "academic-library-faculty-support",
              (. {fullPath, thumbnail, title}) =>
-             <Excerpt fullPath ?thumbnail title isWide=false>
+             <Excerpt fullPath thumbnail title isWide=false>
                {j|I describe several key topics affecting academic libraries
                   and how I could assist faculty with them: data management
                   plans, open access, and intellectual property policy.|j}
@@ -149,7 +104,7 @@ library services to patrons while our doors were closed to the public.
              pages,
              "data-management-plan-evolving-pronouns",
              (. {fullPath, thumbnail, title}) =>
-             <Excerpt fullPath ?thumbnail title isWide=false>
+             <Excerpt fullPath thumbnail title isWide=false>
                {j|In conjunction with my student support project, this is an
                   example data management plan I created.|j}
                ->React.string
@@ -164,7 +119,7 @@ library services to patrons while our doors were closed to the public.
              pages,
              "ex-libris-opac-analysis",
              (. {fullPath, thumbnail, title}) =>
-             <Excerpt fullPath ?thumbnail title isWide=false>
+             <Excerpt fullPath thumbnail title isWide=false>
                {j|I explain the pros and cons of using the Ex Libris OPAC
                 for an academic library.|j}
                ->React.string
@@ -176,7 +131,7 @@ library services to patrons while our doors were closed to the public.
              pages,
              "collection-development-policy",
              (. {fullPath, thumbnail, title}) =>
-             <Excerpt fullPath ?thumbnail title isWide=false>
+             <Excerpt fullPath thumbnail title isWide=false>
                {j|I worked with a team to create this original collection
                   development policy a fictional library and critiqued three
                   existing policies.|j}
@@ -189,7 +144,7 @@ library services to patrons while our doors were closed to the public.
              pages,
              "selection-policy-materials",
              (. {fullPath, thumbnail, title}) =>
-             <Excerpt fullPath ?thumbnail title isWide=true>
+             <Excerpt fullPath thumbnail title isWide=true>
                {j|I selected books with funds donated to a fictional
                   university library. To aid selection, I compared policies
                   from similar, real-world, institutions.|j}
@@ -203,7 +158,7 @@ library services to patrons while our doors were closed to the public.
              pages,
              "researching-hispanic-children-books",
              (. {fullPath, thumbnail, title}) =>
-             <Excerpt fullPath ?thumbnail title isWide=true>
+             <Excerpt fullPath thumbnail title isWide=true>
                {j|I worked with a team that researched the distribution of
                   Hispanic and Latino children's books in various US libraries.
                 |j}
@@ -216,7 +171,7 @@ library services to patrons while our doors were closed to the public.
              pages,
              "library-twitter-r-presentation",
              (. {fullPath, thumbnail, title}) =>
-             <Excerpt fullPath ?thumbnail title isWide=false>
+             <Excerpt fullPath thumbnail title isWide=false>
                {j|These are the slides and notes from a presentation I did
                   on using language analysis of Twitter accounts with the R
                   programming language.|j}
@@ -229,7 +184,7 @@ library services to patrons while our doors were closed to the public.
              pages,
              "environmental-analysis",
              (. {fullPath, thumbnail, title}) =>
-             <Excerpt fullPath ?thumbnail title isWide=false>
+             <Excerpt fullPath thumbnail title isWide=false>
                {j|I wrote this analysis of the community surrounding the
                   Chattahoochee Valley Libraries in Columbus, GA.|j}
                ->React.string
@@ -253,7 +208,8 @@ library services to patrons while our doors were closed to the public.
           isWide=false
           title={j|Your Library’s First Chess Tournament: From Opening to Endgame|j}
           fullPath={j|http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame|j}
-          isExternal=true>
+          isExternal=true
+          thumbnail=Null>
           "I've published a guide to running a library chess tournament on "
           ->React.string
           <em> "Programming Librarian"->React.string </em>
@@ -266,7 +222,7 @@ library services to patrons while our doors were closed to the public.
         {Queries.ToProps.(
            propsOfDict(
              pages, "how-play-chess", (. {fullPath, thumbnail, title}) =>
-             <Excerpt fullPath ?thumbnail title isWide=false>
+             <Excerpt fullPath thumbnail title isWide=false>
                {j| I've run a succesful chess program since 2017. At the time,
                   I couldn't find any satisfactory guides to give to
                   participants. This is one that I wrote myself which aims to
