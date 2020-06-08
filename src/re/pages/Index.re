@@ -2,19 +2,19 @@ let styles = Gatsby.loadCssModule("./index.module.css");
 
 [@react.component]
 let make = () => {
-  let john2018 = Queries.Image.useImages();
+  let images = Queries.Images.useImages();
   <Layout>
     <Seo title="Home" keywords=[|"librarian", "software", "woodworking"|] />
     <main id="main" className="site-main page-content">
       <div className={styles##topColumns}>
         <figure>
           <Gatsby.Img
-            fixed=QueryTypes.Images.(john2018.file.childImageSharp.fixed)
+            fixed=[|QueryTypes.Images.(images.john2018.sharpImg.large)|]
             alt="Portrait of John"
             className="avatar"
           />
         </figure>
-        <p className={Cn.make([styles##hi, "has-large-font-size"])}>
+        <p className=Cn.(styles##hi <:> "has-large-font-size")>
           {j|Hi, I'm John Jackson.|j}->React.string
         </p>
       </div>
@@ -52,11 +52,9 @@ let make = () => {
             ->React.string
           </p>
           <div
-            className={Cn.make([
-              "wp-block-button",
-              "aligncenter",
-              "is-style-squared",
-            ])}>
+            className=Cn.(
+              "wp-block-button" <:> "aligncenter" <:> "is-style-squared"
+            )>
             <Gatsby.Link className="button-link__link" _to="/resume/">
               {j|View my full résumé|j}->React.string
             </Gatsby.Link>
@@ -70,11 +68,9 @@ let make = () => {
             ->React.string
           </p>
           <div
-            className={Cn.make([
-              "wp-block-button",
-              "aligncenter",
-              "is-style-squared",
-            ])}>
+            className=Cn.(
+              "wp-block-button" <:> "aligncenter" <:> "is-style-squared"
+            )>
             <a
               className="button-link__link"
               href="mailto:jbpjackson@icloud.com">

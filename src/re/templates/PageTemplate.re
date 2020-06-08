@@ -8,7 +8,7 @@ module PostedBy = {
   let make = (~author) =>
     <span className="author byline">
       <Icons.Person />
-      {React.string @@ author}
+      author->React.string
     </span>;
 };
 
@@ -18,7 +18,7 @@ module PostedOn = {
     <span className>
       <time dateTime=isoDate>
         <Icons.Calendar />
-        {React.string @@ " Posted on " ++ date}
+        {" Posted on " ++ date |> React.string}
       </time>
     </span>;
 };
@@ -40,43 +40,83 @@ let make = (~pageContext as _, ~data: data) => {
   <Layout
     entryHeader={
       <div
-        className={Cn.make([
-          "has-ui-font",
-          styles##header,
-          Cn.ifSome(styles##hasThumbnail, Js.Nullable.toOption(thumbnail)),
-        ])}>
+        className=Cn.(
+          "has-ui-font"
+          <:>
+          styles##header
+          <:> onSome(styles##hasThumbnail, Js.Nullable.toOption(thumbnail))
+        )>
         {switch (Js.Nullable.toOption(thumbnail)) {
          | None => React.null
-         | Some({publicURL, childImageSharp}) =>
-           <figure className={Cn.make(["full-bleed", styles##coverFigure])}>
-             <img
-               src={
-                 switch (Js.Nullable.toOption(childImageSharp)) {
-                 | Some({fluid: {src}}) => src
-                 | None => publicURL
-                 }
-               }
-               srcSet=?{
-                 switch (Js.Nullable.toOption(childImageSharp)) {
-                 | Some({fluid: {srcSet}}) => Some(srcSet)
-                 | None => None
-                 }
-               }
-               className=styles##coverImg
-               alt={
-                 Js.Nullable.toOption(caption)
-                 ->Belt.Option.getWithDefault("")
-               }
-             />
+         | Some({publicURL, sharpImg}) =>
+           <figure className=Cn.("full-bleed" <:> styles##coverFigure)>
+             {switch (Js.Nullable.toOption(sharpImg)) {
+              | Some({
+                  mobileImage: {
+                    src: mSrc,
+                    srcSet: mSrcSet,
+                    sizes: mSizes,
+                    aspectRatio: mAspectRatio,
+                  },
+                  tabletImage: {
+                    src: tSrc,
+                    srcSet: tSrcSet,
+                    sizes: tSizes,
+                    aspectRatio: tAspectRatio,
+                  },
+                  desktopImage: {
+                    src: dSrc,
+                    srcSet: dSrcSet,
+                    sizes: dSizes,
+                    aspectRatio: dAspectRatio,
+                  },
+                }) =>
+                <Gatsby.Img
+                  fluid=[|
+                    {
+                      src: mSrc,
+                      srcSet: mSrcSet,
+                      sizes: mSizes,
+                      aspectRatio: mAspectRatio,
+                      media: "(max-width: 600px)",
+                    },
+                    {
+                      src: tSrc,
+                      srcSet: tSrcSet,
+                      sizes: tSizes,
+                      aspectRatio: tAspectRatio,
+                      media: "(max-width: 1200px)",
+                    },
+                    {
+                      src: dSrc,
+                      srcSet: dSrcSet,
+                      sizes: dSizes,
+                      aspectRatio: dAspectRatio,
+                      media: "(min-width: 1200px)",
+                    },
+                  |]
+                  className=styles##coverImg
+                  alt={
+                    caption
+                    ->Js.Nullable.toOption
+                    ->Belt.Option.getWithDefault("")
+                  }
+                />
+              | None =>
+                <img
+                  src=publicURL
+                  className=styles##coverImg
+                  alt=?{caption->Js.Nullable.toOption}
+                />
+              }}
              {switch (Js.Nullable.toOption(caption)) {
               | Some(caption) =>
                 <figcaption
-                  className={Cn.make([
-                    styles##coverFigureCaption,
-                    "has-xsmall-font-size",
-                  ])}>
+                  className=Cn.(
+                    styles##coverFigureCaption <:> "has-xsmall-font-size"
+                  )>
                   <span className=styles##captionText>
-                    {React.string @@ caption}
+                    caption->React.string
                   </span>
                 </figcaption>
               | None => React.null
@@ -84,8 +124,8 @@ let make = (~pageContext as _, ~data: data) => {
            </figure>
          }}
         <div className=styles##headerWrap>
-          <h1 className={Cn.make(["has-title-font", styles##title])}>
-            {React.string @@ title}
+          <h1 className=Cn.("has-title-font" <:> styles##title)>
+            title->React.string
           </h1>
           <div className=styles##meta>
             <div className=styles##metaWrapper>
@@ -117,7 +157,7 @@ let make = (~pageContext as _, ~data: data) => {
          | None => React.null
          | Some(attachments) =>
            <div id="attachments" className="attachments has-ui-font">
-             <h3> {React.string @@ "Downloads"} </h3>
+             <h3> "Downloads"->React.string </h3>
              {Js.Array2.map(attachments, file =>
                 <div key={file.fileUrl} className="wp-block-file">
                   <a href={file.fileUrl}>
@@ -125,28 +165,28 @@ let make = (~pageContext as _, ~data: data) => {
                      |> String.concat("")
                      |> React.string}
                   </a>
-                  {React.string @@ " "}
+                  " "->React.string
                   <a
                     href={file.fileUrl}
                     className="wp-block-file__button"
                     download="true">
-                    {React.string @@ "Download"}
+                    "Download"->React.string
                   </a>
                 </div>
               )
               |> React.array}
            </div>
          }}
-        <footer className={Cn.make([styles##footer, "has-ui-font"])}>
-          <div className={Cn.make([styles##postTime, styles##footerItem])}>
+        <footer className=Cn.(styles##footer <:> "has-ui-font")>
+          <div className=Cn.(styles##postTime <:> styles##footerItem)>
             <time dateTime=isoUpdated>
               {switch (
                  Js.Nullable.toOption(updated),
                  Js.Nullable.toOption(frontmatterDate),
                ) {
                | (Some(updated), _) =>
-                 React.string @@ "Updated on " ++ updated
-               | (_, Some(date)) => React.string @@ "Updated on " ++ date
+                 "Updated on " ++ updated |> React.string
+               | (_, Some(date)) => "Updated on " ++ date |> React.string
                | (None, None) => React.null
                }}
             </time>

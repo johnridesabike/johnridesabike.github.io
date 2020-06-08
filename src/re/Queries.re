@@ -10,7 +10,7 @@ module SiteMetadata = {
 module T = QueryTypes;
 module N = T.ListPages;
 
-module Image = {
+module Images = {
   [@bs.module "../queryImages"]
   external useImages: unit => T.Images.t = "useImages";
 };
@@ -26,18 +26,38 @@ external useSoftwarePages: unit => query = "useSoftwarePages";
 [@bs.module "../queryWoodPages"]
 external useWoodworkingPages: unit => query = "useWoodworkingPages";
 
-module Thumbnail = {
+module Image = {
   type t = {
     src: string,
     srcSet: option(string),
   };
 };
 
+module Video = {
+  type source = {
+    src: string,
+    type_: string,
+  };
+  type t = {
+    height: string,
+    width: string,
+    sources: array(source),
+  };
+};
+
+module Thumbnail = {
+  type t =
+    | Video(Video.t)
+    | Image(Image.t)
+    | FixedImg(array(QueryTypes.Sharp.fixed))
+    | Null;
+};
+
 module ToProps = {
   type t = {
     isWide: bool,
     fullPath: string,
-    thumbnail: option(Thumbnail.t),
+    thumbnail: Thumbnail.t,
     title: string,
   };
 
@@ -56,13 +76,12 @@ module ToProps = {
       fullPath,
       thumbnail:
         switch (Js.Nullable.toOption(thumbnail)) {
-        | Some({publicURL, childImageSharp}) =>
-          switch (Js.Nullable.toOption(childImageSharp)) {
-          | Some({fluid: {src, srcSet}}) =>
-            Some({src, srcSet: Some(srcSet)})
-          | None => Some({src: publicURL, srcSet: None})
+        | Some({publicURL, sharpImg}) =>
+          switch (Js.Nullable.toOption(sharpImg)) {
+          | Some({fixed}) => FixedImg([|fixed|])
+          | None => Image({src: publicURL, srcSet: None})
           }
-        | None => None
+        | None => Null
         },
       title: pageTitle,
     });

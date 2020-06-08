@@ -7,7 +7,7 @@ module SiteMetadata: {
   let author: t => string;
 };
 
-module Image: {
+module Images: {
   [@bs.module "../queryImages"]
   external useImages: unit => QueryTypes.Images.t = "useImages";
 };
@@ -23,18 +23,38 @@ external useSoftwarePages: unit => query = "useSoftwarePages";
 [@bs.module "../queryWoodPages"]
 external useWoodworkingPages: unit => query = "useWoodworkingPages";
 
-module Thumbnail: {
+module Image: {
   type t = {
     src: string,
     srcSet: option(string),
   };
 };
 
+module Video: {
+  type source = {
+    src: string,
+    type_: string,
+  };
+  type t = {
+    height: string,
+    width: string,
+    sources: array(source),
+  };
+};
+
+module Thumbnail: {
+  type t =
+    | Video(Video.t)
+    | Image(Image.t)
+    | FixedImg(array(QueryTypes.Sharp.fixed))
+    | Null;
+};
+
 module ToProps: {
   type t = {
     isWide: bool,
     fullPath: string,
-    thumbnail: option(Thumbnail.t),
+    thumbnail: Thumbnail.t,
     title: string,
   };
 
