@@ -104,19 +104,22 @@ let make =
              ariaHidden=true
              tabIndex=(-1)
              isExternal>
-             <video
-               className={styles##coverImg}
-               autoPlay=true
-               muted=true
-               loop=true
-               height
-               width>
-               {sources
-                ->Belt.Array.map(({src, type_}) =>
-                    <source src key=src type_ />
-                  )
-                ->React.array}
-             </video>
+             {ReactDOMRe.createElementVariadic(
+                "video",
+                ~props=
+                  ReactDOMRe.objToDOMProps({
+                    "className": styles##coverImg,
+                    "autoPlay": true,
+                    "muted": true,
+                    "loop": true,
+                    "playsInline": true,
+                    "height": height,
+                    "width": width,
+                  }),
+                Belt.Array.map(sources, ({src, type_}) =>
+                  <source src key=src type_ />
+                ),
+              )}
            </SpecialLink>
          </figure>
 
