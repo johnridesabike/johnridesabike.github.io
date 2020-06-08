@@ -6,7 +6,7 @@ let make:
     ~fullPath: string,
     ~isExternal: bool=?,
     ~title: string,
-    ~thumbnail: Queries.Thumbnail.t=?,
+    ~thumbnail: Queries.Thumbnail.t,
     ~children: React.element
   ) =>
   React.element;

@@ -17,10 +17,24 @@ query PageByPath($path: String!) {
       isoUpdated: updated
       thumbnail {
         publicURL
-        childImageSharp {
-          fluid {
+        sharpImg: childImageSharp {
+          mobileImage: fluid(maxWidth: 600) {
             srcSet
             src
+            sizes
+            aspectRatio
+          }
+          tabletImage: fluid(maxWidth: 1200) {
+            srcSet
+            src
+            sizes
+            aspectRatio
+          }
+          desktopImage: fluid(maxWidth: 600) {
+            srcSet
+            src
+            sizes
+            aspectRatio
           }
         }
       }

@@ -30,23 +30,22 @@ let make =
       ~fullPath: string,
       ~isExternal=false,
       ~title: string,
-      ~thumbnail=?,
+      ~thumbnail: Queries.Thumbnail.t,
       ~children,
     ) => {
   <article
-    className={Cn.make([
-      styles##excerpt,
-      className,
-      Cn.ifTrue(styles##isWide, isWide),
-    ])}>
+    className=Cn.(
+      styles##excerpt <:> className <:> on(styles##isWide, isWide)
+    )>
     <header className="has-ui-font">
       <h3
-        className={Cn.make([
-          "has-body-font",
-          "has-medium-font-size",
-          "has-no-text-transform",
-          styles##title,
-        ])}>
+        className=Cn.(
+          "has-body-font"
+          <:> "has-medium-font-size"
+          <:> "has-no-text-transform"
+          <:>
+          styles##title
+        )>
         <SpecialLink _to=fullPath rel="bookmark" isExternal>
           {React.string(title)}
           {isExternal
@@ -60,9 +59,8 @@ let make =
     </header>
     <div className={styles##content}>
       {switch (thumbnail) {
-       | Some(Queries.Thumbnail.{src, srcSet}) =>
-         <figure
-           className={Cn.make(["full-bleed-small", styles##coverFigure])}>
+       | Image({src, srcSet}) =>
+         <figure className=Cn.("full-bleed-small" <:> styles##coverFigure)>
            <SpecialLink
              _to=fullPath
              className={styles##coverLink}
@@ -79,18 +77,56 @@ let make =
              />
            </SpecialLink>
          </figure>
-       | None => React.null
+       | FixedImg(fixed) =>
+         <figure className=Cn.("full-bleed-small" <:> styles##coverFigure)>
+           <SpecialLink
+             _to=fullPath
+             className={styles##coverLink}
+             ariaHidden=true
+             tabIndex=(-1)
+             isExternal>
+             <Gatsby.Img
+               fixed
+               style={ReactDOMRe.Style.make(
+                 ~position="inherit",
+                 ~width="inherit",
+                 ~height="inherit",
+                 (),
+               )}
+             />
+           </SpecialLink>
+         </figure>
+       | Video({height, width, sources}) =>
+         <figure className=Cn.("full-bleed-small" <:> styles##coverFigure)>
+           <SpecialLink
+             _to=fullPath
+             className={styles##coverLink}
+             ariaHidden=true
+             tabIndex=(-1)
+             isExternal>
+             <video
+               className={styles##coverImg}
+               autoPlay=true
+               muted=true
+               loop=true
+               height
+               width>
+               {sources
+                ->Belt.Array.map(({src, type_}) =>
+                    <source src key=src type_ />
+                  )
+                ->React.array}
+             </video>
+           </SpecialLink>
+         </figure>
+
+       | Null => React.null
        }}
-      <p className={Cn.make(["has-small-font-size", styles##text])}>
-        children
-      </p>
+      <p className=Cn.("has-small-font-size" <:> styles##text)> children </p>
       <Externals.VisuallyHidden>
         <SpecialLink
-          _to=fullPath
-          className={Cn.make(["button-link__link"])}
-          rel="bookmark"
-          isExternal>
-          {["Open", "title"] |> String.concat(" ") |> React.string}
+          _to=fullPath className="button-link__link" rel="bookmark" isExternal>
+          {"Open " ++ title |> React.string}
         </SpecialLink>
       </Externals.VisuallyHidden>
     </div>

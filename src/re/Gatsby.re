@@ -13,12 +13,21 @@ module Link = {
 };
 
 module Img = {
+  type fluidSource = {
+    src: string,
+    srcSet: string,
+    sizes: string,
+    aspectRatio: int,
+    media: string,
+  };
   [@bs.module "gatsby-image"] [@react.component]
   external make:
     (
-      ~fixed: QueryTypes.Images.fixed,
+      ~fixed: array(QueryTypes.Sharp.fixed)=?,
+      ~fluid: array(fluidSource)=?,
       ~alt: string=?,
-      ~className: string=?
+      ~className: string=?,
+      ~style: ReactDOMRe.Style.t=?
     ) =>
     React.element =
     "default";
