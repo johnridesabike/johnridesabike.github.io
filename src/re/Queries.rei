@@ -24,10 +24,8 @@ external useSoftwarePages: unit => query = "useSoftwarePages";
 external useWoodworkingPages: unit => query = "useWoodworkingPages";
 
 module Image: {
-  type t = {
-    src: string,
-    srcSet: option(string),
-  };
+  [@unboxed]
+  type t = {src: string};
 };
 
 module Video: {

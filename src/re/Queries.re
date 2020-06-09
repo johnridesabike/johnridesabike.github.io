@@ -27,10 +27,9 @@ external useSoftwarePages: unit => query = "useSoftwarePages";
 external useWoodworkingPages: unit => query = "useWoodworkingPages";
 
 module Image = {
-  type t = {
-    src: string,
-    srcSet: option(string),
-  };
+  /* I might add more fields to this later. */
+  [@unboxed]
+  type t = {src: string};
 };
 
 module Video = {
@@ -79,7 +78,7 @@ module ToProps = {
         | Some({publicURL, sharpImg}) =>
           switch (Js.Nullable.toOption(sharpImg)) {
           | Some({fixed}) => FixedImg([|fixed|])
-          | None => Image({src: publicURL, srcSet: None})
+          | None => Image({src: publicURL})
           }
         | None => Null
         },
