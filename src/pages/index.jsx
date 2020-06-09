@@ -1,2 +1,2 @@
-import {make} from "../re/pages/Index.bs";
+import {make} from "../re/pages/Page_Index.bs";
 export default make;

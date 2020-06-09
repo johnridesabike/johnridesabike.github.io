@@ -40,15 +40,15 @@ module Header = {
             id="primary-menu"
             className=Cn.(styles##menu <:> menuToggled)
             ariaExpanded=false>
-            {Belt.List.map(links, ({url, title}) =>
-               <li key=url className={styles##menuItem}>
-                 <Gatsby.Link _to=url className={styles##menuLink}>
-                   {React.string(title)}
-                 </Gatsby.Link>
-               </li>
-             )
-             |> Belt.List.toArray
-             |> React.array}
+            {links
+             ->Belt.Array.map(({url, title}) =>
+                 <li key=url className={styles##menuItem}>
+                   <Gatsby.Link _to=url className={styles##menuLink}>
+                     {React.string(title)}
+                   </Gatsby.Link>
+                 </li>
+               )
+             ->React.array}
           </ul>
         </nav>
       </React.Fragment>;
@@ -74,10 +74,10 @@ module Header = {
           </p>
         </div>
         <Menu
-          links=[
+          links=[|
             {url: "/", title: "Home"},
             {url: "/resume/", title: {j|Résumé|j}},
-          ]
+          |]
         />
       </div>
       entryHeader
@@ -203,7 +203,7 @@ module Sidebar = {
   };
 };
 
-let styles = Gatsby.loadCssModule("./layout.module.css");
+let styles = Gatsby.loadCssModule("./Layout.module.css");
 
 [@react.component]
 let make = (~children, ~entryHeader=React.null) => {

@@ -1,4 +1,4 @@
-let styles = Gatsby.loadCssModule("./index.module.css");
+let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 
 let mwmatching = Gatsby.loadImage("../../images/mwmatching.svg");
 
@@ -33,7 +33,7 @@ module ExcerptList = {
         isWide=true
         title={j|Maximum weighted matching finder|j}
         fullPath="https://johnridesa.bike/mwmatching-finder/"
-        thumbnail={Image({src: mwmatching, srcSet: None})}
+        thumbnail={Image({src: mwmatching})}
         isExternal=true>
         {j|While I was developing |j}->React.string
         <em> "Coronate"->React.string </em>

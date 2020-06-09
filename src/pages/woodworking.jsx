@@ -1,2 +1,2 @@
-import {make} from "../re/pages/Woodworking.bs";
+import {make} from "../re/pages/Page_Woodworking.bs";
 export default make;

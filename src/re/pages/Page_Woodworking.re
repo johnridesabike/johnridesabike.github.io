@@ -1,4 +1,4 @@
-let styles = Gatsby.loadCssModule("./index.module.css");
+let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 
 module ExcerptList = {
   [@react.component]

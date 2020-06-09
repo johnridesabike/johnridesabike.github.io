@@ -1,4 +1,4 @@
-let styles = Gatsby.loadCssModule("./excerpt.module.css");
+let styles = Gatsby.loadCssModule("./Excerpt.module.css");
 
 module SpecialLink = {
   [@react.component]
@@ -59,7 +59,7 @@ let make =
     </header>
     <div className={styles##content}>
       {switch (thumbnail) {
-       | Image({src, srcSet}) =>
+       | Image({src}) =>
          <figure className=Cn.("full-bleed-small" <:> styles##coverFigure)>
            <SpecialLink
              _to=fullPath
@@ -71,7 +71,6 @@ let make =
                width="128"
                height="96"
                src
-               ?srcSet
                className={styles##coverImg}
                alt=""
              />
