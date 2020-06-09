@@ -1,5 +1,5 @@
 import {graphql} from "gatsby";
-import {make} from "../re/templates/PageTemplate.bs";
+import {make} from "./re/Template_Page.bs.js";
 export default make;
 export const pageQuery = graphql`
 query PageByPath($path: String!) {

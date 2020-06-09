@@ -67,7 +67,7 @@ let onCreateNode = ({node, actions: {createNodeField}, getNode}) =>
   };
 
 let pageTemplate =
-  NodeJs.Path.resolve([|"src", "templates", "pageTemplate.jsx"|]);
+  NodeJs.Path.resolve([|"src", "Template_Page.js"|]);
 
 let createPages = ({graphql, actions: {createPage}}) =>
   graphql(.

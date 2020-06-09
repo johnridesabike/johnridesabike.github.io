@@ -1,6 +1,11 @@
+.excerpt {
+    margin-bottom: 1em;
+}
+
 @media screen and (min-width: 600px) {
     .excerpt {
         flex-basis: 47.5%;
+        margin-bottom: 0;
     }
 
     .content {
@@ -71,7 +76,8 @@
 
 @media screen and (max-width: 600px) {
     .coverFigure {
-        width: calc(100% + 2rem);
+        width: 100vw;
+        height: 56.25vw; /* 16:9 */
     }
 
     .coverLink {

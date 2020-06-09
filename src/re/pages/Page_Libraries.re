@@ -1,5 +1,5 @@
 open QueryTypes;
-let styles = Gatsby.loadCssModule("./index.module.css");
+let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 
 let montage =
   Queries.Video.{

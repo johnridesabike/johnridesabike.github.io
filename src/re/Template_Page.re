@@ -1,7 +1,7 @@
 module T = QueryTypes;
 type data = T.PageTemplate.data;
 
-let styles = Gatsby.loadCssModule("./page.module.css");
+let styles = Gatsby.loadCssModule("./Template_Page.module.css");
 
 module PostedBy = {
   [@react.component]
@@ -96,11 +96,7 @@ let make = (~pageContext as _, ~data: data) => {
                     },
                   |]
                   className=styles##coverImg
-                  alt={
-                    caption
-                    ->Js.Nullable.toOption
-                    ->Belt.Option.getWithDefault("")
-                  }
+                  alt=?{Js.Nullable.toOption(caption)}
                 />
               | None =>
                 <img
@@ -161,9 +157,7 @@ let make = (~pageContext as _, ~data: data) => {
              {Js.Array2.map(attachments, file =>
                 <div key={file.fileUrl} className="wp-block-file">
                   <a href={file.fileUrl}>
-                    {[file.name, ".", file.extension]
-                     |> String.concat("")
-                     |> React.string}
+                    {file.name ++ "." ++ file.extension |> React.string}
                   </a>
                   " "->React.string
                   <a

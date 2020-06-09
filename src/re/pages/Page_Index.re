@@ -1,4 +1,4 @@
-let styles = Gatsby.loadCssModule("./index.module.css");
+let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 
 [@react.component]
 let make = () => {
@@ -81,11 +81,11 @@ let make = () => {
         </div>
       </div>
       <hr />
-      <Libraries.ExcerptList />
+      <Page_Libraries.ExcerptList />
       <hr />
-      <Software.ExcerptList />
+      <Page_Software.ExcerptList />
       <hr />
-      <Woodworking.ExcerptList />
+      <Page_Woodworking.ExcerptList />
     </main>
   </Layout>;
 };
