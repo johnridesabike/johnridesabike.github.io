@@ -17,6 +17,8 @@ props available around the house.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qms2A6q78J0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-embed alignwide"></iframe>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9ttf_wooIhs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-embed alignwide"></iframe>
+
 ## Chess instruction
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iH6ZB3La2uA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-embed alignwide"></iframe>
