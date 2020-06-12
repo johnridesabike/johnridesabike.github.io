@@ -1,15 +1,25 @@
 [@react.component]
 let make = (~description=?, ~lang="en", ~meta=[||], ~keywords=[||], ~title) => {
-  let site = Queries.SiteMetadata.useSiteMetadata();
+  let Query.SiteMetadata.{site} = Query.useSiteMetaData();
   let description =
     switch (description) {
-    | None => Queries.SiteMetadata.description(site)
+    | None =>
+      site
+      ->Option.flatMap(x => x.Query.SiteMetadata.siteMetadata)
+      ->Option.flatMap(x => x.Query.SiteMetadata.description)
+      ->Option.getWithDefault("")
     | Some(description) => description
     };
   <BsReactHelmet
     title
     htmlAttributes={BsReactHelmet.htmlAttributes(~lang)}
-    titleTemplate={"%s | " ++ Queries.SiteMetadata.title(site)}
+    titleTemplate={
+      "%s | "
+      ++ site
+         ->Option.flatMap(x => x.Query.SiteMetadata.siteMetadata)
+         ->Option.flatMap(x => x.Query.SiteMetadata.title)
+         ->Option.getWithDefault("")
+    }
     meta={
       [|
         BsReactHelmet.meta(~name="description", ~content=description, ()),
@@ -23,7 +33,10 @@ let make = (~description=?, ~lang="en", ~meta=[||], ~keywords=[||], ~title) => {
         BsReactHelmet.meta(~property="twitter:card", ~content="summary", ()),
         BsReactHelmet.meta(
           ~property="twitter:creator",
-          ~content=Queries.SiteMetadata.author(site),
+          ~content=?
+            site
+            ->Option.flatMap(x => x.Query.SiteMetadata.siteMetadata)
+            ->Option.flatMap(x => x.Query.SiteMetadata.author),
           (),
         ),
         BsReactHelmet.meta(~property="twitter:title", ~content=title, ()),

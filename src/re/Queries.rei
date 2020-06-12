@@ -1,27 +1,29 @@
-module SiteMetadata: {
-  type t = QueryTypes.SiteMetadata.t;
-  [@bs.module "../querySiteMetadata"]
-  external useSiteMetadata: unit => t = "useSiteMetadata";
-  let title: t => string;
-  let description: t => string;
-  let author: t => string;
-};
+/*
+ module SiteMetadata: {
+   type t = QueryTypes.SiteMetadata.t;
+   [@bs.module "../querySiteMetadata"]
+   external useSiteMetadata: unit => t = "useSiteMetadata";
+   let title: t => string;
+   let description: t => string;
+   let author: t => string;
+ };
 
-module Images: {
-  [@bs.module "../queryImages"]
-  external useImages: unit => QueryTypes.Images.t = "useImages";
-};
+ module Images: {
+   [@bs.module "../queryImages"]
+   external useImages: unit => QueryTypes.Images.t = "useImages";
+ };
 
-type query = QueryTypes.query(QueryTypes.ListPages.node);
+ type query = QueryTypes.query(QueryTypes.ListPages.node);
 
-[@bs.module "../queryLibraryPages"]
-external useLibraryPages: unit => query = "useLibraryPages";
+ [@bs.module "../queryLibraryPages"]
+ external useLibraryPages: unit => query = "useLibraryPages";
 
-[@bs.module "../querySoftwarePages"]
-external useSoftwarePages: unit => query = "useSoftwarePages";
+ [@bs.module "../querySoftwarePages"]
+ external useSoftwarePages: unit => query = "useSoftwarePages";
 
-[@bs.module "../queryWoodPages"]
-external useWoodworkingPages: unit => query = "useWoodworkingPages";
+ [@bs.module "../queryWoodPages"]
+ external useWoodworkingPages: unit => query = "useWoodworkingPages";
+ */
 
 module Image: {
   [@unboxed]
@@ -44,7 +46,7 @@ module Thumbnail: {
   type t =
     | Video(Video.t)
     | Image(Image.t)
-    | FixedImg(array(QueryTypes.Sharp.fixed))
+    | FixedImg(array(Query.Fragments.ImageFixed.t))
     | Null;
 };
 
@@ -57,10 +59,14 @@ module ToProps: {
   };
 
   let dictOfEdges:
-    array(QueryTypes.edge(QueryTypes.ListPages.node)) =>
-    Js.Dict.t(QueryTypes.ListPages.node);
+    array(Query.Fragments.PageList.t_edges) =>
+    Js.Dict.t(Query.Fragments.PageList.t_edges_node);
 
   let propsOfDict:
-    (Js.Dict.t(QueryTypes.ListPages.node), string, (. t) => React.element) =>
+    (
+      Js.Dict.t(Query.Fragments.PageList.t_edges_node),
+      string,
+      (. t) => React.element
+    ) =>
     React.element;
 };

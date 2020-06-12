@@ -34,9 +34,16 @@
     "re-classnames",
     "@moox/bs-react-helmet",
     "reason-nodejs",
-    "reason-promise"
+    "reason-promise",
+    "@baransu/graphql_ppx_re"
   ],
-  "ppx-flags": [],
+  "ppx-flags": [
+    [
+      "@baransu/graphql_ppx_re/ppx",
+      "-template-tag-import=graphql",
+      "-template-tag-location=gatsby"
+    ]
+  ],
   "refmt": 3,
   "warnings": {
     "number": "+A-48-9-40-42",

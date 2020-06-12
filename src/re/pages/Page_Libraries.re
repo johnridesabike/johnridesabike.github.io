@@ -1,4 +1,3 @@
-open QueryTypes;
 let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 
 let montage =
@@ -20,7 +19,7 @@ let montage =
 module ExcerptList = {
   [@react.component]
   let make = () => {
-    let query = Queries.useLibraryPages();
+    let query = Query.Pages.useLibraryPages();
     let pages = Queries.ToProps.dictOfEdges(query.allMarkdownRemark.edges);
     <React.Fragment>
       <section className={styles##section}>
@@ -32,8 +31,8 @@ module ExcerptList = {
         </header>
         <h2 className={styles##divider}> "Public libraries"->React.string </h2>
         {Queries.ToProps.(
-           propsOfDict(pages, "library-media", (. {fullPath, title, isWide}) =>
-             <Excerpt fullPath thumbnail={Video(montage)} title isWide>
+           propsOfDict(pages, "library-media", (. {fullPath, title}) =>
+             <Excerpt fullPath thumbnail={Video(montage)} title isWide=true>
                {j|I produced instructional videos for Chattahoochee Valley
                   Libraries. This was in part a response to the COVID-19 crisis.
                   These videos were a way to extend library services to patrons

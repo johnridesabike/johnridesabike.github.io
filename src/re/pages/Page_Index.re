@@ -2,17 +2,23 @@ let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 
 [@react.component]
 let make = () => {
-  let images = Queries.Images.useImages();
+  let images = Query.useImages();
   <Layout>
     <Seo title="Home" keywords=[|"librarian", "software", "woodworking"|] />
     <main id="main" className="site-main page-content">
       <div className={styles##topColumns}>
         <figure>
-          <Gatsby.Img
-            fixed=[|QueryTypes.Images.(images.john2018.sharpImg.large)|]
-            alt="Portrait of John"
-            className="avatar"
-          />
+          {images.john2018
+           ->Option.flatMap(x => x.sharpImg)
+           ->Option.flatMap(x => x.large)
+           ->Option.map(large =>
+               <Gatsby.Img
+                 fixed=[|large|]
+                 alt="Portrait of John"
+                 className="avatar"
+               />
+             )
+           ->Option.getWithDefault(React.null)}
         </figure>
         <p className=Cn.(styles##hi <:> "has-large-font-size")>
           {j|Hi, I'm John Jackson.|j}->React.string
