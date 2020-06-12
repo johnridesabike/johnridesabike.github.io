@@ -1,30 +1,32 @@
-module SiteMetadata = {
-  include QueryTypes.SiteMetadata;
-  [@bs.module "../querySiteMetadata"]
-  external useSiteMetadata: unit => t = "useSiteMetadata";
-  let title = t => t.site.siteMetadata.title;
-  let description = t => t.site.siteMetadata.description;
-  let author = t => t.site.siteMetadata.author;
-};
+/*
+ module SiteMetadata = {
+   include QueryTypes.SiteMetadata;
+   [@bs.module "../querySiteMetadata"]
+   external useSiteMetadata: unit => t = "useSiteMetadata";
+   let title = t => t.site.siteMetadata.title;
+   let description = t => t.site.siteMetadata.description;
+   let author = t => t.site.siteMetadata.author;
+ };
 
-module T = QueryTypes;
-module N = T.ListPages;
+ module T = QueryTypes;
+ module N = T.ListPages;
 
-module Images = {
-  [@bs.module "../queryImages"]
-  external useImages: unit => T.Images.t = "useImages";
-};
+ module Images = {
+   [@bs.module "../queryImages"]
+   external useImages: unit => T.Images.t = "useImages";
+ };
 
-type query = T.query(N.node);
+ type query = T.query(N.node);
 
-[@bs.module "../queryLibraryPages"]
-external useLibraryPages: unit => query = "useLibraryPages";
+ [@bs.module "../queryLibraryPages"]
+ external useLibraryPages: unit => query = "useLibraryPages";
 
-[@bs.module "../querySoftwarePages"]
-external useSoftwarePages: unit => query = "useSoftwarePages";
+ [@bs.module "../querySoftwarePages"]
+ external useSoftwarePages: unit => query = "useSoftwarePages";
 
-[@bs.module "../queryWoodPages"]
-external useWoodworkingPages: unit => query = "useWoodworkingPages";
+ [@bs.module "../queryWoodPages"]
+ external useWoodworkingPages: unit => query = "useWoodworkingPages";
+ */
 
 module Image = {
   /* I might add more fields to this later. */
@@ -48,7 +50,7 @@ module Thumbnail = {
   type t =
     | Video(Video.t)
     | Image(Image.t)
-    | FixedImg(array(QueryTypes.Sharp.fixed))
+    | FixedImg(array(Query.Fragments.ImageFixed.t))
     | Null;
 };
 
@@ -62,27 +64,46 @@ module ToProps = {
 
   let dictOfEdges = edges => {
     let dict = Js.Dict.empty();
-    Js.Array2.forEach(edges, (T.{node: N.{fields: {pageSlug}} as node}) =>
-      Js.Dict.set(dict, pageSlug, node)
+    Js.Array2.forEach(
+      edges, (Query.Fragments.PageList.{node: {fields} as node}) =>
+      switch (fields) {
+      | Some({slug: Some(slug)}) => Js.Dict.set(dict, slug, node)
+      | _ => ()
+      }
     );
     dict;
   };
 
-  let nodeFields =
-      (N.{frontmatter: {N.thumbnail, pageTitle}, fields: {N.fullPath}}, f) =>
+  let nodeFields = (Query.Fragments.PageList.{frontmatter, fields}, f) =>
     f(. {
-      isWide: Js.Nullable.isNullable(thumbnail),
-      fullPath,
-      thumbnail:
-        switch (Js.Nullable.toOption(thumbnail)) {
-        | Some({publicURL, sharpImg}) =>
-          switch (Js.Nullable.toOption(sharpImg)) {
-          | Some({fixed}) => FixedImg([|fixed|])
-          | None => Image({src: publicURL})
-          }
-        | None => Null
+      isWide:
+        switch (frontmatter) {
+        | Some({thumbnail: Some(_thumbnail)}) => true
+        | _ => false
         },
-      title: pageTitle,
+      fullPath:
+        switch (fields) {
+        | Some({fullPath: Some(fullPath)}) => fullPath
+        | _ => ""
+        },
+      thumbnail:
+        switch (frontmatter) {
+        | Some({thumbnail: Some({image: Some({publicURL, sharpImg})})}) =>
+          switch (sharpImg) {
+          | Some({fixed: Some(fixed)}) => FixedImg([|fixed|])
+          | _ =>
+            switch (publicURL) {
+            | Some(publicURL) => Image({src: publicURL})
+            | None => Null
+            }
+          }
+        | _ => Null
+        },
+      title:
+        switch (frontmatter) {
+        | Some({title: Some(title)}) => title
+        | _ => ""
+        },
     });
 
   let propsOfDict = (dict, k, f) =>

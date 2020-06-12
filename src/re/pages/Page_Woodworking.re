@@ -3,7 +3,7 @@ let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 module ExcerptList = {
   [@react.component]
   let make = () => {
-    let query = Queries.useWoodworkingPages();
+    let query = Query.Pages.useWoodworkingPages();
     let pages = Queries.ToProps.dictOfEdges(query.allMarkdownRemark.edges);
 
     <section className={styles##section}>

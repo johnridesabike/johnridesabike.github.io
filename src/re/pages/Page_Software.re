@@ -5,7 +5,7 @@ let mwmatching = Gatsby.loadImage("../../images/mwmatching.svg");
 module ExcerptList = {
   [@react.component]
   let make = () => {
-    let query = Queries.useSoftwarePages();
+    let query = Query.Pages.useSoftwarePages();
     let pages = Queries.ToProps.dictOfEdges(query.allMarkdownRemark.edges);
     <section className=styles##section>
       <header className={styles##sectionHeader}>
