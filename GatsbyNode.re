@@ -1,14 +1,45 @@
-open! Belt;
-module T = QueryTypes;
+type parent;
+
+type fields = {
+  [@bs.as "slug"]
+  fieldSlug: string,
+  fullPath: string,
+  parentDir: string,
+};
+
+type internal = {
+  [@bs.as "type"]
+  nodeType: string,
+};
+
+type frontmatter = {
+  slug: option(string),
+  date: option(string),
+};
+
+type node = {
+  fields,
+  internal,
+  parent,
+  frontmatter: option(frontmatter),
+};
+
+type fileNode = {relativePath: string};
+
+type edge = {node};
+
+type allMarkdownRemark = {edges: array(edge)};
+
+type query = {allMarkdownRemark};
 
 type graphqlResult = {
   errors: option(Js.Exn.t),
-  data: T.query(T.GatsbyNode.node),
+  data: query,
 };
 
 type field = {
   name: string,
-  node: T.GatsbyNode.node,
+  node: node,
   value: string,
 };
 
@@ -24,9 +55,9 @@ type actions('context) = {
 };
 
 type nodeApiHelpers('context) = {
-  node: T.GatsbyNode.node,
+  node: node,
   actions: actions('context),
-  getNode: (. T.GatsbyNode.parent) => T.GatsbyNode.fileNode,
+  getNode: (. parent) => fileNode,
   graphql: (. string) => Js.Promise.t(graphqlResult),
 };
 
@@ -67,11 +98,11 @@ let onCreateNode = ({node, actions: {createNodeField}, getNode}) =>
   };
 
 let pageTemplate =
-  NodeJs.Path.resolve([|"src", "Template_Page.js"|]);
+  NodeJs.Path.resolve([|"src", "re", "Template_Page.bs.js"|]);
 
 let createPages = ({graphql, actions: {createPage}}) =>
   graphql(.
-    {j|
+    {|
       {
         allMarkdownRemark {
           edges {
@@ -82,8 +113,7 @@ let createPages = ({graphql, actions: {createPage}}) =>
             }
           }
         }
-    }
-    |j},
+    }|},
   )
   ->Promise.Js.fromBsPromise
   ->Promise.Js.flatMap(

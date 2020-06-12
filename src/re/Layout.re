@@ -162,16 +162,22 @@ module Sidebar = {
 
   [@react.component]
   let make = () => {
-    let images = Queries.Images.useImages();
+    let images = Query.useImages();
     <aside id="secondary" className=Cn.(styles##widgetArea <:> "has-ui-font")>
       <section className={styles##widget}>
         <h4> "About John"->React.string </h4>
         <p>
-          <Gatsby.Img
-            className="avatar alignleft"
-            fixed=[|images.john2018.sharpImg.small|]
-            alt="Portrait of John"
-          />
+          {images.john2018
+           ->Option.flatMap(x => x.sharpImg)
+           ->Option.flatMap(x => x.small)
+           ->Option.map(small =>
+               <Gatsby.Img
+                 className="avatar alignleft"
+                 fixed=[|small|]
+                 alt="Portrait of John"
+               />
+             )
+           ->Option.getWithDefault(React.null)}
         </p>
         <p>
           {j|I’m a public library staffer who is interested in digital library
@@ -207,7 +213,8 @@ let styles = Gatsby.loadCssModule("./Layout.module.css");
 
 [@react.component]
 let make = (~children, ~entryHeader=React.null) => {
-  let data = Queries.SiteMetadata.useSiteMetadata();
+  //let data = Queries.SiteMetadata.useSiteMetadata();
+  let data = Query.useSiteMetaData();
   <React.Fragment>
     <div id="page" className={styles##site}>
       <Externals.VisuallyHidden>
@@ -216,8 +223,16 @@ let make = (~children, ~entryHeader=React.null) => {
         </a>
       </Externals.VisuallyHidden>
       <Header
-        siteTitle={Queries.SiteMetadata.title(data)}
-        siteDescription={Queries.SiteMetadata.description(data)}
+        siteTitle=?{
+          data.site
+          ->Option.flatMap(x => x.Query.SiteMetadata.siteMetadata)
+          ->Option.flatMap(x => x.Query.SiteMetadata.title)
+        }
+        siteDescription=?{
+          data.site
+          ->Option.flatMap(x => x.Query.SiteMetadata.siteMetadata)
+          ->Option.flatMap(x => x.Query.SiteMetadata.description)
+        }
         entryHeader
       />
       <div

@@ -1,6 +1,3 @@
-module T = QueryTypes;
-type data = T.PageTemplate.data;
-
 let styles = Gatsby.loadCssModule("./Template_Page.module.css");
 
 module PostedBy = {
@@ -18,175 +15,212 @@ module PostedOn = {
     <span className>
       <time dateTime=isoDate>
         <Icons.Calendar />
-        {" Posted on " ++ date |> React.string}
+        {" Updated on " ++ date |> React.string}
       </time>
     </span>;
 };
 
+/*
+ module DateTime = {
+   let parse = x =>
+     x->Js.Nullable.toOption->Option.flatMap(Js.Json.decodeString);
+   let serialize = Js.Json.string;
+   type t = string;
+ };
+ */
+
+[%graphql
+  {|
+query PageByPath($path: String!) {
+  markdownRemark(fields: {fullPath: {eq: $path}}) {
+    html
+    timeToRead
+    excerpt
+    frontmatter {
+      date(formatString: "MMMM DD, YYYY")
+      isoDate: date
+      title
+      author
+      thumbnail {
+        caption
+        image {
+          publicURL
+          sharpImg: childImageSharp {
+            mobileImage: fluid(maxWidth: 600) {
+              ...Query.Fragments.ImageFluid
+            }
+            tabletImage: fluid(maxWidth: 1200) {
+              ...Query.Fragments.ImageFluid
+            }
+            desktopImage: fluid(maxWidth: 600) {
+              ...Query.Fragments.ImageFluid
+            }
+          }
+        }
+      }
+      attachments {
+        publicURL
+        name
+        extension
+      }
+    }
+    fields {
+      slug
+      fullPath
+      parentDir
+    }
+  }
+}|}
+];
+
 [@react.component]
-let make = (~pageContext as _, ~data: data) => {
-  let T.PageTemplate.{frontmatter, html} = data.markdownRemark;
-  let T.PageTemplate.{
-        title,
-        thumbnail,
-        caption,
-        frontmatterDate,
-        isoDate,
-        author,
-        attachments,
-        updated,
-        isoUpdated,
-      } = frontmatter;
-  <Layout
-    entryHeader={
-      <div
-        className=Cn.(
-          "has-ui-font"
-          <:>
-          styles##header
-          <:> onSome(styles##hasThumbnail, Js.Nullable.toOption(thumbnail))
-        )>
-        {switch (Js.Nullable.toOption(thumbnail)) {
-         | None => React.null
-         | Some({publicURL, sharpImg}) =>
-           <figure className=Cn.("full-bleed" <:> styles##coverFigure)>
-             {switch (Js.Nullable.toOption(sharpImg)) {
-              | Some({
-                  mobileImage: {
-                    src: mSrc,
-                    srcSet: mSrcSet,
-                    sizes: mSizes,
-                    aspectRatio: mAspectRatio,
-                  },
-                  tabletImage: {
-                    src: tSrc,
-                    srcSet: tSrcSet,
-                    sizes: tSizes,
-                    aspectRatio: tAspectRatio,
-                  },
-                  desktopImage: {
-                    src: dSrc,
-                    srcSet: dSrcSet,
-                    sizes: dSizes,
-                    aspectRatio: dAspectRatio,
-                  },
-                }) =>
-                <Gatsby.Img
-                  fluid=[|
-                    {
-                      src: mSrc,
-                      srcSet: mSrcSet,
-                      sizes: mSizes,
-                      aspectRatio: mAspectRatio,
-                      media: "(max-width: 600px)",
-                    },
-                    {
-                      src: tSrc,
-                      srcSet: tSrcSet,
-                      sizes: tSizes,
-                      aspectRatio: tAspectRatio,
-                      media: "(max-width: 1200px)",
-                    },
-                    {
-                      src: dSrc,
-                      srcSet: dSrcSet,
-                      sizes: dSizes,
-                      aspectRatio: dAspectRatio,
-                      media: "(min-width: 1200px)",
-                    },
-                  |]
-                  className=styles##coverImg
-                  alt=?{Js.Nullable.toOption(caption)}
-                />
-              | None =>
-                <img
-                  src=publicURL
-                  className=styles##coverImg
-                  alt=?{caption->Js.Nullable.toOption}
-                />
-              }}
-             {switch (Js.Nullable.toOption(caption)) {
-              | Some(caption) =>
-                <figcaption
-                  className=Cn.(
-                    styles##coverFigureCaption <:> "has-xsmall-font-size"
-                  )>
-                  <span className=styles##captionText>
-                    caption->React.string
-                  </span>
-                </figcaption>
-              | None => React.null
-              }}
-           </figure>
-         }}
-        <div className=styles##headerWrap>
-          <h1 className=Cn.("has-title-font" <:> styles##title)>
-            title->React.string
-          </h1>
-          <div className=styles##meta>
-            <div className=styles##metaWrapper>
-              {switch (Js.Nullable.toOption(author)) {
-               | Some(author) => <PostedBy author />
-               | None => React.null
-               }}
-              {switch (
-                 Js.Nullable.toOption(frontmatterDate),
-                 Js.Nullable.toOption(isoDate),
-               ) {
-               | (Some(date), Some(isoDate)) => <PostedOn date isoDate />
-               | (None, _)
-               | (_, None) => React.null
-               }}
+let make = (~pageContext as _, ~data: PageByPath.Raw.t) => {
+  open PageByPath;
+  let {markdownRemark} = PageByPath.parse(data);
+  switch (markdownRemark) {
+  | Some({
+      frontmatter:
+        Some({
+          title: Some(title),
+          thumbnail,
+          date,
+          isoDate,
+          author,
+          attachments,
+        }),
+      html: Some(html),
+    }) =>
+    <Layout
+      entryHeader={
+        <div
+          className=Cn.(
+            "has-ui-font"
+            <:>
+            styles##header
+            <:> onSome(styles##hasThumbnail, thumbnail)
+          )>
+          {switch (thumbnail) {
+           | Some({caption, image: Some({publicURL, sharpImg})}) =>
+             <figure className=Cn.("full-bleed" <:> styles##coverFigure)>
+               {switch (sharpImg) {
+                | Some({
+                    mobileImage: Some(mobileImage),
+                    tabletImage: Some(tabletImage),
+                    desktopImage: Some(desktopImage),
+                  }) =>
+                  <Gatsby.Img
+                    fluid=[|
+                      Gatsby.Img.Fluid.make(
+                        mobileImage,
+                        "(max-width: 600px)",
+                      ),
+                      Gatsby.Img.Fluid.make(
+                        tabletImage,
+                        "(max-width: 1200px)",
+                      ),
+                      Gatsby.Img.Fluid.make(
+                        desktopImage,
+                        "(min-width: 1200px)",
+                      ),
+                    |]
+                    className=styles##coverImg
+                    alt=?caption
+                  />
+                | _ =>
+                  switch (publicURL) {
+                  | Some(publicURL) =>
+                    <img
+                      src=publicURL
+                      className=styles##coverImg
+                      alt=?caption
+                    />
+                  | None => React.null
+                  }
+                }}
+               {switch (caption) {
+                | Some(caption) =>
+                  <figcaption
+                    className=Cn.(
+                      styles##coverFigureCaption <:> "has-xsmall-font-size"
+                    )>
+                    <span className=styles##captionText>
+                      caption->React.string
+                    </span>
+                  </figcaption>
+                | None => React.null
+                }}
+             </figure>
+           | _ => React.null
+           }}
+          <div className=styles##headerWrap>
+            <h1 className=Cn.("has-title-font" <:> styles##title)>
+              title->React.string
+            </h1>
+            <div className=styles##meta>
+              <div className=styles##metaWrapper>
+                {switch (author) {
+                 | Some(author) => <PostedBy author />
+                 | None => React.null
+                 }}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    }>
-    <Seo title />
-    <main id="main" className="site-main">
-      <article>
-        <div
-          className="page-content"
-          dangerouslySetInnerHTML={"__html": html}
-        />
-        {switch (Js.Nullable.toOption(attachments)) {
-         | None => React.null
-         | Some(attachments) =>
-           <div id="attachments" className="attachments has-ui-font">
-             <h3> "Downloads"->React.string </h3>
-             {Js.Array2.map(attachments, file =>
-                <div key={file.fileUrl} className="wp-block-file">
-                  <a href={file.fileUrl}>
-                    {file.name ++ "." ++ file.extension |> React.string}
-                  </a>
-                  " "->React.string
-                  <a
-                    href={file.fileUrl}
-                    className="wp-block-file__button"
-                    download="true">
-                    "Download"->React.string
-                  </a>
-                </div>
-              )
-              |> React.array}
-           </div>
-         }}
-        <footer className=Cn.(styles##footer <:> "has-ui-font")>
-          <div className=Cn.(styles##postTime <:> styles##footerItem)>
-            <time dateTime=isoUpdated>
+      }>
+      <Seo title />
+      <main id="main" className="site-main">
+        <article>
+          <div
+            className="page-content"
+            dangerouslySetInnerHTML={"__html": html}
+          />
+          {switch (attachments) {
+           | None => React.null
+           | Some(attachments) =>
+             <div id="attachments" className="attachments has-ui-font">
+               <h3> "Downloads"->React.string </h3>
+               {Js.Array2.map(
+                  attachments,
+                  fun
+                  | Some({publicURL: Some(publicURL), extension, name}) =>
+                    <div key=publicURL className="wp-block-file">
+                      <a href=publicURL>
+                        {name ++ "." ++ extension |> React.string}
+                      </a>
+                      " "->React.string
+                      <a
+                        href=publicURL
+                        className="wp-block-file__button"
+                        download="true">
+                        "Download"->React.string
+                      </a>
+                    </div>
+                  | _ => React.null,
+                )
+                |> React.array}
+             </div>
+           }}
+          <footer className=Cn.(styles##footer <:> "has-ui-font")>
+            <div className=Cn.(styles##postTime <:> styles##footerItem)>
               {switch (
-                 Js.Nullable.toOption(updated),
-                 Js.Nullable.toOption(frontmatterDate),
+                 date->Option.flatMap(Js.Json.decodeString),
+                 isoDate->Option.flatMap(Js.Json.decodeString),
                ) {
-               | (Some(updated), _) =>
-                 "Updated on " ++ updated |> React.string
-               | (_, Some(date)) => "Updated on " ++ date |> React.string
-               | (None, None) => React.null
+               | (Some(date), Some(isoDate)) => <PostedOn date isoDate />
+               | _ => React.null
                }}
-            </time>
-          </div>
-        </footer>
-      </article>
-    </main>
-  </Layout>;
+            </div>
+          </footer>
+        </article>
+      </main>
+    </Layout>
+  | _ => React.null
+  };
 };
+
+let default = make;
+
+let query = PageByPath.query;
+
+let _ = PageByPath.makeVariables;
+let _ = PageByPath.definition;

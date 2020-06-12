@@ -5,7 +5,8 @@
   "version": "1.0.0",
   "author": "John Jackson",
   "dependencies": {
-    "@moox/bs-react-helmet": "^2.1.0",
+    "@baransu/graphql_ppx_re": "^1.0.0-beta.9",
+    "@moox/bs-react-helmet": "^3.0.0",
     "@reach/visually-hidden": "^0.10.2",
     "dotenv": "^8.2.0",
     "gatsby": "^2.23.3",
@@ -47,6 +48,7 @@
     "bs-platform": "^8.0.0-dev.1",
     "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-react-hooks": "^4.0.4",
+    "get-graphql-schema": "^2.1.2",
     "gh-pages": "^3.0.0",
     "stylelint-config-standard": "^20.0.0"
   },
@@ -66,7 +68,8 @@
     "deploy": "npm run build && gh-pages -d public -b master",
     "re:build": "bsb -make-world",
     "re:cleanbuild": "bsb -make-world -clean-world",
-    "re:watch": "bsb -make-world -clean-world -w"
+    "re:watch": "bsb -make-world -clean-world -w",
+    "get-graphql-schema": "get-graphql-schema http://localhost:8000/___graphql -j > graphql_schema.json"
   },
   "repository": {
     "type": "git",
