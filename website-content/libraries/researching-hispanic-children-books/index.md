@@ -2,7 +2,6 @@
 title: Researching the Distribution of Hispanic and Latino Children’s Books in United States Public Libraries
 author: John Jackson
 date: 2018-12-19
-updated: 2018-12-19
 ---
 *I worked with a team that researched the distribution of Hispanic and Latino children's books in various US libraries, and we compared our findings with population statistics to glean insights. This report is a summary of our findings. This was originally written for my Introduction to Research in Library and Information Science class in the Fall of 2017.*
 
