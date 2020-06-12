@@ -1,10 +1,10 @@
 ---
 title: iOS Shortcuts
 author: John Jackson
-date: 2018-10-08
-updated: 2019-11-05
-thumbnail: ./ios-shortcuts.jpg
-caption: The iOS Shortcuts app.
+date: 2019-11-05
+thumbnail:
+  image: ./ios-shortcuts.jpg
+  caption: The iOS Shortcuts app.
 ---
 *These are a few shortcut scripts I've made for Apple's [iOS Shortcuts app](https://itunes.apple.com/app/shortcuts/id915249334).*
 

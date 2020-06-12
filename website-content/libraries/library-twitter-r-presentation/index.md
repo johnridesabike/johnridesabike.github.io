@@ -2,7 +2,6 @@
 title: Library Twitter Text Analysis With R Presentation
 author: John Jackson
 date: 2018-12-19
-updated: 2018-12-19
 ---
 *I worked with a team to analyze the content of several library Twitter accounts using R packages. These are the slides and the transcript of our presentation. This was originally created for my Information Networks class in the Fall of 2018.*
 

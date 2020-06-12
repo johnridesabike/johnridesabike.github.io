@@ -2,7 +2,6 @@
 title: Chattahoochee Valley Environmental Analysis
 author: John Jackson
 date: 2018-12-19
-updated: 2018-12-19
 ---
 *I wrote an analysis of the community surrounding the Chattahoochee Valley Libraries in Columbus, GA. This was originally written for my Intro to Management of Libraries class in the Summer of 2017.*
 
