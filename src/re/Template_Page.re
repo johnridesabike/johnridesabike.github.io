@@ -1,13 +1,15 @@
 let styles = Gatsby.loadCssModule("./Template_Page.module.css");
 
-module PostedBy = {
-  [@react.component]
-  let make = (~author) =>
-    <span className="author byline">
-      <Icons.Person />
-      author->React.string
-    </span>;
-};
+/*
+ module PostedBy = {
+   [@react.component]
+   let make = (~author) =>
+     <span className="author byline">
+       <Icons.Person />
+       author->React.string
+     </span>;
+ };
+ */
 
 module PostedOn = {
   [@react.component]
@@ -34,13 +36,10 @@ module PostedOn = {
 query PageByPath($path: String!) {
   markdownRemark(fields: {fullPath: {eq: $path}}) {
     html
-    timeToRead
-    excerpt
     frontmatter {
       date(formatString: "MMMM DD, YYYY")
       isoDate: date
       title
-      author
       thumbnail {
         caption
         image {
@@ -64,30 +63,20 @@ query PageByPath($path: String!) {
         extension
       }
     }
-    fields {
-      slug
-      fullPath
-      parentDir
-    }
   }
-}|}
+}|};
+  {inline: true}
 ];
 
+let _ = makeVariables;
+let _ = definition;
+
 [@react.component]
-let make = (~pageContext as _, ~data: PageByPath.Raw.t) => {
-  open PageByPath;
-  let {markdownRemark} = PageByPath.parse(data);
+let make = (~pageContext as _, ~data: Raw.t) => {
+  let {markdownRemark} = parse(data);
   switch (markdownRemark) {
   | Some({
-      frontmatter:
-        Some({
-          title: Some(title),
-          thumbnail,
-          date,
-          isoDate,
-          author,
-          attachments,
-        }),
+      frontmatter: {title, thumbnail, date, isoDate, attachments},
       html: Some(html),
     }) =>
     <Layout
@@ -100,7 +89,7 @@ let make = (~pageContext as _, ~data: PageByPath.Raw.t) => {
             <:> onSome(styles##hasThumbnail, thumbnail)
           )>
           {switch (thumbnail) {
-           | Some({caption, image: Some({publicURL, sharpImg})}) =>
+           | Some({caption, image: {publicURL, sharpImg}}) =>
              <figure className=Cn.("full-bleed" <:> styles##coverFigure)>
                {switch (sharpImg) {
                 | Some({
@@ -124,31 +113,27 @@ let make = (~pageContext as _, ~data: PageByPath.Raw.t) => {
                       ),
                     |]
                     className=styles##coverImg
-                    alt=?caption
+                    alt=caption
                   />
                 | _ =>
                   switch (publicURL) {
+                  | None => React.null
                   | Some(publicURL) =>
                     <img
                       src=publicURL
                       className=styles##coverImg
-                      alt=?caption
+                      alt=caption
                     />
-                  | None => React.null
                   }
                 }}
-               {switch (caption) {
-                | Some(caption) =>
-                  <figcaption
-                    className=Cn.(
-                      styles##coverFigureCaption <:> "has-xsmall-font-size"
-                    )>
-                    <span className=styles##captionText>
-                      caption->React.string
-                    </span>
-                  </figcaption>
-                | None => React.null
-                }}
+               <figcaption
+                 className=Cn.(
+                   styles##coverFigureCaption <:> "has-xsmall-font-size"
+                 )>
+                 <span className=styles##captionText>
+                   caption->React.string
+                 </span>
+               </figcaption>
              </figure>
            | _ => React.null
            }}
@@ -156,14 +141,6 @@ let make = (~pageContext as _, ~data: PageByPath.Raw.t) => {
             <h1 className=Cn.("has-title-font" <:> styles##title)>
               title->React.string
             </h1>
-            <div className=styles##meta>
-              <div className=styles##metaWrapper>
-                {switch (author) {
-                 | Some(author) => <PostedBy author />
-                 | None => React.null
-                 }}
-              </div>
-            </div>
           </div>
         </div>
       }>
@@ -182,7 +159,7 @@ let make = (~pageContext as _, ~data: PageByPath.Raw.t) => {
                {Js.Array2.map(
                   attachments,
                   fun
-                  | Some({publicURL: Some(publicURL), extension, name}) =>
+                  | {publicURL: Some(publicURL), extension, name} =>
                     <div key=publicURL className="wp-block-file">
                       <a href=publicURL>
                         {name ++ "." ++ extension |> React.string}
@@ -203,8 +180,8 @@ let make = (~pageContext as _, ~data: PageByPath.Raw.t) => {
           <footer className=Cn.(styles##footer <:> "has-ui-font")>
             <div className=Cn.(styles##postTime <:> styles##footerItem)>
               {switch (
-                 date->Option.flatMap(Js.Json.decodeString),
-                 isoDate->Option.flatMap(Js.Json.decodeString),
+                 Js.Json.decodeString(date),
+                 Js.Json.decodeString(isoDate),
                ) {
                | (Some(date), Some(isoDate)) => <PostedOn date isoDate />
                | _ => React.null
@@ -220,7 +197,3 @@ let make = (~pageContext as _, ~data: PageByPath.Raw.t) => {
 
 let default = make;
 
-let query = PageByPath.query;
-
-let _ = PageByPath.makeVariables;
-let _ = PageByPath.definition;

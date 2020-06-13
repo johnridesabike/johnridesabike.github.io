@@ -166,19 +166,19 @@ module Sidebar = {
     <aside id="secondary" className=Cn.(styles##widgetArea <:> "has-ui-font")>
       <section className={styles##widget}>
         <h4> "About John"->React.string </h4>
-        <p>
+        <div>
           {images.john2018
            ->Option.flatMap(x => x.sharpImg)
            ->Option.flatMap(x => x.small)
-           ->Option.map(small =>
+           ->Option.map(fixed =>
                <Gatsby.Img
                  className="avatar alignleft"
-                 fixed=[|small|]
+                 fixed
                  alt="Portrait of John"
                />
              )
            ->Option.getWithDefault(React.null)}
-        </p>
+        </div>
         <p>
           {j|I’m a public library staffer who is interested in digital library
          technologies, web development, and libraries of all types.|j}

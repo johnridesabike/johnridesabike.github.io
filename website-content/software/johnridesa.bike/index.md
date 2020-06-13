@@ -1,6 +1,5 @@
 ---
 title: "JohnRidesA.Bike: how I made this website"
-author: John Jackson
 date: 2020-01-25
 ---
 I maintain [JohnRidesA.bike](https://johnridesa.bike/) with a combination of

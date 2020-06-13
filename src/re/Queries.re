@@ -50,7 +50,7 @@ module Thumbnail = {
   type t =
     | Video(Video.t)
     | Image(Image.t)
-    | FixedImg(array(Query.Fragments.ImageFixed.t))
+    | FixedImg(Query.Fragments.ImageFixed.t)
     | Null;
 };
 
@@ -67,43 +67,38 @@ module ToProps = {
     Js.Array2.forEach(
       edges, (Query.Fragments.PageList.{node: {fields} as node}) =>
       switch (fields) {
-      | Some({slug: Some(slug)}) => Js.Dict.set(dict, slug, node)
-      | _ => ()
+      | {slug} => Js.Dict.set(dict, slug, node)
       }
     );
     dict;
   };
 
-  let nodeFields = (Query.Fragments.PageList.{frontmatter, fields}, f) =>
+  let nodeFields =
+      (
+        {Query.Fragments.PageList.frontmatter: {thumbnail, title}, fields},
+        f,
+      ) =>
     f(. {
       isWide:
-        switch (frontmatter) {
-        | Some({thumbnail: Some(_thumbnail)}) => true
-        | _ => false
+        switch (thumbnail) {
+        | Some(_thumbnail) => true
+        | None => false
         },
-      fullPath:
-        switch (fields) {
-        | Some({fullPath: Some(fullPath)}) => fullPath
-        | _ => ""
-        },
+      fullPath: fields.fullPath,
       thumbnail:
-        switch (frontmatter) {
-        | Some({thumbnail: Some({image: Some({publicURL, sharpImg})})}) =>
+        switch (thumbnail) {
+        | Some({image: {publicURL, sharpImg}}) =>
           switch (sharpImg) {
-          | Some({fixed: Some(fixed)}) => FixedImg([|fixed|])
+          | Some({fixed: Some(fixed)}) => FixedImg(fixed)
           | _ =>
             switch (publicURL) {
             | Some(publicURL) => Image({src: publicURL})
             | None => Null
             }
           }
-        | _ => Null
+        | None => Null
         },
-      title:
-        switch (frontmatter) {
-        | Some({title: Some(title)}) => title
-        | _ => ""
-        },
+      title,
     });
 
   let propsOfDict = (dict, k, f) =>

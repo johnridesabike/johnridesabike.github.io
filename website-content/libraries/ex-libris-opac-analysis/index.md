@@ -1,6 +1,5 @@
 ---
 title: Ex Libris OPAC Analysis
-author: John Jackson
 date: 2018-12-19
 ---
 *The director of a fictional library system is seeking a new OPAC, and I was tasked with writing a recommendation for Ex Libris. This was originally written for my Technical Services class in the Fall of 2017.*

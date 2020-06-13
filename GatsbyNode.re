@@ -39,7 +39,7 @@ type graphqlResult = {
 
 type field = {
   name: string,
-  node: node,
+  node,
   value: string,
 };
 
@@ -52,10 +52,11 @@ type page('context) = {
 type actions('context) = {
   createNodeField: (. field) => unit,
   createPage: (. page('context)) => unit,
+  createTypes: (. string) => unit,
 };
 
 type nodeApiHelpers('context) = {
-  node: node,
+  node,
   actions: actions('context),
   getNode: (. parent) => fileNode,
   graphql: (. string) => Js.Promise.t(graphqlResult),
@@ -64,12 +65,10 @@ type nodeApiHelpers('context) = {
 let onCreateNode = ({node, actions: {createNodeField}, getNode}) =>
   switch (node) {
   | {internal: {nodeType: "MarkdownRemark"}, parent} =>
-    let fileNode = getNode(. parent);
-    let parsedFilePath = NodeJs.Path.parse(fileNode.relativePath);
-    switch (parsedFilePath) {
+    switch (NodeJs.Path.parse(getNode(. parent).relativePath)) {
     | {dir, name: "index"} =>
       let path = "/" ++ dir ++ "/";
-      let dir' = dir->Js.String2.split(NodeJs.Path.sep);
+      let dir' = Js.String2.split(dir, NodeJs.Path.sep);
       let penultimateDirIndex = Js.Array2.length(dir') - 1;
       let parentDir =
         dir'
@@ -86,14 +85,13 @@ let onCreateNode = ({node, actions: {createNodeField}, getNode}) =>
     | {dir: "", name} =>
       let path = "/" ++ name ++ "/";
       createNodeField(. {node, name: "fullPath", value: path});
-      createNodeField(. {node, name: "parentDir", value: ""});
       createNodeField(. {node, name: "slug", value: name});
     | {dir, name} =>
       let path = "/" ++ dir ++ "/" ++ name ++ "/";
       createNodeField(. {node, name: "fullPath", value: path});
       createNodeField(. {node, name: "parentDir", value: dir});
       createNodeField(. {node, name: "slug", value: name});
-    };
+    }
   | _ => ()
   };
 
@@ -118,11 +116,11 @@ let createPages = ({graphql, actions: {createPage}}) =>
   ->Promise.Js.fromBsPromise
   ->Promise.Js.flatMap(
       fun
-      | {errors: Some(exn)} => failwith(Js.String.make(exn))
+      | {errors: Some(exn)} => failwith(Js.String2.make(exn))
       | result => Promise.Js.resolved(result),
     )
   ->Promise.Js.map(({data: {allMarkdownRemark: {edges}}}) =>
-      Js.Array2.forEach(edges, ({node: {fields: {fullPath}}}) =>
+      Array.forEach(edges, ({node: {fields: {fullPath}}}) =>
         createPage(. {
           component: pageTemplate,
           context: {
@@ -132,3 +130,31 @@ let createPages = ({graphql, actions: {createPage}}) =>
         })
       )
     );
+
+/**
+ * De-nullify a lot of nullable fields.
+ */
+let createSchemaCustomization = ({actions: {createTypes}}) => {
+  createTypes(.
+    {|
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter!
+      fields: Fields!
+    }
+    type Frontmatter {
+      title: String!
+      date: Date! @dateformat
+      attachments: [File!] @fileByRelativePath
+      thumbnail: Thumbnail
+    }
+    type Thumbnail {
+      caption: String!
+      image: File! @fileByRelativePath
+    }
+    type Fields {
+      slug: String!
+      fullPath: String!
+    }
+  |},
+  );
+};

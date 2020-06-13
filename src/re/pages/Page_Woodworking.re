@@ -1,9 +1,23 @@
 let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 
+[%graphql
+  {|
+query WoodworkingPages {
+  allMarkdownRemark(filter: {fields: {parentDir: {eq: "woodworking"}}}) {
+    ...Query_Frag_PageList.PageList
+  }
+}|}
+];
+
+let _ = WoodworkingPages.definition;
+
 module ExcerptList = {
   [@react.component]
   let make = () => {
-    let query = Query.Pages.useWoodworkingPages();
+    let query =
+      WoodworkingPages.query
+      ->Gatsby.useStaticQueryUnsafe
+      ->WoodworkingPages.parse;
     let pages = Queries.ToProps.dictOfEdges(query.allMarkdownRemark.edges);
 
     <section className={styles##section}>
@@ -49,7 +63,5 @@ module ExcerptList = {
 let make = () =>
   <Layout>
     <Seo title="Woodworking" />
-    <main id="main" className="site-mainn page-content">
-      <ExcerptList />
-    </main>
+    <main id="main" className="site-main page-content"> <ExcerptList /> </main>
   </Layout>;
