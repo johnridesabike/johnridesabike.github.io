@@ -1,6 +1,5 @@
 ---
 title: Standing Desk Converter with Scrap Wood
-author: John Jackson
 date: 2019-01-11
 thumbnail:
   image: ./final.png

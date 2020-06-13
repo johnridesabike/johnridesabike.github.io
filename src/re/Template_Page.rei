@@ -1,14 +1,13 @@
-module PageByPath: {module Raw: {type t;};};
+module Raw: {type t;};
+let query: 'a;
 
 [@react.component]
-let make: (~pageContext: 'a, ~data: PageByPath.Raw.t) => React.element;
+let make: (~pageContext: 'a, ~data: Raw.t) => React.element;
 
 let default:
   {
     .
-    "data": PageByPath.Raw.t,
+    "data": Raw.t,
     "pageContext": 'a,
   } =>
   React.element;
-
-let query: 'a;

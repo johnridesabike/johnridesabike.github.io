@@ -11,12 +11,8 @@ let make = () => {
           {images.john2018
            ->Option.flatMap(x => x.sharpImg)
            ->Option.flatMap(x => x.large)
-           ->Option.map(large =>
-               <Gatsby.Img
-                 fixed=[|large|]
-                 alt="Portrait of John"
-                 className="avatar"
-               />
+           ->Option.map(fixed =>
+               <Gatsby.Img fixed alt="Portrait of John" className="avatar" />
              )
            ->Option.getWithDefault(React.null)}
         </figure>

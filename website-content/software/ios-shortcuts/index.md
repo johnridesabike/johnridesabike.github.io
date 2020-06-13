@@ -1,6 +1,5 @@
 ---
 title: iOS Shortcuts
-author: John Jackson
 date: 2019-11-05
 thumbnail:
   image: ./ios-shortcuts.jpg

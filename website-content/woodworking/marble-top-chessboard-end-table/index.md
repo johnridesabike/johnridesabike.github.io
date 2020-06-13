@@ -1,9 +1,8 @@
 ---
 title: Marble-top Chessboard End Table
-author: John Jackson
 date: 2018-05-13
 thumbnail:
-  image: "./IMG_0293.jpg"
+  image: ./IMG_0293.jpg
   caption: Photo of the completed table.
 attachments:
     - ./Chess-Table-Sketchup.zip

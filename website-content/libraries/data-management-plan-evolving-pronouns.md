@@ -1,6 +1,5 @@
 ---
 title: "Data Management Plan: Evolving Pronouns"
-author: John Jackson
 date: 2018-12-19
 ---
 *I created this DMP with [DMPTool](https://dmptool.org/) in conjunction with my [student support report](/libraries/academic-library-student-support/). It serves as a model for the kind of DMP that a student would create under my supervision if necessary. This was originally written for my Academic Libraries class in the Spring of 2018.*

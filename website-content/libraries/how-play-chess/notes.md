@@ -1,6 +1,5 @@
 ---
 title: "How to Play Chess: end notes"
-author: John Jackson
 date: 2019-03-18
 ---
 <nav class="post-nav-links">

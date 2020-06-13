@@ -16,10 +16,22 @@ let montage =
     |],
   };
 
+[%graphql
+  {|
+query LibraryPages {
+  allMarkdownRemark(filter: {fields: {parentDir: {eq: "libraries"}}}) {
+    ...Query_Frag_PageList.PageList
+  }
+}|}
+];
+
+let _ = LibraryPages.definition;
+
 module ExcerptList = {
   [@react.component]
   let make = () => {
-    let query = Query.Pages.useLibraryPages();
+    let query =
+      LibraryPages.query->Gatsby.useStaticQueryUnsafe->LibraryPages.parse;
     let pages = Queries.ToProps.dictOfEdges(query.allMarkdownRemark.edges);
     <React.Fragment>
       <section className={styles##section}>
@@ -240,7 +252,5 @@ module ExcerptList = {
 let make = () =>
   <Layout>
     <Seo title="Libraries" />
-    <main id="main" className="site-mainn page-content">
-      <ExcerptList />
-    </main>
+    <main id="main" className="site-main page-content"> <ExcerptList /> </main>
   </Layout>;
