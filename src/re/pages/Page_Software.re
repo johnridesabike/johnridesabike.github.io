@@ -2,10 +2,22 @@ let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 
 let mwmatching = Gatsby.loadImage("../../images/mwmatching.svg");
 
+[%graphql
+  {|
+query SoftwarePages {
+  allMarkdownRemark(filter: {fields: {parentDir: {eq: "software"}}}) {
+    ...Query_Frag_PageList.PageList
+  }
+}|}
+];
+
+let _ = SoftwarePages.definition;
+
 module ExcerptList = {
   [@react.component]
   let make = () => {
-    let query = Query.Pages.useSoftwarePages();
+    let query =
+      SoftwarePages.query->Gatsby.useStaticQueryUnsafe->SoftwarePages.parse;
     let pages = Queries.ToProps.dictOfEdges(query.allMarkdownRemark.edges);
     <section className=styles##section>
       <header className={styles##sectionHeader}>

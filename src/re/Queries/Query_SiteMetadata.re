@@ -1,6 +1,5 @@
 [%graphql
-  {|
-query SiteMetadata {
+  {|{
   site {
     siteMetadata {
       title
@@ -8,8 +7,9 @@ query SiteMetadata {
       author
     }
   }
-}|}
+}|};
+  {inline: true}
 ];
 
-let useSiteMetaData: unit => SiteMetadata.t =
-  () => SiteMetadata.query->Gatsby.useStaticQueryUnsafe->SiteMetadata.parse;
+let useSiteMetaData: unit => t =
+  () => query->Gatsby.useStaticQueryUnsafe->parse;

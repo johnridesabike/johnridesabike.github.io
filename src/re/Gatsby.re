@@ -36,7 +36,7 @@ module Img = {
   [@bs.module "gatsby-image"] [@react.component]
   external make:
     (
-      ~fixed: array(Query_Frag_ImageFixed.ImageFixed.t)=?,
+      ~fixed: Query_Frag_ImageFixed.ImageFixed.t=?,
       ~fluid: array(Fluid.t)=?,
       ~alt: string=?,
       ~className: string=?,

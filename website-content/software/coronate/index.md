@@ -1,9 +1,8 @@
 ---
 title: "Coronate: a Swiss chess tournament manager"
-author: John Jackson
 date: 2019-09-01
 thumbnail:
-  image: "./logo_wide.svg"
+  image: ./logo_wide.svg
   caption: The Coronate logo.
 ---
 Coronate is a free, open-source app for managing Swiss-style chess tournaments.

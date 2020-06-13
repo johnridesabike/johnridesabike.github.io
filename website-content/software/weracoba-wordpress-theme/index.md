@@ -1,6 +1,5 @@
 ---
 title: Weracoba WordPress Theme
-author: John Jackson
 date: 2018-08-16
 # thumbnail: "./weracoba-home-page.jpg"
 ---

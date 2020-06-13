@@ -46,7 +46,7 @@ module Thumbnail: {
   type t =
     | Video(Video.t)
     | Image(Image.t)
-    | FixedImg(array(Query.Fragments.ImageFixed.t))
+    | FixedImg((Query.Fragments.ImageFixed.t))
     | Null;
 };
 

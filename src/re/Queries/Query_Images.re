@@ -12,9 +12,8 @@ query Images {
     }
   }
 }
-|}
+|};
+  {inline: true}
 ];
 
-let useImages: unit => Images.t =
-  () => Images.query->Gatsby.useStaticQueryUnsafe->Images.parse;
-
+let useImages: unit => t = () => query->Gatsby.useStaticQueryUnsafe->parse;

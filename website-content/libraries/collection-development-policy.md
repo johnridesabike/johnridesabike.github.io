@@ -1,6 +1,5 @@
 ---
 title: Collection Development Policy
-author: John Jackson
 date: 2018-12-19
 ---
 *I worked with a team to create an original collection development policy and critique three existing policies for a fictional library. This was originally written for my Collection Development class in the Fall of 2018.*
