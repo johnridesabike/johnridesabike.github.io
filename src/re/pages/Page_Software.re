@@ -11,7 +11,8 @@ query SoftwarePages {
 }|}
 ];
 
-let _ = SoftwarePages.definition;
+let _ = SoftwarePages.makeDefaultVariables;
+let _ = SoftwarePages.Z__INTERNAL.graphql_module;
 
 module ExcerptList = {
   [@react.component]

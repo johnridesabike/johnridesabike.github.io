@@ -69,7 +69,7 @@ query PageByPath($path: String!) {
 ];
 
 let _ = makeVariables;
-let _ = definition;
+let _ = Z__INTERNAL.graphql_module;
 
 [@react.component]
 let make = (~pageContext as _, ~data: Raw.t) => {
