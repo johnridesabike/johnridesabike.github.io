@@ -71,10 +71,9 @@ yarn-error.log
 # Reason
 .merlin
 .bsb.lock
-/lib/
+lib/
 *.bs.js
-/_esy/
-/esy.lock/
+_esy/
 
 *.swp
 

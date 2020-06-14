@@ -25,7 +25,8 @@ query LibraryPages {
 }|}
 ];
 
-let _ = LibraryPages.definition;
+let _ = LibraryPages.makeDefaultVariables;
+let _ = LibraryPages.Z__INTERNAL.graphql_module;
 
 module ExcerptList = {
   [@react.component]
