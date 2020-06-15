@@ -6,11 +6,11 @@ let montage =
     width: "160",
     sources: [|
       {
-        src: Gatsby.loadImage("../../video/montage_web.mp4"),
+        src: Gatsby.loadImage("../video/montage_web.mp4"),
         type_: "video/mp4",
       },
       {
-        src: Gatsby.loadImage("../../video/montage_web.webm"),
+        src: Gatsby.loadImage("../video/montage_web.webm"),
         type_: "video/webm",
       },
     |],

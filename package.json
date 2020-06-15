@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@baransu/graphql_ppx_re": "^1.0.0-beta.10",
-    "bs-platform": "^8.0.0-dev.1",
+    "bs-platform": "^7.3.2",
     "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-react-hooks": "^4.0.4",
     "get-graphql-schema": "^2.1.2",
