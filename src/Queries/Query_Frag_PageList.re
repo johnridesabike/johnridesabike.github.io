@@ -8,12 +8,8 @@ fragment PageList on MarkdownRemarkConnection {
         slug
         fullPath
       }
-      excerpt
-      timeToRead
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        isoDate: date
         thumbnail {
           caption
           image {

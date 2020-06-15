@@ -22,23 +22,14 @@ module PostedOn = {
     </span>;
 };
 
-/*
- module DateTime = {
-   let parse = x =>
-     x->Js.Nullable.toOption->Option.flatMap(Js.Json.decodeString);
-   let serialize = Js.Json.string;
-   type t = string;
- };
- */
-
 [%graphql
   {|
 query PageByPath($path: String!) {
   markdownRemark(fields: {fullPath: {eq: $path}}) {
     html
     frontmatter {
-      date(formatString: "MMMM DD, YYYY")
-      isoDate: date
+      date(formatString: "MMMM DD, YYYY") @ppxCustom(module: "DateTime")
+      isoDate: date @ppxCustom(module: "DateTime")
       title
       thumbnail {
         caption
@@ -179,10 +170,7 @@ let make = (~pageContext as _, ~data: Raw.t) => {
            }}
           <footer className=Cn.(styles##footer <:> "has-ui-font")>
             <div className=Cn.(styles##postTime <:> styles##footerItem)>
-              {switch (
-                 Js.Json.decodeString(date),
-                 Js.Json.decodeString(isoDate),
-               ) {
+              {switch (date, isoDate) {
                | (Some(date), Some(isoDate)) => <PostedOn date isoDate />
                | _ => React.null
                }}
@@ -196,4 +184,3 @@ let make = (~pageContext as _, ~data: Raw.t) => {
 };
 
 let default = make;
-
