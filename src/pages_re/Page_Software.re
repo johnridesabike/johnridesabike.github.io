@@ -1,6 +1,6 @@
 let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 
-let mwmatching = Gatsby.loadImage("../../images/mwmatching.svg");
+let mwmatching = Gatsby.loadImage("../images/mwmatching.svg");
 
 [%graphql
   {|

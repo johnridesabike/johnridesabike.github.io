@@ -86,7 +86,7 @@ module Header = {
 
 module Footer = {
   let styles = Gatsby.loadCssModule("./footer.module.css");
-  let widgetStyles = Gatsby.loadCssModule("../styles/widgets.module.css");
+  let widgetStyles = Gatsby.loadCssModule("./styles/widgets.module.css");
 
   [@react.component]
   let make = () =>
@@ -158,7 +158,7 @@ module Sidebar = {
     },
   |];
 
-  let styles = Gatsby.loadCssModule("../styles/widgets.module.css");
+  let styles = Gatsby.loadCssModule("./styles/widgets.module.css");
 
   [@react.component]
   let make = () => {

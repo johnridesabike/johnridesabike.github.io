@@ -1,4 +1,4 @@
-import {make} from "../re/pages/Page_Index.bs";
+import {make} from "../pages_re/Page_Index.bs";
 import {graphql} from "gatsby";
 export default make;
 

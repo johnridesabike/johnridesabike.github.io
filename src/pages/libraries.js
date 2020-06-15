@@ -1,2 +1,2 @@
-import {make} from "../re/pages/Page_Libraries.bs";
+import {make} from "../pages_re/Page_Libraries.bs";
 export default make;
