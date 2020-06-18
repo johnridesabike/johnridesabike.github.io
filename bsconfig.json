@@ -35,11 +35,11 @@
     "@moox/bs-react-helmet",
     "reason-nodejs",
     "reason-promise",
-    "@baransu/graphql_ppx_re"
+    "@reasonml-community/graphql-ppx"
   ],
   "ppx-flags": [
     [
-      "@baransu/graphql_ppx_re/ppx",
+      "@reasonml-community/graphql-ppx/ppx",
       "-template-tag-import=graphql",
       "-template-tag-location=gatsby"
     ]
