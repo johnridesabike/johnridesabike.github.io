@@ -1,7 +1,5 @@
 let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 
-let mwmatching = Gatsby.loadImage("../images/mwmatching.svg");
-
 [%graphql
   {|
 query SoftwarePages {
@@ -13,6 +11,7 @@ query SoftwarePages {
 
 let _ = SoftwarePages.makeDefaultVariables;
 let _ = SoftwarePages.Z__INTERNAL.graphql_module;
+let _ = SoftwarePages.serializeVariables;
 
 module ExcerptList = {
   [@react.component]
@@ -20,6 +19,11 @@ module ExcerptList = {
     let query =
       SoftwarePages.query->Gatsby.useStaticQueryUnsafe->SoftwarePages.parse;
     let pages = Queries.ToProps.dictOfEdges(query.allMarkdownRemark.edges);
+    let mwmatching =
+      Query.MwmatchingSvg.useQuery().file
+      ->Option.flatMap(x => x.publicURL)
+      ->Option.map(src => Queries.Thumbnail.Image({src: src}))
+      ->Option.getWithDefault(Queries.Thumbnail.Null);
     <section className=styles##section>
       <header className={styles##sectionHeader}>
         <h1>
@@ -46,7 +50,7 @@ module ExcerptList = {
         isWide=true
         title={j|Maximum weighted matching finder|j}
         fullPath="https://johnridesa.bike/mwmatching-finder/"
-        thumbnail={Image({src: mwmatching})}
+        thumbnail=mwmatching
         isExternal=true>
         {j|While I was developing |j}->React.string
         <em> "Coronate"->React.string </em>

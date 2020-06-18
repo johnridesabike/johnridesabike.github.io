@@ -1,41 +1,16 @@
 type parent;
 
-type fields = {
-  [@bs.as "slug"]
-  fieldSlug: string,
-  fullPath: string,
-  parentDir: string,
-};
-
 type internal = {
   [@bs.as "type"]
-  nodeType: string,
-};
-
-type frontmatter = {
-  slug: option(string),
-  date: option(string),
+  type_: string,
 };
 
 type node = {
-  fields,
   internal,
   parent,
-  frontmatter: option(frontmatter),
 };
 
 type fileNode = {relativePath: string};
-
-type edge = {node};
-
-type allMarkdownRemark = {edges: array(edge)};
-
-type query = {allMarkdownRemark};
-
-type graphqlResult = {
-  errors: option(Js.Exn.t),
-  data: query,
-};
 
 type field = {
   name: string,
@@ -55,16 +30,21 @@ type actions('context) = {
   createTypes: (. string) => unit,
 };
 
-type nodeApiHelpers('context) = {
+type graphqlResult('data) = {
+  errors: option(Js.Exn.t),
+  data: 'data,
+};
+
+type t('context, 'data) = {
   node,
   actions: actions('context),
   getNode: (. parent) => fileNode,
-  graphql: (. string) => Js.Promise.t(graphqlResult),
+  graphql: (. string) => Js.Promise.t(graphqlResult('data)),
 };
 
 let onCreateNode = ({node, actions: {createNodeField}, getNode}) =>
   switch (node) {
-  | {internal: {nodeType: "MarkdownRemark"}, parent} =>
+  | {internal: {type_: "MarkdownRemark"}, parent} =>
     switch (NodeJs.Path.parse(getNode(. parent).relativePath)) {
     | {dir, name: "index"} =>
       let path = "/" ++ dir ++ "/";
@@ -95,37 +75,38 @@ let onCreateNode = ({node, actions: {createNodeField}, getNode}) =>
   | _ => ()
   };
 
-let pageTemplate =
-  NodeJs.Path.resolve([|"src", "Template_Page.bs.js"|]);
+let pageTemplate = NodeJs.Path.resolve([|"src", "Template_Page.bs.js"|]);
+
+[%graphql
+  {|
+query AllMarkdown {
+  allMarkdownRemark {
+    edges {
+      node {
+        fields {
+          fullPath
+        }
+      }
+    }
+  }
+}|};
+  {taggedTemplate: false}
+];
+
+let _ = AllMarkdown.Z__INTERNAL.graphql_module;
+let _ = AllMarkdown.makeDefaultVariables;
+let _ = AllMarkdown.serialize;
+let _ = AllMarkdown.parse;
+let _ = AllMarkdown.serializeVariables;
 
 let createPages = ({graphql, actions: {createPage}}) =>
-  graphql(.
-    {|
-      {
-        allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                fullPath
-              }
-            }
-          }
-        }
-    }|},
-  )
+  graphql(. AllMarkdown.query)
   ->Promise.Js.fromBsPromise
-  ->Promise.Js.flatMap(
-      fun
-      | {errors: Some(exn)} => failwith(Js.String2.make(exn))
-      | result => Promise.Js.resolved(result),
-    )
-  ->Promise.Js.map(({data: {allMarkdownRemark: {edges}}}) =>
+  ->Promise.Js.tap(({data: AllMarkdown.Raw.{allMarkdownRemark: {edges}}}) =>
       Array.forEach(edges, ({node: {fields: {fullPath}}}) =>
         createPage(. {
           component: pageTemplate,
-          context: {
-            "fullPath": fullPath,
-          },
+          context: Js.Obj.empty(),
           path: fullPath,
         })
       )

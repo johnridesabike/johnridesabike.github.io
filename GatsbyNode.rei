@@ -1,9 +1,15 @@
-type nodeApiHelpers('context);
+type t('context, 'data);
+type graphqlResult('data);
 
-let onCreateNode: nodeApiHelpers('context) => unit;
+let onCreateNode: t(_, _) => unit;
+
+module AllMarkdown: {
+  module Raw: {type t;};
+  type t;
+};
 
 let createPages:
-  nodeApiHelpers({. fullPath: string}) =>
-  Promise.rejectable(unit, Js.Promise.error);
+  t({..}, AllMarkdown.Raw.t) =>
+  Promise.rejectable(graphqlResult(AllMarkdown.Raw.t), Js.Promise.error);
 
-let createSchemaCustomization: nodeApiHelpers('context) => unit;
+let createSchemaCustomization: t(_, _) => unit;
