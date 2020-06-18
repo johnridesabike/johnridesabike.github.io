@@ -11,6 +11,7 @@ query WoodworkingPages {
 
 let _ = WoodworkingPages.makeDefaultVariables;
 let _ = WoodworkingPages.Z__INTERNAL.graphql_module;
+let _ = WoodworkingPages.serializeVariables;
 
 module ExcerptList = {
   [@react.component]

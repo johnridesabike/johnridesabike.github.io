@@ -12,3 +12,4 @@ module Images = Query_Images;
 
 let useImages = Query_Images.useImages;
 
+module MwmatchingSvg = Query_MwmatchingSvg;
