@@ -51,3 +51,4 @@ module Img = {
 
 [@bs.module "gatsby"]
 external useStaticQueryUnsafe: 'a => 'b = "useStaticQuery";
+
