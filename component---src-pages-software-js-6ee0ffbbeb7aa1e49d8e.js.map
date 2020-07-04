@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/pages/software.js"],"names":["make"],"mappings":"2FAAA,uBACeA,YAAf","file":"component---src-pages-software-js-6ee0ffbbeb7aa1e49d8e.js","sourcesContent":["import {make} from \"../re/pages/Page_Software.bs\";\nexport default make;\n"],"sourceRoot":""}
