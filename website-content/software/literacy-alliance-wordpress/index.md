@@ -4,6 +4,7 @@ date: 2018-08-15
 thumbnail:
   image: ./LA-logo-2018.png
   caption: The Literacy Alliance logo.
+description: In 2017, I redesigned a website for the local nonprofit Literacy Alliance using WordPress and SquareSpace.
 ---
 The Literacy Alliance is a nonprofit organization dedicated to literacy education in Columbus, Georgia. Beginning in 2017, I redesigned their website ([theliteracyalliance.org](https://theliteracyalliance.org/)) from the ground up with WordPress.
 

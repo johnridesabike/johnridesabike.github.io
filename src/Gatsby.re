@@ -23,7 +23,7 @@ module Img = {
     };
     let make =
         (
-          {Query_Frag_ImageFluid.ImageFluid.src, srcSet, sizes, aspectRatio},
+          {Query_Frag_ImageFluid.src, srcSet, sizes, aspectRatio},
           media,
         ) => {
       media,
@@ -36,9 +36,9 @@ module Img = {
   [@bs.module "gatsby-image"] [@react.component]
   external make:
     (
-      ~fixed: Query_Frag_ImageFixed.ImageFixed.t=?,
+      ~fixed: Query_Frag_ImageFixed.t=?,
       ~fluid: array(Fluid.t)=?,
-      ~alt: string=?,
+      ~alt: string,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?
     ) =>
@@ -47,7 +47,6 @@ module Img = {
 };
 
 [@bs.val] external loadCssModule: string => Js.t({..}) = "require";
-[@bs.val] external loadImage: string => string = "require";
 
 [@bs.module "gatsby"]
 external useStaticQueryUnsafe: 'a => 'b = "useStaticQuery";

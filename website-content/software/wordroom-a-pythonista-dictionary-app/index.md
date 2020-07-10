@@ -1,6 +1,7 @@
 ---
 title: "WordRoom: A Dictionary App for iOS + Pythonista"
 date: 2018-05-25
+description: This is an iOS dictionary "app" built with Pythonista. It saves the words you look up and your notes on them.
 ---
 I just finished the first release of my iOS app, WordRoom. [You can download it here](https://github.com/johnridesabike/WordRoom/releases/latest). If you don’t have [Pythonista for iOS, you can get it here](http://omz-software.com/pythonista/).
 

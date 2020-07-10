@@ -1,6 +1,7 @@
 ---
 title: Résumé
 date: 2019-07-24
+description: John Jackson's Résumé
 ---
 <p class="has-large-font-size">John Jackson • Columbus, GA</p>
 

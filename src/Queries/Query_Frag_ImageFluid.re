@@ -1,3 +1,5 @@
+[%%raw "import { graphql } from 'gatsby'"];
+
 [%graphql
   {|
 fragment ImageFluid on ImageSharpFluid {
@@ -6,7 +8,6 @@ fragment ImageFluid on ImageSharpFluid {
   sizes
   aspectRatio
 }
-|}
+|};
+  {inline: true}
 ];
-
-let query = ImageFluid.query;

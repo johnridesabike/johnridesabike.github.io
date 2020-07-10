@@ -1,6 +1,7 @@
 ---
 title: Academic Library Student Support
 date: 2018-12-19
+description: Here, I walk through a hypothetical student project and explain how I, as an academic librarian, would assist throughout the process.
 ---
 *I walk through a hypothetical student project and explain how I, as an academic librarian, would assist throughout the whole process. This was originally written for my Academic Libraries class in the Spring of 2018.*
 

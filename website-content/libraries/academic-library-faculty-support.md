@@ -1,6 +1,7 @@
 ---
 title: Academic Library Faculty Support
 date: 2018-12-19
+description: "I describe several key topics affecting academic libraries and how I could assist faculty with them: data management plans, open access, and intellectual property policy."
 ---
 *Here, I describe several key topics affecting academic libraries and how I could assist faculty with them: data management plans, open access, and intellectual property policy. This was originally written for my Academic Libraries class in the Spring of 2018.*
 

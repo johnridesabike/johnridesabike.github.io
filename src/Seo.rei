@@ -1,10 +1,6 @@
+type description = [ | `Site | `Str(string)];
+
 [@react.component]
 let make:
-  (
-    ~description: string=?,
-    ~lang: string=?,
-    ~meta: array(BsReactHelmet.meta)=?,
-    ~keywords: array(string)=?,
-    ~title: string
-  ) =>
+  (~description: description, ~keywords: array(string)=?, ~title: string) =>
   React.element;
