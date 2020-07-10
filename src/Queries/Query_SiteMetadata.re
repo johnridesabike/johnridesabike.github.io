@@ -1,3 +1,5 @@
+[%%raw "import { graphql } from 'gatsby'"];
+
 [%graphql
   {|{
   site {

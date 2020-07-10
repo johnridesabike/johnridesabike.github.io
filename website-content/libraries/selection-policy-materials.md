@@ -1,6 +1,7 @@
 ---
 title: Selection Policy & Materials Project
 date: 2018-12-19
+description: I selected books with funds donated to a fictional university library. To aid selection, I compared policies from similar, real-world, institutions.
 ---
 *I selected books with funds donated to a fictional university library. To aid selection, I compared policies from similar, real-world, institutions. This was originally written for my Technical Services class in the Fall of 2017.*
 

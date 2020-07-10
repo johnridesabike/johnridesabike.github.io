@@ -1,3 +1,7 @@
+[%%raw "import { graphql } from 'gatsby'"];
+
+module ImageFixed = Query_Frag_ImageFixed;
+
 [%graphql
   {|
 fragment PageList on MarkdownRemarkConnection {
@@ -16,7 +20,7 @@ fragment PageList on MarkdownRemarkConnection {
             publicURL
             sharpImg: childImageSharp {
               fixed(width: 600) {
-                ...Query_Frag_ImageFixed.ImageFixed
+                ...ImageFixed
               }
             }
           }
@@ -24,7 +28,6 @@ fragment PageList on MarkdownRemarkConnection {
       }
     }
   }
-}|}
+}|};
+  {inline: true}
 ];
-
-let query = PageList.query;

@@ -6,6 +6,7 @@ date: 2019-03-18
 attachments:
     - ./handout-How-to-Play-Chess.pdf
     - ./handout-How-to-Play-Chess.docx
+description:  I've run a succesful chess program since 2017. At the time, I couldn't find any satisfactory guides to give to participants. This is one that I wrote myself which aims to cover all of the necessary knowledge without being too long or too short.
 ---
 This guide covers all the knowledge required to play a basic game of chess. It’s a quick reference resource, one that can answer questions like: “how many squares do you move when castling?” or “what conditions make a stalemate?” Even if you know these rules by heart, it’s useful to have a text to cite so your opponent doesn’t think you just made up “_en passant_.”
 

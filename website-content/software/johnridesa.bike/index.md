@@ -1,6 +1,7 @@
 ---
 title: "JohnRidesA.Bike: how I made this website"
 date: 2020-01-25
+description: This page explains what technology I use to maintain this website, as well as how I solved a few problems along the way. It may be of interest to similarly-minded web developers.
 ---
 I maintain [JohnRidesA.bike](https://johnridesa.bike/) with a combination of
 two technologies:

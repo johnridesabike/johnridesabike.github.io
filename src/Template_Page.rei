@@ -1,5 +1,5 @@
 module Raw: {type t;};
-let query: 'a;
+let query: string;
 
 [@react.component]
 let make: (~pageContext: 'a, ~data: Raw.t) => React.element;

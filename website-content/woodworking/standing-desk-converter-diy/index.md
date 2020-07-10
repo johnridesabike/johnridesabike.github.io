@@ -6,6 +6,7 @@ thumbnail:
   caption: Diagram of the final design.
 attachments:
     - ./standing_desk.skp.zip
+description: I turned a old, regular desk into a fancy new standing desk. This covers how I did it, how you can make your own, and some general tips about standing desks.
 ---
 If you’re like me, you’ve thought about joining the standing desk trend, but the price of entry is a turn-off. Why spend hundreds of dollars on a new desk when you can surely make your own with a little DIY woodworking? It turns out, you can easily create your own standing desk with nothing more than your current desk, some scrap 2x4s, and some basic woodworking skills.
 

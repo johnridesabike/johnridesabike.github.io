@@ -4,6 +4,7 @@ date: 2019-11-05
 thumbnail:
   image: ./ios-shortcuts.jpg
   caption: The iOS Shortcuts app.
+description: These are a few iOS shortcut scripts that I've made.
 ---
 *These are a few shortcut scripts I've made for Apple's [iOS Shortcuts app](https://itunes.apple.com/app/shortcuts/id915249334).*
 

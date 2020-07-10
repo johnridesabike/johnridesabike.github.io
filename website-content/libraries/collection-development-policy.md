@@ -1,6 +1,7 @@
 ---
 title: Collection Development Policy
 date: 2018-12-19
+description: I worked with a team to create this original collection development policy a fictional library and critiqued three existing policies.
 ---
 *I worked with a team to create an original collection development policy and critique three existing policies for a fictional library. This was originally written for my Collection Development class in the Fall of 2018.*
 

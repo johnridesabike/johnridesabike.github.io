@@ -1,3 +1,7 @@
+[%%raw "import { graphql } from 'gatsby'"];
+
+module ImageFixed = Query_Frag_ImageFixed;
+
 [%graphql
   {|
 fragment PageExcerpt on MarkdownRemark {
@@ -5,33 +9,30 @@ fragment PageExcerpt on MarkdownRemark {
         slug
         fullPath
       }
-      excerpt
-      timeToRead
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        isoDate: date
+        description
         thumbnail {
           caption
           image {
             publicURL
             sharpImg: childImageSharp {
               fixed(width: 600) {
-                ...Query_Frag_ImageFixed.ImageFixed
+                ...ImageFixed
               }
             }
           }
         }
       }
-}|}
+}|};
+  {inline: true}
 ];
 
-let query = PageExcerpt.query;
-
 module Image = {
-  /* I might add more fields to this later. */
-  [@unboxed]
-  type t = {src: string};
+  type t = {
+    src: string,
+    alt: string,
+  };
 };
 
 module Video = {
@@ -50,45 +51,19 @@ module Thumbnail = {
   type t =
     | Video(Video.t)
     | Image(Image.t)
-    | FixedImg(Query_Frag_ImageFixed.ImageFixed.t)
+    | FixedImg(ImageFixed.t, string)
     | Null;
-};
 
-module ToProps = {
-  type t = {
-    isWide: bool,
-    fullPath: string,
-    thumbnail: Thumbnail.t,
-    title: string,
-  };
-
-  let make = (~f) =>
+  let make =
     fun
-    | Some({
-        PageExcerpt.frontmatter: {title, thumbnail},
-        fields: {fullPath},
-      }) =>
-      f(. {
-        isWide:
-          switch (thumbnail) {
-          | Some(_thumbnail) => true
-          | None => false
-          },
-        fullPath,
-        thumbnail:
-          switch (thumbnail) {
-          | Some({image: {publicURL, sharpImg}}) =>
-            switch (sharpImg) {
-            | Some({fixed: Some(fixed)}) => FixedImg(fixed)
-            | _ =>
-              switch (publicURL) {
-              | Some(publicURL) => Image({src: publicURL})
-              | None => Null
-              }
-            }
-          | _ => Null
-          },
-        title,
-      })
-    | _ => React.null;
+    | Some({caption, image: {publicURL, sharpImg}}) =>
+      switch (sharpImg) {
+      | Some({fixed: Some(fixed)}) => FixedImg(fixed, caption)
+      | _ =>
+        switch (publicURL) {
+        | Some(publicURL) => Image({src: publicURL, alt: caption})
+        | None => Null
+        }
+      }
+    | _ => Null;
 };

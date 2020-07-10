@@ -42,11 +42,11 @@ type t('context, 'data) = {
   graphql: (. string) => Js.Promise.t(graphqlResult('data)),
 };
 
-let onCreateNode = ({node, actions: {createNodeField}, getNode}) =>
+let onCreateNode = ({node, actions: {createNodeField, _}, getNode, _}) =>
   switch (node) {
   | {internal: {type_: "MarkdownRemark"}, parent} =>
     switch (NodeJs.Path.parse(getNode(. parent).relativePath)) {
-    | {dir, name: "index"} =>
+    | {dir, name: "index", _} =>
       let path = "/" ++ dir ++ "/";
       let dir' = Js.String2.split(dir, NodeJs.Path.sep);
       let penultimateDirIndex = Js.Array2.length(dir') - 1;
@@ -62,11 +62,11 @@ let onCreateNode = ({node, actions: {createNodeField}, getNode}) =>
       createNodeField(. {node, name: "fullPath", value: path});
       createNodeField(. {node, name: "parentDir", value: parentDir});
       createNodeField(. {node, name: "slug", value: slug});
-    | {dir: "", name} =>
+    | {dir: "", name, _} =>
       let path = "/" ++ name ++ "/";
       createNodeField(. {node, name: "fullPath", value: path});
       createNodeField(. {node, name: "slug", value: name});
-    | {dir, name} =>
+    | {dir, name, _} =>
       let path = "/" ++ dir ++ "/" ++ name ++ "/";
       createNodeField(. {node, name: "fullPath", value: path});
       createNodeField(. {node, name: "parentDir", value: dir});
@@ -93,16 +93,11 @@ query AllMarkdown {
   {taggedTemplate: false}
 ];
 
-let _ = AllMarkdown.Z__INTERNAL.graphql_module;
-let _ = AllMarkdown.makeDefaultVariables;
-let _ = AllMarkdown.serialize;
-let _ = AllMarkdown.parse;
-let _ = AllMarkdown.serializeVariables;
-
-let createPages = ({graphql, actions: {createPage}}) =>
+let createPages = ({graphql, actions: {createPage, _}, _}) =>
   graphql(. AllMarkdown.query)
   ->Promise.Js.fromBsPromise
-  ->Promise.Js.tap(({data: AllMarkdown.Raw.{allMarkdownRemark: {edges}}}) =>
+  ->Promise.Js.tap(
+      ({data: AllMarkdown.Raw.{allMarkdownRemark: {edges}}, _}) =>
       Array.forEach(edges, ({node: {fields: {fullPath}}}) =>
         createPage(. {
           component: pageTemplate,
@@ -115,7 +110,7 @@ let createPages = ({graphql, actions: {createPage}}) =>
 /**
  * De-nullify a lot of nullable fields.
  */
-let createSchemaCustomization = ({actions: {createTypes}}) => {
+let createSchemaCustomization = ({actions: {createTypes, _}, _}) => {
   createTypes(.
     {|
     type MarkdownRemark implements Node {
@@ -125,6 +120,7 @@ let createSchemaCustomization = ({actions: {createTypes}}) => {
     type Frontmatter {
       title: String!
       date: Date! @dateformat
+      description: String!
       attachments: [File!] @fileByRelativePath
       thumbnail: Thumbnail
     }
@@ -135,6 +131,15 @@ let createSchemaCustomization = ({actions: {createTypes}}) => {
     type Fields {
       slug: String!
       fullPath: String!
+    }
+    type Site {
+      siteMetadata: SiteMetadata!
+    }
+    type SiteMetadata {
+      title: String!
+      description: String!
+      author: String!
+      siteUrl: String!
     }
   |},
   );

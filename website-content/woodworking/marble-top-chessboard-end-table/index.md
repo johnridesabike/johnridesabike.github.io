@@ -6,6 +6,7 @@ thumbnail:
   caption: Photo of the completed table.
 attachments:
     - ./Chess-Table-Sketchup.zip
+description: I made a custom end-table with an old marble chessboard and some two-by-fours. This guide covers how it was done, and some tips for building your own.
 ---
 
 A while back, I inherited a marble chessboard that had once been the top to a beautiful table. The metal base had rusted away long ago, but I believed that I could restore this table to new glory. All I needed was my toolbox and some 2x4s.

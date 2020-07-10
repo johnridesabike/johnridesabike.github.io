@@ -1,6 +1,7 @@
 ---
 title: Library Twitter Text Analysis With R Presentation
 date: 2018-12-19
+description: These are the slides and notes from a presentation I did on using language analysis of Twitter accounts with the R programming language.
 ---
 *I worked with a team to analyze the content of several library Twitter accounts using R packages. These are the slides and the transcript of our presentation. This was originally created for my Information Networks class in the Fall of 2018.*
 
