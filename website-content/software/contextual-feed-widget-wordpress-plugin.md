@@ -1,6 +1,7 @@
 ---
 title: Contextual Feed Widget WordPress Plugin
 date: 2018-11-13
+description: TBD
 ---
 My “Contextual Feed Widget” plugin is now live on the WordPress Plugin Directory. Now you can easily add it to your own website.
 

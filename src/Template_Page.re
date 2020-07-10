@@ -1,3 +1,6 @@
+%raw
+"import { graphql } from 'gatsby'";
+
 let styles = Gatsby.loadCssModule("./Template_Page.module.css");
 
 /*
@@ -22,6 +25,8 @@ module PostedOn = {
     </span>;
 };
 
+module ImageFluid = Query.Fragment.ImageFluid;
+
 [%graphql
   {|
 query PageByPath($path: String!) {
@@ -31,19 +36,20 @@ query PageByPath($path: String!) {
       date(formatString: "MMMM DD, YYYY") @ppxCustom(module: "DateTime")
       isoDate: date @ppxCustom(module: "DateTime")
       title
+      description
       thumbnail {
         caption
         image {
           publicURL
           sharpImg: childImageSharp {
             mobileImage: fluid(maxWidth: 600) {
-              ...Query.Fragments.ImageFluid
+              ...ImageFluid
             }
             tabletImage: fluid(maxWidth: 1200) {
-              ...Query.Fragments.ImageFluid
+              ...ImageFluid
             }
             desktopImage: fluid(maxWidth: 600) {
-              ...Query.Fragments.ImageFluid
+              ...ImageFluid
             }
           }
         }
@@ -59,15 +65,19 @@ query PageByPath($path: String!) {
   {inline: true}
 ];
 
-let _ = makeVariables;
-let _ = Z__INTERNAL.graphql_module;
-
 [@react.component]
 let make = (~pageContext as _, ~data: Raw.t) => {
   let {markdownRemark} = parse(data);
   switch (markdownRemark) {
   | Some({
-      frontmatter: {title, thumbnail, date, isoDate, attachments},
+      frontmatter: {
+        title,
+        thumbnail,
+        date,
+        isoDate,
+        attachments,
+        description,
+      },
       html: Some(html),
     }) =>
     <Layout
@@ -135,7 +145,7 @@ let make = (~pageContext as _, ~data: Raw.t) => {
           </div>
         </div>
       }>
-      <Seo title />
+      <Seo title description={`Str(description)} />
       <main id="main" className="site-main">
         <article>
           <div
@@ -170,10 +180,7 @@ let make = (~pageContext as _, ~data: Raw.t) => {
            }}
           <footer className=Cn.(styles##footer <:> "has-ui-font")>
             <div className=Cn.(styles##postTime <:> styles##footerItem)>
-              {switch (date, isoDate) {
-               | (Some(date), Some(isoDate)) => <PostedOn date isoDate />
-               | _ => React.null
-               }}
+              <PostedOn date isoDate />
             </div>
           </footer>
         </article>

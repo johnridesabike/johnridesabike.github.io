@@ -1,6 +1,7 @@
 ---
 title: Social distancing library videos
 date: 2020-06-08
+description: I produced instructional videos for Chattahoochee Valley Libraries. This was in part a response to the COVID-19 crisis. These videos were a way to extend library services to patrons while our doors were closed to the public.
 ---
 
 I produced instructional videos for Chattahoochee Valley Libraries as 

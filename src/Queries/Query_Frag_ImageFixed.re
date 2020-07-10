@@ -1,10 +1,13 @@
-[%graphql {|
+[%%raw "import { graphql } from 'gatsby'"];
+
+[%graphql
+  {|
 fragment ImageFixed on ImageSharpFixed {
   src
   srcSet
   height
   width
 }
-|}]
-
-let query = ImageFixed.query;
+|};
+  {inline: true}
+];

@@ -1,6 +1,7 @@
 ---
 title: "How to Play Chess: end notes"
 date: 2019-03-18
+description:  I've run a succesful chess program since 2017. At the time, I couldn't find any satisfactory guides to give to participants. This is one that I wrote myself which aims to cover all of the necessary knowledge without being too long or too short.
 ---
 <nav class="post-nav-links">
 <a href="../" class="prev">

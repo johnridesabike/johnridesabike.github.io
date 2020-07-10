@@ -2,6 +2,7 @@
 title: Weracoba WordPress Theme
 date: 2018-08-16
 # thumbnail: "./weracoba-home-page.jpg"
+description: (Currently defunct.) This is a custom WordPress theme I created from scratch. I don't update it anymore since I stopped using WordPress for this site.
 ---
 Weracoba is my custom-built theme based on [Underscores](https://underscores.me/). Until I switched away from WordPress, I used it to power the site here on [johnridesa.bike](https://johnridesa.bike/).
 

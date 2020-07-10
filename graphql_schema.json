@@ -1140,7 +1140,7 @@
                 "description": "",
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "SiteSiteMetadataFilterInput",
+                  "name": "SiteMetadataFilterInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -3565,6 +3565,16 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "DateQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "description",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null
@@ -8179,6 +8189,22 @@
             "deprecationReason": null
           },
           {
+            "name": "description",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "attachments",
             "description": null,
             "args": [],
@@ -9811,6 +9837,12 @@
           },
           {
             "name": "childMarkdownRemark___frontmatter___date",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "childMarkdownRemark___frontmatter___description",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -16726,7 +16758,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "SiteSiteMetadataFilterInput",
+        "name": "SiteMetadataFilterInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -16838,9 +16870,13 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "OBJECT",
-              "name": "SiteSiteMetadata",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "SiteMetadata",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -17016,7 +17052,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "SiteSiteMetadata",
+        "name": "SiteMetadata",
         "description": null,
         "fields": [
           {
@@ -17024,9 +17060,13 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -17036,9 +17076,13 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -17048,9 +17092,13 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -17060,9 +17108,13 @@
             "description": null,
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -17094,7 +17146,7 @@
             "description": "",
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "SiteSiteMetadataFilterInput",
+              "name": "SiteMetadataFilterInput",
               "ofType": null
             },
             "defaultValue": null
@@ -19467,6 +19519,12 @@
           },
           {
             "name": "frontmatter___date",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "frontmatter___description",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null

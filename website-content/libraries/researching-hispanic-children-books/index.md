@@ -4,6 +4,7 @@ date: 2018-12-19
 thumbnail:
   image: ./figure3.png
   caption: Average percent of titles in each library according to locale
+description: I worked with a team that researched the distribution of Hispanic and Latino children's books in various US libraries.
 ---
 *I worked with a team that researched the distribution of Hispanic and Latino children's books in various US libraries, and we compared our findings with population statistics to glean insights. This report is a summary of our findings. This was originally written for my Introduction to Research in Library and Information Science class in the Fall of 2017.*
 

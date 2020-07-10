@@ -1,12 +1,19 @@
+type link = [ | `External | `Internal];
+
+type size = [ | `Wide | `Half];
+
 [@react.component]
 let make:
   (
     ~className: string=?,
-    ~isWide: bool,
+    ~size: size,
     ~fullPath: string,
-    ~isExternal: bool=?,
+    ~linkType: link=?,
     ~title: string,
-    ~thumbnail: Queries.Thumbnail.t,
+    ~thumbnail: Query.Fragment.PageExcerpt.Thumbnail.t,
     ~children: React.element
   ) =>
   React.element;
+
+let fromQuery:
+  (~size: size, option(Query.Fragment.PageExcerpt.t)) => React.element;

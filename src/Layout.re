@@ -213,8 +213,7 @@ let styles = Gatsby.loadCssModule("./Layout.module.css");
 
 [@react.component]
 let make = (~children, ~entryHeader=React.null) => {
-  //let data = Queries.SiteMetadata.useSiteMetadata();
-  let data = Query.useSiteMetaData();
+  let Query.SiteMetadata.{site} = Query.useSiteMetaData();
   <React.Fragment>
     <div id="page" className={styles##site}>
       <Externals.VisuallyHidden>
@@ -224,14 +223,14 @@ let make = (~children, ~entryHeader=React.null) => {
       </Externals.VisuallyHidden>
       <Header
         siteTitle=?{
-          data.site
-          ->Option.flatMap(x => x.Query.SiteMetadata.siteMetadata)
-          ->Option.flatMap(x => x.Query.SiteMetadata.title)
+          site->Option.map(x =>
+            x.Query.SiteMetadata.siteMetadata.Query.SiteMetadata.title
+          )
         }
         siteDescription=?{
-          data.site
-          ->Option.flatMap(x => x.Query.SiteMetadata.siteMetadata)
-          ->Option.flatMap(x => x.Query.SiteMetadata.description)
+          site->Option.map(x =>
+            x.Query.SiteMetadata.siteMetadata.Query.SiteMetadata.description
+          )
         }
         entryHeader
       />

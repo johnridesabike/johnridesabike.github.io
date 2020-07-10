@@ -4,7 +4,11 @@ let styles = Gatsby.loadCssModule("./Page_Index.module.css");
 let make = () => {
   let images = Query.useImages();
   <Layout>
-    <Seo title="Home" keywords=[|"librarian", "software", "woodworking"|] />
+    <Seo
+      title="Home"
+      keywords=[|"librarian", "resume", "software", "woodworking"|]
+      description=`Site
+    />
     <main id="main" className="site-main page-content">
       <div className={styles##topColumns}>
         <figure>

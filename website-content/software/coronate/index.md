@@ -4,6 +4,7 @@ date: 2019-09-01
 thumbnail:
   image: ./logo_wide.svg
   caption: The Coronate logo.
+description: I created my own Swiss chess tournament manager with ReasonReact. It's free and open source for anyone to use, but especially designed for the needs of libraries and small clubs.
 ---
 Coronate is a free, open-source app for managing Swiss-style chess tournaments.
 
