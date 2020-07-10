@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/pages/libraries.js"],"names":["make"],"mappings":"2FAAA,uBACeA,YAAf","file":"component---src-pages-libraries-js-4a0afffb87147b9175cf.js","sourcesContent":["import {make} from \"../pages_re/Page_Libraries.bs\";\nexport default make;\n"],"sourceRoot":""}
