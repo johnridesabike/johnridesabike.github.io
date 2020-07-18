@@ -1,6 +1,6 @@
 [%%raw "import { graphql } from 'gatsby'"];
 
-let styles = Gatsby.loadCssModule("./Page_Index.module.css");
+let styles = Gatsby.loadCssModule("./index.module.css");
 
 module PageExcerpt = Query.Fragment.PageExcerpt;
 
@@ -49,3 +49,5 @@ let make = () =>
     <Seo title="Woodworking" description=`Site />
     <main id="main" className="site-main page-content"> <ExcerptList /> </main>
   </Layout>;
+
+let default = make;

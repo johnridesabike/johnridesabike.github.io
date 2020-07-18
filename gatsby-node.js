@@ -7,3 +7,4 @@ const config = require("./lib/js/GatsbyNode.bs.js");
 exports.onCreateNode = config.onCreateNode;
 exports.createPages = config.createPages;
 exports.createSchemaCustomization = config.createSchemaCustomization;
+exports.onCreatePage = config.onCreatePage;
