@@ -1,4 +1,4 @@
-let styles = Gatsby.loadCssModule("./Page_Index.module.css");
+let styles = Gatsby.loadCssModule("./index.module.css");
 
 [@react.component]
 let make = () => {
@@ -12,13 +12,11 @@ let make = () => {
     <main id="main" className="site-main page-content">
       <div className={styles##topColumns}>
         <figure>
-          {images.john2018
-           ->Option.flatMap(x => x.sharpImg)
-           ->Option.flatMap(x => x.large)
-           ->Option.map(fixed =>
-               <Gatsby.Img fixed alt="Portrait of John" className="avatar" />
-             )
-           ->Option.getWithDefault(React.null)}
+          {switch (images.john2018) {
+           | Some({sharpImg: Some({large: Some(fixed), _}), _}) =>
+             <Gatsby.Img fixed alt="Portrait of John" className="avatar" />
+           | _ => React.null
+           }}
         </figure>
         <p className=Cn.(styles##hi <:> "has-large-font-size")>
           {j|Hi, I'm John Jackson.|j}->React.string
@@ -87,11 +85,13 @@ let make = () => {
         </div>
       </div>
       <hr />
-      <Page_Libraries.ExcerptList />
+      <Libraries.ExcerptList />
       <hr />
-      <Page_Software.ExcerptList />
+      <Software.ExcerptList />
       <hr />
-      <Page_Woodworking.ExcerptList />
+      <Woodworking.ExcerptList />
     </main>
   </Layout>;
 };
+
+let default = make;

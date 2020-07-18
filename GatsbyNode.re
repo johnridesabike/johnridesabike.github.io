@@ -21,7 +21,7 @@ type field = {
 type page('context) = {
   component: string,
   context: Js.t('context),
-  path: string,
+  mutable path: string,
 };
 
 type actions('context) = {
@@ -35,11 +35,14 @@ type graphqlResult('data) = {
   data: 'data,
 };
 
+type reporter = {panicOnBuild: (. string, Js.Exn.t) => unit};
+
 type t('context, 'data) = {
   node,
   actions: actions('context),
   getNode: (. parent) => fileNode,
   graphql: (. string) => Js.Promise.t(graphqlResult('data)),
+  reporter,
 };
 
 let onCreateNode = ({node, actions: {createNodeField, _}, getNode, _}) =>
@@ -93,18 +96,22 @@ query AllMarkdown {
   {taggedTemplate: false}
 ];
 
-let createPages = ({graphql, actions: {createPage, _}, _}) =>
+let createPages =
+    ({graphql, actions: {createPage, _}, reporter: {panicOnBuild}, _}) =>
   graphql(. AllMarkdown.query)
   ->Promise.Js.fromBsPromise
   ->Promise.Js.tap(
-      ({data: AllMarkdown.Raw.{allMarkdownRemark: {edges}}, _}) =>
-      Array.forEach(edges, ({node: {fields: {fullPath}}}) =>
-        createPage(. {
-          component: pageTemplate,
-          context: Js.Obj.empty(),
-          path: fullPath,
-        })
-      )
+      fun
+      | {errors: Some(errors), _} =>
+        panicOnBuild(. "Error creating pages", errors)
+      | {data: AllMarkdown.Raw.{allMarkdownRemark: {edges}}, _} =>
+        Array.forEach(edges, ({node: {fields: {fullPath}}}) =>
+          createPage(. {
+            component: pageTemplate,
+            context: Js.Obj.empty(),
+            path: fullPath,
+          })
+        ),
     );
 
 /**
@@ -143,4 +150,38 @@ let createSchemaCustomization = ({actions: {createTypes, _}, _}) => {
     }
   |},
   );
+};
+
+[@bs.val] [@bs.scope "Object"]
+external clone: ([@bs.as {json|{}|json}] _, page('context)) => page('context) =
+  "assign";
+
+type pageActions('context) = {
+  deletePage: (. page('context)) => unit,
+  createPage: (. page('context)) => unit,
+};
+
+type onCreatePage('context) = {
+  page: page('context),
+  actions: pageActions('context),
+};
+
+/**
+ * Fix *.bs.js files for pages.
+ */
+let onCreatePage = ({page, actions: {deletePage, createPage}}) => {
+  let oldPage = clone(page);
+  page.path =
+    Js.String2.replaceByRe(page.path, [%bs.re "/(\\/index\\.bs\\/)$/"], "/");
+  if (page.path != oldPage.path) {
+    deletePage(. oldPage);
+    createPage(. page);
+  } else {
+    page.path =
+      Js.String2.replaceByRe(page.path, [%bs.re "/(\\.bs\\/)$/"], "/");
+    if (page.path != oldPage.path) {
+      deletePage(. oldPage);
+      createPage(. page);
+    };
+  };
 };

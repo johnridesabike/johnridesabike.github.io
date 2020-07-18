@@ -8,7 +8,7 @@ import "normalize.css";
 import "typeface-source-sans-pro";
 import "typeface-libre-baskerville";
 import "typeface-source-code-pro";
-import "./src/styles/prism-dracula.css";
+import "gatsby-prismjs-dracula";
 import "./src/styles/variables.css";
 import "./src/styles/elements.css";
 import "./src/styles/typography.css";

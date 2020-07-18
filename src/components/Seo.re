@@ -16,10 +16,11 @@ let make = (~description: description, ~keywords=[||], ~title) => {
     title
     htmlAttributes={BsReactHelmet.htmlAttributes(~lang="en-US")}
     titleTemplate={
-      "%s | "
-      ++ site->Option.mapWithDefault("", x =>
-           Query.SiteMetadata.(x.siteMetadata.title)
-         )
+      switch (site) {
+      | Some(Query.SiteMetadata.{siteMetadata: {title, _}}) =>
+        "%s | " ++ title
+      | None => "%s"
+      }
     }
     meta=[|
       BsReactHelmet.meta(~name="description", ~content=description, ()),
@@ -33,8 +34,13 @@ let make = (~description: description, ~keywords=[||], ~title) => {
       BsReactHelmet.meta(~property="twitter:card", ~content="summary", ()),
       BsReactHelmet.meta(
         ~property="twitter:creator",
-        ~content=?
-          site->Option.map(x => Query.SiteMetadata.(x.siteMetadata.author)),
+        ~content=?{
+          switch (site) {
+          | Some(Query.SiteMetadata.{siteMetadata: {author, _}}) =>
+            Some(author)
+          | None => None
+          };
+        },
         (),
       ),
       BsReactHelmet.meta(~property="twitter:title", ~content=title, ()),

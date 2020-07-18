@@ -10,7 +10,7 @@ module Header = {
     [@react.component]
     let make = (~links) => {
       let (menuToggled, setMenuToggled) = React.Uncurried.useState(() => "");
-      <React.Fragment>
+      <>
         <div
           id="toggle-button" className=Cn.(styles##menuButton <:> menuToggled)>
           <button
@@ -23,7 +23,7 @@ module Header = {
                 : setMenuToggled(. _ => "")
             }>
             <Externals.VisuallyHidden>
-              {React.string("Menu")}
+              "Menu"->React.string
             </Externals.VisuallyHidden>
             <Icons.Menu
               className=Cn.(styles##toggleIcon <:> styles##menuIcon)
@@ -44,14 +44,14 @@ module Header = {
              ->Belt.Array.map(({url, title}) =>
                  <li key=url className={styles##menuItem}>
                    <Gatsby.Link _to=url className={styles##menuLink}>
-                     {React.string(title)}
+                     title->React.string
                    </Gatsby.Link>
                  </li>
                )
              ->React.array}
           </ul>
         </nav>
-      </React.Fragment>;
+      </>;
     };
   };
 
@@ -66,11 +66,11 @@ module Header = {
         <div className={styles##branding}>
           <p className={styles##title}>
             <Gatsby.Link _to="/" rel="home" className={styles##linkHome}>
-              {React.string(siteTitle)}
+              siteTitle->React.string
             </Gatsby.Link>
           </p>
           <p className={styles##description}>
-            {React.string(siteDescription)}
+            siteDescription->React.string
           </p>
         </div>
         <Menu
@@ -84,9 +84,10 @@ module Header = {
     </header>;
 };
 
+let widgetStyles = Gatsby.loadCssModule("./widgets.module.css");
+
 module Footer = {
   let styles = Gatsby.loadCssModule("./footer.module.css");
-  let widgetStyles = Gatsby.loadCssModule("./styles/widgets.module.css");
 
   [@react.component]
   let make = () =>
@@ -98,31 +99,28 @@ module Footer = {
       <div className=Cn.(styles##footer <:> widgetStyles##widgetArea)>
         <section className=Cn.(widgetStyles##widget <:> styles##footerWidget)>
           <p>
-            {React.string({j|Copyright © 2020 |j})}
+            {j|Copyright © 2020 |j}->React.string
             <span property="cc:attributionName">
-              {React.string("John Jackson")}
+              "John Jackson"->React.string
             </span>
           </p>
           <p>
             <Icons.CreativeCommons height="32" className={styles##ccIcon} />
-            {React.string(
-               {|All content by John on this site is licensed under a |},
-             )}
+            {|All content by John on this site is licensed under a |}
+            ->React.string
             <a
               rel="license"
               href="http://creativecommons.org/licenses/by-sa/4.0">
-              {React.string(
-                 {|Creative Commons Attribution-ShareAlike 4.0 International License|},
-               )}
+              {|Creative Commons Attribution-ShareAlike 4.0 International License|}
+              ->React.string
             </a>
-            {React.string(".")}
+            "."->React.string
           </p>
         </section>
         <section className=Cn.(widgetStyles##widget <:> styles##footerWidget)>
           <p>
-            {React.string(
-               {|This website doesn't collect or store anything about you or any of its users.|},
-             )}
+            {|This website doesn't collect or store anything about you or any of its users.|}
+            ->React.string
           </p>
         </section>
       </div>
@@ -158,26 +156,23 @@ module Sidebar = {
     },
   |];
 
-  let styles = Gatsby.loadCssModule("./styles/widgets.module.css");
-
   [@react.component]
   let make = () => {
     let images = Query.useImages();
-    <aside id="secondary" className=Cn.(styles##widgetArea <:> "has-ui-font")>
-      <section className={styles##widget}>
+    <aside
+      id="secondary" className=Cn.(widgetStyles##widgetArea <:> "has-ui-font")>
+      <section className={widgetStyles##widget}>
         <h4> "About John"->React.string </h4>
         <div>
-          {images.john2018
-           ->Option.flatMap(x => x.sharpImg)
-           ->Option.flatMap(x => x.small)
-           ->Option.map(fixed =>
-               <Gatsby.Img
-                 className="avatar alignleft"
-                 fixed
-                 alt="Portrait of John"
-               />
-             )
-           ->Option.getWithDefault(React.null)}
+          {switch (images.john2018) {
+           | Some({sharpImg: Some({small: Some(fixed), _}), _}) =>
+             <Gatsby.Img
+               className="avatar alignleft"
+               fixed
+               alt="Portrait of John"
+             />
+           | _ => React.null
+           }}
         </div>
         <p>
           {j|I’m a public library staffer who is interested in digital library
@@ -194,15 +189,15 @@ module Sidebar = {
           " if this is your first time here."->React.string
         </p>
       </section>
-      <section className={styles##widget}>
+      <section className={widgetStyles##widget}>
         <h4> "Connect with John"->React.string </h4>
         <ul id="menu-social-menu" className="menu">
-          {Js.Array2.map(socialMenu, ({url, icon, title}) =>
+          {Array.map(socialMenu, ({url, icon, title}) =>
              <li key=url>
                <a href=url> icon "\xa0"->React.string title->React.string </a>
              </li>
            )
-           |> React.array}
+           ->React.array}
         </ul>
       </section>
     </aside>;
@@ -213,27 +208,21 @@ let styles = Gatsby.loadCssModule("./Layout.module.css");
 
 [@react.component]
 let make = (~children, ~entryHeader=React.null) => {
-  let Query.SiteMetadata.{site} = Query.useSiteMetaData();
-  <React.Fragment>
+  let siteMetaData = Query.useSiteMetaData();
+  <>
     <div id="page" className={styles##site}>
       <Externals.VisuallyHidden>
         <a className="skip-link" href="#content">
           "Skip to content."->React.string
         </a>
       </Externals.VisuallyHidden>
-      <Header
-        siteTitle=?{
-          site->Option.map(x =>
-            x.Query.SiteMetadata.siteMetadata.Query.SiteMetadata.title
-          )
-        }
-        siteDescription=?{
-          site->Option.map(x =>
-            x.Query.SiteMetadata.siteMetadata.Query.SiteMetadata.description
-          )
-        }
-        entryHeader
-      />
+      {switch (siteMetaData) {
+       | Query.SiteMetadata.{
+           site: Some({siteMetadata: {title, description, _}}),
+         } =>
+         <Header siteTitle=title siteDescription=description entryHeader />
+       | {site: None} => <Header entryHeader />
+       }}
       <div
         id="content" className=Cn.(styles##content <:> "smallscreen-padding")>
         children
@@ -241,5 +230,7 @@ let make = (~children, ~entryHeader=React.null) => {
       </div>
       <Footer />
     </div>
-  </React.Fragment>;
+  </>;
 };
+
+let default = make;
