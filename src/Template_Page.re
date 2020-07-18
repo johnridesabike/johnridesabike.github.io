@@ -16,8 +16,8 @@ let styles = Gatsby.loadCssModule("./Template_Page.module.css");
 
 module PostedOn = {
   [@react.component]
-  let make = (~date, ~isoDate, ~className="") =>
-    <span className>
+  let make = (~date, ~isoDate) =>
+    <span>
       <time dateTime=isoDate>
         <Icons.Calendar />
         {" Updated on " ++ date |> React.string}
@@ -157,7 +157,7 @@ let make = (~pageContext as _, ~data: Raw.t) => {
            | Some(attachments) =>
              <div id="attachments" className="attachments has-ui-font">
                <h3> "Downloads"->React.string </h3>
-               {Js.Array2.map(
+               {Array.map(
                   attachments,
                   fun
                   | {publicURL: Some(publicURL), extension, name} =>
@@ -175,7 +175,7 @@ let make = (~pageContext as _, ~data: Raw.t) => {
                     </div>
                   | _ => React.null,
                 )
-                |> React.array}
+                ->React.array}
              </div>
            }}
           <footer className=Cn.(styles##footer <:> "has-ui-font")>
