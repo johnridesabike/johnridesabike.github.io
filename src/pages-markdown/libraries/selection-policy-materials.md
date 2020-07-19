@@ -45,7 +45,7 @@ Smith, A. (n.d.). Editorial Reviews. In *Amazon: American gothic: an anthology f
 
 **Rationale:** For undergraduates in American literature classes, access to primary sources is invaluable. Smith, cited by Amazon’s review list, says “This anthology is comprehensive and authoritative and will be an essential source for scholars and students for years to come.” According to Larson, writing for *CHOICE*, “This excellent anthology provides an entertaining collection of gothic works of various genres written by both canonical authors, such as Nathaniel Hawthorne and Edgar Allan Poe, and less familiar American writers, such as Harriet Prescot Spofford and Ella Wilkinson Peattie.” The review concludes by recommending the work for undergraduates as well as general readership. This book will certainly meet the needs of our library users, and prove to be a valuable asset to our English department.
 
-**Item:** Anderson, E. G., Hagood, T., &amp; Turner, D.C. (Eds.). (2015). *Undead souths: the gothic and beyond in southern literature and culture*. Baton Rouge, LA: Louisiana State.
+**Item:** Anderson, E. G., Hagood, T., & Turner, D.C. (Eds.). (2015). *Undead souths: the gothic and beyond in southern literature and culture*. Baton Rouge, LA: Louisiana State.
 
 **Price:** $52.50
 
@@ -71,7 +71,7 @@ Green Man Review (n.d.). Editorial Reviews. In *Amazon: scare tactics: supernatu
 
 **Review citations:** Corstorphine, K. (2017). Rebecca janicker, the literary haunted house: lovecraft, matheson, king and the horror in between (jefferson, nc: mcfarland, 2015, $40.00). pp. 224. isbn 978 0 7864 6573 6. paul hurh , american terror: the feeling of thinking in edward, poe, and melville (stanford, ca: stanford university press, 2015, £43.00). pp. 312. isbn 978 0 8047 9114 4. *Journal of American Studies*, *51*(3). http://doi.org/10.1017/S0021875817000718 
 
-Miller, J. W. (2015). American terror: the feeling of thinking in Edwards, Poe, and Melville. * Choice: Current Reviews for Academic Libraries*,*53*(3). 
+Miller, J. W. (2015). American terror: the feeling of thinking in Edwards, Poe, and Melville. *Choice: Current Reviews for Academic Libraries*,*53*(3). 
 
 **Rationale:** Poe, Edwards, and Melville are possibly the most cited and referenced authors of American gothic literature, so this book will be perfect for our literature students. Much has been written about them over the years, but this book is fairly recent, from 2015, which puts it at the forefront of intellectual trends. Corstorphine, in his review, notes that, “this deserves to be thought of as a major contribution to the study of Edwards, Poe, and Melville, but also as a provocative and important intervention in the relationship between American literature and the Gothic that continues to dominate the conversation.” The CHOICE review adds, “the two chapters on Poe are particularly strong, perhaps due to his well-known attachment to the gothic,” and that “the book is meticulously researched, and Hurh displays a wide-ranging knowledge of history, philosophy, and literary theory.” CHOICE highly recommends this book for upper-division undergraduates.
 
@@ -111,7 +111,7 @@ Rachman, S. (n.d.). Editorial Reviews. In *Poe in His Own Time: A Biographical C
 
 **Rationale:** Edgar Allan Poe may be the most cited author of American gothic literature, and for this reason it is critical for our library to contain a reputable biography for him. This book draws on a large number of primary sources including, as the title suggests, interviews, friends, and critics. CHOICE highly recommends this book for upper-division graduates and faculty, and says that the book contains several full-text documents that are usually not presented in their entirety, and that a researcher would normally have to spend hours to find. Rachman concurs in his review, saying, “one would have to consult letters, biographies, and dozens of other sources in order to obtain such a concise yet moving picture of Poe.” For these reasons, it seems like an essential part of our library.
 
-**Item:** Sederholm, C. H., &amp; Weinstock, J. A. (Eds.) (2016). *The age of Lovecraft*. Minneapolis, MN: Minnesota
+**Item:** Sederholm, C. H., & Weinstock, J. A. (Eds.) (2016). *The age of Lovecraft*. Minneapolis, MN: Minnesota
 
 **Price:** $24.95
 
