@@ -18,10 +18,10 @@ Download: [PDF printable booklet](./handout-How-to-Play-Chess.pdf) *or* [DOCX pr
 
 A game of chess has two players, one with “_white_” pieces and one with “_black_” pieces (although you may actually see them as green, blue, or any color). The chessboard is made of alternating dark and light squares, eight wide and eight long.
 
-<div class="wp-block-image">
-    <figure class="aligncenter">
-        <img src="./chess_start.svg" alt="Chess starting position."/>
-    </figure>
+<div class="aligncenter">
+
+![Chess starting position.](./chess_start.svg)
+
 </div>
 
 Begin the game by setting the board as shown above. Keep these details in mind:
@@ -46,11 +46,11 @@ To capture a piece, the player must move one of their pieces to the same square 
 
 ### ♔ The king ♚
 
-<div class="wp-block-image">
-    <figure class="alignright">
-        <img src="./chess_King.svg" alt="The king’s moves."/>
-    </figure>
-</div>
+<div><div class="alignright">
+
+![The king’s moves.](./chess_King.svg)
+
+</div></div>
 
 The king is the most important piece, but he is also weak. He can move one square in any direction: horizontal, vertical, or diagonal.
 
@@ -58,31 +58,31 @@ Make sure your king always stays safe!
 
 ### ♕ The queen ♛
 
-<div class="wp-block-image">
-    <figure class="alignright">
-        <img src="./chess_Queen.svg" alt="The queen’s moves."/>
-    </figure>
-</div>
+<div><div class="alignright">
+
+![The queen’s moves.](./chess_Queen.svg)
+
+</div></div>
 
 The queen is the most powerful piece. She can move any number of squares in any direction: horizontal, vertical, or diagonal.
 
 ### ♖ The rook ♜
 
-<div class="wp-block-image">
-    <figure class="alignright">
-        <img src="./chess_Rook.svg" alt="The rook’s moves." />
-    </figure>
-</div>
+<div><div class="alignright">
+
+![The rook’s moves.](./chess_Rook.svg)
+
+</div></div>
 
 The rook is the second most powerful piece. It can move any number of squares vertically or horizontally, but not diagonally.
 
 ### ♗ The bishop ♝
 
-<div class="wp-block-image">
-    <figure class="alignright">
-        <img src="./chess_Bishop.svg" alt="The bishop’s moves." />
-    </figure>
-</div>
+<div><div class="alignright">
+
+![The bishop’s moves.](./chess_Bishop.svg)
+
+</div></div>
 
 The bishop can move any number of squares diagonally.
 
@@ -90,11 +90,11 @@ Note that bishops can only move to the same color square that they started on. E
 
 ### ♘ The knight ♞
 
-<div class="wp-block-image">
-    <figure class="alignright">
-        <img src="./chess_Knight.svg" alt="The knight’s moves."/>
-    </figure>
-</div>
+<div><div class="alignright">
+
+![The knight’s moves.](./chess_Knight.svg)
+
+</div></div>
 
 The knight doesn’t move like the other pieces. Instead of a straight line, it moves in an “_L_” shape. It will always move two squares horizontally or vertically, turn at a right angle, and finally move one more square. It is the only piece that can “hop” over other pieces.
 
@@ -119,8 +119,11 @@ When a pawn is still in its starting position, it has the option to move two squ
 
 If a pawn manages to reach the other end of the board (a difficult achievement!), then it gets “_promoted_” and becomes either a queen, a rook, a bishop, or a knight, but players almost always choose a queen.
 
+<div id="section-special-moves">
+
 ## Special moves
-{id="section-special-moves"}
+
+</div>
 
 ### Castling
 
@@ -181,7 +184,6 @@ This move is only an option on the turn immediately following the first pawn’s
 </div>
 
 ## Check, checkmate, and stalemate
-{id="section-check-checkmate"}
 
 <div class="wp-block-image">
     <figure class="alignright">
@@ -307,5 +309,5 @@ Several situations will end the game in a draw. Some are obvious, but others can
 **Zugzwang**: When a player is forced to make a move when they would rather pass without moving.
 
 <nav class="post-nav-links">
-<a href="./notes/" class="next">Keep reading to the endnotes →</a>
+  <a href="./notes/" class="next">Keep reading to the endnotes →</a>
 </nav>

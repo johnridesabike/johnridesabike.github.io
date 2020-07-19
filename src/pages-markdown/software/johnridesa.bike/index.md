@@ -19,11 +19,11 @@ hackable, and produces fast websites.
 
 ## Reason ![](./reason.svg)
 
-[Reason](https://reasonml.github.io/) is an OCaml syntax and a toolchain that lets you use the JavaScript
-ecosystem. Like OCaml, it uses a powerful type system (much safer and more
-useful than languages like TypeScript). It also includes first-class support
-for React-style JSX syntax. Most of the website's source code is written in
-Reason.
+[Reason](https://reasonml.github.io/) is an OCaml syntax and a toolchain that
+lets you use the JavaScript ecosystem. Like OCaml, it uses a powerful type
+system (much safer and more useful than languages like TypeScript). It also
+includes first-class support for React-style JSX syntax. Most of the website's
+source code is written in Reason.
 
 Gatsby and GraphQL don't always play nicely with Reason, unfortunately. Gatsby
 uses some compiler magic to generate pages and GraphQL queries, so code
@@ -49,4 +49,6 @@ that wasn't difficult.
 
 ## Source Code
 
-[Browse the source code here on GitHub](https://github.com/johnridesabike/johnridesabike.github.io). If you have any interest in exactly how I implemented a feature, the answer is probably there.
+[Browse the source code here on GitHub](https://github.com/johnridesabike/johnridesabike.github.io).
+If you have any interest in exactly how I implemented a feature, the answer is
+probably there.

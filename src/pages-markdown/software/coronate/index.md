@@ -90,47 +90,17 @@ All code is [AGPL v3.0 licensed](https://github.com/johnridesabike/coronate/blob
 
 ## Screenshots
 
-<figure class="alignwide">
-    <img
-        alt="An example round."
-        src="./screenshot-round.png"
-        height="792"
-        width="1136"
-    />
-</figure>
+<div class="alignwide">
 
-<figure class="alignwide">
-    <img
-        alt="The crosstable screen."
-        src="./screenshot-crosstable.png"
-        height="792"
-        width="1136"
-    />
-</figure>
+![Screenshot](./screenshot-round.png "An example round.")
 
-<figure class="alignwide">
-    <img
-        alt="A screen displaying tiebreak details."
-        src="./screenshot-score-detail.png"
-        height="792"
-        width="1136"
-    />
-</figure>
+![Screenshot](./screenshot-crosstable.png "The crosstable screen.")
 
-<figure class="alignwide">
-    <img
-        alt="The tournament list screen."
-        src="./screenshot-tourney-list.png"
-        height="792"
-        width="1136"
-    />
-</figure>
+![Screenshot](./screenshot-score-detail.png "A screen displaying tiebreak details.")
 
-<figure class="alignwide">
-    <img
-        alt="A screen editing player information."
-        src="./screenshot-player-edit.png"
-        height="792"
-        width="1136"
-    />
-</figure>
+![Screenshot](./screenshot-tourney-list.png "The tournament list screen.")
+
+![Screenshot](./screenshot-player-edit.png "A screen editing player information.")
+
+</div>
+

@@ -59,13 +59,13 @@ module.exports = {
               // pixels) of the content container as this plugin
               // uses this as the base for generating different
               // widths of each image.
-              maxWidth: 1200
+              maxWidth: 1200,
+              showCaptions: ["title"],
             }
           },
           "gatsby-remark-static-images",
           "gatsby-remark-copy-linked-files",
           "gatsby-remark-grid-tables",
-          "gatsby-remark-attr",
           {
             resolve: "gatsby-remark-prismjs",
             options: {

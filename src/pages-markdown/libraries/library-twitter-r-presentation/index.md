@@ -36,7 +36,7 @@ description: These are the slides and notes from a presentation I did on using l
 <img src="./Slide4.jpeg" alt="Slide: Applications of Twitter Data Analysis."/>
 </figure>
 <div class="wp-block-media-text__content">
-<p>Twitter data analysis is applicable to a broad array of topics beyond libraries. According to Gayo-Avello(in 2015), counting the frequency of tweets discussing a candidate or political party can provide insight into upcoming election results. Public health crises follow predictable patterns on Twitter, as well. Tweets about the flu correspond closely to CDC-reported rates of the flu, and Tweets about illnesses are more common in states with lower exercise rates (Paul &amp; Dredge, 2011, pp. 268-269). Even natural disasters are ripe for analysis. During a predicted disaster, such as supertyphoonHaiyan, Twitter users spread news and stories related to the storm across their network (David, Legara, &amp; Ong, 2016, p. 14).</p>
+<p>Twitter data analysis is applicable to a broad array of topics beyond libraries. According to Gayo-Avello(in 2015), counting the frequency of tweets discussing a candidate or political party can provide insight into upcoming election results. Public health crises follow predictable patterns on Twitter, as well. Tweets about the flu correspond closely to CDC-reported rates of the flu, and Tweets about illnesses are more common in states with lower exercise rates (Paul & Dredge, 2011, pp. 268-269). Even natural disasters are ripe for analysis. During a predicted disaster, such as supertyphoonHaiyan, Twitter users spread news and stories related to the storm across their network (David, Legara, & Ong, 2016, p. 14).</p>
 </div>
 </div>
 
@@ -48,8 +48,8 @@ description: These are the slides and notes from a presentation I did on using l
 </figure>
 <div class="wp-block-media-text__content">
 <p>Libraries are able to utilize social media for various purposes, from disseminating marketing materials to answering reference questions.</p>
-<p>Shiri &amp; Rathi(2013) used data mined from Twitter to identify several categories of how users interact with a public library on social media. Recommendations, advisory services, and information seeking were prominent topics. The study suggests libraries should use Twitter to mine information from their patrons for library activities, collection services and user assistance.</p>
-<p>Stewart &amp; Walker (2018) used Twitter data mining to identify which types of tweets from libraries create the most engagement from patrons, such as replies or “retweets.” The accounts which received the most user interaction, and higher sentiment score, were ones that directly engaged users and that posted content related to the larger institution.</p>
+<p>Shiri & Rathi (2013) used data mined from Twitter to identify several categories of how users interact with a public library on social media. Recommendations, advisory services, and information seeking were prominent topics. The study suggests libraries should use Twitter to mine information from their patrons for library activities, collection services and user assistance.</p>
+<p>Stewart & Walker (2018) used Twitter data mining to identify which types of tweets from libraries create the most engagement from patrons, such as replies or “retweets.” The accounts which received the most user interaction, and higher sentiment score, were ones that directly engaged users and that posted content related to the larger institution.</p>
 <p>In both of these studies, the researchers are able to make data-driven recommendations to their respective libraries on how to best engage with patrons on social media.Libraries can also use Twitter to disseminate information that is directly relevant to its patrons, such as local events or services.</p>
 </div>
 </div>
@@ -111,7 +111,7 @@ description: These are the slides and notes from a presentation I did on using l
 
 <div class="wp-block-media-text alignwide is-stacked-on-mobile">
 <figure class="wp-block-media-text__media">
-<img src="./Slide12.jpeg" alt="Slide: Common &amp; Uncommon Words."/>
+<img src="./Slide12.jpeg" alt="Slide: Common & Uncommon Words."/>
 </figure>
 <div class="wp-block-media-text__content">
 <p>To find the most common and most uncommon words, we referenced our charts that showed the frequency of words appearing more than 100 times. We picked out some common patterns.</p>
@@ -153,7 +153,7 @@ description: These are the slides and notes from a presentation I did on using l
 
 <div class="wp-block-media-text alignwide is-stacked-on-mobile">
 <figure class="wp-block-media-text__media">
-<img src="./Slide15.jpeg" alt="Slide: Interesting Topics &amp; Patterns."/>
+<img src="./Slide15.jpeg" alt="Slide: Interesting Topics & Patterns."/>
 </figure>
 <div class="wp-block-media-text__content">
 <p>And here are the interesting topics and patterns.</p>
@@ -169,12 +169,12 @@ description: These are the slides and notes from a presentation I did on using l
 
 ## References
 
-1. Choi, N., &amp; Joo, S. (2018). Understanding public libraries’ challenges, motivators, and perceptions toward the use of social media for marketing. *Library Hi Tech*. https://doi.org/10.1108/LHT-11-2017-0237
+1. Choi, N., & Joo, S. (2018). Understanding public libraries’ challenges, motivators, and perceptions toward the use of social media for marketing. *Library Hi Tech*. https://doi.org/10.1108/LHT-11-2017-0237
 2. Dahl, A.A., Karami, A., Kharrazi, Shaw, G. Jr., Turner-McGrievy, G. (2017). Characterizing diabetes, diet, exercise, and obesity comments on Twitter. *International Journal of Information Management, 38*, 1-6. http://dx.doi.org/10.1016/j.ijinfomgt.2017.08.002
-3. David, C.C., Legara, E.F.T., &amp; Ong, J.C. (2016). Tweeting supertyphoonHaiyan: Evolving functions of Twitter during and after a disaster event. *PLoSONE, 11*(3), 1-19. doi:10.1371/journal.pone.0150190
-4. Gayo-Avello, D. (2015). Political opinion. In M. W. Macy, Y. Mejova, &amp; I. Weber (Eds.), *Twitter: a digital socioscope*. New York, NY: Cambridge University Press.
-5. Mao, H. (2015). Socioeconomic indicators. In M. W. Macy, Y. Mejova, &amp; I. Weber (Eds), *Twitter: a digital socioscope*(pp. 75-95). New York, NY: Cambridge University Press.
-6. Paul, M. J., &amp; Dredze, M. (2011). You are what you Tweet: Analyzing Twitter for public health. *Icwsm*, *20*, 265-272. https://www.aaai.org/ocs/index.php/ICWSM/ICWSM11/paper/viewFile/2880/3264
-7. Shiri, A., &amp; Rathi, D. (2013). Twitter content categorisation: a public library perspective. *Journal of Information &amp; Knowledge Management*,*12*(4). https://doi.org/10.1142/S0219649213500354
-8. Stewart, B., &amp; Walker, J. (2018). Build it and they will come? Patron engagement via twitter at historically black college and university libraries. *The Journal of Academic Librarianship*,*44*(1), 118–124. https://doi.org/10.1016/j.acalib.2017.09.016
-9. Stvilia, B &amp; Gibradze, L. (2014). What do academic libraries tweet *about*, and what makes a library tweet useful? *Library and Information Science Research, 36*(3-4), 136-141. http://doi.org/doi:10.1016/j.lisr.2014.07.001
+3. David, C.C., Legara, E.F.T., & Ong, J.C. (2016). Tweeting supertyphoonHaiyan: Evolving functions of Twitter during and after a disaster event. *PLoSONE, 11*(3), 1-19. doi:10.1371/journal.pone.0150190
+4. Gayo-Avello, D. (2015). Political opinion. In M. W. Macy, Y. Mejova, & I. Weber (Eds.), *Twitter: a digital socioscope*. New York, NY: Cambridge University Press.
+5. Mao, H. (2015). Socioeconomic indicators. In M. W. Macy, Y. Mejova, & I. Weber (Eds), *Twitter: a digital socioscope*(pp. 75-95). New York, NY: Cambridge University Press.
+6. Paul, M. J., & Dredze, M. (2011). You are what you Tweet: Analyzing Twitter for public health. *Icwsm*, *20*, 265-272. https://www.aaai.org/ocs/index.php/ICWSM/ICWSM11/paper/viewFile/2880/3264
+7. Shiri, A., & Rathi, D. (2013). Twitter content categorisation: a public library perspective. *Journal of Information & Knowledge Management*,*12*(4). https://doi.org/10.1142/S0219649213500354
+8. Stewart, B., & Walker, J. (2018). Build it and they will come? Patron engagement via twitter at historically black college and university libraries. *The Journal of Academic Librarianship*,*44*(1), 118–124. https://doi.org/10.1016/j.acalib.2017.09.016
+9. Stvilia, B & Gibradze, L. (2014). What do academic libraries tweet *about*, and what makes a library tweet useful? *Library and Information Science Research, 36*(3-4), 136-141. http://doi.org/doi:10.1016/j.lisr.2014.07.001

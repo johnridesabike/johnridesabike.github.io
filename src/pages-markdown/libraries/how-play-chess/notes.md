@@ -5,7 +5,7 @@ description:  I've run a succesful chess program since 2017. At the time, I coul
 ---
 <nav class="post-nav-links">
 <a href="../" class="prev">
-← Back to main article
+  ← Back to main article
 </a>
 </nav>
 
