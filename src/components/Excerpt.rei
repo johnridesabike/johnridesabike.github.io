@@ -1,4 +1,4 @@
-type link = [ | `External | `Internal];
+type link = [ | `External(string) | `Internal(string)];
 
 type size = [ | `Wide | `Half];
 
@@ -7,8 +7,7 @@ let make:
   (
     ~className: string=?,
     ~size: size,
-    ~fullPath: string,
-    ~linkType: link=?,
+    ~fullPath: link,
     ~title: string,
     ~thumbnail: Query.Fragment.PageExcerpt.Thumbnail.t,
     ~children: React.element
