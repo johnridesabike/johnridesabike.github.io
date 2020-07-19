@@ -66,7 +66,7 @@ I’m a public library staffer and MLIS graduate who is interested in digital li
 
 ## Community service
 
-### Columbus, GA: International Relations &amp; Cultural Liaison Encounters (C.I.R.C.L.E.)
+### Columbus, GA: International Relations & Cultural Liaison Encounters (C.I.R.C.L.E.)
 
 <!--<div class="wp-block-button alignright is-style-squared"><a class="wp-block-button__link" href="https://www.columbusga.gov/mayor/circle.htm">Learn about C.I.R.C.L.E.</a></div>-->
 

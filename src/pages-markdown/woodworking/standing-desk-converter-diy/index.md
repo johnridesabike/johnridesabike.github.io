@@ -145,10 +145,11 @@ Here are some diagrams to help you visualize it:
 
 I cut mine entirely out of scrap, but here’s a chart to give you an idea of how much wood I used:
 
-<figure class="wp-block-image alignwide">
-    <img src="./measurements.png" alt="Standing desk cut diagram." />
-    <figcaption>Sample cut diagram from four 2x4x8s.</figcaption>
-</figure>
+<div class="alignwide">
+
+![Standing desk cut diagram.](./measurements.png "Sample cut diagram from four 2x4x8s.")
+
+</div>
 
 ## Step 1: The Feet
 
@@ -156,29 +157,23 @@ First, cut all of the wood and sand the pieces.
 
 Use wood glue to combine the eight foot pieces into four feet. Apply the glue across one of the broad sides of each 2x4, and clamp until the glue settles. It’s best to wait 24 hours before continuing.
 
-<div class="wp-block-image">
-    <figure class="aligncenter">
-        <img src="./standing_desk_01.png" alt="Standing desk step 1 diagram."/>
-    </figure>
-</div>
+![Standing desk step 1 diagram.](./standing_desk_01.png)
 
 ## Step 2: The Outer Walls
 
 Take four wall pieces and attach each to a broad sides of each foot. These will either become the front or back of the foot, depending on which side of the desk the foot goes on. I attached it with 2 wood screws into the middle of the wall (1¾" from each side), about 3" apart.
 
-<div class="wp-block-image">
-    <figure class="aligncenter">
-        <img src="./standing_desk_02.png" alt="Standing desk step 2 diagram." />
-    </figure>
-</div>
+![Standing desk step 2 diagram.](./standing_desk_02.png)
 
 ## Step 3: The Side Stretchers
 
 Drill 1½" pocket holes into one end of each of your stretchers. Rest the stretchers on top of the feet, flush with the foot’s edge, and use pocket screws to attach the stretchers to the walls.
 
-<figure class="wp-block-image alignwide">
-    <img src="./standing_desk_03.png" alt="Standing desk step 3 diagram."/>
-</figure>
+<div class="alignwide">
+
+![Standing desk step 3 diagram.](./standing_desk_03.png)
+
+</div>
 
 ### Notes on step 3:
 
@@ -189,33 +184,27 @@ Drill 1½" pocket holes into one end of each of your stretchers. Rest the stretc
 
 These are almost exactly the same as the outer walls. Align them flush with the inner side of the foot, which means they won’t quite be flush with the outer wall. When you drill wood screws to attach them, align the screws with the center of the middle 2x4 that makes up the foot, which should be about 2¼" from the outside of the wall.
 
-<div class="wp-block-image">
-    <figure class="aligncenter">
-        <img src="./standing_desk_04.png" alt="Standing desk step 4 diagram."/>
-    </figure>
-</div>
+![Standing desk step 4 diagram.](./standing_desk_04.png)
 
 ### Note on step 4:
 
 I realized afterwards that this design could possibly have the screws on both walls collide if they’re long enough. To avoid this, you might want to offset the inner wall’s screws vertically by about an inch or so.
 
-## Step 5: The Middle Stretcher</h2>
+## Step 5: The Middle Stretcher
 
 Like the side stretchers, drill 1½" pocket holes into the ends of the middle stretcher. Then, attach it to the side stretchers with pocket screws. Before attaching, make sure that it is in the middle of the side stretchers (10½" from each end with my measurements).
 
-<figure class="wp-block-image alignwide">
-    <img src="./standing_desk_05.png" alt="Standing desk step 5 diagram."/>
-</figure>
+<div class="alignwide">
+
+![Standing desk step 5 diagram.](./standing_desk_05.png)
+
+</div>
 
 That’s all! Just add your desk, and you’re now a proud standing desk owner. Optionally, you can route the edges, stain the wood, or do whatever else you want to make it match your style.
 
 ## Final comments about your new standing desk
 
-<div class="wp-block-image">
-    <figure class="aligncenter is-resized">
-        <img src="./IMG_1190.jpeg" alt="Photo of my final standing desk." />
-    </figure>
-</div>
+![Photo of my final standing desk.](./IMG_1190.jpeg)
 
 To me, standing desks offer benefits beyond a healthy lifestyle. I move around when I’m working, so I love the convenience of being able to simply walk up to a desk, do work for a few minutes, and walk away. No sitting down or standing up required.
 

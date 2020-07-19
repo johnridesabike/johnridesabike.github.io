@@ -13,5 +13,7 @@ The new website highlights their current impact, their history, and streamlines 
 <div class="wp-block-button aligncenter"><a class="button-link__link" href="https://theliteracyalliance.org/">View the Literacy Alliance website here</a></div>
 
 ![Literacy Alliance front page](./LA-front-page.jpeg)
+
 ![Literacy Alliance events](/LA-events.jpeg)
+
 ![Editing the Literacy Alliance website](./LA-editor.jpeg)

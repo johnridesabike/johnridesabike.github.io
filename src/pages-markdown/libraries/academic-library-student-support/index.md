@@ -25,7 +25,7 @@ After bouncing around some ideas, I start to get the feeling that the student is
 
 I would advise them that an ideal research problem is one that answers a real question that past researchers haven’t adequately covered. While the student should choose one that interests them personally, they may want to avoid any ones that they believe they can already answer. Finally, we will have to consider the requirements of their department, such as dissertation committees and chairs.
 
-I would also provide the student guides and tools to identify a topic themselves. A couple of good ones include [Mapping Your Research](http://guides.library.sc.edu/c.php?g=410281&amp;p=2794804) (Appling, 2016) which is a LibGuide at USC libraries, and [How to Choose a Topic](https://youtu.be/3YDl4GnHBCk) (Thomas Cooper Library: Tips &amp; Tutorials, 2017) which is a video that explains the process in detail.
+I would also provide the student guides and tools to identify a topic themselves. A couple of good ones include [Mapping Your Research](http://guides.library.sc.edu/c.php?g=410281&p=2794804) (Appling, 2016) which is a LibGuide at USC libraries, and [How to Choose a Topic](https://youtu.be/3YDl4GnHBCk) (Thomas Cooper Library: Tips & Tutorials, 2017) which is a video that explains the process in detail.
 
 ### Making a Choice
 
@@ -41,9 +41,34 @@ USC Libraries has access to a wealth of linguistics research. I would show the s
 
 I have to make sure that the student understands how to find what they need on a database. I go over a few of the basic strategies, outlined in Table 1: LLBA search strategies.
 
-<p style="text-align:center">Table1: LLBA search strategies</p>
+<p style="text-align:center" class="has-caption-color">Table 1: LLBA search strategies</p>
 
-<table class="wp-block-table"><tbody><tr><td>Boolean operators</td><td>These search words use computer logic to refine results:<br><br>AND joins two or more search terms together.<br><br>OR will tell the system to retrieve results that contain either term.<br><br>NOT tells the system to exclude results containing a term.</td></tr><tr><td>Thesaurus</td><td>This tool helps you use the database’s controlled vocabulary. The computer will have preferred words for specific terms or use different terms for ambiguous words.For example, LLBA prefers the term “Pronouns” versus “pronoun” or “pronominals.” It uses “Gender (Grammatical)” to classify articles about gendered words. It can also help you find terms related to these terms.</td></tr><tr><td>Wildcards</td><td>A question mark (?) can be a stand-in for any single character. For example, “wom?n” will search “women” or “woman.”An asterisk (*) can be a stand-in for multiple characters, or no character. For example, “farm*” retrieves “farmers” as well as “farming.”</td></tr></tbody></table>
+<div class="alignwide">
+
++------------------------+-------------------------+---------------------------+
+| Boolean operators      | Thesaurus               | Wildcards                 |
++========================+=========================+===========================+
+| These search words use | This tool helps you use | A question mark (?) can   |
+| computer logic to      | the database’s          | be a stand-in for any     |
+| refine results:        | controlled vocabulary.  | single character. For     |
+|                        | The computer will have  | example, “wom?n” will     |
+| - AND joins two or     | preferred words for     | search “women” or         |
+| more  search terms     | specific terms or use   | “woman.”An asterisk (\*)  |
+| together.              | different terms for     | can be a stand-in for     |
+| - OR will tell the     | ambiguous words. For    | multiple characters, or   |
+| system to retrieve     | example, LLBA prefers   | no character. For         |
+| results that contain   | the term “Pronouns”     | example, “farm\*”         |
+| either term.           | versus “pronoun” or     | retrieves “farmers” as    |
+| - NOT tells the system | “pronominals.” It uses  | well as “farming.”        |
+| to exclude results     | “Gender (Grammatical)”  |                           |
+| containing a term.     | to classify articles    |                           |
+|                        | about gendered words.   |                           |
+|                        | It can also help you    |                           |
+|                        | find terms related to   |                           |
+|                        | these terms.            |                           |
++------------------------+-------------------------+---------------------------+
+
+</div>
 
 ### Articles & Books
 
@@ -54,10 +79,10 @@ Using these tools, I'm able to assist the student in finding appropriate materia
 
 I also review the books available through the University of South Carolina libraries. We find four books in particular that may be useful. They all deal with linguistics, and have at least one chapter dedicated to gendered language.
 
-1. Åfarli, T. A., &amp; Maehlum, B. (2014). *The Sociolinguistics of Grammar*. Amsterdam/Philadelphia: John Benjamins Publishing Company.
-2. Pfenninger, S. E., &amp; Navracsics, J. (Eds.). (2017). *Future research directions for applied linguistics*. Bristol ; Tonawanda, NY ; North York, Ontario: Multilingual Matters.
-3. Tracy, K., &amp; Robles, J. S. (2013). *Everyday talk: building and reflecting identities* (Second Edition). New York: The Guilford Press.
-4. Trask, R. L., &amp; Stockwell, P. (2007). *Language and linguistics: the key concepts* (Second edition). Abingdon [England] ; New York: Routledge.
+1. Åfarli, T. A., & Maehlum, B. (2014). *The Sociolinguistics of Grammar*. Amsterdam/Philadelphia: John Benjamins Publishing Company.
+2. Pfenninger, S. E., & Navracsics, J. (Eds.). (2017). *Future research directions for applied linguistics*. Bristol ; Tonawanda, NY ; North York, Ontario: Multilingual Matters.
+3. Tracy, K., & Robles, J. S. (2013). *Everyday talk: building and reflecting identities* (Second Edition). New York: The Guilford Press.
+4. Trask, R. L., & Stockwell, P. (2007). *Language and linguistics: the key concepts* (Second edition). Abingdon [England] ; New York: Routledge.
 
 ### Reference Management
 
@@ -71,10 +96,11 @@ The data itself will look like a table. There will be one column for the source 
 
 With the exception of the first and last columns, each other column will have a "1" or a checkmark to indicate which pronoun, gender, and number it refers to. Other columns will have a "0." Naturally, one article may be included in the table several times, one for each instance of a pronoun. The student can then use filters to calculate exactly how many different instances appear for each possible combination. See Figure 1 for an example.
 
-<figure class="alignwide">
-    <img src="./student-support.png" alt="Screenshot of data in a spreadsheet."/>
-    <figcaption>Figure 1: Sample data entry.</figcaption>
-</figure>
+<div class="alignwide">
+
+![Screenshot of a spreadsheet](./student-support.png "Figure 1: sample data entry.")
+
+</div>
 
 A separate table would exist to track citations for each article. That table would keep track of the different publishers and author gender. That way, the tables can be cross-referenced for insights into how publications or authors may differ.
 
@@ -110,7 +136,7 @@ There are always ethical concerns as well. If the research data uses any persona
 
 ## Step 5: Writing a Draft
 
-Finally, as the student begins writing the words of the final product, I’m almost through helping them. My responsibility now is to ensure the student has access to, and understands, proper paper formatting. This is another instance where I will need to refer to the linguistics department’s guidelines, since each group has different style standards. I can provide them access to the USC [Citation Basics LibGuide](http://guides.library.sc.edu/c.php?g=410193&amp;p=2795056) (Snediker, 2018b), and guides such as [OWL MLA Guide](https://owl.english.purdue.edu/owl/resource/747/01/) (“The Purdue OWL: MLA Style,” n.d.), for example, as well as the library’s reference books on style. Zotero has different settings for the different citation formats, so understanding those will also be important. Although software like Zotero makes citations easy, it’s always best to manually verify that they’re formatted correctly.
+Finally, as the student begins writing the words of the final product, I’m almost through helping them. My responsibility now is to ensure the student has access to, and understands, proper paper formatting. This is another instance where I will need to refer to the linguistics department’s guidelines, since each group has different style standards. I can provide them access to the USC [Citation Basics LibGuide](http://guides.library.sc.edu/c.php?g=410193&p=2795056) (Snediker, 2018b), and guides such as [OWL MLA Guide](https://owl.english.purdue.edu/owl/resource/747/01/) (“The Purdue OWL: MLA Style,” n.d.), for example, as well as the library’s reference books on style. Zotero has different settings for the different citation formats, so understanding those will also be important. Although software like Zotero makes citations easy, it’s always best to manually verify that they’re formatted correctly.
 
 ## Conclusion
 
@@ -118,12 +144,12 @@ Anyone who’s done research knows that it’s not a linear process. Even though
 
 ## References
 
-1. Appling, B. (2016, October 14). Library Guides: Mapping Your Research: Home. Retrieved from http://guides.library.sc.edu/c.php?g=410281&amp;p=2794804
+1. Appling, B. (2016, October 14). Library Guides: Mapping Your Research: Home. Retrieved from http://guides.library.sc.edu/c.php?g=410281&p=2794804
 2. ProQuest. (n.d.). Linguistics and Language Behavior Abstracts. Retrieved from& https://search-proquest-com.pallas2.tcl.sc.edu/llba/advanced?accountid=13965
-3. Snediker, K. (2018a, January 11). Library Guides: Zotero Tutorials: Zotero Tutorials. Retrieved from http://guides.library.sc.edu/c.php?g=486219&amp;p=3325514
-4. Snediker, K. (2018b, March 12). Library Guides: Citation Formats: Citation Basics. Retrieved from http://guides.library.sc.edu/c.php?g=410193&amp;p=2795056
+3. Snediker, K. (2018a, January 11). Library Guides: Zotero Tutorials: Zotero Tutorials. Retrieved from http://guides.library.sc.edu/c.php?g=486219&p=3325514
+4. Snediker, K. (2018b, March 12). Library Guides: Citation Formats: Citation Basics. Retrieved from http://guides.library.sc.edu/c.php?g=410193&p=2795056
 5. The Purdue OWL: MLA Style. (n.d.). Retrieved from https://owl.english.purdue.edu/owl/section/2/11/
-6. Thomas Cooper Library: Tips &amp; Tutorials. (2017). *How to Choose a Topic*. Retrieved from https://www.youtube.com/watch?v=3YDl4GnHBCk
+6. Thomas Cooper Library: Tips & Tutorials. (2017). *How to Choose a Topic*. Retrieved from https://www.youtube.com/watch?v=3YDl4GnHBCk
 7. University of California Curation Center. (n.d.). DMPTool. Retrieved from https://dmptool.org/
 8. University of South Carolina. (n.d.). Linguistics Article Databases. Retrieved from http://library.sc.edu/p/Research/Resources/linguistics
 9. Winchester, S. (2018, March 26). Library Guides: Data Management: Data Management Basics. Retrieved from http://guides.library.sc.edu/RDM/basics

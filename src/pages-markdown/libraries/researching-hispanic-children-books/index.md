@@ -59,29 +59,18 @@ One hundred four public libraries in the United States were analyzed to determin
 
 The percentage of Hispanic residents in the county where the library is located was examined to determine if there was a correlation between the number of titles with Hispanic/Latino themes that each library holds and the size of the Hispanic population. The libraries were divided into quartiles consisting of 26 libraries each. The quartiles were analyzed to find the average Hispanic population, the number of titles held by each quartile, and the percentage of all titles held by each quartile. The data do not suggest a strong correlation between Hispanic population and the number of titles held, especially when compared to the other variables studied. Figure 1 summarizes this data. Quartile 4 represents the libraries with the smallest Hispanic population with an average of 1.84% of the library’s total population, while Quartile 1 represents the libraries with the largest Hispanic population with an average of 36.76%. Quartiles 2 and 3 have average Hispanic populations of 12.69% and 4.95%, respectively. The number of titles held by each quartile ranges from 226 titles held by libraries in Quartile 4 to 281 titles in Quartile 1. Quartiles 2 and 3 both hold 247 titles, despite a fairly large difference in their average Hispanic populations. While Quartile 1 does hold the highest average percentage of all titles and have the largest percentage of Hispanic residents among the population of the libraries, the range of the number of titles held is so narrow across the quartiles, despite the differences in Hispanic population size, that a correlation between the two variables appears nonexistent or negligible.
 
-<figure class="wp-block-image">
-    <img src="./figure1.png" alt="Graph of average hispanic population compared to number of titles held by each quartile."/>
-    <figcaption>Figure 1.</figcaption>
-</figure>
+
+![Graph of average hispanic population compared to number of titles held by each quartile.](./figure1.png "Figure 1.")
 
 The next variable studied was the number of librarians in each library who hold a postgraduate degree in Library Science. The libraries were once again sorted into quartiles based on this data. The number of librarians with a MLIS degrees was calculated for each quartile and then compared to the number of titles held and the percentage of all titles held by that quartile. The data are summarized in Figure 2. The data show a positive correlation between the number of librarians holding MLIS degrees and the number of children’s materials containing Hispanic/Latino themes. Quartile 1 represents the libraries with the highest number of librarians holding MLIS degrees, at 18.54. This quartile holds 316 titles, representing 31.57% of all titles held. Quartile 2 has the second highest number of librarians with MLIS degrees at 10.23. This quartile holds 294 titles, or 29.37%. Quartile 3 has an average of 5.06 librarians holding MLIS degrees and has 214 titles, or 21.38%. Only 1.42 librarians in Quartile 4 have MLIS degrees. This quartile holds the lowest number of titles: 177, or 17.68%, of all titles. The number of Pura Belpré titles held by the libraries in each quartile declines steeply as the number of librarians holding Library Science degrees declines. The consistency in the degree of decline for both variables indicates that there is a positive correlation between libraries staffed by those with MLIS degrees and the availability of books with strong Hispanic themes and representation. 
 
-<figure class="wp-block-image">
-    <img src="./figure2.png" alt="Graph of average MLIS staff compared to total number of titles held by each quartile."/>
-    <figcaption>Figure 2.</figcaption>
-</figure>
+![Graph of average MLIS staff compared to total number of titles held by each quartile.](./figure2.png "Figure 2.")
 
 The libraries in the sample were sorted and grouped by one of four location types: cities, suburban areas, towns, and rural areas. This resulted in unequal groupings, with the majority of libraries being located in cities or suburban areas. Ten libraries were located in rural areas, 21 in towns, 36 in suburban areas, and 37 in cities. The groups were examined to determine the total number of titles held in each group and the percentage of all titles held. This data is summarized in Figure 3. Rural libraries hold the lowest percentage of the titles at 5.29%. Towns hold the second lowest percentage of the titles at 18.68%. Suburban libraries hold 37.56% of the titles. Cities hold the highest number of titles with 38.46%. The data suggest that cities and suburbs are much more likely to carry children’s literature with Hispanic and Latino themes than towns and rural areas. These figures are somewhat misleading, however, due to the higher number of city and suburban libraries in the sample. The average number of titles held by each library within each group was also calculated in an effort to compensate for the unequal groupings. The percentage of all titles held was recalculated using these averages. The results of these adjustments are summarized in Figure 4. While rural and town libraries still had fewer holdings, the differences were significantly less, with an average of 15.12% of the titles held per library in rural areas and 25.4% in towns. Suburban libraries had an average of 29.79% of all titles per library and libraries within cities had an average of 29.68%. 
 
-<figure class="wp-block-image">
-    <img src="./figure3.png" alt="Graph of percentage of titles held according to locale."/>
-    <figcaption>Figure 3.</figcaption>
-</figure>
+![Graph of percentage of titles held according to locale.](./figure3.png "Figure 3.")
 
-<figure class="wp-block-image">
-    <img src="./figure4.png" alt="Graph of average percent of titles in each library according to locale.">
-    <figcaption>Figure 4.</figcaption>
-</figure>
+![Graph of average percent of titles in each library according to locale.](./figure4.png "Figure 4.")
 
 ## Limitations
 

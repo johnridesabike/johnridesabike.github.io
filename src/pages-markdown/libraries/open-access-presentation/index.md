@@ -133,6 +133,6 @@ description: These are the slides and notes from a presentation I did on the sta
 5. Garofalo, D. A. (2015). Tips from the trenches. *Journal of Electronic Resources Librarianship, 27*(1), 35-37. DOI: 10.1080/1941126X.2015.999524
 6. Kern, B, & Wishnetsky, S. (2014). Adopting and implementing an open access policy: the library’s role. *The Serials Librarian, 66,* 196–203. DOI: 10.1080/0361526X.2014.880035
 7. McKiel, A, & Dooley, J. (2017). Changing library operations: open access policies. *Against the Grain, 26*(6). DOI: https://doi.org/10.7771/2380-176X.6978
-8. Molto, M. B. (2015). Discovering open access articles: maximum access, maximum visibility! a report of the alcts continuing resources section program. american library association annual conference, Las Vegas, June 2014. *Technical Services Quarterly, 32*(3), 316-320. DOI: 10.1080/07317131.2015.1031605&nbsp;
-9. Ojennus, P. (2017). Open access and the humanities: the case of classics journals. *Library Resources &amp; Technical Services 61*(2).
+8. Molto, M. B. (2015). Discovering open access articles: maximum access, maximum visibility! a report of the alcts continuing resources section program. american library association annual conference, Las Vegas, June 2014. *Technical Services Quarterly, 32*(3), 316-320. DOI: 10.1080/07317131.2015.1031605
+9. Ojennus, P. (2017). Open access and the humanities: the case of classics journals. *Library Resources & Technical Services 61*(2).
 10. Wesolek, A. (2014). Bridging the gap between digital measures and digital commons in support of open access: or, how i learned to stop worrying and love human mediation. *Collection Management, 39*(1), 32-42. DOI: 10.1080/01462679.2014.860856
