@@ -1,4 +1,5 @@
-[%%raw "import { graphql } from 'gatsby'"];
+%raw
+"import { graphql } from 'gatsby'";
 
 let styles = Gatsby.loadCssModule("./index.module.css");
 
@@ -89,7 +90,11 @@ module ExcerptList = {
              fields: {fullPath, _},
              frontmatter: {title, description, _},
            }) =>
-           <Excerpt fullPath thumbnail={Video(montage)} title size=`Wide>
+           <Excerpt
+             fullPath={`Internal(fullPath)}
+             thumbnail={Video(montage)}
+             title
+             size=`Wide>
              description->React.string
            </Excerpt>
          }}
@@ -142,8 +147,11 @@ module ExcerptList = {
         <Excerpt
           size=`Half
           title={j|Your Library’s First Chess Tournament: From Opening to Endgame|j}
-          fullPath={j|http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame|j}
-          linkType=`External
+          fullPath={
+                     `External(
+                       {j|http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame|j},
+                     )
+                   }
           thumbnail=Null>
           "I've published a guide to running a library chess tournament on "
           ->React.string

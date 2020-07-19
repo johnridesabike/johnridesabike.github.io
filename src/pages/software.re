@@ -1,4 +1,5 @@
-[%%raw "import { graphql } from 'gatsby'"];
+%raw
+"import { graphql } from 'gatsby'";
 
 let styles = Gatsby.loadCssModule("./index.module.css");
 
@@ -59,9 +60,8 @@ module ExcerptList = {
       <Excerpt
         size=`Wide
         title={j|Maximum weighted matching finder|j}
-        fullPath="https://johnridesa.bike/mwmatching-finder/"
-        thumbnail=mwmatching
-        linkType=`External>
+        fullPath={`External("https://johnridesa.bike/mwmatching-finder/")}
+        thumbnail=mwmatching>
         {j|While I was developing |j}->React.string
         <em> "Coronate"->React.string </em>
         {j| I needed to solve the problem of how to correctly pair chess players.

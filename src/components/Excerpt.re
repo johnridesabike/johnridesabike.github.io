@@ -2,25 +2,24 @@ module PageExcerpt = Query.Fragment.PageExcerpt;
 
 let styles = Gatsby.loadCssModule("./Excerpt.module.css");
 
-type link = [ | `External | `Internal];
+type link = [ | `External(string) | `Internal(string)];
 
 [@react.component]
 module SpecialLink = {
   [@react.component]
   let make =
       (
-        ~type_: link,
-        ~_to,
+        ~_to: link,
         ~children,
         ~rel="",
         ~className="",
         ~ariaHidden=false,
         ~tabIndex=0,
       ) => {
-    switch (type_) {
-    | `External =>
-      <a rel="external" href=_to className ariaHidden tabIndex> children </a>
-    | `Internal =>
+    switch (_to) {
+    | `External(href) =>
+      <a rel="external" href className ariaHidden tabIndex> children </a>
+    | `Internal(_to) =>
       <span ariaHidden>
         <Gatsby.Link _to rel className tabIndex> children </Gatsby.Link>
       </span>
@@ -36,7 +35,6 @@ let make =
       ~className="",
       ~size: size,
       ~fullPath,
-      ~linkType=`Internal,
       ~title,
       ~thumbnail: PageExcerpt.Thumbnail.t,
       ~children,
@@ -54,15 +52,15 @@ let make =
           <:>
           styles##title
         )>
-        <SpecialLink _to=fullPath rel="bookmark" type_=linkType>
+        <SpecialLink _to=fullPath rel="bookmark">
           {React.string(title)}
-          {switch (linkType) {
-           | `External =>
+          {switch (fullPath) {
+           | `External(_) =>
              <React.Fragment>
                {React.string(" ")}
                <Icons.ExternalLink />
              </React.Fragment>
-           | `Internal => React.null
+           | `Internal(_) => React.null
            }}
         </SpecialLink>
       </h3>
@@ -75,8 +73,7 @@ let make =
              _to=fullPath
              className={styles##coverLink}
              ariaHidden=true
-             tabIndex=(-1)
-             type_=linkType>
+             tabIndex=(-1)>
              <img
                width="128"
                height="96"
@@ -92,8 +89,7 @@ let make =
              _to=fullPath
              className={styles##coverLink}
              ariaHidden=true
-             tabIndex=(-1)
-             type_=linkType>
+             tabIndex=(-1)>
              <Gatsby.Img
                fixed
                alt
@@ -112,8 +108,7 @@ let make =
              _to=fullPath
              className={styles##coverLink}
              ariaHidden=true
-             tabIndex=(-1)
-             type_=linkType>
+             tabIndex=(-1)>
              {ReactDOMRe.createElementVariadic(
                 "video",
                 ~props=
@@ -137,11 +132,7 @@ let make =
        }}
       <p className=Cn.("has-small-font-size" <:> styles##text)> children </p>
       <Externals.VisuallyHidden>
-        <SpecialLink
-          _to=fullPath
-          className="button-link__link"
-          rel="bookmark"
-          type_=linkType>
+        <SpecialLink _to=fullPath className="button-link__link" rel="bookmark">
           {"Open " ++ title |> React.string}
         </SpecialLink>
       </Externals.VisuallyHidden>
@@ -161,7 +152,7 @@ let fromQuery = (~size) =>
     React.createElement(
       make,
       makeProps(
-        ~fullPath,
+        ~fullPath=`Internal(fullPath),
         ~thumbnail={
           PageExcerpt.Thumbnail.make(thumbnail);
         },
