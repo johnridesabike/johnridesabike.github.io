@@ -5,7 +5,7 @@ let make = () => {
   let images = Query.useImages();
   <Layout>
     <Seo
-      title="Home"
+      title=`Site
       keywords=[|"librarian", "resume", "software", "woodworking"|]
       description=`Site
     />

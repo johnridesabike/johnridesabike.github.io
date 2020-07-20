@@ -1,4 +1,5 @@
-[%%raw "import { graphql } from 'gatsby'"];
+%raw
+"import { graphql } from 'gatsby'";
 
 let styles = Gatsby.loadCssModule("./index.module.css");
 
@@ -46,7 +47,7 @@ module ExcerptList = {
 [@react.component]
 let make = () =>
   <Layout>
-    <Seo title="Woodworking" description=`Site />
+    <Seo title={`Str("Woodworking")} description=`Site />
     <main id="main" className="site-main page-content"> <ExcerptList /> </main>
   </Layout>;
 

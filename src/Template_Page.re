@@ -66,20 +66,22 @@ query PageByPath($path: String!) {
 ];
 
 [@react.component]
-let make = (~pageContext as _, ~data: Raw.t) => {
-  let {markdownRemark} = parse(data);
-  switch (markdownRemark) {
-  | Some({
-      frontmatter: {
-        title,
-        thumbnail,
-        date,
-        isoDate,
-        attachments,
-        description,
-      },
-      html: Some(html),
-    }) =>
+let make = (~data: Raw.t) => {
+  switch (parse(data)) {
+  | {
+      markdownRemark:
+        Some({
+          html: Some(html),
+          frontmatter: {
+            title,
+            thumbnail,
+            date,
+            isoDate,
+            attachments,
+            description,
+          },
+        }),
+    } =>
     <Layout
       entryHeader={
         <div
@@ -136,7 +138,7 @@ let make = (~pageContext as _, ~data: Raw.t) => {
                  </span>
                </figcaption>
              </figure>
-           | _ => React.null
+           | None => React.null
            }}
           <div className=styles##headerWrap>
             <h1 className=Cn.("has-title-font" <:> styles##title)>
@@ -145,7 +147,7 @@ let make = (~pageContext as _, ~data: Raw.t) => {
           </div>
         </div>
       }>
-      <Seo title description={`Str(description)} />
+      <Seo title={`Str(title)} description={`Str(description)} />
       <main id="main" className="site-main">
         <article>
           <div

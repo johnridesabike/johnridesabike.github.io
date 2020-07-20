@@ -83,7 +83,7 @@ module ExcerptList = {
 [@react.component]
 let make = () =>
   <Layout>
-    <Seo title="Software" description=`Site />
+    <Seo title={`Str("Software")} description=`Site />
     <main id="main" className="site-main page-content"> <ExcerptList /> </main>
   </Layout>;
 
