@@ -1,6 +1,6 @@
-type description = [ | `Site | `Str(string)];
+type metadata = [ | `Site | `Str(string)];
 
 [@react.component]
 let make:
-  (~description: description, ~keywords: array(string)=?, ~title: string) =>
+  (~title: metadata, ~description: metadata, ~keywords: array(string)=?) =>
   React.element;
