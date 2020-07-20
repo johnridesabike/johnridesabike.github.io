@@ -38,15 +38,15 @@
     "@reasonml-community/graphql-ppx"
   ],
   "ppx-flags": [
-    [
-      "@reasonml-community/graphql-ppx/ppx",
-      "-template-tag=graphql",
-      "-fragment-in-query=exclude"
-    ]
+    "@reasonml-community/graphql-ppx/ppx"
   ],
   "refmt": 3,
   "warnings": {
     "number": "+A-48",
     "error": "+A-3-44-102"
+  },
+  "graphql": {
+    "template-tag": "graphql",
+    "fragment-in-query": "exclude"
   }
 }
