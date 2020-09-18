@@ -1,4 +1,4 @@
-module PageExcerpt = Query.Fragment.PageExcerpt;
+module PageExcerpt = QueryFragments.PageExcerpt;
 
 let styles = Gatsby.loadCssModule("./Excerpt.module.css");
 
@@ -36,7 +36,7 @@ let make =
       ~size: size,
       ~fullPath,
       ~title,
-      ~thumbnail: PageExcerpt.Thumbnail.t,
+      ~thumbnail: QueryFragments.Thumbnail.t,
       ~children,
     ) => {
   <article
@@ -154,7 +154,7 @@ let fromQuery = (~size) =>
       makeProps(
         ~fullPath=`Internal(fullPath),
         ~thumbnail={
-          PageExcerpt.Thumbnail.make(thumbnail);
+          QueryFragments.Thumbnail.make(thumbnail);
         },
         ~title,
         ~size,

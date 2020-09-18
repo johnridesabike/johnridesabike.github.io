@@ -9,10 +9,10 @@ let make:
     ~size: size,
     ~fullPath: link,
     ~title: string,
-    ~thumbnail: Query.Fragment.PageExcerpt.Thumbnail.t,
+    ~thumbnail: QueryFragments.Thumbnail.t,
     ~children: React.element
   ) =>
   React.element;
 
 let fromQuery:
-  (~size: size, option(Query.Fragment.PageExcerpt.t)) => React.element;
+  (~size: size, option(QueryFragments.PageExcerpt.t)) => React.element;

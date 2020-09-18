@@ -25,7 +25,7 @@ module PostedOn = {
     </span>;
 };
 
-module ImageFluid = Query.Fragment.ImageFluid;
+module ImageFluid = QueryFragments.ImageFluid;
 
 [%graphql
   {|
@@ -42,13 +42,7 @@ query PageByPath($path: String!) {
         image {
           publicURL
           sharpImg: childImageSharp {
-            mobileImage: fluid(maxWidth: 600) {
-              ...ImageFluid
-            }
-            tabletImage: fluid(maxWidth: 1200) {
-              ...ImageFluid
-            }
-            desktopImage: fluid(maxWidth: 600) {
+            fluid(srcSetBreakpoints: [600, 1200]) {
               ...ImageFluid
             }
           }
@@ -66,8 +60,8 @@ query PageByPath($path: String!) {
 ];
 
 [@react.component]
-let make = (~data: Raw.t) => {
-  switch (parse(data)) {
+let make = (~data) => {
+  switch (data->unsafe_fromJson->parse) {
   | {
       markdownRemark:
         Some({
@@ -95,26 +89,9 @@ let make = (~data: Raw.t) => {
            | Some({caption, image: {publicURL, sharpImg}}) =>
              <figure className=Cn.("full-bleed" <:> styles##coverFigure)>
                {switch (sharpImg) {
-                | Some({
-                    mobileImage: Some(mobileImage),
-                    tabletImage: Some(tabletImage),
-                    desktopImage: Some(desktopImage),
-                  }) =>
+                | Some({fluid: Some(fluid)}) =>
                   <Gatsby.Img
-                    fluid=[|
-                      Gatsby.Img.Fluid.make(
-                        mobileImage,
-                        "(max-width: 600px)",
-                      ),
-                      Gatsby.Img.Fluid.make(
-                        tabletImage,
-                        "(max-width: 1200px)",
-                      ),
-                      Gatsby.Img.Fluid.make(
-                        desktopImage,
-                        "(min-width: 1200px)",
-                      ),
-                    |]
+                    fluid
                     className=styles##coverImg
                     alt=caption
                   />

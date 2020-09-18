@@ -2,7 +2,7 @@ let styles = Gatsby.loadCssModule("./index.module.css");
 
 [@react.component]
 let make = () => {
-  let images = Query.useImages();
+  let images = QueryImages.useQuery();
   <Layout>
     <Seo
       title=`Site

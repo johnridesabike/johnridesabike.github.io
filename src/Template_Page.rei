@@ -1,7 +1,6 @@
-module Raw: {type t;};
-let query: string;
+let query: Gatsby.query;
 
 [@react.component]
-let make: (~data: Raw.t) => React.element;
+let make: (~data: Js.Json.t) => React.element;
 
-let default: {. "data": Raw.t} => React.element;
+let default: {. "data": Js.Json.t} => React.element;

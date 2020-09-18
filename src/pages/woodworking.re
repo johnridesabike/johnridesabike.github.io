@@ -3,11 +3,11 @@
 
 let styles = Gatsby.loadCssModule("./index.module.css");
 
-module PageExcerpt = Query.Fragment.PageExcerpt;
+module PageExcerpt = QueryFragments.PageExcerpt;
 
 [%graphql
   {|
-query WoodworkingPages {
+query WoodworkingPages @ppxConfig(extend: "Gatsby.ExtendQuery")  {
   marbleTable: markdownRemark(fields: {slug: {eq: "marble-top-chessboard-end-table"}}) {
     ...PageExcerpt
   }
@@ -22,9 +22,8 @@ module ExcerptList = {
   let make = () => {
     let query =
       WoodworkingPages.query
-      ->Gatsby.useStaticQueryUnsafe
+      ->WoodworkingPages.useStaticQuery
       ->WoodworkingPages.parse;
-
     <section className={styles##section}>
       <header className={styles##sectionHeader}>
         <h1>

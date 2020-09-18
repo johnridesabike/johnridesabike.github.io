@@ -3,11 +3,11 @@
 
 let styles = Gatsby.loadCssModule("./index.module.css");
 
-module PageExcerpt = Query.Fragment.PageExcerpt;
+module PageExcerpt = QueryFragments.PageExcerpt;
 
 [%graphql
   {|
-query LibraryPages {
+query LibraryPages @ppxConfig(extend: "Gatsby.ExtendQuery") {
   libraryMedia: markdownRemark(fields: {slug: {eq: "library-media"}}) {
     ...PageExcerpt
   }
@@ -51,10 +51,10 @@ module ExcerptList = {
   [@react.component]
   let make = () => {
     let query =
-      LibraryPages.query->Gatsby.useStaticQueryUnsafe->LibraryPages.parse;
-    let videos = Query.useVideos();
+      LibraryPages.query->LibraryPages.useStaticQuery->LibraryPages.parse;
+    let videos = QueryVideos.useQuery();
     let montage =
-      PageExcerpt.Video.{
+      QueryFragments.Video.{
         height: "90",
         width: "160",
         sources:
