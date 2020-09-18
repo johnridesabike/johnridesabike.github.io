@@ -3,11 +3,11 @@
 
 let styles = Gatsby.loadCssModule("./index.module.css");
 
-module PageExcerpt = Query.Fragment.PageExcerpt;
+module PageExcerpt = QueryFragments.PageExcerpt;
 
 [%graphql
   {|
-query SoftwarePages {
+query SoftwarePages @ppxConfig(extend: "Gatsby.ExtendQuery") {
   coronate: markdownRemark(fields: {slug: {eq: "coronate"}}) {
     ...PageExcerpt
   }
@@ -33,15 +33,15 @@ module ExcerptList = {
   [@react.component]
   let make = () => {
     let query =
-      SoftwarePages.query->Gatsby.useStaticQueryUnsafe->SoftwarePages.parse;
+      SoftwarePages.query->SoftwarePages.useStaticQuery->SoftwarePages.parse;
     let mwmatching =
-      switch (Query.useImages().mwmatching) {
+      switch (QueryImages.useQuery().mwmatching) {
       | Some({publicURL: Some(src)}) =>
-        PageExcerpt.Thumbnail.Image({
+        QueryFragments.Thumbnail.Image({
           src,
           alt: "An undirected graph for matching.",
         })
-      | _ => PageExcerpt.Thumbnail.Null
+      | _ => QueryFragments.Thumbnail.Null
       };
     <section className=styles##section>
       <header className={styles##sectionHeader}>

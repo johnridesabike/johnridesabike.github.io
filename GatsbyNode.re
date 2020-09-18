@@ -82,7 +82,7 @@ let pageTemplate = NodeJs.Path.resolve([|"src", "Template_Page.bs.js"|]);
 
 [%graphql
   {|
-query AllMarkdown {
+query AllMarkdown @ppxConfig(taggedTemplate: false, templateTagReturnType: "string") {
   allMarkdownRemark {
     edges {
       node {
@@ -92,8 +92,7 @@ query AllMarkdown {
       }
     }
   }
-}|};
-  {taggedTemplate: false}
+}|}
 ];
 
 let createPages =

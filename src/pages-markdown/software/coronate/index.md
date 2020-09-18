@@ -10,8 +10,6 @@ Coronate is a free, open-source app for managing Swiss-style chess tournaments.
 
 <p><div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://johnridesa.bike/coronate/">Launch Coronate in your browser</a></div></p>
 
-<p><div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://github.com/johnridesabike/coronate/releases/latest">Download Coronate for Mac or PC</a></div></p>
-
 <p><div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://github.com/johnridesabike/coronate">Browse the source code</a></div></p>
 
 ## 🧐 About
@@ -62,7 +60,7 @@ You can edit other player data as well, but you typically won’t need to.
 
 Unlike most web apps, Coronate doesn’t keep your data in “the cloud” (e.g. someone else’s computer). Instead, your data is saved to your browser’s storage. This mostly works well, but it comes with caveats: a) moving data from one device to another is frustrating, b) backing up and making copies of data is frustrating, and c) browsers manage their data differently from each other and are sometimes eager to quietly delete or restrict storage.
 
-Coronate addresses these in a couple of ways. First, you can manually load and save your data through its “options” screen. If you create a tournament on your work laptop and want to ensure its records are preserved, just go to the options and save the file somewhere safe. At any point, you can open Coronate again and load the data. Second, you can use the portable Electron version for Windows (only the Windows version is portable). This will give you a standalone *.exe* file and a *data* folder that you can save where you want: a USB drive, your DropBox, wherever.
+You can manually load and save your data through its “options” screen. If you create a tournament on your work laptop and want to ensure its records are preserved, just go to the options and save the file somewhere safe. At any point, you can open Coronate again and load the data. 
 
 ## 🌅 The future
 

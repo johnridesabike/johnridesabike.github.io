@@ -7,7 +7,7 @@ let make =
       ~description as pageDescription: metadata,
       ~keywords=[||],
     ) => {
-  switch (Query.useSiteMetaData()) {
+  switch (QuerySiteMetadata.useQuery()) {
   | {site: None} => React.null
   | {site: Some({siteMetadata: {description, title, author}})} =>
     let description =

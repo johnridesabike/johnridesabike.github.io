@@ -1,3 +1,20 @@
+type query
+
+module type GraphQLQuery = {
+  module Raw: {
+    type t
+  }
+  type t
+  let query: query
+  external unsafe_fromJson: Js.Json.t => Raw.t = "%identity"
+  let parse: Raw.t => t
+}
+
+module ExtendQuery = (M: GraphQLQuery) => {
+  [@bs.module "gatsby"]
+  external useStaticQuery: query => M.Raw.t = "useStaticQuery"
+}
+
 module Link = {
   [@bs.module "gatsby"] [@react.component]
   external make:
@@ -13,31 +30,11 @@ module Link = {
 };
 
 module Img = {
-  module Fluid = {
-    type t = {
-      src: string,
-      srcSet: string,
-      sizes: string,
-      aspectRatio: float,
-      media: string,
-    };
-    let make =
-        (
-          {Query_Frag_ImageFluid.src, srcSet, sizes, aspectRatio},
-          media,
-        ) => {
-      media,
-      src,
-      srcSet,
-      sizes,
-      aspectRatio,
-    };
-  };
   [@bs.module "gatsby-image"] [@react.component]
   external make:
     (
-      ~fixed: Query_Frag_ImageFixed.t=?,
-      ~fluid: array(Fluid.t)=?,
+      ~fixed: 'unsafe_fixed=?,
+      ~fluid: 'unsafe_fluid=?,
       ~alt: string,
       ~className: string=?,
       ~style: ReactDOMRe.Style.t=?
@@ -47,7 +44,3 @@ module Img = {
 };
 
 [@bs.val] external loadCssModule: string => Js.t({..}) = "require";
-
-[@bs.module "gatsby"]
-external useStaticQueryUnsafe: 'a => 'b = "useStaticQuery";
-

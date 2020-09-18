@@ -15,6 +15,8 @@ props available around the house.
 
 ## Library services
 
+[![Video thumbnail](./curbside-title.jpg "Curbside Service @ CVL")](https://www.facebook.com/chatlibraries/videos/632143977302753/)
+
 [![Video thumbnail](./Entrepreneurial-Mindset-Training-Course-with-John-hTnw1sfOeQQ.jpg "Entrepreneurial Mindset Training Course with John")](https://youtu.be/hTnw1sfOeQQ)
 
 [![Video thumbnail](./How-to-Use-Gale-Forms-qms2A6q78J0.jpg "How to Use Gale Forms")](https://youtu.be/qms2A6q78J0)

@@ -158,7 +158,7 @@ module Sidebar = {
 
   [@react.component]
   let make = () => {
-    let images = Query.useImages();
+    let images = QueryImages.useQuery();
     <aside
       id="secondary" className=Cn.(widgetStyles##widgetArea <:> "has-ui-font")>
       <section className={widgetStyles##widget}>
@@ -208,7 +208,7 @@ let styles = Gatsby.loadCssModule("./Layout.module.css");
 
 [@react.component]
 let make = (~children, ~entryHeader=React.null) => {
-  let siteMetaData = Query.useSiteMetaData();
+  let siteMetaData = QuerySiteMetadata.useQuery();
   <>
     <div id="page" className={styles##site}>
       <Externals.VisuallyHidden>
@@ -217,7 +217,7 @@ let make = (~children, ~entryHeader=React.null) => {
         </a>
       </Externals.VisuallyHidden>
       {switch (siteMetaData) {
-       | Query.SiteMetadata.{
+       | QuerySiteMetadata.{
            site: Some({siteMetadata: {title, description, _}}),
          } =>
          <Header siteTitle=title siteDescription=description entryHeader />
