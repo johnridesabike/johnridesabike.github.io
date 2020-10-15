@@ -1,8 +1,6 @@
 %raw
 "import { graphql } from 'gatsby'";
 
-let styles = Gatsby.loadCssModule("./index.module.css");
-
 module PageExcerpt = QueryFragments.PageExcerpt;
 
 [%graphql
@@ -76,14 +74,14 @@ module ExcerptList = {
           },
       };
     <React.Fragment>
-      <section className={styles##section}>
-        <header className={styles##sectionHeader}>
+      <section className="index__section">
+        <header className="index__sectionHeader">
           <h1>
             <span role="img" ariaHidden=true> {j|📽|j}->React.string </span>
             " Media production"->React.string
           </h1>
         </header>
-        <h2 className={styles##divider}> "Public libraries"->React.string </h2>
+        <h2 className="index__divider"> "Public libraries"->React.string </h2>
         {switch (query.libraryMedia) {
          | None => React.null
          | Some({
@@ -100,8 +98,8 @@ module ExcerptList = {
          }}
       </section>
       <hr />
-      <section className={styles##section}>
-        <header className={styles##sectionHeader}>
+      <section className="index__section">
+        <header className="index__sectionHeader">
           <h1>
             <span role="img" ariaHidden=true> {j|🎓|j}->React.string </span>
             " MLIS portfolio"->React.string
@@ -114,27 +112,27 @@ module ExcerptList = {
             ->React.string
           </p>
         </header>
-        <h2 className={styles##divider}>
+        <h2 className="index__divider">
           "Academic libraries"->React.string
         </h2>
         {Excerpt.fromQuery(~size=`Half, query.academicStudentSupport)}
         {Excerpt.fromQuery(~size=`Half, query.openAccessPres)}
         {Excerpt.fromQuery(~size=`Half, query.academicFacultySupport)}
         {Excerpt.fromQuery(~size=`Half, query.dmp)}
-        <h2 className={styles##divider}>
+        <h2 className="index__divider">
           "Technical services"->React.string
         </h2>
         {Excerpt.fromQuery(~size=`Half, query.opacAnalysis)}
         {Excerpt.fromQuery(~size=`Half, query.collectionDevelopment)}
         {Excerpt.fromQuery(~size=`Wide, query.selectionPolicy)}
-        <h2 className={styles##divider}> "Research"->React.string </h2>
+        <h2 className="index__divider"> "Research"->React.string </h2>
         {Excerpt.fromQuery(~size=`Wide, query.researchHispanic)}
         {Excerpt.fromQuery(~size=`Half, query.twitterRPres)}
         {Excerpt.fromQuery(~size=`Half, query.envAnalysis)}
       </section>
       <hr />
-      <section className={styles##section}>
-        <header className={styles##sectionHeader}>
+      <section className="index__section">
+        <header className="index__sectionHeader">
           <h1> <Icons.Chess /> " Chess at the library."->React.string </h1>
           <p>
             {j|While working at a public library for the last few years,
@@ -143,7 +141,7 @@ module ExcerptList = {
             ->React.string
           </p>
         </header>
-        <h2 className={styles##divider}> "Chess articles"->React.string </h2>
+        <h2 className="index__divider"> "Chess articles"->React.string </h2>
         <Excerpt
           size=`Half
           title={j|Your Library’s First Chess Tournament: From Opening to Endgame|j}

@@ -1,5 +1,3 @@
-let styles = Gatsby.loadCssModule("./index.module.css");
-
 [@react.component]
 let make = () => {
   let images = QueryImages.useQuery();
@@ -10,7 +8,7 @@ let make = () => {
       description=`Site
     />
     <main id="main" className="site-main page-content">
-      <div className={styles##topColumns}>
+      <div className="index__topColumns">
         <figure>
           {switch (images.john2018) {
            | Some({sharpImg: Some({large: Some(fixed), _}), _}) =>
@@ -18,7 +16,7 @@ let make = () => {
            | _ => React.null
            }}
         </figure>
-        <p className=Cn.(styles##hi <:> "has-large-font-size")>
+        <p className="index__hi has-large-font-size">
           {j|Hi, I'm John Jackson.|j}->React.string
         </p>
       </div>
@@ -28,7 +26,7 @@ let make = () => {
 	   bike, write, build, and tinker.|j}
         ->React.string
       </p>
-      <div className={styles##topColumns}>
+      <div className="index__topColumns">
         <div>
           <p>
             <strong>

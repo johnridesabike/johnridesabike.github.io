@@ -1,7 +1,5 @@
 module PageExcerpt = QueryFragments.PageExcerpt;
 
-let styles = Gatsby.loadCssModule("./Excerpt.module.css");
-
 type link = [ | `External(string) | `Internal(string)];
 
 [@react.component]
@@ -41,7 +39,7 @@ let make =
     ) => {
   <article
     className=Cn.(
-      styles##excerpt <:> className <:> on(styles##isWide, size == `Wide)
+      "excerpt__excerpt" <:> className <:> on("excerpt__isWide", size == `Wide)
     )>
     <header className="has-ui-font">
       <h3
@@ -50,7 +48,7 @@ let make =
           <:> "has-medium-font-size"
           <:> "has-no-text-transform"
           <:>
-          styles##title
+          "excerpt__title"
         )>
         <SpecialLink _to=fullPath rel="bookmark">
           {React.string(title)}
@@ -65,29 +63,29 @@ let make =
         </SpecialLink>
       </h3>
     </header>
-    <div className={styles##content}>
+    <div className={"excerpt__content"}>
       {switch (thumbnail) {
        | Image({src, alt}) =>
-         <figure className=Cn.("full-bleed-small" <:> styles##coverFigure)>
+         <figure className="full-bleed-small excerpt__coverFigure">
            <SpecialLink
              _to=fullPath
-             className={styles##coverLink}
+             className={"excerpt__coverLink"}
              ariaHidden=true
              tabIndex=(-1)>
              <img
                width="128"
                height="96"
                src
-               className={styles##coverImg}
+               className={"excerpt__coverImg"}
                alt
              />
            </SpecialLink>
          </figure>
        | FixedImg(fixed, alt) =>
-         <figure className=Cn.("full-bleed-small" <:> styles##coverFigure)>
+         <figure className=Cn.("full-bleed-small" <:> "excerpt__coverFigure")>
            <SpecialLink
              _to=fullPath
-             className={styles##coverLink}
+             className={"excerpt__coverLink"}
              ariaHidden=true
              tabIndex=(-1)>
              <Gatsby.Img
@@ -103,17 +101,17 @@ let make =
            </SpecialLink>
          </figure>
        | Video({height, width, sources}) =>
-         <figure className=Cn.("full-bleed-small" <:> styles##coverFigure)>
+         <figure className="full-bleed-small excerpt__coverFigure">
            <SpecialLink
              _to=fullPath
-             className={styles##coverLink}
+             className={"excerpt__coverLink"}
              ariaHidden=true
              tabIndex=(-1)>
              {ReactDOMRe.createElementVariadic(
                 "video",
                 ~props=
                   ReactDOMRe.objToDOMProps({
-                    "className": styles##coverImg,
+                    "className": "excerpt__coverImg",
                     "autoPlay": true,
                     "muted": true,
                     "loop": true,
@@ -130,7 +128,7 @@ let make =
 
        | Null => React.null
        }}
-      <p className=Cn.("has-small-font-size" <:> styles##text)> children </p>
+      <p className="has-small-font-size excerpt__text"> children </p>
       <Externals.VisuallyHidden>
         <SpecialLink _to=fullPath className="button-link__link" rel="bookmark">
           {"Open " ++ title |> React.string}

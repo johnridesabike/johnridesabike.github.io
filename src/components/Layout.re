@@ -5,45 +5,43 @@ module Header = {
   };
 
   module Menu = {
-    let styles = Gatsby.loadCssModule("./menu.module.css");
-
     [@react.component]
     let make = (~links) => {
       let (menuToggled, setMenuToggled) = React.Uncurried.useState(() => "");
       <>
         <div
-          id="toggle-button" className=Cn.(styles##menuButton <:> menuToggled)>
+          id="toggle-button" className=Cn.("menu__menuButton" <:> menuToggled)>
           <button
-            className={styles##toggle}
+            className={"menu__toggle"}
             ariaControls="primary-menu"
             ariaExpanded=false
             onClick={_ =>
               menuToggled === ""
-                ? setMenuToggled(. styles##toggled)
+                ? setMenuToggled(. _ => "menu__toggled")
                 : setMenuToggled(. _ => "")
             }>
             <Externals.VisuallyHidden>
               "Menu"->React.string
             </Externals.VisuallyHidden>
             <Icons.Menu
-              className=Cn.(styles##toggleIcon <:> styles##menuIcon)
+              className="menu__toggleIcon menu__menuIcon"
             />
             <Icons.Dismiss
-              className=Cn.(styles##toggleIcon <:> styles##dismissIcon)
+              className="menu__toggleIcon menu__dismissIcon"
             />
           </button>
         </div>
         <nav
           id="site-navigation"
-          className=Cn.("has-ui-font" <:> styles##navigation)>
+          className="has-ui-font menu__navigation">
           <ul
             id="primary-menu"
-            className=Cn.(styles##menu <:> menuToggled)
+            className=Cn.("menu__menu" <:> menuToggled)
             ariaExpanded=false>
             {links
              ->Belt.Array.map(({url, title}) =>
-                 <li key=url className={styles##menuItem}>
-                   <Gatsby.Link _to=url className={styles##menuLink}>
+                 <li key=url className="menu__menuItem">
+                   <Gatsby.Link _to=url className="menu__menuLink">
                      title->React.string
                    </Gatsby.Link>
                  </li>
@@ -55,21 +53,19 @@ module Header = {
     };
   };
 
-  let styles = Gatsby.loadCssModule("./header.module.css");
-
   [@react.component]
   let make = (~siteTitle="", ~siteDescription="", ~entryHeader) =>
     <header
       id="masthead"
-      className=Cn.(styles##headerWrapper <:> "smallscreen-padding")>
-      <div id="global-header" className={styles##globalHeader}>
-        <div className={styles##branding}>
-          <p className={styles##title}>
-            <Gatsby.Link _to="/" rel="home" className={styles##linkHome}>
+      className="header__headerWrapper smallscreen-padding">
+      <div id="global-header" className="header__globalHeader">
+        <div className="header__branding">
+          <p className="header__title">
+            <Gatsby.Link _to="/" rel="home" className="header__linkHome">
               siteTitle->React.string
             </Gatsby.Link>
           </p>
-          <p className={styles##description}>
+          <p className="header__description">
             siteDescription->React.string
           </p>
         </div>
@@ -84,20 +80,15 @@ module Header = {
     </header>;
 };
 
-let widgetStyles = Gatsby.loadCssModule("./widgets.module.css");
-
 module Footer = {
-  let styles = Gatsby.loadCssModule("./footer.module.css");
-
   [@react.component]
   let make = () =>
     <footer
       id="colophon"
-      className=Cn.(
-        styles##footerWrapper <:> "has-ui-font" <:> "smallscreen-padding"
-      )>
-      <div className=Cn.(styles##footer <:> widgetStyles##widgetArea)>
-        <section className=Cn.(widgetStyles##widget <:> styles##footerWidget)>
+      className="footer__footerWrapper has-ui-font smallscreen-padding"
+      >
+      <div className="footer__footer widget__widgetArea">
+        <section className="widget__widget footer__footerWidget">
           <p>
             {j|Copyright © 2020 |j}->React.string
             <span property="cc:attributionName">
@@ -105,7 +96,7 @@ module Footer = {
             </span>
           </p>
           <p>
-            <Icons.CreativeCommons height="32" className={styles##ccIcon} />
+            <Icons.CreativeCommons height="32" className="footer__ccIcon" />
             {|All content by John on this site is licensed under a |}
             ->React.string
             <a
@@ -117,7 +108,7 @@ module Footer = {
             "."->React.string
           </p>
         </section>
-        <section className=Cn.(widgetStyles##widget <:> styles##footerWidget)>
+        <section className="widget__widget footer__footerWidget">
           <p>
             {|This website doesn't collect or store anything about you or any of its users.|}
             ->React.string
@@ -160,8 +151,8 @@ module Sidebar = {
   let make = () => {
     let images = QueryImages.useQuery();
     <aside
-      id="secondary" className=Cn.(widgetStyles##widgetArea <:> "has-ui-font")>
-      <section className={widgetStyles##widget}>
+      id="secondary" className="widget__widgetArea has-ui-font">
+      <section className="widget__widget">
         <h4> "About John"->React.string </h4>
         <div>
           {switch (images.john2018) {
@@ -189,7 +180,7 @@ module Sidebar = {
           " if this is your first time here."->React.string
         </p>
       </section>
-      <section className={widgetStyles##widget}>
+      <section className="widget__widget">
         <h4> "Connect with John"->React.string </h4>
         <ul id="menu-social-menu" className="menu">
           {Array.map(socialMenu, ({url, icon, title}) =>
@@ -204,13 +195,11 @@ module Sidebar = {
   };
 };
 
-let styles = Gatsby.loadCssModule("./Layout.module.css");
-
 [@react.component]
 let make = (~children, ~entryHeader=React.null) => {
   let siteMetaData = QuerySiteMetadata.useQuery();
   <>
-    <div id="page" className={styles##site}>
+    <div id="page" className="layout__site">
       <Externals.VisuallyHidden>
         <a className="skip-link" href="#content">
           "Skip to content."->React.string
@@ -224,7 +213,7 @@ let make = (~children, ~entryHeader=React.null) => {
        | {site: None} => <Header entryHeader />
        }}
       <div
-        id="content" className=Cn.(styles##content <:> "smallscreen-padding")>
+        id="content" className="layout__content smallscreen-padding">
         children
         <Sidebar />
       </div>
