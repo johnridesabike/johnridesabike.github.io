@@ -1,5 +1,3 @@
-const path = require('path')
-
 require("dotenv").config();
 const {SiteMetadata} = require("./lib/js/SiteConfig.bs.js");
 
@@ -36,16 +34,7 @@ module.exports = {
         name: "pages"
       }
     },
-    {
-      resolve: "gatsby-plugin-postcss",
-      options: {
-        postCssPlugins: [
-          require("postcss-custom-properties")({
-            importFrom: `${__dirname}/src/styles/variables.css`
-          })
-        ]
-      }
-    },
+    "gatsby-plugin-postcss",
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-transformer-remark",

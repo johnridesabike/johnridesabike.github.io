@@ -1,8 +1,6 @@
 %raw
 "import { graphql } from 'gatsby'";
 
-let styles = Gatsby.loadCssModule("./index.module.css");
-
 module PageExcerpt = QueryFragments.PageExcerpt;
 
 [%graphql
@@ -43,8 +41,8 @@ module ExcerptList = {
         })
       | _ => QueryFragments.Thumbnail.Null
       };
-    <section className=styles##section>
-      <header className={styles##sectionHeader}>
+    <section className="index__section">
+      <header className={"index__sectionHeader"}>
         <h1>
           <Icons.Software height="1em" width="1em" />
           " Software projects"->React.string
@@ -55,7 +53,7 @@ module ExcerptList = {
           ->React.string
         </p>
       </header>
-      <h2 className={styles##divider}> "Apps and coding"->React.string </h2>
+      <h2 className={"index__divider"}> "Apps and coding"->React.string </h2>
       {Excerpt.fromQuery(~size=`Wide, query.coronate)}
       <Excerpt
         size=`Wide
@@ -72,7 +70,7 @@ module ExcerptList = {
       </Excerpt>
       {Excerpt.fromQuery(~size=`Half, query.iosShortcuts)}
       {Excerpt.fromQuery(~size=`Half, query.wordroom)}
-      <h2 className={styles##divider}> "Web development"->React.string </h2>
+      <h2 className={"index__divider"}> "Web development"->React.string </h2>
       {Excerpt.fromQuery(~size=`Wide, query.johnridesabike)}
       {Excerpt.fromQuery(~size=`Half, query.literacyAlliance)}
       {Excerpt.fromQuery(~size=`Half, query.weracoba)}

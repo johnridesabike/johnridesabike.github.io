@@ -9,11 +9,5 @@ import "typeface-source-sans-pro";
 import "typeface-libre-baskerville";
 import "typeface-source-code-pro";
 import "gatsby-prismjs-dracula";
-import "./src/styles/variables.css";
-import "./src/styles/elements.css";
-import "./src/styles/typography.css";
-import "./src/styles/navigation.css";
-import "./src/styles/content.css";
-import "./src/styles/wp-blocks.css";
-import "./src/styles/media.css";
+import "./src/style.css";
 // Cool tools for colors: https://coolors.co & https://www.colourlovers.com

@@ -1,8 +1,6 @@
 %raw
 "import { graphql } from 'gatsby'";
 
-let styles = Gatsby.loadCssModule("./index.module.css");
-
 module PageExcerpt = QueryFragments.PageExcerpt;
 
 [%graphql
@@ -24,8 +22,8 @@ module ExcerptList = {
       WoodworkingPages.query
       ->WoodworkingPages.useStaticQuery
       ->WoodworkingPages.parse;
-    <section className={styles##section}>
-      <header className={styles##sectionHeader}>
+    <section className={"index__section"}>
+      <header className={"index__sectionHeader"}>
         <h1>
           <span role="img" ariaHidden=true> {j|🛠|j}->React.string </span>
           " Woodworking projects"->React.string
@@ -36,7 +34,7 @@ module ExcerptList = {
           ->React.string
         </p>
       </header>
-      <h2 className={styles##divider}> "Guides"->React.string </h2>
+      <h2 className={"index__divider"}> "Guides"->React.string </h2>
       {Excerpt.fromQuery(~size=`Wide, query.marbleTable)}
       {Excerpt.fromQuery(~size=`Wide, query.standingDesk)}
     </section>;

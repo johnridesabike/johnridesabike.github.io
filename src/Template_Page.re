@@ -1,8 +1,6 @@
 %raw
 "import { graphql } from 'gatsby'";
 
-let styles = Gatsby.loadCssModule("./Template_Page.module.css");
-
 /*
  module PostedBy = {
    [@react.component]
@@ -82,17 +80,17 @@ let make = (~data) => {
           className=Cn.(
             "has-ui-font"
             <:>
-            styles##header
-            <:> onSome(styles##hasThumbnail, thumbnail)
+            "page__header"
+            <:> onSome("page__hasThumbnail", thumbnail)
           )>
           {switch (thumbnail) {
            | Some({caption, image: {publicURL, sharpImg}}) =>
-             <figure className=Cn.("full-bleed" <:> styles##coverFigure)>
+             <figure className=Cn.("full-bleed" <:> "page__coverFigure")>
                {switch (sharpImg) {
                 | Some({fluid: Some(fluid)}) =>
                   <Gatsby.Img
                     fluid
-                    className=styles##coverImg
+                    className="page__coverImg"
                     alt=caption
                   />
                 | _ =>
@@ -101,24 +99,23 @@ let make = (~data) => {
                   | Some(publicURL) =>
                     <img
                       src=publicURL
-                      className=styles##coverImg
+                      className="page__coverImg"
                       alt=caption
                     />
                   }
                 }}
                <figcaption
-                 className=Cn.(
-                   styles##coverFigureCaption <:> "has-xsmall-font-size"
-                 )>
-                 <span className=styles##captionText>
+                 className="page__coverFigureCaption has-xsmall-font-size"
+                 >
+                 <span className="page__captionText">
                    caption->React.string
                  </span>
                </figcaption>
              </figure>
            | None => React.null
            }}
-          <div className=styles##headerWrap>
-            <h1 className=Cn.("has-title-font" <:> styles##title)>
+          <div className="page__headerWrap">
+            <h1 className="has-title-font page__title">
               title->React.string
             </h1>
           </div>
@@ -157,8 +154,8 @@ let make = (~data) => {
                 ->React.array}
              </div>
            }}
-          <footer className=Cn.(styles##footer <:> "has-ui-font")>
-            <div className=Cn.(styles##postTime <:> styles##footerItem)>
+          <footer className="page__footer has-ui-font">
+            <div className="page__postTime page__footerItem">
               <PostedOn date isoDate />
             </div>
           </footer>
