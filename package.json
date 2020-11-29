@@ -17,10 +17,11 @@
   "author": "John Jackson",
   "scripts": {
     "build": "concurrently yarn:build:*",
-    "build:css": "postcss style.css -d _site",
     "build:11ty": "ELEVENTY_EXPERIMENTAL=true eleventy",
+    "build:css": "postcss style.css -d _site",
     "clean": "rm -r _site",
-    "deploy": "yarn build && gh-pages -d public -b master",
+    "deploy": "gh-pages -d _site -b master",
+    "predeploy": "yarn build",
     "start": "concurrently yarn:start:*",
     "start:11ty": "ELEVENTY_EXPERIMENTAL=true eleventy --serve",
     "start:css": "postcss style.css -d _site -w"
