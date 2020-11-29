@@ -4,8 +4,8 @@ date: 2019-03-18
 # thumbnail: /assets/images/how-play-chess/Chess.jpg
 # caption: A chess set with USCF rule book.
 attachments:
-    - /assets/attachments/how-play-chess/handout-How-to-Play-Chess.pdf
-    - /assets/attachments/how-play-chess/handout-How-to-Play-Chess.docx
+    - /assets/attachments/handout-How-to-Play-Chess.pdf
+    - /assets/attachments/handout-How-to-Play-Chess.docx
 description: |
   I've run a succesful chess program since 2017. At the time, I couldn't find
   any satisfactory guides to give to participants. This is one that I wrote
@@ -15,6 +15,7 @@ thumbnail: null
 layout: Page.acutis
 tags: chessGuide
 ---
+
 This guide covers all the knowledge required to play a basic game of chess.
 It’s a quick reference resource, one that can answer questions like: “how
 many squares do you move when castling?” or “what conditions make a
@@ -29,8 +30,8 @@ that’s simple yet also covers all the common rules.
 
 Download: [PDF printable booklet][1] *or* [DOCX printable booklet][2]
 
-[1]: /assets/attachments/how-play-chess/handout-How-to-Play-Chess.pdf
-[2]: /assets/attachments/how-play-chess/handout-How-to-Play-Chess.docx
+[1]: /assets/attachments/handout-How-to-Play-Chess.pdf
+[2]: /assets/attachments/handout-How-to-Play-Chess.docx
 
 ## Setting up the board
 
@@ -140,7 +141,7 @@ the only piece that can “hop” over other pieces.
 
 <div class="wp-block-image">
     <figure class="alignright">
-        <img src="/assets/images/how-play-chess/chess_Pawn.svg" alt="The pawn’s moves." />
+        <img src="/assets/vector/how-play-chess/chess_Pawn.svg" alt="" />
         <figcaption>
             The dots mark where the pawns<br/>
             can move, and the Xs mark<br/>
@@ -188,7 +189,9 @@ A player may not castle out of check, into check, or through check. (See
     <div class="wp-block-column">
         <div class="wp-block-image">
             <figure class="aligncenter">
-                <img src="/assets/images/how-play-chess/chess_Castling-part-1.svg" alt="The position before castling."/>
+                <img
+                    src="/assets/vector/how-play-chess/chess_Castling-part-1.svg"
+                    alt="" />
                 <figcaption>Before castling</figcaption>
             </figure>
         </div>
@@ -196,7 +199,9 @@ A player may not castle out of check, into check, or through check. (See
     <div class="wp-block-column">
         <div class="wp-block-image">
             <figure class="aligncenter">
-                <img src="/assets/images/how-play-chess/chess_Castling-part-2.svg" alt="The position after castling." />
+                <img
+                    src="/assets/vector/how-play-chess/chess_Castling-part-2.svg" 
+                    alt="" />
                 <figcaption>After castling</figcaption>
             </figure>
         </div>
@@ -218,7 +223,9 @@ pawn’s two-square move.
     <div class="wp-block-column">
         <div class="wp-block-image">
             <figure class="aligncenter">
-                <img src="/assets/images/how-play-chess/chess_En-passant-part-1.svg" alt="The position before en passant." />
+                <img
+                    src="/assets/vector/how-play-chess/chess_En-passant-part-1.svg" 
+                    alt="" />
                 <figcaption>
                     1. The black pawn advances two spaces.
                 </figcaption>
@@ -228,9 +235,12 @@ pawn’s two-square move.
     <div class="wp-block-column">
         <div class="wp-block-image">
             <figure class="aligncenter">
-                <img src="/assets/images/how-play-chess/chess_En-passant-part-2.svg" alt="The position after en passant."/>
+                <img
+                    src="/assets/vector/how-play-chess/chess_En-passant-part-2.svg" 
+                    alt=""/>
                 <figcaption>
-                    2. The white pawn captures the black pawn as if the black pawn had only advanced one space.
+                    2. The white pawn captures the black pawn as if the black
+                    pawn had only advanced one space.
                 </figcaption>
             </figure>
         </div>
@@ -241,7 +251,9 @@ pawn’s two-square move.
 
 <div class="wp-block-image">
     <figure class="alignright">
-        <img src="/assets/images/how-play-chess/chess_Checkmate.svg" alt="A checkmate position."/>
+        <img
+            src="/assets/vector/how-play-chess/chess_Checkmate.svg"
+            alt=""/>
         <figcaption>
             The black king has been<br/>
             checkmated by the white queen.<br/>
@@ -271,7 +283,9 @@ piece that was previously blocking the king from check.
 
 <div class="wp-block-image">
     <figure class="alignright">
-        <img src="/assets/images/how-play-chess/chess_Stalemate.svg" alt="A stalemate position."/>
+        <img
+            src="/assets/vector/how-play-chess/chess_Stalemate.svg"
+            alt=""/>
         <figcaption>
             Black has no legal move, so<br/>
             this is a stalemate. (If it’s<br/>
@@ -324,7 +338,9 @@ For example, you would say that the kings start on the “_E file_.”
 
 <div class="wp-block-image">
     <figure class="alignright">
-        <img src="/assets/images/how-play-chess/chess_Fork.svg" alt="A fork position." />
+        <img
+            src="/assets/vector/how-play-chess/chess_Fork.svg"
+            alt="" />
         <figcaption>
             The black knight is forking<br/>
             the white king and white queen.<br/>
@@ -354,7 +370,7 @@ advantage_.”
 
 <div class="wp-block-image">
     <figure class="alignright">
-        <img src="/assets/images/how-play-chess/chess_Pin.svg" alt="A pin position."/>
+        <img src="/assets/vector/how-play-chess/chess_Pin.svg" alt=""/>
         <figcaption>
             The white rook is pinning the<br/>
             black knight.

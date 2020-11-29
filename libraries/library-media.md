@@ -62,12 +62,4 @@ props available around the house.
 
 </div>
 
-## Learn to code
-
-<div class="video-thumbnail__link">
-
-[![Coding with John: Part 1](/assets/images/library-media/Coding-with-John-Part-1-Vw_sBSQ9KMQ.jpg)](https://youtu.be/Vw_sBSQ9KMQ)
-
-</div>
-
 </div>

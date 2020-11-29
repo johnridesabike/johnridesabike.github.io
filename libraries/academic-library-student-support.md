@@ -104,9 +104,11 @@ I have to make sure that the student understands how to find what they need
 on a database. I go over a few of the basic strategies, outlined in Table 1:
 LLBA search strategies.
 
+----
+
 <p style="text-align:center" class="has-caption-color">Table 1: LLBA search strategies</p>
 
-<dl class="has-small-font-size">
+<dl class="has-xsmall-font-size">
   <dt>Boolean operators</dt>
   <dd>
     These search words use computer logic to refine results:
@@ -133,6 +135,8 @@ LLBA search strategies.
     “farmers” as well as “farming.” 
   </dd>
 </dl>
+
+----
 
 ### Articles & Books
 
@@ -205,10 +209,13 @@ the table several times, one for each instance of a pronoun. The student can
 then use filters to calculate exactly how many different instances appear for
 each possible combination. See Figure 1 for an example.
 
-<figure class="image__wrapper">
-
-![Screenshot of a spreadsheet](/assets/images/student-support.png "Figure 1: sample data entry.")
-
+<figure class="image__wrapper alignwide">
+  {%~ Img
+      alt="Screenshot of a spreadsheet"
+      width=1200
+      src="/assets/images/student-support.png"
+      / ~%}
+   <figcaption>Figure 1: sample data entry.</figcaption>
 </figure>
 
 A separate table would exist to track citations for each article. That table

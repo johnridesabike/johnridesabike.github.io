@@ -76,7 +76,7 @@
           <section class="widget__widget">
             <h3>About John</h3>
             <div>
-              {% ImgFixed
+              {% Img
                 src="./assets/images/john2018.jpg"
                 alt="A photo of John."
                 width=146

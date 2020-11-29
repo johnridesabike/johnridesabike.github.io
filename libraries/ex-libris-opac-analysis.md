@@ -56,9 +56,10 @@ title, subject, ISBN, and creator. It defaults to “all fields,” which
 searches the entire MARC record. In the advanced interface, the user can
 refine their search with more fields and logical statements.
 
-![Screenshot of Ex Libris basic search form](/assets/images/ex-libris-opac-analysis/alma-search-field.png "Figure 1: Simple search")
+![Figure 1: Simple search](/assets/images/ex-libris-opac-analysis/alma-search-field.png)
 
-![Screenshot of Ex Libris advanced search form](/assets/images/ex-libris-opac-analysis/exlibris-advanced-search.png "Figure 2: Advanced search")
+![Figure 2: Advanced search](/assets/images/ex-libris-opac-analysis/exlibris-advanced-search.png)
+
 
 If the user types a search query, Alma delivers a series of results that list
 the item’s name, author, date, publisher, where the item is available, and
@@ -71,11 +72,7 @@ so on. This interface should require little practice for a library user to
 master, since the information and the controls are logically organized and
 labeled.
 
-<div><div class="alignright">
-
-![A screenshot of Ex Libris.](/assets/images/ex-libris-opac-analysis/exlibris-general-search.png "Figure 3: An example search for \"Edgar Alan Poe.\"")
-
-</div></div>
+![Figure 3: An example search for "Edgar Alan Poe."](/assets/images/ex-libris-opac-analysis/exlibris-general-search.png)
 
 When the user views a book, they see a page with the book’s information (the
 same information from the search results page) along with a tabbed interface
@@ -104,11 +101,11 @@ The “technical view” link, located under this tab, opens the raw MARC data.
 Another tab that users may find useful is the “virtual browse” view, which
 simulates what books will be near the book on the physical shelf.
 
-![A screenshot of Ex Libris.](/assets/images/ex-libris-opac-analysis/exlibris-book-view-1.png "Figure 4: The \"Get It\" tab for an item")
+![Figure 4: The "Get It" tab for an item](/assets/images/ex-libris-opac-analysis/exlibris-book-view-1.png)
 
-![A screenshot of Ex Libris.](/assets/images/ex-libris-opac-analysis/exlibris-book-view-2.png "Figure 5: The \"Details\" tab for an item. The link to view the raw MARC data is highlighted.")
+![Figure 5: The "Details" tab for an item. The link to view the raw MARC data is highlighted.](/assets/images/ex-libris-opac-analysis/exlibris-book-view-2.png)
 
-![A screenshot of Ex Libris.](/assets/images/ex-libris-opac-analysis/exlibris-book-view-3.png "Figure 6: The \"Virtual Browse\" tab for an item")
+![Figure 6: The "Virtual Browse" tab for an item.](/assets/images/ex-libris-opac-analysis/exlibris-book-view-3.png)
 
 ## Search Function Tests
 
@@ -120,7 +117,7 @@ start with that phrase, which would filter out items with titles such as
 “Critical Companion to King Lear.” Each one of these options narrows the
 scope of the search, and thus produces narrower results.
 
-![A screenshot of Ex Libris.](/assets/images/ex-libris-opac-analysis/exlibris-title-search-king-lear.png "Figure 7: A title search for \"King Lear\"")
+![Figure 7: A title search for "King Lear."](/assets/images/ex-libris-opac-analysis/exlibris-title-search-king-lear.png)
 
 If we do an author search for “Shakespeare,” Alma returns everything with
 that keyword in the MARC 100 field. We can use the advanced fields to narrow
@@ -130,9 +127,9 @@ searches for an author’s name, but does not select the author field, Alma
 will search all fields, but seems to default to putting items whose titles
 contain the search terms at the top of the results.
 
-![A screenshot of Ex Libris.](/assets/images/ex-libris-opac-analysis/ex-libris-author-search-2-shakespeare.png "Figure 8: An author search for \"William Shakespeare\"")
+![Figure 8: An author search for "William Shakespeare."](/assets/images/ex-libris-opac-analysis/ex-libris-author-search-2-shakespeare.png)
 
-![A screenshot of Ex Libris.](/assets/images/ex-libris-opac-analysis/ex-libris-author-search-1-shakespeare.png "Figure 9: Searching all fields for \"William Shakespeare\"")
+![Figure 9: Searching all fields for "William Shakespeare."](/assets/images/ex-libris-opac-analysis/ex-libris-author-search-1-shakespeare.png)
 
 If we do a subject search for “southern gothic literature,” we get a wide
 range of results. Alma seems to find items that contain any of the keywords
@@ -143,7 +140,7 @@ search of “southern gothic literature” will return zero results, since no 65
 field has that exact phrase. We would have to break the keywords up in
 separate AND fields in order to get the results we want.
 
-![A screenshot of Ex Libris.](/assets/images/ex-libris-opac-analysis/ex-libris-subject-search-southern-gothic-literature.png "Figure 10: Searching all fields for \"southern gothic literature\"")
+![Figure 10: Searching all fields for "southern gothic literature."](/assets/images/ex-libris-opac-analysis/ex-libris-subject-search-southern-gothic-literature.png)
 
 Finally, if a user just wants to find items based on general keywords, they
 would use the default “all fields” search option. Suppose we’re researching
@@ -153,7 +150,7 @@ This may be useful for certain searches, such as ones that will rely on
 lesser-used MARC fields like 520. In this case, that’s where “allegory” most
 frequently appeared in the item records.
 
-![A screenshot of Ex Libris.](/assets/images/ex-libris-opac-analysis/ex-libris-keyword-search-civil-war-allegory.png "Figure 11: Searching all fields for \"civil war allegory\"")
+![Figure 11: Searching all fields for "civil war allegory."](/assets/images/ex-libris-opac-analysis/ex-libris-keyword-search-civil-war-allegory.png)
 
 ## Error Handling
 
