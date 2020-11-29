@@ -1,0 +1,108 @@
+<article
+  class="
+    excerpt__excerpt
+    {{ class }}
+    {% match isWide with true %} excerpt__isWide
+    {% with false with null %} {* none *}
+    {% /match %}
+    "
+>
+  <header class="has-ui-font">
+    <h3
+      class="
+        has-body-font
+        has-medium-font-size
+        has-no-text-transform
+        excerpt__title"
+    >
+      <a href="{{ fullPath }}" rel="bookmark">
+        {{ title }}
+        {% match isExternal with true %} {% Feather icon="external-link" /%}
+        {% with false %} {* null *}
+        {% /match %}
+      </a>
+    </h3>
+  </header>
+  <div class="excerpt__content">
+    {% match thumbnail 
+       with {image, caption} %}
+     <figure
+      class="full-bleed-small excerpt__coverFigure"
+      style="overflow:hidden">
+       <a
+         href="{{ fullPath }}"
+         class="excerpt__coverLink"
+         aria-hidden="true"
+         tabIndex="-1"
+       >
+        {% ImgFixed
+           src=image
+           class="excerpt__coverImg"
+           alt=caption
+           width=600
+           / %}
+       {*<!--
+         <img
+           width="128"
+           height="96"
+           src="{{ image }}"
+           class="excerpt__coverImg"
+           alt="{{ caption }}"
+         />
+-->*}
+       </a>
+     </figure>
+  {* <!-- | FixedImg(fixed, alt) =>
+     <figure className=Cn.("full-bleed-small" <:> "excerpt__coverFigure")>
+       <SpecialLink
+         _to=fullPath
+         className={"excerpt__coverLink"}
+         ariaHidden=true
+         tabIndex=(-1)>
+         <Gatsby.Img
+           fixed
+           alt
+           style={ReactDOMRe.Style.make(
+             ~position="inherit",
+             ~width="inherit",
+             ~height="inherit",
+             (),
+           )}
+         />
+       </SpecialLink>
+     </figure>
+    -->*}
+    {% with {video, height, width} %}
+     <figure class="full-bleed-small excerpt__coverFigure">
+       <a
+         href="{{ fullPath }}"
+         class="excerpt__coverLink"
+         aria-hidden="true"
+         tabIndex="-1"
+       >
+        <video
+          class="excerpt__coverImg"
+          autoplay
+          muted
+          loop
+          playsinline
+          height="{{ height }}"
+          width="{{ width }}"
+        >
+          {% map video with {src, type} %}
+            <source src="{{ src }}" type="{{ type }}" />
+          {% /map %}
+      </a>
+     </figure>
+    {% with null %} {* null *}
+    {% /match %}
+    <p class="has-small-font-size excerpt__text">
+      {{ Children }}
+    </p>
+    {% VisuallyHidden %}
+    <a href="{{ fullPath }}" class="button-link__link" rel="bookmark">
+      Open {{ title }}
+    </a>
+    {% /VisuallyHidden %}
+  </div>
+</article>

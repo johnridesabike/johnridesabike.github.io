@@ -1,0 +1,77 @@
+{% Layout
+   siteMetadata
+   mainMenu
+   socialMenu
+   description
+   EntryHeader=#%}
+    <div
+      class="has-ui-font page__header
+        {%~ match thumbnail with null ~%}
+        {%~ with _ %} page__hasThumbnail
+        {%~ /match %}"
+    >
+      {% match thumbnail with {caption, image} %}
+        <figure class="full-bleed page__coverFigure">
+          {% ImgFluid
+             src=image
+             alt=caption
+             class=""
+             breakpoints=[600, 1200]
+            /%}
+          <figcaption class="page__coverFigureCaption has-xsmall-font-size">
+            <span class="page__captionText"> {{ caption }}</span>
+          </figcaption>
+        </figure>
+      {% with null %}
+        <!-- no image -->
+      {% /match %}
+      <div class="page__headerWrap">
+        <h1 class="has-title-font page__title">{{ title }}</h1>
+      </div>
+    </div>
+  {%/#
+%}
+<main id="main" class="site-main">
+  <article>
+    <div class="page-content">{% raw content %}</div>
+    <!--{switch (attachments) {
+           | None => React.null
+           | Some(attachments) =>
+             <div id="attachments" class="attachments has-ui-font">
+               <h3> "Downloads"->React.string </h3>
+               {Array.map(
+                  attachments,
+                  fun
+                  | {publicURL: Some(publicURL), extension, name} =>
+                    <div key=publicURL class="wp-block-file">
+                      <a href=publicURL>
+                        {name ++ "." ++ extension |> React.string}
+                      </a>
+                      " "->React.string
+                      <a
+                        href=publicURL
+                        class="wp-block-file__button"
+                        download="true">
+                        "Download"->React.string
+                      </a>
+                    </div>
+                  | _ => React.null,
+                )
+                ->React.array}
+             </div>
+           }}-->
+    <footer class="page__footer has-ui-font">
+      <div class="page__postTime page__footerItem">
+        <!--<PostedOn date isoDate />-->
+        <span>
+          {% DateHTML date %}
+            {% Icon_Calendar class="" /%}
+            Updated on
+            {% DateFormat date /%}
+          {% /DateHTML %}
+        </span>
+      </div>
+    </footer>
+  </article>
+</main>
+{% /Layout %}
