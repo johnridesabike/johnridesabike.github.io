@@ -78,3 +78,6 @@ _esy/
 *.swp
 
 .graphql_ppx_cache/
+
+# Eleventy
+_site

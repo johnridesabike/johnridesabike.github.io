@@ -1,0 +1,142 @@
+<!DOCTYPE html> 
+{% match siteMetadata with {title: siteTitle, description: siteDescription} %}
+<html lang="en-US">
+  <head>
+    <title>
+      {% match title
+         with null %}
+         {{ siteTitle }}
+      {% with title %}
+         {{ title }} | {{ siteTitle }}
+      {% /match %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="description"
+      content="
+        {%~ match description with null ~%} {{ siteDescription }}
+        {%~ with description ~%} description
+        {%~ /match ~%}
+      "
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="preload"
+      as="font"
+      crossorigin
+      href="/files/source-sans-pro-400.woff2"
+    />
+    <link
+      rel="preload"
+      as="font"
+      crossorigin
+      href="/files/source-sans-pro-400italic.woff2"
+    />
+    <link
+      rel="preload"
+      as="font"
+      crossorigin
+      href="/files/source-sans-pro-700.woff2"
+    />
+    <link
+      rel="preload"
+      as="font"
+      crossorigin
+      href="/files/libre-baskerville-latin-400.woff2"
+    />
+  </head>
+  <body>
+    <div id="page" class="layout__site">
+      <a class="skip-nav" href="#content"> Skip to content. </a>
+      <header id="masthead" class="header__headerWrapper smallscreen-padding">
+        <div id="global-header" class="header__globalHeader">
+          <div class="header__branding">
+            <p class="header__title">
+              <a href="/" rel="home" class="header__linkHome">
+                {{ siteTitle }}
+              </a>
+            </p>
+            <p class="header__description">{{ siteDescription }}</p>
+          </div>
+          <nav id="site-navigation" class="has-ui-font menu__navigation">
+            <ul id="primary-menu" class="menu__menu">
+              {% map mainMenu with {path, title} %}
+              <li class="menu__menuItem">
+                <a href="{{ path }}" class="menu__menuLink"> {{ title }} </a>
+              </li>
+              {% /map %}
+            </ul>
+          </nav>
+        </div>
+        {{ EntryHeader }}
+      </header>
+      <div id="content" class="layout__content smallscreen-padding">
+        {{ Children }}
+        <aside id="secondary" class="widget__widgetArea has-ui-font">
+          <section class="widget__widget">
+            <h3>About John</h3>
+            <div>
+              {% ImgFixed
+                src="./assets/images/john2018.jpg"
+                alt="A photo of John."
+                width=146
+                class="avatar alignleft"
+              /%}
+            </div>
+            <p>
+              I’m a public library staffer who is interested in digital library
+              technologies, web development, and libraries of all types.
+            </p>
+            <p>
+              This website is home to my blog, portfolio, and other projects
+              I’ve managed.
+              <a href="/"> Head to the home page </a>
+              if this is your first time here.
+            </p>
+          </section>
+          <section class="widget__widget">
+            <h3>Connect with John</h3>
+            <ul id="menu-social-menu" class="menu">
+              {% map socialMenu with {url, icon, title} %}
+              <li>
+                <a href="{{ url }}"> {% raw icon %} {{ title }}</a>
+              </li>
+              {% /map %}
+            </ul>
+          </section>
+        </aside>
+      </div>
+      <footer
+        id="colophon"
+        class="footer__footerWrapper has-ui-font smallscreen-padding"
+      >
+        <div class="footer__footer widget__widgetArea">
+          <section class="widget__widget footer__footerWidget">
+            <p>
+              Copyright © 2020
+              <span property="cc:attributionName"> John Jackson </span>
+            </p>
+            <p>
+              {% Icon_CreativeCommons height=32 class="footer__ccIcon" /%} All
+              content by John on this site is licensed under a
+              <a
+                rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0"
+              >
+                Creative Commons Attribution-ShareAlike 4.0 International
+                License</a
+              >.
+            </p>
+          </section>
+          <section class="widget__widget footer__footerWidget">
+            <p>
+              This website doesn't collect or store anything about you or any of
+              its users.
+            </p>
+          </section>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+{% /match %}
