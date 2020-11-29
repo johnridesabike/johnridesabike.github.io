@@ -1393,7 +1393,6 @@ object {
 
 .excerpt__coverFigure {
   flex: 1 0 128px;
-  margin-right: 8px;
   align-self: center;
   margin-bottom: 0;
 
@@ -1456,6 +1455,12 @@ object {
 
   .excerpt__coverImg {
     width: 100%;
+  }
+}
+
+@media screen and (--tablet-portrait-up) {
+  .excerpt__coverFigure {
+    margin-right: 8px;
   }
 }
 

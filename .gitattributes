@@ -1,6 +1,5 @@
-# Tell github that .re and .rei files are Reason
-*.re linguist-language=Reason
-*.rei linguist-language=Reason
+# Tell github that .acutis files are HTML
+*.acutis linguist-language=HTML
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text

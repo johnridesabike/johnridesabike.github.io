@@ -1,12 +1,12 @@
-const {compile, renderContextAsync, errorMessage} = require("acutis");
-const {loadTemplate, filenameToComponent} = require("acutis/node-utils");
+const { compile, renderContextAsync, errorMessage } = require("acutis-lang");
+const { loadTemplate, filenameToComponent } = require("acutis-lang/node-utils");
 const fastGlob = require("fast-glob");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
 const contentWidth = 640;
 
-function renderImg({formats, src, alt}) {
+function renderImg({ formats, src, alt }) {
   const opts = {
     widths: [contentWidth, contentWidth * 1.5, contentWidth * 2],
     formats,
@@ -16,40 +16,20 @@ function renderImg({formats, src, alt}) {
   const stats = Image.statsSync("./" + src, opts);
   Image("./" + src, opts);
 
-  function indexToSize(i) {
-    switch (i) {
-      case 0:
-        return "1x";
-      case 1:
-        return "1.5x";
-      case 2:
-        return "2x";
-    }
-  }
+  const indexToSize = (i) => `${i / 2 + 1}x`;
 
-  const defaultFormat = stats[formats[0]];
-  const defaultSrc = defaultFormat[0];
+  const srcset = (format) =>
+    format.map(({ url }, i) => `${url} ${indexToSize(i)}`).join(", ");
 
-  return `<picture>
-      ${Object.values(stats)
-        .map(
-          (imageFormat) =>
-            `  <source type="image/${
-              imageFormat[0].format
-            }" srcset="${imageFormat
-              .map(({url}, i) => `${url} ${indexToSize(i)}`)
-              .join(", ")}" />`
-        )
-        .join("\n")}
-        <img
-          srcset="${defaultFormat
-            .map(({url}, i) => `${url} ${indexToSize(i)}`)
-            .join(", ")}" 
-          src="${defaultSrc.url}"
-          width="${defaultSrc.width}"
-          height="${defaultSrc.height}"
-          alt="${alt}" />
-      </picture>`;
+  const format = stats[formats[0]];
+  const img = format[0];
+
+  return `<img
+    srcset="${srcset(format)}" 
+    src="${img.url}"
+    width="${img.width}"
+    height="${img.height}"
+    alt="${alt}" />`;
 }
 
 function mdImages(md, _ops) {
@@ -57,14 +37,14 @@ function mdImages(md, _ops) {
   md.renderer.rules.image = function (tokens, idx, options, env, self) {
     const token = tokens[idx];
     const src = token.attrs[token.attrIndex("src")][1];
-    const alt = token.children[0].content;
+    const alt = token.content;
     switch (path.extname(src)) {
       case ".svg":
         return defaultRender(tokens, idx, options, env, self);
       case ".png":
-        return renderImg({formats: ["png", "webp"], src, alt});
+        return renderImg({ formats: ["png"], src, alt });
       default:
-        return renderImg({formats: ["jpeg", "webp"], src, alt});
+        return renderImg({ formats: ["jpeg"], src, alt });
     }
   };
 }
@@ -130,6 +110,7 @@ module.exports = function (config) {
     })
       .use(require("markdown-it-footnote"))
       .use(mdImages)
+      .use(require("markdown-it-implicit-figures"), { figcaption: true })
   );
   return {
     templateFormats: ["md", "acutis"],

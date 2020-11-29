@@ -1,6 +1,6 @@
 const path = require("path");
 const Image = require("@11ty/eleventy-img");
-const {makeAst} = require("acutis");
+const { makeAst } = require("acutis-lang");
 
 const ast = makeAst(
   `<div

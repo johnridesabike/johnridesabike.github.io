@@ -162,13 +162,13 @@ I welcome contributions in code, as well as suggestions and bug reports.
 
 ## Screenshots
 
-![Screenshot](/assets/images/coronate/screenshot-round.png "An example round.")
+![An example round.](/assets/images/coronate/screenshot-round.png)
 
-![Screenshot](/assets/images/coronate/screenshot-crosstable.png "The crosstable screen.")
+![The crosstable screen.](/assets/images/coronate/screenshot-crosstable.png)
 
-![Screenshot](/assets/images/coronate/screenshot-score-detail.png "A screen displaying tiebreak details.")
+![A screen displaying tiebreak details.](/assets/images/coronate/screenshot-score-detail.png)
 
-![Screenshot](/assets/images/coronate/screenshot-tourney-list.png "The tournament list screen.")
+![The tournament list screen.](/assets/images/coronate/screenshot-tourney-list.png)
 
-![Screenshot](/assets/images/coronate/screenshot-player-edit.png "A screen editing player information.")
+![A screen editing player information.](/assets/images/coronate/screenshot-player-edit.png)
 

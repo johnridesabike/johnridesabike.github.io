@@ -2,7 +2,7 @@
 <main id="main" class="site-main page-content">
   <div class="index__topColumns">
     <figure>
-      {% ImgFixed
+      {% Img
          src="./assets/images/john2018.jpg"
          alt="A photo of John."
          width=256
@@ -196,9 +196,9 @@
       {% ExcerptPage page isWide=false / %}
     {% /match %}
     <h2 class="index__divider"> Web development </h2>
-    {% match collections with {johnridesabike: [page]} %}
+    {* {% match collections with {johnridesabike: [page]} %}
       {% ExcerptPage page isWide=true / %}
-    {% /match %}
+    {% /match %} *}
     {% match collections with {literacyAlliance: [page]} %}
       {% ExcerptPage page isWide=false / %}
     {% /match %}
@@ -206,6 +206,7 @@
       {% ExcerptPage page isWide=false / %}
     {% /match %}
   </section>
+  <hr />
   <section class="index__section">
     <header class="index__sectionHeader">
       <h1>

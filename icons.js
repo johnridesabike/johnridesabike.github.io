@@ -1,6 +1,6 @@
 const simpleIcons = require("simple-icons");
 
-module.exports.simpleIcon = ({name, className}) => {
+module.exports.simpleIcon = ({ name, className }) => {
   const icon = simpleIcons.get(name);
   return `
     <svg
@@ -10,14 +10,13 @@ module.exports.simpleIcon = ({name, className}) => {
       width="24"
       class="${className}"
       style="fill: #${icon.hex}"
-      aria-label="${icon.title} icon."
-      aria-hidden="false">
+      aria-label="${icon.title} icon.">
       <path d="${icon.path}" />
     </svg>
   `;
 };
 
-module.exports.chess = ({className}) => `
+module.exports.chess = ({ className }) => `
 <svg width="1em" height="1em" viewBox="0 0 45 45" class="${className}">
 <g
   fill="none"

@@ -83,7 +83,7 @@ information that is directly relevant to its patrons, such as local events or
 services.
 
 <figure class="wp-block-image alignwide">
-  {%~ ImgFixed
+  {%~ Img
       src="/assets/images/library-twitter-r-presentation/Slide6.jpeg"
       alt="Slide: Methodology."
       width=1200
@@ -139,7 +139,7 @@ using the “tidy” function with the “beta” variable. Use “ap_topics” 
 the ggplot/geom_colfunctions.
 
 <figure class="wp-block-image alignwide">
-  {%~ ImgFixed
+  {%~ Img
       src="/assets/images/library-twitter-r-presentation/Slide10.jpeg"
       alt="Slide: Results."
       width=1200
@@ -240,7 +240,7 @@ between groups.
 
 
 <figure class="wp-block-image alignwide">
-  {%~ ImgFixed
+  {%~ Img
       src="/assets/images/library-twitter-r-presentation/Slide16.jpeg"
       alt="Slide: References."
       width=1200

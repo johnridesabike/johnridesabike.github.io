@@ -5,7 +5,7 @@ thumbnail:
   image: /assets/images/standing-desk-converter-diy/final.png
   caption: Diagram of the final design.
 attachments:
-    - /assets/attachments/standing-desk-converter-diy/standing_desk.skp.zip
+    - /assets/attachments/standing_desk.skp.zip
 description: |
   I turned a old, regular desk into a fancy new standing desk. This covers
   how I did it, how you can make your own, and some general tips about
@@ -67,9 +67,10 @@ always, measure twice, cut once 😉.
 Sound good? Let’s get started!
 
 ![Diagram of final standing desk.](/assets/images/standing-desk-converter-diy/final.png)
+
 ![Project overview diagram.](/assets/images/standing-desk-converter-diy/standing_desk_overview.png)
 
-[Download the SketchUp file to follow along](/assets/images/standing-desk-converter-diy/standing_desk.skp.zip)
+[Download the SketchUp file to follow along](/assets/attachments/standing_desk.skp.zip)
 
 ### Tools
 
@@ -125,36 +126,33 @@ If that seems confusing, here’s a chart:
 Here are some diagrams to help you visualize it:
 
 <div class="wp-block-columns alignwide has-2-columns">
-    <div class="wp-block-column">
-        <figure class="aligncenter">
+<div class="wp-block-column aligncenter">
 
-![Diagram of how to measure the legs.](/assets/images/standing-desk-converter-diy/standing_desk_leg.png)
-            <figcaption>The “feet” lifting the legs to their new height.</figcaption>
-        </figure>
-        <figure class="aligncenter">
+![The “feet” lifting the legs to their new height.](/assets/images/standing-desk-converter-diy/standing_desk_leg.png)
 
-![Diagram of how to measure the side stretcher.](/assets/images/standing-desk-converter-diy/standing_desk_stretcher_1.png)
-            <figcaption>The side stretcher, laid across the legs, should extend about ¼" on each side.</figcaption>
-        </figure>
-    </div>
-    <div class="wp-block-column">
-        <figure class="aligncenter">
+![The side stretcher, laid across the legs, should extend about ¼" on each side.](/assets/images/standing-desk-converter-diy/standing_desk_stretcher_1.png)
 
-![Diagram of how to measure the middle stretcher.](/assets/images/standing-desk-converter-diy/standing_desk_stretcher_2.png)
-            <figcaption>The long, middle stretcher should lay completely across the front legs.</figcaption>
-        </figure>
-        <figure class="aligncenter">
+</div>
+<div class="wp-block-column">
 
-![Diagram of how the leg fits into the foot.](/assets/images/standing-desk-converter-diy/standing_desk_foot.png)
-            <figcaption>This isn’t an abstract painting, just the top-down view of a leg (the middle square) on the foot with walls and stretcher around it.</figcaption>
-        </figure>
-    </div>
+![The long, middle stretcher should lay completely across the front legs.](/assets/images/standing-desk-converter-diy/standing_desk_stretcher_2.png)
+
+![This isn’t an abstract painting, just the top-down view of a leg (the middle square) on the foot with walls and stretcher around it.](/assets/images/standing-desk-converter-diy/standing_desk_foot.png)
+
+</div>
 </div>
 
 I cut mine entirely out of scrap, but here’s a chart to give you an idea of
 how much wood I used:
 
-![Standing desk cut diagram.](/assets/images/standing-desk-converter-diy/measurements.png "Sample cut diagram from four 2x4x8s.")
+<figure class="alignwide aligncenter">
+  {% Img
+     src="/assets/images/standing-desk-converter-diy/measurements.png"
+     alt=""
+     width=1200
+    / ~%}
+  <figcaption>Sample cut diagram from four 2x4x8s.</figcaption>
+</figure>
 
 ## Step 1: The Feet
 

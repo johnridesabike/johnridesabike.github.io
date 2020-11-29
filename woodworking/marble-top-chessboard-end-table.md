@@ -5,7 +5,7 @@ thumbnail:
   image: /assets/images/marble-top-chessboard-end-table/IMG_0293.jpg
   caption: Photo of the completed table.
 attachments:
-  - /assets/attachments/marble-top-chessboard-end-table/Chess-Table-Sketchup.zip
+  - /assets/attachments/Chess-Table-Sketchup.zip
 description: |
   I made a custom end-table with an old marble chessboard and some
   two-by-fours. This guide covers how it was done, and some tips for building
@@ -29,7 +29,7 @@ shelf without any extra cutting.
 
 [1]: http://www.ana-white.com/2013/10/plans/tryde-end-table-shelf-updated-pocket-hole-plans
 
-[Download the SketchUp file for this project here.](/assets/images/marble-top-chessboard-end-table/Chess-Table-Sketchup.zip)
+[Download the SketchUp file for this project here.](/assets/attachments/Chess-Table-Sketchup.zip)
 
 ## Shopping List
 

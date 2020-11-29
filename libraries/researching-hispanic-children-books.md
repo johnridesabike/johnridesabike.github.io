@@ -89,7 +89,7 @@ differences in Hispanic population size, that a correlation between the two
 variables appears nonexistent or negligible.
 
 
-![Graph of average hispanic population compared to number of titles held by each quartile.](/assets/images/researching-hispanic-children-books/figure1.png "Figure 1.")
+![Figure 1: Graph of average hispanic population compared to number of titles held by each quartile.](/assets/images/researching-hispanic-children-books/figure1.png)
 
 The next variable studied was the number of librarians in each library who
 hold a postgraduate degree in Library Science. The libraries were once again
@@ -113,7 +113,7 @@ is a positive correlation between libraries staffed by those with MLIS
 degrees and the availability of books with strong Hispanic themes and
 representation.
 
-![Graph of average MLIS staff compared to total number of titles held by each quartile.](/assets/images/researching-hispanic-children-books/figure2.png "Figure 2.")
+![Figure 2: Graph of average MLIS staff compared to total number of titles held by each quartile.](/assets/images/researching-hispanic-children-books/figure2.png)
 
 The libraries in the sample were sorted and grouped by one of four location
 types: cities, suburban areas, towns, and rural areas. This resulted in
@@ -138,9 +138,9 @@ in rural areas and 25.4% in towns. Suburban libraries had an average of
 29.79% of all titles per library and libraries within cities had an average
 of 29.68%.
 
-![Graph of percentage of titles held according to locale.](/assets/images/researching-hispanic-children-books/figure3.png "Figure 3.")
+![Figure 3: Graph of percentage of titles held according to locale.](/assets/images/researching-hispanic-children-books/figure3.png)
 
-![Graph of average percent of titles in each library according to locale.](/assets/images/researching-hispanic-children-books/figure4.png "Figure 4.")
+![Figure 4: Graph of average percent of titles in each library according to locale.](/assets/images/researching-hispanic-children-books/figure4.png)
 
 ## Limitations
 

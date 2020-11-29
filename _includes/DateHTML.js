@@ -1,4 +1,4 @@
-const {makeAst} = require("acutis");
+const { makeAst } = require("acutis-lang");
 
 const ast = makeAst(
   `
@@ -9,7 +9,7 @@ const ast = makeAst(
   module.filename
 );
 
-module.exports = (render, {date}, children) =>
+module.exports = (render, { date }, children) =>
   render(
     ast,
     {
