@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg height="256" version="1.1" viewBox="0 0 360 360" width="256"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <g class="white bishop" fill="none" fill-rule="evenodd" id="white-bishop" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+      <g fill="#fff" stroke-linecap="butt">
+        <path d="M9 36c3.39-.97 10.11.43 13.5-2 3.39 2.43 10.11 1.03 13.5 2 0 0 1.65.54 3 2-.68.97-1.65.99-3 .5-3.39-.97-10.11.46-13.5-1-3.39 1.46-10.11.03-13.5 1-1.354.49-2.323.47-3-.5 1.354-1.94 3-2 3-2zM15 32c2.5 2.5 12.5 2.5 15 0 .5-1.5 0-2 0-2 0-2.5-2.5-4-2.5-4 5.5-1.5 6-11.5-5-15.5-11 4-10.5 14-5 15.5 0 0-2.5 1.5-2.5 4 0 0-.5.5 0 2zM25 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 1 1 5 0z" />
+      </g>
+      <path d="M17.5 26h10M15 30h15m-7.5-14.5v5M20 18h5" stroke-linejoin="miter" />
+    </g>
+    <g id="xx" style="fill:none; stroke:#000000; stroke-width:2; stroke-opacity:1; stroke-linecap:round;stroke-linejoin:round; stroke-miterlimit:4; stroke-dasharray:none;">
+      <path d="M 30,30 L 15,15" />
+      <path d="M 30,15 L 15,30" />
+    </g>
+  </defs>
+  <rect class="square dark a1" fill="#d18b47" height="45" stroke="none" width="45" x="0" y="315" />
+  <rect class="square light b1" fill="#ffce9e" height="45" stroke="none" width="45" x="45" y="315" />
+  <rect class="square dark c1" fill="#d18b47" height="45" stroke="none" width="45" x="90" y="315" />
+  <use x="90" xlink:href="#xx" y="315" />
+  <rect class="square light d1" fill="#ffce9e" height="45" stroke="none" width="45" x="135" y="315" />
+  <rect class="square dark e1" fill="#d18b47" height="45" stroke="none" width="45" x="180" y="315" />
+  <rect class="square light f1" fill="#ffce9e" height="45" stroke="none" width="45" x="225" y="315" />
+  <rect class="square dark g1" fill="#d18b47" height="45" stroke="none" width="45" x="270" y="315" />
+  <use x="270" xlink:href="#xx" y="315" />
+  <rect class="square light h1" fill="#ffce9e" height="45" stroke="none" width="45" x="315" y="315" />
+  <rect class="square light a2" fill="#ffce9e" height="45" stroke="none" width="45" x="0" y="270" />
+  <rect class="square dark b2" fill="#d18b47" height="45" stroke="none" width="45" x="45" y="270" />
+  <rect class="square light c2" fill="#ffce9e" height="45" stroke="none" width="45" x="90" y="270" />
+  <rect class="square dark d2" fill="#d18b47" height="45" stroke="none" width="45" x="135" y="270" />
+  <use x="135" xlink:href="#xx" y="270" />
+  <rect class="square light e2" fill="#ffce9e" height="45" stroke="none" width="45" x="180" y="270" />
+  <rect class="square dark f2" fill="#d18b47" height="45" stroke="none" width="45" x="225" y="270" />
+  <use x="225" xlink:href="#xx" y="270" />
+  <rect class="square light g2" fill="#ffce9e" height="45" stroke="none" width="45" x="270" y="270" />
+  <rect class="square dark h2" fill="#d18b47" height="45" stroke="none" width="45" x="315" y="270" />
+  <rect class="square dark a3" fill="#d18b47" height="45" stroke="none" width="45" x="0" y="225" />
+  <rect class="square light b3" fill="#ffce9e" height="45" stroke="none" width="45" x="45" y="225" />
+  <rect class="square dark c3" fill="#d18b47" height="45" stroke="none" width="45" x="90" y="225" />
+  <rect class="square light d3" fill="#ffce9e" height="45" stroke="none" width="45" x="135" y="225" />
+  <rect class="square dark e3" fill="#d18b47" height="45" stroke="none" width="45" x="180" y="225" />
+  <use transform="translate(180, 225)" xlink:href="#white-bishop" />
+  <rect class="square light f3" fill="#ffce9e" height="45" stroke="none" width="45" x="225" y="225" />
+  <rect class="square dark g3" fill="#d18b47" height="45" stroke="none" width="45" x="270" y="225" />
+  <rect class="square light h3" fill="#ffce9e" height="45" stroke="none" width="45" x="315" y="225" />
+  <rect class="square light a4" fill="#ffce9e" height="45" stroke="none" width="45" x="0" y="180" />
+  <rect class="square dark b4" fill="#d18b47" height="45" stroke="none" width="45" x="45" y="180" />
+  <rect class="square light c4" fill="#ffce9e" height="45" stroke="none" width="45" x="90" y="180" />
+  <rect class="square dark d4" fill="#d18b47" height="45" stroke="none" width="45" x="135" y="180" />
+  <use x="135" xlink:href="#xx" y="180" />
+  <rect class="square light e4" fill="#ffce9e" height="45" stroke="none" width="45" x="180" y="180" />
+  <rect class="square dark f4" fill="#d18b47" height="45" stroke="none" width="45" x="225" y="180" />
+  <use x="225" xlink:href="#xx" y="180" />
+  <rect class="square light g4" fill="#ffce9e" height="45" stroke="none" width="45" x="270" y="180" />
+  <rect class="square dark h4" fill="#d18b47" height="45" stroke="none" width="45" x="315" y="180" />
+  <rect class="square dark a5" fill="#d18b47" height="45" stroke="none" width="45" x="0" y="135" />
+  <rect class="square light b5" fill="#ffce9e" height="45" stroke="none" width="45" x="45" y="135" />
+  <rect class="square dark c5" fill="#d18b47" height="45" stroke="none" width="45" x="90" y="135" />
+  <use x="90" xlink:href="#xx" y="135" />
+  <rect class="square light d5" fill="#ffce9e" height="45" stroke="none" width="45" x="135" y="135" />
+  <rect class="square dark e5" fill="#d18b47" height="45" stroke="none" width="45" x="180" y="135" />
+  <rect class="square light f5" fill="#ffce9e" height="45" stroke="none" width="45" x="225" y="135" />
+  <rect class="square dark g5" fill="#d18b47" height="45" stroke="none" width="45" x="270" y="135" />
+  <use x="270" xlink:href="#xx" y="135" />
+  <rect class="square light h5" fill="#ffce9e" height="45" stroke="none" width="45" x="315" y="135" />
+  <rect class="square light a6" fill="#ffce9e" height="45" stroke="none" width="45" x="0" y="90" />
+  <rect class="square dark b6" fill="#d18b47" height="45" stroke="none" width="45" x="45" y="90" />
+  <use x="45" xlink:href="#xx" y="90" />
+  <rect class="square light c6" fill="#ffce9e" height="45" stroke="none" width="45" x="90" y="90" />
+  <rect class="square dark d6" fill="#d18b47" height="45" stroke="none" width="45" x="135" y="90" />
+  <rect class="square light e6" fill="#ffce9e" height="45" stroke="none" width="45" x="180" y="90" />
+  <rect class="square dark f6" fill="#d18b47" height="45" stroke="none" width="45" x="225" y="90" />
+  <rect class="square light g6" fill="#ffce9e" height="45" stroke="none" width="45" x="270" y="90" />
+  <rect class="square dark h6" fill="#d18b47" height="45" stroke="none" width="45" x="315" y="90" />
+  <use x="315" xlink:href="#xx" y="90" />
+  <rect class="square dark a7" fill="#d18b47" height="45" stroke="none" width="45" x="0" y="45" />
+  <use x="0" xlink:href="#xx" y="45" />
+  <rect class="square light b7" fill="#ffce9e" height="45" stroke="none" width="45" x="45" y="45" />
+  <rect class="square dark c7" fill="#d18b47" height="45" stroke="none" width="45" x="90" y="45" />
+  <rect class="square light d7" fill="#ffce9e" height="45" stroke="none" width="45" x="135" y="45" />
+  <rect class="square dark e7" fill="#d18b47" height="45" stroke="none" width="45" x="180" y="45" />
+  <rect class="square light f7" fill="#ffce9e" height="45" stroke="none" width="45" x="225" y="45" />
+  <rect class="square dark g7" fill="#d18b47" height="45" stroke="none" width="45" x="270" y="45" />
+  <rect class="square light h7" fill="#ffce9e" height="45" stroke="none" width="45" x="315" y="45" />
+  <rect class="square light a8" fill="#ffce9e" height="45" stroke="none" width="45" x="0" y="0" />
+  <rect class="square dark b8" fill="#d18b47" height="45" stroke="none" width="45" x="45" y="0" />
+  <rect class="square light c8" fill="#ffce9e" height="45" stroke="none" width="45" x="90" y="0" />
+  <rect class="square dark d8" fill="#d18b47" height="45" stroke="none" width="45" x="135" y="0" />
+  <rect class="square light e8" fill="#ffce9e" height="45" stroke="none" width="45" x="180" y="0" />
+  <rect class="square dark f8" fill="#d18b47" height="45" stroke="none" width="45" x="225" y="0" />
+  <rect class="square light g8" fill="#ffce9e" height="45" stroke="none" width="45" x="270" y="0" />
+  <rect class="square dark h8" fill="#d18b47" height="45" stroke="none" width="45" x="315" y="0" />
+</svg>
