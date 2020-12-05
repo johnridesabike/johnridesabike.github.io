@@ -13,6 +13,8 @@ exports.makeImg = function makeImg(props) {
       format = "jpeg";
       break;
     case ".svg":
+      format = "svg";
+      break;
     case ".png":
       format = "png";
       break;
