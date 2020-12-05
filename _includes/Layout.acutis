@@ -3,12 +3,12 @@
 <html lang="en-US">
   <head>
     <title>
-      {% match title
-         with null %}
+      {%~ match title
+          with null ~%}
          {{ siteTitle }}
-      {% with title %}
+      {%~ with title ~%}
          {{ title }} | {{ siteTitle }}
-      {% /match %}
+      {%~ /match ~%}
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta

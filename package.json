@@ -4,7 +4,8 @@
   "private": true,
   "description": "John Jackson's personal site",
   "keywords": [
-    "gatsby"
+    "eleventy",
+    "acutis"
   ],
   "bugs": {
     "url": "https://github.com/johnridesabike/johnridesabike.github.io/issues"
@@ -21,33 +22,33 @@
     "build:css": "postcss style.css -d _site",
     "clean": "rm -r _site",
     "deploy": "gh-pages -d _site -b master",
-    "predeploy": "yarn build",
+    "predeploy": "yarn clean && yarn build",
     "start": "concurrently yarn:start:*",
     "start:11ty": "ELEVENTY_EXPERIMENTAL=true eleventy --serve",
     "start:css": "postcss style.css -d _site -w"
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-img": "^0.3.0",
-    "acutis-lang": "^0.1.0",
+    "@11ty/eleventy-img": "^0.4.1",
+    "acutis-lang": "^0.2.1",
     "concurrently": "^5.3.0",
     "cssnano": "^4.1.10",
     "fast-glob": "^3.2.4",
     "feather-icons": "^4.28.0",
+    "fontsource-libre-baskerville": "^3.0.9",
+    "fontsource-source-code-pro": "^3.0.10",
+    "fontsource-source-sans-pro": "^3.0.9",
     "gh-pages": "^3.1.0",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-implicit-figures": "^0.10.0",
     "normalize.css": "^8.0.1",
-    "postcss": "^8.1.10",
+    "postcss": "^8.1.14",
     "postcss-cli": "^8.3.0",
     "postcss-custom-media": "^7.0.8",
     "postcss-custom-properties": "^10.0.0",
     "postcss-import": "^13.0.0",
     "prismjs": "^1.22.0",
-    "simple-icons": "^4.0.1",
-    "typeface-libre-baskerville": "0.0.72",
-    "typeface-source-code-pro": "^1.1.3",
-    "typeface-source-sans-pro": "1.1.5"
-  }
+    "simple-icons": "^4.0.1"
+  },
+  "devDependencies": {}
 }

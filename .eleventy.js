@@ -57,13 +57,13 @@ module.exports = function (config) {
   config.addPassthroughCopy("CNAME");
   config.addPassthroughCopy("robots.txt");
   config.addPassthroughCopy({
-    "node_modules/typeface-source-sans-pro/files/*": "files/",
+    "node_modules/fontsource-source-sans-pro/files/*": "files/",
   });
   config.addPassthroughCopy({
-    "node_modules/typeface-libre-baskerville/files/*": "files/",
+    "node_modules/fontsource-libre-baskerville/files/*": "files/",
   });
   config.addPassthroughCopy({
-    "node_modules/typeface-source-code-pro/files/*": "files/",
+    "node_modules/fontsource-source-code-pro/files/*": "files/",
   });
   // Remove stale cache.
   config.on("beforeWatch", (files) =>
