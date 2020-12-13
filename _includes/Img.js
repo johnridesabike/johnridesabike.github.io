@@ -1,4 +1,4 @@
-const { makeAst, errorMessage } = require("acutis-lang");
+const { makeAst } = require("acutis-lang");
 const { makeImg } = require("../img");
 
 const ast = makeAst(
@@ -29,7 +29,7 @@ const ast = makeAst(
       {%~ match class with null %}
       {%~ with class %} class="{{ class }}"
       {%~ /match ~%}
-      lazy
+      loading="lazy"
     />
   {%~ /match %}`,
   module.filename
@@ -39,6 +39,6 @@ module.exports = (render, props, children) =>
   makeImg(props)
     .then((props) => render(ast, props, children))
     .catch((e) => {
-      console.error(errorMessage(e));
+      console.error(e);
       return "";
     });
