@@ -1,4 +1,4 @@
-const { compile, renderContextAsync, errorMessage } = require("acutis-lang");
+const { compile, renderContextAsync, result } = require("acutis-lang");
 const { loadTemplate, filenameToComponent } = require("acutis-lang/node-utils");
 const fastGlob = require("fast-glob");
 const Image = require("@11ty/eleventy-img");
@@ -29,7 +29,8 @@ function renderImg({ formats, src, alt }) {
     src="${img.url}"
     width="${img.width}"
     height="${img.height}"
-    alt="${alt}" />`;
+    alt="${alt}"
+    loading="lazy" />`;
 }
 
 function mdImages(md, _ops) {
@@ -74,6 +75,7 @@ module.exports = function (config) {
     })
   );
   const templates = {};
+  let render = renderContextAsync(templates);
   config.addTemplateFormats("acutis");
   config.addExtension("acutis", {
     read: true,
@@ -88,17 +90,21 @@ module.exports = function (config) {
               }
             })
           )
-        )
+        ).then(() => {
+          render = renderContextAsync(templates);
+        })
       ),
-    compile: (src, inputPath) => (data) => {
-      try {
-        const template = compile(src, inputPath);
-        const render = renderContextAsync(templates);
-        return template(render, data, {});
-      } catch (e) {
-        console.error(errorMessage(e));
-        return "";
-      }
+    compile: (src, inputPath) => (props) => {
+      const template = compile(src, inputPath);
+      return template(render, props, {}).then((x) => {
+        const { data, errors } = result(x);
+        if (data) {
+          return data;
+        } else {
+          console.error(errors);
+          return "";
+        }
+      });
     },
   });
   config.setLibrary(
