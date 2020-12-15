@@ -1,4 +1,4 @@
-const { compile, renderContextAsync, result } = require("acutis-lang");
+const { compile, renderContextAsync } = require("acutis-lang");
 const { loadTemplate, filenameToComponent } = require("acutis-lang/node-utils");
 const fastGlob = require("fast-glob");
 const Image = require("@11ty/eleventy-img");
@@ -96,13 +96,12 @@ module.exports = function (config) {
       ),
     compile: (src, inputPath) => (props) => {
       const template = compile(src, inputPath);
-      return template(render, props, {}).then((x) => {
-        const { data, errors } = result(x);
-        if (data) {
-          return data;
-        } else {
-          console.error(errors);
+      return template(render, props, {}).then(({ NAME, VAL }) => {
+        if (NAME === "errors") {
+          console.error(VAL);
           return "";
+        } else {
+          return VAL;
         }
       });
     },

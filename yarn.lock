@@ -178,10 +178,10 @@ acorn@^4.0.4, acorn@~4.0.2:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
   integrity sha1-EFSVrlNh1pe9GVyCUZLhrX8lN4c=
 
-acutis-lang@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/acutis-lang/-/acutis-lang-0.3.0.tgz#83baab1e4940e93fd09b16aad23a8de444c88ddb"
-  integrity sha512-N5LgqO7ofacfS2ywKxHKf4duBzpVdL0yfreXmPNIGdClcEiv+o3abdcSo9ZiA+ZTWYeIj6HxIq/P2HyMiwhbng==
+acutis-lang@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/acutis-lang/-/acutis-lang-0.4.0.tgz#b5c8c7d7023050ec220b6b788b8f36ee1d0443a8"
+  integrity sha512-7+3OtAUShIPvRWwN/qSyC5ApHrDFdiD+RKC748txoMNZb441Whw485r2ZFMVCGmFkG6FzXrfvUOFPM0EwECX/g==
   dependencies:
     minimist "^1.2.5"
 
