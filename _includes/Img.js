@@ -15,11 +15,11 @@ const ast = makeAst(
   {%~ with {images: [{url, width, height, srcset}, ...rest]} ~%}
     <img
       srcset="
-        {{~ url }} 1x,
+        {{~ url }} 1x
         {%~ map rest
-            with {url}, 0 %} {{ url }} 1.5x,
-        {%~ with {url}, 1 %} {{ url }} 2x,
-        {%~ with {srcset} %} {{ srcset }},
+            with {url}, 0 %}, {{ url }} 1.5x
+        {%~ with {url}, 1 %}, {{ url }} 2x
+        {%~ with {srcset} %}, {{ srcset }}
         {%~ /map ~%}
       "
       src="{{ url }}"
@@ -28,7 +28,7 @@ const ast = makeAst(
       alt="{{ alt }}"
       {%~ match class with null %}
       {%~ with class %} class="{{ class }}"
-      {%~ /match ~%}
+      {%~ /match %}
       loading="lazy"
     />
   {%~ /match %}`,
