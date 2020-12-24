@@ -3,6 +3,7 @@
    mainMenu
    socialMenu
    description
+   build
    EntryHeader=#%}
     <div
       class="has-ui-font page__header

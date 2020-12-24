@@ -130,7 +130,7 @@ Here are some diagrams to help you visualize it:
 
 ![The “feet” lifting the legs to their new height.](/assets/images/standing-desk-converter-diy/standing_desk_leg.png)
 
-![The side stretcher, laid across the legs, should extend about ¼" on each side.](/assets/images/standing-desk-converter-diy/standing_desk_stretcher_1.png)
+![The side stretcher, laid across the legs, should extend about ¼ inches on each side.](/assets/images/standing-desk-converter-diy/standing_desk_stretcher_1.png)
 
 </div>
 <div class="wp-block-column">

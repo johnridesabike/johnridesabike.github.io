@@ -1,4 +1,4 @@
-{% Layout mainMenu socialMenu title=null siteMetadata EntryHeader=#/# %}
+{% Layout mainMenu socialMenu title=null siteMetadata build EntryHeader=#/# %}
 <main id="main" class="site-main page-content">
   <div class="index__topColumns">
     <figure>

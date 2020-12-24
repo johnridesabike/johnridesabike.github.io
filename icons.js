@@ -20,11 +20,11 @@ module.exports.chess = ({ className }) => `
 <svg width="1em" height="1em" viewBox="0 0 45 45" class="${className}">
 <g
   fill="none"
-  fillRule="evenodd"
+  fill-rule="evenodd"
   stroke="#000"
-  strokeWidth="1.5"
-  strokeLinecap="round"
-  strokeLinejoin="round">
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round">
   <path d="M22 10c10.5 1 16.5 8 16 29H15c0-9 10-6.5 8-21" fill="#fff" />
   <path
     d="M24 18c.38 2.91-5.55 7.37-8 9-3 2-2.82 4.34-5 4-1.042-.94
@@ -37,7 +37,7 @@ module.exports.chess = ({ className }) => `
   <path
     d="M14.933 15.75a.5 1.5 30 1 1-.866-.5.5 1.5 30 1 1 .866.5z"
     fill="#000"
-    strokeWidth="1.49997"
+    stroke-width="1.49997"
   />
 </g>
 </svg>

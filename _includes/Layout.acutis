@@ -20,31 +20,17 @@
         {%~ /match ~%}
       "
     />
-    <link rel="stylesheet" href="/style.css" />
-    <link
-      rel="preload"
-      as="font"
-      crossorigin
-      href="/files/source-sans-pro-400.woff2"
-    />
-    <link
-      rel="preload"
-      as="font"
-      crossorigin
-      href="/files/source-sans-pro-400italic.woff2"
-    />
-    <link
-      rel="preload"
-      as="font"
-      crossorigin
-      href="/files/source-sans-pro-700.woff2"
-    />
-    <link
-      rel="preload"
-      as="font"
-      crossorigin
-      href="/files/libre-baskerville-latin-400.woff2"
-    />
+    <link rel="stylesheet" href='{% Webpack asset="main.css" /%}' />
+    {% match build with {assets}
+       map assets with asset
+    ~%}
+       <link
+        rel="preload"
+        as="font"
+        crossorigin
+        href="{% Webpack asset /%}"
+        />
+    {% /map /match ~%}
   </head>
   <body>
     <div id="page" class="layout__site">
