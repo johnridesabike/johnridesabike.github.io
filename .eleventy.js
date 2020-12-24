@@ -3,6 +3,7 @@ const { loadTemplate, filenameToComponent } = require("acutis-lang/node-utils");
 const fastGlob = require("fast-glob");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
+const htmlmin = require("html-minifier");
 
 const contentWidth = 640;
 
@@ -38,7 +39,7 @@ function mdImages(md, _ops) {
   md.renderer.rules.image = function (tokens, idx, options, env, self) {
     const token = tokens[idx];
     const src = token.attrs[token.attrIndex("src")][1];
-    const alt = token.content;
+    const alt = token.attrs[token.attrIndex("alt")][1];
     switch (path.extname(src)) {
       case ".svg":
         return defaultRender(tokens, idx, options, env, self);
@@ -57,15 +58,6 @@ module.exports = function (config) {
   config.addPassthroughCopy(".nojekyll");
   config.addPassthroughCopy("CNAME");
   config.addPassthroughCopy("robots.txt");
-  config.addPassthroughCopy({
-    "node_modules/fontsource-source-sans-pro/files/*": "files/",
-  });
-  config.addPassthroughCopy({
-    "node_modules/fontsource-libre-baskerville/files/*": "files/",
-  });
-  config.addPassthroughCopy({
-    "node_modules/fontsource-source-code-pro/files/*": "files/",
-  });
   // Remove stale cache.
   config.on("beforeWatch", (files) =>
     files.forEach((file) => {
@@ -117,6 +109,22 @@ module.exports = function (config) {
       .use(mdImages)
       .use(require("markdown-it-implicit-figures"), { figcaption: true })
   );
+  if (process.env.ELEVENTY_ENV === "production") {
+    config.addTransform("htmlmin", (content, outputPath) => {
+      // Eleventy 1.0+: use this.inputPath and this.outputPath instead
+      if (outputPath && outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true,
+          minifyCSS: true,
+        });
+        return minified;
+      } else {
+        return content;
+      }
+    });
+  }
   return {
     templateFormats: ["md", "acutis"],
 

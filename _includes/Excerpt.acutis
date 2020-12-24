@@ -84,6 +84,7 @@
           {% map video with {src, type} %}
             <source src="{{ src }}" type="{{ type }}" />
           {% /map %}
+        </video>
       </a>
      </figure>
     {% with null %} {* null *}
