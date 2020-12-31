@@ -1,4 +1,4 @@
-const { compile, renderContextAsync } = require("acutis-lang");
+const Acutis = require("acutis-lang");
 const { loadTemplate, filenameToComponent } = require("acutis-lang/node-utils");
 const fastGlob = require("fast-glob");
 const Image = require("@11ty/eleventy-img");
@@ -67,7 +67,7 @@ module.exports = function (config) {
     })
   );
   const templates = {};
-  let render = renderContextAsync(templates);
+  let env = Acutis.Environment.Async.make(templates);
   config.addTemplateFormats("acutis");
   config.addExtension("acutis", {
     read: true,
@@ -83,12 +83,12 @@ module.exports = function (config) {
             })
           )
         ).then(() => {
-          render = renderContextAsync(templates);
+          env = Acutis.Environment.Async.make(templates);
         })
       ),
     compile: (src, inputPath) => (props) => {
-      const template = compile(src, inputPath);
-      return template(render, props, {}).then(({ NAME, VAL }) => {
+      const template = Acutis.Compile.make(src, inputPath);
+      return template(env, props, {}).then(({ NAME, VAL }) => {
         if (NAME === "errors") {
           console.error(VAL);
           return "";
@@ -104,6 +104,7 @@ module.exports = function (config) {
       html: true,
       breaks: false,
       linkify: true,
+      typographer: true,
     })
       .use(require("markdown-it-footnote"))
       .use(mdImages)

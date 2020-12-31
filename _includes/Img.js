@@ -1,7 +1,7 @@
-const { makeAst } = require("acutis-lang");
+const { Compile } = require("acutis-lang");
 const { makeImg } = require("../img");
 
-const ast = makeAst(
+const ast = Compile.makeAst(
   `{% match image
       with {vector: {src, width}} ~%}
     <img
@@ -35,10 +35,7 @@ const ast = makeAst(
   module.filename
 );
 
-module.exports = (render, props, children) =>
+module.exports = (env, props, children) =>
   makeImg(props)
-    .then((props) => render(ast, props, children))
-    .catch((e) => {
-      console.error(e);
-      return "";
-    });
+    .then((props) => env.render(ast, props, children))
+    .catch((e) => env.error(e.message));
