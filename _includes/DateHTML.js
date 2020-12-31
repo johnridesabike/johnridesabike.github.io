@@ -1,6 +1,6 @@
-const { makeAst } = require("acutis-lang");
+const { Compile } = require("acutis-lang");
 
-const ast = makeAst(
+const ast = Compile.makeAst(
   `
 <time datetime="{{ dateJSON }}">
   {{ Children }}
@@ -9,8 +9,8 @@ const ast = makeAst(
   module.filename
 );
 
-module.exports = (render, { date }, children) =>
-  render(
+module.exports = (env, { date }, children) =>
+  env.render(
     ast,
     {
       dateJSON: date.toJSON(),
