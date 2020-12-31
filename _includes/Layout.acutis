@@ -115,15 +115,25 @@
               >.
             </p>
           </section>
-          <section class="widget__widget footer__footerWidget">
-            <p>
-              This website doesn't collect or store anything about you or any of
-              its users.
-            </p>
-          </section>
         </div>
       </footer>
     </div>
+    <!-- Default Statcounter code for My portfolio site
+    https://johnridesa.bike/ -->
+    <script type="text/javascript">
+      var sc_project=12454167; 
+      var sc_invisible=1; 
+      var sc_security="0cdce85d"; 
+      </script>
+      <script type="text/javascript"
+      src="https://www.statcounter.com/counter/counter.js"
+      async></script>
+      <noscript><div class="statcounter"><a title="free web stats"
+      href="https://statcounter.com/" target="_blank"><img
+      class="statcounter"
+      src="https://c.statcounter.com/12454167/0/0cdce85d/1/"
+      alt="free web stats"></a></div></noscript>
+    <!-- End of Statcounter Code -->
   </body>
 </html>
 {% /match %}
