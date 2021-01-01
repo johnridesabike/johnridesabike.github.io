@@ -189,12 +189,12 @@
       To make these concepts easier for other people to learn, I put together
       this interactive webpage.
     {% /Excerpt %}
-    {% match collections with {iosShortcuts: [page]} %}
+    {* {% match collections with {iosShortcuts: [page]} %}
       {% ExcerptPage page isWide=false / %}
-    {% /match %}
-    {% match collections with {wordroom: [page]} %}
+    {% /match %} *}
+    {* {% match collections with {wordroom: [page]} %}
       {% ExcerptPage page isWide=false / %}
-    {% /match %}
+    {% /match %} *}
     <h2 class="index__divider"> Web development </h2>
     {* {% match collections with {johnridesabike: [page]} %}
       {% ExcerptPage page isWide=true / %}

@@ -1,4 +1,4 @@
 [
-  {"path": "/", "title": "Home"},
-  {"path": "/resume/", "title": "Résumé"}
+  { "path": "/", "title": "Home" },
+  { "path": "/resume/", "title": "Résumé" }
 ]

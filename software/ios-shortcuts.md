@@ -7,6 +7,8 @@ thumbnail:
 description: These are a few iOS shortcut scripts that I've made.
 layout: Page.acutis
 tags: iosShortcuts
+permalink: false
+eleventyExcludeFromCollections: true
 ---
 *These are a few shortcut scripts I've made for Apple's [iOS Shortcuts
 app][1].*
