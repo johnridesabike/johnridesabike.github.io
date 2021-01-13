@@ -5,6 +5,8 @@ const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const htmlmin = require("html-minifier");
 
+const manifestPath = path.resolve(__dirname, "_site", "manifest.json");
+
 const contentWidth = 640;
 
 function renderImg({ formats, src, alt }) {
@@ -51,15 +53,15 @@ function mdImages(md, _ops) {
   };
 }
 
-module.exports = function (config) {
-  config.addPassthroughCopy("assets/attachments");
-  config.addPassthroughCopy("assets/vector");
-  config.addPassthroughCopy("assets/video");
-  config.addPassthroughCopy(".nojekyll");
-  config.addPassthroughCopy("CNAME");
-  config.addPassthroughCopy("robots.txt");
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("assets/attachments");
+  eleventyConfig.addPassthroughCopy("assets/vector");
+  eleventyConfig.addPassthroughCopy("assets/video");
+  eleventyConfig.addPassthroughCopy(".nojekyll");
+  eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy("robots.txt");
   // Remove stale cache.
-  config.on("beforeWatch", (files) =>
+  eleventyConfig.on("beforeWatch", (files) =>
     files.forEach((file) => {
       if (file.endsWith(".js")) {
         delete require.cache[require.resolve(file)];
@@ -68,8 +70,8 @@ module.exports = function (config) {
   );
   const templates = {};
   let env = Acutis.Environment.Async.make(templates);
-  config.addTemplateFormats("acutis");
-  config.addExtension("acutis", {
+  eleventyConfig.addTemplateFormats("acutis");
+  eleventyConfig.addExtension("acutis", {
     read: true,
     data: true,
     init: () =>
@@ -98,7 +100,7 @@ module.exports = function (config) {
       });
     },
   });
-  config.setLibrary(
+  eleventyConfig.setLibrary(
     "md",
     require("markdown-it")({
       html: true,
@@ -110,8 +112,16 @@ module.exports = function (config) {
       .use(mdImages)
       .use(require("markdown-it-implicit-figures"), { figcaption: true })
   );
+  eleventyConfig.setBrowserSyncConfig({
+    ...eleventyConfig.browserSyncConfig,
+    // Reload when manifest file changes
+    files: [manifestPath],
+    // Speed/clean up build time
+    ui: false,
+    ghostMode: false,
+  });
   if (process.env.ELEVENTY_ENV === "production") {
-    config.addTransform("htmlmin", (content, outputPath) => {
+    eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
       // Eleventy 1.0+: use this.inputPath and this.outputPath instead
       if (outputPath && outputPath.endsWith(".html")) {
         let minified = htmlmin.minify(content, {

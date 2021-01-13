@@ -1,7 +1,8 @@
 @import "normalize.css";
-@import "fontsource-source-sans-pro";
-@import "fontsource-libre-baskerville";
-@import "fontsource-source-code-pro";
+@import "@fontsource/source-sans-pro/400.css";
+@import "@fontsource/source-sans-pro/700.css";
+@import "@fontsource/libre-baskerville/400.css";
+@import "@fontsource/source-code-pro/400.css";
 
 /*******************************************************************************
 # Variables
