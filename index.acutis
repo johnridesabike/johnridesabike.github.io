@@ -174,9 +174,20 @@
     {% /match %}
     {% Excerpt
       isWide=true
+      title="Acutis template language"
+      fullPath="https://johnridesa.bike/acutis/"
+      isExternal=false
+      class=""
+    %}
+      Acutis is a template engine I wrote from scratch that uses pattern
+      matching, strong typing, asynchronous templates, and template
+      components. This website is built with it!
+    {% /Excerpt %}
+    {% Excerpt
+      isWide=true
       title="Maximum weighted matching finder"
       fullPath="https://johnridesa.bike/mwmatching-finder/"
-      isExternal=true
+      isExternal=false
       thumbnail={
         image: "/assets/vector/mwmatching.svg",
         caption: "An undirected graph for matching."
