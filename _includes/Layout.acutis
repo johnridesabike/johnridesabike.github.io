@@ -14,11 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta
       name="description"
-      content="
-        {%~ match description with null ~%} {{ siteDescription }}
-        {%~ with description ~%} description
-        {%~ /match ~%}
-      "
+      content="{{ description ? siteDescription }}"
     />
     <link rel="stylesheet" href='{% Webpack asset="main.css" /%}' />
     {% match build with {assets}
@@ -86,7 +82,7 @@
             <ul id="menu-social-menu" class="menu">
               {% map socialMenu with {url, icon, title} %}
               <li>
-                <a href="{{ url }}"> {% raw icon %} {{ title }}</a>
+                <a href="{{ url }}"> {{ &icon }} {{ title }}</a>
               </li>
               {% /map %}
             </ul>
