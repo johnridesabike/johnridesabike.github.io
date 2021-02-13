@@ -1,8 +1,8 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
+//const { ESBuildPlugin, ESBuildMinifyPlugin } = require("esbuild-loader");
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -17,13 +17,14 @@ module.exports = {
   // `All values enable source map generation except eval and false value.`
   // https://github.com/webpack-contrib/css-loader
   devtool: isDev ? "cheap-module-source-map" : "source-map",
-  entry: [path.resolve(__dirname, "style.css")],
+  entry: [path.resolve(__dirname, "assets", "style.css")],
   output: {
     filename: isDev ? "[name].js" : "[name].[contenthash].js",
-    path: path.resolve(__dirname, "_site/"),
-    publicPath: "/",
+    path: path.resolve(__dirname, "_site/", "assets"),
+    publicPath: "/assets/",
   },
   plugins: [
+    // new ESBuildPlugin(),
     new WebpackManifestPlugin(),
     new MiniCssExtractPlugin({
       filename: isDev ? "[name].css" : "[name].[contenthash].css",
@@ -32,15 +33,28 @@ module.exports = {
   optimization: isDev
     ? {}
     : {
-        minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+        minimize: true,
+        minimizer: [
+          /*
+          new ESBuildMinifyPlugin({
+            target: "es2015",
+          }),
+          */
+          new CssMinimizerPlugin(),
+        ],
       },
   module: {
     rules: [
+      /*
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: "esbuild-loader",
+        options: {
+          target: "es2015",
+        },
       },
+      */
       {
         test: /\.s?css/i,
         use: [

@@ -1,7 +1,13 @@
 const fs = require("fs").promises;
 const path = require("path");
 
-const manifestPath = path.resolve(__dirname, "../_site/manifest.json");
+const manifestPath = path.resolve(
+  __dirname,
+  "..",
+  "_site",
+  "assets",
+  "manifest.json"
+);
 
 module.exports = () =>
   fs.readFile(manifestPath, { encoding: "utf8" }).then((manifestData) => ({

@@ -1,11 +1,17 @@
-const Acutis = require("acutis-lang");
 const { loadTemplate, filenameToComponent } = require("acutis-lang/node-utils");
 const fastGlob = require("fast-glob");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const htmlmin = require("html-minifier");
+const acutis = require("./_11ty/eleventyAcutis");
+const acutisComponents = require("./_includes/acutisComponents");
 
-const manifestPath = path.resolve(__dirname, "_site", "manifest.json");
+const manifestPath = path.resolve(
+  __dirname,
+  "_site",
+  "assets",
+  "manifest.json"
+);
 
 const contentWidth = 640;
 
@@ -60,46 +66,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy(".nojekyll");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("robots.txt");
-  // Remove stale cache.
-  eleventyConfig.on("beforeWatch", (files) =>
-    files.forEach((file) => {
-      if (file.endsWith(".js")) {
-        delete require.cache[require.resolve(file)];
-      }
-    })
-  );
-  const templates = {};
-  let env = Acutis.Environment.Async.make(templates);
-  eleventyConfig.addTemplateFormats("acutis");
-  eleventyConfig.addExtension("acutis", {
-    read: true,
-    data: true,
-    init: () =>
-      fastGlob("./_includes/**/*.(js|mjs|acutis)").then((files) =>
-        Promise.all(
-          files.map((fileName) =>
-            loadTemplate(fileName).then((file) => {
-              if (file) {
-                templates[filenameToComponent(fileName)] = file;
-              }
-            })
-          )
-        ).then(() => {
-          env = Acutis.Environment.Async.make(templates);
-        })
-      ),
-    compile: (src, inputPath) => (props) => {
-      const template = Acutis.Compile.make(src, inputPath);
-      return template(env, props, {}).then(({ NAME, VAL }) => {
-        if (NAME === "errors") {
-          console.error(VAL);
-          return "";
-        } else {
-          return VAL;
-        }
-      });
-    },
-  });
+  eleventyConfig.addPlugin(acutis, { components: acutisComponents });
   eleventyConfig.setLibrary(
     "md",
     require("markdown-it")({
@@ -138,22 +105,9 @@ module.exports = function (eleventyConfig) {
   }
   return {
     templateFormats: ["md", "acutis"],
-
-    // If your site lives in a different subdirectory, change this.
-    // Leading or trailing slashes are all normalized away, so don’t worry about those.
-
-    // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
-    // This is only used for link URLs (it does not affect your file structure)
-    // Best paired with the `url` filter: https://www.11ty.dev/docs/filters/url/
-
-    // You can also pass this in on the command line using `--pathprefix`
-    // pathPrefix: "/",
-
     markdownTemplateEngine: "acutis",
     htmlTemplateEngine: "acutis",
     dataTemplateEngine: "acutis",
-
-    // These are all optional, defaults are shown:
     dir: {
       input: ".",
       includes: "_includes",
