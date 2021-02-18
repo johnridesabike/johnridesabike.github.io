@@ -1,32 +1,22 @@
 <!DOCTYPE html> 
-{% match siteMetadata with {title: siteTitle, description: siteDescription} %}
-<html lang="en-US">
+{% match siteMetadata with {title: siteTitle, description: siteDescription} ~%}
+<html lang="en-US" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>
-    <title>
-      {%~ match title
-          with null ~%}
-         {{ siteTitle }}
-      {%~ with title ~%}
-         {{ title }} | {{ siteTitle }}
-      {%~ /match ~%}
-    </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta
-      name="description"
-      content="{{ description ? siteDescription }}"
-    />
     <link rel="stylesheet" href='{% Webpack asset="main.css" /%}' />
-    {% match build with {assets}
-       map assets with asset
-    ~%}
-       <link
-        rel="preload"
-        as="font"
-        crossorigin
-        href="{% Webpack asset /%}"
-        />
-    {% /map /match ~%}
+    {% map [
+        "node_modules/@fontsource/libre-baskerville/files/libre-baskerville-latin-400-normal.woff2",
+        "node_modules/@fontsource/libre-baskerville/files/libre-baskerville-latin-ext-400-normal.woff2",
+        "node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-400-normal.woff2",
+        "node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-400-italic.woff2",
+        "node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-700-normal.woff2",
+        "node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-700-italic.woff2"
+      ]
+      with asset ~%}
+      <link rel="preload" as="font" crossorigin href="{% Webpack asset /%}" />
+    {% /map ~%}
+    {% Metadata siteMetadata title description absoluteUrl thumbnail contentType / %}
   </head>
   <body>
     <div id="page" class="layout__site">
@@ -114,22 +104,25 @@
         </div>
       </footer>
     </div>
-    <!-- Default Statcounter code for My portfolio site
-    https://johnridesa.bike/ -->
-    <script type="text/javascript">
-      var sc_project=12454167; 
-      var sc_invisible=1; 
-      var sc_security="0cdce85d"; 
-      </script>
-      <script type="text/javascript"
-      src="https://www.statcounter.com/counter/counter.js"
-      async></script>
-      <noscript><div class="statcounter"><a title="free web stats"
-      href="https://statcounter.com/" target="_blank"><img
-      class="statcounter"
-      src="https://c.statcounter.com/12454167/0/0cdce85d/1/"
-      alt="free web stats"></a></div></noscript>
-    <!-- End of Statcounter Code -->
+    {% match build with {environment: "production"} ~%}
+      <!-- Default Statcounter code for My portfolio site
+      https://johnridesa.bike/ -->
+      <script type="text/javascript">
+        var sc_project=12454167; 
+        var sc_invisible=1; 
+        var sc_security="0cdce85d"; 
+        </script>
+        <script type="text/javascript"
+        src="https://www.statcounter.com/counter/counter.js"
+        async></script>
+        <noscript><div class="statcounter"><a title="free web stats"
+        href="https://statcounter.com/" target="_blank"><img
+        class="statcounter"
+        src="https://c.statcounter.com/12454167/0/0cdce85d/1/"
+        alt="free web stats"></a></div></noscript>
+      <!-- End of Statcounter Code -->
+    {% with _ %} <!-- Don't show tracking in development -->
+    {% /match %}
   </body>
 </html>
 {% /match %}

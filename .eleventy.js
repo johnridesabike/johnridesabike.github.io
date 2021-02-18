@@ -1,5 +1,3 @@
-const { loadTemplate, filenameToComponent } = require("acutis-lang/node-utils");
-const fastGlob = require("fast-glob");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const htmlmin = require("html-minifier");
@@ -19,8 +17,8 @@ function renderImg({ formats, src, alt }) {
   const opts = {
     widths: [contentWidth, contentWidth * 1.5, contentWidth * 2],
     formats,
-    urlPath: "/assets/images/",
-    outputDir: "./_site/assets/images/",
+    urlPath: "/assets/images/minified/",
+    outputDir: path.join(".", "_site", "assets", "images", "minified"),
   };
   const stats = Image.statsSync("./" + src, opts);
   Image("./" + src, opts);
@@ -63,6 +61,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets/attachments");
   eleventyConfig.addPassthroughCopy("assets/vector");
   eleventyConfig.addPassthroughCopy("assets/video");
+  eleventyConfig.addPassthroughCopy("assets/images");
   eleventyConfig.addPassthroughCopy(".nojekyll");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("robots.txt");

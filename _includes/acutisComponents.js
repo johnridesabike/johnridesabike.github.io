@@ -4,31 +4,6 @@ const fs = require("fs").promises;
 const path = require("path");
 const { makeImg } = require("../_11ty/img");
 
-const formatter = new Intl.DateTimeFormat("en-US", {
-  dateStyle: "long",
-});
-
-module.exports.DateFormat = (env, { date }, _children) =>
-  env.return(formatter.format(date));
-
-const astDateHTML = Compile.makeAst(
-  `
-  <time datetime="{{ dateJSON }}">
-    {{ Children }}
-  </time>
-  `,
-  "DateHTML"
-);
-
-module.exports.DateHTML = (env, { date }, children) =>
-  env.render(
-    astDateHTML,
-    {
-      dateJSON: date.toJSON(),
-    },
-    children
-  );
-
 module.exports.Feather = (env, { icon }, _children) =>
   env.return(icons[icon].toSvg());
 
@@ -79,9 +54,13 @@ const manifestPath = path.resolve(
   "manifest.json"
 );
 
+const manifest = fs
+  .readFile(manifestPath, "utf-8")
+  .then((data) => JSON.parse(data));
+
 module.exports.Webpack = (env, props, _children) =>
-  fs.readFile(manifestPath, { encoding: "utf8" }).then((data) => {
-    const x = JSON.parse(data)[props.asset];
+  manifest.then((data) => {
+    const x = data[props.asset];
     if (x) {
       return env.return(x);
     } else {

@@ -3,7 +3,7 @@ title: Résumé
 date: 2020-11-29
 description: John Jackson's Résumé
 layout: Page.acutis
-
+thumbnail: null
 ---
 
 I’m a public library staffer and MLIS graduate who is interested in digital

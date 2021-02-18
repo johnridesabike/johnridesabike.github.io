@@ -1,4 +1,18 @@
-{% Layout mainMenu socialMenu title=null siteMetadata build EntryHeader=#/# %}
+{% Layout
+    mainMenu
+    socialMenu
+    title=null
+    description=null
+    thumbnail={
+      image: "/assets/images/john2018.jpg",
+      caption: "A photo of John."
+    }
+    siteMetadata
+    build
+    absoluteUrl
+    contentType="website"
+    EntryHeader=#/#
+%}
 <main id="main" class="site-main page-content">
   <div class="index__topColumns">
     <figure>
