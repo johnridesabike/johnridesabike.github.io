@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-img": "^0.7.8",
+    "@11ty/eleventy-img": "^0.8.0",
     "@fontsource/libre-baskerville": "^4.2.1",
     "@fontsource/source-code-pro": "^4.2.1",
     "@fontsource/source-sans-pro": "^4.2.1",

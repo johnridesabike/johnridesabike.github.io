@@ -29,8 +29,8 @@ exports.makeImg = function makeImg(props) {
     return Image("./" + props.src, {
       widths: [props.width, props.width * 1.5, props.width * 2],
       formats: [format],
-      urlPath: "/assets/images/",
-      outputDir: "./_site/assets/images/",
+      urlPath: "/assets/images/minified/",
+      outputDir: path.join(".", "_site", "assets", "images", "minified"),
     }).then((stats) => {
       props.image = { images: stats[format] };
       return props;

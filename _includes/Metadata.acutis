@@ -1,0 +1,39 @@
+{% match siteMetadata with {title: siteTitle, description: siteDescription} %}
+<meta property="og:site_name" content="{{ siteTitle }}" />
+<title>
+  {%~ match title
+      with null ~%}
+     {{ siteTitle }}
+  {%~ with title ~%}
+     {{ title }} | {{ siteTitle }}
+  {%~ /match ~%}
+</title>
+<meta property="og:title" content="{{ title ? siteTitle }}" />
+
+{% match absoluteUrl
+  with null %} <!-- no absoluteUrl -->
+  {% with absoluteUrl %}
+  <link rel="canonical" href="{{ absoluteUrl }}" />
+  <meta property="og:url" content="{{ absoluteUrl }}" />
+{% /match %}
+<meta property="og:type" content='{{ contentType ? "website" }}' />
+<meta
+  name="description"
+  property="og:description"
+  content="{{ description ? siteDescription }}"
+/>
+{% match thumbnail
+  with null %}
+    <!-- No thumbnail -->
+  {% with {image, caption} %}
+  <meta
+    property="og:image"
+    content="{{ image }}"
+  />
+  <meta
+    name="twitter:image:alt"
+    property="og:image:alt"
+    content="{{ caption }}"
+  />
+{% /match %}
+{% /match %}

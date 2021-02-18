@@ -4,6 +4,11 @@
    socialMenu
    description
    build
+   thumbnail
+   title
+   description
+   absoluteUrl
+   contentType="article"
    EntryHeader=#%}
     <div
       class="has-ui-font page__header
@@ -39,11 +44,11 @@
     <footer class="page__footer has-ui-font">
       <div class="page__postTime page__footerItem">
         <span>
-          {% DateHTML date %}
+          <time datetime="{{ isoDate }}">
             {% Icon_Calendar class="" /%}
             Updated on
-            {% DateFormat date /%}
-          {% /DateHTML %}
+            {{ formattedDate }}
+          </time>
         </span>
       </div>
     </footer>

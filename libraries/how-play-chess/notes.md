@@ -6,6 +6,7 @@ description: |
   any satisfactory guides to give to participants. This is one that I wrote
   myself which aims to cover all of the necessary knowledge without being too
   long or too short.
+thumbnail: null
 layout: Page.acutis
 ---
 <nav class="post-nav-links">
