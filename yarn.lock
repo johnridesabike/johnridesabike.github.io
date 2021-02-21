@@ -144,10 +144,10 @@
     mkdirp "^1.0.4"
     rimraf "^2.7.1"
 
-"@rescript/std@^9.0.0":
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/@rescript/std/-/std-9.0.0.tgz#df53f3fa5911cb4e85bd66b92e9e58ddf3e4a7e1"
-  integrity sha512-zGzFsgtZ44mgL4Xef2gOy1hrRVdrs9mcxCOOKZrIPsmbZW14yTkaF591GXxpQvjXiHtgZ/iA9qLyWH6oSReIxQ==
+"@rescript/std@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@rescript/std/-/std-9.0.1.tgz#4597be595256f79f4c2f3eaeb56981340e18e700"
+  integrity sha512-JUdxfVjHjRzrTwcZbLaPHEzN3id6XGdLFxubp6Bimj0/1CmIYgfLaUhflac1KAyI1lKIM2Htrz6U6bHkuihnZg==
 
 "@types/babel-types@*", "@types/babel-types@^7.0.0":
   version "7.0.9"
@@ -395,12 +395,12 @@ acorn@^8.0.4:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.0.5.tgz#a3bfb872a74a6a7f661bc81b9849d9cac12601b7"
   integrity sha512-v+DieK/HJkJOpFBETDJioequtc3PfxsWMaxIdIwujtF7FEV/MAyDQLlm6/zPvr7Mix07mLh6ccVwIsloceodlg==
 
-acutis-lang@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/acutis-lang/-/acutis-lang-0.9.0.tgz#ba1aeaee2fcb559564b491bd845d44f3041f6368"
-  integrity sha512-94n8DrHHfxrWUdSmLU/ZD0GNNPAnymGRH0V+qZwbgp9S+kV5gAOf9htt5UOQT/gZClpZM6/aCxIuD/ytDcw2vA==
+acutis-lang@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/acutis-lang/-/acutis-lang-0.10.0.tgz#271075be7a04f7158a71943b0779cc86bde8e19f"
+  integrity sha512-EWAFNcaa9cQvPG9vKfFEoMzvw44xAHkHwAJ56gVUqFXl6x3eeg4gCgKn40+LTfG1Es7NhwiB5L6dr8tAaAbTyQ==
   dependencies:
-    "@rescript/std" "^9.0.0"
+    "@rescript/std" "^9.0.1"
     minimist "^1.2.5"
 
 after@0.8.2:

@@ -2,59 +2,58 @@ const path = require("path");
 const fs = require("fs");
 const util = require("util");
 const fastGlob = require("fast-glob");
-const { Compile, Environment } = require("acutis-lang");
+const { Compile, Environment, Result, Source } = require("acutis-lang");
 const { filenameToComponent } = require("acutis-lang/node-utils");
 
 const readFile = util.promisify(fs.readFile);
 
-const cache = new Map();
+function onComponentsError(e) {
+  console.error(e);
+  throw new Error(
+    "I couldn't compile Acutis components due to the previous errors."
+  );
+}
 
-module.exports = (eleventyConfig, config) => {
-  let env = Environment.Async.make({});
+module.exports = function (eleventyConfig, config) {
+  let env = Environment.Async.make(Compile.emptyMap);
   eleventyConfig.addTemplateFormats("acutis");
   eleventyConfig.addExtension("acutis", {
     read: true,
     data: true,
-    init: function () {
-      const filesGlob = path.join(
+    init: async function () {
+      const glob = path.join(
         this.config.inputDir,
         this.config.dir.includes,
         "**/*.acutis"
       );
-      const components = {};
-      return fastGlob(filesGlob)
-        .then((files) =>
-          Promise.all(
-            files.map((fileName) =>
-              readFile(fileName, "utf-8")
-                .then((src) => {
-                  if (!cache.has(src)) {
-                    cache.set(src, Compile.make(src, fileName));
-                  }
-                  components[filenameToComponent(fileName)] = cache.get(src);
-                })
-                .catch((e) => console.error(e.message))
-            )
-          )
-        )
-        .then(() => {
-          env = Environment.Async.make({ ...components, ...config.components });
-        });
+      const files = await fastGlob(glob);
+      const queue = await Promise.all(
+        files.map(async (fileName) => {
+          const str = await readFile(fileName, "utf-8");
+          const name = filenameToComponent(fileName);
+          return Source.string(name, str);
+        })
+      );
+      const componentsResult = Compile.fromArray([
+        ...queue,
+        ...config.components,
+      ]);
+      const components = Result.getOrElse(componentsResult, onComponentsError);
+      env = Environment.Async.make(components);
     },
-    compile: (src, inputPath) => (props) => {
-      if (!cache.has(src)) {
-        cache.set(src, Compile.make(src, inputPath));
+    compile: function (str, inputPath) {
+      function onError(e) {
+        console.error(e);
+        throw new Error(
+          `I couldn't render ${inputPath} due to the previous errors.`
+        );
       }
-      return cache
-        .get(src)(env, props, {})
-        .then(({ NAME, VAL }) => {
-          if (NAME === "errors") {
-            console.error(VAL);
-            throw new Error(`Error with ${props.permalink}`);
-          } else {
-            return VAL;
-          }
-        });
+      return async function (data) {
+        const src = Source.string(inputPath, str);
+        const template = Result.getOrElse(Compile.make(src), onError);
+        const result = await template(env, data, {});
+        return Result.getOrElse(result, onError);
+      };
     },
   });
 };
