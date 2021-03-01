@@ -1,6 +1,6 @@
 ---
 title: Social distancing library videos
-date: 2020-06-08
+date: 2021-03-01
 description: I produced instructional videos for Chattahoochee Valley Libraries. This was in part a response to the COVID-19 crisis. These videos were a way to extend library services to patrons while our doors were closed to the public.
 thumbnail: null
 layout: Page.acutis
@@ -21,6 +21,11 @@ props available around the house.
 <div class="video-thumbnail__link">
 
 [![Curbside Service @ CVL](/assets/images/library-media/curbside-title.jpg)](https://www.facebook.com/chatlibraries/videos/632143977302753/)
+
+</div>
+<div class="video-thumbnail__link">
+
+[![Legal Resources At Your Library](/assets/images/library-media/Legal-Resources-At-Your-Library.webp)](https://youtu.be/ugSAYYL0bgU)
 
 </div>
 <div class="video-thumbnail__link">
