@@ -18,10 +18,10 @@
     p-queue "^6.6.2"
     short-hash "^1.0.0"
 
-"@11ty/eleventy-img@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@11ty/eleventy-img/-/eleventy-img-0.8.0.tgz#1303cb070266bc24e9aae3b527d0e837a7a9a05c"
-  integrity sha512-ZyiZLkQnVJW1gtW6GDZpW6BpokqNWS7JsoPWm7FX7bsUxhIaCpHu069LTNvgAUuv21zjx4JMkvjR1T60M39s2g==
+"@11ty/eleventy-img@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@11ty/eleventy-img/-/eleventy-img-0.8.2.tgz#7de80e592152ba0150163e6cca4ce5473bbb46df"
+  integrity sha512-Evb6wNfSo1H7YsN/F2ScV+02Ow2+KtT3rJ5Gn2cdQipZwvL9UAo03C9gcWQoX4OaLajQkPKcECqXx5JiVYXv5g==
   dependencies:
     "@11ty/eleventy-cache-assets" "^2.1.0"
     debug "^4.3.1"
@@ -395,10 +395,10 @@ acorn@^8.0.4:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.0.5.tgz#a3bfb872a74a6a7f661bc81b9849d9cac12601b7"
   integrity sha512-v+DieK/HJkJOpFBETDJioequtc3PfxsWMaxIdIwujtF7FEV/MAyDQLlm6/zPvr7Mix07mLh6ccVwIsloceodlg==
 
-acutis-lang@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/acutis-lang/-/acutis-lang-0.10.0.tgz#271075be7a04f7158a71943b0779cc86bde8e19f"
-  integrity sha512-EWAFNcaa9cQvPG9vKfFEoMzvw44xAHkHwAJ56gVUqFXl6x3eeg4gCgKn40+LTfG1Es7NhwiB5L6dr8tAaAbTyQ==
+acutis-lang@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/acutis-lang/-/acutis-lang-0.11.0.tgz#ead738eaea2d2f3a9ac3cf93b952c1e18c07f058"
+  integrity sha512-1LC9Hy5DWz0q5KZ4duoxgl0UxQkoE6UsGHNpkV/YNniWSAdGlpiBTPFZOIzQI8MQ2GvZ2eo6/ZCD+9Qm4HYfnw==
   dependencies:
     "@rescript/std" "^9.0.1"
     minimist "^1.2.5"

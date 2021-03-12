@@ -25,6 +25,11 @@ props available around the house.
 </div>
 <div class="video-thumbnail__link">
 
+[![Ten Fun Finds At Your Library](/assets/images/library-media/10things.jpg)](https://youtu.be/Qv5kRzo5e7o)
+
+</div>
+<div class="video-thumbnail__link">
+
 [![Legal Resources At Your Library](/assets/images/library-media/Legal-Resources-At-Your-Library.webp)](https://youtu.be/ugSAYYL0bgU)
 
 </div>

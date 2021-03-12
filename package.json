@@ -30,11 +30,11 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-img": "^0.8.0",
+    "@11ty/eleventy-img": "^0.8.2",
     "@fontsource/libre-baskerville": "^4.2.1",
     "@fontsource/source-code-pro": "^4.2.1",
     "@fontsource/source-sans-pro": "^4.2.1",
-    "acutis-lang": "^0.10.0",
+    "acutis-lang": "^0.11.0",
     "css-loader": "^5.0.2",
     "css-minimizer-webpack-plugin": "^1.2.0",
     "fast-glob": "^3.2.5",
