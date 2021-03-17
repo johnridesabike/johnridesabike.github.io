@@ -14,8 +14,6 @@ library services to patrons while our doors were closed to the public.
 Video production involved iPhone and iPad cameras, iMovie software, and sundry
 props available around the house.
 
-<div class="video-thumbnail">
-
 ## Library services
 
 <div class="video-thumbnail__link">
@@ -25,7 +23,7 @@ props available around the house.
 </div>
 <div class="video-thumbnail__link">
 
-[![Ten Fun Finds At Your Library](/assets/images/library-media/10things.jpg)](https://youtu.be/Qv5kRzo5e7o)
+[![Ten Fun Finds At Your Library](/assets/images/library-media/10things-cover.png)](https://youtu.be/Qv5kRzo5e7o)
 
 </div>
 <div class="video-thumbnail__link">
@@ -69,7 +67,5 @@ props available around the house.
 <div class="video-thumbnail__link">
 
 [![Chess with John: Understanding Checkmate](/assets/images/library-media/Chess-with-John-Understanding-Checkmate-KXsTUkHgaJM.jpg)](https://youtu.be/KXsTUkHgaJM)
-
-</div>
 
 </div>
