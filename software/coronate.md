@@ -1,6 +1,6 @@
 ---
 title: "Coronate: a Swiss chess tournament manager"
-date: 2019-09-01
+date: 2021-03-18
 thumbnail:
   image: /assets/vector/coronate_logo_wide.svg
   caption: The Coronate logo.
@@ -20,11 +20,11 @@ tournaments.
 
 ## 🧐 About
 
-I began working on Coronate shortly after hosting a tournament at
-Chattahoochee Valley Libraries. I discovered a dearth of free software, so I
-and decided to change that. Library employees deal with limited budgets and
-restrictive computer access, so purchasing, installing, and learning to use
-specialized tournament software is usually a considerable barrier-to-entry.
+I began working on Coronate shortly after hosting a tournament as a public
+library program. I discovered a dearth of free software, so I and decided to
+change that. Library employees deal with limited budgets and restrictive
+computer access, so purchasing, installing, and learning to use specialized
+tournament software is usually a considerable barrier-to-entry.
 
 Coronate aims to solve this problem. It’s free, open source, and runs on
 almost any system. Although it (probably) won’t replace a professional app in
@@ -33,18 +33,10 @@ a rated tournament, it fills the gap for small clubs or public events.
 Coronate is in a "proof-of-concept" phase. It should work fine, but it's
 optimized for small groups and specific conditions. Adding features, even
 small ones, is time consuming, so work is prioritized based on the real-world
-needs of its users. [If you would like to contribute your feature ideas, it's
-easy!][1]
+needs of its users. [If you would like to contribute your feature ideas, just
+file an issue!][issues]
 
-[1]: https://github.com/johnridesabike/coronate/blob/master/CONTRIBUTING.md
-
-## 🔧 Setup
-
-Coronate is built in the language [Reason] with the [React] library, so you
-can run a copy of it right in your browser, no installation required.
-
-[Reason]: https://reasonml.github.io
-[React]: https://reactjs.org/
+[issues]: https://github.com/johnridesabike/coronate/issues
 
 ## ♟ How to use it
 
@@ -116,7 +108,7 @@ point, you can open Coronate again and load the data.
 
 ## 🌅 The future
 
-Coronate is currently 1.0 status, mostly bugfree and with all of the basic
+Coronate is currently 1.0 status, mostly bug-free and with all of the basic
 functionality. There are still plenty of features that can go into the next
 version, but I haven't decided yet what to focus on.
 
@@ -133,32 +125,26 @@ appropriate, the code should have comments indicating the specific section of
 the rulebook they come from. Not all scoring rules are implemented (yet),
 just the commonly used ones.
 
-[USCF’s scoring guidelines can be found on their rulebook, which is freely downloadable here.][3]
-
-[3]: http://www.uschess.org/content/view/7752/369/
+[USCF’s scoring guidelines can be found on their rulebook, which is freely
+downloadable here.](http://www.uschess.org/content/view/7752/369/)
 
 ### Pairing
 
-Similar to scoring, the auto-pairing functions aim to comply with USCF recommendations. Pairing is a much trickier beast than scoring, however. The current implementation is “good enough” for now, and still needs more work.
+Similar to scoring, the auto-pairing functions aim to comply with USCF
+recommendations. Pairing is a much trickier beast than scoring, however. The
+current implementation is “good enough” for now, and still needs more work.
 
 ### Source code
 
-Coronate is written with [Reason], [ReasonReact], and [BuckleScript]. Reason
-is an extension of the OCaml programming language, and BuckleScript provides
-a JavaScript compiler along with a standard library optimized for web usage.
+Coronate is written with [ReScript] and [React]. All code is [AGPL v3.0
+licensed][license] which allows anyone to download and modify it. I welcome
+contributions in code, as well as suggestions and bug reports. [Visit the
+repository page to get started][repo].
 
-[ReasonReact]: https://reasonml.github.io/reason-react/
-[BuckleScript]: https://bucklescript.github.io
-
-All code is [AGPL v3.0 licensed][4] which allows anyone the freedom to
-download and modify it. If you are interested in using parts of the source
-for your own project (e.g. the scoring or pairing algorithms), let me know
-and I'm happy to release those modules under a more liberal license for you.
-I welcome contributions in code, as well as suggestions and bug reports.
-[Visit the repository page to get started][5].
-
-[4]: https://github.com/johnridesabike/coronate/blob/master/LICENSE
-[5]: https://github.com/johnridesabike/coronate/
+[ReScript]: https://rescript-lang.org/
+[React]: https://reactjs.org/
+[license]: https://github.com/johnridesabike/coronate/blob/master/LICENSE
+[repo]: https://github.com/johnridesabike/coronate/
 
 ## Screenshots
 
