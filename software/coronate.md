@@ -30,11 +30,8 @@ Coronate aims to solve this problem. It’s free, open source, and runs on
 almost any system. Although it (probably) won’t replace a professional app in
 a rated tournament, it fills the gap for small clubs or public events.
 
-Coronate is in a "proof-of-concept" phase. It should work fine, but it's
-optimized for small groups and specific conditions. Adding features, even
-small ones, is time consuming, so work is prioritized based on the real-world
-needs of its users. [If you would like to contribute your feature ideas, just
-file an issue!][issues]
+Coronate is in a "proof-of-concept" phase. [If you would like to contribute
+your feature ideas, just file an issue!][issues]
 
 [issues]: https://github.com/johnridesabike/coronate/issues
 
@@ -105,6 +102,36 @@ You can manually load and save your data through its “options” screen. If yo
 create a tournament on your work laptop and want to ensure its records are
 preserved, just go to the options and save the file somewhere safe. At any
 point, you can open Coronate again and load the data.
+
+## 🥰 Enjoy using Coronate?
+
+Coronate is free software, but you're welcome to show your appreciation.
+
+<script
+  type="text/javascript"
+  src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+  data-name="bmc-button"
+  data-slug="johnridesabike"
+  data-color="#FFDD00"
+  data-emoji=""
+  data-font="Cookie"
+  data-text="Buy me a coffee"
+  data-outline-color="#000000"
+  data-font-color="#000000"
+  data-coffee-color="#ffffff">
+</script>
+<noscript>
+  <a 
+    href="https://www.buymeacoffee.com/johnridesabike"
+    target="_blank">
+    <img
+      src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+      alt="Buy Me A Coffee"
+      height="60"
+      width="217"
+      style="height: 60px !important;width: 217px !important;" />
+  </a>
+</noscript>
 
 ## 🌅 The future
 
