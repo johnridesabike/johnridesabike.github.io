@@ -18,6 +18,30 @@ tournaments.
 
 <p><div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://github.com/johnridesabike/coronate">Browse the source code</a></div></p>
 
+<blockquote
+  class="has-large-font-size"
+  style="margin-bottom: 2em;"
+  cite="https://github.com/johnridesabike/coronate/issues/17#issue-815725499">
+  <p style="margin-bottom: 0;">
+    &ldquo;Myself and a few other engineers working at GitHub have been using
+    this to run a chess tournament for ourselves. I wanted to say thanks. 🥇
+    🏆 ✨&rdquo;
+  </p>
+  <p style="font-weight: 700; text-align: right; margin-top: 0;" class="has-small-font-size">
+    &mdash;
+    <a
+      href="https://github.com/johnridesabike/coronate/issues/17#issue-815725499">
+      <img
+        src="/assets/images/coronate/StanleyGoldman-av.jpg"
+        style="border-radius: 50%; vertical-align: middle;"
+        height="40"
+        width="40"
+      />
+      Stanley Goldman
+    </a>
+  </p>
+</blockquote>
+
 ## 🧐 About
 
 I began working on Coronate shortly after hosting a tournament as a public
