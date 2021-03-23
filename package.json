@@ -29,14 +29,14 @@
     "start:html": "ELEVENTY_EXPERIMENTAL=true ELEVENTY_ENV=development eleventy --serve"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-img": "^0.8.2",
     "@fontsource/libre-baskerville": "^4.2.1",
     "@fontsource/source-code-pro": "^4.2.1",
     "@fontsource/source-sans-pro": "^4.2.1",
     "acutis-lang": "^0.12.0",
     "css-loader": "^5.0.2",
-    "css-minimizer-webpack-plugin": "^1.2.0",
+    "css-minimizer-webpack-plugin": "^1.3.0",
     "fast-glob": "^3.2.5",
     "feather-icons": "^4.28.0",
     "gh-pages": "^3.1.0",
