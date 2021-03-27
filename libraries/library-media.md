@@ -1,18 +1,18 @@
 ---
 title: Social distancing library videos
-date: 2021-03-01
-description: I produced instructional videos for Chattahoochee Valley Libraries. This was in part a response to the COVID-19 crisis. These videos were a way to extend library services to patrons while our doors were closed to the public.
+date: 2021-03-27
+description: |
+  I produced instructional videos for Chattahoochee Valley Libraries as part
+  of a response to the COVID-19 crisis. These videos helped extend library
+  services to patrons while our doors were closed to the public.
 thumbnail: null
 layout: Page.acutis
 tags: libraryMedia
 ---
 
-I produced instructional videos for Chattahoochee Valley Libraries as 
-part of a response to the COVID-19 crisis. These videos were a way to extend
-library services to patrons while our doors were closed to the public.
-
-Video production involved iPhone and iPad cameras, iMovie software, and sundry
-props available around the house.
+I produced instructional videos for Chattahoochee Valley Libraries as part of
+a response to the COVID-19 crisis. These videos helped extend library
+services to patrons while our doors were closed to the public.
 
 ## Library services
 
