@@ -191,6 +191,10 @@
       title="Acutis template language"
       fullPath="https://johnridesa.bike/acutis/"
       isExternal=false
+      thumbnail={
+        image: "/assets/vector/acutis_wide.svg",
+        caption: "Acutis language icon."
+      }
       class=""
     %}
       Acutis is a template engine I wrote from scratch that uses pattern
