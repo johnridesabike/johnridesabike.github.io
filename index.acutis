@@ -93,6 +93,7 @@
       {% /Excerpt %}
     {% /match %}
   </section>
+  <hr />
   <section class="index__section">
     <header class="index__sectionHeader">
       <h1>
@@ -187,7 +188,7 @@
       {% ExcerptPage page isWide=true / %}
     {% /match %}
     {% Excerpt
-      isWide=true
+      isWide=false
       title="Acutis template language"
       fullPath="https://johnridesa.bike/acutis/"
       isExternal=false
@@ -197,26 +198,20 @@
       }
       class=""
     %}
-      Acutis is a template engine I wrote from scratch that uses pattern
-      matching, strong typing, asynchronous templates, and template
-      components. This website is built with it!
+      Acutis is a template engine I wrote from scratch. This website is built
+      with it!
     {% /Excerpt %}
     {% Excerpt
-      isWide=true
+      isWide=false
       title="Maximum weighted matching finder"
       fullPath="https://johnridesa.bike/mwmatching-finder/"
       isExternal=false
-      thumbnail={
-        image: "/assets/vector/mwmatching.svg",
-        caption: "An undirected graph for matching."
-      }
+      thumbnail=null
       class=""
     %}
-      While I was developing <em>Coronate</em> I needed to solve the problem
-      of how to correctly pair chess players. Researching this problem led me
-      to discover the world of graph theory and “maximum weighted matching.”
-      To make these concepts easier for other people to learn, I put together
-      this interactive webpage.
+      While I was developing <em>Coronate</em> I needed to automatically pair
+      chess players. This interactive webpage explains how to use <em>maximum
+      weighted matching</em> theory to solve this problem.
     {% /Excerpt %}
     {* {% match collections with {iosShortcuts: [page]} %}
       {% ExcerptPage page isWide=false / %}
@@ -224,16 +219,15 @@
     {* {% match collections with {wordroom: [page]} %}
       {% ExcerptPage page isWide=false / %}
     {% /match %} *}
-    <h2 class="index__divider"> Web development </h2>
     {* {% match collections with {johnridesabike: [page]} %}
       {% ExcerptPage page isWide=true / %}
     {% /match %} *}
     {% match collections with {literacyAlliance: [page]} %}
-      {% ExcerptPage page isWide=false / %}
+      {% ExcerptPage page isWide=true / %}
     {% /match %}
-    {% match collections with {weracoba: [page]} %}
+    {* {% match collections with {weracoba: [page]} %}
       {% ExcerptPage page isWide=false / %}
-    {% /match %}
+    {% /match %} *}
   </section>
   <hr />
   <section class="index__section">
