@@ -1,7 +1,7 @@
-const simpleIcons = require("simple-icons");
+const si = require("simple-icons/icons");
 
 module.exports.simpleIcon = ({ name, className }) => {
-  const icon = simpleIcons.get(name);
+  const icon = si["si" + name];
   return `
     <svg
       role="img"
