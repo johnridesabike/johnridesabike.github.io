@@ -2,6 +2,7 @@
 title: Marble-top Chessboard End Table
 date: 2018-05-13
 thumbnail:
+  kind: image
   image: /assets/images/marble-top-chessboard-end-table/IMG_0293.jpg
   caption: Photo of the completed table.
 attachments:

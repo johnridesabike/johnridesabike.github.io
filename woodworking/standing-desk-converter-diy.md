@@ -2,6 +2,7 @@
 title: Standing Desk Converter with Scrap Wood
 date: 2019-01-11
 thumbnail:
+  kind: image
   image: /assets/images/standing-desk-converter-diy/final.png
   caption: Diagram of the final design.
 attachments:
@@ -148,6 +149,7 @@ how much wood I used:
 <figure class="alignwide aligncenter">
   {% Img
      src="/assets/images/standing-desk-converter-diy/measurements.png"
+     class=""
      alt=""
      width=1200
     / ~%}

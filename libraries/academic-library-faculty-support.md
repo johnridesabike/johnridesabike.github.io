@@ -235,7 +235,7 @@ concepts.
 > 5. What are advantages and disadvantages of Gold OA publishing?
 > 6. What is the difference between gratis-libre distinction and green/gold distinction?
 > 7. Describe the major initiatives and network for Open Access.
-> 
+>
 > <cite>Text adapted from UNESCO's "[Concepts of Openness and Open Access][17]."</cite>
 
 [17]: http://unesdoc.unesco.org/images/0023/002322/232207E.pdf

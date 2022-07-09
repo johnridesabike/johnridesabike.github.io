@@ -2,6 +2,7 @@
 title: iOS Shortcuts
 date: 2019-11-05
 thumbnail:
+  kind: image
   image: /assets/images/ios-shortcuts/ios-shortcuts.jpg
   caption: The iOS Shortcuts app.
 description: These are a few iOS shortcut scripts that I've made.

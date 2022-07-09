@@ -1,4 +1,4 @@
-const { Source } = require("acutis-lang");
+const { Compile, Typescheme, TypeschemeChildren } = require("acutis-lang");
 const { icons } = require("feather-icons");
 const fs = require("fs").promises;
 const path = require("path");
@@ -16,57 +16,84 @@ const manifest = fs
   .readFile(manifestPath, "utf-8")
   .then((data) => JSON.parse(data));
 
+const Ty = Typescheme;
+const TyChild = TypeschemeChildren;
+
 module.exports = [
-  Source.func("Feather", (env, { icon }, _children) =>
-    env.return(icons[icon].toSvg())
+  Compile.fromFunAsync(
+    "Feather",
+    Ty.make([["icon", Ty.string()]]),
+    TyChild.make([]),
+    ({ icon }, _children) => Promise.resolve(icons[icon].toSvg())
   ),
 
-  Source.funcWithString(
+  /*
+   * Sometimes this gets used in a markdown file, so the HTML output gets
+   * parsed as markdown. This means that extra lines with indentation can
+   * get parsed as a code block, which we don't want.
+   */
+  Compile.fromFunAsync(
     "Img",
-    `{% match image
-        with {vector: {src, width}} ~%}
-      <img
-        src="{{ src }}"
-        alt="{{ alt }}"
-        width="{{ width }}"
-        {%~ match class with null %}
-        {%~ with class %} class="{{ class }}"
-        {%~ /match ~%}
-      />
-    {%~ with {images: [{url, width, height, srcset}, ...rest]} ~%}
-      <img
-        srcset="
-          {{~ url }} 1x
-          {%~ map rest
-              with {url}, 0 %}, {{ url }} 1.5x
-          {%~ with {url}, 1 %}, {{ url }} 2x
-          {%~ with {srcset} %}, {{ srcset }}
-          {%~ /map ~%}
-        "
-        src="{{ url }}"
-        width="{{ width }}"
-        height="{{ height }}"
-        alt="{{ alt }}"
-        {%~ match class with null %}
-        {%~ with class %} class="{{ class }}"
-        {%~ /match %}
-        loading="lazy"
-      />
-    {%~ /match %}`,
-    (ast) => (env, props, children) =>
+    Ty.make([
+      ["src", Ty.string()],
+      ["alt", Ty.string()],
+      ["class", Ty.string()],
+      ["width", Ty.int()],
+    ]),
+    TyChild.make([]),
+    (props, _children) =>
       makeImg(props)
-        .then((props) => env.render(ast, props, children))
-        .catch((e) => env.error(e.message))
+        .then((props) => {
+          const className = props["class"] ? `class="${props["class"]}"` : "";
+          if (props.image.tag == "vector") {
+            const { src, width } = props.image.vector;
+            return Promise.resolve(`<img
+              src="${src}"
+              alt="${alt}"
+              width="${width}"
+              ${className} />`);
+          } else {
+            const [{ url, width, height }, ...rest] = props.image.images;
+            const srcset = rest
+              .map(({ url, srcset }, i) => {
+                switch (i) {
+                  case 0:
+                    return `, ${url} 1.5x`;
+                  case 1:
+                    return `, ${url} 2x`;
+                  default:
+                    return `, ${srcset}`;
+                }
+              })
+              .join("");
+            return Promise.resolve(`<img
+              srcset="${url} 1x${srcset}"
+              src="${url}"
+              width="${width}"
+              height="${height}"
+              alt="${props.alt}" ${className} loading="lazy"
+            />`);
+          }
+        })
+        .catch((e) =>
+          Promise.reject(new Error("Problem with Img: " + e.message))
+        )
   ),
 
-  Source.func("Webpack", (env, props, _children) =>
-    manifest.then((data) => {
-      const x = data[props.asset];
-      if (x) {
-        return env.return(x);
-      } else {
-        return env.error(`${props.asset} doesn't exist in the manifest.`);
-      }
-    })
+  Compile.fromFunAsync(
+    "Webpack",
+    Ty.make([["asset", Ty.string()]]),
+    TyChild.make([]),
+    (props, _children) =>
+      manifest.then((data) => {
+        const x = data[props.asset];
+        if (x) {
+          return Promise.resolve(x);
+        } else {
+          return Promise.reject(
+            `Problem with Webpack: ${props.asset} doesn't exist in the manifest.`
+          );
+        }
+      })
   ),
 ];

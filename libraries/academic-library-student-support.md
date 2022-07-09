@@ -8,7 +8,7 @@ thumbnail: null
 tags: academicStudent
 layout: Page.acutis
 ---
-*I walk through a hypothetical student project and explain how I, as an academic 
+*I walk through a hypothetical student project and explain how I, as an academic
 librarian, would assist throughout the whole process. This was originally
 written for my Academic Libraries class in the Spring of 2018.*
 
@@ -121,7 +121,7 @@ LLBA search strategies.
   <dt>Thesaurus</dt>
   <dd>
     This tool helps you use the database’s controlled vocabulary. The computer
-    will have preferred words for specific terms or use different terms for 
+    will have preferred words for specific terms or use different terms for
     ambiguous words. For example, LLBA prefers the term “Pronouns” versus
     “pronoun” or “pronominals.” It uses “Gender (Grammatical)” to classify
     articles about gendered words. It can also help you find terms related to
@@ -132,7 +132,7 @@ LLBA search strategies.
     A question mark (?) can be a stand-in for any single character. For example,
     “wom?n” will search “women” or “woman.”An asterisk (\*) can be a stand-in
     for multiple characters, or no character. For example, “farm\*” retrieves
-    “farmers” as well as “farming.” 
+    “farmers” as well as “farming.”
   </dd>
 </dl>
 
@@ -214,6 +214,7 @@ each possible combination. See Figure 1 for an example.
       alt="Screenshot of a spreadsheet"
       width=1200
       src="/assets/images/student-support.png"
+      class=""
       / ~%}
    <figcaption>Figure 1: sample data entry.</figcaption>
 </figure>

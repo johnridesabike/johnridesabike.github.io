@@ -23,7 +23,10 @@ exports.makeImg = function makeImg(props) {
       break;
   }
   if (format === null) {
-    props.image = { vector: { src: props.src, width: props.width } };
+    props.image = {
+      tag: "vector",
+      vector: { src: props.src, width: props.width },
+    };
     return Promise.resolve(props);
   } else {
     return Image("./" + props.src, {
@@ -32,7 +35,7 @@ exports.makeImg = function makeImg(props) {
       urlPath: "/assets/images/minified/",
       outputDir: path.join(".", "_site", "assets", "images", "minified"),
     }).then((stats) => {
-      props.image = { images: stats[format] };
+      props.image = { tag: "image", images: stats[format] };
       return props;
     });
   }

@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 {% match siteMetadata with {title: siteTitle, description: siteDescription} ~%}
 <html lang="en-US" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>
@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href='{% Webpack asset="main.css" /%}' />
     {% map [
-        "node_modules/@fontsource/libre-baskerville/files/libre-baskerville-latin-400-normal.woff2",
-        "node_modules/@fontsource/libre-baskerville/files/libre-baskerville-latin-ext-400-normal.woff2",
-        "node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-400-normal.woff2",
-        "node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-400-italic.woff2",
-        "node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-700-normal.woff2",
-        "node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-700-italic.woff2"
+        "fonts/libre-baskerville-latin-400-normal.woff2",
+        "fonts/libre-baskerville-latin-ext-400-normal.woff2",
+        "fonts/source-sans-pro-latin-400-normal.woff2",
+        "fonts/source-sans-pro-latin-400-italic.woff2",
+        "fonts/source-sans-pro-latin-700-normal.woff2",
+        "fonts/source-sans-pro-latin-700-italic.woff2"
       ]
       with asset ~%}
       <link rel="preload" as="font" crossorigin href="{% Webpack asset /%}" />
@@ -108,9 +108,9 @@
       <!-- Default Statcounter code for My portfolio site
       https://johnridesa.bike/ -->
       <script type="text/javascript">
-        var sc_project=12454167; 
-        var sc_invisible=1; 
-        var sc_security="0cdce85d"; 
+        var sc_project=12454167;
+        var sc_invisible=1;
+        var sc_security="0cdce85d";
         </script>
         <script type="text/javascript"
         src="https://www.statcounter.com/counter/counter.js"
