@@ -3,7 +3,7 @@ const icons = require("../_includes/icons");
 module.exports = [
   {
     icon: icons.simpleIcon({
-      name: "LinkedIn",
+      name: "Linkedin",
       className: "svgIconColored",
     }),
     title: "LinkedIn",
@@ -11,7 +11,7 @@ module.exports = [
   },
   {
     icon: icons.simpleIcon({
-      name: "GitHub",
+      name: "Github",
       className: "svgIconColored",
     }),
     title: "GitHub",
@@ -19,7 +19,7 @@ module.exports = [
   },
   {
     icon: icons.simpleIcon({
-      name: "LibraryThing",
+      name: "Librarything",
       className: "svgIconColored",
     }),
     title: "LibraryThing",
