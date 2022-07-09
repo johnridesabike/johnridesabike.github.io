@@ -32,7 +32,7 @@ function renderImg({ formats, src, alt }) {
   const img = format[0];
 
   return `<img
-    srcset="${srcset(format)}" 
+    srcset="${srcset(format)}"
     src="${img.url}"
     width="${img.width}"
     height="${img.height}"
@@ -90,13 +90,19 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
       // Eleventy 1.0+: use this.inputPath and this.outputPath instead
       if (outputPath && outputPath.endsWith(".html")) {
-        let minified = htmlmin.minify(content, {
-          useShortDoctype: true,
-          removeComments: true,
-          collapseWhitespace: true,
-          minifyCSS: true,
-        });
-        return minified;
+        try {
+          let minified = htmlmin.minify(content, {
+            useShortDoctype: true,
+            removeComments: true,
+            collapseWhitespace: true,
+            minifyCSS: true,
+          });
+          return minified;
+        } catch (e) {
+          console.log("minifier failed!", outputPath);
+          console.log(e.message.slice(0, 500));
+          return "";
+        }
       } else {
         return content;
       }

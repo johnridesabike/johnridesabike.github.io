@@ -1,7 +1,7 @@
 <article
   class="excerpt__excerpt {{ class }}
     {%~ match isWide with true %} excerpt__isWide
-    {%~ with false with null %} {* none *}
+    {%~ with false %} {* none *}
     {%~ /match ~%}"
 >
   <header class="has-ui-font">
@@ -16,8 +16,8 @@
     </h3>
   </header>
   <div class="excerpt__content">
-    {% match thumbnail 
-       with {image, caption} %}
+    {% match thumbnail
+       with !{@kind: "image", image, caption} %}
      <figure
       class="full-bleed-small excerpt__coverFigure"
       style="overflow:hidden">
@@ -33,38 +33,9 @@
            alt=caption
            width=600
            / %}
-       {*<!--
-         <img
-           width="128"
-           height="96"
-           src="{{ image }}"
-           class="excerpt__coverImg"
-           alt="{{ caption }}"
-         />
--->*}
        </a>
      </figure>
-  {* <!-- | FixedImg(fixed, alt) =>
-     <figure className=Cn.("full-bleed-small" <:> "excerpt__coverFigure")>
-       <SpecialLink
-         _to=fullPath
-         className={"excerpt__coverLink"}
-         ariaHidden=true
-         tabIndex=(-1)>
-         <Gatsby.Img
-           fixed
-           alt
-           style={ReactDOMRe.Style.make(
-             ~position="inherit",
-             ~width="inherit",
-             ~height="inherit",
-             (),
-           )}
-         />
-       </SpecialLink>
-     </figure>
-    -->*}
-    {% with {video, height, width} %}
+    {% with !{@kind: "video", video, height, width} %}
      <figure class="full-bleed-small excerpt__coverFigure">
        <a
          href="{{ fullPath }}"

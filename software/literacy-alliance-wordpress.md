@@ -2,6 +2,7 @@
 title: Literacy Alliance WordPress Redesign
 date: 2018-08-15
 thumbnail:
+  kind: image
   image: /assets/images/literacy-alliance-wordpress/LA-logo-2018.png
   caption: The Literacy Alliance logo.
 description: |

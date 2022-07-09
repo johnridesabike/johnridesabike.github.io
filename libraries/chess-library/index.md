@@ -2,6 +2,7 @@
 title: "Chess at the Library: my public library chess program"
 date: 2018-08-15
 thumbnail:
+  kind: image
   image: "./Chess.jpg"
   caption: A chessboard at the library.
 description: Placeholder.

@@ -4,6 +4,7 @@ title: |
   United States Public Libraries
 date: 2018-12-19
 thumbnail:
+  kind: image
   image: /assets/images/researching-hispanic-children-books/figure3.png
   caption: Average percent of titles in each library according to locale
 description: |

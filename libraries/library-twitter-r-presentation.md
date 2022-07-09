@@ -5,6 +5,7 @@ description: |
   These are the slides and notes from a presentation I did on using language
   analysis of Twitter accounts with the R programming language.
 thumbnail:
+  kind: image
   image: /assets/images/library-twitter-r-presentation/Slide1.jpeg
   caption: "Slide: Social Media Analysis of State Libraries"
 layout: Page.acutis

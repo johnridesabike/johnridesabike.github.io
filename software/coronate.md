@@ -2,6 +2,7 @@
 title: "Coronate: a Swiss chess tournament manager"
 date: 2021-03-18
 thumbnail:
+  kind: image
   image: /assets/vector/coronate_logo_wide.svg
   caption: The Coronate logo.
 description: |
@@ -145,7 +146,7 @@ Coronate is free software, but you're welcome to show your appreciation.
   data-coffee-color="#ffffff">
 </script>
 <noscript>
-  <a 
+  <a
     href="https://www.buymeacoffee.com/johnridesabike"
     target="_blank">
     <img

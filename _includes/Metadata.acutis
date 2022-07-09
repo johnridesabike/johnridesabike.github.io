@@ -4,7 +4,7 @@
   {%~ match title
       with null ~%}
      {{ siteTitle }}
-  {%~ with title ~%}
+  {%~ with !title ~%}
      {{ title }} | {{ siteTitle }}
   {%~ /match ~%}
 </title>
@@ -12,7 +12,7 @@
 
 {% match absoluteUrl
   with null %} <!-- no absoluteUrl -->
-  {% with absoluteUrl %}
+  {% with !absoluteUrl %}
   <link rel="canonical" href="{{ absoluteUrl }}" />
   <meta property="og:url" content="{{ absoluteUrl }}" />
 {% /match %}
@@ -25,7 +25,7 @@
 {% match thumbnail
   with null %}
     <!-- No thumbnail -->
-  {% with {image, caption} %}
+  {% with !{image, caption} %}
   <meta
     property="og:image"
     content="{{ image }}"

@@ -5,10 +5,9 @@
    description
    build
    thumbnail
-   title
-   description
+   title=!title
    absoluteUrl
-   contentType="article"
+   contentType=!"article"
    EntryHeader=#%}
     <div
       class="has-ui-font page__header
@@ -16,7 +15,7 @@
         {%~ with _ %} page__hasThumbnail
         {%~ /match %}"
     >
-      {% match thumbnail with {caption, image} %}
+      {% match thumbnail with !{caption, image} %}
         <figure class="full-bleed page__coverFigure">
           {% Img
              src=image

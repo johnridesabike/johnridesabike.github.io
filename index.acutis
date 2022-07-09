@@ -3,15 +3,15 @@
     socialMenu
     title=null
     description=null
-    thumbnail={
+    thumbnail=!{
       image: "/assets/images/john2018.jpg",
       caption: "A photo of John."
     }
     siteMetadata
     build
     absoluteUrl
-    contentType="website"
-    EntryHeader=#/#
+    contentType=!"website"
+    EntryHeader=#%}{%/#
 %}
 <main id="main" class="site-main page-content">
   <div class="index__topColumns">
@@ -76,11 +76,12 @@
     {% match collections with {libraryMedia: [{data: {title, description, thumbnail}, url}]} %}
       {% Excerpt
          fullPath=url
-         title
+         title=title
          isWide=true
          class=""
          isExternal=false
-         thumbnail={
+         thumbnail=!{
+           @kind: "video",
            video: [
             {src: "/assets/video/montage_web.mp4", type: "video/mp4"},
             {src: "/assets/video/montage_web.webm", type: "video/webm"}
@@ -91,6 +92,7 @@
         %}
          {{ description }}
       {% /Excerpt %}
+    {% with _ %} {* Nothing *}
     {% /match %}
   </section>
   <hr />
@@ -110,37 +112,47 @@
     <h2 class="index__divider">Academic libraries</h2>
     {% match collections with {academicStudent: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     {% match collections with {oaPres: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     {% match collections with {academicFaculty: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     {% match collections with {dmp: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     <h2 class="index__divider">
       Technical services
     </h2>
     {% match collections with {exLibrisOPAC: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     {% match collections with {collectionDevelopment: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     {% match collections with {selectionPolicy: [page]} %}
       {% ExcerptPage page isWide=true / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     <h2 class="index__divider"> Research </h2>
     {% match collections with {researchHispanic: [page]} %}
       {% ExcerptPage page isWide=true / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     {% match collections with {libraryTwitter: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     {% match collections with {envAnalysis: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
   </section>
   <hr />
@@ -160,7 +172,7 @@
        fullPath="http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame"
        class=""
        isExternal=true
-
+       thumbnail=null
        %}
       I've published a guide to running a library chess tournament on
       <em>Programming Librarian</em>. It covers all of the basic knowledge
@@ -169,6 +181,7 @@
     {% /Excerpt %}
     {% match collections with {chessGuide: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
   </section>
   <hr />
@@ -186,13 +199,15 @@
     <h2 class="index__divider"> Apps and coding </h2>
     {% match collections with {coronate: [page]} %}
       {% ExcerptPage page isWide=true / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     {% Excerpt
       isWide=false
       title="Acutis template language"
       fullPath="https://johnridesa.bike/acutis/"
       isExternal=false
-      thumbnail={
+      thumbnail=!{
+        @kind: "image",
         image: "/assets/vector/acutis_wide.svg",
         caption: "Acutis language icon."
       }
@@ -215,18 +230,23 @@
     {% /Excerpt %}
     {* {% match collections with {iosShortcuts: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %} *}
     {* {% match collections with {wordroom: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %} *}
     {* {% match collections with {johnridesabike: [page]} %}
       {% ExcerptPage page isWide=true / %}
+    {% with _ %} {* Nothing *}
     {% /match %} *}
     {% match collections with {literacyAlliance: [page]} %}
       {% ExcerptPage page isWide=true / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     {* {% match collections with {weracoba: [page]} %}
       {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
     {% /match %} *}
   </section>
   <hr />
@@ -244,9 +264,11 @@
     <h2 class="index__divider"> Guides </h2>
     {% match collections with {marbleTable: [page]} %}
       {% ExcerptPage page isWide=true / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
     {% match collections with {standingDesk: [page]} %}
       {% ExcerptPage page isWide=true / %}
+    {% with _ %} {* Nothing *}
     {% /match %}
   </section>
 </main>
