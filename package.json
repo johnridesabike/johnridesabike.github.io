@@ -22,7 +22,7 @@
     "build:html": "ELEVENTY_ENV=production eleventy",
     "clean": "rm -r _site",
     "deploy": "gh-pages -d _site -b master",
-    "predeploy": "yarn clean && yarn build",
+    "predeploy": "npm run clean && npm run build",
     "prestart": "NODE_ENV=development webpack",
     "start": "npm-run-all -l --parallel start:*",
     "start:assets": "NODE_ENV=development webpack --watch",
