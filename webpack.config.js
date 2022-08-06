@@ -2,7 +2,6 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
-//const { ESBuildPlugin, ESBuildMinifyPlugin } = require("esbuild-loader");
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -35,26 +34,11 @@ module.exports = {
     : {
         minimize: true,
         minimizer: [
-          /*
-          new ESBuildMinifyPlugin({
-            target: "es2015",
-          }),
-          */
           new CssMinimizerPlugin(),
         ],
       },
   module: {
     rules: [
-      /*
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "esbuild-loader",
-        options: {
-          target: "es2015",
-        },
-      },
-      */
       {
         test: /\.s?css/i,
         use: [

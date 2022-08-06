@@ -45,8 +45,8 @@
       </p>
       <p style="text-align: left">
         <span role="img" aria-label="check"> ✔️ </span>
-        Experience in adult services programming, web development, data
-        management, customer service, and more.
+          Experience in technical services, public service programming, web
+          development, data management, and more.
       </p>
       <div class="wp-block-button aligncenter is-style-squared">
         <a class="button-link__link" href="/resume/"> View my full résumé </a>
@@ -68,7 +68,7 @@
   <section class="index__section">
     <header class="index__sectionHeader">
       <h1>
-        <span role="img" aria-hidden="true"> 📽 </span>
+        <span role="img" aria-hidden="true"> 🎥 </span>
         Media production
       </h1>
     </header>
@@ -192,8 +192,8 @@
         Software projects
       </h1>
       <p>
-        The sundry software projects I've dabbled in over the years. I do
-        mostly coding and web design.
+        These are the sundry software projects I've dabbled in over the years.
+        I do coding and web design.
       </p>
     </header>
     <h2 class="index__divider"> Apps and coding </h2>
@@ -202,7 +202,7 @@
     {% with _ %} {* Nothing *}
     {% /match %}
     {% Excerpt
-      isWide=false
+      isWide=true
       title="Acutis template language"
       fullPath="https://johnridesa.bike/acutis/"
       isExternal=false
@@ -241,7 +241,7 @@
     {% with _ %} {* Nothing *}
     {% /match %} *}
     {% match collections with {literacyAlliance: [page]} %}
-      {% ExcerptPage page isWide=true / %}
+      {% ExcerptPage page isWide=false / %}
     {% with _ %} {* Nothing *}
     {% /match %}
     {* {% match collections with {weracoba: [page]} %}
@@ -253,7 +253,7 @@
   <section class="index__section">
     <header class="index__sectionHeader">
       <h1>
-        <span role="img" aria-hidden="true"> 🛠 </span>
+        <span role="img" aria-hidden="true"> 🪚 </span>
         Woodworking projects
       </h1>
       <p>
