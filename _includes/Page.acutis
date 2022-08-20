@@ -1,3 +1,16 @@
+{% interface
+  absoluteUrl = ?string
+  build = {environment: string}
+  content = string
+  description = ?string
+  formattedDate = string
+  isoDate = string
+  mainMenu = [{path: string, title: string}]
+  siteMetadata = {description: string, title: string}
+  socialMenu = [{icon: string, title: string, url: string}]
+  thumbnail = ?{caption: string, image: string}
+  title = string
+/interface %}
 {% Layout
    siteMetadata
    mainMenu

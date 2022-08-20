@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+{% interface
+  siteMetadata = {description: string, title: string}
+  absoluteUrl = ?string
+  build = {environment: string}
+  contentType = ?string
+  description = ?string
+  mainMenu = [{path: string, title: string}]
+  socialMenu = [{icon: string, title: string, url: string}]
+  thumbnail = ?{caption: string, image: string}
+  title = ?string
+
+  Children
+  EntryHeader = ?
+/interface %}
 {% match siteMetadata with {title: siteTitle, description: siteDescription} ~%}
 <html lang="en-US" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>
@@ -41,7 +55,7 @@
             </ul>
           </nav>
         </div>
-        {{ EntryHeader }}
+        {{ EntryHeader ? "" }}
       </header>
       <div id="content" class="layout__content smallscreen-padding">
         {{ Children }}

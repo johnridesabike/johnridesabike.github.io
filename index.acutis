@@ -1,3 +1,5 @@
+{* No interface because the collections record is HUUUUUGE. There's probably
+   a better way of encoding that data. *}
 {% Layout
     mainMenu
     socialMenu
@@ -11,7 +13,6 @@
     build
     absoluteUrl
     contentType=!"website"
-    EntryHeader=#%}{%/#
 %}
 <main id="main" class="site-main page-content">
   <div class="index__topColumns">
