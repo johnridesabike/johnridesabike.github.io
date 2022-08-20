@@ -1,3 +1,11 @@
+{% interface
+  siteMetadata = {title: string, description: string}
+  title = ?string
+  absoluteUrl = ?string
+  contentType = ?string
+  description = ?string
+  thumbnail = ?{caption: string, image: string}
+/interface %}
 {% match siteMetadata with {title: siteTitle, description: siteDescription} %}
 <meta property="og:site_name" content="{{ siteTitle }}" />
 <title>
