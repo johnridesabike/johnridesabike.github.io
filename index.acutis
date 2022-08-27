@@ -214,8 +214,8 @@
       }
       class=""
     %}
-      Acutis is a template engine I wrote from scratch. This website is built
-      with it!
+      Acutis is a programming language that I created from scratch. This website
+      is built with it!
     {% /Excerpt %}
     {% Excerpt
       isWide=false
