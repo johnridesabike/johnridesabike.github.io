@@ -1,6 +1,6 @@
 {% interface
   class = string
-/interface %}
+/ %}
 <svg
   width="20"
   height="20"

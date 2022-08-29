@@ -15,7 +15,7 @@
   title = string
 
   Children
-/interface %}
+/ %}
 <article
   class="excerpt__excerpt {{ class }}
     {%~ match isWide with true %} excerpt__isWide

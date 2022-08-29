@@ -10,7 +10,7 @@
   socialMenu = [{icon: string, title: string, url: string}]
   thumbnail = ?{caption: string, image: string}
   title = string
-/interface %}
+/ %}
 {% Layout
    siteMetadata
    mainMenu
