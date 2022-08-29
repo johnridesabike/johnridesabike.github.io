@@ -12,7 +12,7 @@
 
   Children
   EntryHeader = ?
-/interface %}
+/ %}
 {% match siteMetadata with {title: siteTitle, description: siteDescription} ~%}
 <html lang="en-US" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>

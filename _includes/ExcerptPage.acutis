@@ -17,7 +17,7 @@
               }
       }
     }
-/interface %}
+/ %}
 {% match page with {data: {title, description, thumbnail}, url} %}
   {% Excerpt title fullPath=url isExternal=false class="" isWide thumbnail %}
     {{ description }}
