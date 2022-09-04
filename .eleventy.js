@@ -1,7 +1,7 @@
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const htmlmin = require("html-minifier");
-const acutis = require("./_11ty/eleventyAcutis");
+const acutis = require("acutis-lang/eleventy");
 const acutisComponents = require("./_includes/acutisComponents");
 
 const manifestPath = path.resolve(
@@ -112,7 +112,6 @@ module.exports = function (eleventyConfig) {
     templateFormats: ["md", "acutis"],
     markdownTemplateEngine: "acutis",
     htmlTemplateEngine: "acutis",
-    dataTemplateEngine: "acutis",
     dir: {
       input: ".",
       includes: "_includes",
