@@ -1,8 +1,48 @@
-const { Compile, Typescheme, TypeschemeChildren } = require("acutis-lang");
+const { Component, Typescheme, TypeschemeChildren } = require("acutis-lang");
 const { icons } = require("feather-icons");
 const fs = require("fs").promises;
 const path = require("path");
-const { makeImg } = require("../_11ty/img");
+const Image = require("@11ty/eleventy-img");
+
+function makeImg(props) {
+  const extName = path.extname(props.src).toLowerCase();
+  let format;
+  switch (extName) {
+    case ".jpg":
+    case ".jpeg":
+    case ".tiff":
+    case ".raw":
+    case ".webp":
+      format = "jpeg";
+      break;
+    case ".svg":
+      format = "svg";
+      break;
+    case ".png":
+      format = "png";
+      break;
+    default:
+      format = null;
+      break;
+  }
+  if (format === null) {
+    props.image = {
+      tag: "vector",
+      vector: { src: props.src, width: props.width },
+    };
+    return Promise.resolve(props);
+  } else {
+    return Image("./" + props.src, {
+      widths: [props.width, props.width * 1.5, props.width * 2],
+      formats: [format],
+      urlPath: "/assets/images/minified/",
+      outputDir: path.join(".", "_site", "assets", "images", "minified"),
+    }).then((stats) => {
+      props.image = { tag: "image", images: stats[format] };
+      return props;
+    });
+  }
+}
 
 const manifestPath = path.resolve(
   __dirname,
@@ -20,7 +60,7 @@ const Ty = Typescheme;
 const TyChild = TypeschemeChildren;
 
 module.exports = [
-  Compile.fromFunAsync(
+  Component.funAsync(
     "Feather",
     Ty.make([["icon", Ty.string()]]),
     TyChild.make([]),
@@ -32,7 +72,7 @@ module.exports = [
    * parsed as markdown. This means that extra lines with indentation can
    * get parsed as a code block, which we don't want.
    */
-  Compile.fromFunAsync(
+  Component.funAsync(
     "Img",
     Ty.make([
       ["src", Ty.string()],
@@ -80,7 +120,7 @@ module.exports = [
         )
   ),
 
-  Compile.fromFunAsync(
+  Component.funAsync(
     "Webpack",
     Ty.make([["asset", Ty.string()]]),
     TyChild.make([]),
