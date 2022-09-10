@@ -1,5 +1,5 @@
 {% interface
-  class = string
+  class = ?string
   fullPath = string
   isExternal = false | true
   isWide = false | true
@@ -17,7 +17,7 @@
   Children
 / %}
 <article
-  class="excerpt__excerpt {{ class }}
+  class="excerpt__excerpt {{ class ? "" }}
     {%~ match isWide with true %} excerpt__isWide
     {%~ with false %} {* none *}
     {%~ /match ~%}"

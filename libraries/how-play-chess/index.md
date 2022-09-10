@@ -7,8 +7,8 @@ attachments:
     - /assets/attachments/handout-How-to-Play-Chess.pdf
     - /assets/attachments/handout-How-to-Play-Chess.docx
 description: |
-  I've run a succesful chess program since 2017. At the time, I couldn't find
-  any satisfactory guides to give to participants. This is one that I wrote
+  I ran a successful chess program from 2017 to 2020. At the time, I couldn't
+  find any satisfactory guides to give to participants. This is one that I wrote
   myself which aims to cover all of the necessary knowledge without being too
   long or too short.
 thumbnail: null
