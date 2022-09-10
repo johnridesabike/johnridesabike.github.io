@@ -3,8 +3,6 @@
 {% Layout
     mainMenu
     socialMenu
-    title=null
-    description=null
     thumbnail=!{
       image: "/assets/images/john2018.jpg",
       caption: "A photo of John."
@@ -59,27 +57,133 @@
         Questions, comments, job offers, jokes, poems, or just to say “hi.”
       </p>
       <div class="wp-block-button aligncenter is-style-squared">
-        <a class="button-link__link" href="mailto:jbpjackson@icloud.com">
+        <a class="button-link__link" href="mailto:jbpjackson+website@icloud.com">
           {% Feather icon="mail" / %} Email me
         </a>
       </div>
     </div>
   </div>
+
   <hr />
+
   <section class="index__section">
     <header class="index__sectionHeader">
       <h1>
-        <span role="img" aria-hidden="true"> 🎥 </span>
-        Media production
+        {% Feather icon="code" / %}
+        Software projects
       </h1>
+      <p>
+        These are the sundry software projects I've dabbled in over the years.
+        I do coding and web design.
+      </p>
     </header>
-    <h2 class="index__divider"> Public libraries </h2>
+    <!-- <h2 class="index__divider"> Apps and coding </h2> -->
+    {% match collections with {coronate: [page]} %}
+      {% ExcerptPage page isWide=true / %}
+    {% with _ %} {* Nothing *}
+    {% /match %}
+    {% Excerpt
+      isWide=true
+      title="Acutis template language"
+      fullPath="https://johnridesa.bike/acutis/"
+      isExternal=false
+      thumbnail=!{
+        @kind: "image",
+        image: "/assets/vector/acutis_wide.svg",
+        caption: "Acutis language icon."
+      }
+    %}
+      Acutis is a programming language that I created from scratch. This website
+      is built with it!
+    {% /Excerpt %}
+    {% Excerpt
+      isWide=false
+      title="Maximum weighted matching finder"
+      fullPath="https://johnridesa.bike/mwmatching-finder/"
+      isExternal=false
+    %}
+      While I was developing <em>Coronate</em> I needed to automatically pair
+      chess players. This interactive webpage explains how to use <em>maximum
+      weighted matching</em> theory to solve this problem.
+    {% /Excerpt %}
+    {* {% match collections with {iosShortcuts: [page]} %}
+      {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
+    {% /match %} *}
+    {* {% match collections with {wordroom: [page]} %}
+      {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
+    {% /match %} *}
+    {* {% match collections with {johnridesabike: [page]} %}
+      {% ExcerptPage page isWide=true / %}
+    {% with _ %} {* Nothing *}
+    {% /match %} *}
+    {% match collections with {literacyAlliance: [page]} %}
+      {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
+    {% /match %}
+    {* {% match collections with {weracoba: [page]} %}
+      {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
+    {% /match %} *}
+  </section>
+
+  <hr />
+
+  <section class="index__section">
+    <header class="index__sectionHeader">
+      <h1> {% Feather icon="pen-tool" / %} Writing </h1>
+      <p>
+        In addition to the documents on this website, here's a sample of my
+        other writing projects.
+      </p>
+    </header>
+    <h2 class="index__divider"> Blogging </h2>
+    {% Excerpt
+      isWide=true
+      title="Bike Walk Life blog"
+      fullPath="https://bikewalk.life/"
+      isExternal=true
+      thumbnail=!{
+        @kind: "image",
+        image: "/assets/vector/bikewalklife-logo.svg",
+        caption: "Bike Walk Life logo."
+      }
+    %}
+      As a longtime bicycle commuter, I use this blog to discuss stories and
+      issues from the world of biking and walking. I especially focus on the
+      Southeast U.S.
+    {% /Excerpt %}
+    <h2 class="index__divider"> Chess articles </h2>
+    {% Excerpt
+       isWide=false
+       title="Your Library’s First Chess Tournament: From Opening to Endgame"
+       fullPath="http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame"
+       isExternal=true
+       %}
+      I've published a guide to running a library chess tournament on
+      <em>Programming Librarian</em>. It covers all of the basic knowledge
+      such as scorekeeping and pairing, plus other tips that a library worker
+      (or anyone directing a tournament) would need to know.
+    {% /Excerpt %}
+    {% match collections with {chessGuide: [page]} %}
+      {% ExcerptPage page isWide=false / %}
+    {% with _ %} {* Nothing *}
+    {% /match %}
+  </section>
+
+  <hr />
+
+  <section class="index__section">
+    <header class="index__sectionHeader">
+      <h1> {% Feather icon="video" / %} Media production </h1>
+    </header>
+    <!-- <h2 class="index__divider"> Public libraries </h2> -->
     {% match collections with {libraryMedia: [{data: {title, description, thumbnail}, url}]} %}
       {% Excerpt
          fullPath=url
          title=title
          isWide=true
-         class=""
          isExternal=false
          thumbnail=!{
            @kind: "video",
@@ -96,13 +200,12 @@
     {% with _ %} {* Nothing *}
     {% /match %}
   </section>
+
   <hr />
+
   <section class="index__section">
     <header class="index__sectionHeader">
-      <h1>
-        <span role="img" aria-hidden="true"> 🎓 </span>
-        MLIS portfolio
-      </h1>
+      <h1> {% Feather icon="book" / %} MLIS portfolio </h1>
       <p>
         I graduated with a master of library science degree from the
         University of South Carolina with a focus on academic and digital
@@ -156,113 +259,18 @@
     {% with _ %} {* Nothing *}
     {% /match %}
   </section>
+
   <hr />
+
   <section class="index__section">
     <header class="index__sectionHeader">
-      <h1> {% Icon_Chess class="" /%} Chess at the library. </h1>
-      <p>
-        While working at a public library for the last few years, I've
-        developed an all-ages chess program. These are a few resources I
-        created to help facilitate it.
-      </p>
-    </header>
-    <h2 class="index__divider"> Chess articles </h2>
-    {% Excerpt
-       isWide=false
-       title="Your Library’s First Chess Tournament: From Opening to Endgame"
-       fullPath="http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame"
-       class=""
-       isExternal=true
-       thumbnail=null
-       %}
-      I've published a guide to running a library chess tournament on
-      <em>Programming Librarian</em>. It covers all of the basic knowledge
-      such as scorekeeping and pairing, plus other tips that a library worker
-      (or anyone directing a tournament) would need to know.
-    {% /Excerpt %}
-    {% match collections with {chessGuide: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-  </section>
-  <hr />
-  <section class="index__section">
-    <header class="index__sectionHeader">
-      <h1>
-        {% Feather icon="code" / %}
-        Software projects
-      </h1>
-      <p>
-        These are the sundry software projects I've dabbled in over the years.
-        I do coding and web design.
-      </p>
-    </header>
-    <h2 class="index__divider"> Apps and coding </h2>
-    {% match collections with {coronate: [page]} %}
-      {% ExcerptPage page isWide=true / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {% Excerpt
-      isWide=true
-      title="Acutis template language"
-      fullPath="https://johnridesa.bike/acutis/"
-      isExternal=false
-      thumbnail=!{
-        @kind: "image",
-        image: "/assets/vector/acutis_wide.svg",
-        caption: "Acutis language icon."
-      }
-      class=""
-    %}
-      Acutis is a programming language that I created from scratch. This website
-      is built with it!
-    {% /Excerpt %}
-    {% Excerpt
-      isWide=false
-      title="Maximum weighted matching finder"
-      fullPath="https://johnridesa.bike/mwmatching-finder/"
-      isExternal=false
-      thumbnail=null
-      class=""
-    %}
-      While I was developing <em>Coronate</em> I needed to automatically pair
-      chess players. This interactive webpage explains how to use <em>maximum
-      weighted matching</em> theory to solve this problem.
-    {% /Excerpt %}
-    {* {% match collections with {iosShortcuts: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %} *}
-    {* {% match collections with {wordroom: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %} *}
-    {* {% match collections with {johnridesabike: [page]} %}
-      {% ExcerptPage page isWide=true / %}
-    {% with _ %} {* Nothing *}
-    {% /match %} *}
-    {% match collections with {literacyAlliance: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {* {% match collections with {weracoba: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %} *}
-  </section>
-  <hr />
-  <section class="index__section">
-    <header class="index__sectionHeader">
-      <h1>
-        <span role="img" aria-hidden="true"> 🪚 </span>
-        Woodworking projects
-      </h1>
+      <h1> {% Feather icon="tool" / %} Woodworking projects </h1>
       <p>
         Sometimes I build furniture, and these are the guides I wrote for
         them.
       </p>
     </header>
-    <h2 class="index__divider"> Guides </h2>
+    <!-- <h2 class="index__divider"> Guides </h2> -->
     {% match collections with {marbleTable: [page]} %}
       {% ExcerptPage page isWide=true / %}
     {% with _ %} {* Nothing *}

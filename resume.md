@@ -1,6 +1,6 @@
 ---
 title: Résumé
-date: 2022-08-06
+date: 2022-09-10
 description: John Jackson's Résumé
 layout: Page.acutis
 thumbnail: null
@@ -8,7 +8,7 @@ thumbnail: null
 
 I’m a public library staffer and MLIS graduate who is interested in digital
 library technologies, web development, and libraries of all types. I like to
-bike, write, build, and tinker.
+bike, write, and tinker.
 
 ## Professional experience
 
@@ -16,15 +16,16 @@ bike, write, build, and tinker.
 
 **Library Associate: Materials Management • 2021-present**
 
-- Manage bibliographic, item, and authority records for Polaris ILS.
-- Built and maintain an internal system for managing library statistics data and
+- Perform original cataloging for new materials added to the collection.
+- Manage bibliographic records, item records, and authority records with Polaris
+  ILS.
+- Build and maintain an internal system for managing library statistics data and
   displaying it on user-friendly dashboards.
 - Manage resource sharing through WorldShare ILL.
-- Perform original cataloging for new materials added to the collection.
 
 **Library Associate: Adult Services • 2016-2021**
 
-- Planned and lead an average of 6 unique adult library programs per year on
+- Planned and led an average of six unique adult library programs per year on
   topics including: chess clubs, job search assistance, fitness, bicycle safety,
   and geocaching.
 - Created live and asynchronous virtual programs during COVID-19 pandemic.
@@ -59,6 +60,8 @@ bike, write, build, and tinker.
 
 ## Professional development
 
+- Attended 2022 Georgia Library Cataloging Conference.
+- Attended 2021 Georgia Library Tech Boot Camp Conference.
 - Attended 2018 Public Library Association Conference.
 - Attended 2018 Georgia Library Association Conference.
 
