@@ -4,13 +4,6 @@ const htmlmin = require("html-minifier");
 const acutis = require("acutis-lang/eleventy");
 const acutisComponents = require("./_includes/acutisComponents");
 
-const manifestPath = path.resolve(
-  __dirname,
-  "_site",
-  "assets",
-  "manifest.json"
-);
-
 const contentWidth = 640;
 
 function renderImg({ formats, src, alt }) {
@@ -80,8 +73,6 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.setBrowserSyncConfig({
     ...eleventyConfig.browserSyncConfig,
-    // Reload when manifest file changes
-    files: [manifestPath],
     // Speed/clean up build time
     ui: false,
     ghostMode: false,
