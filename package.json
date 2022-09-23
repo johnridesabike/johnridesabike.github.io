@@ -34,7 +34,7 @@
     "@fontsource/libre-baskerville": "^4.5.8",
     "@fontsource/source-code-pro": "^4.5.10",
     "@fontsource/source-sans-pro": "^4.5.10",
-    "acutis-lang": "^0.18.1",
+    "acutis-lang": "^0.18.2",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.1.0",
     "feather-icons": "^4.29.0",
