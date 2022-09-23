@@ -1,7 +1,6 @@
-Copyright © 2019 John Jackson
+Copyright © 2022 John Jackson
 
-Website content, which is mostly located in the `src/pages-markdown` directory,
-is licensed under the Creative Commons Attribution-ShareAlike 4.0 International
-license. (CC BY-SA 4.0) 
+Website content is licensed under the Creative Commons Attribution-ShareAlike
+4.0 International license. (CC BY-SA 4.0)
 
-Everything else is is MIT licensed.
+Source code is licensed under the Mozilla Public License 2.0. (MPL-2.0)
