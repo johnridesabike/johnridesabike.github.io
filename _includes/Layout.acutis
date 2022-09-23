@@ -18,17 +18,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href='{% Webpack asset="main.css" /%}' />
+    <link rel="stylesheet" href="/assets/style.css" />
     {% map [
-        "fonts/libre-baskerville-latin-400-normal.woff2",
-        "fonts/libre-baskerville-latin-ext-400-normal.woff2",
-        "fonts/source-sans-pro-latin-400-normal.woff2",
-        "fonts/source-sans-pro-latin-400-italic.woff2",
-        "fonts/source-sans-pro-latin-700-normal.woff2",
-        "fonts/source-sans-pro-latin-700-italic.woff2"
+        "/assets/node_modules/@fontsource/libre-baskerville/files/libre-baskerville-latin-400-normal.woff2",
+        "/assets/node_modules/@fontsource/libre-baskerville/files/libre-baskerville-latin-ext-400-normal.woff2",
+        "/assets/node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-400-normal.woff2",
+        "/assets/node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-400-italic.woff2",
+        "/assets/node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-700-normal.woff2",
+        "/assets/node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-700-italic.woff2"
       ]
       with asset ~%}
-      <link rel="preload" as="font" crossorigin href="{% Webpack asset /%}" />
+      <link rel="preload" as="font" crossorigin href="{{ asset }}" />
     {% /map ~%}
     {% Metadata siteMetadata title description absoluteUrl thumbnail contentType / %}
   </head>

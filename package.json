@@ -17,16 +17,11 @@
   "license": "MIT",
   "author": "John Jackson",
   "scripts": {
-    "build": "npm-run-all build:assets build:html",
-    "build:assets": "NODE_ENV=production webpack",
-    "build:html": "ELEVENTY_ENV=production eleventy",
+    "build": "ELEVENTY_ENV=production eleventy",
     "clean": "rm -r _site",
     "deploy": "gh-pages -d _site -b master",
     "predeploy": "npm run clean && npm run build",
-    "prestart": "NODE_ENV=development webpack",
-    "start": "npm-run-all -l --parallel start:*",
-    "start:assets": "NODE_ENV=development webpack --watch",
-    "start:html": "ELEVENTY_ENV=development eleventy --serve"
+    "start": "ELEVENTY_ENV=development eleventy --serve"
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.2",
@@ -35,23 +30,21 @@
     "@fontsource/source-code-pro": "^4.5.10",
     "@fontsource/source-sans-pro": "^4.5.10",
     "acutis-lang": "^0.18.2",
-    "css-loader": "^6.7.1",
-    "css-minimizer-webpack-plugin": "^4.1.0",
+    "cssnano": "^5.1.13",
     "feather-icons": "^4.29.0",
     "gh-pages": "^4.0.0",
     "html-minifier": "^4.0.0",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-implicit-figures": "^0.10.0",
-    "mini-css-extract-plugin": "^2.6.1",
     "normalize.css": "^8.0.1",
-    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.16",
-    "postcss-loader": "^7.0.1",
-    "postcss-preset-env": "^7.8.1",
+    "postcss-import": "^15.0.0",
+    "postcss-preset-env": "^7.8.2",
+    "postcss-url": "^10.1.3",
     "prismjs": "^1.28.0",
-    "simple-icons": "^7.4.0",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-manifest-plugin": "^5.0.0"
+    "simple-icons": "^7.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1"
   }
 }
