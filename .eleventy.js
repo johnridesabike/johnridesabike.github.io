@@ -109,7 +109,7 @@ module.exports = function (eleventyConfig) {
     });
   }
   return {
-    templateFormats: ["md", "acutis"],
+    templateFormats: ["md", "acutis", "11ty.js"],
     markdownTemplateEngine: "acutis",
     htmlTemplateEngine: "acutis",
     dir: {

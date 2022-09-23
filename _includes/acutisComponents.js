@@ -1,6 +1,5 @@
 const { Component, Typescheme, TypeschemeChildren } = require("acutis-lang");
 const { icons } = require("feather-icons");
-const fs = require("fs").promises;
 const path = require("path");
 const Image = require("@11ty/eleventy-img");
 
@@ -44,18 +43,6 @@ function makeImg(props) {
   }
 }
 
-const manifestPath = path.resolve(
-  __dirname,
-  "..",
-  "_site",
-  "assets",
-  "manifest.json"
-);
-
-const manifest = fs
-  .readFile(manifestPath, "utf-8")
-  .then((data) => JSON.parse(data));
-
 const Ty = Typescheme;
 const TyChild = TypeschemeChildren;
 
@@ -89,7 +76,7 @@ module.exports = [
             const { src, width } = props.image.vector;
             return Promise.resolve(`<img
               src="${src}"
-              alt="${alt}"
+              alt="${props.alt}"
               width="${width}"
               ${className} />`);
           } else {
@@ -118,22 +105,5 @@ module.exports = [
         .catch((e) =>
           Promise.reject(new Error("Problem with Img: " + e.message))
         )
-  ),
-
-  Component.funAsync(
-    "Webpack",
-    Ty.make([["asset", Ty.string()]]),
-    TyChild.make([]),
-    (props, _children) =>
-      manifest.then((data) => {
-        const x = data[props.asset];
-        if (x) {
-          return Promise.resolve(x);
-        } else {
-          return Promise.reject(
-            `Problem with Webpack: ${props.asset} doesn't exist in the manifest.`
-          );
-        }
-      })
   ),
 ];
