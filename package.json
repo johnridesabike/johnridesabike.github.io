@@ -14,7 +14,7 @@
     "type": "git",
     "url": "https://github.com/johnridesabike/johnridesabike.github.io"
   },
-  "license": "MIT",
+  "license": "MPL-2.0",
   "author": "John Jackson",
   "scripts": {
     "build": "ELEVENTY_ENV=production eleventy",
