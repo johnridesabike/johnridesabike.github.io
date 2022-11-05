@@ -1,4 +1,4 @@
-const { Component, Typescheme, TypeschemeChildren } = require("acutis-lang");
+const { Component, Typescheme } = require("acutis-lang");
 const { icons } = require("feather-icons");
 const path = require("path");
 const Image = require("@11ty/eleventy-img");
@@ -44,14 +44,10 @@ function makeImg(props) {
 }
 
 const Ty = Typescheme;
-const TyChild = TypeschemeChildren;
 
 module.exports = [
-  Component.funAsync(
-    "Feather",
-    Ty.make([["icon", Ty.string()]]),
-    TyChild.make([]),
-    ({ icon }, _children) => Promise.resolve(icons[icon].toSvg())
+  Component.funAsync("Feather", Ty.make([["icon", Ty.string()]]), ({ icon }) =>
+    Promise.resolve(icons[icon].toSvg())
   ),
 
   /*
@@ -67,8 +63,7 @@ module.exports = [
       ["class", Ty.string()],
       ["width", Ty.int()],
     ]),
-    TyChild.make([]),
-    (props, _children) =>
+    (props) =>
       makeImg(props)
         .then((props) => {
           const className = props["class"] ? `class="${props["class"]}"` : "";

@@ -1,5 +1,5 @@
 {% interface
-  Children
+  children = string
 / %}
 {*
 https://github.com/reach/reach-ui/blob/main/packages/visually-hidden/src/index.tsx
@@ -18,5 +18,5 @@ https://github.com/reach/reach-ui/blob/main/packages/visually-hidden/src/index.t
     word-wrap: normal;
   "
 >
-  {{ Children }}
+  {{ &children }}
 </span>

@@ -9,9 +9,8 @@
   socialMenu = [{icon: string, title: string, url: string}]
   thumbnail = ?{caption: string, image: string}
   title = ?string
-
-  Children
-  EntryHeader = ?
+  children = string
+  entryHeader = ?string
 / %}
 {% match siteMetadata with {title: siteTitle, description: siteDescription} ~%}
 <html lang="en-US" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
@@ -55,10 +54,10 @@
             </ul>
           </nav>
         </div>
-        {{ EntryHeader ? "" }}
+        {{ &entryHeader ? "" }}
       </header>
       <div id="content" class="layout__content smallscreen-padding">
-        {{ Children }}
+        {{ &children }}
         <aside id="secondary" class="widget__widgetArea has-ui-font">
           <section class="widget__widget">
             <h3>About John</h3>

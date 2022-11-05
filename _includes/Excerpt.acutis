@@ -13,8 +13,7 @@
           video: [{src: string, type: string}]
         }
   title = string
-
-  Children
+  children = string
 / %}
 <article
   class="excerpt__excerpt {{ class ? "" }}
@@ -79,7 +78,7 @@
     {% with null %} {* null *}
     {% /match %}
     <p class="has-small-font-size excerpt__text">
-      {{ Children }}
+      {{ &children }}
     </p>
     {% VisuallyHidden %}
     <a href="{{ fullPath }}" class="button-link__link" rel="bookmark">
