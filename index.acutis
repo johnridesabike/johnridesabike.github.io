@@ -179,7 +179,7 @@
       <h1> {% Feather icon="video" / %} Media production </h1>
     </header>
     <!-- <h2 class="index__divider"> Public libraries </h2> -->
-    {% match collections with {libraryMedia: [{data: {title, description, thumbnail}, url}]} %}
+    {% match collections with {libraryMedia: [{data: {title, description}, url}]} %}
       {% Excerpt
          fullPath=url
          title=title
