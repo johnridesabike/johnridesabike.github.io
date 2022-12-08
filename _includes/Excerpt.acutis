@@ -66,8 +66,8 @@
           muted
           loop
           playsinline
-          height="{{ height }}"
-          width="{{ width }}"
+          height="{{ %i height }}"
+          width="{{ %i width }}"
         >
           {% map video with {src, type} %}
             <source src="{{ src }}" type="{{ type }}" />
@@ -78,7 +78,7 @@
     {% with null %} {* null *}
     {% /match %}
     <p class="has-small-font-size excerpt__text">
-      {{ &children }}
+      {{{ children }}}
     </p>
     {% VisuallyHidden %}
     <a href="{{ fullPath }}" class="button-link__link" rel="bookmark">

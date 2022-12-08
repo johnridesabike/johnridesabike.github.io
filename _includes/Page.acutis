@@ -52,7 +52,7 @@
 %}
 <main id="main" class="site-main">
   <article>
-    <div class="page-content">{{ &content }}</div>
+    <div class="page-content">{{{ content }}}</div>
     <footer class="page__footer has-ui-font">
       <div class="page__postTime page__footerItem">
         <span>

@@ -54,10 +54,10 @@
             </ul>
           </nav>
         </div>
-        {{ &entryHeader ? "" }}
+        {{{ entryHeader ? "" }}}
       </header>
       <div id="content" class="layout__content smallscreen-padding">
-        {{ &children }}
+        {{{ children }}}
         <aside id="secondary" class="widget__widgetArea has-ui-font">
           <section class="widget__widget">
             <h3>About John</h3>
@@ -85,7 +85,7 @@
             <ul id="menu-social-menu" class="menu">
               {% map socialMenu with {url, icon, title} %}
               <li>
-                <a href="{{ url }}"> {{ &icon }} {{ title }}</a>
+                <a href="{{ url }}"> {{{ icon }}} {{ title }}</a>
               </li>
               {% /map %}
             </ul>
