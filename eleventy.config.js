@@ -71,12 +71,6 @@ module.exports = function (eleventyConfig) {
       .use(mdImages)
       .use(require("markdown-it-implicit-figures"), { figcaption: true })
   );
-  eleventyConfig.setBrowserSyncConfig({
-    ...eleventyConfig.browserSyncConfig,
-    // Speed/clean up build time
-    ui: false,
-    ghostMode: false,
-  });
   if (process.env.ELEVENTY_ENV === "production") {
     eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
       // Eleventy 1.0+: use this.inputPath and this.outputPath instead
