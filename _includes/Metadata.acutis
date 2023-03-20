@@ -6,17 +6,16 @@
   description = ?string
   thumbnail = ?{caption: string, image: string}
 / %}
-{% match siteMetadata with {title: siteTitle, description: siteDescription} %}
-<meta property="og:site_name" content="{{ siteTitle }}" />
+<meta property="og:site_name" content="{{ siteMetadata.title }}" />
 <title>
   {%~ match title
       with null ~%}
-     {{ siteTitle }}
+     {{ siteMetadata.title }}
   {%~ with !title ~%}
-     {{ title }} | {{ siteTitle }}
+     {{ title }} | {{ siteMetadata.title }}
   {%~ /match ~%}
 </title>
-<meta property="og:title" content="{{ title ? siteTitle }}" />
+<meta property="og:title" content="{{ title ? siteMetadata.title }}" />
 
 {% match absoluteUrl
   with null %} <!-- no absoluteUrl -->
@@ -28,7 +27,7 @@
 <meta
   name="description"
   property="og:description"
-  content="{{ description ? siteDescription }}"
+  content="{{ description ? siteMetadata.description }}"
 />
 {% match thumbnail
   with null %}
@@ -43,5 +42,4 @@
     property="og:image:alt"
     content="{{ caption }}"
   />
-{% /match %}
 {% /match %}

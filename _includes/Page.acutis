@@ -35,7 +35,6 @@
              alt=""
              class="excerpt__coverImg"
              width=1200
-             breakpoints=[600, 1200]
             /%}
           <figcaption class="page__coverFigureCaption has-xsmall-font-size">
             <span class="page__captionText"> {{ caption }}</span>

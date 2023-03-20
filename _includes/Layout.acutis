@@ -12,7 +12,6 @@
   children = string
   entryHeader = ?string
 / %}
-{% match siteMetadata with {title: siteTitle, description: siteDescription} ~%}
 <html lang="en-US" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>
     <meta charset="utf-8" />
@@ -39,10 +38,10 @@
           <div class="header__branding">
             <p class="header__title">
               <a href="/" rel="home" class="header__linkHome">
-                {{ siteTitle }}
+                {{ siteMetadata.title }}
               </a>
             </p>
-            <p class="header__description">{{ siteDescription }}</p>
+            <p class="header__description">{{ siteMetadata.description }}</p>
           </div>
           <nav id="site-navigation" class="has-ui-font menu__navigation">
             <ul id="primary-menu" class="menu__menu">
@@ -138,4 +137,3 @@
     {% /match %}
   </body>
 </html>
-{% /match %}
