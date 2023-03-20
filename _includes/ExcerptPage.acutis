@@ -18,8 +18,11 @@
       }
     }
 / %}
-{% match page with {data: {title, description, thumbnail}, url} %}
-  {% Excerpt title fullPath=url isExternal=false isWide thumbnail %}
-    {{ description }}
-  {% /Excerpt %}
-{% /match %}
+{% Excerpt
+  title=page.data.title
+  fullPath=page.url
+  isExternal=false
+  isWide
+  thumbnail=page.data.thumbnail %}
+  {{ page.data.description }}
+{% /Excerpt %}
