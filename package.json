@@ -19,7 +19,7 @@
   "scripts": {
     "build": "ELEVENTY_ENV=production eleventy",
     "clean": "rm -r _site",
-    "deploy": "gh-pages -d _site -b master",
+    "deploy": "gh-pages -d _site -b master -t",
     "predeploy": "npm run clean && npm run build",
     "start": "ELEVENTY_ENV=development eleventy --serve"
   },
