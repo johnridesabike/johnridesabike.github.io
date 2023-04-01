@@ -59,18 +59,20 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPlugin(acutis, { components: acutisComponents });
-  eleventyConfig.setLibrary(
-    "md",
-    require("markdown-it")({
-      html: true,
-      breaks: false,
-      linkify: true,
-      typographer: true,
-    })
+
+  eleventyConfig.amendLibrary("md", (md) =>
+    md
+      .set({
+        html: true,
+        breaks: false,
+        linkify: true,
+        typographer: true,
+      })
       .use(require("markdown-it-footnote"))
       .use(mdImages)
       .use(require("markdown-it-implicit-figures"), { figcaption: true })
   );
+
   if (process.env.ELEVENTY_ENV === "production") {
     eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
       // Eleventy 1.0+: use this.inputPath and this.outputPath instead
@@ -93,6 +95,7 @@ module.exports = function (eleventyConfig) {
       }
     });
   }
+  eleventyConfig.addWatchTarget("./assets/**/*");
   return {
     templateFormats: ["md", "acutis", "11ty.js"],
     markdownTemplateEngine: "acutis",
