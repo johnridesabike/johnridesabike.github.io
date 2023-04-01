@@ -26,9 +26,10 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-img": "^3.0.0",
-    "@fontsource/libre-baskerville": "^4.5.8",
-    "@fontsource/source-code-pro": "^4.5.10",
-    "@fontsource/source-sans-pro": "^4.5.10",
+    "@fontsource/libre-baskerville": "^4.5.10",
+    "@fontsource/source-code-pro": "^4.5.14",
+    "@fontsource/source-sans-3": "^4.5.13",
+    "@fontsource/source-serif-4": "^4.5.17",
     "acutis-lang": "^0.21.0",
     "cssnano": "^5.1.15",
     "feather-icons": "^4.29.0",
