@@ -23,7 +23,7 @@ services to patrons while our doors were closed to the public.
 </div>
 <div class="video-thumbnail__link">
 
-[![Ten Fun Finds At Your Library](/assets/images/library-media/10things-cover.png)](https://youtu.be/Qv5kRzo5e7o)
+[![Ten Fun Finds At Your Library](/assets/images/library-media/10things-cover.jpg)](https://youtu.be/Qv5kRzo5e7o)
 
 </div>
 <div class="video-thumbnail__link">
