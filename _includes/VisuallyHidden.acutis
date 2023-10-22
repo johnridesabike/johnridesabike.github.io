@@ -1,6 +1,6 @@
 {% interface
   children = string
-/ %}
+%}
 {*
 https://github.com/reach/reach-ui/blob/main/packages/visually-hidden/src/index.tsx
 *}

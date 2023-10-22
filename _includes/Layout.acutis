@@ -11,7 +11,7 @@
   title = ?string
   children = string
   entryHeader = ?string
-/ %}
+%}
 <html lang="en-US" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>
     <meta charset="utf-8" />

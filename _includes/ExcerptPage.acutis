@@ -17,7 +17,7 @@
               }
       }
     }
-/ %}
+%}
 {% Excerpt
   title=page.data.title
   fullPath=page.url

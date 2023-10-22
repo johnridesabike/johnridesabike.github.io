@@ -5,7 +5,7 @@
   contentType = ?string
   description = ?string
   thumbnail = ?{caption: string, image: string}
-/ %}
+%}
 <meta property="og:site_name" content="{{ siteMetadata.title }}" />
 <title>
   {%~ match title
