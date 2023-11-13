@@ -14,9 +14,9 @@ tags: coronate
 
 Coronate is a free, open-source app for managing Swiss-style chess tournaments.
 
-<p><div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://coronate.netlify.app/">Launch Coronate in your browser</a></div></p>
+<div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://coronate.netlify.app/">Launch Coronate in your browser</a></div>
 
-<p><div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://github.com/johnridesabike/coronate">Browse the source code</a></div></p>
+<div class="wp-block-button aligncenter download"><a class="button-link__link" href="https://github.com/johnridesabike/coronate">Browse the source code</a></div>
 
 <blockquote
   class="has-large-font-size"
@@ -33,9 +33,11 @@ Coronate is a free, open-source app for managing Swiss-style chess tournaments.
       href="https://github.com/johnridesabike/coronate/issues/17#issue-815725499">
       <img
         src="/assets/images/coronate/StanleyGoldman-av.jpg"
-        style="border-radius: 50%; vertical-align: middle;"
+        style="vertical-align: middle;"
+        class="avatar"
         height="40"
         width="40"
+        alt=""
       />
       Stanley Goldman
     </a>

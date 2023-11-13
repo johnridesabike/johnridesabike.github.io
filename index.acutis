@@ -11,82 +11,85 @@
     build
     absoluteUrl
     contentType=!"website"
+    hideAbout=!true
 %}
-<main id="main" class="site-main page-content">
-  <div class="index__topColumns">
-    <figure>
-      {% Img
-         src="./assets/images/john2018.jpg"
-         alt="A photo of John."
-         width=256
-         class="avatar"
-       /%}
-    </figure>
-    <p class="index__hi has-large-font-size">Hi, I'm John Jackson.</p>
+
+<main class="page-content max-width-wide-content">
+  <header class=frontpage__section>
+    {% Mrk tag=245 html=!"h1" dir=@"column" %}
+      {% Sub field="a" %} Hi, I'm John Jackson. {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=520 dir=@"column" %}
+      {% Sub field="a" %}
+        {% Img
+           src="./assets/images/john2018.jpg"
+           alt="A photo of John."
+           width=96
+           class="avatar alignright"
+         /%}
+        I’m a cataloging librarian who bikes, writes, codes, and tinkers. This
+        is my portfolio and repository of personal projects.
+      {% /Sub %}
+    {% /Mrk %}
+  </header>
+
+  <div class=frontpage__section>
+    {% Mrk tag=520 dir=@"column" %}
+      {% Sub field="a" %}
+        Here are a few subject headings that may describe me:
+      {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" %}
+      {% Sub field="a" %} Public librarians. {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" %}
+      {% Sub field="a" %} Catalogers. {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" %}
+      {% Sub field="a" %} Cyclists. {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" %}
+      {% Sub field="a" %} Computer programmers. {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" %}
+      {% Sub field="a" %} Bloggers. {% /Sub %}
+    {% /Mrk %}
   </div>
-  <p>
-    I’m a public library staffer who is interested in digital library
-    technologies, web development, and libraries of all types. I like to bike,
-    write, build, and tinker.
-  </p>
-  <div class="index__topColumns">
-    <div>
-      <p>
-        <strong> Hiring? Here’s a bit about me: </strong>
-      </p>
-      <p style="text-align: left">
-        <span role="img" aria-label="check"> ✔️ </span>
-        MLIS Graduate.
-      </p>
-      <p style="text-align: left">
-        <span role="img" aria-label="check"> ✔️ </span>
-        Working in libraries since 2015.
-      </p>
-      <p style="text-align: left">
-        <span role="img" aria-label="check"> ✔️ </span>
-          Experience in technical services, public service programming, web
-          development, data management, and more.
-      </p>
-      <div class="wp-block-button aligncenter is-style-squared">
-        <a class="button-link__link" href="/resume/"> View my full résumé </a>
-      </div>
-    </div>
-    <div>
-      <p><strong> Let’s get in touch. </strong></p>
-      <p style="text-align: left">
-        Questions, comments, job offers, jokes, poems, or just to say “hi.”
-      </p>
-      <div class="wp-block-button aligncenter is-style-squared">
-        <a class="button-link__link" href="mailto:jbpjackson+website@icloud.com">
-          {% Feather icon="mail" / %} Email me
+
+  <div class=frontpage__section>
+    {% Mrk tag=856 ind1=!4 ind2=!2  dir=@"column"%}
+      {% Sub field="y" %}
+        <a href="/resume/">
+          {% Feather icon="file-text" / %} View my full résumé.
         </a>
-      </div>
-    </div>
+      {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=856 ind1=!0 dir=@"column" %}
+      {% Sub field="y" %} 
+          <a href="mailto:jbpjackson+website@icloud.com">
+            {% Feather icon="mail" / %} Email me.
+          </a>
+      {% /Sub %}
+    {% /Mrk %}
   </div>
 
-  <hr />
-
-  <section class="index__section">
-    <header class="index__sectionHeader">
-      <h1>
-        {% Feather icon="code" / %}
-        Software projects
-      </h1>
-      <p>
-        These are the sundry software projects I've dabbled in over the years.
-        I do coding and web design.
-      </p>
-    </header>
-    <!-- <h2 class="index__divider"> Apps and coding </h2> -->
-    {% match collections with {coronate: [page]} %}
-      {% ExcerptPage page isWide=true / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {% Excerpt
-      isWide=true
+  <section class=frontpage__section>
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+      {% Sub field="a" %}
+        {% Feather icon="terminal" / %}
+        Software engineering.
+      {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=520 dir=@"column" %}
+      {% Sub field="a" %}
+        These are some sundry software projects I've dabbled in over the years.
+      {% /Sub %}
+    {% /Mrk %}
+    {% Mrk_AddedEntryTitle_Page page=collections.coronate / %}
+    {% Mrk_AddedEntryTitle
       title="Acutis template language"
       fullPath="https://johnridesa.bike/acutis/"
-      isExternal=false
+      isExternal=true
       thumbnail=!{
         @kind: "image",
         image: "/assets/vector/acutis_wide.svg",
@@ -95,52 +98,36 @@
     %}
       Acutis is a programming language that I created from scratch. This website
       is built with it!
-    {% /Excerpt %}
-    {% Excerpt
-      isWide=false
+    {% /Mrk_AddedEntryTitle %}
+    {% Mrk_AddedEntryTitle
       title="Maximum weighted matching finder"
       fullPath="https://johnridesa.bike/mwmatching-finder/"
-      isExternal=false
+      isExternal=true
     %}
-      While I was developing <em>Coronate</em> I needed to automatically pair
-      chess players. This interactive webpage explains how to use <em>maximum
-      weighted matching</em> theory to solve this problem.
-    {% /Excerpt %}
-    {* {% match collections with {iosShortcuts: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %} *}
-    {* {% match collections with {wordroom: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %} *}
-    {* {% match collections with {johnridesabike: [page]} %}
-      {% ExcerptPage page isWide=true / %}
-    {% with _ %} {* Nothing *}
-    {% /match %} *}
-    {% match collections with {literacyAlliance: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {* {% match collections with {weracoba: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %} *}
+      While I was developing Coronate I needed to automatically pair chess
+      players. This interactive webpage explains how to use <em>maximum weighted
+      matching</em> theory to solve this problem.
+    {% /Mrk_AddedEntryTitle %}
   </section>
 
-  <hr />
-
-  <section class="index__section">
-    <header class="index__sectionHeader">
-      <h1> {% Feather icon="pen-tool" / %} Writing </h1>
-      <p>
+  <section class=frontpage__section>
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+      {% Sub field="a" %}
+        {% Feather icon="pen-tool" / %} Writing.
+      {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=520 dir=@"column" %}
+      {% Sub field="a" %}
         In addition to the documents on this website, here's a sample of my
         other writing projects.
-      </p>
-    </header>
-    <h2 class="index__divider"> Blogging </h2>
-    {% Excerpt
-      isWide=true
+      {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
+      {% Sub field="a" %}
+        Blogs.
+      {% /Sub %}
+    {% /Mrk %}
+    {% Mrk_AddedEntryTitle
       title="Bike Walk Life blog"
       fullPath="https://bikewalk.life/"
       isExternal=true
@@ -153,10 +140,16 @@
       As a longtime bicycle commuter, I use this blog to discuss stories and
       issues from the world of biking and walking. I especially focus on the
       Southeast U.S.
-    {% /Excerpt %}
-    <h2 class="index__divider"> Chess articles </h2>
-    {% Excerpt
-       isWide=false
+    {% /Mrk_AddedEntryTitle %}
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
+      {% Sub field="a" %}
+        Chess
+      {% /Sub %}
+      {% Sub field="v" %}
+        Handbooks, manuals, etc.
+      {% /Sub %}
+    {% /Mrk %}
+    {% Mrk_AddedEntryTitle
        title="Your Library’s First Chess Tournament: From Opening to Endgame"
        fullPath="http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame"
        isExternal=true
@@ -165,25 +158,20 @@
       <em>Programming Librarian</em>. It covers all of the basic knowledge
       such as scorekeeping and pairing, plus other tips that a library worker
       (or anyone directing a tournament) would need to know.
-    {% /Excerpt %}
-    {% match collections with {chessGuide: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
+    {% /Mrk_AddedEntryTitle %}
+    {% Mrk_AddedEntryTitle_Page page=collections.chessGuide / %}
   </section>
 
-  <hr />
-
-  <section class="index__section">
-    <header class="index__sectionHeader">
-      <h1> {% Feather icon="video" / %} Media production </h1>
-    </header>
-    <!-- <h2 class="index__divider"> Public libraries </h2> -->
-    {% match collections with {libraryMedia: [{data: {title, description}, url}]} %}
-      {% Excerpt
+  <section class=frontpage__section>
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+      {% Sub field="a" %}
+        {% Feather icon="video" / %} Video recording
+      {% /Sub %}
+    {% /Mrk %}
+    {% match collections.libraryMedia with [{data, url}, ..._] %}
+      {% Mrk_AddedEntryTitle
          fullPath=url
-         title=title
-         isWide=true
+         title=data.title
          isExternal=false
          thumbnail=!{
            @kind: "video",
@@ -195,90 +183,63 @@
            width: 160
           }
         %}
-         {{ description }}
-      {% /Excerpt %}
-    {% with _ %} {* Nothing *}
+         {{ data.description }}
+      {% /Mrk_AddedEntryTitle %}
+    {% with [] %} {* Nothing *}
     {% /match %}
   </section>
 
-  <hr />
-
-  <section class="index__section">
-    <header class="index__sectionHeader">
-      <h1> {% Feather icon="book" / %} MLIS portfolio </h1>
-      <p>
+  <section class=frontpage__section>
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+      {% Sub field="a" %}
+        {% Feather icon="book" / %} Master of Science degree
+      {% /Sub %}
+      {% Sub field="x" %} Library Science. {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=520 dir=@"column" %}
+      {% Sub field="a" %}
         I graduated with a master of library science degree from the
         University of South Carolina with a focus on academic and digital
         libraries. These pages include samples of my work accomplished during
         that time.
-      </p>
-    </header>
-    <h2 class="index__divider">Academic libraries</h2>
-    {% match collections with {academicStudent: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {% match collections with {oaPres: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {% match collections with {academicFaculty: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {% match collections with {dmp: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    <h2 class="index__divider">
-      Technical services
-    </h2>
-    {% match collections with {exLibrisOPAC: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {% match collections with {collectionDevelopment: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {% match collections with {selectionPolicy: [page]} %}
-      {% ExcerptPage page isWide=true / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    <h2 class="index__divider"> Research </h2>
-    {% match collections with {researchHispanic: [page]} %}
-      {% ExcerptPage page isWide=true / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {% match collections with {libraryTwitter: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {% match collections with {envAnalysis: [page]} %}
-      {% ExcerptPage page isWide=false / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
+      {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
+      {% Sub field="a" %} Academic libraries. {% /Sub %}
+    {% /Mrk %}
+    {% Mrk_AddedEntryTitle_Page page=collections.academicStudent / %}
+    {% Mrk_AddedEntryTitle_Page page=collections.oaPres / %}
+    {% Mrk_AddedEntryTitle_Page page=collections.academicFaculty / %}
+    {% Mrk_AddedEntryTitle_Page page=collections.dmp / %}
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
+      {% Sub field="a" %} Technical services (Libraries). {% /Sub %}
+    {% /Mrk %}
+    {% Mrk_AddedEntryTitle_Page page=collections.exLibrisOPAC / %}
+    {% Mrk_AddedEntryTitle_Page page=collections.collectionDevelopment / %}
+    {% Mrk_AddedEntryTitle_Page page=collections.selectionPolicy / %}
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
+      {% Sub field="a" %} Research {% /Sub %}
+      {% Sub field="x" %} Library resources. {% /Sub %}
+    {% /Mrk %}
+    {% Mrk_AddedEntryTitle_Page page=collections.researchHispanic / %}
+    {% Mrk_AddedEntryTitle_Page page=collections.libraryTwitter / %}
+    {% Mrk_AddedEntryTitle_Page page=collections.envAnalysis / %}
   </section>
 
-  <hr />
-
-  <section class="index__section">
-    <header class="index__sectionHeader">
-      <h1> {% Feather icon="tool" / %} Woodworking projects </h1>
-      <p>
+  <section class=frontpage__section>
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+      {% Sub field="a" %} {% Feather icon="tool" / %} Carpentry {% /Sub %}
+      {% Sub field="v" %} Handbooks, manuals, etc. {% /Sub %}
+    {% /Mrk %}
+    {% Mrk tag=520 dir=@"column" %}
+      {% Sub field="a" %}
         Sometimes I build furniture, and these are the guides I wrote for
         them.
-      </p>
-    </header>
-    <!-- <h2 class="index__divider"> Guides </h2> -->
-    {% match collections with {marbleTable: [page]} %}
-      {% ExcerptPage page isWide=true / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
-    {% match collections with {standingDesk: [page]} %}
-      {% ExcerptPage page isWide=true / %}
-    {% with _ %} {* Nothing *}
-    {% /match %}
+      {% /Sub %}
+    {% /Mrk %}
+    {% Mrk_AddedEntryTitle_Page page=collections.marbleTable / %}
+    {% Mrk_AddedEntryTitle_Page page=collections.standingDesk / %}
   </section>
 </main>
+
 {% /Layout %}

@@ -88,7 +88,7 @@ Sound good? Let’s get started!
 
 - 3" wood screws
 - 2½" [pocket screws] (see note on step 3)
-- Wood glue<
+- Wood glue
 - Stain (optional)
 - 2x4s (huh?)
 

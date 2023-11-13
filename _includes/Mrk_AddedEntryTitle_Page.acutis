@@ -1,0 +1,32 @@
+{% interface
+  page =
+    [
+      {
+        url: string,
+        data: {
+          title: string,
+          description: string,
+          thumbnail:
+            ?
+                {@kind: "image", image: string, caption: string}
+              | {
+                  @kind: "video",
+                  height: int,
+                  width: int,
+                  video: [{src: string, type: string}]
+                }
+        }
+      }
+    ]
+%}
+{% match page with [page, ..._] %}
+  {% Mrk_AddedEntryTitle
+      title=page.data.title
+      fullPath=page.url
+      isExternal=false
+      thumbnail=page.data.thumbnail %}
+    {{ page.data.description }}
+  {% /Mrk_AddedEntryTitle %}
+{% with [] %} {* No page *}
+{% /match %}
+

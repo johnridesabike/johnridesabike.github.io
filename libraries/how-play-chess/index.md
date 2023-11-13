@@ -402,6 +402,6 @@ opponent capture one of their own pieces.
 **Zugzwang**: When a player is forced to make a move when they would rather
 pass without moving.
 
-<nav class="post-nav-links">
-  <a href="./notes/" class="next">Keep reading to the endnotes →</a>
+<nav class=page-nav>
+  <a href="./notes/" class=page-nav__next>Keep reading to the endnotes →</a>
 </nav>

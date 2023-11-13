@@ -9,8 +9,8 @@ description: |
 thumbnail: null
 layout: Page.acutis
 ---
-<nav class="post-nav-links">
-<a href="../" class="prev">
+<nav class=page-nav>
+<a href="../" class=page-nav__prev>
   ← Back to main article
 </a>
 </nav>
