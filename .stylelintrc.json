@@ -1,0 +1,7 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "comment-empty-line-before": null,
+    "selector-class-pattern": null
+  }
+}

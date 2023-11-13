@@ -10,14 +10,19 @@ module.exports.simpleIcon = ({ name, className }) => {
       width="24"
       class="${className}"
       style="fill: #${icon.hex}"
-      aria-label="${icon.title} icon.">
+      aria-hidden="true">
       <path d="${icon.path}" />
     </svg>
   `;
 };
 
 module.exports.chess = ({ className }) => `
-<svg width="1em" height="1em" viewBox="0 0 45 45" class="${className}">
+<svg
+  width="1em"
+  height="1em"
+  viewBox="0 0 45 45"
+  class="${className}"
+  aria-hidden="true">
 <g
   fill="none"
   fill-rule="evenodd"

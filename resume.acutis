@@ -1,0 +1,217 @@
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    I’m a public library staffer and MLIS graduate who is interested in digital
+    library technologies, web development, and libraries of all types. I like to
+    bike, write, and tinker.
+  {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=653 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+  {% Sub field="a" %} Professional experience {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=610 ind1=!2 ind2=!4 dir=@"row" html=!"h3" %}
+  {% Sub field="a" %} Chattahoochee Valley Libraries {% /Sub %}
+  {% Sub field="z" %} Columbus, (Ga.) {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=656 ind2=!7 dir=@"row" html=!"h4" %}
+  {% Sub field="a" %} Cataloging Librarian {% /Sub %}
+  {% Sub field="x" %} Materials Management {% /Sub %}
+  {% Sub field="y" %} 2021 to present {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Performed original cataloging for new materials added to the collection.
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Managed bibliographic records, item records, and authority records with
+    Polaris ILS.
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Built and maintained an internal system for managing library statistics data
+    and displaying it on user-friendly dashboards.
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Managed resource sharing through WorldShare ILL.
+  {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=656 ind2=!7 dir=@"row" html=!"h4" %}
+  {% Sub field="a" %} Library Associate {% /Sub %}
+  {% Sub field="x" %} Adult services {% /Sub %}
+  {% Sub field="y" %} 2016 to 2021 {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Planned and led an average of six unique adult library programs per year on
+    topics including: chess clubs, job search assistance, fitness, bicycle
+    safety, and geocaching.
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Created live and asynchronous virtual programs during COVID-19 pandemic.
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Worked with patrons by teaching computer skills and assisting with student
+    research projects.
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Continued the duties of Library Assistant:
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=656 ind2=!7 dir=@"row" html=!"h4" %}
+  {% Sub field="a" %} Library Assistant {% /Sub %}
+  {% Sub field="y" %} 2015 to 2016 {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %} Circulated library materials using Polaris ILS. {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Regularly staffed reference desk and answered patrons’ reference questions
+    in person, over email, and over the phone.
+  {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=610 ind1=!2 ind2=!4 dir=@"row" html=!"h3" %}
+  {% Sub field="a" %} Literacy Alliance {% /Sub %}
+  {% Sub field="z" %} Columbus, (Ga). {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=656 ind2=!7 dir=@"row" html=!"h4" %}
+  {% Sub field="a" %} Web Developer {% /Sub %}
+  {% Sub field="y" %} 2018 to 2020 {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Worked with client to create a WordPress website that aligns with their
+    goals.
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %} Managed client’s online Square store. {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %} Coded with HTML, CSS, &amp; PHP. {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=653 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+  {% Sub field="a" %} Publications {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=730 ind1=!0 dir=@"row" %}
+  {% Sub field="a" %}
+    “<a href="http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame">Your Library’s First Chess Tournament: From Opening to Endgame.</a>”
+    <em>Programming Librarian</em>
+  {% /Sub %}
+  {% Sub field="f" %} 22 May 2019. {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=653 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+  {% Sub field="a" %} Career development {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=611 ind1=!2 ind2=!4 dir=@"row" %}
+  {% Sub field="a" %} Georgia Library Cataloging Conference {% /Sub %}
+  {% Sub field="d" %} 2022, {% /Sub %}
+  {% Sub field="g" %} attended. {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=611 ind1=!2 ind2=!4 dir=@"row" %}
+  {% Sub field="a" %} Georgia Library Tech Boot Camp Conference {% /Sub %}
+  {% Sub field="d" %} 2021, {% /Sub %}
+  {% Sub field="g" %} attended. {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=611 ind1=!2 ind2=!4 dir=@"row" %}
+  {% Sub field="a" %} Public Library Association Conference {% /Sub %}
+  {% Sub field="d" %} 2018, {% /Sub %}
+  {% Sub field="g" %} attended. {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=611 ind1=!2 ind2=!4 dir=@"row" %}
+  {% Sub field="a" %} Georgia Library Association Conference {% /Sub %}
+  {% Sub field="d" %} 2018, {% /Sub %}
+  {% Sub field="g" %} attended. {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=650 ind2=!0 dir=@"row" html=!"h2" %}
+  {% Sub field="a" %} Occupations {% /Sub %}
+  {% Sub field="x" %} Licenses. {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=650 dir=@"row" %}
+  {% Sub field="a" %} Librarian, {% /Sub %}
+  {% Sub field="g" %} licensed in {% /Sub %}
+  {% Sub field="z" %} Georgia. {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=653 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+  {% Sub field="a" %} Education {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=610 ind1=!2 ind2=!0 dir=@"row" html=!"h3" %}
+  {% Sub field="a" %} University of South Carolina {% /Sub %}
+  {% Sub field="z" %} Columbia, (S.C.) {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=650 ind2=!4 dir=@"row" html=!"h4" %}
+  {% Sub field="a" %} Master of Library and Information Science {% /Sub %}
+  {% Sub field="y" %} 2018 {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Academic libraries, public libraries, digital libraries, library research,
+    library management, technical services, collection development.
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %} Python and R coding. {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=650 ind2=!4 dir=@"row" html=!"h4" %}
+  {% Sub field="a" %} Bachelor of Arts {% /Sub %}
+  {% Sub field="x" %} English {% /Sub %}
+  {% Sub field="y" %} 2010 {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Academic interests include: English literature &amp; writing.
+  {% /Sub %}
+{% /Mrk %}
+
+{% Mrk tag=653 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+  {% Sub field="a" %} Civic leadership {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=610 ind1=!2 ind2=!4 dir=@"row" html=!"h3" %}
+  {% Sub field="a" %}
+    International Relations &amp; Cultural Liaison Encounters (C.I.R.C.L.E.)
+ {% /Sub %}
+ {% Sub field="c" %} Columbus, (Ga). {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    <a href="https://www.columbusga.gov/mayor/Commission-on-Relations">
+      C.I.R.C.L.E. is a mayoral commission for managing events with Columbus’
+      sister cities.
+    </a>
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %} Chair from 2020 to 2022. {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %} Secretary from 2019 to 2020. {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %} Commissioner from 2018 to 2022. {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Organized student art exchange between Columbus, GA and Kiryū, Japan.
+  {% /Sub %}
+{% /Mrk %}

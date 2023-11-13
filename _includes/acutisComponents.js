@@ -1,4 +1,4 @@
-const { Component, Typescheme } = require("acutis-lang");
+const { Typescheme } = require("acutis-lang");
 const { icons } = require("feather-icons");
 const path = require("path");
 const Image = require("@11ty/eleventy-img");
@@ -46,7 +46,7 @@ function makeImg(props) {
 const Ty = Typescheme;
 
 module.exports.Feather = function Feather({ icon }) {
-  return Promise.resolve(icons[icon].toSvg());
+  return Promise.resolve(icons[icon].toSvg({ "aria-hidden": "true" }));
 };
 module.exports.Feather.interface = Ty.make([["icon", Ty.string()]]);
 
@@ -65,7 +65,7 @@ module.exports.Img = function (props) {
           src="${src}"
           alt="${props.alt}"
           width="${width}"
-          ${className} />`);
+          ${className}>`);
       } else {
         const [{ url, width, height }, ...rest] = props.image.images;
         const srcset = rest
@@ -86,7 +86,7 @@ module.exports.Img = function (props) {
             width="${width}"
             height="${height}"
             alt="${props.alt}" ${className} loading="lazy"
-          />`);
+          >`);
       }
     })
     .catch((e) => Promise.reject(new Error("Problem with Img: " + e.message)));

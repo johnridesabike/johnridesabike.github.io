@@ -209,7 +209,7 @@ the table several times, one for each instance of a pronoun. The student can
 then use filters to calculate exactly how many different instances appear for
 each possible combination. See Figure 1 for an example.
 
-<figure class="image__wrapper alignwide">
+<figure class="alignwide">
   {%~ Img
       alt="Screenshot of a spreadsheet"
       width=1200

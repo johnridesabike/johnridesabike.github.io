@@ -10,129 +10,122 @@
   thumbnail = ?{caption: string, image: string}
   title = ?string
   children = string
-  entryHeader = ?string
-%}
-<html lang="en-US" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  hideAbout = ?true | false
+~%}
+<html lang=en-US prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="/assets/style.css" />
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel=stylesheet href="/assets/style.css">
     {% map [
-        "/assets/node_modules/@fontsource/libre-baskerville/files/libre-baskerville-latin-400-normal.woff2",
-        "/assets/node_modules/@fontsource/libre-baskerville/files/libre-baskerville-latin-ext-400-normal.woff2",
-        "/assets/node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-400-normal.woff2",
-        "/assets/node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-400-italic.woff2",
-        "/assets/node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-700-normal.woff2",
-        "/assets/node_modules/@fontsource/source-sans-pro/files/source-sans-pro-latin-700-italic.woff2"
+        "/assets/node_modules/@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2",
+        "/assets/node_modules/@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-italic.woff2",
+        "/assets/node_modules/@fontsource-variable/source-code-pro/files/source-code-pro-latin-wght-normal.woff2"
       ]
       with asset ~%}
-      <link rel="preload" as="font" crossorigin href="{{ asset }}" />
+      <link rel="preload" as="font" crossorigin href="{{ asset }}">
     {% /map ~%}
     {% Metadata siteMetadata title description absoluteUrl thumbnail contentType / %}
   </head>
   <body>
-    <div id="page" class="layout__site">
-      <a class="skip-nav" href="#content"> Skip to content. </a>
-      <header id="masthead" class="header__headerWrapper smallscreen-padding">
-        <div id="global-header" class="header__globalHeader">
-          <div class="header__branding">
-            <p class="header__title">
-              <a href="/" rel="home" class="header__linkHome">
+    <div class=site-layout>
+      <a class=skip-nav href="#content"> Skip to content. </a>
+      <header class="site-header smallscreen-padding">
+        <div class=max-width-content>
+          <a href="/" rel=home class=site-header__link>
+            {% Mrk tag=100 ind1=!0 dir=@"row" %}
+              {% Sub field="a" class=!"site-header__text" %}
                 {{ siteMetadata.title }}
-              </a>
-            </p>
-            <p class="header__description">{{ siteMetadata.description }}</p>
-          </div>
-          <nav id="site-navigation" class="has-ui-font menu__navigation">
-            <ul id="primary-menu" class="menu__menu">
+              {% /Sub %}
+              {% Sub field="t" class=!"site-header__text" %}
+                {{ siteMetadata.description }}
+              {% /Sub %}
+            {% /Mrk %}
+          </a>
+          <nav class=site-header__nav>
+            {% Mrk tag=505 ind1=!0 ind2=!0 dir=@"row" %}
+              {% Sub field="t" %} Contents : {% /Sub %}
               {% map mainMenu with {path, title} %}
-              <li class="menu__menuItem">
-                <a href="{{ path }}" class="menu__menuLink"> {{ title }} </a>
-              </li>
+                {% Sub field="t" %}
+                  <a href="{{ path }}" class=site-header__link--menu>
+                    {{ title }}
+                  </a>
+                {% /Sub %}
               {% /map %}
-            </ul>
+            {% /Mrk %}
           </nav>
         </div>
-        {{{ entryHeader ? "" }}}
       </header>
-      <div id="content" class="layout__content smallscreen-padding">
+
+      <div id=content class="site-content smallscreen-padding">
         {{{ children }}}
-        <aside id="secondary" class="widget__widgetArea has-ui-font">
-          <section class="widget__widget">
-            <h3>About John</h3>
-            <div>
-              {% Img
-                src="./assets/images/john2018.jpg"
-                alt="A photo of John."
-                width=146
-                class="avatar alignleft"
-              /%}
-            </div>
-            <p>
-              I’m a public library staffer who is interested in digital library
-              technologies, web development, and libraries of all types.
-            </p>
-            <p>
-              This website is home to my blog, portfolio, and other projects
-              I’ve managed.
-              <a href="/"> Head to the home page </a>
-              if this is your first time here.
-            </p>
-          </section>
-          <section class="widget__widget">
-            <h3>Connect with John</h3>
-            <ul id="menu-social-menu" class="menu">
-              {% map socialMenu with {url, icon, title} %}
-              <li>
-                <a href="{{ url }}"> {{{ icon }}} {{ title }}</a>
-              </li>
-              {% /map %}
-            </ul>
-          </section>
-        </aside>
       </div>
-      <footer
-        id="colophon"
-        class="footer__footerWrapper has-ui-font smallscreen-padding"
-      >
-        <div class="footer__footer widget__widgetArea">
-          <section class="widget__widget footer__footerWidget">
-            <p>
-              Copyright © 2022
+
+      <aside class=smallscreen-padding>
+        <hr class=max-width-content>
+        {% match hideAbout with null with !false %}
+          <section class="site-aside__section max-width-content">
+            {% Mrk tag=710 ind1=!0 dir=@"row" html=!"h3" %}
+              {% Sub field="a" %}
+                About this site
+              {% /Sub %}
+            {% /Mrk %}
+            {% Mrk tag=520 dir=@"row" %}
+              {% Sub field="a" %}
+                {% Img
+                  src="./assets/images/john2018.jpg"
+                  alt="A photo of John."
+                  width=96
+                  class="avatar alignright"
+                /%}
+                I’m John. This website is home to my blog, portfolio, and
+                other projects I manage. <a href="/"> Head to the home page
+                </a> if this is your first time here.
+              {% /Sub %}
+            {% /Mrk %}
+          </section>
+        {% with !true %} {* nothing *}
+        {% /match %}
+        <section class="site-aside__section max-width-content">
+          {% Mrk tag=710 ind1=!0 html=!"h3" dir=@"row" %}
+            {% Sub field="a" %} Connect with John {% /Sub %}
+          {% /Mrk %}
+          {% map socialMenu with {url, icon, title} %}
+            {% Mrk tag=856 ind1=!4 ind2=!2 dir=@"row" %}
+              {% Sub field="y" %}
+                <a href="{{ url }}"> {{{ icon }}} {{ title }}</a>
+              {% /Sub %}
+            {% /Mrk %}
+          {% /map %}
+        </section>
+      </aside>
+
+      <footer class="site-footer__wrapper smallscreen-padding">
+        <div class=max-width-content>
+          {% Mrk tag=542 ind1=!1 dir=@"row" %}
+            {% Sub field="f" %}
+              Copyright &copy; 2023 by
               <span property="cc:attributionName"> John Jackson </span>
-            </p>
-            <p>
-              {% Icon_CreativeCommons height=32 class="footer__ccIcon" /%} All
-              content by John on this site is licensed under a
+            {% /Sub %}
+            {% Sub field="l" %}
+              {% Icon_CreativeCommons
+                  height=32
+                  class="site-footer__cc-icon alignright" /%}
+                All content by John on this site is licensed under the
               <a
                 rel="license"
-                href="http://creativecommons.org/licenses/by-sa/4.0"
-              >
+                href="http://creativecommons.org/licenses/by-sa/4.0" >
                 Creative Commons Attribution-ShareAlike 4.0 International
-                License</a
-              >.
-            </p>
-          </section>
+                License
+              </a>
+            {% /Sub %}
+          {% /Mrk %}
         </div>
       </footer>
     </div>
     {% match build with {environment: "production"} ~%}
-      <!-- Default Statcounter code for My portfolio site
-      https://johnridesa.bike/ -->
-      <script type="text/javascript">
-        var sc_project=12454167;
-        var sc_invisible=1;
-        var sc_security="0cdce85d";
-        </script>
-        <script type="text/javascript"
-        src="https://www.statcounter.com/counter/counter.js"
-        async></script>
-        <noscript><div class="statcounter"><a title="free web stats"
-        href="https://statcounter.com/" target="_blank"><img
-        class="statcounter"
-        src="https://c.statcounter.com/12454167/0/0cdce85d/1/"
-        alt="free web stats"></a></div></noscript>
-      <!-- End of Statcounter Code -->
+      <script data-goatcounter="https://johnridesabike.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
     {% with _ %} <!-- Don't show tracking in development -->
     {% /match %}
   </body>

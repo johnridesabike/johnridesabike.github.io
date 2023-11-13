@@ -1,0 +1,9 @@
+{% interface
+  field = string
+  children = string
+  class = ?string
+%}
+<span class=mrk__field>
+  <span class=mrk__field__code aria-hidden=true>&ddagger;{{ field }}</span>
+  <span class="mrk__field__children {{ class ? "" }}"> {{{ children }}} </span>
+</span>

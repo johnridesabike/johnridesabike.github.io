@@ -8,7 +8,7 @@
   height="{{ %i height }}"
   viewBox="0 0 120 42"
   class="{{ class }}"
->
+  aria-hidden="true">
   <g transform="matrix(0.9937807,0,0,0.9936694,-177.69409,-74.436409)">
     <path
       d="M 182.23532,75.39014 L 296.29928,75.59326 C 297.89303,75.59326
