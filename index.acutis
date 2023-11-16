@@ -104,9 +104,8 @@
       fullPath="https://johnridesa.bike/mwmatching-finder/"
       isExternal=true
     %}
-      While I was developing Coronate I needed to automatically pair chess
-      players. This interactive webpage explains how to use <em>maximum weighted
-      matching</em> theory to solve this problem.
+      This interactive webpage explains how to use <em>maximum weighted
+      matching</em> theory to do things like pair chess players.
     {% /Mrk_AddedEntryTitle %}
   </section>
 
