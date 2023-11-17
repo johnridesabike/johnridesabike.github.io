@@ -117,8 +117,8 @@
     {% /Mrk %}
     {% Mrk tag=520 dir=@"column" %}
       {% Sub field="a" %}
-        In addition to the documents on this website, here's a sample of my
-        other writing projects.
+        Besides the documents on this website, here are some of my writing
+        projects.
       {% /Sub %}
     {% /Mrk %}
     {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
