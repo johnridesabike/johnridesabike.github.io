@@ -38,24 +38,24 @@
            width=1200
           /%}
         <figcaption class=page-header__figcaption>
-          <span class=page-header__figcaption__text> {{ caption }}</span>
+          <span class=page-header__figcaption__text> {% caption %}</span>
         </figcaption>
       </figure>
     {% with null %} <!-- no image -->
     {% /match %}
     <div class=max-width-content>
       {% Mrk tag=245 ind1=!0 ind2=!0 dir=@"row" html=!"h1" %}
-        {% Sub field="a" %} {{ title }} {% /Sub %}
+        {% Sub field="a" %} {% title %} {% /Sub %}
       {% /Mrk %}
     {% Mrk tag=264 ind2=!4 dir=@"row" %}
       {% Sub field="c" %}
-        <time datetime="{{ isoDate }}" class=page-header__time>
-          {% Icon_Calendar class="" /%} {{ formattedDate }}
+        <time datetime="{% isoDate %}" class=page-header__time>
+          {% Icon_Calendar class="" /%} {% formattedDate %}
         </time>
       {% /Sub %}
     {% /Mrk %}
     </div>
   </header>
-  {{{ content }}}
+  {{% content %}}
 </main>
 {% /Layout %}

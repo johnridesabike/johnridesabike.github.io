@@ -16,8 +16,8 @@
 <article>
   {% Mrk tag=730 ind1=!0 html=!"h3" dir=@"column" %}
     {% Sub field="a" %}
-        <a href="{{ fullPath }}">
-          {{ title }}
+        <a href="{% fullPath %}">
+          {% title %}
           {% match isExternal with true %} {% Feather icon="external-link" /%}
           {% with false %} {* null *}
           {% /match %}
@@ -29,7 +29,7 @@
       {% match thumbnail
        with !{@kind: "image", image, caption} %}
         <a
-          href="{{ fullPath }}"
+          href="{% fullPath %}"
           aria-hidden="true"
           tabIndex="-1"
           class=alignleft>
@@ -42,7 +42,7 @@
         </a>
       {% with !{@kind: "video", video, height, width} %}
         <a
-          href="{{ fullPath }}"
+          href="{% fullPath %}"
           aria-hidden="true"
           tabIndex="-1"
           class=alignleft>
@@ -51,16 +51,16 @@
             muted
             loop
             playsinline
-            height="{{ %i height }}"
-            width="{{ %i width }}" >
+            height="{% %i height %}"
+            width="{% %i width %}" >
             {% map video with {src, type} %}
-              <source src="{{ src }}" type="{{ type }}">
+              <source src="{% src %}" type="{% type %}">
             {% /map %}
           </video>
         </a>
       {% with null %} {* null *}
       {% /match %}
-      {{{ children }}}
+      {{% children %}}
     {% /Sub %}
   {% /Mrk %}
 </article>

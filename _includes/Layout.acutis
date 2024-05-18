@@ -23,7 +23,7 @@
         "/assets/node_modules/@fontsource-variable/source-code-pro/files/source-code-pro-latin-wght-normal.woff2"
       ]
       with asset ~%}
-      <link rel="preload" as="font" crossorigin href="{{ asset }}">
+      <link rel="preload" as="font" crossorigin href="{% asset %}">
     {% /map ~%}
     {% Metadata siteMetadata title description absoluteUrl thumbnail contentType / %}
   </head>
@@ -35,10 +35,10 @@
           <a href="/" rel=home class=site-header__link>
             {% Mrk tag=100 ind1=!0 dir=@"row" %}
               {% Sub field="a" class=!"site-header__text" %}
-                {{ siteMetadata.title }}
+                {% siteMetadata.title %}
               {% /Sub %}
               {% Sub field="t" class=!"site-header__text" %}
-                {{ siteMetadata.description }}
+                {% siteMetadata.description %}
               {% /Sub %}
             {% /Mrk %}
           </a>
@@ -47,8 +47,8 @@
               {% Sub field="t" %} Contents : {% /Sub %}
               {% map mainMenu with {path, title} %}
                 {% Sub field="t" %}
-                  <a href="{{ path }}" class=site-header__link--menu>
-                    {{ title }}
+                  <a href="{% path %}" class=site-header__link--menu>
+                    {% title %}
                   </a>
                 {% /Sub %}
               {% /map %}
@@ -58,7 +58,7 @@
       </header>
 
       <div id=content class="site-content smallscreen-padding">
-        {{{ children }}}
+        {{% children %}}
       </div>
 
       <aside class=smallscreen-padding>
@@ -93,7 +93,7 @@
           {% map socialMenu with {url, icon, title} %}
             {% Mrk tag=856 ind1=!4 ind2=!2 dir=@"row" %}
               {% Sub field="y" %}
-                <a href="{{ url }}"> {{{ icon }}} {{ title }}</a>
+                <a href="{% url %}"> {{% icon %}} {% title %}</a>
               {% /Sub %}
             {% /Mrk %}
           {% /map %}

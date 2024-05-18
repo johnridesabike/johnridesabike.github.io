@@ -6,30 +6,30 @@
   description = ?string
   thumbnail = ?{caption: string, image: string}
 %}
-<meta property="og:site_name" content="{{ siteMetadata.title }}">
+<meta property="og:site_name" content="{% siteMetadata.title %}">
 <title>
   {%~ match title
-      with null ~%} {{ siteMetadata.title }} - {{ siteMetadata.description }}
-  {%~ with !title ~%} {{ title }}
+      with null ~%} {% siteMetadata.title %} - {% siteMetadata.description %}
+  {%~ with !title ~%} {% title %}
   {%~ /match ~%}
 </title>
-<meta property="og:title" content="{{ title ? siteMetadata.title }}">
+<meta property="og:title" content="{% title ? siteMetadata.title %}">
 
 {% match absoluteUrl
   with null %} <!-- no absoluteUrl -->
   {% with !absoluteUrl %}
-  <link rel="canonical" href="{{ absoluteUrl }}">
-  <meta property="og:url" content="{{ absoluteUrl }}">
+  <link rel="canonical" href="{% absoluteUrl %}">
+  <meta property="og:url" content="{% absoluteUrl %}">
 {% /match %}
-<meta property="og:type" content='{{ contentType ? "website" }}'>
+<meta property="og:type" content='{% contentType ? "website" %}'>
 <meta
   name="description"
   property="og:description"
-  content="{{ description ? siteMetadata.description }}">
+  content="{% description ? siteMetadata.description %}">
 {% match thumbnail
   with null %}
     <!-- No thumbnail -->
   {% with !{image, caption} %}
-  <meta property="og:image" content="{{ image }}" >
-  <meta name="twitter:image:alt" property="og:image:alt" content="{{ caption }}">
+  <meta property="og:image" content="{% image %}" >
+  <meta name="twitter:image:alt" property="og:image:alt" content="{% caption %}">
 {% /match %}
