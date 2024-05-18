@@ -182,7 +182,7 @@
            width: 160
           }
         %}
-         {{ data.description }}
+         {% data.description %}
       {% /Mrk_AddedEntryTitle %}
     {% with [] %} {* Nothing *}
     {% /match %}

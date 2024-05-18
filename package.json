@@ -28,7 +28,7 @@
     "@11ty/eleventy-img": "^3.1.8",
     "@fontsource-variable/source-code-pro": "^5.0.16",
     "@fontsource-variable/source-sans-3": "^5.0.18",
-    "acutis-lang": "^0.24.0",
+    "acutis-lang": "^0.25.0",
     "cssnano": "^6.0.1",
     "feather-icons": "^4.29.1",
     "gh-pages": "^6.0.0",

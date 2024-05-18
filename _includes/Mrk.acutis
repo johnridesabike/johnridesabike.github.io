@@ -7,15 +7,15 @@
   class = ?string
   dir = @"column" | @"row"
 %}
-<{{ html ? "div" }} class="mrk {{ class ? "" }}">
+<{% html ? "div" %} class="mrk {% class ? "" %}">
   <span class=mrk__tag aria-hidden=true>
-    {{ %i tag }}
-    <span class=mrk__ind> {{ %i ind1 ? "\\" }}{{ %i ind2 ? "\\" }} </span>
+    {% %i tag %}
+    <span class=mrk__ind> {% %i ind1 ? "\\" %}{% %i ind2 ? "\\" %} </span>
   </span>
   {% match dir
       with @"column" %}
-    <span class=mrk__children--column> {{{ children }}} </span>
+    <span class=mrk__children--column> {{% children %}} </span>
   {% with @"row" %}
-    <span class=mrk__children--row> {{{ children }}} </span>
+    <span class=mrk__children--row> {{% children %}} </span>
   {% /match %}
-</{{ html ? "div"}}>
+</{% html ? "div" %}>

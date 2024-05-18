@@ -25,7 +25,7 @@
       fullPath=page.url
       isExternal=false
       thumbnail=page.data.thumbnail %}
-    {{ page.data.description }}
+    {% page.data.description %}
   {% /Mrk_AddedEntryTitle %}
 {% with [] %} {* No page *}
 {% /match %}

@@ -5,9 +5,9 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="120"
-  height="{{ %i height }}"
+  height="{% %i height %}"
   viewBox="0 0 120 42"
-  class="{{ class }}"
+  class="{% class %}"
   aria-hidden="true">
   <g transform="matrix(0.9937807,0,0,0.9936694,-177.69409,-74.436409)">
     <path
