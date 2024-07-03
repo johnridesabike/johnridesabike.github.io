@@ -8,7 +8,7 @@ module.exports.simpleIcon = ({ name, className }) => {
       viewBox="0 0 24 24"
       height="24"
       width="24"
-      class="${className}"
+      class="icon__svg ${className}"
       style="fill: #${icon.hex}"
       aria-hidden="true">
       <path d="${icon.path}" />
@@ -21,7 +21,7 @@ module.exports.chess = ({ className }) => `
   width="1em"
   height="1em"
   viewBox="0 0 45 45"
-  class="${className}"
+  class="icon__svg ${className}"
   aria-hidden="true">
 <g
   fill="none"

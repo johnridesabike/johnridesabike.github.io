@@ -1,8 +1,55 @@
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 const htmlmin = require("html-minifier");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const markdownItToc = require("markdown-it-table-of-contents");
 const acutis = require("acutis-lang/eleventy");
 const acutisComponents = require("./_includes/acutisComponents");
+
+function acutisSyntax(Prism) {
+  // Make sure markup-templating is loaded.
+  require("prismjs/components/prism-markup-templating");
+
+  Prism.languages.acutis = {
+    comment: /^{\*[\s\S]*?\*}$/,
+    delimiter: {
+      pattern: /^{[{%]|[}%]}$/,
+      alias: "punctuation",
+    },
+    string: {
+      pattern: /(")(?:\\.|(?!\1)[^\\\r\n])*\1/,
+      greedy: true,
+    },
+    component: {
+      pattern: /\b([A-Z])([a-zA-Z0-9_]+)?/,
+      alias: "function",
+    },
+    tag: {
+      pattern: /(@)([a-z_])([a-zA-Z0-9_]+)?/,
+      alias: "operator",
+    },
+    formatter: {
+      pattern: /%(,)?(\.[0-9]+)?[a-z]/,
+      alias: "function",
+    },
+    keyword: /(\/{0,1})\b(?:match|map|map_dict|with|interface)\b/,
+    operator: /\?|#|~|!|@/,
+    number: /(-|\+)?\s*[0-9]+(\.[0-9]+)?(e|E)?/,
+    boolean: /\b(false|true|null)\b/,
+    variable: /([a-z_])([a-zA-Z0-9_]+)?/,
+    punctuation: /[{}[\],.:/=()<>|]/,
+  };
+
+  var pattern = /{({?)%[\s\S]*?%(}?)}|{\*[\s\S]*?\*}/g;
+  var markupTemplating = Prism.languages["markup-templating"];
+
+  Prism.hooks.add("before-tokenize", (env) =>
+    markupTemplating.buildPlaceholders(env, "acutis", pattern),
+  );
+  Prism.hooks.add("after-tokenize", (env) =>
+    markupTemplating.tokenizePlaceholders(env, "acutis"),
+  );
+}
 
 const contentWidth = 640;
 
@@ -59,7 +106,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPlugin(acutis, { components: acutisComponents });
-
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    init: ({ Prism }) => acutisSyntax(Prism),
+  });
   eleventyConfig.amendLibrary("md", (md) =>
     md
       .set({
@@ -71,6 +120,12 @@ module.exports = function (eleventyConfig) {
       .use(require("markdown-it-footnote"))
       .use(mdImages)
       .use(require("markdown-it-implicit-figures"), { figcaption: true })
+      .use(markdownItToc, {
+        containerHeaderHtml: `<details open><summary class="toc-container-header">Contents</summary>`,
+        containerFooterHtml: `</details>`,
+        listType: "ol",
+        includeLevel: [1, 2],
+      }),
   );
 
   if (process.env.ELEVENTY_ENV === "production") {
