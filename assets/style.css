@@ -2,6 +2,7 @@
 @import url("@fontsource-variable/source-sans-3/");
 @import url("@fontsource-variable/source-sans-3/wght-italic.css");
 @import url("@fontsource-variable/source-code-pro/");
+@import url("prismjs/themes/prism-tomorrow.css");
 
 /*******************************************************************************
 # Variables
@@ -209,12 +210,11 @@ img {
 
 svg {
   max-width: 100%;
-  height: 1em;
   width: auto;
-  vertical-align: middle;
 }
 
 figure {
+  text-align: center;
   /* Extra wide images within figure tags don't overflow the content area. */
   margin: 0 0 1em;
 }
@@ -379,6 +379,12 @@ var {
   font-family: var(--font-code);
   font-size: 20px;
   font-size: var(--font-size-xs);
+}
+
+p code {
+  background: #eee;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 abbr,
@@ -562,6 +568,7 @@ big {
   position: relative;
   height: 67vw;
   overflow: hidden;
+  text-align: left;
 
   /* aspect ratio kept intact for small screens */
   margin-top: 0;
@@ -649,6 +656,11 @@ big {
   margin-left: auto;
 }
 
+.table-of-contents li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 /* --------------------------------------------------------------
 # Accessibility
 -------------------------------------------------------------- */
@@ -691,9 +703,14 @@ object {
   box-shadow: 0 0 4px var(--color-link-hover);
 }
 
-.icon__svg {
-  width: 1em;
+svg.feather {
   height: 1em;
+  vertical-align: middle;
+}
+
+.icon__svg,
+.svgIconColored {
+  width: 1em;
   vertical-align: baseline;
   transition: fill 120ms ease-in-out;
   fill: currentcolor;

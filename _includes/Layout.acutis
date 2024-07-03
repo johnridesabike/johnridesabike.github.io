@@ -78,9 +78,9 @@
                   width=96
                   class="avatar alignright"
                 /%}
-                I’m John. This website is home to my blog, portfolio, and
-                other projects I manage. <a href="/"> Head to the home page
-                </a> if this is your first time here.
+                I’m John. This website is home to my work portfolio and personal
+                projects I manage. <a href="/"> Head to the home page </a> if
+                this is your first time here.
               {% /Sub %}
             {% /Mrk %}
           </section>
@@ -104,7 +104,7 @@
         <div class=max-width-content>
           {% Mrk tag=542 ind1=!1 dir=@"row" %}
             {% Sub field="f" %}
-              Copyright &copy; 2023 by
+              Copyright &copy; 2024 by
               <span property="cc:attributionName"> John Jackson </span>
             {% /Sub %}
             {% Sub field="l" %}

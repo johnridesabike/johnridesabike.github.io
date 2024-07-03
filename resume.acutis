@@ -104,7 +104,7 @@
 {% /Mrk %}
 {% Mrk tag=730 ind1=!0 dir=@"row" %}
   {% Sub field="t" %}
-    “<a href="http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame">Your Library’s First Chess Tournament: From Opening to Endgame.</a>”
+    “<a href="https://programminglibrarian.org/articles/your-librarys-first-chess-tournament-opening-endgame">Your Library’s First Chess Tournament: From Opening to Endgame.</a>”
   {% /Sub %}
   {% Sub field="a" %}
     Programming Librarian

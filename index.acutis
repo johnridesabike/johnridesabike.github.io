@@ -142,6 +142,12 @@
     {% /Mrk_AddedEntryTitle %}
     {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
       {% Sub field="a" %}
+        Software engineering.
+      {% /Sub %}
+    {% /Mrk %}
+    {% Mrk_AddedEntryTitle_Page page=collections.acutisArticle / %}
+    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
+      {% Sub field="a" %}
         Chess
       {% /Sub %}
       {% Sub field="v" %}
@@ -150,7 +156,7 @@
     {% /Mrk %}
     {% Mrk_AddedEntryTitle
        title="Your Library’s First Chess Tournament: From Opening to Endgame"
-       fullPath="http://programminglibrarian.org/articles/your-library’s-first-chess-tournament-opening-endgame"
+       fullPath="https://programminglibrarian.org/articles/your-librarys-first-chess-tournament-opening-endgame"
        isExternal=true
        %}
       I've published a guide to running a library chess tournament on
