@@ -31,9 +31,14 @@ level, I hope to convey my decisions and the problems I solved more than merely
 the technical details.
 
 <figure>
-  <img src="https://johnridesa.bike/acutis/icon.svg" alt="The Acutis icon." height=128 width=128>
+  <a href="https://johnridesa.bike/acutis/">
+    <img src="https://johnridesa.bike/acutis/icon.svg" alt="The Acutis icon." height=128 width=128>
+  </a>
   <figcaption>
-    <a href="https://johnridesa.bike/acutis/">To see the Acutis in action, check out its home page here</a>.
+    To see Acutis in action,
+    <a href="https://johnridesa.bike/acutis/">visit its home page here</a>
+    or
+    <a href="https://github.com/johnridesabike/acutis">check out its source code here</a>.
  </figcaption>
 </figure>
 
@@ -612,10 +617,10 @@ Consider the tree that these cases would produce:
 ```acutis
 {% match a,  b,  c
    with 10, 11, 12 %} case 0
-{% with  x, 21, 22 %} case 1
+{% with  _, 21, 22 %} case 1
 {% with 30, 31, 32 %} case 2
-{% with 30,  y, 42 %} case 3
-{% with  a,  b,  c %} case 4
+{% with 30,  _, 42 %} case 3
+{% with  _,  _,  _ %} case 4
 {% /match %}
 ```
 
