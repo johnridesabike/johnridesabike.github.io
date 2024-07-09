@@ -382,7 +382,8 @@ var {
 }
 
 p code {
-  background: #eee;
+  color: var(--color-text);
+  background: var(--color-footer-shadow);
   padding-left: 2px;
   padding-right: 2px;
 }
