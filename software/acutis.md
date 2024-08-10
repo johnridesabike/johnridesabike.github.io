@@ -570,7 +570,7 @@ both.
 
 ### Further reading
 
-- [The Acutis type-checker interface](https://johnridesa.bike/acutis/api/acutis/Acutis/Typechecker/index.html).
+- [The Acutis type-checker interface](https://johnridesa.bike/acutis/api/acutis/Acutis_internals/Typechecker/index.html).
 - [The Acutis type-checker implementation](https://github.com/johnridesabike/acutis/blob/master/lib/typechecker.ml).
 
 ## Decisions, decisions, or: how Acutis pattern-matching works
@@ -1083,7 +1083,7 @@ to invent a new algorithm all over again.
 
 ### Further reading
 
-- [The Acutis matching interface](https://johnridesa.bike/acutis/api/acutis/Acutis/Matching/index.html).
+- [The Acutis matching interface](https://johnridesa.bike/acutis/api/acutis/Acutis_internals/Matching/index.html).
 - [The Acutis matching implementation](https://github.com/johnridesabike/acutis/blob/master/lib/matching.ml).
 
 ## Template components, or: why Acutis doesn't have functions
@@ -1273,7 +1273,7 @@ features means just writing a couple more functions.
 
 ### Further reading
 
-- [The Acutis tagless-final semantics interface](https://johnridesa.bike/acutis/api/acutis/Acutis/Instruct/index.html).
+- [The Acutis tagless-final semantics interface](https://johnridesa.bike/acutis/api/acutis/Acutis_internals/Instruct/index.html).
 - [The Acutis instructions implementation](https://github.com/johnridesabike/acutis/blob/master/lib/instruct.ml).
 - [The Acutis renderer implementation](https://github.com/johnridesabike/acutis/blob/master/lib/render.ml).
 - [The Acutis JavaScript printer implementation](https://github.com/johnridesabike/acutis/blob/master/lib/printJs.ml).
