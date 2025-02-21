@@ -1,9 +1,9 @@
-const site = require("./siteMetadata.json");
+import site from "./siteMetadata.js";
 
-const lang = "en-US";
-const timeZone = "America/New_York";
+let lang = "en-US";
+let timeZone = "America/New_York";
 
-module.exports = {
+export default {
   absoluteUrl: (data) => {
     if (data.page.url && data.page.permalink !== false) {
       return new URL(data.page.url, site.siteUrl).href;

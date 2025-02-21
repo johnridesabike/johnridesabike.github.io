@@ -1,7 +1,7 @@
-const si = require("simple-icons/icons");
+import * as si from "simple-icons/icons";
 
-module.exports.simpleIcon = ({ name, className }) => {
-  const icon = si["si" + name];
+export function simpleIcon({ name, className }) {
+  let icon = si["si" + name];
   return `
     <svg
       role="img"
@@ -14,9 +14,10 @@ module.exports.simpleIcon = ({ name, className }) => {
       <path d="${icon.path}" />
     </svg>
   `;
-};
+}
 
-module.exports.chess = ({ className }) => `
+export function chess({ className }) {
+  return `
 <svg
   width="1em"
   height="1em"
@@ -47,3 +48,4 @@ module.exports.chess = ({ className }) => `
 </g>
 </svg>
 `;
+}
