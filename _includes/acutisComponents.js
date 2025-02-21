@@ -1,10 +1,12 @@
-const { Typescheme } = require("acutis-lang");
-const { icons } = require("feather-icons");
-const path = require("path");
-const Image = require("@11ty/eleventy-img");
+import acutis from "acutis-lang";
+import path from "node:path";
+import Image from "@11ty/eleventy-img";
+import { icons } from "feather-icons";
+
+let Ty = acutis.Typescheme;
 
 function makeImg(props) {
-  const extName = path.extname(props.src).toLowerCase();
+  let extName = path.extname(props.src).toLowerCase();
   let format;
   switch (extName) {
     case ".jpg":
@@ -43,32 +45,30 @@ function makeImg(props) {
   }
 }
 
-const Ty = Typescheme;
-
-module.exports.Feather = function Feather({ icon }) {
+export function Feather({ icon }) {
   return Promise.resolve(icons[icon].toSvg({ "aria-hidden": "true" }));
-};
-module.exports.Feather.interface = Ty.make([["icon", Ty.string()]]);
+}
+Feather.interface = Ty.make([["icon", Ty.string()]]);
 
 /*
  * Sometimes this gets used in a markdown file, so the HTML output gets
  * parsed as markdown. This means that extra lines with indentation can
  * get parsed as a code block, which we don't want.
  */
-module.exports.Img = function (props) {
+export function Img(props) {
   return makeImg(props)
     .then((props) => {
-      const className = props["class"] ? `class="${props["class"]}"` : "";
+      let className = props["class"] ? `class="${props["class"]}"` : "";
       if (props.image.tag == "vector") {
-        const { src, width } = props.image.vector;
+        let { src, width } = props.image.vector;
         return Promise.resolve(`<img
           src="${src}"
           alt="${props.alt}"
           width="${width}"
           ${className}>`);
       } else {
-        const [{ url, width, height }, ...rest] = props.image.images;
-        const srcset = rest
+        let [{ url, width, height }, ...rest] = props.image.images;
+        let srcset = rest
           .map(({ url, srcset }, i) => {
             switch (i) {
               case 0:
@@ -90,8 +90,8 @@ module.exports.Img = function (props) {
       }
     })
     .catch((e) => Promise.reject(new Error("Problem with Img: " + e.message)));
-};
-module.exports.Img.interface = Ty.make([
+}
+Img.interface = Ty.make([
   ["src", Ty.string()],
   ["alt", Ty.string()],
   ["class", Ty.string()],

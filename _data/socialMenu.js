@@ -1,6 +1,6 @@
-const icons = require("../_includes/icons");
+import * as icons from "../_includes/icons.js";
 
-module.exports = [
+export default [
   /*
   {
     icon: icons.simpleIcon({

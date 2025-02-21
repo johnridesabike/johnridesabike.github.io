@@ -1,14 +1,16 @@
-const Image = require("@11ty/eleventy-img");
-const path = require("path");
-const htmlmin = require("html-minifier");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const markdownItToc = require("markdown-it-table-of-contents");
-const acutis = require("acutis-lang/eleventy");
-const acutisComponents = require("./_includes/acutisComponents");
+import path from "node:path";
+import Image from "@11ty/eleventy-img";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import htmlmin from "html-minifier";
+import markdownItToc from "markdown-it-table-of-contents";
+import markdownItFootnote from "markdown-it-footnote";
+import markdownItImplicitFigures from "markdown-it-implicit-figures";
+import * as acutis from "acutis-lang/eleventy";
+import * as acutisComponents from "./_includes/acutisComponents.js";
 
-function acutisSyntax(Prism) {
+async function acutisSyntax(Prism) {
   // Make sure markup-templating is loaded.
-  require("prismjs/components/prism-markup-templating");
+  await import("prismjs/components/prism-markup-templating.js");
 
   Prism.languages.acutis = {
     comment: /^{\*[\s\S]*?\*}$/,
@@ -97,7 +99,7 @@ function mdImages(md, _ops) {
   };
 }
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets/attachments");
   eleventyConfig.addPassthroughCopy("assets/vector");
   eleventyConfig.addPassthroughCopy("assets/video");
@@ -105,7 +107,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy(".nojekyll");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.addPlugin(acutis, { components: acutisComponents });
+  eleventyConfig.addPlugin(acutis.plugin, { components: acutisComponents });
   eleventyConfig.addPlugin(syntaxHighlight, {
     init: ({ Prism }) => acutisSyntax(Prism),
   });
@@ -117,9 +119,9 @@ module.exports = function (eleventyConfig) {
         linkify: true,
         typographer: true,
       })
-      .use(require("markdown-it-footnote"))
+      .use(markdownItFootnote)
       .use(mdImages)
-      .use(require("markdown-it-implicit-figures"), { figcaption: true })
+      .use(markdownItImplicitFigures, { figcaption: true })
       .use(markdownItToc, {
         containerHeaderHtml: `<details open><summary class="toc-container-header">Contents</summary>`,
         containerFooterHtml: `</details>`,
@@ -162,4 +164,4 @@ module.exports = function (eleventyConfig) {
       output: "_site",
     },
   };
-};
+}
