@@ -88,7 +88,7 @@
     {% Mrk_AddedEntryTitle_Page page=collections.coronate / %}
     {% Mrk_AddedEntryTitle
       title="Acutis template language"
-      fullPath="https://johnridesa.bike/acutis/"
+      fullPath="https://acutis.johnridesa.bike/"
       isExternal=true
       thumbnail=!{
         @kind: "image",
@@ -101,7 +101,7 @@
     {% /Mrk_AddedEntryTitle %}
     {% Mrk_AddedEntryTitle
       title="Maximum weighted matching finder"
-      fullPath="https://johnridesa.bike/mwmatching-finder/"
+      fullPath="https://mwmatching.johnridesa.bike/"
       isExternal=true
     %}
       This interactive webpage explains how to use <em>maximum weighted

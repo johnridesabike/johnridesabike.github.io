@@ -81,3 +81,5 @@ _esy/
 
 # Eleventy
 _site
+# Local Netlify folder
+.netlify

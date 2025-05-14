@@ -104,9 +104,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets/vector");
   eleventyConfig.addPassthroughCopy("assets/video");
   eleventyConfig.addPassthroughCopy("assets/images");
-  eleventyConfig.addPassthroughCopy(".nojekyll");
-  eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("robots.txt");
+  eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPlugin(acutis.plugin, { components: acutisComponents });
   eleventyConfig.addPlugin(syntaxHighlight, {
     init: ({ Prism }) => acutisSyntax(Prism),
