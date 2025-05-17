@@ -21,7 +21,6 @@ Finally I did what every coder with too much free time does and built my own.
 (Thanks, 2020.) The result is Acutis. Maybe it's better than its predecessors,
 but I'll let you decide that yourself. Either way, it's certainly different.
 
-
 I wrote the following document to share what I learned along the way. This isn't
 so much of a tutorial or a guide as is it the story of my journey. I'm not a
 computer scientist by education or profession, and I'm sure that much of the
@@ -31,12 +30,12 @@ level, I hope to convey my decisions and the problems I solved more than merely
 the technical details.
 
 <figure>
-  <a href="https://johnridesa.bike/acutis/">
-    <img src="https://johnridesa.bike/acutis/icon.svg" alt="The Acutis icon." height=128 width=128>
+  <a href="https://acutis.johnridesa.bike/">
+    <img src="https://acutis.johnridesa.bike/icon.svg" alt="The Acutis icon." height=128 width=128>
   </a>
   <figcaption>
     To see Acutis in action,
-    <a href="https://johnridesa.bike/acutis/">visit its home page here</a>
+    <a href="https://acutis.johnridesa.bike/">visit its home page here</a>
     or
     <a href="https://github.com/johnridesabike/acutis">check out its source code here</a>.
  </figcaption>
@@ -115,7 +114,7 @@ of how I ended up with this design is long and sinuous.
 
 ### Further reading
 
-- [The Acutis home page](https://johnridesa.bike/acutis/).
+- [The Acutis home page](https://acutis.johnridesa.bike/).
 - [The Acutis source code](https://github.com/johnridesabike/acutis).
 
 ## Why I made a new language, or: how to scratch your own itch
@@ -156,7 +155,7 @@ went to work.
 ## Design decisions, or: loving to crash loud and long and clear
 
 Before we get into the nitty-gritty,
-[I wish make you aware of the Acutis language manual](https://johnridesa.bike/acutis/manual/).
+[I wish to make you aware of the Acutis language manual](https://acutis.johnridesa.bike/manual/).
 It contains much more detail about how the language works, and I don’t want to
 bog down this document by repeating that all here. Feel free to reference it if
 any of the following information seem scant.
@@ -213,7 +212,7 @@ that builds websites.
 
 ### Further reading
 
-- [The Acutis manual](https://johnridesa.bike/acutis/manual/).
+- [The Acutis manual](https://acutis.johnridesa.bike/manual/).
 - [The Principle of Least Power](https://www.w3.org/2001/tag/doc/leastPower-2006-01-23.html).
 
 ## Playing the orchestra, or: how Acutis basically works
@@ -570,7 +569,7 @@ both.
 
 ### Further reading
 
-- [The Acutis type-checker interface](https://johnridesa.bike/acutis/api/acutis/Acutis_internals/Typechecker/index.html).
+- [The Acutis type-checker interface](https://acutis.johnridesa.bike/api/acutis/Acutis_internals/Typechecker/index.html).
 - [The Acutis type-checker implementation](https://github.com/johnridesabike/acutis/blob/master/lib/typechecker.ml).
 
 ## Decisions, decisions, or: how Acutis pattern-matching works
@@ -1083,7 +1082,7 @@ to invent a new algorithm all over again.
 
 ### Further reading
 
-- [The Acutis matching interface](https://johnridesa.bike/acutis/api/acutis/Acutis_internals/Matching/index.html).
+- [The Acutis matching interface](https://acutis.johnridesa.bike/api/acutis/Acutis_internals/Matching/index.html).
 - [The Acutis matching implementation](https://github.com/johnridesabike/acutis/blob/master/lib/matching.ml).
 
 ## Template components, or: why Acutis doesn't have functions
@@ -1273,7 +1272,7 @@ features means just writing a couple more functions.
 
 ### Further reading
 
-- [The Acutis tagless-final semantics interface](https://johnridesa.bike/acutis/api/acutis/Acutis_internals/Instruct/index.html).
+- [The Acutis tagless-final semantics interface](https://acutis.johnridesa.bike/api/acutis/Acutis_internals/Instruct/index.html).
 - [The Acutis instructions implementation](https://github.com/johnridesabike/acutis/blob/master/lib/instruct.ml).
 - [The Acutis renderer implementation](https://github.com/johnridesabike/acutis/blob/master/lib/render.ml).
 - [The Acutis JavaScript printer implementation](https://github.com/johnridesabike/acutis/blob/master/lib/printJs.ml).
