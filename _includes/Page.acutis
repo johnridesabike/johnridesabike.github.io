@@ -50,7 +50,7 @@
     {% Mrk tag=264 ind2=!4 dir=@"row" %}
       {% Sub field="c" %}
         <time datetime="{% isoDate %}" class=page-header__time>
-          {% Icon_Calendar class="" /%} {% formattedDate %}
+          {% Icon_Calendar class="" /%} Last modified on {% formattedDate %}
         </time>
       {% /Sub %}
     {% /Mrk %}

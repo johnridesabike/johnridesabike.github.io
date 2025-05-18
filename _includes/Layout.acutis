@@ -104,7 +104,7 @@
         <div class=max-width-content>
           {% Mrk tag=542 ind1=!1 dir=@"row" %}
             {% Sub field="f" %}
-              Copyright &copy; 2024 by
+              Copyright &copy; 2025 by
               <span property="cc:attributionName"> John Jackson </span>
             {% /Sub %}
             {% Sub field="l" %}

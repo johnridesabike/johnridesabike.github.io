@@ -1,16 +1,6 @@
 import * as icons from "../_includes/icons.js";
 
 export default [
-  /*
-  {
-    icon: icons.simpleIcon({
-      name: "Linkedin",
-      className: "svgIconColored",
-    }),
-    title: "LinkedIn",
-    url: "https://www.linkedin.com/in/johnbpjackson/",
-  },
-  */
   {
     icon: icons.simpleIcon({
       name: "Github",
@@ -19,18 +9,9 @@ export default [
     title: "GitHub",
     url: "https://github.com/johnridesabike",
   },
-  /*
   {
     icon: icons.simpleIcon({
-      name: "Librarything",
-      className: "svgIconColored",
-    }),
-    title: "LibraryThing",
-    url: "https://www.librarything.com/profile/jbpjackson",
-  },
-  */
-  {
-    icon: icons.chess({
+      name: "Lichess",
       className: "svgIconColored",
     }),
     title: "Challenge me to a game of chess",

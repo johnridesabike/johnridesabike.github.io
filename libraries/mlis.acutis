@@ -1,0 +1,25 @@
+{% Mrk tag=520 dir=@"column" %}
+  {% Sub field="a" %}
+    {% description %}
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+  {% Sub field="a" %} Academic libraries. {% /Sub %}
+{% /Mrk %}
+{% Mrk_AddedEntryTitle_Page page=collections.academicStudent / %}
+{% Mrk_AddedEntryTitle_Page page=collections.oaPres / %}
+{% Mrk_AddedEntryTitle_Page page=collections.academicFaculty / %}
+{% Mrk_AddedEntryTitle_Page page=collections.dmp / %}
+{% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+  {% Sub field="a" %} Technical services (Libraries). {% /Sub %}
+{% /Mrk %}
+{% Mrk_AddedEntryTitle_Page page=collections.exLibrisOPAC / %}
+{% Mrk_AddedEntryTitle_Page page=collections.collectionDevelopment / %}
+{% Mrk_AddedEntryTitle_Page page=collections.selectionPolicy / %}
+{% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
+  {% Sub field="a" %} Research {% /Sub %}
+  {% Sub field="x" %} Library resources. {% /Sub %}
+{% /Mrk %}
+{% Mrk_AddedEntryTitle_Page page=collections.researchHispanic / %}
+{% Mrk_AddedEntryTitle_Page page=collections.libraryTwitter / %}
+{% Mrk_AddedEntryTitle_Page page=collections.envAnalysis / %}

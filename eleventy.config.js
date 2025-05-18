@@ -152,15 +152,9 @@ export default function (eleventyConfig) {
     });
   }
   eleventyConfig.addWatchTarget("./assets/**/*");
+  eleventyConfig.setTemplateFormats(["md", "acutis", "11ty.js"]);
   return {
-    templateFormats: ["md", "acutis", "11ty.js"],
     markdownTemplateEngine: "acutis",
     htmlTemplateEngine: "acutis",
-    dir: {
-      input: ".",
-      includes: "_includes",
-      data: "_data",
-      output: "_site",
-    },
   };
 }

@@ -15,13 +15,12 @@ let postcssWithOptions = postcss([
 ]);
 
 let cssPath = "style.css";
-let cssFile = fs.readFile(
-  path.join(path.dirname(url.fileURLToPath(import.meta.url)), cssPath),
-);
 
 export default function Template() {}
 Template.prototype.data = async function data() {
-  let css = await cssFile;
+  let css = await fs.readFile(
+    path.join(path.dirname(url.fileURLToPath(import.meta.url)), cssPath),
+  );
   return {
     cssPath,
     css,

@@ -563,6 +563,7 @@ big {
 
 .page-header__time {
   font-size: var(--font-size-sm);
+  color: var(--color-caption);
 }
 
 .page-header__figure {
@@ -712,7 +713,7 @@ svg.feather {
 .icon__svg,
 .svgIconColored {
   width: 1em;
-  vertical-align: baseline;
+  vertical-align: text-top;
   transition: fill 120ms ease-in-out;
   fill: currentcolor;
 }

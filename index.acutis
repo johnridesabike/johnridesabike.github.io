@@ -100,6 +100,20 @@
       is built with it!
     {% /Mrk_AddedEntryTitle %}
     {% Mrk_AddedEntryTitle
+      title="V4D: Visualize 4D Shapes"
+      fullPath="https://visualize4d.johnridesa.bike/"
+      isExternal=true
+      thumbnail=!{
+        @kind: "image",
+        image: "/assets/vector/v4d.svg",
+        caption: "A visualization of a tesseract."
+      }
+    %}
+      V4D is a webpage I made to play with four-dimensional shapes. It can
+      project each shape in its entirety or as a three-dimensional "slice" that
+      simulates how the shape would appear passing through our space.
+    {% /Mrk_AddedEntryTitle %}
+    {% Mrk_AddedEntryTitle
       title="Maximum weighted matching finder"
       fullPath="https://mwmatching.johnridesa.bike/"
       isExternal=true
@@ -121,11 +135,6 @@
         projects.
       {% /Sub %}
     {% /Mrk %}
-    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
-      {% Sub field="a" %}
-        Blogs.
-      {% /Sub %}
-    {% /Mrk %}
     {% Mrk_AddedEntryTitle
       title="Bike Walk Life blog"
       fullPath="https://bikewalk.life/"
@@ -140,20 +149,7 @@
       issues from the world of biking and walking. I especially focus on the
       Southeast U.S.
     {% /Mrk_AddedEntryTitle %}
-    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
-      {% Sub field="a" %}
-        Software engineering.
-      {% /Sub %}
-    {% /Mrk %}
     {% Mrk_AddedEntryTitle_Page page=collections.acutisArticle / %}
-    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
-      {% Sub field="a" %}
-        Chess
-      {% /Sub %}
-      {% Sub field="v" %}
-        Handbooks, manuals, etc.
-      {% /Sub %}
-    {% /Mrk %}
     {% Mrk_AddedEntryTitle
        title="Your Library’s First Chess Tournament: From Opening to Endgame"
        fullPath="https://programminglibrarian.org/articles/your-librarys-first-chess-tournament-opening-endgame"
@@ -170,7 +166,10 @@
   <section class=frontpage__section>
     {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
       {% Sub field="a" %}
-        {% Feather icon="video" / %} Video recording
+        {% Feather icon="video" / %} Internet videos
+      {% /Sub %}
+      {% Sub field="x" %}
+        production and direction.
       {% /Sub %}
     {% /Mrk %}
     {% match collections.libraryMedia with [{data, url}, ..._] %}
@@ -179,13 +178,9 @@
          title=data.title
          isExternal=false
          thumbnail=!{
-           @kind: "video",
-           video: [
-            {src: "/assets/video/montage_web.mp4", type: "video/mp4"},
-            {src: "/assets/video/montage_web.webm", type: "video/webm"}
-            ],
-           height: 90,
-           width: 160
+           @kind: "image",
+           image: "/assets/images/library-media/curbside-title.jpg",
+           caption: "An example video thumbnail.",
           }
         %}
          {% data.description %}
@@ -197,38 +192,10 @@
   <section class=frontpage__section>
     {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
       {% Sub field="a" %}
-        {% Feather icon="book" / %} Master of Science degree
-      {% /Sub %}
-      {% Sub field="x" %} Library Science. {% /Sub %}
-    {% /Mrk %}
-    {% Mrk tag=520 dir=@"column" %}
-      {% Sub field="a" %}
-        I graduated with a master of library science degree from the
-        University of South Carolina with a focus on academic and digital
-        libraries. These pages include samples of my work accomplished during
-        that time.
+        {% Feather icon="book" / %} Library Science.
       {% /Sub %}
     {% /Mrk %}
-    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
-      {% Sub field="a" %} Academic libraries. {% /Sub %}
-    {% /Mrk %}
-    {% Mrk_AddedEntryTitle_Page page=collections.academicStudent / %}
-    {% Mrk_AddedEntryTitle_Page page=collections.oaPres / %}
-    {% Mrk_AddedEntryTitle_Page page=collections.academicFaculty / %}
-    {% Mrk_AddedEntryTitle_Page page=collections.dmp / %}
-    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
-      {% Sub field="a" %} Technical services (Libraries). {% /Sub %}
-    {% /Mrk %}
-    {% Mrk_AddedEntryTitle_Page page=collections.exLibrisOPAC / %}
-    {% Mrk_AddedEntryTitle_Page page=collections.collectionDevelopment / %}
-    {% Mrk_AddedEntryTitle_Page page=collections.selectionPolicy / %}
-    {% Mrk tag=650 ind1=!0 ind2=!0 dir=@"row" html=!"h3" %}
-      {% Sub field="a" %} Research {% /Sub %}
-      {% Sub field="x" %} Library resources. {% /Sub %}
-    {% /Mrk %}
-    {% Mrk_AddedEntryTitle_Page page=collections.researchHispanic / %}
-    {% Mrk_AddedEntryTitle_Page page=collections.libraryTwitter / %}
-    {% Mrk_AddedEntryTitle_Page page=collections.envAnalysis / %}
+    {% Mrk_AddedEntryTitle_Page page=collections.mlis / %}
   </section>
 
   <section class=frontpage__section>
