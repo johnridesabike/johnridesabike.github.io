@@ -1,0 +1,16 @@
+image: ubuntu/lts
+packages:
+  - nodejs
+  - npm
+sources:
+  - https://git.sr.ht/~johnridesabike/johnridesa.bike
+secrets:
+  - 4648aeba-a81e-442c-bc37-5118709e8535
+tasks:
+  - deploy: |
+      set +x
+      . ~/.netlify_auth
+      set -x
+      cd johnridesa.bike
+      npm ci
+      npm run deploy
