@@ -114,12 +114,34 @@
       simulates how the shape would appear passing through our space.
     {% /Mrk_AddedEntryTitle %}
     {% Mrk_AddedEntryTitle
+      title="Stella Maris Vim color scheme"
+      fullPath="https://sr.ht/~johnridesabike/vim-stella-maris/"
+      isExternal=true
+      thumbnail=!{
+        @kind: "image",
+        image: "/assets/vector/stella-square.svg",
+        caption: "An icon in the Stella Maris colors."
+      }
+    %}
+      I spent enough time looking at the Vim text editor that I made my own
+      color scheme for it and called the scheme Stella Maris. It's simple,
+      accessible, and looks good to my eyes.
+    {% /Mrk_AddedEntryTitle %}
+    {% Mrk_AddedEntryTitle
       title="Maximum weighted matching finder"
       fullPath="https://mwmatching.johnridesa.bike/"
       isExternal=true
     %}
       This interactive webpage explains how to use <em>maximum weighted
       matching</em> theory to do things like pair chess players.
+    {% /Mrk_AddedEntryTitle %}
+    {% Mrk_AddedEntryTitle
+      title="...and other small projects"
+      fullPath="https://sr.ht/~johnridesabike/workshop/sources"
+      isExternal=true
+    %}
+      Most of my tinkerings don't result in anything big or useful at first, but
+      you can view some of my other repositories here.
     {% /Mrk_AddedEntryTitle %}
   </section>
 
