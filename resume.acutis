@@ -20,7 +20,12 @@
 {% Mrk tag=520 dir=@"row" %}
   {% Sub field="a" %}
     Managed bibliographic records, item records, and authority records with
-    Polaris ILS.
+    the Polaris ILS and Library&bullet;Solution ILS.
+  {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Planned and led system-wide inventory projects.
   {% /Sub %}
 {% /Mrk %}
 {% Mrk tag=520 dir=@"row" %}
@@ -114,6 +119,11 @@
 
 {% Mrk tag=653 ind1=!0 ind2=!0 dir=@"row" html=!"h2" %}
   {% Sub field="a" %} Career development {% /Sub %}
+{% /Mrk %}
+{% Mrk tag=611 ind1=!2 ind2=!4 dir=@"row" %}
+  {% Sub field="a" %} Georgia Library Conference {% /Sub %}
+  {% Sub field="d" %} 2024, {% /Sub %}
+  {% Sub field="g" %} attendee. {% /Sub %}
 {% /Mrk %}
 {% Mrk tag=611 ind1=!2 ind2=!4 dir=@"row" %}
   {% Sub field="a" %} Georgia Library Cataloging Conference {% /Sub %}
