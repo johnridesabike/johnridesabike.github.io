@@ -85,20 +85,20 @@
         These are some sundry software projects I've dabbled in over the years.
       {% /Sub %}
     {% /Mrk %}
-    {% Mrk_AddedEntryTitle_Page page=collections.coronate / %}
-    {% Mrk_AddedEntryTitle
-      title="Acutis template language"
-      fullPath="https://acutis.johnridesa.bike/"
-      isExternal=true
+    {% Mrk_AddedEntryTitle_Page
+      page=collections.coronate
       thumbnail=!{
         @kind: "image",
-        image: "/assets/vector/acutis_wide.svg",
-        caption: "Acutis language icon."
-      }
-    %}
-      Acutis is a programming language that I created from scratch. This website
-      is built with it!
-    {% /Mrk_AddedEntryTitle %}
+        image: "/assets/vector/coronate_logo.svg",
+        caption: "The Coronate logo."
+      } / %}
+    {% Mrk_AddedEntryTitle_Page
+      page=collections.acutisArticle
+      thumbnail=!{
+        @kind: "image",
+        image: "/assets/vector/acutis_logo.svg",
+        caption: "The Acutis language icon."
+      } / %}
     {% Mrk_AddedEntryTitle
       title="V4D: Visualize 4D Shapes"
       fullPath="https://visualize4d.johnridesa.bike/"
@@ -171,7 +171,6 @@
       issues from the world of biking and walking. I especially focus on the
       Southeast U.S.
     {% /Mrk_AddedEntryTitle %}
-    {% Mrk_AddedEntryTitle_Page page=collections.acutisArticle / %}
     {% Mrk_AddedEntryTitle
        title="Your Library’s First Chess Tournament: From Opening to Endgame"
        fullPath="https://programminglibrarian.org/articles/your-librarys-first-chess-tournament-opening-endgame"
@@ -194,21 +193,14 @@
         production and direction.
       {% /Sub %}
     {% /Mrk %}
-    {% match collections.libraryMedia with [{data, url}, ..._] %}
-      {% Mrk_AddedEntryTitle
-         fullPath=url
-         title=data.title
-         isExternal=false
-         thumbnail=!{
-           @kind: "image",
-           image: "/assets/images/library-media/curbside-title.jpg",
-           caption: "An example video thumbnail.",
-          }
-        %}
-         {% data.description %}
-      {% /Mrk_AddedEntryTitle %}
-    {% with [] %} {* Nothing *}
-    {% /match %}
+    {% Mrk_AddedEntryTitle_Page
+      page=collections.libraryMedia
+      thumbnail=!{
+       @kind: "image",
+       image: "/assets/images/library-media/curbside-title.jpg",
+       caption: "An example video thumbnail.",
+      }
+      / %}
   </section>
 
   <section class=frontpage__section>

@@ -2,14 +2,24 @@
 title:
   "The Acutis template language, or: how I over-engineered a program that just
   prints text"
-date: 2024-07-04
+date: 2025-05-21
 description: |
-  This is the story of how and why I built the Acutis template language. It
-  explains the decisions I made, the problems I solved, and the technical
-  details involved.
+  Acutis is a programming language that I created from scratch. This is the
+  story of how and why I built it, including the decisions I made, the problems
+  I solved, and the technical details involved. Also, this website is built with
+  it!
 layout: Page.acutis
 tags: acutisArticle
 templateEngineOverride: md # Don't process Acutis code.
+---
+
+[![The Acutis language
+icon.](/assets/vector/acutis_logo.svg)](https://acutis.johnridesa.bike/)
+
+- **[View the Acutis home page here to see it in action](https://acutis.johnridesa.bike/).**
+- **[View the Acutis source code here](https://sr.ht/~johnridesabike/acutis/).**
+- Continue reading for the whole story about how and why I built Acutis.
+
 ---
 
 Almost every software project needs to generate text, and it usually has a
@@ -28,18 +38,6 @@ knowledge herein is elementary to compiler experts. Some of it also may also
 seem a bit sophisticated to beginner coders. Regardless of the reader's skill
 level, I hope to convey my decisions and the problems I solved more than merely
 the technical details.
-
-<figure>
-  <a href="https://acutis.johnridesa.bike/">
-    <img src="https://acutis.johnridesa.bike/icon.svg" alt="The Acutis icon." height=128 width=128>
-  </a>
-  <figcaption>
-    To see Acutis in action,
-    <a href="https://acutis.johnridesa.bike/">visit its home page here</a>
-    or
-    <a href="https://github.com/johnridesabike/acutis">check out its source code here</a>.
- </figcaption>
-</figure>
 
 [[toc]]
 
@@ -115,7 +113,7 @@ of how I ended up with this design is long and sinuous.
 ### Further reading
 
 - [The Acutis home page](https://acutis.johnridesa.bike/).
-- [The Acutis source code](https://github.com/johnridesabike/acutis).
+- [The Acutis source code](https://sr.ht/~johnridesabike/acutis/).
 
 ## Why I made a new language, or: how to scratch your own itch
 
@@ -481,8 +479,8 @@ But type erasure like this only works with a compile-time type-checker that is
 
 ### Further reading
 
-- [The Acutis lexer implementation](https://github.com/johnridesabike/acutis/blob/master/lib/lexer.mll).
-- [The Acutis parser implementation](https://github.com/johnridesabike/acutis/blob/master/lib/parser.mly).
+- [The Acutis lexer implementation](https://git.sr.ht/~johnridesabike/acutis/tree/master/item/lib/lexer.mll).
+- [The Acutis parser implementation](https://git.sr.ht/~johnridesabike/acutis/tree/master/item/lib/parser.mly).
 - [The OCaml home page](https://ocaml.org/).
 - [The `ocamllex` documentation](https://ocaml.org/manual/latest/lexyacc.html).
 - [The Menhir documentation](http://cambium.inria.fr/~fpottier/menhir/).
@@ -570,7 +568,7 @@ both.
 ### Further reading
 
 - [The Acutis type-checker interface](https://acutis.johnridesa.bike/api/acutis/Acutis_internals/Typechecker/index.html).
-- [The Acutis type-checker implementation](https://github.com/johnridesabike/acutis/blob/master/lib/typechecker.ml).
+- [The Acutis type-checker implementation](https://git.sr.ht/~johnridesabike/acutis/tree/master/item/lib/typechecker.ml).
 
 ## Decisions, decisions, or: how Acutis pattern-matching works
 
@@ -1083,7 +1081,7 @@ to invent a new algorithm all over again.
 ### Further reading
 
 - [The Acutis matching interface](https://acutis.johnridesa.bike/api/acutis/Acutis_internals/Matching/index.html).
-- [The Acutis matching implementation](https://github.com/johnridesabike/acutis/blob/master/lib/matching.ml).
+- [The Acutis matching implementation](https://git.sr.ht/~johnridesabike/acutis/tree/master/item/lib/matching.ml).
 
 ## Template components, or: why Acutis doesn't have functions
 
@@ -1251,7 +1249,7 @@ example, we define an `if` function which takes a boolean value and two
 functions for the `then` and `else` paths. `let` is a function which takes an
 expression and a function for what we do with that expression’s result. And so
 on.
-[You can see the entire semantics I use here](https://github.com/johnridesabike/acutis/blob/master/lib/instruct.ml).
+[You can see the entire semantics I use here](https://git.sr.ht/~johnridesabike/acutis/tree/master/item/lib/instruct.ml).
 
 Once we've defined language semantics and have written our folding functions
 that use them, the next step is to define implementations. Executing the
@@ -1273,9 +1271,8 @@ features means just writing a couple more functions.
 ### Further reading
 
 - [The Acutis tagless-final semantics interface](https://acutis.johnridesa.bike/api/acutis/Acutis_internals/Instruct/index.html).
-- [The Acutis instructions implementation](https://github.com/johnridesabike/acutis/blob/master/lib/instruct.ml).
-- [The Acutis renderer implementation](https://github.com/johnridesabike/acutis/blob/master/lib/render.ml).
-- [The Acutis JavaScript printer implementation](https://github.com/johnridesabike/acutis/blob/master/lib/printJs.ml).
+- [The Acutis instructions implementation](https://git.sr.ht/~johnridesabike/acutis/tree/master/item/lib/instruct.ml).
+- [The Acutis renderer and JavaScript printer implementations](https://git.sr.ht/~johnridesabike/acutis/tree/master/item/acutis.ml).
 - [A tagless-final course](https://okmij.org/ftp/tagless-final/).
 - [Using the OCaml Format module](https://ocaml.org/manual/5.2/api/Format_tutorial.html).
 
@@ -1288,7 +1285,7 @@ Building a website requires more than just templates, though. So I called upon
 the Eleventy static-site generator. Eleventy runs on Node.js and has a broad API
 that includes support for custom templates engines.
 
-We can package Acutis into JavaScript using the Js_of_ocaml compiler. And,
+We can package Acutis into JavaScript using the Js\_of\_ocaml compiler. And,
 thanks, to Acutis template components being implementable as functions, we can
 call virtually anything in the Node.js ecosystem while building our site. (I use
 that for things like image optimization.)
@@ -1304,8 +1301,8 @@ works, it works.
 
 ### Further reading
 
-- [The Acutis Eleventy plugin](https://github.com/johnridesabike/acutis/blob/master/eleventy.js).
-- [The Acutis OCaml-to-JavaScript implementation](https://github.com/johnridesabike/acutis/blob/master/js/acutis_js.ml).
+- [The Acutis Eleventy plugin](https://git.sr.ht/~johnridesabike/acutis/tree/master/item/eleventy.js).
+- [The Acutis OCaml-to-JavaScript implementation](https://git.sr.ht/~johnridesabike/acutis/tree/master/item/acutis_js.ml).
 - [The acutis-lang npm package](https://www.npmjs.com/package/acutis-lang).
 - [The Js_of_ocaml documentation](https://ocsigen.org/js_of_ocaml/latest/manual/overview).
 - [The Eleventy documentation](https://www.11ty.dev/).

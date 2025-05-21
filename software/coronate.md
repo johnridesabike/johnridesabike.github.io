@@ -1,16 +1,15 @@
 ---
 title: "Coronate: a Swiss chess tournament manager"
 date: 2021-03-18
-thumbnail:
-  kind: image
-  image: /assets/vector/coronate_logo_wide.svg
-  caption: The Coronate logo.
 description: |
   I created my own chess tournament manager. It's free and open source for
   anyone to use, but especially designed for libraries and small clubs.
 layout: Page.acutis
 tags: coronate
 ---
+
+[![The Coronate
+icon.](/assets/vector/coronate_logo.svg)](https://coronate.netlify.app)
 
 Coronate is a free, open-source app for managing Swiss-style chess tournaments.
 
