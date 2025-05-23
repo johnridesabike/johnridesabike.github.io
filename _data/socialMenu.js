@@ -3,6 +3,14 @@ import * as icons from "../_includes/icons.js";
 export default [
   {
     icon: icons.simpleIcon({
+      name: "Sourcehut",
+      className: "svgIconColored",
+    }),
+    title: "Sourcehut",
+    url: "https://sr.ht/~johnridesabike/",
+  },
+  {
+    icon: icons.simpleIcon({
       name: "Github",
       className: "svgIconColored",
     }),
