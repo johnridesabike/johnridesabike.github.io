@@ -166,12 +166,10 @@
   {% Sub field="c" %} Columbus, (Ga). {% /Sub %}
 {% /Mrk %}
 {% Mrk tag=500 dir=@"row" %}
-  {% Sub field="a" %}
-    <i>
-      Bicycle Columbus promotes safe bicycling for transportation and
-      recreation, and advocates for improved bicycling conditions in Columbus,
-      Georgia.
-    </i>
+  {% Sub field="a" class=!"has-small-font-size italic" %}
+    Bicycle Columbus promotes safe walking and bicycling for transportation and
+    recreation and advocates for improved bicycle and pedestrian conditions in
+    Columbus, Georgia.
   {% /Sub %}
 {% /Mrk %}
 {% Mrk tag=520 dir=@"row" %}
@@ -180,6 +178,13 @@
 {% Mrk tag=520 dir=@"row" %}
   {% Sub field="a" %} Board member since 2021. {% /Sub %}
 {% /Mrk %}
+{% Mrk tag=520 dir=@"row" %}
+  {% Sub field="a" %}
+    Collaborated with local government offices and organizations to organize
+    annual bicycle events including Ride With the Mayor, Juneteenth Historic
+    Bike Ride, and Ride of Silence.
+  {% /Sub %}
+{% /Mrk %}
 {% Mrk tag=610 ind1=!2 ind2=!4 dir=@"row" html=!"h3" %}
   {% Sub field="a" %}
     International Relations &amp; Cultural Liaison Encounters (C.I.R.C.L.E.)
@@ -187,18 +192,13 @@
   {% Sub field="c" %} Columbus, (Ga). {% /Sub %}
 {% /Mrk %}
 {% Mrk tag=500 dir=@"row" %}
-  {% Sub field="a" %}
-    <i>
-      C.I.R.C.L.E. is a mayoral commission to coordinate communication between
-      Columbus and other nations and to facilitate cross–cultural associations.
-    </i>
+  {% Sub field="a" class=!"has-small-font-size italic" %}
+    C.I.R.C.L.E. is a mayoral commission to coordinate communication between
+    Columbus and other nations and to facilitate cross–cultural associations.
   {% /Sub %}
 {% /Mrk %}
 {% Mrk tag=520 dir=@"row" %}
   {% Sub field="a" %} Chair from 2020 to 2023. {% /Sub %}
-{% /Mrk %}
-{% Mrk tag=520 dir=@"row" %}
-  {% Sub field="a" %} Secretary from 2019 to 2020. {% /Sub %}
 {% /Mrk %}
 {% Mrk tag=520 dir=@"row" %}
   {% Sub field="a" %} Commissioner from 2018 to 2023. {% /Sub %}

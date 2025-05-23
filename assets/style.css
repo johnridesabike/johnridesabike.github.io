@@ -462,6 +462,10 @@ big {
   letter-spacing: normal;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .align-center {
   text-align: center;
 }
