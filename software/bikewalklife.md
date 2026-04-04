@@ -174,5 +174,6 @@ not aware of any linked page so far that has accepted Webmentions.
 
 Feel free to let me know if you have questions about how I use any of these
 tools or services. You can reach me privately by emailing
-<john@johnridesa.bike>, or publicly on the social platforms above if that's your
-thing.
+<a href="{% Hexificate %}mailto:john@johnridesa.bike{% /Hexificate %}">
+  {% Hexificate %}john@johnridesa.bike{% /Hexificate %}
+</a>, or publicly on the social platforms above if that's your thing.

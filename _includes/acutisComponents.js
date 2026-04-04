@@ -80,3 +80,17 @@ Img.interface = {
   class: "string",
   width: "int",
 };
+
+// Supposedly, email scrapers don't decode HTML entities.
+export function Hexificate({ children }) {
+  let result = "";
+  for (let i = 0; i < children.length; i++) {
+    result += "&#x";
+    result += children.charCodeAt(i).toString(16);
+    result += ";";
+  }
+  return result;
+}
+Hexificate.interface = {
+  children: "string",
+};
